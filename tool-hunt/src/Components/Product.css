@@ -1,0 +1,23 @@
+.product {
+    display: flex;
+    flex-direction: row;
+}
+
+.product__image img {
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+}
+.product__heading {
+    color: #61dbfb;
+    font-size: 32px;
+}
+
+.product__description {
+    margin-left: 2rem;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.product__rating {
+}
