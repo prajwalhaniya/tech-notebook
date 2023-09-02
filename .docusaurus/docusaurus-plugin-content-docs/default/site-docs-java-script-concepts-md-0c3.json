@@ -2,13 +2,12 @@
   "unversionedId": "JavaScript/Concepts",
   "id": "JavaScript/Concepts",
   "title": "Concepts",
-  "description": "JavaScript Concepts",
+  "description": "Variables",
   "source": "@site/docs/JavaScript/Concepts.md",
   "sourceDirName": "JavaScript",
   "slug": "/JavaScript/Concepts",
   "permalink": "/docs/JavaScript/Concepts",
   "draft": false,
-  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/JavaScript/Concepts.md",
   "tags": [],
   "version": "current",
   "sidebarPosition": 1,
@@ -21,7 +20,7 @@
     "permalink": "/docs/category/javascript"
   },
   "next": {
-    "title": "React",
-    "permalink": "/docs/category/react"
+    "title": "Projects",
+    "permalink": "/docs/JavaScript/Projects"
   }
 }

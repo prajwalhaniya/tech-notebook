@@ -20,6 +20,12 @@
             "label": "Concepts",
             "href": "/docs/JavaScript/Concepts",
             "docId": "JavaScript/Concepts"
+          },
+          {
+            "type": "link",
+            "label": "Projects",
+            "href": "/docs/JavaScript/Projects",
+            "docId": "JavaScript/Projects"
           }
         ],
         "href": "/docs/category/javascript"
@@ -102,7 +108,13 @@
     "JavaScript/Concepts": {
       "id": "JavaScript/Concepts",
       "title": "Concepts",
-      "description": "JavaScript Concepts",
+      "description": "Variables",
+      "sidebar": "tutorialSidebar"
+    },
+    "JavaScript/Projects": {
+      "id": "JavaScript/Projects",
+      "title": "Projects",
+      "description": "The following projects must be done using the pure JavaScript without the help of any external libraries",
       "sidebar": "tutorialSidebar"
     },
     "nodejs/concepts": {
@@ -114,7 +126,7 @@
     "React/concepts": {
       "id": "React/concepts",
       "title": "concepts",
-      "description": "",
+      "description": "Components",
       "sidebar": "tutorialSidebar"
     }
   }

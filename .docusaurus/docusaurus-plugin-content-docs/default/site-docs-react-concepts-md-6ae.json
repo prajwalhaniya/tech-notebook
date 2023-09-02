@@ -2,16 +2,18 @@
   "unversionedId": "React/concepts",
   "id": "React/concepts",
   "title": "concepts",
-  "description": "",
+  "description": "Components",
   "source": "@site/docs/React/concepts.md",
   "sourceDirName": "React",
   "slug": "/React/concepts",
   "permalink": "/docs/React/concepts",
   "draft": false,
-  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/React/concepts.md",
   "tags": [],
   "version": "current",
-  "frontMatter": {},
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "React",

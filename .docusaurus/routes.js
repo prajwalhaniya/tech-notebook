@@ -4,62 +4,62 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 export default [
   {
     path: '/__docusaurus/debug',
-    component: ComponentCreator('/__docusaurus/debug', 'd92'),
+    component: ComponentCreator('/__docusaurus/debug', '516'),
     exact: true
   },
   {
     path: '/__docusaurus/debug/config',
-    component: ComponentCreator('/__docusaurus/debug/config', '584'),
+    component: ComponentCreator('/__docusaurus/debug/config', '288'),
     exact: true
   },
   {
     path: '/__docusaurus/debug/content',
-    component: ComponentCreator('/__docusaurus/debug/content', 'd00'),
+    component: ComponentCreator('/__docusaurus/debug/content', 'ecc'),
     exact: true
   },
   {
     path: '/__docusaurus/debug/globalData',
-    component: ComponentCreator('/__docusaurus/debug/globalData', 'd9f'),
+    component: ComponentCreator('/__docusaurus/debug/globalData', 'bb1'),
     exact: true
   },
   {
     path: '/__docusaurus/debug/metadata',
-    component: ComponentCreator('/__docusaurus/debug/metadata', 'ab4'),
+    component: ComponentCreator('/__docusaurus/debug/metadata', '335'),
     exact: true
   },
   {
     path: '/__docusaurus/debug/registry',
-    component: ComponentCreator('/__docusaurus/debug/registry', '776'),
+    component: ComponentCreator('/__docusaurus/debug/registry', '03c'),
     exact: true
   },
   {
     path: '/__docusaurus/debug/routes',
-    component: ComponentCreator('/__docusaurus/debug/routes', '49e'),
+    component: ComponentCreator('/__docusaurus/debug/routes', '52a'),
     exact: true
   },
   {
     path: '/blog',
-    component: ComponentCreator('/blog', 'bea'),
+    component: ComponentCreator('/blog', '2d9'),
     exact: true
   },
   {
     path: '/blog/archive',
-    component: ComponentCreator('/blog/archive', 'b9b'),
+    component: ComponentCreator('/blog/archive', 'cf9'),
     exact: true
   },
   {
     path: '/blog/welcome',
-    component: ComponentCreator('/blog/welcome', '8de'),
+    component: ComponentCreator('/blog/welcome', '1bb'),
     exact: true
   },
   {
     path: '/markdown-page',
-    component: ComponentCreator('/markdown-page', 'e16'),
+    component: ComponentCreator('/markdown-page', '389'),
     exact: true
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '68c'),
+    component: ComponentCreator('/docs', 'ca1'),
     routes: [
       {
         path: '/docs/category/database',
@@ -110,6 +110,12 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
+        path: '/docs/JavaScript/Projects',
+        component: ComponentCreator('/docs/JavaScript/Projects', 'e95'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
         path: '/docs/nodejs/concepts',
         component: ComponentCreator('/docs/nodejs/concepts', '672'),
         exact: true,
@@ -125,7 +131,7 @@ export default [
   },
   {
     path: '/',
-    component: ComponentCreator('/', '38b'),
+    component: ComponentCreator('/', '54a'),
     exact: true
   },
   {

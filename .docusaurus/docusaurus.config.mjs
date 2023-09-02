@@ -6,7 +6,7 @@
 export default {
   "title": "Tech Notebook",
   "tagline": "Dinosaurs are cool",
-  "favicon": "img/favicon.ico",
+  "favicon": "img/technotebook.svg",
   "url": "https://your-docusaurus-test-site.com",
   "baseUrl": "/",
   "organizationName": "facebook",
@@ -26,15 +26,13 @@ export default {
       "classic",
       {
         "docs": {
-          "sidebarPath": "/home/prajwal/Disk D/Prajwal Haniya/tech-notebook/sidebars.js",
-          "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/"
+          "sidebarPath": "/Users/prajwal/Documents/Extras/tech-notebook/sidebars.js"
         },
         "blog": {
-          "showReadingTime": true,
-          "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/"
+          "showReadingTime": true
         },
         "theme": {
-          "customCss": "/home/prajwal/Disk D/Prajwal Haniya/tech-notebook/src/css/custom.css"
+          "customCss": "/Users/prajwal/Documents/Extras/tech-notebook/src/css/custom.css"
         }
       }
     ]

@@ -26,6 +26,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "JavaScript/Projects",
+              "path": "/docs/JavaScript/Projects",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "nodejs/concepts",
               "path": "/docs/nodejs/concepts",
               "sidebar": "tutorialSidebar"
