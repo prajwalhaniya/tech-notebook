@@ -1,0 +1,78 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/docs",
+          "mainDocId": "JavaScript/Concepts",
+          "docs": [
+            {
+              "id": "Database/concepts",
+              "path": "/docs/Database/concepts",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Deployment/concepts",
+              "path": "/docs/Deployment/concepts",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "JavaScript/Concepts",
+              "path": "/docs/JavaScript/Concepts",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "nodejs/concepts",
+              "path": "/docs/nodejs/concepts",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "React/concepts",
+              "path": "/docs/React/concepts",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/javascript",
+              "path": "/docs/category/javascript",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/react",
+              "path": "/docs/category/react",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/nodejs",
+              "path": "/docs/category/nodejs",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/database",
+              "path": "/docs/category/database",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/deployment",
+              "path": "/docs/category/deployment",
+              "sidebar": "tutorialSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "tutorialSidebar": {
+              "link": {
+                "path": "/docs/category/javascript",
+                "label": "JavaScript"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

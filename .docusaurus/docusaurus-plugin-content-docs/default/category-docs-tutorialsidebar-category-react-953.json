@@ -1,0 +1,16 @@
+{
+  "title": "React",
+  "description": "All the required React concepts goes here",
+  "slug": "/category/react",
+  "permalink": "/docs/category/react",
+  "navigation": {
+    "previous": {
+      "title": "Concepts",
+      "permalink": "/docs/JavaScript/Concepts"
+    },
+    "next": {
+      "title": "concepts",
+      "permalink": "/docs/React/concepts"
+    }
+  }
+}

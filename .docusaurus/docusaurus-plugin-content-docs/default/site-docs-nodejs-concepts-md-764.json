@@ -1,0 +1,24 @@
+{
+  "unversionedId": "nodejs/concepts",
+  "id": "nodejs/concepts",
+  "title": "concepts",
+  "description": "",
+  "source": "@site/docs/nodejs/concepts.md",
+  "sourceDirName": "nodejs",
+  "slug": "/nodejs/concepts",
+  "permalink": "/docs/nodejs/concepts",
+  "draft": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/nodejs/concepts.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "nodejs",
+    "permalink": "/docs/category/nodejs"
+  },
+  "next": {
+    "title": "Database",
+    "permalink": "/docs/category/database"
+  }
+}

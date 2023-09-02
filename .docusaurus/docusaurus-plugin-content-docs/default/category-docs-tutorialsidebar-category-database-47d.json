@@ -1,0 +1,16 @@
+{
+  "title": "Database",
+  "description": "All the required JavaScript concepts goes here",
+  "slug": "/category/database",
+  "permalink": "/docs/category/database",
+  "navigation": {
+    "previous": {
+      "title": "concepts",
+      "permalink": "/docs/nodejs/concepts"
+    },
+    "next": {
+      "title": "concepts",
+      "permalink": "/docs/Database/concepts"
+    }
+  }
+}

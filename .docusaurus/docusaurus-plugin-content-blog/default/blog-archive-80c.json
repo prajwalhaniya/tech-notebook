@@ -1,0 +1,35 @@
+{
+  "blogPosts": [
+    {
+      "id": "welcome",
+      "metadata": {
+        "permalink": "/blog/welcome",
+        "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2023-09-02-welcome/index.md",
+        "source": "@site/blog/2023-09-02-welcome/index.md",
+        "title": "Welcome",
+        "description": "Hello,",
+        "date": "2023-09-02T00:00:00.000Z",
+        "formattedDate": "September 2, 2023",
+        "tags": [],
+        "readingTime": 0.385,
+        "hasTruncateMarker": false,
+        "authors": [
+          {
+            "name": "Prajwal Haniya",
+            "title": "Software Engineer",
+            "url": "https://github.com/prajwalhaniya",
+            "imageURL": "https://avatars.githubusercontent.com/u/82883854?s=400&u=a067b7aff0fb648e1f9a18424cfe2de40e0fb52c&v=4",
+            "key": "prajwal"
+          }
+        ],
+        "frontMatter": {
+          "slug": "welcome",
+          "title": "Welcome",
+          "authors": "prajwal",
+          "tags": []
+        }
+      },
+      "content": "Hello,\n\nI build softwares. In this blog, I am determined to document all the necessary requirements for a software engineer to build & deploy softwares. \n\nWith tons of information available it's very difficult to understand how to build and deploy applications. So here I wish to give a solution to an individual, where he/she can learn from building an application & deploying it to the cloud. I use JavaScript. So this doc contains software development using JavaScript."
+    }
+  ]
+}

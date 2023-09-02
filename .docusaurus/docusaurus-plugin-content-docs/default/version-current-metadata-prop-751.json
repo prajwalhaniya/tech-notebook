@@ -1,0 +1,121 @@
+{
+  "pluginId": "default",
+  "version": "current",
+  "label": "Next",
+  "banner": null,
+  "badge": false,
+  "noIndex": false,
+  "className": "docs-version-current",
+  "isLast": true,
+  "docsSidebars": {
+    "tutorialSidebar": [
+      {
+        "type": "category",
+        "label": "JavaScript",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "Concepts",
+            "href": "/docs/JavaScript/Concepts",
+            "docId": "JavaScript/Concepts"
+          }
+        ],
+        "href": "/docs/category/javascript"
+      },
+      {
+        "type": "category",
+        "label": "React",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "concepts",
+            "href": "/docs/React/concepts",
+            "docId": "React/concepts"
+          }
+        ],
+        "href": "/docs/category/react"
+      },
+      {
+        "type": "category",
+        "label": "nodejs",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "concepts",
+            "href": "/docs/nodejs/concepts",
+            "docId": "nodejs/concepts"
+          }
+        ],
+        "href": "/docs/category/nodejs"
+      },
+      {
+        "type": "category",
+        "label": "Database",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "concepts",
+            "href": "/docs/Database/concepts",
+            "docId": "Database/concepts"
+          }
+        ],
+        "href": "/docs/category/database"
+      },
+      {
+        "type": "category",
+        "label": "Deployment",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "concepts",
+            "href": "/docs/Deployment/concepts",
+            "docId": "Deployment/concepts"
+          }
+        ],
+        "href": "/docs/category/deployment"
+      }
+    ]
+  },
+  "docs": {
+    "Database/concepts": {
+      "id": "Database/concepts",
+      "title": "concepts",
+      "description": "",
+      "sidebar": "tutorialSidebar"
+    },
+    "Deployment/concepts": {
+      "id": "Deployment/concepts",
+      "title": "concepts",
+      "description": "",
+      "sidebar": "tutorialSidebar"
+    },
+    "JavaScript/Concepts": {
+      "id": "JavaScript/Concepts",
+      "title": "Concepts",
+      "description": "JavaScript Concepts",
+      "sidebar": "tutorialSidebar"
+    },
+    "nodejs/concepts": {
+      "id": "nodejs/concepts",
+      "title": "concepts",
+      "description": "",
+      "sidebar": "tutorialSidebar"
+    },
+    "React/concepts": {
+      "id": "React/concepts",
+      "title": "concepts",
+      "description": "",
+      "sidebar": "tutorialSidebar"
+    }
+  }
+}

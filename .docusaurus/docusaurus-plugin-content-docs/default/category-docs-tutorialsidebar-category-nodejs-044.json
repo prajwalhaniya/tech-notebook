@@ -1,0 +1,16 @@
+{
+  "title": "nodejs",
+  "description": "All the required nodejs concepts goes here",
+  "slug": "/category/nodejs",
+  "permalink": "/docs/category/nodejs",
+  "navigation": {
+    "previous": {
+      "title": "concepts",
+      "permalink": "/docs/React/concepts"
+    },
+    "next": {
+      "title": "concepts",
+      "permalink": "/docs/nodejs/concepts"
+    }
+  }
+}

@@ -1,0 +1,320 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "loadedVersions": [
+        {
+          "versionName": "current",
+          "label": "Next",
+          "banner": null,
+          "badge": false,
+          "noIndex": false,
+          "className": "docs-version-current",
+          "path": "/docs",
+          "tagsPath": "/docs/tags",
+          "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs",
+          "editUrlLocalized": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/i18n/en/docusaurus-plugin-content-docs/current",
+          "isLast": true,
+          "routePriority": -1,
+          "sidebarFilePath": "/home/prajwal/Disk D/Prajwal Haniya/tech-notebook/sidebars.js",
+          "contentPath": "/home/prajwal/Disk D/Prajwal Haniya/tech-notebook/docs",
+          "contentPathLocalized": "/home/prajwal/Disk D/Prajwal Haniya/tech-notebook/i18n/en/docusaurus-plugin-content-docs/current",
+          "docs": [
+            {
+              "unversionedId": "Database/concepts",
+              "id": "Database/concepts",
+              "title": "concepts",
+              "description": "",
+              "source": "@site/docs/Database/concepts.md",
+              "sourceDirName": "Database",
+              "slug": "/Database/concepts",
+              "permalink": "/docs/Database/concepts",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/Database/concepts.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Database",
+                "permalink": "/docs/category/database"
+              },
+              "next": {
+                "title": "Deployment",
+                "permalink": "/docs/category/deployment"
+              }
+            },
+            {
+              "unversionedId": "Deployment/concepts",
+              "id": "Deployment/concepts",
+              "title": "concepts",
+              "description": "",
+              "source": "@site/docs/Deployment/concepts.md",
+              "sourceDirName": "Deployment",
+              "slug": "/Deployment/concepts",
+              "permalink": "/docs/Deployment/concepts",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/Deployment/concepts.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Deployment",
+                "permalink": "/docs/category/deployment"
+              }
+            },
+            {
+              "unversionedId": "JavaScript/Concepts",
+              "id": "JavaScript/Concepts",
+              "title": "Concepts",
+              "description": "JavaScript Concepts",
+              "source": "@site/docs/JavaScript/Concepts.md",
+              "sourceDirName": "JavaScript",
+              "slug": "/JavaScript/Concepts",
+              "permalink": "/docs/JavaScript/Concepts",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/JavaScript/Concepts.md",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "sidebar_position": 1
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "JavaScript",
+                "permalink": "/docs/category/javascript"
+              },
+              "next": {
+                "title": "React",
+                "permalink": "/docs/category/react"
+              }
+            },
+            {
+              "unversionedId": "nodejs/concepts",
+              "id": "nodejs/concepts",
+              "title": "concepts",
+              "description": "",
+              "source": "@site/docs/nodejs/concepts.md",
+              "sourceDirName": "nodejs",
+              "slug": "/nodejs/concepts",
+              "permalink": "/docs/nodejs/concepts",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/nodejs/concepts.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "nodejs",
+                "permalink": "/docs/category/nodejs"
+              },
+              "next": {
+                "title": "Database",
+                "permalink": "/docs/category/database"
+              }
+            },
+            {
+              "unversionedId": "React/concepts",
+              "id": "React/concepts",
+              "title": "concepts",
+              "description": "",
+              "source": "@site/docs/React/concepts.md",
+              "sourceDirName": "React",
+              "slug": "/React/concepts",
+              "permalink": "/docs/React/concepts",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/React/concepts.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "React",
+                "permalink": "/docs/category/react"
+              },
+              "next": {
+                "title": "nodejs",
+                "permalink": "/docs/category/nodejs"
+              }
+            }
+          ],
+          "drafts": [],
+          "sidebars": {
+            "tutorialSidebar": [
+              {
+                "type": "category",
+                "label": "JavaScript",
+                "collapsible": true,
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "JavaScript/Concepts"
+                  }
+                ],
+                "link": {
+                  "type": "generated-index",
+                  "description": "All the required JavaScript concepts goes here",
+                  "slug": "/category/javascript",
+                  "permalink": "/docs/category/javascript"
+                }
+              },
+              {
+                "type": "category",
+                "label": "React",
+                "collapsible": true,
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "React/concepts"
+                  }
+                ],
+                "link": {
+                  "type": "generated-index",
+                  "description": "All the required React concepts goes here",
+                  "slug": "/category/react",
+                  "permalink": "/docs/category/react"
+                }
+              },
+              {
+                "type": "category",
+                "label": "nodejs",
+                "collapsible": true,
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "nodejs/concepts"
+                  }
+                ],
+                "link": {
+                  "type": "generated-index",
+                  "description": "All the required nodejs concepts goes here",
+                  "slug": "/category/nodejs",
+                  "permalink": "/docs/category/nodejs"
+                }
+              },
+              {
+                "type": "category",
+                "label": "Database",
+                "collapsible": true,
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "Database/concepts"
+                  }
+                ],
+                "link": {
+                  "type": "generated-index",
+                  "description": "All the required JavaScript concepts goes here",
+                  "slug": "/category/database",
+                  "permalink": "/docs/category/database"
+                }
+              },
+              {
+                "type": "category",
+                "label": "Deployment",
+                "collapsible": true,
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "Deployment/concepts"
+                  }
+                ],
+                "link": {
+                  "type": "generated-index",
+                  "description": "All the required Deployment concepts goes here",
+                  "slug": "/category/deployment",
+                  "permalink": "/docs/category/deployment"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "docusaurus-plugin-content-blog": {
+    "default": {
+      "blogSidebarTitle": "Recent posts",
+      "blogPosts": [
+        {
+          "id": "welcome",
+          "metadata": {
+            "permalink": "/blog/welcome",
+            "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2023-09-02-welcome/index.md",
+            "source": "@site/blog/2023-09-02-welcome/index.md",
+            "title": "Welcome",
+            "description": "Hello,",
+            "date": "2023-09-02T00:00:00.000Z",
+            "formattedDate": "September 2, 2023",
+            "tags": [],
+            "readingTime": 0.385,
+            "hasTruncateMarker": false,
+            "authors": [
+              {
+                "name": "Prajwal Haniya",
+                "title": "Software Engineer",
+                "url": "https://github.com/prajwalhaniya",
+                "imageURL": "https://avatars.githubusercontent.com/u/82883854?s=400&u=a067b7aff0fb648e1f9a18424cfe2de40e0fb52c&v=4",
+                "key": "prajwal"
+              }
+            ],
+            "frontMatter": {
+              "slug": "welcome",
+              "title": "Welcome",
+              "authors": "prajwal",
+              "tags": []
+            }
+          },
+          "content": "Hello,\n\nI build softwares. In this blog, I am determined to document all the necessary requirements for a software engineer to build & deploy softwares. \n\nWith tons of information available it's very difficult to understand how to build and deploy applications. So here I wish to give a solution to an individual, where he/she can learn from building an application & deploying it to the cloud. I use JavaScript. So this doc contains software development using JavaScript."
+        }
+      ],
+      "blogListPaginated": [
+        {
+          "items": [
+            "welcome"
+          ],
+          "metadata": {
+            "permalink": "/blog",
+            "page": 1,
+            "postsPerPage": 10,
+            "totalPages": 1,
+            "totalCount": 1,
+            "blogDescription": "Blog",
+            "blogTitle": "Blog"
+          }
+        }
+      ],
+      "blogTags": {},
+      "blogTagsListPath": "/blog/tags"
+    }
+  },
+  "docusaurus-plugin-content-pages": {
+    "default": [
+      {
+        "type": "jsx",
+        "permalink": "/",
+        "source": "@site/src/pages/index.js"
+      },
+      {
+        "type": "mdx",
+        "permalink": "/markdown-page",
+        "source": "@site/src/pages/markdown-page.md",
+        "title": "Markdown page example",
+        "description": "You don't need React to write simple standalone pages.",
+        "frontMatter": {
+          "title": "Markdown page example"
+        }
+      }
+    ]
+  },
+  "docusaurus-plugin-debug": {},
+  "docusaurus-theme-classic": {},
+  "docusaurus-bootstrap-plugin": {},
+  "docusaurus-mdx-fallback-plugin": {}
+}
