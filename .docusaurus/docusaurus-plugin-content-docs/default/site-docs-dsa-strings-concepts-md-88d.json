@@ -1,0 +1,23 @@
+{
+  "unversionedId": "DSA/Strings/Concepts",
+  "id": "DSA/Strings/Concepts",
+  "title": "Concepts",
+  "description": "",
+  "source": "@site/docs/DSA/Strings/Concepts.md",
+  "sourceDirName": "DSA/Strings",
+  "slug": "/DSA/Strings/Concepts",
+  "permalink": "/docs/DSA/Strings/Concepts",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Strings",
+    "permalink": "/docs/category/strings"
+  },
+  "next": {
+    "title": "Hash Table",
+    "permalink": "/docs/category/hash-table"
+  }
+}

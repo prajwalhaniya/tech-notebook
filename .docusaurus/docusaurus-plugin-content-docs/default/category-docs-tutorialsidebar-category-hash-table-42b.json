@@ -1,0 +1,16 @@
+{
+  "title": "Hash Table",
+  "description": "All the required JavaScript concepts goes here",
+  "slug": "/category/hash-table",
+  "permalink": "/docs/category/hash-table",
+  "navigation": {
+    "previous": {
+      "title": "Concepts",
+      "permalink": "/docs/DSA/Strings/Concepts"
+    },
+    "next": {
+      "title": "Concepts",
+      "permalink": "/docs/DSA/Hashtable/Concepts"
+    }
+  }
+}

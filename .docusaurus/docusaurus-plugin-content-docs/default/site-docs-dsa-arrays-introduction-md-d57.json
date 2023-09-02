@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/Arrays/Introduction",
+  "id": "DSA/Arrays/Introduction",
+  "title": "Introduction",
+  "description": "",
+  "source": "@site/docs/DSA/Arrays/Introduction.md",
+  "sourceDirName": "DSA/Arrays",
+  "slug": "/DSA/Arrays/Introduction",
+  "permalink": "/docs/DSA/Arrays/Introduction",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Arrays",
+    "permalink": "/docs/category/arrays"
+  },
+  "next": {
+    "title": "Strings",
+    "permalink": "/docs/category/strings"
+  }
+}

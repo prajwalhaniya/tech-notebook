@@ -8,7 +8,7 @@
           "label": "Next",
           "isLast": true,
           "path": "/docs",
-          "mainDocId": "JavaScript/Concepts",
+          "mainDocId": "DSA/Fundamentals",
           "docs": [
             {
               "id": "Database/concepts",
@@ -18,6 +18,26 @@
             {
               "id": "Deployment/concepts",
               "path": "/docs/Deployment/concepts",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Arrays/Introduction",
+              "path": "/docs/DSA/Arrays/Introduction",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Fundamentals",
+              "path": "/docs/DSA/Fundamentals",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Hashtable/Concepts",
+              "path": "/docs/DSA/Hashtable/Concepts",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Strings/Concepts",
+              "path": "/docs/DSA/Strings/Concepts",
               "sidebar": "tutorialSidebar"
             },
             {
@@ -38,6 +58,26 @@
             {
               "id": "React/concepts",
               "path": "/docs/React/concepts",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/dsa",
+              "path": "/docs/category/dsa",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/arrays",
+              "path": "/docs/category/arrays",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/strings",
+              "path": "/docs/category/strings",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/hash-table",
+              "path": "/docs/category/hash-table",
               "sidebar": "tutorialSidebar"
             },
             {
@@ -70,8 +110,8 @@
           "sidebars": {
             "tutorialSidebar": {
               "link": {
-                "path": "/docs/category/javascript",
-                "label": "JavaScript"
+                "path": "/docs/category/dsa",
+                "label": "DSA"
               }
             }
           }

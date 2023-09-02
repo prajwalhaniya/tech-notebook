@@ -1,0 +1,16 @@
+{
+  "title": "Arrays",
+  "description": "All the required JavaScript concepts goes here",
+  "slug": "/category/arrays-4",
+  "permalink": "/docs/category/arrays-4",
+  "navigation": {
+    "previous": {
+      "title": "Concepts",
+      "permalink": "/docs/DSA/Arrays copy 5/Concepts"
+    },
+    "next": {
+      "title": "Concepts",
+      "permalink": "/docs/DSA/Arrays copy 6/Concepts"
+    }
+  }
+}

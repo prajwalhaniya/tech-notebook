@@ -1,0 +1,16 @@
+{
+  "title": "Arrays",
+  "description": "All the required JavaScript concepts goes here",
+  "slug": "/category/arrays",
+  "permalink": "/docs/category/arrays",
+  "navigation": {
+    "previous": {
+      "title": "Fundamentals",
+      "permalink": "/docs/DSA/Fundamentals"
+    },
+    "next": {
+      "title": "Introduction",
+      "permalink": "/docs/DSA/Arrays/Introduction"
+    }
+  }
+}

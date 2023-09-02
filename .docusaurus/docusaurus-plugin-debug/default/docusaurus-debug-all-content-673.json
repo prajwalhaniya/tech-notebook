@@ -60,6 +60,104 @@
               }
             },
             {
+              "unversionedId": "DSA/Arrays/Introduction",
+              "id": "DSA/Arrays/Introduction",
+              "title": "Introduction",
+              "description": "",
+              "source": "@site/docs/DSA/Arrays/Introduction.md",
+              "sourceDirName": "DSA/Arrays",
+              "slug": "/DSA/Arrays/Introduction",
+              "permalink": "/docs/DSA/Arrays/Introduction",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "sidebar_position": 1
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Arrays",
+                "permalink": "/docs/category/arrays"
+              },
+              "next": {
+                "title": "Strings",
+                "permalink": "/docs/category/strings"
+              }
+            },
+            {
+              "unversionedId": "DSA/Fundamentals",
+              "id": "DSA/Fundamentals",
+              "title": "Fundamentals",
+              "description": "Time complexities",
+              "source": "@site/docs/DSA/Fundamentals.md",
+              "sourceDirName": "DSA",
+              "slug": "/DSA/Fundamentals",
+              "permalink": "/docs/DSA/Fundamentals",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "sidebar_position": 1
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "DSA",
+                "permalink": "/docs/category/dsa"
+              },
+              "next": {
+                "title": "Arrays",
+                "permalink": "/docs/category/arrays"
+              }
+            },
+            {
+              "unversionedId": "DSA/Hashtable/Concepts",
+              "id": "DSA/Hashtable/Concepts",
+              "title": "Concepts",
+              "description": "",
+              "source": "@site/docs/DSA/Hashtable/Concepts.md",
+              "sourceDirName": "DSA/Hashtable",
+              "slug": "/DSA/Hashtable/Concepts",
+              "permalink": "/docs/DSA/Hashtable/Concepts",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Hash Table",
+                "permalink": "/docs/category/hash-table"
+              },
+              "next": {
+                "title": "JavaScript",
+                "permalink": "/docs/category/javascript"
+              }
+            },
+            {
+              "unversionedId": "DSA/Strings/Concepts",
+              "id": "DSA/Strings/Concepts",
+              "title": "Concepts",
+              "description": "",
+              "source": "@site/docs/DSA/Strings/Concepts.md",
+              "sourceDirName": "DSA/Strings",
+              "slug": "/DSA/Strings/Concepts",
+              "permalink": "/docs/DSA/Strings/Concepts",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Strings",
+                "permalink": "/docs/category/strings"
+              },
+              "next": {
+                "title": "Hash Table",
+                "permalink": "/docs/category/hash-table"
+              }
+            },
+            {
               "unversionedId": "JavaScript/Concepts",
               "id": "JavaScript/Concepts",
               "title": "Concepts",
@@ -164,6 +262,78 @@
           "drafts": [],
           "sidebars": {
             "tutorialSidebar": [
+              {
+                "type": "category",
+                "label": "DSA",
+                "collapsible": true,
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "DSA/Fundamentals"
+                  },
+                  {
+                    "type": "category",
+                    "label": "Arrays",
+                    "collapsible": true,
+                    "collapsed": true,
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "DSA/Arrays/Introduction"
+                      }
+                    ],
+                    "link": {
+                      "type": "generated-index",
+                      "description": "All the required JavaScript concepts goes here",
+                      "slug": "/category/arrays",
+                      "permalink": "/docs/category/arrays"
+                    }
+                  },
+                  {
+                    "type": "category",
+                    "label": "Strings",
+                    "collapsible": true,
+                    "collapsed": true,
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "DSA/Strings/Concepts"
+                      }
+                    ],
+                    "link": {
+                      "type": "generated-index",
+                      "description": "All the required JavaScript concepts goes here",
+                      "slug": "/category/strings",
+                      "permalink": "/docs/category/strings"
+                    }
+                  },
+                  {
+                    "type": "category",
+                    "label": "Hash Table",
+                    "collapsible": true,
+                    "collapsed": true,
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "DSA/Hashtable/Concepts"
+                      }
+                    ],
+                    "link": {
+                      "type": "generated-index",
+                      "description": "All the required JavaScript concepts goes here",
+                      "slug": "/category/hash-table",
+                      "permalink": "/docs/category/hash-table"
+                    }
+                  }
+                ],
+                "link": {
+                  "type": "generated-index",
+                  "description": "All the required JavaScript concepts goes here",
+                  "slug": "/category/dsa",
+                  "permalink": "/docs/category/dsa"
+                }
+              },
               {
                 "type": "category",
                 "label": "JavaScript",
@@ -278,7 +448,7 @@
             "date": "2023-09-02T00:00:00.000Z",
             "formattedDate": "September 2, 2023",
             "tags": [],
-            "readingTime": 0.385,
+            "readingTime": 0.61,
             "hasTruncateMarker": false,
             "authors": [
               {
@@ -296,7 +466,7 @@
               "tags": []
             }
           },
-          "content": "Hello,\n\nI build softwares. In this blog, I am determined to document all the necessary requirements for a software engineer to build & deploy softwares. \n\nWith tons of information available it's very difficult to understand how to build and deploy applications. So here I wish to give a solution to an individual, where he/she can learn from building an application & deploying it to the cloud. I use JavaScript. So this doc contains software development using JavaScript."
+          "content": "Hello,\n\nI build softwares. In this blog, I am determined to document all the necessary requirements for a software engineer to build & deploy softwares. \n\nWith tons of information available it's very difficult to understand how to build and deploy applications. So here I wish to give a solution to an individual, where he/she can learn from building an application & deploying it to the cloud. I use JavaScript. So this doc contains software development using JavaScript.\n\nIn this guides I try not to keep links/ highlight links so that readers don't get distracted from what they are reading. Usually every articles that I read online, people try to link a reference to another article, this can be a source of distraction."
         }
       ],
       "blogListPaginated": [

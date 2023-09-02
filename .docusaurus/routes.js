@@ -59,8 +59,14 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', 'ca1'),
+    component: ComponentCreator('/docs', 'c0a'),
     routes: [
+      {
+        path: '/docs/category/arrays',
+        component: ComponentCreator('/docs/category/arrays', '6e2'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
       {
         path: '/docs/category/database',
         component: ComponentCreator('/docs/category/database', '03e'),
@@ -70,6 +76,18 @@ export default [
       {
         path: '/docs/category/deployment',
         component: ComponentCreator('/docs/category/deployment', '901'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/category/dsa',
+        component: ComponentCreator('/docs/category/dsa', '14a'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/category/hash-table',
+        component: ComponentCreator('/docs/category/hash-table', '660'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
@@ -92,6 +110,12 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
+        path: '/docs/category/strings',
+        component: ComponentCreator('/docs/category/strings', '0d5'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
         path: '/docs/Database/concepts',
         component: ComponentCreator('/docs/Database/concepts', '3ca'),
         exact: true,
@@ -100,6 +124,30 @@ export default [
       {
         path: '/docs/Deployment/concepts',
         component: ComponentCreator('/docs/Deployment/concepts', '7a1'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/Arrays/Introduction',
+        component: ComponentCreator('/docs/DSA/Arrays/Introduction', '5ba'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/Fundamentals',
+        component: ComponentCreator('/docs/DSA/Fundamentals', '570'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/Hashtable/Concepts',
+        component: ComponentCreator('/docs/DSA/Hashtable/Concepts', '6e0'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/Strings/Concepts',
+        component: ComponentCreator('/docs/DSA/Strings/Concepts', '7fa'),
         exact: true,
         sidebar: "tutorialSidebar"
       },

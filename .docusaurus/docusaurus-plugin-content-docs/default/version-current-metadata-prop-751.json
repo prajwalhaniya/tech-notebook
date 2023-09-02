@@ -11,6 +11,66 @@
     "tutorialSidebar": [
       {
         "type": "category",
+        "label": "DSA",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "Fundamentals",
+            "href": "/docs/DSA/Fundamentals",
+            "docId": "DSA/Fundamentals"
+          },
+          {
+            "type": "category",
+            "label": "Arrays",
+            "collapsible": true,
+            "collapsed": true,
+            "items": [
+              {
+                "type": "link",
+                "label": "Introduction",
+                "href": "/docs/DSA/Arrays/Introduction",
+                "docId": "DSA/Arrays/Introduction"
+              }
+            ],
+            "href": "/docs/category/arrays"
+          },
+          {
+            "type": "category",
+            "label": "Strings",
+            "collapsible": true,
+            "collapsed": true,
+            "items": [
+              {
+                "type": "link",
+                "label": "Concepts",
+                "href": "/docs/DSA/Strings/Concepts",
+                "docId": "DSA/Strings/Concepts"
+              }
+            ],
+            "href": "/docs/category/strings"
+          },
+          {
+            "type": "category",
+            "label": "Hash Table",
+            "collapsible": true,
+            "collapsed": true,
+            "items": [
+              {
+                "type": "link",
+                "label": "Concepts",
+                "href": "/docs/DSA/Hashtable/Concepts",
+                "docId": "DSA/Hashtable/Concepts"
+              }
+            ],
+            "href": "/docs/category/hash-table"
+          }
+        ],
+        "href": "/docs/category/dsa"
+      },
+      {
+        "type": "category",
         "label": "JavaScript",
         "collapsible": true,
         "collapsed": true,
@@ -102,6 +162,30 @@
     "Deployment/concepts": {
       "id": "Deployment/concepts",
       "title": "concepts",
+      "description": "",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/Arrays/Introduction": {
+      "id": "DSA/Arrays/Introduction",
+      "title": "Introduction",
+      "description": "",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/Fundamentals": {
+      "id": "DSA/Fundamentals",
+      "title": "Fundamentals",
+      "description": "Time complexities",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/Hashtable/Concepts": {
+      "id": "DSA/Hashtable/Concepts",
+      "title": "Concepts",
+      "description": "",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/Strings/Concepts": {
+      "id": "DSA/Strings/Concepts",
+      "title": "Concepts",
       "description": "",
       "sidebar": "tutorialSidebar"
     },

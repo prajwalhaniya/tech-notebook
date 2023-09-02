@@ -1,0 +1,23 @@
+{
+  "unversionedId": "DSA/Arrays copy/Concepts",
+  "id": "DSA/Arrays copy/Concepts",
+  "title": "Concepts",
+  "description": "",
+  "source": "@site/docs/DSA/Arrays copy/Concepts.md",
+  "sourceDirName": "DSA/Arrays copy",
+  "slug": "/DSA/Arrays copy/Concepts",
+  "permalink": "/docs/DSA/Arrays copy/Concepts",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Arrays",
+    "permalink": "/docs/category/arrays-1"
+  },
+  "next": {
+    "title": "Arrays",
+    "permalink": "/docs/category/arrays-2"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "title": "Strings",
+  "description": "All the required JavaScript concepts goes here",
+  "slug": "/category/strings",
+  "permalink": "/docs/category/strings",
+  "navigation": {
+    "previous": {
+      "title": "Introduction",
+      "permalink": "/docs/DSA/Arrays/Introduction"
+    },
+    "next": {
+      "title": "Concepts",
+      "permalink": "/docs/DSA/Strings/Concepts"
+    }
+  }
+}

@@ -77,12 +77,16 @@
     },
     "content": "content---markdown-page-393-028"
   },
-  "/docs-ca1": {
+  "/docs-c0a": {
     "__comp": "__comp---theme-doc-page-1-be-9be",
     "__context": {
       "plugin": "plugin---docsd-46-576"
     },
     "versionMetadata": "versionMetadata---docs-935-398"
+  },
+  "/docs/category/arrays-6e2": {
+    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-arrays-929-472"
   },
   "/docs/category/database-03e": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
@@ -91,6 +95,14 @@
   "/docs/category/deployment-901": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-deployment-065-d63"
+  },
+  "/docs/category/dsa-14a": {
+    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-dsaa-35-ed0"
+  },
+  "/docs/category/hash-table-660": {
+    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-hash-tablee-0-f-eda"
   },
   "/docs/category/javascript-bb0": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
@@ -104,6 +116,10 @@
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-react-0-d-0-b79"
   },
+  "/docs/category/strings-0d5": {
+    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-strings-0-ce-26e"
+  },
   "/docs/Database/concepts-3ca": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-database-conceptsd-38-46a"
@@ -111,6 +127,22 @@
   "/docs/Deployment/concepts-7a1": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-deployment-concepts-9-f-4-1b8"
+  },
+  "/docs/DSA/Arrays/Introduction-5ba": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-arrays-introductiond-57-f86"
+  },
+  "/docs/DSA/Fundamentals-570": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-fundamentalsc-25-317"
+  },
+  "/docs/DSA/Hashtable/Concepts-6e0": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-hashtable-concepts-645-ab1"
+  },
+  "/docs/DSA/Strings/Concepts-7fa": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-strings-concepts-88-d-0ea"
   },
   "/docs/JavaScript/Concepts-fa3": {
     "__comp": "__comp---theme-doc-item-178-a40",
