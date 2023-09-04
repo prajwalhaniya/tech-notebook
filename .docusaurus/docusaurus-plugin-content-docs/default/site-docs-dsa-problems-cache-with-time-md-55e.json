@@ -1,0 +1,28 @@
+{
+  "unversionedId": "DSA/Problems/cache-with-time",
+  "id": "DSA/Problems/cache-with-time",
+  "title": "cache-with-time",
+  "description": "",
+  "source": "@site/docs/DSA/Problems/Cache-with-Time.md",
+  "sourceDirName": "DSA/Problems",
+  "slug": "/DSA/Problems/cache-with-time",
+  "permalink": "/docs/DSA/Problems/cache-with-time",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3,
+    "id": "cache-with-time",
+    "Title": "Cache With Time"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Sleep",
+    "permalink": "/docs/DSA/Problems/Sleep"
+  },
+  "next": {
+    "title": "JavaScript",
+    "permalink": "/docs/category/javascript"
+  }
+}

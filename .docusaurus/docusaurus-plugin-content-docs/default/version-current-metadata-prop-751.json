@@ -11,6 +11,27 @@
     "tutorialSidebar": [
       {
         "type": "category",
+        "label": "JavaScript",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "Fundamentals",
+            "href": "/docs/JavaScript/Fundamentals",
+            "docId": "JavaScript/Fundamentals"
+          },
+          {
+            "type": "link",
+            "label": "Projects",
+            "href": "/docs/JavaScript/Projects",
+            "docId": "JavaScript/Projects"
+          }
+        ],
+        "href": "/docs/category/javascript"
+      },
+      {
+        "type": "category",
         "label": "DSA",
         "collapsible": true,
         "collapsed": true,
@@ -23,72 +44,84 @@
           },
           {
             "type": "category",
-            "label": "Arrays",
+            "label": "Search Algorithms",
             "collapsible": true,
             "collapsed": true,
             "items": [
               {
                 "type": "link",
-                "label": "Introduction",
-                "href": "/docs/DSA/Arrays/Introduction",
-                "docId": "DSA/Arrays/Introduction"
+                "label": "Binary Search",
+                "href": "/docs/DSA/Search/Binary Search",
+                "docId": "DSA/Search/Binary Search"
               }
             ],
-            "href": "/docs/category/arrays"
+            "href": "/docs/category/search-algorithms"
           },
           {
             "type": "category",
-            "label": "Strings",
+            "label": "Problems",
             "collapsible": true,
             "collapsed": true,
             "items": [
               {
                 "type": "link",
-                "label": "Concepts",
-                "href": "/docs/DSA/Strings/Concepts",
-                "docId": "DSA/Strings/Concepts"
-              }
-            ],
-            "href": "/docs/category/strings"
-          },
-          {
-            "type": "category",
-            "label": "Hash Table",
-            "collapsible": true,
-            "collapsed": true,
-            "items": [
+                "label": "Counter",
+                "href": "/docs/DSA/Problems/Counter",
+                "docId": "DSA/Problems/Counter"
+              },
               {
                 "type": "link",
-                "label": "Concepts",
-                "href": "/docs/DSA/Hashtable/Concepts",
-                "docId": "DSA/Hashtable/Concepts"
+                "label": "Sleep",
+                "href": "/docs/DSA/Problems/Sleep",
+                "docId": "DSA/Problems/Sleep"
+              },
+              {
+                "type": "link",
+                "label": "Cache with Time",
+                "href": "/docs/DSA/Problems/Cache with Time",
+                "docId": "DSA/Problems/Cache with Time"
+              },
+              {
+                "type": "link",
+                "label": "Memoize",
+                "href": "/docs/DSA/Problems/Memoize",
+                "docId": "DSA/Problems/Memoize"
+              },
+              {
+                "type": "link",
+                "label": "Recursive Flatten",
+                "href": "/docs/DSA/Problems/Recursive Flatten",
+                "docId": "DSA/Problems/Recursive Flatten"
+              },
+              {
+                "type": "link",
+                "label": "Array Reduce Transformation",
+                "href": "/docs/DSA/Problems/Array Reduce Transformation",
+                "docId": "DSA/Problems/Array Reduce Transformation"
+              },
+              {
+                "type": "link",
+                "label": "Function Composition",
+                "href": "/docs/DSA/Problems/Function Composition",
+                "docId": "DSA/Problems/Function Composition"
+              },
+              {
+                "type": "link",
+                "label": "Filter Elements From Array",
+                "href": "/docs/DSA/Problems/Filter Elements From Array",
+                "docId": "DSA/Problems/Filter Elements From Array"
+              },
+              {
+                "type": "link",
+                "label": "Group By",
+                "href": "/docs/DSA/Problems/Group By",
+                "docId": "DSA/Problems/Group By"
               }
             ],
-            "href": "/docs/category/hash-table"
+            "href": "/docs/category/problems"
           }
         ],
         "href": "/docs/category/dsa"
-      },
-      {
-        "type": "category",
-        "label": "JavaScript",
-        "collapsible": true,
-        "collapsed": true,
-        "items": [
-          {
-            "type": "link",
-            "label": "Concepts",
-            "href": "/docs/JavaScript/Concepts",
-            "docId": "JavaScript/Concepts"
-          },
-          {
-            "type": "link",
-            "label": "Projects",
-            "href": "/docs/JavaScript/Projects",
-            "docId": "JavaScript/Projects"
-          }
-        ],
-        "href": "/docs/category/javascript"
       },
       {
         "type": "category",
@@ -165,33 +198,75 @@
       "description": "",
       "sidebar": "tutorialSidebar"
     },
-    "DSA/Arrays/Introduction": {
-      "id": "DSA/Arrays/Introduction",
-      "title": "Introduction",
-      "description": "",
-      "sidebar": "tutorialSidebar"
-    },
     "DSA/Fundamentals": {
       "id": "DSA/Fundamentals",
       "title": "Fundamentals",
       "description": "Time complexities",
       "sidebar": "tutorialSidebar"
     },
-    "DSA/Hashtable/Concepts": {
-      "id": "DSA/Hashtable/Concepts",
-      "title": "Concepts",
+    "DSA/Problems/Array Reduce Transformation": {
+      "id": "DSA/Problems/Array Reduce Transformation",
+      "title": "Array Reduce Transformation",
+      "description": "Given an integer array nums, a reducer function fn, and an initial value init, return a reduced array.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/Problems/Cache with Time": {
+      "id": "DSA/Problems/Cache with Time",
+      "title": "Cache with Time",
+      "description": "Write a class that allows getting and setting key-value pairs, however a time until expiration is associated with each key.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/Problems/Counter": {
+      "id": "DSA/Problems/Counter",
+      "title": "Counter",
+      "description": "Given an integer n, return a counter function. This counter function initially returns n and then returns 1 more than the previous value every subsequent time it is called (n, n + 1, n + 2, etc).",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/Problems/Filter Elements From Array": {
+      "id": "DSA/Problems/Filter Elements From Array",
+      "title": "Filter Elements From Array",
+      "description": "Given an integer array arr and a filtering function fn, return a filtered array filteredArr.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/Problems/Function Composition": {
+      "id": "DSA/Problems/Function Composition",
+      "title": "Function Composition",
+      "description": "Given an array of functions [f1, f2, f3, ..., fn], return a new function fn that is the function composition of the array of functions.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/Problems/Group By": {
+      "id": "DSA/Problems/Group By",
+      "title": "Group By",
+      "description": "Write code that enhances all arrays such that you can call the array.groupBy(fn) method on any array and it will return a grouped version of the array.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/Problems/Memoize": {
+      "id": "DSA/Problems/Memoize",
+      "title": "Memoize",
+      "description": "Given a function fn, return a memoized version of that function.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/Problems/Recursive Flatten": {
+      "id": "DSA/Problems/Recursive Flatten",
+      "title": "Recursive Flatten",
+      "description": "Given a multi-dimensional array arr and a depth n, return a flattened version of that array.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/Problems/Sleep": {
+      "id": "DSA/Problems/Sleep",
+      "title": "Sleep",
+      "description": "Given a positive integer millis, write an asynchronous function that sleeps for millis milliseconds. It can resolve any value.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/Search/Binary Search": {
+      "id": "DSA/Search/Binary Search",
+      "title": "Binary Search",
       "description": "",
       "sidebar": "tutorialSidebar"
     },
-    "DSA/Strings/Concepts": {
-      "id": "DSA/Strings/Concepts",
-      "title": "Concepts",
-      "description": "",
-      "sidebar": "tutorialSidebar"
-    },
-    "JavaScript/Concepts": {
-      "id": "JavaScript/Concepts",
-      "title": "Concepts",
+    "JavaScript/Fundamentals": {
+      "id": "JavaScript/Fundamentals",
+      "title": "Fundamentals",
       "description": "Variables",
       "sidebar": "tutorialSidebar"
     },

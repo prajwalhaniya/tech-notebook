@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/Problems/Group By",
+  "id": "DSA/Problems/Group By",
+  "title": "Group By",
+  "description": "Write code that enhances all arrays such that you can call the array.groupBy(fn) method on any array and it will return a grouped version of the array.",
+  "source": "@site/docs/DSA/Problems/Group By.md",
+  "sourceDirName": "DSA/Problems",
+  "slug": "/DSA/Problems/Group By",
+  "permalink": "/docs/DSA/Problems/Group By",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 9,
+  "frontMatter": {
+    "sidebar_position": 9
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Filter Elements From Array",
+    "permalink": "/docs/DSA/Problems/Filter Elements From Array"
+  },
+  "next": {
+    "title": "React",
+    "permalink": "/docs/category/react"
+  }
+}

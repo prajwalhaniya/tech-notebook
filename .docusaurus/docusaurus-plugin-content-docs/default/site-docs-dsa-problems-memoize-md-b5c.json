@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/Problems/Memoize",
+  "id": "DSA/Problems/Memoize",
+  "title": "Memoize",
+  "description": "Given a function fn, return a memoized version of that function.",
+  "source": "@site/docs/DSA/Problems/Memoize.md",
+  "sourceDirName": "DSA/Problems",
+  "slug": "/DSA/Problems/Memoize",
+  "permalink": "/docs/DSA/Problems/Memoize",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_position": 4
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Cache with Time",
+    "permalink": "/docs/DSA/Problems/Cache with Time"
+  },
+  "next": {
+    "title": "Recursive Flatten",
+    "permalink": "/docs/DSA/Problems/Recursive Flatten"
+  }
+}

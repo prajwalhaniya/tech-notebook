@@ -5,12 +5,12 @@
  */
 export default {
   "title": "Tech Notebook",
-  "tagline": "Dinosaurs are cool",
+  "tagline": "End to End software guide",
   "favicon": "img/technotebook.svg",
   "url": "https://your-docusaurus-test-site.com",
   "baseUrl": "/",
-  "organizationName": "facebook",
-  "projectName": "docusaurus",
+  "organizationName": "Technotebook",
+  "projectName": "Technotebook",
   "onBrokenLinks": "throw",
   "onBrokenMarkdownLinks": "warn",
   "i18n": {

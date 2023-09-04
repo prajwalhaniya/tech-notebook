@@ -77,16 +77,12 @@
     },
     "content": "content---markdown-page-393-028"
   },
-  "/docs-c0a": {
+  "/docs-e44": {
     "__comp": "__comp---theme-doc-page-1-be-9be",
     "__context": {
       "plugin": "plugin---docsd-46-576"
     },
     "versionMetadata": "versionMetadata---docs-935-398"
-  },
-  "/docs/category/arrays-6e2": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-arrays-929-472"
   },
   "/docs/category/database-03e": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
@@ -100,10 +96,6 @@
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-dsaa-35-ed0"
   },
-  "/docs/category/hash-table-660": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-hash-tablee-0-f-eda"
-  },
   "/docs/category/javascript-bb0": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-javascriptdb-3-fa2"
@@ -112,13 +104,17 @@
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-nodejs-567-e4a"
   },
+  "/docs/category/problems-3d8": {
+    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-problems-28-d-7f3"
+  },
   "/docs/category/react-386": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-react-0-d-0-b79"
   },
-  "/docs/category/strings-0d5": {
+  "/docs/category/search-algorithms-7ea": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-strings-0-ce-26e"
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-search-algorithms-541-916"
   },
   "/docs/Database/concepts-3ca": {
     "__comp": "__comp---theme-doc-item-178-a40",
@@ -128,25 +124,53 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-deployment-concepts-9-f-4-1b8"
   },
-  "/docs/DSA/Arrays/Introduction-5ba": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-arrays-introductiond-57-f86"
-  },
   "/docs/DSA/Fundamentals-570": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-dsa-fundamentalsc-25-317"
   },
-  "/docs/DSA/Hashtable/Concepts-6e0": {
+  "/docs/DSA/Problems/Array Reduce Transformation-448": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-hashtable-concepts-645-ab1"
+    "content": "content---docs-dsa-problems-array-reduce-transformation-989-df7"
   },
-  "/docs/DSA/Strings/Concepts-7fa": {
+  "/docs/DSA/Problems/Cache with Time-670": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-strings-concepts-88-d-0ea"
+    "content": "content---docs-dsa-problems-cache-with-time-26-d-860"
   },
-  "/docs/JavaScript/Concepts-fa3": {
+  "/docs/DSA/Problems/Counter-4d0": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-java-script-concepts-0-c-3-306"
+    "content": "content---docs-dsa-problems-counter-425-2c3"
+  },
+  "/docs/DSA/Problems/Filter Elements From Array-fd7": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-problems-filter-elements-from-array-357-5ee"
+  },
+  "/docs/DSA/Problems/Function Composition-6b0": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-problems-function-composition-0-e-1-dec"
+  },
+  "/docs/DSA/Problems/Group By-474": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-problems-group-bye-6-b-c28"
+  },
+  "/docs/DSA/Problems/Memoize-e98": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-problems-memoizeb-5-c-cfe"
+  },
+  "/docs/DSA/Problems/Recursive Flatten-b6b": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-problems-recursive-flatten-8-b-8-ce4"
+  },
+  "/docs/DSA/Problems/Sleep-0f7": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-problems-sleepe-08-52f"
+  },
+  "/docs/DSA/Search/Binary Search-4c8": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-search-binary-searchc-38-6c0"
+  },
+  "/docs/JavaScript/Fundamentals-c80": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-java-script-fundamentals-2-a-3-b82"
   },
   "/docs/JavaScript/Projects-e95": {
     "__comp": "__comp---theme-doc-item-178-a40",

@@ -8,7 +8,7 @@
           "label": "Next",
           "isLast": true,
           "path": "/docs",
-          "mainDocId": "DSA/Fundamentals",
+          "mainDocId": "JavaScript/Fundamentals",
           "docs": [
             {
               "id": "Database/concepts",
@@ -21,28 +21,63 @@
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "DSA/Arrays/Introduction",
-              "path": "/docs/DSA/Arrays/Introduction",
-              "sidebar": "tutorialSidebar"
-            },
-            {
               "id": "DSA/Fundamentals",
               "path": "/docs/DSA/Fundamentals",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "DSA/Hashtable/Concepts",
-              "path": "/docs/DSA/Hashtable/Concepts",
+              "id": "DSA/Problems/Array Reduce Transformation",
+              "path": "/docs/DSA/Problems/Array Reduce Transformation",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "DSA/Strings/Concepts",
-              "path": "/docs/DSA/Strings/Concepts",
+              "id": "DSA/Problems/Cache with Time",
+              "path": "/docs/DSA/Problems/Cache with Time",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "JavaScript/Concepts",
-              "path": "/docs/JavaScript/Concepts",
+              "id": "DSA/Problems/Counter",
+              "path": "/docs/DSA/Problems/Counter",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Problems/Filter Elements From Array",
+              "path": "/docs/DSA/Problems/Filter Elements From Array",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Problems/Function Composition",
+              "path": "/docs/DSA/Problems/Function Composition",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Problems/Group By",
+              "path": "/docs/DSA/Problems/Group By",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Problems/Memoize",
+              "path": "/docs/DSA/Problems/Memoize",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Problems/Recursive Flatten",
+              "path": "/docs/DSA/Problems/Recursive Flatten",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Problems/Sleep",
+              "path": "/docs/DSA/Problems/Sleep",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Search/Binary Search",
+              "path": "/docs/DSA/Search/Binary Search",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "JavaScript/Fundamentals",
+              "path": "/docs/JavaScript/Fundamentals",
               "sidebar": "tutorialSidebar"
             },
             {
@@ -61,28 +96,23 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "/category/javascript",
+              "path": "/docs/category/javascript",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "/category/dsa",
               "path": "/docs/category/dsa",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "/category/arrays",
-              "path": "/docs/category/arrays",
+              "id": "/category/search-algorithms",
+              "path": "/docs/category/search-algorithms",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "/category/strings",
-              "path": "/docs/category/strings",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "/category/hash-table",
-              "path": "/docs/category/hash-table",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "/category/javascript",
-              "path": "/docs/category/javascript",
+              "id": "/category/problems",
+              "path": "/docs/category/problems",
               "sidebar": "tutorialSidebar"
             },
             {
@@ -110,8 +140,8 @@
           "sidebars": {
             "tutorialSidebar": {
               "link": {
-                "path": "/docs/category/dsa",
-                "label": "DSA"
+                "path": "/docs/category/javascript",
+                "label": "JavaScript"
               }
             }
           }

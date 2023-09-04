@@ -1,0 +1,16 @@
+{
+  "title": "Search Algorithms",
+  "description": "All the required JavaScript concepts goes here",
+  "slug": "/category/search-algorithms",
+  "permalink": "/docs/category/search-algorithms",
+  "navigation": {
+    "previous": {
+      "title": "Fundamentals",
+      "permalink": "/docs/DSA/Fundamentals"
+    },
+    "next": {
+      "title": "Binary Search",
+      "permalink": "/docs/DSA/Search/Binary Search"
+    }
+  }
+}

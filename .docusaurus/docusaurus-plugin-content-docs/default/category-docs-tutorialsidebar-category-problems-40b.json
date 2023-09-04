@@ -1,0 +1,16 @@
+{
+  "title": "Problems",
+  "description": "All the required JavaScript concepts goes here",
+  "slug": "/category/problems",
+  "permalink": "/docs/category/problems",
+  "navigation": {
+    "previous": {
+      "title": "Binary Search",
+      "permalink": "/docs/DSA/Search/Binary Search"
+    },
+    "next": {
+      "title": "Counter",
+      "permalink": "/docs/DSA/Problems/Counter"
+    }
+  }
+}

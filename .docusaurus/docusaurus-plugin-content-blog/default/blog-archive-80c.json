@@ -10,7 +10,7 @@
         "date": "2023-09-02T00:00:00.000Z",
         "formattedDate": "September 2, 2023",
         "tags": [],
-        "readingTime": 0.61,
+        "readingTime": 0.57,
         "hasTruncateMarker": false,
         "authors": [
           {
@@ -28,7 +28,7 @@
           "tags": []
         }
       },
-      "content": "Hello,\n\nI build softwares. In this blog, I am determined to document all the necessary requirements for a software engineer to build & deploy softwares. \n\nWith tons of information available it's very difficult to understand how to build and deploy applications. So here I wish to give a solution to an individual, where he/she can learn from building an application & deploying it to the cloud. I use JavaScript. So this doc contains software development using JavaScript.\n\nIn this guides I try not to keep links/ highlight links so that readers don't get distracted from what they are reading. Usually every articles that I read online, people try to link a reference to another article, this can be a source of distraction."
+      "content": "Hello,\n\nI build softwares. In this blog, I am determined to document all the necessary requirements for a software engineer to build & deploy softwares. \n\nWith tons of information available it's very difficult to understand how to build and deploy applications. So here I wish to give a solution to an individual, where he/she can learn from building an application to deploying it to the cloud. I use JavaScript.\n\nIn this guides I try not to keep links/ highlight links so that readers don't get distracted from what they are reading. Usually every articles that I read online, people try to link a reference to another article, this can be a source of distraction."
     }
   ]
 }

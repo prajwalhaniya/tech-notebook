@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/Problems/Recursive Flatten",
+  "id": "DSA/Problems/Recursive Flatten",
+  "title": "Recursive Flatten",
+  "description": "Given a multi-dimensional array arr and a depth n, return a flattened version of that array.",
+  "source": "@site/docs/DSA/Problems/Recursive Flatten.md",
+  "sourceDirName": "DSA/Problems",
+  "slug": "/DSA/Problems/Recursive Flatten",
+  "permalink": "/docs/DSA/Problems/Recursive Flatten",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "sidebar_position": 5
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Memoize",
+    "permalink": "/docs/DSA/Problems/Memoize"
+  },
+  "next": {
+    "title": "Array Reduce Transformation",
+    "permalink": "/docs/DSA/Problems/Array Reduce Transformation"
+  }
+}

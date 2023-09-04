@@ -16,11 +16,11 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Concepts",
-    "permalink": "/docs/JavaScript/Concepts"
+    "title": "Fundamentals",
+    "permalink": "/docs/JavaScript/Fundamentals"
   },
   "next": {
-    "title": "React",
-    "permalink": "/docs/category/react"
+    "title": "DSA",
+    "permalink": "/docs/category/dsa"
   }
 }

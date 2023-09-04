@@ -4,13 +4,9 @@
   "slug": "/category/javascript",
   "permalink": "/docs/category/javascript",
   "navigation": {
-    "previous": {
-      "title": "Concepts",
-      "permalink": "/docs/DSA/Hashtable/Concepts"
-    },
     "next": {
-      "title": "Concepts",
-      "permalink": "/docs/JavaScript/Concepts"
+      "title": "Fundamentals",
+      "permalink": "/docs/JavaScript/Fundamentals"
     }
   }
 }

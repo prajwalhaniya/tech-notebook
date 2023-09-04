@@ -59,14 +59,8 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', 'c0a'),
+    component: ComponentCreator('/docs', 'e44'),
     routes: [
-      {
-        path: '/docs/category/arrays',
-        component: ComponentCreator('/docs/category/arrays', '6e2'),
-        exact: true,
-        sidebar: "tutorialSidebar"
-      },
       {
         path: '/docs/category/database',
         component: ComponentCreator('/docs/category/database', '03e'),
@@ -86,12 +80,6 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/category/hash-table',
-        component: ComponentCreator('/docs/category/hash-table', '660'),
-        exact: true,
-        sidebar: "tutorialSidebar"
-      },
-      {
         path: '/docs/category/javascript',
         component: ComponentCreator('/docs/category/javascript', 'bb0'),
         exact: true,
@@ -104,14 +92,20 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
+        path: '/docs/category/problems',
+        component: ComponentCreator('/docs/category/problems', '3d8'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
         path: '/docs/category/react',
         component: ComponentCreator('/docs/category/react', '386'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/category/strings',
-        component: ComponentCreator('/docs/category/strings', '0d5'),
+        path: '/docs/category/search-algorithms',
+        component: ComponentCreator('/docs/category/search-algorithms', '7ea'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
@@ -128,32 +122,74 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/DSA/Arrays/Introduction',
-        component: ComponentCreator('/docs/DSA/Arrays/Introduction', '5ba'),
-        exact: true,
-        sidebar: "tutorialSidebar"
-      },
-      {
         path: '/docs/DSA/Fundamentals',
         component: ComponentCreator('/docs/DSA/Fundamentals', '570'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/DSA/Hashtable/Concepts',
-        component: ComponentCreator('/docs/DSA/Hashtable/Concepts', '6e0'),
+        path: '/docs/DSA/Problems/Array Reduce Transformation',
+        component: ComponentCreator('/docs/DSA/Problems/Array Reduce Transformation', '448'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/DSA/Strings/Concepts',
-        component: ComponentCreator('/docs/DSA/Strings/Concepts', '7fa'),
+        path: '/docs/DSA/Problems/Cache with Time',
+        component: ComponentCreator('/docs/DSA/Problems/Cache with Time', '670'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/JavaScript/Concepts',
-        component: ComponentCreator('/docs/JavaScript/Concepts', 'fa3'),
+        path: '/docs/DSA/Problems/Counter',
+        component: ComponentCreator('/docs/DSA/Problems/Counter', '4d0'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/Problems/Filter Elements From Array',
+        component: ComponentCreator('/docs/DSA/Problems/Filter Elements From Array', 'fd7'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/Problems/Function Composition',
+        component: ComponentCreator('/docs/DSA/Problems/Function Composition', '6b0'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/Problems/Group By',
+        component: ComponentCreator('/docs/DSA/Problems/Group By', '474'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/Problems/Memoize',
+        component: ComponentCreator('/docs/DSA/Problems/Memoize', 'e98'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/Problems/Recursive Flatten',
+        component: ComponentCreator('/docs/DSA/Problems/Recursive Flatten', 'b6b'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/Problems/Sleep',
+        component: ComponentCreator('/docs/DSA/Problems/Sleep', '0f7'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/Search/Binary Search',
+        component: ComponentCreator('/docs/DSA/Search/Binary Search', '4c8'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/JavaScript/Fundamentals',
+        component: ComponentCreator('/docs/JavaScript/Fundamentals', 'c80'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
