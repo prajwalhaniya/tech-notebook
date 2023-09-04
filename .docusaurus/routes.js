@@ -59,7 +59,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', 'e44'),
+    component: ComponentCreator('/docs', '45b'),
     routes: [
       {
         path: '/docs/category/database',
@@ -146,6 +146,12 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
+        path: '/docs/DSA/Problems/Fibonnacci',
+        component: ComponentCreator('/docs/DSA/Problems/Fibonnacci', 'efb'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
         path: '/docs/DSA/Problems/Filter Elements From Array',
         component: ComponentCreator('/docs/DSA/Problems/Filter Elements From Array', 'fd7'),
         exact: true,
@@ -166,6 +172,12 @@ export default [
       {
         path: '/docs/DSA/Problems/Memoize',
         component: ComponentCreator('/docs/DSA/Problems/Memoize', 'e98'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/Problems/Promise Time Limit',
+        component: ComponentCreator('/docs/DSA/Problems/Promise Time Limit', 'a09'),
         exact: true,
         sidebar: "tutorialSidebar"
       },

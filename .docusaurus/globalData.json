@@ -41,6 +41,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "DSA/Problems/Fibonnacci",
+              "path": "/docs/DSA/Problems/Fibonnacci",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "DSA/Problems/Filter Elements From Array",
               "path": "/docs/DSA/Problems/Filter Elements From Array",
               "sidebar": "tutorialSidebar"
@@ -58,6 +63,11 @@
             {
               "id": "DSA/Problems/Memoize",
               "path": "/docs/DSA/Problems/Memoize",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Problems/Promise Time Limit",
+              "path": "/docs/DSA/Problems/Promise Time Limit",
               "sidebar": "tutorialSidebar"
             },
             {

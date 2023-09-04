@@ -164,6 +164,32 @@
               }
             },
             {
+              "unversionedId": "DSA/Problems/Fibonnacci",
+              "id": "DSA/Problems/Fibonnacci",
+              "title": "Fibonnacci",
+              "description": "Write a generator function that returns a generator object which yields the fibonacci sequence.",
+              "source": "@site/docs/DSA/Problems/Fibonnacci.md",
+              "sourceDirName": "DSA/Problems",
+              "slug": "/DSA/Problems/Fibonnacci",
+              "permalink": "/docs/DSA/Problems/Fibonnacci",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 11,
+              "frontMatter": {
+                "sidebar_position": 11
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Promise Time Limit",
+                "permalink": "/docs/DSA/Problems/Promise Time Limit"
+              },
+              "next": {
+                "title": "React",
+                "permalink": "/docs/category/react"
+              }
+            },
+            {
               "unversionedId": "DSA/Problems/Filter Elements From Array",
               "id": "DSA/Problems/Filter Elements From Array",
               "title": "Filter Elements From Array",
@@ -237,8 +263,8 @@
                 "permalink": "/docs/DSA/Problems/Filter Elements From Array"
               },
               "next": {
-                "title": "React",
-                "permalink": "/docs/category/react"
+                "title": "Promise Time Limit",
+                "permalink": "/docs/DSA/Problems/Promise Time Limit"
               }
             },
             {
@@ -265,6 +291,32 @@
               "next": {
                 "title": "Recursive Flatten",
                 "permalink": "/docs/DSA/Problems/Recursive Flatten"
+              }
+            },
+            {
+              "unversionedId": "DSA/Problems/Promise Time Limit",
+              "id": "DSA/Problems/Promise Time Limit",
+              "title": "Promise Time Limit",
+              "description": "Given an asynchronous function fn and a time t in milliseconds, return a new time limited version of the input function. fn takes arguments provided to the time limited function.",
+              "source": "@site/docs/DSA/Problems/Promise Time Limit.md",
+              "sourceDirName": "DSA/Problems",
+              "slug": "/DSA/Problems/Promise Time Limit",
+              "permalink": "/docs/DSA/Problems/Promise Time Limit",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 10,
+              "frontMatter": {
+                "sidebar_position": 10
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Group By",
+                "permalink": "/docs/DSA/Problems/Group By"
+              },
+              "next": {
+                "title": "Fibonnacci",
+                "permalink": "/docs/DSA/Problems/Fibonnacci"
               }
             },
             {
@@ -538,6 +590,14 @@
                       {
                         "type": "doc",
                         "id": "DSA/Problems/Group By"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "DSA/Problems/Promise Time Limit"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "DSA/Problems/Fibonnacci"
                       }
                     ],
                     "link": {

@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/Problems/Promise Time Limit",
+  "id": "DSA/Problems/Promise Time Limit",
+  "title": "Promise Time Limit",
+  "description": "Given an asynchronous function fn and a time t in milliseconds, return a new time limited version of the input function. fn takes arguments provided to the time limited function.",
+  "source": "@site/docs/DSA/Problems/Promise Time Limit.md",
+  "sourceDirName": "DSA/Problems",
+  "slug": "/DSA/Problems/Promise Time Limit",
+  "permalink": "/docs/DSA/Problems/Promise Time Limit",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 10,
+  "frontMatter": {
+    "sidebar_position": 10
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Group By",
+    "permalink": "/docs/DSA/Problems/Group By"
+  },
+  "next": {
+    "title": "Fibonnacci",
+    "permalink": "/docs/DSA/Problems/Fibonnacci"
+  }
+}

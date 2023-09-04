@@ -101,3 +101,5 @@ sidebar_position: 1
 - Debounce
 - Function Composition
 - Reduce Right
+- Generator function
+- Promis.Race()

@@ -77,7 +77,7 @@
     },
     "content": "content---markdown-page-393-028"
   },
-  "/docs-e44": {
+  "/docs-45b": {
     "__comp": "__comp---theme-doc-page-1-be-9be",
     "__context": {
       "plugin": "plugin---docsd-46-576"
@@ -134,11 +134,15 @@
   },
   "/docs/DSA/Problems/Cache with Time-670": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-problems-cache-with-time-26-d-860"
+    "content": "content---docs-dsa-problems-cache-with-time-26-d-928"
   },
   "/docs/DSA/Problems/Counter-4d0": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-dsa-problems-counter-425-2c3"
+  },
+  "/docs/DSA/Problems/Fibonnacci-efb": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-problems-fibonnaccic-07-380"
   },
   "/docs/DSA/Problems/Filter Elements From Array-fd7": {
     "__comp": "__comp---theme-doc-item-178-a40",
@@ -155,6 +159,10 @@
   "/docs/DSA/Problems/Memoize-e98": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-dsa-problems-memoizeb-5-c-cfe"
+  },
+  "/docs/DSA/Problems/Promise Time Limit-a09": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-problems-promise-time-limite-0-f-d37"
   },
   "/docs/DSA/Problems/Recursive Flatten-b6b": {
     "__comp": "__comp---theme-doc-item-178-a40",

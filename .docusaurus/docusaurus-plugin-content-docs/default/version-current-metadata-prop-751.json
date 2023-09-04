@@ -116,6 +116,18 @@
                 "label": "Group By",
                 "href": "/docs/DSA/Problems/Group By",
                 "docId": "DSA/Problems/Group By"
+              },
+              {
+                "type": "link",
+                "label": "Promise Time Limit",
+                "href": "/docs/DSA/Problems/Promise Time Limit",
+                "docId": "DSA/Problems/Promise Time Limit"
+              },
+              {
+                "type": "link",
+                "label": "Fibonnacci",
+                "href": "/docs/DSA/Problems/Fibonnacci",
+                "docId": "DSA/Problems/Fibonnacci"
               }
             ],
             "href": "/docs/category/problems"
@@ -222,6 +234,12 @@
       "description": "Given an integer n, return a counter function. This counter function initially returns n and then returns 1 more than the previous value every subsequent time it is called (n, n + 1, n + 2, etc).",
       "sidebar": "tutorialSidebar"
     },
+    "DSA/Problems/Fibonnacci": {
+      "id": "DSA/Problems/Fibonnacci",
+      "title": "Fibonnacci",
+      "description": "Write a generator function that returns a generator object which yields the fibonacci sequence.",
+      "sidebar": "tutorialSidebar"
+    },
     "DSA/Problems/Filter Elements From Array": {
       "id": "DSA/Problems/Filter Elements From Array",
       "title": "Filter Elements From Array",
@@ -244,6 +262,12 @@
       "id": "DSA/Problems/Memoize",
       "title": "Memoize",
       "description": "Given a function fn, return a memoized version of that function.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/Problems/Promise Time Limit": {
+      "id": "DSA/Problems/Promise Time Limit",
+      "title": "Promise Time Limit",
+      "description": "Given an asynchronous function fn and a time t in milliseconds, return a new time limited version of the input function. fn takes arguments provided to the time limited function.",
       "sidebar": "tutorialSidebar"
     },
     "DSA/Problems/Recursive Flatten": {
