@@ -103,3 +103,4 @@ sidebar_position: 1
 - Reduce Right
 - Generator function
 - Promis.Race()
+- How to implement .concat() method using pure javascript?

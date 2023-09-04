@@ -128,6 +128,18 @@
                 "label": "Fibonnacci",
                 "href": "/docs/DSA/Problems/Fibonnacci",
                 "docId": "DSA/Problems/Fibonnacci"
+              },
+              {
+                "type": "link",
+                "label": "Nested Array Generator",
+                "href": "/docs/DSA/Problems/Nested Array Generator",
+                "docId": "DSA/Problems/Nested Array Generator"
+              },
+              {
+                "type": "link",
+                "label": "Counter Two",
+                "href": "/docs/DSA/Problems/Counter Two",
+                "docId": "DSA/Problems/Counter Two"
               }
             ],
             "href": "/docs/category/problems"
@@ -234,6 +246,12 @@
       "description": "Given an integer n, return a counter function. This counter function initially returns n and then returns 1 more than the previous value every subsequent time it is called (n, n + 1, n + 2, etc).",
       "sidebar": "tutorialSidebar"
     },
+    "DSA/Problems/Counter Two": {
+      "id": "DSA/Problems/Counter Two",
+      "title": "Counter Two",
+      "description": "Write a function createCounter. It should accept an initial integer init. It should return an object with three functions.",
+      "sidebar": "tutorialSidebar"
+    },
     "DSA/Problems/Fibonnacci": {
       "id": "DSA/Problems/Fibonnacci",
       "title": "Fibonnacci",
@@ -262,6 +280,12 @@
       "id": "DSA/Problems/Memoize",
       "title": "Memoize",
       "description": "Given a function fn, return a memoized version of that function.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/Problems/Nested Array Generator": {
+      "id": "DSA/Problems/Nested Array Generator",
+      "title": "Nested Array Generator",
+      "description": "Given a multi-dimensional array of integers, return a generator object which yields integers in the same order as inorder traversal.",
       "sidebar": "tutorialSidebar"
     },
     "DSA/Problems/Promise Time Limit": {

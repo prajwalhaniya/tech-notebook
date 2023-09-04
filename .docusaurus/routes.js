@@ -59,7 +59,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '45b'),
+    component: ComponentCreator('/docs', '127'),
     routes: [
       {
         path: '/docs/category/database',
@@ -146,6 +146,12 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
+        path: '/docs/DSA/Problems/Counter Two',
+        component: ComponentCreator('/docs/DSA/Problems/Counter Two', '13e'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
         path: '/docs/DSA/Problems/Fibonnacci',
         component: ComponentCreator('/docs/DSA/Problems/Fibonnacci', 'efb'),
         exact: true,
@@ -172,6 +178,12 @@ export default [
       {
         path: '/docs/DSA/Problems/Memoize',
         component: ComponentCreator('/docs/DSA/Problems/Memoize', 'e98'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/Problems/Nested Array Generator',
+        component: ComponentCreator('/docs/DSA/Problems/Nested Array Generator', '02f'),
         exact: true,
         sidebar: "tutorialSidebar"
       },

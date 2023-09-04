@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/Problems/Nested Array Generator",
+  "id": "DSA/Problems/Nested Array Generator",
+  "title": "Nested Array Generator",
+  "description": "Given a multi-dimensional array of integers, return a generator object which yields integers in the same order as inorder traversal.",
+  "source": "@site/docs/DSA/Problems/Nested Array Generator.md",
+  "sourceDirName": "DSA/Problems",
+  "slug": "/DSA/Problems/Nested Array Generator",
+  "permalink": "/docs/DSA/Problems/Nested Array Generator",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 12,
+  "frontMatter": {
+    "sidebar_position": 12
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Fibonnacci",
+    "permalink": "/docs/DSA/Problems/Fibonnacci"
+  },
+  "next": {
+    "title": "Counter Two",
+    "permalink": "/docs/DSA/Problems/Counter Two"
+  }
+}

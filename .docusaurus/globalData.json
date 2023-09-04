@@ -41,6 +41,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "DSA/Problems/Counter Two",
+              "path": "/docs/DSA/Problems/Counter Two",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "DSA/Problems/Fibonnacci",
               "path": "/docs/DSA/Problems/Fibonnacci",
               "sidebar": "tutorialSidebar"
@@ -63,6 +68,11 @@
             {
               "id": "DSA/Problems/Memoize",
               "path": "/docs/DSA/Problems/Memoize",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Problems/Nested Array Generator",
+              "path": "/docs/DSA/Problems/Nested Array Generator",
               "sidebar": "tutorialSidebar"
             },
             {
