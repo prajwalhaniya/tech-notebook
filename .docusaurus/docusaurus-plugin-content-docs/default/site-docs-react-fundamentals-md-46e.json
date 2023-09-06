@@ -1,0 +1,26 @@
+{
+  "unversionedId": "React/Fundamentals",
+  "id": "React/Fundamentals",
+  "title": "Fundamentals",
+  "description": "Components",
+  "source": "@site/docs/React/Fundamentals.md",
+  "sourceDirName": "React",
+  "slug": "/React/Fundamentals",
+  "permalink": "/docs/React/Fundamentals",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "React",
+    "permalink": "/docs/category/react"
+  },
+  "next": {
+    "title": "Components",
+    "permalink": "/docs/React/Components"
+  }
+}

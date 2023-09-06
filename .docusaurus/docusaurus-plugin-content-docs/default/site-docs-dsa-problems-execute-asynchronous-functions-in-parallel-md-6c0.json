@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/Problems/Execute Asynchronous Functions In Parallel",
+  "id": "DSA/Problems/Execute Asynchronous Functions In Parallel",
+  "title": "Execute Asynchronous Functions In Parallel",
+  "description": "Given an array of asynchronous functions functions, return a new promise promise. Each function in the array accepts no arguments and returns a promise.",
+  "source": "@site/docs/DSA/Problems/Execute Asynchronous Functions In Parallel.md",
+  "sourceDirName": "DSA/Problems",
+  "slug": "/DSA/Problems/Execute Asynchronous Functions In Parallel",
+  "permalink": "/docs/DSA/Problems/Execute Asynchronous Functions In Parallel",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 16,
+  "frontMatter": {
+    "sidebar_position": 16
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "To Be or Not To Be",
+    "permalink": "/docs/DSA/Problems/To Be or Not To Be"
+  },
+  "next": {
+    "title": "Compact Object",
+    "permalink": "/docs/DSA/Problems/Compact Object"
+  }
+}

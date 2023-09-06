@@ -44,20 +44,78 @@ sidebar_position: 1
 
         ```
 
-- Hoisting
-- Varibale Naming Rules
+- **Hoisting**
+
+    Hoisting is a behavior in which variable and function declarations are **_moved to the top_** of their containing scope during the compilation phase, before the code is executed. This means that regardless of where you declare variables or functions within a scope, they are effectively "hoisted" to the top of that scope.
+
+    > Only the declarations are hoisted, not the initializations or assignments.
+
+    ```js
+    function hoisting() {
+        console.log(x); // undefined
+        var x = 10;
+        console.log(x); // 10
+    }
+    hoisting();
+    ```
+
+
 
 ### Data Types
 
 - `Primitive Types`: string, undefined, number, bigint, boolean, null, symbol
+
 - `Objects`: Prototypal inheritance, object prototype, Built-in objects
 
-### Type Casting
+    **Prototypal Inheritance**
+
+    Prototypal inheritance describes how objects can `inherit` properties and methods from other objects.
+
+    - `Prototype Chain`: Every object in JavaScript has a special property called __proto__ (or `[[Prototype]]`) that points to another object. This object is known as its prototype. When you access a property or method on an object, JavaScript first looks for that property or method on the object itself. If it doesn't find it, it follows the prototype chain by checking the prototype object. This process continues until the property or method is found or the end of the chain is reached.
+
+    - `Constructor Functions`: you can create constructor functions that are used to create objects with shared properties and methods. These functions are typically capitalized by convention. You can add properties and methods to the constructor function's prototype property, and all objects created from that constructor will inherit those properties and methods.
+
+    ```js
+    // constructor function
+    function Person(name, subject) {
+        this.name = name;
+        this.subject = subject;
+    }
+
+    Person.prototype.subjectChoice = function() {
+        console.log(`${this.name} has made a choice of ${this.subject}`);
+    }
+
+    const person = new Person('Prajwal', 'Computer Science');
+    person.subjectChoice();
+    ```
+
+    - `Object Prototype`
+
+    Object Prototype is at the top of the prototype chain. It contains common properties and methods that are available on all objects. For example, every object inherits methods like `toString()`, `hasOwnProperty()`, and `constructor` from Object.prototype.
+
+    ```js
+    const person = {
+        name: "Prajwal",
+        subject: "Computer Science"
+    }
+
+    person.__proto__.skill = "Software Development";
+    
+    console.log(person.name); // Prajwal
+    console.log(person.skill); // Software Development
+    ```
+
+> Why `__proto__` word is used instead of `prototype` for object prototype? 
+
+>__proto__ is a property that exists on individual objects and points to their prototype. It is used to look up properties and methods on the prototype chain. `prototype` is a property that is typically used with constructor functions to define the prototype of objects created by that constructor. It is not a property of individual objects but rather of constructor functions.
+        
+<!-- ### Type Casting
 
 - Explicit Type Casting
-- Implicit Type Casting
+- Implicit Type Casting -->
 
-### Data Structures
+<!-- ### Data Structures
 
 - Keyed Collections
     - Map
@@ -70,16 +128,95 @@ sidebar_position: 1
 
 - Indexed Collections
     - Typed Arrays
-    - Arrays
+    - Arrays -->
 
 ### Loops & Iterations
 
-- for
-- do while
-- while
-- for in
-- for of
-- break / continue
+- `for`
+```js
+for (let i = 0; i < LENGTH; i++) {
+    // perform operation
+}
+```
+
+- `do while`
+
+```js
+/*
+    do {
+
+    } while (condition)
+*/
+
+
+// Example:
+let count = 1;
+
+do {
+    console.log(count);
+    count++;
+} while (count <= 5);
+```
+- `while`
+
+```js
+/*
+    while (condition) {
+
+    }
+*/
+
+// Example 
+
+let count = 0;
+while (count < 5) {
+    console.log(count);
+    count++;
+}
+```
+
+
+- `for in`
+
+This is typically used with the objects(with keys)
+
+```js
+/*
+    for (variable in object) {
+        // Code to be executed for each property in the object
+    }
+*/
+
+// Example
+
+let person = {
+    name: 'Prajwal',
+    subject: 'Computer Science'
+}
+
+for (let key in person) {
+    if (person.hasOwnProperty(key)) {
+        console.log(key + ' : ' + person[key]);
+    }
+}
+```
+- `for of`
+
+```js
+/*
+    for (let item of iterableObject) {
+        // perform operation
+    }
+*/
+
+// Example
+
+const numbers = [1, 2, 3, 4];
+
+for (let num of numbers) {
+    console.log(num);
+}
+```
 
 ### Control flow
 
@@ -103,4 +240,9 @@ sidebar_position: 1
 - Reduce Right
 - Generator function
 - Promis.Race()
-- How to implement .concat() method using pure javascript?
+- How to implement .concat() method using pure javascript? -> Its used to flatten the array.
+- How do callbacks work?
+- How do promises work?
+- What is the use of Promise.all()?
+- How JSON.stringify() works?
+- What is the difference between setInterval And setTimeout? How they are implemented under the hood?

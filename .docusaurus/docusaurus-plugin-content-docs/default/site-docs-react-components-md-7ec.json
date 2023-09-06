@@ -1,0 +1,26 @@
+{
+  "unversionedId": "React/Components",
+  "id": "React/Components",
+  "title": "Components",
+  "description": "Every web application today has a lot of features. And those are going to be something fundamental for any application. For example Navigation bar, Routes, Login functionality, etc. So, here let's document some of the must know components as a developer. Because, this can save you a lot of time while developing it.",
+  "source": "@site/docs/React/Components.md",
+  "sourceDirName": "React",
+  "slug": "/React/Components",
+  "permalink": "/docs/React/Components",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Fundamentals",
+    "permalink": "/docs/React/Fundamentals"
+  },
+  "next": {
+    "title": "nodejs",
+    "permalink": "/docs/category/nodejs"
+  }
+}

@@ -5,8 +5,8 @@
   "permalink": "/docs/category/nodejs",
   "navigation": {
     "previous": {
-      "title": "concepts",
-      "permalink": "/docs/React/concepts"
+      "title": "Components",
+      "permalink": "/docs/React/Components"
     },
     "next": {
       "title": "concepts",

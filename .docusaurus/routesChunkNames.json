@@ -77,7 +77,7 @@
     },
     "content": "content---markdown-page-393-028"
   },
-  "/docs-127": {
+  "/docs-2ef": {
     "__comp": "__comp---theme-doc-page-1-be-9be",
     "__context": {
       "plugin": "plugin---docsd-46-576"
@@ -128,6 +128,10 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-dsa-fundamentalsc-25-317"
   },
+  "/docs/DSA/Problems/Array Prototype Last-6b0": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-problems-array-prototype-lastc-6-b-4ac"
+  },
   "/docs/DSA/Problems/Array Reduce Transformation-448": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-dsa-problems-array-reduce-transformation-989-df7"
@@ -136,6 +140,10 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-dsa-problems-cache-with-time-26-d-928"
   },
+  "/docs/DSA/Problems/Compact Object-d15": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-problems-compact-object-347-eb0"
+  },
   "/docs/DSA/Problems/Counter-4d0": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-dsa-problems-counter-425-2c3"
@@ -143,6 +151,14 @@
   "/docs/DSA/Problems/Counter Two-13e": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-dsa-problems-counter-twoe-11-539"
+  },
+  "/docs/DSA/Problems/Event Emitter-700": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-problems-event-emittercb-5-3e2"
+  },
+  "/docs/DSA/Problems/Execute Asynchronous Functions In Parallel-4b2": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-problems-execute-asynchronous-functions-in-parallel-6-c-0-ce3"
   },
   "/docs/DSA/Problems/Fibonnacci-efb": {
     "__comp": "__comp---theme-doc-item-178-a40",
@@ -159,6 +175,10 @@
   "/docs/DSA/Problems/Group By-474": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-dsa-problems-group-bye-6-b-c28"
+  },
+  "/docs/DSA/Problems/Join Two Arrays By Id-1ad": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-problems-join-two-arrays-by-id-2-d-8-943"
   },
   "/docs/DSA/Problems/Memoize-e98": {
     "__comp": "__comp---theme-doc-item-178-a40",
@@ -180,6 +200,10 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-dsa-problems-sleepe-08-52f"
   },
+  "/docs/DSA/Problems/To Be or Not To Be-e96": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-problems-to-be-or-not-to-be-5-a-2-c17"
+  },
   "/docs/DSA/Search/Binary Search-4c8": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-dsa-search-binary-searchc-38-6c0"
@@ -196,9 +220,13 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-nodejs-concepts-764-f57"
   },
-  "/docs/React/concepts-49f": {
+  "/docs/React/Components-0a0": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-react-concepts-6-ae-492"
+    "content": "content---docs-react-components-7-ec-cf1"
+  },
+  "/docs/React/Fundamentals-3db": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-react-fundamentals-46-e-488"
   },
   "/-54a": {
     "__comp": "__comp---site-src-pages-index-jsc-4-f-f99",

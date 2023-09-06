@@ -26,6 +26,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "DSA/Problems/Array Prototype Last",
+              "path": "/docs/DSA/Problems/Array Prototype Last",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "DSA/Problems/Array Reduce Transformation",
               "path": "/docs/DSA/Problems/Array Reduce Transformation",
               "sidebar": "tutorialSidebar"
@@ -36,6 +41,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "DSA/Problems/Compact Object",
+              "path": "/docs/DSA/Problems/Compact Object",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "DSA/Problems/Counter",
               "path": "/docs/DSA/Problems/Counter",
               "sidebar": "tutorialSidebar"
@@ -43,6 +53,16 @@
             {
               "id": "DSA/Problems/Counter Two",
               "path": "/docs/DSA/Problems/Counter Two",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Problems/Event Emitter",
+              "path": "/docs/DSA/Problems/Event Emitter",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Problems/Execute Asynchronous Functions In Parallel",
+              "path": "/docs/DSA/Problems/Execute Asynchronous Functions In Parallel",
               "sidebar": "tutorialSidebar"
             },
             {
@@ -63,6 +83,11 @@
             {
               "id": "DSA/Problems/Group By",
               "path": "/docs/DSA/Problems/Group By",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Problems/Join Two Arrays By Id",
+              "path": "/docs/DSA/Problems/Join Two Arrays By Id",
               "sidebar": "tutorialSidebar"
             },
             {
@@ -91,6 +116,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "DSA/Problems/To Be or Not To Be",
+              "path": "/docs/DSA/Problems/To Be or Not To Be",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "DSA/Search/Binary Search",
               "path": "/docs/DSA/Search/Binary Search",
               "sidebar": "tutorialSidebar"
@@ -111,8 +141,13 @@
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "React/concepts",
-              "path": "/docs/React/concepts",
+              "id": "React/Components",
+              "path": "/docs/React/Components",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "React/Fundamentals",
+              "path": "/docs/React/Fundamentals",
               "sidebar": "tutorialSidebar"
             },
             {

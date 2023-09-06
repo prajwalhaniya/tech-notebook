@@ -140,6 +140,42 @@
                 "label": "Counter Two",
                 "href": "/docs/DSA/Problems/Counter Two",
                 "docId": "DSA/Problems/Counter Two"
+              },
+              {
+                "type": "link",
+                "label": "Event Emitter",
+                "href": "/docs/DSA/Problems/Event Emitter",
+                "docId": "DSA/Problems/Event Emitter"
+              },
+              {
+                "type": "link",
+                "label": "To Be or Not To Be",
+                "href": "/docs/DSA/Problems/To Be or Not To Be",
+                "docId": "DSA/Problems/To Be or Not To Be"
+              },
+              {
+                "type": "link",
+                "label": "Execute Asynchronous Functions In Parallel",
+                "href": "/docs/DSA/Problems/Execute Asynchronous Functions In Parallel",
+                "docId": "DSA/Problems/Execute Asynchronous Functions In Parallel"
+              },
+              {
+                "type": "link",
+                "label": "Compact Object",
+                "href": "/docs/DSA/Problems/Compact Object",
+                "docId": "DSA/Problems/Compact Object"
+              },
+              {
+                "type": "link",
+                "label": "Join Two Arrays By Id",
+                "href": "/docs/DSA/Problems/Join Two Arrays By Id",
+                "docId": "DSA/Problems/Join Two Arrays By Id"
+              },
+              {
+                "type": "link",
+                "label": "Array Prototype Last",
+                "href": "/docs/DSA/Problems/Array Prototype Last",
+                "docId": "DSA/Problems/Array Prototype Last"
               }
             ],
             "href": "/docs/category/problems"
@@ -155,9 +191,15 @@
         "items": [
           {
             "type": "link",
-            "label": "concepts",
-            "href": "/docs/React/concepts",
-            "docId": "React/concepts"
+            "label": "Fundamentals",
+            "href": "/docs/React/Fundamentals",
+            "docId": "React/Fundamentals"
+          },
+          {
+            "type": "link",
+            "label": "Components",
+            "href": "/docs/React/Components",
+            "docId": "React/Components"
           }
         ],
         "href": "/docs/category/react"
@@ -228,6 +270,12 @@
       "description": "Time complexities",
       "sidebar": "tutorialSidebar"
     },
+    "DSA/Problems/Array Prototype Last": {
+      "id": "DSA/Problems/Array Prototype Last",
+      "title": "Array Prototype Last",
+      "description": "Write code that enhances all arrays such that you can call the array.last() method on any array and it will return the last element. If there are no elements in the array, it should return -1.",
+      "sidebar": "tutorialSidebar"
+    },
     "DSA/Problems/Array Reduce Transformation": {
       "id": "DSA/Problems/Array Reduce Transformation",
       "title": "Array Reduce Transformation",
@@ -240,6 +288,12 @@
       "description": "Write a class that allows getting and setting key-value pairs, however a time until expiration is associated with each key.",
       "sidebar": "tutorialSidebar"
     },
+    "DSA/Problems/Compact Object": {
+      "id": "DSA/Problems/Compact Object",
+      "title": "Compact Object",
+      "description": "Given an object or array obj, return a compact object. A compact object is the same as the original object, except with keys containing falsy values removed. This operation applies to the object and any nested objects. Arrays are considered objects where the indices are keys. A value is considered falsy when Boolean(value) returns false.",
+      "sidebar": "tutorialSidebar"
+    },
     "DSA/Problems/Counter": {
       "id": "DSA/Problems/Counter",
       "title": "Counter",
@@ -250,6 +304,18 @@
       "id": "DSA/Problems/Counter Two",
       "title": "Counter Two",
       "description": "Write a function createCounter. It should accept an initial integer init. It should return an object with three functions.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/Problems/Event Emitter": {
+      "id": "DSA/Problems/Event Emitter",
+      "title": "Event Emitter",
+      "description": "Design an EventEmitter class. This interface is similar (but with some differences) to the one found in Node.js or the Event Target interface of the DOM. The EventEmitter should allow for subscribing to events and emitting them.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/Problems/Execute Asynchronous Functions In Parallel": {
+      "id": "DSA/Problems/Execute Asynchronous Functions In Parallel",
+      "title": "Execute Asynchronous Functions In Parallel",
+      "description": "Given an array of asynchronous functions functions, return a new promise promise. Each function in the array accepts no arguments and returns a promise.",
       "sidebar": "tutorialSidebar"
     },
     "DSA/Problems/Fibonnacci": {
@@ -274,6 +340,12 @@
       "id": "DSA/Problems/Group By",
       "title": "Group By",
       "description": "Write code that enhances all arrays such that you can call the array.groupBy(fn) method on any array and it will return a grouped version of the array.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/Problems/Join Two Arrays By Id": {
+      "id": "DSA/Problems/Join Two Arrays By Id",
+      "title": "Join Two Arrays By Id",
+      "description": "Given two arrays arr1 and arr2, return a new array joinedArray. All the objects in each of the two inputs arrays will contain an id field that has an integer value. joinedArray is an array formed by merging arr1 and arr2 based on their id key. The length of joinedArray should be the length of unique values of id. The returned array should be sorted in ascending order based on the id key.",
       "sidebar": "tutorialSidebar"
     },
     "DSA/Problems/Memoize": {
@@ -306,6 +378,12 @@
       "description": "Given a positive integer millis, write an asynchronous function that sleeps for millis milliseconds. It can resolve any value.",
       "sidebar": "tutorialSidebar"
     },
+    "DSA/Problems/To Be or Not To Be": {
+      "id": "DSA/Problems/To Be or Not To Be",
+      "title": "To Be or Not To Be",
+      "description": "Write a function expect that helps developers test their code. It should take in any value val and return an object with the following two functions.",
+      "sidebar": "tutorialSidebar"
+    },
     "DSA/Search/Binary Search": {
       "id": "DSA/Search/Binary Search",
       "title": "Binary Search",
@@ -330,9 +408,15 @@
       "description": "",
       "sidebar": "tutorialSidebar"
     },
-    "React/concepts": {
-      "id": "React/concepts",
-      "title": "concepts",
+    "React/Components": {
+      "id": "React/Components",
+      "title": "Components",
+      "description": "Every web application today has a lot of features. And those are going to be something fundamental for any application. For example Navigation bar, Routes, Login functionality, etc. So, here let's document some of the must know components as a developer. Because, this can save you a lot of time while developing it.",
+      "sidebar": "tutorialSidebar"
+    },
+    "React/Fundamentals": {
+      "id": "React/Fundamentals",
+      "title": "Fundamentals",
       "description": "Components",
       "sidebar": "tutorialSidebar"
     }

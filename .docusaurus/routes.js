@@ -59,7 +59,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '127'),
+    component: ComponentCreator('/docs', '2ef'),
     routes: [
       {
         path: '/docs/category/database',
@@ -128,6 +128,12 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
+        path: '/docs/DSA/Problems/Array Prototype Last',
+        component: ComponentCreator('/docs/DSA/Problems/Array Prototype Last', '6b0'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
         path: '/docs/DSA/Problems/Array Reduce Transformation',
         component: ComponentCreator('/docs/DSA/Problems/Array Reduce Transformation', '448'),
         exact: true,
@@ -140,6 +146,12 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
+        path: '/docs/DSA/Problems/Compact Object',
+        component: ComponentCreator('/docs/DSA/Problems/Compact Object', 'd15'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
         path: '/docs/DSA/Problems/Counter',
         component: ComponentCreator('/docs/DSA/Problems/Counter', '4d0'),
         exact: true,
@@ -148,6 +160,18 @@ export default [
       {
         path: '/docs/DSA/Problems/Counter Two',
         component: ComponentCreator('/docs/DSA/Problems/Counter Two', '13e'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/Problems/Event Emitter',
+        component: ComponentCreator('/docs/DSA/Problems/Event Emitter', '700'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/Problems/Execute Asynchronous Functions In Parallel',
+        component: ComponentCreator('/docs/DSA/Problems/Execute Asynchronous Functions In Parallel', '4b2'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
@@ -172,6 +196,12 @@ export default [
       {
         path: '/docs/DSA/Problems/Group By',
         component: ComponentCreator('/docs/DSA/Problems/Group By', '474'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/Problems/Join Two Arrays By Id',
+        component: ComponentCreator('/docs/DSA/Problems/Join Two Arrays By Id', '1ad'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
@@ -206,6 +236,12 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
+        path: '/docs/DSA/Problems/To Be or Not To Be',
+        component: ComponentCreator('/docs/DSA/Problems/To Be or Not To Be', 'e96'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
         path: '/docs/DSA/Search/Binary Search',
         component: ComponentCreator('/docs/DSA/Search/Binary Search', '4c8'),
         exact: true,
@@ -230,8 +266,14 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/React/concepts',
-        component: ComponentCreator('/docs/React/concepts', '49f'),
+        path: '/docs/React/Components',
+        component: ComponentCreator('/docs/React/Components', '0a0'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/React/Fundamentals',
+        component: ComponentCreator('/docs/React/Fundamentals', '3db'),
         exact: true,
         sidebar: "tutorialSidebar"
       }
