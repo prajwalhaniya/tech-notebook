@@ -2,7 +2,7 @@
   "unversionedId": "nodejs/concepts",
   "id": "nodejs/concepts",
   "title": "concepts",
-  "description": "",
+  "description": "- FFI (Foreign Function Interface)",
   "source": "@site/docs/nodejs/concepts.md",
   "sourceDirName": "nodejs",
   "slug": "/nodejs/concepts",

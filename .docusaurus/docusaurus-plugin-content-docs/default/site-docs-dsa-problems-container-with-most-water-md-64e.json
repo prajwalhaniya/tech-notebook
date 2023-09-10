@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/Problems/Container with most water",
+  "id": "DSA/Problems/Container with most water",
+  "title": "Container with most water",
+  "description": "You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]).",
+  "source": "@site/docs/DSA/Problems/Container with most water.md",
+  "sourceDirName": "DSA/Problems",
+  "slug": "/DSA/Problems/Container with most water",
+  "permalink": "/docs/DSA/Problems/Container with most water",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 25,
+  "frontMatter": {
+    "sidebar_position": 25
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Two Sum II",
+    "permalink": "/docs/DSA/Problems/Two Sum II"
+  },
+  "next": {
+    "title": "Minimum size subarray sum",
+    "permalink": "/docs/DSA/Problems/Minimum size subarray sum"
+  }
+}

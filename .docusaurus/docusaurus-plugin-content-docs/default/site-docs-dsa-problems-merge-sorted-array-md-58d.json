@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/Problems/Merge Sorted Array",
+  "id": "DSA/Problems/Merge Sorted Array",
+  "title": "Merge Sorted Array",
+  "description": "You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively.",
+  "source": "@site/docs/DSA/Problems/Merge Sorted Array.md",
+  "sourceDirName": "DSA/Problems",
+  "slug": "/DSA/Problems/Merge Sorted Array",
+  "permalink": "/docs/DSA/Problems/Merge Sorted Array",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 22,
+  "frontMatter": {
+    "sidebar_position": 22
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Zigzag Conversion",
+    "permalink": "/docs/DSA/Problems/Zigzag Conversion"
+  },
+  "next": {
+    "title": "Valid Palindrome",
+    "permalink": "/docs/DSA/Problems/Valid Palindrome"
+  }
+}

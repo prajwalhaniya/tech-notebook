@@ -46,6 +46,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "DSA/Problems/Container with most water",
+              "path": "/docs/DSA/Problems/Container with most water",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "DSA/Problems/Counter",
               "path": "/docs/DSA/Problems/Counter",
               "sidebar": "tutorialSidebar"
@@ -96,6 +101,16 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "DSA/Problems/Merge Sorted Array",
+              "path": "/docs/DSA/Problems/Merge Sorted Array",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Problems/Minimum size subarray sum",
+              "path": "/docs/DSA/Problems/Minimum size subarray sum",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "DSA/Problems/Nested Array Generator",
               "path": "/docs/DSA/Problems/Nested Array Generator",
               "sidebar": "tutorialSidebar"
@@ -111,6 +126,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "DSA/Problems/Reverse words in a string",
+              "path": "/docs/DSA/Problems/Reverse words in a string",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "DSA/Problems/Sleep",
               "path": "/docs/DSA/Problems/Sleep",
               "sidebar": "tutorialSidebar"
@@ -118,6 +138,21 @@
             {
               "id": "DSA/Problems/To Be or Not To Be",
               "path": "/docs/DSA/Problems/To Be or Not To Be",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Problems/Two Sum II",
+              "path": "/docs/DSA/Problems/Two Sum II",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Problems/Valid Palindrome",
+              "path": "/docs/DSA/Problems/Valid Palindrome",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Problems/Zigzag Conversion",
+              "path": "/docs/DSA/Problems/Zigzag Conversion",
               "sidebar": "tutorialSidebar"
             },
             {

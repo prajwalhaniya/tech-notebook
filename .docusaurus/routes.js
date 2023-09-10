@@ -59,7 +59,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '2ef'),
+    component: ComponentCreator('/docs', '8e3'),
     routes: [
       {
         path: '/docs/category/database',
@@ -152,6 +152,12 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
+        path: '/docs/DSA/Problems/Container with most water',
+        component: ComponentCreator('/docs/DSA/Problems/Container with most water', '540'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
         path: '/docs/DSA/Problems/Counter',
         component: ComponentCreator('/docs/DSA/Problems/Counter', '4d0'),
         exact: true,
@@ -212,6 +218,18 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
+        path: '/docs/DSA/Problems/Merge Sorted Array',
+        component: ComponentCreator('/docs/DSA/Problems/Merge Sorted Array', 'c08'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/Problems/Minimum size subarray sum',
+        component: ComponentCreator('/docs/DSA/Problems/Minimum size subarray sum', '491'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
         path: '/docs/DSA/Problems/Nested Array Generator',
         component: ComponentCreator('/docs/DSA/Problems/Nested Array Generator', '02f'),
         exact: true,
@@ -230,6 +248,12 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
+        path: '/docs/DSA/Problems/Reverse words in a string',
+        component: ComponentCreator('/docs/DSA/Problems/Reverse words in a string', '831'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
         path: '/docs/DSA/Problems/Sleep',
         component: ComponentCreator('/docs/DSA/Problems/Sleep', '0f7'),
         exact: true,
@@ -238,6 +262,24 @@ export default [
       {
         path: '/docs/DSA/Problems/To Be or Not To Be',
         component: ComponentCreator('/docs/DSA/Problems/To Be or Not To Be', 'e96'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/Problems/Two Sum II',
+        component: ComponentCreator('/docs/DSA/Problems/Two Sum II', '9b5'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/Problems/Valid Palindrome',
+        component: ComponentCreator('/docs/DSA/Problems/Valid Palindrome', 'd54'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/Problems/Zigzag Conversion',
+        component: ComponentCreator('/docs/DSA/Problems/Zigzag Conversion', 'b5f'),
         exact: true,
         sidebar: "tutorialSidebar"
       },

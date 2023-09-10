@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/Problems/Zigzag Conversion",
+  "id": "DSA/Problems/Zigzag Conversion",
+  "title": "Zigzag Conversion",
+  "description": "The string \"PAYPALISHIRING\" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)",
+  "source": "@site/docs/DSA/Problems/Zigzag Conversion.md",
+  "sourceDirName": "DSA/Problems",
+  "slug": "/DSA/Problems/Zigzag Conversion",
+  "permalink": "/docs/DSA/Problems/Zigzag Conversion",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 21,
+  "frontMatter": {
+    "sidebar_position": 21
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Reverse words in a string",
+    "permalink": "/docs/DSA/Problems/Reverse words in a string"
+  },
+  "next": {
+    "title": "Merge Sorted Array",
+    "permalink": "/docs/DSA/Problems/Merge Sorted Array"
+  }
+}

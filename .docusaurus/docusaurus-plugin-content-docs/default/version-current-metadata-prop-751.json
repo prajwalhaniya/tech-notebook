@@ -176,6 +176,48 @@
                 "label": "Array Prototype Last",
                 "href": "/docs/DSA/Problems/Array Prototype Last",
                 "docId": "DSA/Problems/Array Prototype Last"
+              },
+              {
+                "type": "link",
+                "label": "Reverse words in a string",
+                "href": "/docs/DSA/Problems/Reverse words in a string",
+                "docId": "DSA/Problems/Reverse words in a string"
+              },
+              {
+                "type": "link",
+                "label": "Zigzag Conversion",
+                "href": "/docs/DSA/Problems/Zigzag Conversion",
+                "docId": "DSA/Problems/Zigzag Conversion"
+              },
+              {
+                "type": "link",
+                "label": "Merge Sorted Array",
+                "href": "/docs/DSA/Problems/Merge Sorted Array",
+                "docId": "DSA/Problems/Merge Sorted Array"
+              },
+              {
+                "type": "link",
+                "label": "Valid Palindrome",
+                "href": "/docs/DSA/Problems/Valid Palindrome",
+                "docId": "DSA/Problems/Valid Palindrome"
+              },
+              {
+                "type": "link",
+                "label": "Two Sum II",
+                "href": "/docs/DSA/Problems/Two Sum II",
+                "docId": "DSA/Problems/Two Sum II"
+              },
+              {
+                "type": "link",
+                "label": "Container with most water",
+                "href": "/docs/DSA/Problems/Container with most water",
+                "docId": "DSA/Problems/Container with most water"
+              },
+              {
+                "type": "link",
+                "label": "Minimum size subarray sum",
+                "href": "/docs/DSA/Problems/Minimum size subarray sum",
+                "docId": "DSA/Problems/Minimum size subarray sum"
               }
             ],
             "href": "/docs/category/problems"
@@ -294,6 +336,12 @@
       "description": "Given an object or array obj, return a compact object. A compact object is the same as the original object, except with keys containing falsy values removed. This operation applies to the object and any nested objects. Arrays are considered objects where the indices are keys. A value is considered falsy when Boolean(value) returns false.",
       "sidebar": "tutorialSidebar"
     },
+    "DSA/Problems/Container with most water": {
+      "id": "DSA/Problems/Container with most water",
+      "title": "Container with most water",
+      "description": "You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]).",
+      "sidebar": "tutorialSidebar"
+    },
     "DSA/Problems/Counter": {
       "id": "DSA/Problems/Counter",
       "title": "Counter",
@@ -354,6 +402,18 @@
       "description": "Given a function fn, return a memoized version of that function.",
       "sidebar": "tutorialSidebar"
     },
+    "DSA/Problems/Merge Sorted Array": {
+      "id": "DSA/Problems/Merge Sorted Array",
+      "title": "Merge Sorted Array",
+      "description": "You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/Problems/Minimum size subarray sum": {
+      "id": "DSA/Problems/Minimum size subarray sum",
+      "title": "Minimum size subarray sum",
+      "description": "Given an array of positive integers nums and a positive integer target, return the minimal length of a",
+      "sidebar": "tutorialSidebar"
+    },
     "DSA/Problems/Nested Array Generator": {
       "id": "DSA/Problems/Nested Array Generator",
       "title": "Nested Array Generator",
@@ -372,6 +432,12 @@
       "description": "Given a multi-dimensional array arr and a depth n, return a flattened version of that array.",
       "sidebar": "tutorialSidebar"
     },
+    "DSA/Problems/Reverse words in a string": {
+      "id": "DSA/Problems/Reverse words in a string",
+      "title": "Reverse words in a string",
+      "description": "Given an input string s, reverse the order of the words.",
+      "sidebar": "tutorialSidebar"
+    },
     "DSA/Problems/Sleep": {
       "id": "DSA/Problems/Sleep",
       "title": "Sleep",
@@ -382,6 +448,24 @@
       "id": "DSA/Problems/To Be or Not To Be",
       "title": "To Be or Not To Be",
       "description": "Write a function expect that helps developers test their code. It should take in any value val and return an object with the following two functions.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/Problems/Two Sum II": {
+      "id": "DSA/Problems/Two Sum II",
+      "title": "Two Sum II",
+      "description": "Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number. Let these two numbers be numbers[index1] and numbers[index2] where 1 <= index1 < index2 < numbers.length.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/Problems/Valid Palindrome": {
+      "id": "DSA/Problems/Valid Palindrome",
+      "title": "Valid Palindrome",
+      "description": "A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/Problems/Zigzag Conversion": {
+      "id": "DSA/Problems/Zigzag Conversion",
+      "title": "Zigzag Conversion",
+      "description": "The string \"PAYPALISHIRING\" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)",
       "sidebar": "tutorialSidebar"
     },
     "DSA/Search/Binary Search": {
@@ -405,7 +489,7 @@
     "nodejs/concepts": {
       "id": "nodejs/concepts",
       "title": "concepts",
-      "description": "",
+      "description": "- FFI (Foreign Function Interface)",
       "sidebar": "tutorialSidebar"
     },
     "React/Components": {

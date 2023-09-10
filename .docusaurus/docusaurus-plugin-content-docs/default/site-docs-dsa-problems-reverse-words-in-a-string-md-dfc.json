@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/Problems/Reverse words in a string",
+  "id": "DSA/Problems/Reverse words in a string",
+  "title": "Reverse words in a string",
+  "description": "Given an input string s, reverse the order of the words.",
+  "source": "@site/docs/DSA/Problems/Reverse words in a string.md",
+  "sourceDirName": "DSA/Problems",
+  "slug": "/DSA/Problems/Reverse words in a string",
+  "permalink": "/docs/DSA/Problems/Reverse words in a string",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 20,
+  "frontMatter": {
+    "sidebar_position": 20
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Array Prototype Last",
+    "permalink": "/docs/DSA/Problems/Array Prototype Last"
+  },
+  "next": {
+    "title": "Zigzag Conversion",
+    "permalink": "/docs/DSA/Problems/Zigzag Conversion"
+  }
+}

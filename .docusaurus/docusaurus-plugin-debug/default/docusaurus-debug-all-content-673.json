@@ -107,8 +107,8 @@
                 "permalink": "/docs/DSA/Problems/Join Two Arrays By Id"
               },
               "next": {
-                "title": "React",
-                "permalink": "/docs/category/react"
+                "title": "Reverse words in a string",
+                "permalink": "/docs/DSA/Problems/Reverse words in a string"
               }
             },
             {
@@ -187,6 +187,32 @@
               "next": {
                 "title": "Join Two Arrays By Id",
                 "permalink": "/docs/DSA/Problems/Join Two Arrays By Id"
+              }
+            },
+            {
+              "unversionedId": "DSA/Problems/Container with most water",
+              "id": "DSA/Problems/Container with most water",
+              "title": "Container with most water",
+              "description": "You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]).",
+              "source": "@site/docs/DSA/Problems/Container with most water.md",
+              "sourceDirName": "DSA/Problems",
+              "slug": "/DSA/Problems/Container with most water",
+              "permalink": "/docs/DSA/Problems/Container with most water",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 25,
+              "frontMatter": {
+                "sidebar_position": 25
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Two Sum II",
+                "permalink": "/docs/DSA/Problems/Two Sum II"
+              },
+              "next": {
+                "title": "Minimum size subarray sum",
+                "permalink": "/docs/DSA/Problems/Minimum size subarray sum"
               }
             },
             {
@@ -450,6 +476,57 @@
               }
             },
             {
+              "unversionedId": "DSA/Problems/Merge Sorted Array",
+              "id": "DSA/Problems/Merge Sorted Array",
+              "title": "Merge Sorted Array",
+              "description": "You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively.",
+              "source": "@site/docs/DSA/Problems/Merge Sorted Array.md",
+              "sourceDirName": "DSA/Problems",
+              "slug": "/DSA/Problems/Merge Sorted Array",
+              "permalink": "/docs/DSA/Problems/Merge Sorted Array",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 22,
+              "frontMatter": {
+                "sidebar_position": 22
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Zigzag Conversion",
+                "permalink": "/docs/DSA/Problems/Zigzag Conversion"
+              },
+              "next": {
+                "title": "Valid Palindrome",
+                "permalink": "/docs/DSA/Problems/Valid Palindrome"
+              }
+            },
+            {
+              "unversionedId": "DSA/Problems/Minimum size subarray sum",
+              "id": "DSA/Problems/Minimum size subarray sum",
+              "title": "Minimum size subarray sum",
+              "description": "Given an array of positive integers nums and a positive integer target, return the minimal length of a",
+              "source": "@site/docs/DSA/Problems/Minimum size subarray sum.md",
+              "sourceDirName": "DSA/Problems",
+              "slug": "/DSA/Problems/Minimum size subarray sum",
+              "permalink": "/docs/DSA/Problems/Minimum size subarray sum",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "sidebar_postion": 26
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Container with most water",
+                "permalink": "/docs/DSA/Problems/Container with most water"
+              },
+              "next": {
+                "title": "React",
+                "permalink": "/docs/category/react"
+              }
+            },
+            {
               "unversionedId": "DSA/Problems/Nested Array Generator",
               "id": "DSA/Problems/Nested Array Generator",
               "title": "Nested Array Generator",
@@ -528,6 +605,32 @@
               }
             },
             {
+              "unversionedId": "DSA/Problems/Reverse words in a string",
+              "id": "DSA/Problems/Reverse words in a string",
+              "title": "Reverse words in a string",
+              "description": "Given an input string s, reverse the order of the words.",
+              "source": "@site/docs/DSA/Problems/Reverse words in a string.md",
+              "sourceDirName": "DSA/Problems",
+              "slug": "/DSA/Problems/Reverse words in a string",
+              "permalink": "/docs/DSA/Problems/Reverse words in a string",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 20,
+              "frontMatter": {
+                "sidebar_position": 20
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Array Prototype Last",
+                "permalink": "/docs/DSA/Problems/Array Prototype Last"
+              },
+              "next": {
+                "title": "Zigzag Conversion",
+                "permalink": "/docs/DSA/Problems/Zigzag Conversion"
+              }
+            },
+            {
               "unversionedId": "DSA/Problems/Sleep",
               "id": "DSA/Problems/Sleep",
               "title": "Sleep",
@@ -577,6 +680,84 @@
               "next": {
                 "title": "Execute Asynchronous Functions In Parallel",
                 "permalink": "/docs/DSA/Problems/Execute Asynchronous Functions In Parallel"
+              }
+            },
+            {
+              "unversionedId": "DSA/Problems/Two Sum II",
+              "id": "DSA/Problems/Two Sum II",
+              "title": "Two Sum II",
+              "description": "Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number. Let these two numbers be numbers[index1] and numbers[index2] where 1 <= index1 < index2 < numbers.length.",
+              "source": "@site/docs/DSA/Problems/Two Sum II.md",
+              "sourceDirName": "DSA/Problems",
+              "slug": "/DSA/Problems/Two Sum II",
+              "permalink": "/docs/DSA/Problems/Two Sum II",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 24,
+              "frontMatter": {
+                "sidebar_position": 24
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Valid Palindrome",
+                "permalink": "/docs/DSA/Problems/Valid Palindrome"
+              },
+              "next": {
+                "title": "Container with most water",
+                "permalink": "/docs/DSA/Problems/Container with most water"
+              }
+            },
+            {
+              "unversionedId": "DSA/Problems/Valid Palindrome",
+              "id": "DSA/Problems/Valid Palindrome",
+              "title": "Valid Palindrome",
+              "description": "A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.",
+              "source": "@site/docs/DSA/Problems/Valid Palindrome.md",
+              "sourceDirName": "DSA/Problems",
+              "slug": "/DSA/Problems/Valid Palindrome",
+              "permalink": "/docs/DSA/Problems/Valid Palindrome",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 23,
+              "frontMatter": {
+                "sidebar_position": 23
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Merge Sorted Array",
+                "permalink": "/docs/DSA/Problems/Merge Sorted Array"
+              },
+              "next": {
+                "title": "Two Sum II",
+                "permalink": "/docs/DSA/Problems/Two Sum II"
+              }
+            },
+            {
+              "unversionedId": "DSA/Problems/Zigzag Conversion",
+              "id": "DSA/Problems/Zigzag Conversion",
+              "title": "Zigzag Conversion",
+              "description": "The string \"PAYPALISHIRING\" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)",
+              "source": "@site/docs/DSA/Problems/Zigzag Conversion.md",
+              "sourceDirName": "DSA/Problems",
+              "slug": "/DSA/Problems/Zigzag Conversion",
+              "permalink": "/docs/DSA/Problems/Zigzag Conversion",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 21,
+              "frontMatter": {
+                "sidebar_position": 21
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Reverse words in a string",
+                "permalink": "/docs/DSA/Problems/Reverse words in a string"
+              },
+              "next": {
+                "title": "Merge Sorted Array",
+                "permalink": "/docs/DSA/Problems/Merge Sorted Array"
               }
             },
             {
@@ -658,7 +839,7 @@
               "unversionedId": "nodejs/concepts",
               "id": "nodejs/concepts",
               "title": "concepts",
-              "description": "",
+              "description": "- FFI (Foreign Function Interface)",
               "source": "@site/docs/nodejs/concepts.md",
               "sourceDirName": "nodejs",
               "slug": "/nodejs/concepts",
@@ -864,6 +1045,34 @@
                       {
                         "type": "doc",
                         "id": "DSA/Problems/Array Prototype Last"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "DSA/Problems/Reverse words in a string"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "DSA/Problems/Zigzag Conversion"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "DSA/Problems/Merge Sorted Array"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "DSA/Problems/Valid Palindrome"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "DSA/Problems/Two Sum II"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "DSA/Problems/Container with most water"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "DSA/Problems/Minimum size subarray sum"
                       }
                     ],
                     "link": {
