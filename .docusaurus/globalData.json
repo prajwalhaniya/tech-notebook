@@ -96,6 +96,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "DSA/Problems/Longest substring without repeating characters",
+              "path": "/docs/DSA/Problems/Longest substring without repeating characters",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "DSA/Problems/Memoize",
               "path": "/docs/DSA/Problems/Memoize",
               "sidebar": "tutorialSidebar"
@@ -148,6 +153,11 @@
             {
               "id": "DSA/Problems/Valid Palindrome",
               "path": "/docs/DSA/Problems/Valid Palindrome",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Problems/Valid Sudoku",
+              "path": "/docs/DSA/Problems/Valid Sudoku",
               "sidebar": "tutorialSidebar"
             },
             {

@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/Problems/Valid Sudoku",
+  "id": "DSA/Problems/Valid Sudoku",
+  "title": "Valid Sudoku",
+  "description": "Determine if a 9 x 9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules:",
+  "source": "@site/docs/DSA/Problems/Valid Sudoku.md",
+  "sourceDirName": "DSA/Problems",
+  "slug": "/DSA/Problems/Valid Sudoku",
+  "permalink": "/docs/DSA/Problems/Valid Sudoku",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 28,
+  "frontMatter": {
+    "sidebar_position": 28
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Longest substring without repeating characters",
+    "permalink": "/docs/DSA/Problems/Longest substring without repeating characters"
+  },
+  "next": {
+    "title": "Minimum size subarray sum",
+    "permalink": "/docs/DSA/Problems/Minimum size subarray sum"
+  }
+}

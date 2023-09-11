@@ -59,7 +59,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '8e3'),
+    component: ComponentCreator('/docs', 'f8f'),
     routes: [
       {
         path: '/docs/category/database',
@@ -212,6 +212,12 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
+        path: '/docs/DSA/Problems/Longest substring without repeating characters',
+        component: ComponentCreator('/docs/DSA/Problems/Longest substring without repeating characters', '396'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
         path: '/docs/DSA/Problems/Memoize',
         component: ComponentCreator('/docs/DSA/Problems/Memoize', 'e98'),
         exact: true,
@@ -274,6 +280,12 @@ export default [
       {
         path: '/docs/DSA/Problems/Valid Palindrome',
         component: ComponentCreator('/docs/DSA/Problems/Valid Palindrome', 'd54'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/Problems/Valid Sudoku',
+        component: ComponentCreator('/docs/DSA/Problems/Valid Sudoku', '0e5'),
         exact: true,
         sidebar: "tutorialSidebar"
       },

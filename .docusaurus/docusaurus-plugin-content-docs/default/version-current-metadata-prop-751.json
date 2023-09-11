@@ -215,6 +215,18 @@
               },
               {
                 "type": "link",
+                "label": "Longest substring without repeating characters",
+                "href": "/docs/DSA/Problems/Longest substring without repeating characters",
+                "docId": "DSA/Problems/Longest substring without repeating characters"
+              },
+              {
+                "type": "link",
+                "label": "Valid Sudoku",
+                "href": "/docs/DSA/Problems/Valid Sudoku",
+                "docId": "DSA/Problems/Valid Sudoku"
+              },
+              {
+                "type": "link",
                 "label": "Minimum size subarray sum",
                 "href": "/docs/DSA/Problems/Minimum size subarray sum",
                 "docId": "DSA/Problems/Minimum size subarray sum"
@@ -396,6 +408,12 @@
       "description": "Given two arrays arr1 and arr2, return a new array joinedArray. All the objects in each of the two inputs arrays will contain an id field that has an integer value. joinedArray is an array formed by merging arr1 and arr2 based on their id key. The length of joinedArray should be the length of unique values of id. The returned array should be sorted in ascending order based on the id key.",
       "sidebar": "tutorialSidebar"
     },
+    "DSA/Problems/Longest substring without repeating characters": {
+      "id": "DSA/Problems/Longest substring without repeating characters",
+      "title": "Longest substring without repeating characters",
+      "description": "Given a string s, find the length of the longest substring without repeating characters.",
+      "sidebar": "tutorialSidebar"
+    },
     "DSA/Problems/Memoize": {
       "id": "DSA/Problems/Memoize",
       "title": "Memoize",
@@ -460,6 +478,12 @@
       "id": "DSA/Problems/Valid Palindrome",
       "title": "Valid Palindrome",
       "description": "A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/Problems/Valid Sudoku": {
+      "id": "DSA/Problems/Valid Sudoku",
+      "title": "Valid Sudoku",
+      "description": "Determine if a 9 x 9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules:",
       "sidebar": "tutorialSidebar"
     },
     "DSA/Problems/Zigzag Conversion": {

@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/Problems/Longest substring without repeating characters",
+  "id": "DSA/Problems/Longest substring without repeating characters",
+  "title": "Longest substring without repeating characters",
+  "description": "Given a string s, find the length of the longest substring without repeating characters.",
+  "source": "@site/docs/DSA/Problems/Longest substring without repeating characters.md",
+  "sourceDirName": "DSA/Problems",
+  "slug": "/DSA/Problems/Longest substring without repeating characters",
+  "permalink": "/docs/DSA/Problems/Longest substring without repeating characters",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 27,
+  "frontMatter": {
+    "sidebar_position": 27
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Container with most water",
+    "permalink": "/docs/DSA/Problems/Container with most water"
+  },
+  "next": {
+    "title": "Valid Sudoku",
+    "permalink": "/docs/DSA/Problems/Valid Sudoku"
+  }
+}
