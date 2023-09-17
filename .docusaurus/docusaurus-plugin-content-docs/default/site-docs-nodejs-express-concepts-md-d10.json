@@ -1,0 +1,23 @@
+{
+  "unversionedId": "nodejs/Express/concepts",
+  "id": "nodejs/Express/concepts",
+  "title": "concepts",
+  "description": "- FFI (Foreign Function Interface)",
+  "source": "@site/docs/nodejs/Express/concepts.md",
+  "sourceDirName": "nodejs/Express",
+  "slug": "/nodejs/Express/concepts",
+  "permalink": "/docs/nodejs/Express/concepts",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Disecting Express",
+    "permalink": "/docs/category/disecting-express"
+  },
+  "next": {
+    "title": "concepts",
+    "permalink": "/docs/nodejs/concepts"
+  }
+}

@@ -265,6 +265,21 @@
         "collapsed": true,
         "items": [
           {
+            "type": "category",
+            "label": "Dissecting Express",
+            "collapsible": true,
+            "collapsed": true,
+            "items": [
+              {
+                "type": "link",
+                "label": "Application",
+                "href": "/docs/nodejs/Express/Application",
+                "docId": "nodejs/Express/Application"
+              }
+            ],
+            "href": "/docs/category/dissecting-express"
+          },
+          {
             "type": "link",
             "label": "concepts",
             "href": "/docs/nodejs/concepts",
@@ -514,6 +529,12 @@
       "id": "nodejs/concepts",
       "title": "concepts",
       "description": "- FFI (Foreign Function Interface)",
+      "sidebar": "tutorialSidebar"
+    },
+    "nodejs/Express/Application": {
+      "id": "nodejs/Express/Application",
+      "title": "Application",
+      "description": "This is an explanation of each code in an express/lib/application.js. This files seems as the starting point of creating an express application. So, let's understand how this actually works.",
       "sidebar": "tutorialSidebar"
     },
     "React/Components": {

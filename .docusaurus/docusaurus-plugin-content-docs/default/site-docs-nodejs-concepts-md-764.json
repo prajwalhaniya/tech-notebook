@@ -13,8 +13,8 @@
   "frontMatter": {},
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "nodejs",
-    "permalink": "/docs/category/nodejs"
+    "title": "Application",
+    "permalink": "/docs/nodejs/Express/Application"
   },
   "next": {
     "title": "Database",

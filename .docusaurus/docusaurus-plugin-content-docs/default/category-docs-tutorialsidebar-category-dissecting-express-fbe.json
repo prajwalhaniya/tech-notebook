@@ -1,0 +1,16 @@
+{
+  "title": "Dissecting Express",
+  "description": "This is a complete explanation how express framework works",
+  "slug": "/category/dissecting-express",
+  "permalink": "/docs/category/dissecting-express",
+  "navigation": {
+    "previous": {
+      "title": "nodejs",
+      "permalink": "/docs/category/nodejs"
+    },
+    "next": {
+      "title": "Application",
+      "permalink": "/docs/nodejs/Express/Application"
+    }
+  }
+}

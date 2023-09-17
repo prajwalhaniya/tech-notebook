@@ -1,0 +1,19 @@
+/node_modules
+/.vscode
+package-lock.json
+yarn.lock
+yarn-error.log
+.env
+/cypress
+cypress.config.js
+Dockerfile
+Dockerfile.dev
+.DS_Store
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets

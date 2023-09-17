@@ -59,7 +59,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', 'f8f'),
+    component: ComponentCreator('/docs', 'cc5'),
     routes: [
       {
         path: '/docs/category/database',
@@ -70,6 +70,12 @@ export default [
       {
         path: '/docs/category/deployment',
         component: ComponentCreator('/docs/category/deployment', '901'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/category/dissecting-express',
+        component: ComponentCreator('/docs/category/dissecting-express', 'ff9'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
@@ -316,6 +322,12 @@ export default [
       {
         path: '/docs/nodejs/concepts',
         component: ComponentCreator('/docs/nodejs/concepts', '672'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/nodejs/Express/Application',
+        component: ComponentCreator('/docs/nodejs/Express/Application', '3a2'),
         exact: true,
         sidebar: "tutorialSidebar"
       },

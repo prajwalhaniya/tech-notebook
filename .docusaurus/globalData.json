@@ -186,6 +186,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "nodejs/Express/Application",
+              "path": "/docs/nodejs/Express/Application",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "React/Components",
               "path": "/docs/React/Components",
               "sidebar": "tutorialSidebar"
@@ -223,6 +228,11 @@
             {
               "id": "/category/nodejs",
               "path": "/docs/category/nodejs",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/dissecting-express",
+              "path": "/docs/category/dissecting-express",
               "sidebar": "tutorialSidebar"
             },
             {
