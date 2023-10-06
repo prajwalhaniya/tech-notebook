@@ -10,16 +10,17 @@
   "draft": false,
   "tags": [],
   "version": "current",
+  "sidebarPosition": 26,
   "frontMatter": {
-    "sidebar_postion": 26
+    "sidebar_position": 26
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Valid Sudoku",
-    "permalink": "/docs/DSA/Problems/Valid Sudoku"
+    "title": "Container with most water",
+    "permalink": "/docs/DSA/Problems/Container with most water"
   },
   "next": {
-    "title": "React",
-    "permalink": "/docs/category/react"
+    "title": "Longest substring without repeating characters",
+    "permalink": "/docs/DSA/Problems/Longest substring without repeating characters"
   }
 }

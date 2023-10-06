@@ -86,6 +86,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "DSA/Problems/Group Anagrams",
+              "path": "/docs/DSA/Problems/Group Anagrams",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "DSA/Problems/Group By",
               "path": "/docs/DSA/Problems/Group By",
               "sidebar": "tutorialSidebar"

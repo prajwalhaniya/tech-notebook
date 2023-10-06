@@ -215,6 +215,12 @@
               },
               {
                 "type": "link",
+                "label": "Minimum size subarray sum",
+                "href": "/docs/DSA/Problems/Minimum size subarray sum",
+                "docId": "DSA/Problems/Minimum size subarray sum"
+              },
+              {
+                "type": "link",
                 "label": "Longest substring without repeating characters",
                 "href": "/docs/DSA/Problems/Longest substring without repeating characters",
                 "docId": "DSA/Problems/Longest substring without repeating characters"
@@ -227,9 +233,9 @@
               },
               {
                 "type": "link",
-                "label": "Minimum size subarray sum",
-                "href": "/docs/DSA/Problems/Minimum size subarray sum",
-                "docId": "DSA/Problems/Minimum size subarray sum"
+                "label": "Group Anagrams",
+                "href": "/docs/DSA/Problems/Group Anagrams",
+                "docId": "DSA/Problems/Group Anagrams"
               }
             ],
             "href": "/docs/category/problems"
@@ -409,6 +415,12 @@
       "id": "DSA/Problems/Function Composition",
       "title": "Function Composition",
       "description": "Given an array of functions [f1, f2, f3, ..., fn], return a new function fn that is the function composition of the array of functions.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/Problems/Group Anagrams": {
+      "id": "DSA/Problems/Group Anagrams",
+      "title": "Group Anagrams",
+      "description": "Given an array of strings strs, group the anagrams together. You can return the answer in any order.",
       "sidebar": "tutorialSidebar"
     },
     "DSA/Problems/Group By": {

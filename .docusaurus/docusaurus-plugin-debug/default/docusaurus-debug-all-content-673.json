@@ -211,8 +211,8 @@
                 "permalink": "/docs/DSA/Problems/Two Sum II"
               },
               "next": {
-                "title": "Longest substring without repeating characters",
-                "permalink": "/docs/DSA/Problems/Longest substring without repeating characters"
+                "title": "Minimum size subarray sum",
+                "permalink": "/docs/DSA/Problems/Minimum size subarray sum"
               }
             },
             {
@@ -398,6 +398,32 @@
               }
             },
             {
+              "unversionedId": "DSA/Problems/Group Anagrams",
+              "id": "DSA/Problems/Group Anagrams",
+              "title": "Group Anagrams",
+              "description": "Given an array of strings strs, group the anagrams together. You can return the answer in any order.",
+              "source": "@site/docs/DSA/Problems/Group Anagrams.md",
+              "sourceDirName": "DSA/Problems",
+              "slug": "/DSA/Problems/Group Anagrams",
+              "permalink": "/docs/DSA/Problems/Group Anagrams",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 29,
+              "frontMatter": {
+                "sidebar_position": 29
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Valid Sudoku",
+                "permalink": "/docs/DSA/Problems/Valid Sudoku"
+              },
+              "next": {
+                "title": "React",
+                "permalink": "/docs/category/react"
+              }
+            },
+            {
               "unversionedId": "DSA/Problems/Group By",
               "id": "DSA/Problems/Group By",
               "title": "Group By",
@@ -467,8 +493,8 @@
               },
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "Container with most water",
-                "permalink": "/docs/DSA/Problems/Container with most water"
+                "title": "Minimum size subarray sum",
+                "permalink": "/docs/DSA/Problems/Minimum size subarray sum"
               },
               "next": {
                 "title": "Valid Sudoku",
@@ -539,17 +565,18 @@
               "draft": false,
               "tags": [],
               "version": "current",
+              "sidebarPosition": 26,
               "frontMatter": {
-                "sidebar_postion": 26
+                "sidebar_position": 26
               },
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "Valid Sudoku",
-                "permalink": "/docs/DSA/Problems/Valid Sudoku"
+                "title": "Container with most water",
+                "permalink": "/docs/DSA/Problems/Container with most water"
               },
               "next": {
-                "title": "React",
-                "permalink": "/docs/category/react"
+                "title": "Longest substring without repeating characters",
+                "permalink": "/docs/DSA/Problems/Longest substring without repeating characters"
               }
             },
             {
@@ -782,8 +809,8 @@
                 "permalink": "/docs/DSA/Problems/Longest substring without repeating characters"
               },
               "next": {
-                "title": "Minimum size subarray sum",
-                "permalink": "/docs/DSA/Problems/Minimum size subarray sum"
+                "title": "Group Anagrams",
+                "permalink": "/docs/DSA/Problems/Group Anagrams"
               }
             },
             {
@@ -1150,6 +1177,10 @@
                       },
                       {
                         "type": "doc",
+                        "id": "DSA/Problems/Minimum size subarray sum"
+                      },
+                      {
+                        "type": "doc",
                         "id": "DSA/Problems/Longest substring without repeating characters"
                       },
                       {
@@ -1158,7 +1189,7 @@
                       },
                       {
                         "type": "doc",
-                        "id": "DSA/Problems/Minimum size subarray sum"
+                        "id": "DSA/Problems/Group Anagrams"
                       }
                     ],
                     "link": {

@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/Problems/Group Anagrams",
+  "id": "DSA/Problems/Group Anagrams",
+  "title": "Group Anagrams",
+  "description": "Given an array of strings strs, group the anagrams together. You can return the answer in any order.",
+  "source": "@site/docs/DSA/Problems/Group Anagrams.md",
+  "sourceDirName": "DSA/Problems",
+  "slug": "/DSA/Problems/Group Anagrams",
+  "permalink": "/docs/DSA/Problems/Group Anagrams",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 29,
+  "frontMatter": {
+    "sidebar_position": 29
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Valid Sudoku",
+    "permalink": "/docs/DSA/Problems/Valid Sudoku"
+  },
+  "next": {
+    "title": "React",
+    "permalink": "/docs/category/react"
+  }
+}

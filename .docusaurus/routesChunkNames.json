@@ -77,7 +77,7 @@
     },
     "content": "content---markdown-page-393-028"
   },
-  "/docs-cc5": {
+  "/docs-23c": {
     "__comp": "__comp---theme-doc-page-1-be-9be",
     "__context": {
       "plugin": "plugin---docsd-46-576"
@@ -179,6 +179,10 @@
   "/docs/DSA/Problems/Function Composition-6b0": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-dsa-problems-function-composition-0-e-1-dec"
+  },
+  "/docs/DSA/Problems/Group Anagrams-57a": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-problems-group-anagramsf-95-d1e"
   },
   "/docs/DSA/Problems/Group By-474": {
     "__comp": "__comp---theme-doc-item-178-a40",

@@ -59,7 +59,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', 'cc5'),
+    component: ComponentCreator('/docs', '23c'),
     routes: [
       {
         path: '/docs/category/database',
@@ -202,6 +202,12 @@ export default [
       {
         path: '/docs/DSA/Problems/Function Composition',
         component: ComponentCreator('/docs/DSA/Problems/Function Composition', '6b0'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/Problems/Group Anagrams',
+        component: ComponentCreator('/docs/DSA/Problems/Group Anagrams', '57a'),
         exact: true,
         sidebar: "tutorialSidebar"
       },

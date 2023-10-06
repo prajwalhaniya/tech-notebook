@@ -16,8 +16,8 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Container with most water",
-    "permalink": "/docs/DSA/Problems/Container with most water"
+    "title": "Minimum size subarray sum",
+    "permalink": "/docs/DSA/Problems/Minimum size subarray sum"
   },
   "next": {
     "title": "Valid Sudoku",
