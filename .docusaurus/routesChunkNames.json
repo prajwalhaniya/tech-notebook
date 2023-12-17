@@ -77,7 +77,7 @@
     },
     "content": "content---markdown-page-393-028"
   },
-  "/docs-23c": {
+  "/docs-567": {
     "__comp": "__comp---theme-doc-page-1-be-9be",
     "__context": {
       "plugin": "plugin---docsd-46-576"
@@ -92,10 +92,6 @@
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-deployment-065-d63"
   },
-  "/docs/category/dissecting-express-ff9": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-dissecting-express-6-a-2-f79"
-  },
   "/docs/category/dsa-14a": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-dsaa-35-ed0"
@@ -104,17 +100,9 @@
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-javascriptdb-3-fa2"
   },
-  "/docs/category/nodejs-1ac": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-nodejs-567-e4a"
-  },
   "/docs/category/problems-3d8": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-problems-28-d-7f3"
-  },
-  "/docs/category/react-386": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-react-0-d-0-b79"
   },
   "/docs/category/search-algorithms-7ea": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
@@ -200,6 +188,10 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-dsa-problems-memoizeb-5-c-cfe"
   },
+  "/docs/DSA/Problems/Merge Intervals-648": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-problems-merge-intervalsd-8-a-47a"
+  },
   "/docs/DSA/Problems/Merge Sorted Array-c08": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-dsa-problems-merge-sorted-array-58-d-728"
@@ -227,6 +219,10 @@
   "/docs/DSA/Problems/Sleep-0f7": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-dsa-problems-sleepe-08-52f"
+  },
+  "/docs/DSA/Problems/Summary Ranges-11a": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-problems-summary-rangesc-76-f6a"
   },
   "/docs/DSA/Problems/To Be or Not To Be-e96": {
     "__comp": "__comp---theme-doc-item-178-a40",
@@ -259,22 +255,6 @@
   "/docs/JavaScript/Projects-e95": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-java-script-projects-2-ae-35e"
-  },
-  "/docs/nodejs/concepts-672": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-nodejs-concepts-764-f57"
-  },
-  "/docs/nodejs/Express/Application-3a2": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-nodejs-express-application-24-f-d6f"
-  },
-  "/docs/React/Components-0a0": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-react-components-7-ec-cf1"
-  },
-  "/docs/React/Fundamentals-3db": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-react-fundamentals-46-e-488"
   },
   "/-54a": {
     "__comp": "__comp---site-src-pages-index-jsc-4-f-f99",

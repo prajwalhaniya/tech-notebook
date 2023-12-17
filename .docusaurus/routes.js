@@ -59,7 +59,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '23c'),
+    component: ComponentCreator('/docs', '567'),
     routes: [
       {
         path: '/docs/category/database',
@@ -70,12 +70,6 @@ export default [
       {
         path: '/docs/category/deployment',
         component: ComponentCreator('/docs/category/deployment', '901'),
-        exact: true,
-        sidebar: "tutorialSidebar"
-      },
-      {
-        path: '/docs/category/dissecting-express',
-        component: ComponentCreator('/docs/category/dissecting-express', 'ff9'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
@@ -92,20 +86,8 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/category/nodejs',
-        component: ComponentCreator('/docs/category/nodejs', '1ac'),
-        exact: true,
-        sidebar: "tutorialSidebar"
-      },
-      {
         path: '/docs/category/problems',
         component: ComponentCreator('/docs/category/problems', '3d8'),
-        exact: true,
-        sidebar: "tutorialSidebar"
-      },
-      {
-        path: '/docs/category/react',
-        component: ComponentCreator('/docs/category/react', '386'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
@@ -236,6 +218,12 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
+        path: '/docs/DSA/Problems/Merge Intervals',
+        component: ComponentCreator('/docs/DSA/Problems/Merge Intervals', '648'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
         path: '/docs/DSA/Problems/Merge Sorted Array',
         component: ComponentCreator('/docs/DSA/Problems/Merge Sorted Array', 'c08'),
         exact: true,
@@ -274,6 +262,12 @@ export default [
       {
         path: '/docs/DSA/Problems/Sleep',
         component: ComponentCreator('/docs/DSA/Problems/Sleep', '0f7'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/Problems/Summary Ranges',
+        component: ComponentCreator('/docs/DSA/Problems/Summary Ranges', '11a'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
@@ -322,30 +316,6 @@ export default [
       {
         path: '/docs/JavaScript/Projects',
         component: ComponentCreator('/docs/JavaScript/Projects', 'e95'),
-        exact: true,
-        sidebar: "tutorialSidebar"
-      },
-      {
-        path: '/docs/nodejs/concepts',
-        component: ComponentCreator('/docs/nodejs/concepts', '672'),
-        exact: true,
-        sidebar: "tutorialSidebar"
-      },
-      {
-        path: '/docs/nodejs/Express/Application',
-        component: ComponentCreator('/docs/nodejs/Express/Application', '3a2'),
-        exact: true,
-        sidebar: "tutorialSidebar"
-      },
-      {
-        path: '/docs/React/Components',
-        component: ComponentCreator('/docs/React/Components', '0a0'),
-        exact: true,
-        sidebar: "tutorialSidebar"
-      },
-      {
-        path: '/docs/React/Fundamentals',
-        component: ComponentCreator('/docs/React/Fundamentals', '3db'),
         exact: true,
         sidebar: "tutorialSidebar"
       }

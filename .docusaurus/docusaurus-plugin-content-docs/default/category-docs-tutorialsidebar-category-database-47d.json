@@ -5,8 +5,8 @@
   "permalink": "/docs/category/database",
   "navigation": {
     "previous": {
-      "title": "concepts",
-      "permalink": "/docs/nodejs/concepts"
+      "title": "Merge Intervals",
+      "permalink": "/docs/DSA/Problems/Merge Intervals"
     },
     "next": {
       "title": "concepts",

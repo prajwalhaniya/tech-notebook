@@ -236,63 +236,24 @@
                 "label": "Group Anagrams",
                 "href": "/docs/DSA/Problems/Group Anagrams",
                 "docId": "DSA/Problems/Group Anagrams"
+              },
+              {
+                "type": "link",
+                "label": "Summary Ranges",
+                "href": "/docs/DSA/Problems/Summary Ranges",
+                "docId": "DSA/Problems/Summary Ranges"
+              },
+              {
+                "type": "link",
+                "label": "Merge Intervals",
+                "href": "/docs/DSA/Problems/Merge Intervals",
+                "docId": "DSA/Problems/Merge Intervals"
               }
             ],
             "href": "/docs/category/problems"
           }
         ],
         "href": "/docs/category/dsa"
-      },
-      {
-        "type": "category",
-        "label": "React",
-        "collapsible": true,
-        "collapsed": true,
-        "items": [
-          {
-            "type": "link",
-            "label": "Fundamentals",
-            "href": "/docs/React/Fundamentals",
-            "docId": "React/Fundamentals"
-          },
-          {
-            "type": "link",
-            "label": "Components",
-            "href": "/docs/React/Components",
-            "docId": "React/Components"
-          }
-        ],
-        "href": "/docs/category/react"
-      },
-      {
-        "type": "category",
-        "label": "nodejs",
-        "collapsible": true,
-        "collapsed": true,
-        "items": [
-          {
-            "type": "category",
-            "label": "Dissecting Express",
-            "collapsible": true,
-            "collapsed": true,
-            "items": [
-              {
-                "type": "link",
-                "label": "Application",
-                "href": "/docs/nodejs/Express/Application",
-                "docId": "nodejs/Express/Application"
-              }
-            ],
-            "href": "/docs/category/dissecting-express"
-          },
-          {
-            "type": "link",
-            "label": "concepts",
-            "href": "/docs/nodejs/concepts",
-            "docId": "nodejs/concepts"
-          }
-        ],
-        "href": "/docs/category/nodejs"
       },
       {
         "type": "category",
@@ -447,6 +408,12 @@
       "description": "Given a function fn, return a memoized version of that function.",
       "sidebar": "tutorialSidebar"
     },
+    "DSA/Problems/Merge Intervals": {
+      "id": "DSA/Problems/Merge Intervals",
+      "title": "Merge Intervals",
+      "description": "Given an array of intervals where intervals[i] = [starti, endi], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.",
+      "sidebar": "tutorialSidebar"
+    },
     "DSA/Problems/Merge Sorted Array": {
       "id": "DSA/Problems/Merge Sorted Array",
       "title": "Merge Sorted Array",
@@ -487,6 +454,12 @@
       "id": "DSA/Problems/Sleep",
       "title": "Sleep",
       "description": "Given a positive integer millis, write an asynchronous function that sleeps for millis milliseconds. It can resolve any value.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/Problems/Summary Ranges": {
+      "id": "DSA/Problems/Summary Ranges",
+      "title": "Summary Ranges",
+      "description": "You are given a sorted unique integer array nums.",
       "sidebar": "tutorialSidebar"
     },
     "DSA/Problems/To Be or Not To Be": {
@@ -535,30 +508,6 @@
       "id": "JavaScript/Projects",
       "title": "Projects",
       "description": "The following projects must be done using the pure JavaScript without the help of any external libraries",
-      "sidebar": "tutorialSidebar"
-    },
-    "nodejs/concepts": {
-      "id": "nodejs/concepts",
-      "title": "concepts",
-      "description": "- FFI (Foreign Function Interface)",
-      "sidebar": "tutorialSidebar"
-    },
-    "nodejs/Express/Application": {
-      "id": "nodejs/Express/Application",
-      "title": "Application",
-      "description": "This is an explanation of each code in an express/lib/application.js. This files seems as the starting point of creating an express application. So, let's understand how this actually works.",
-      "sidebar": "tutorialSidebar"
-    },
-    "React/Components": {
-      "id": "React/Components",
-      "title": "Components",
-      "description": "Every web application today has a lot of features. And those are going to be something fundamental for any application. For example Navigation bar, Routes, Login functionality, etc. So, here let's document some of the must know components as a developer. Because, this can save you a lot of time while developing it.",
-      "sidebar": "tutorialSidebar"
-    },
-    "React/Fundamentals": {
-      "id": "React/Fundamentals",
-      "title": "Fundamentals",
-      "description": "Components",
       "sidebar": "tutorialSidebar"
     }
   }

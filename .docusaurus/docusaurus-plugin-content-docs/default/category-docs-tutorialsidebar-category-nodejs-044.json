@@ -5,12 +5,12 @@
   "permalink": "/docs/category/nodejs",
   "navigation": {
     "previous": {
-      "title": "Components",
-      "permalink": "/docs/React/Components"
+      "title": "Merge Intervals",
+      "permalink": "/docs/DSA/Problems/Merge Intervals"
     },
     "next": {
-      "title": "Dissecting Express",
-      "permalink": "/docs/category/dissecting-express"
+      "title": "concepts",
+      "permalink": "/docs/nodejs/concepts"
     }
   }
 }

@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/Problems/Summary Ranges",
+  "id": "DSA/Problems/Summary Ranges",
+  "title": "Summary Ranges",
+  "description": "You are given a sorted unique integer array nums.",
+  "source": "@site/docs/DSA/Problems/Summary Ranges.md",
+  "sourceDirName": "DSA/Problems",
+  "slug": "/DSA/Problems/Summary Ranges",
+  "permalink": "/docs/DSA/Problems/Summary Ranges",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 30,
+  "frontMatter": {
+    "sidebar_position": 30
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Group Anagrams",
+    "permalink": "/docs/DSA/Problems/Group Anagrams"
+  },
+  "next": {
+    "title": "Merge Intervals",
+    "permalink": "/docs/DSA/Problems/Merge Intervals"
+  }
+}

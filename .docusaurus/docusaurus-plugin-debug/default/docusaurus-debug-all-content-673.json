@@ -419,8 +419,8 @@
                 "permalink": "/docs/DSA/Problems/Valid Sudoku"
               },
               "next": {
-                "title": "React",
-                "permalink": "/docs/category/react"
+                "title": "Summary Ranges",
+                "permalink": "/docs/DSA/Problems/Summary Ranges"
               }
             },
             {
@@ -525,6 +525,32 @@
               "next": {
                 "title": "Recursive Flatten",
                 "permalink": "/docs/DSA/Problems/Recursive Flatten"
+              }
+            },
+            {
+              "unversionedId": "DSA/Problems/Merge Intervals",
+              "id": "DSA/Problems/Merge Intervals",
+              "title": "Merge Intervals",
+              "description": "Given an array of intervals where intervals[i] = [starti, endi], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.",
+              "source": "@site/docs/DSA/Problems/Merge Intervals.md",
+              "sourceDirName": "DSA/Problems",
+              "slug": "/DSA/Problems/Merge Intervals",
+              "permalink": "/docs/DSA/Problems/Merge Intervals",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 31,
+              "frontMatter": {
+                "sidebar_position": 31
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Summary Ranges",
+                "permalink": "/docs/DSA/Problems/Summary Ranges"
+              },
+              "next": {
+                "title": "Database",
+                "permalink": "/docs/category/database"
               }
             },
             {
@@ -707,6 +733,32 @@
               "next": {
                 "title": "Cache with Time",
                 "permalink": "/docs/DSA/Problems/Cache with Time"
+              }
+            },
+            {
+              "unversionedId": "DSA/Problems/Summary Ranges",
+              "id": "DSA/Problems/Summary Ranges",
+              "title": "Summary Ranges",
+              "description": "You are given a sorted unique integer array nums.",
+              "source": "@site/docs/DSA/Problems/Summary Ranges.md",
+              "sourceDirName": "DSA/Problems",
+              "slug": "/DSA/Problems/Summary Ranges",
+              "permalink": "/docs/DSA/Problems/Summary Ranges",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 30,
+              "frontMatter": {
+                "sidebar_position": 30
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Group Anagrams",
+                "permalink": "/docs/DSA/Problems/Group Anagrams"
+              },
+              "next": {
+                "title": "Merge Intervals",
+                "permalink": "/docs/DSA/Problems/Merge Intervals"
               }
             },
             {
@@ -913,107 +965,6 @@
                 "title": "DSA",
                 "permalink": "/docs/category/dsa"
               }
-            },
-            {
-              "unversionedId": "nodejs/concepts",
-              "id": "nodejs/concepts",
-              "title": "concepts",
-              "description": "- FFI (Foreign Function Interface)",
-              "source": "@site/docs/nodejs/concepts.md",
-              "sourceDirName": "nodejs",
-              "slug": "/nodejs/concepts",
-              "permalink": "/docs/nodejs/concepts",
-              "draft": false,
-              "tags": [],
-              "version": "current",
-              "frontMatter": {},
-              "sidebar": "tutorialSidebar",
-              "previous": {
-                "title": "Application",
-                "permalink": "/docs/nodejs/Express/Application"
-              },
-              "next": {
-                "title": "Database",
-                "permalink": "/docs/category/database"
-              }
-            },
-            {
-              "unversionedId": "nodejs/Express/Application",
-              "id": "nodejs/Express/Application",
-              "title": "Application",
-              "description": "This is an explanation of each code in an express/lib/application.js. This files seems as the starting point of creating an express application. So, let's understand how this actually works.",
-              "source": "@site/docs/nodejs/Express/Application.md",
-              "sourceDirName": "nodejs/Express",
-              "slug": "/nodejs/Express/Application",
-              "permalink": "/docs/nodejs/Express/Application",
-              "draft": false,
-              "tags": [],
-              "version": "current",
-              "sidebarPosition": 1,
-              "frontMatter": {
-                "sidebar_position": 1
-              },
-              "sidebar": "tutorialSidebar",
-              "previous": {
-                "title": "Dissecting Express",
-                "permalink": "/docs/category/dissecting-express"
-              },
-              "next": {
-                "title": "concepts",
-                "permalink": "/docs/nodejs/concepts"
-              }
-            },
-            {
-              "unversionedId": "React/Components",
-              "id": "React/Components",
-              "title": "Components",
-              "description": "Every web application today has a lot of features. And those are going to be something fundamental for any application. For example Navigation bar, Routes, Login functionality, etc. So, here let's document some of the must know components as a developer. Because, this can save you a lot of time while developing it.",
-              "source": "@site/docs/React/Components.md",
-              "sourceDirName": "React",
-              "slug": "/React/Components",
-              "permalink": "/docs/React/Components",
-              "draft": false,
-              "tags": [],
-              "version": "current",
-              "sidebarPosition": 2,
-              "frontMatter": {
-                "sidebar_position": 2
-              },
-              "sidebar": "tutorialSidebar",
-              "previous": {
-                "title": "Fundamentals",
-                "permalink": "/docs/React/Fundamentals"
-              },
-              "next": {
-                "title": "nodejs",
-                "permalink": "/docs/category/nodejs"
-              }
-            },
-            {
-              "unversionedId": "React/Fundamentals",
-              "id": "React/Fundamentals",
-              "title": "Fundamentals",
-              "description": "Components",
-              "source": "@site/docs/React/Fundamentals.md",
-              "sourceDirName": "React",
-              "slug": "/React/Fundamentals",
-              "permalink": "/docs/React/Fundamentals",
-              "draft": false,
-              "tags": [],
-              "version": "current",
-              "sidebarPosition": 1,
-              "frontMatter": {
-                "sidebar_position": 1
-              },
-              "sidebar": "tutorialSidebar",
-              "previous": {
-                "title": "React",
-                "permalink": "/docs/category/react"
-              },
-              "next": {
-                "title": "Components",
-                "permalink": "/docs/React/Components"
-              }
             }
           ],
           "drafts": [],
@@ -1190,6 +1141,14 @@
                       {
                         "type": "doc",
                         "id": "DSA/Problems/Group Anagrams"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "DSA/Problems/Summary Ranges"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "DSA/Problems/Merge Intervals"
                       }
                     ],
                     "link": {
@@ -1205,64 +1164,6 @@
                   "description": "All the required JavaScript concepts goes here",
                   "slug": "/category/dsa",
                   "permalink": "/docs/category/dsa"
-                }
-              },
-              {
-                "type": "category",
-                "label": "React",
-                "collapsible": true,
-                "collapsed": true,
-                "items": [
-                  {
-                    "type": "doc",
-                    "id": "React/Fundamentals"
-                  },
-                  {
-                    "type": "doc",
-                    "id": "React/Components"
-                  }
-                ],
-                "link": {
-                  "type": "generated-index",
-                  "description": "All the required React concepts goes here",
-                  "slug": "/category/react",
-                  "permalink": "/docs/category/react"
-                }
-              },
-              {
-                "type": "category",
-                "label": "nodejs",
-                "collapsible": true,
-                "collapsed": true,
-                "items": [
-                  {
-                    "type": "category",
-                    "label": "Dissecting Express",
-                    "collapsible": true,
-                    "collapsed": true,
-                    "items": [
-                      {
-                        "type": "doc",
-                        "id": "nodejs/Express/Application"
-                      }
-                    ],
-                    "link": {
-                      "type": "generated-index",
-                      "description": "This is a complete explanation how express framework works",
-                      "slug": "/category/dissecting-express",
-                      "permalink": "/docs/category/dissecting-express"
-                    }
-                  },
-                  {
-                    "type": "doc",
-                    "id": "nodejs/concepts"
-                  }
-                ],
-                "link": {
-                  "type": "generated-index",
-                  "description": "All the required nodejs concepts goes here",
-                  "slug": "/category/nodejs",
-                  "permalink": "/docs/category/nodejs"
                 }
               },
               {
