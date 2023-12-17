@@ -60,6 +60,32 @@
               }
             },
             {
+              "unversionedId": "DSA/Binary Search/overview",
+              "id": "DSA/Binary Search/overview",
+              "title": "overview",
+              "description": "",
+              "source": "@site/docs/DSA/Binary Search/overview.md",
+              "sourceDirName": "DSA/Binary Search",
+              "slug": "/DSA/Binary Search/overview",
+              "permalink": "/docs/DSA/Binary Search/overview",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "sidebar_position": 1
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Binary Search",
+                "permalink": "/docs/category/binary-search"
+              },
+              "next": {
+                "title": "Database",
+                "permalink": "/docs/category/database"
+              }
+            },
+            {
               "unversionedId": "DSA/Fundamentals",
               "id": "DSA/Fundamentals",
               "title": "Fundamentals",
@@ -81,8 +107,8 @@
                 "permalink": "/docs/category/dsa"
               },
               "next": {
-                "title": "Search Algorithms",
-                "permalink": "/docs/category/search-algorithms"
+                "title": "Problems",
+                "permalink": "/docs/category/problems"
               }
             },
             {
@@ -549,8 +575,8 @@
                 "permalink": "/docs/DSA/Problems/Summary Ranges"
               },
               "next": {
-                "title": "Database",
-                "permalink": "/docs/category/database"
+                "title": "Binary Search",
+                "permalink": "/docs/category/binary-search"
               }
             },
             {
@@ -892,29 +918,6 @@
               }
             },
             {
-              "unversionedId": "DSA/Search/Binary Search",
-              "id": "DSA/Search/Binary Search",
-              "title": "Binary Search",
-              "description": "",
-              "source": "@site/docs/DSA/Search/Binary Search.md",
-              "sourceDirName": "DSA/Search",
-              "slug": "/DSA/Search/Binary Search",
-              "permalink": "/docs/DSA/Search/Binary Search",
-              "draft": false,
-              "tags": [],
-              "version": "current",
-              "frontMatter": {},
-              "sidebar": "tutorialSidebar",
-              "previous": {
-                "title": "Search Algorithms",
-                "permalink": "/docs/category/search-algorithms"
-              },
-              "next": {
-                "title": "Problems",
-                "permalink": "/docs/category/problems"
-              }
-            },
-            {
               "unversionedId": "JavaScript/Fundamentals",
               "id": "JavaScript/Fundamentals",
               "title": "Fundamentals",
@@ -1001,24 +1004,6 @@
                   {
                     "type": "doc",
                     "id": "DSA/Fundamentals"
-                  },
-                  {
-                    "type": "category",
-                    "label": "Search Algorithms",
-                    "collapsible": true,
-                    "collapsed": true,
-                    "items": [
-                      {
-                        "type": "doc",
-                        "id": "DSA/Search/Binary Search"
-                      }
-                    ],
-                    "link": {
-                      "type": "generated-index",
-                      "description": "All the required JavaScript concepts goes here",
-                      "slug": "/category/search-algorithms",
-                      "permalink": "/docs/category/search-algorithms"
-                    }
                   },
                   {
                     "type": "category",
@@ -1156,6 +1141,24 @@
                       "description": "All the required JavaScript concepts goes here",
                       "slug": "/category/problems",
                       "permalink": "/docs/category/problems"
+                    }
+                  },
+                  {
+                    "type": "category",
+                    "label": "Binary Search",
+                    "collapsible": true,
+                    "collapsed": true,
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "DSA/Binary Search/overview"
+                      }
+                    ],
+                    "link": {
+                      "type": "generated-index",
+                      "description": "All problems related to binary search goes in this section",
+                      "slug": "/category/binary-search",
+                      "permalink": "/docs/category/binary-search"
                     }
                   }
                 ],

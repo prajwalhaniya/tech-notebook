@@ -59,8 +59,14 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '567'),
+    component: ComponentCreator('/docs', '843'),
     routes: [
+      {
+        path: '/docs/category/binary-search',
+        component: ComponentCreator('/docs/category/binary-search', '721'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
       {
         path: '/docs/category/database',
         component: ComponentCreator('/docs/category/database', '03e'),
@@ -92,12 +98,6 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/category/search-algorithms',
-        component: ComponentCreator('/docs/category/search-algorithms', '7ea'),
-        exact: true,
-        sidebar: "tutorialSidebar"
-      },
-      {
         path: '/docs/Database/concepts',
         component: ComponentCreator('/docs/Database/concepts', '3ca'),
         exact: true,
@@ -106,6 +106,12 @@ export default [
       {
         path: '/docs/Deployment/concepts',
         component: ComponentCreator('/docs/Deployment/concepts', '7a1'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/Binary Search/overview',
+        component: ComponentCreator('/docs/DSA/Binary Search/overview', '706'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
@@ -298,12 +304,6 @@ export default [
       {
         path: '/docs/DSA/Problems/Zigzag Conversion',
         component: ComponentCreator('/docs/DSA/Problems/Zigzag Conversion', 'b5f'),
-        exact: true,
-        sidebar: "tutorialSidebar"
-      },
-      {
-        path: '/docs/DSA/Search/Binary Search',
-        component: ComponentCreator('/docs/DSA/Search/Binary Search', '4c8'),
         exact: true,
         sidebar: "tutorialSidebar"
       },

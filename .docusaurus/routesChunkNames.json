@@ -77,12 +77,16 @@
     },
     "content": "content---markdown-page-393-028"
   },
-  "/docs-567": {
+  "/docs-843": {
     "__comp": "__comp---theme-doc-page-1-be-9be",
     "__context": {
       "plugin": "plugin---docsd-46-576"
     },
     "versionMetadata": "versionMetadata---docs-935-398"
+  },
+  "/docs/category/binary-search-721": {
+    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-binary-search-14-f-78a"
   },
   "/docs/category/database-03e": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
@@ -104,10 +108,6 @@
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-problems-28-d-7f3"
   },
-  "/docs/category/search-algorithms-7ea": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-search-algorithms-541-916"
-  },
   "/docs/Database/concepts-3ca": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-database-conceptsd-38-46a"
@@ -115,6 +115,10 @@
   "/docs/Deployment/concepts-7a1": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-deployment-concepts-9-f-4-1b8"
+  },
+  "/docs/DSA/Binary Search/overview-706": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-binary-search-overviewe-66-ffc"
   },
   "/docs/DSA/Fundamentals-570": {
     "__comp": "__comp---theme-doc-item-178-a40",
@@ -243,10 +247,6 @@
   "/docs/DSA/Problems/Zigzag Conversion-b5f": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-dsa-problems-zigzag-conversionc-42-094"
-  },
-  "/docs/DSA/Search/Binary Search-4c8": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-search-binary-searchc-38-6c0"
   },
   "/docs/JavaScript/Fundamentals-c80": {
     "__comp": "__comp---theme-doc-item-178-a40",

@@ -1,0 +1,16 @@
+{
+  "title": "Binary Search",
+  "description": "All problems related to binary search goes in this section",
+  "slug": "/category/binary-search",
+  "permalink": "/docs/category/binary-search",
+  "navigation": {
+    "previous": {
+      "title": "Merge Intervals",
+      "permalink": "/docs/DSA/Problems/Merge Intervals"
+    },
+    "next": {
+      "title": "overview",
+      "permalink": "/docs/DSA/Binary Search/overview"
+    }
+  }
+}

@@ -21,6 +21,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "DSA/Binary Search/overview",
+              "path": "/docs/DSA/Binary Search/overview",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "DSA/Fundamentals",
               "path": "/docs/DSA/Fundamentals",
               "sidebar": "tutorialSidebar"
@@ -181,11 +186,6 @@
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "DSA/Search/Binary Search",
-              "path": "/docs/DSA/Search/Binary Search",
-              "sidebar": "tutorialSidebar"
-            },
-            {
               "id": "JavaScript/Fundamentals",
               "path": "/docs/JavaScript/Fundamentals",
               "sidebar": "tutorialSidebar"
@@ -206,13 +206,13 @@
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "/category/search-algorithms",
-              "path": "/docs/category/search-algorithms",
+              "id": "/category/problems",
+              "path": "/docs/category/problems",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "/category/problems",
-              "path": "/docs/category/problems",
+              "id": "/category/binary-search",
+              "path": "/docs/category/binary-search",
               "sidebar": "tutorialSidebar"
             },
             {

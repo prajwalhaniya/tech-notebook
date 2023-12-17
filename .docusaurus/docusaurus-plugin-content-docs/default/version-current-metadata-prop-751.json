@@ -44,21 +44,6 @@
           },
           {
             "type": "category",
-            "label": "Search Algorithms",
-            "collapsible": true,
-            "collapsed": true,
-            "items": [
-              {
-                "type": "link",
-                "label": "Binary Search",
-                "href": "/docs/DSA/Search/Binary Search",
-                "docId": "DSA/Search/Binary Search"
-              }
-            ],
-            "href": "/docs/category/search-algorithms"
-          },
-          {
-            "type": "category",
             "label": "Problems",
             "collapsible": true,
             "collapsed": true,
@@ -251,6 +236,21 @@
               }
             ],
             "href": "/docs/category/problems"
+          },
+          {
+            "type": "category",
+            "label": "Binary Search",
+            "collapsible": true,
+            "collapsed": true,
+            "items": [
+              {
+                "type": "link",
+                "label": "overview",
+                "href": "/docs/DSA/Binary Search/overview",
+                "docId": "DSA/Binary Search/overview"
+              }
+            ],
+            "href": "/docs/category/binary-search"
           }
         ],
         "href": "/docs/category/dsa"
@@ -297,6 +297,12 @@
     "Deployment/concepts": {
       "id": "Deployment/concepts",
       "title": "concepts",
+      "description": "",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/Binary Search/overview": {
+      "id": "DSA/Binary Search/overview",
+      "title": "overview",
       "description": "",
       "sidebar": "tutorialSidebar"
     },
@@ -490,12 +496,6 @@
       "id": "DSA/Problems/Zigzag Conversion",
       "title": "Zigzag Conversion",
       "description": "The string \"PAYPALISHIRING\" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)",
-      "sidebar": "tutorialSidebar"
-    },
-    "DSA/Search/Binary Search": {
-      "id": "DSA/Search/Binary Search",
-      "title": "Binary Search",
-      "description": "",
       "sidebar": "tutorialSidebar"
     },
     "JavaScript/Fundamentals": {
