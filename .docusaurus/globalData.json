@@ -26,6 +26,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "DSA/Depth First Search/overview",
+              "path": "/docs/DSA/Depth First Search/overview",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "DSA/Fundamentals",
               "path": "/docs/DSA/Fundamentals",
               "sidebar": "tutorialSidebar"
@@ -213,6 +218,11 @@
             {
               "id": "/category/binary-search",
               "path": "/docs/category/binary-search",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/depth-first-search",
+              "path": "/docs/category/depth-first-search",
               "sidebar": "tutorialSidebar"
             },
             {

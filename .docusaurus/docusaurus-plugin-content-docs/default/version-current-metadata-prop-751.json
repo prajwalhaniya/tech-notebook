@@ -251,6 +251,21 @@
               }
             ],
             "href": "/docs/category/binary-search"
+          },
+          {
+            "type": "category",
+            "label": "Depth First Search",
+            "collapsible": true,
+            "collapsed": true,
+            "items": [
+              {
+                "type": "link",
+                "label": "overview",
+                "href": "/docs/DSA/Depth First Search/overview",
+                "docId": "DSA/Depth First Search/overview"
+              }
+            ],
+            "href": "/docs/category/depth-first-search"
           }
         ],
         "href": "/docs/category/dsa"
@@ -302,6 +317,12 @@
     },
     "DSA/Binary Search/overview": {
       "id": "DSA/Binary Search/overview",
+      "title": "overview",
+      "description": "",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/Depth First Search/overview": {
+      "id": "DSA/Depth First Search/overview",
       "title": "overview",
       "description": "",
       "sidebar": "tutorialSidebar"

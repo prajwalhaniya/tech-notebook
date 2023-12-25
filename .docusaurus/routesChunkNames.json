@@ -77,7 +77,7 @@
     },
     "content": "content---markdown-page-393-028"
   },
-  "/docs-843": {
+  "/docs-59c": {
     "__comp": "__comp---theme-doc-page-1-be-9be",
     "__context": {
       "plugin": "plugin---docsd-46-576"
@@ -95,6 +95,10 @@
   "/docs/category/deployment-901": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-deployment-065-d63"
+  },
+  "/docs/category/depth-first-search-942": {
+    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-depth-first-search-233-933"
   },
   "/docs/category/dsa-14a": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
@@ -119,6 +123,10 @@
   "/docs/DSA/Binary Search/overview-706": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-dsa-binary-search-overviewe-66-ffc"
+  },
+  "/docs/DSA/Depth First Search/overview-65e": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-depth-first-search-overview-9-a-5-d0e"
   },
   "/docs/DSA/Fundamentals-570": {
     "__comp": "__comp---theme-doc-item-178-a40",

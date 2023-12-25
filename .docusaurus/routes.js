@@ -59,7 +59,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '843'),
+    component: ComponentCreator('/docs', '59c'),
     routes: [
       {
         path: '/docs/category/binary-search',
@@ -76,6 +76,12 @@ export default [
       {
         path: '/docs/category/deployment',
         component: ComponentCreator('/docs/category/deployment', '901'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/category/depth-first-search',
+        component: ComponentCreator('/docs/category/depth-first-search', '942'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
@@ -112,6 +118,12 @@ export default [
       {
         path: '/docs/DSA/Binary Search/overview',
         component: ComponentCreator('/docs/DSA/Binary Search/overview', '706'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/Depth First Search/overview',
+        component: ComponentCreator('/docs/DSA/Depth First Search/overview', '65e'),
         exact: true,
         sidebar: "tutorialSidebar"
       },

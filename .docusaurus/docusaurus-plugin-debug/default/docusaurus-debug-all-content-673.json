@@ -81,6 +81,32 @@
                 "permalink": "/docs/category/binary-search"
               },
               "next": {
+                "title": "Depth First Search",
+                "permalink": "/docs/category/depth-first-search"
+              }
+            },
+            {
+              "unversionedId": "DSA/Depth First Search/overview",
+              "id": "DSA/Depth First Search/overview",
+              "title": "overview",
+              "description": "",
+              "source": "@site/docs/DSA/Depth First Search/overview.md",
+              "sourceDirName": "DSA/Depth First Search",
+              "slug": "/DSA/Depth First Search/overview",
+              "permalink": "/docs/DSA/Depth First Search/overview",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "sidebar_position": 1
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Depth First Search",
+                "permalink": "/docs/category/depth-first-search"
+              },
+              "next": {
                 "title": "Database",
                 "permalink": "/docs/category/database"
               }
@@ -1159,6 +1185,24 @@
                       "description": "All problems related to binary search goes in this section",
                       "slug": "/category/binary-search",
                       "permalink": "/docs/category/binary-search"
+                    }
+                  },
+                  {
+                    "type": "category",
+                    "label": "Depth First Search",
+                    "collapsible": true,
+                    "collapsed": true,
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "DSA/Depth First Search/overview"
+                      }
+                    ],
+                    "link": {
+                      "type": "generated-index",
+                      "description": "All problems related to binary search goes in this section",
+                      "slug": "/category/depth-first-search",
+                      "permalink": "/docs/category/depth-first-search"
                     }
                   }
                 ],
