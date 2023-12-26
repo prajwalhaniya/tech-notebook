@@ -9,7 +9,7 @@ DSA matters for the following reasons:
 - It shows our problem solving capability
 - Developing solutions for hard problems (Eg: Code optimisation, Player Ranking, etc) requires Computer Science fundamentals
 
-I have taken the below exerpt from zerotosoftwarearchitect.com
+I have taken the below excerpt from zerotosoftwarearchitect.com
 
 Programmers at the big tech companies, who continually come up with innovative products, are expected to write software from the bare bones, with or without frameworks. LinkedIn developed Kafka, the most used message queue in the industry, to deal with the trillions of messages that were being sent across the users on the platform. 
 
