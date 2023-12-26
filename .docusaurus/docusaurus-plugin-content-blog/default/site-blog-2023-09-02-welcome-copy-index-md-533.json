@@ -1,6 +1,6 @@
 {
   "permalink": "/blog/welcome",
-  "source": "@site/blog/2023-09-02-welcome/index.md",
+  "source": "@site/blog/2023-09-02-welcome copy/index.md",
   "title": "Welcome",
   "description": "Hello,",
   "date": "2023-09-02T00:00:00.000Z",
@@ -24,7 +24,7 @@
     "tags": []
   },
   "prevItem": {
-    "title": "Why DSA Matter?",
-    "permalink": "/blog/why dsa matter"
+    "title": "Welcome",
+    "permalink": "/blog/welcome"
   }
 }

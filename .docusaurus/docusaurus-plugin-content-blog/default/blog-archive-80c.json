@@ -1,6 +1,40 @@
 {
   "blogPosts": [
     {
+      "id": "why dsa matter",
+      "metadata": {
+        "permalink": "/blog/why dsa matter",
+        "source": "@site/blog/2023-12-26-why-dsa-matter/index.md",
+        "title": "Why DSA Matter?",
+        "description": "DSA matters for the following reasons:",
+        "date": "2023-12-26T00:00:00.000Z",
+        "formattedDate": "December 26, 2023",
+        "tags": [],
+        "readingTime": 1.49,
+        "hasTruncateMarker": false,
+        "authors": [
+          {
+            "name": "Prajwal Haniya",
+            "title": "Software Engineer",
+            "url": "https://github.com/prajwalhaniya",
+            "imageURL": "https://avatars.githubusercontent.com/u/82883854?s=400&u=a067b7aff0fb648e1f9a18424cfe2de40e0fb52c&v=4",
+            "key": "prajwal"
+          }
+        ],
+        "frontMatter": {
+          "slug": "why dsa matter",
+          "title": "Why DSA Matter?",
+          "authors": "prajwal",
+          "tags": []
+        },
+        "nextItem": {
+          "title": "Welcome",
+          "permalink": "/blog/welcome"
+        }
+      },
+      "content": "DSA matters for the following reasons:\n- It shows our problem solving capability\n- Developing solutions for hard problems (Eg: Code optimisation, Player Ranking, etc) requires Computer Science fundamentals\n\nI have taken the below exerpt from zerotosoftwarearchitect.com\n\nProgrammers at the big tech companies, who continually come up with innovative products, are expected to write software from the bare bones, with or without frameworks. LinkedIn developed Kafka, the most used message queue in the industry, to deal with the trillions of messages that were being sent across the users on the platform. \n\nQuoting from the [article](https://engineering.linkedin.com/blog/2019/apache-kafka-trillion-messages) \"The total number of messages handled by LinkedIn's Kafka deployments recently surpassed 7 trillion per day.\" \n\nThe scale at which data was generated on the platform, the existing solutions failed to address the needs. Thus they had to develop the stream processing platform, which they later open-sourced. Besides message processing, Kafka is also used to facilitate activity tracking, collecting application metrics and logs, and more at LinkedIn. \n\nSimilarly, all the big tech write innovative products and features from the bare bones to address their unique requirements. Facebook & Google came up with the concept of single-page applications to deal with the spaghetti JavaScript code. They open-sourced React and Angular, respectively. Kubernetes came out of Google. Facebook developed Cassandra for inbox search. These are a few examples of the software written in-house at the big tech; you can visit the GitHub repos of the respective companies to find more tools and open source projects they actively work on. \n\nSo, to develop solutions like these, a programmer is expected to have knowledge of computer science fundamentals, primarily data structures and algorithms. If you look at the job interview requirements of these companies, they prefer to focus on the fundamentals as opposed to a specific technology"
+    },
+    {
       "id": "welcome",
       "metadata": {
         "permalink": "/blog/welcome",
@@ -26,6 +60,10 @@
           "title": "Welcome",
           "authors": "prajwal",
           "tags": []
+        },
+        "prevItem": {
+          "title": "Why DSA Matter?",
+          "permalink": "/blog/why dsa matter"
         }
       },
       "content": "Hello,\n\nI build softwares. In this blog, I am determined to document all the necessary requirements for a software engineer to build & deploy softwares. \n\nWith tons of information available it's very difficult to understand how to build and deploy applications. So here I wish to give a solution to an individual, where he/she can learn from building an application to deploying it to the cloud. I use JavaScript.\n\nIn this guides I try not to keep links/ highlight links so that readers don't get distracted from what they are reading. Usually every articles that I read online, people try to link a reference to another article, this can be a source of distraction."

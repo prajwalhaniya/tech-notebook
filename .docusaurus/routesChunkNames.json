@@ -42,13 +42,16 @@
       "plugin": "plugin---docusaurus-debug-01-a-fc3"
     }
   },
-  "/blog-2d9": {
+  "/blog-98e": {
     "__comp": "__comp---theme-blog-list-pagea-6-a-7ba",
     "__context": {
       "plugin": "plugin---blog-1-dc-24d"
     },
     "sidebar": "sidebar---blog-814-8ac",
     "items": [
+      {
+        "content": "content---blogf-68-144"
+      },
       {
         "content": "content---blogae-0-e59"
       }
@@ -69,6 +72,14 @@
     },
     "sidebar": "sidebar---blog-814-8ac",
     "content": "content---blog-welcome-442-3a7"
+  },
+  "/blog/why dsa matter-ddd": {
+    "__comp": "__comp---theme-blog-post-pageccc-cab",
+    "__context": {
+      "plugin": "plugin---blog-1-dc-24d"
+    },
+    "sidebar": "sidebar---blog-814-8ac",
+    "content": "content---blog-why-dsa-matters-139-dab"
   },
   "/markdown-page-389": {
     "__comp": "__comp---theme-mdx-page-1-f-3-b90",

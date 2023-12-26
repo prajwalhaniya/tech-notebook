@@ -39,7 +39,7 @@ export default [
   },
   {
     path: '/blog',
-    component: ComponentCreator('/blog', '2d9'),
+    component: ComponentCreator('/blog', '98e'),
     exact: true
   },
   {
@@ -50,6 +50,11 @@ export default [
   {
     path: '/blog/welcome',
     component: ComponentCreator('/blog/welcome', '1bb'),
+    exact: true
+  },
+  {
+    path: '/blog/why dsa matter',
+    component: ComponentCreator('/blog/why dsa matter', 'ddd'),
     exact: true
   },
   {

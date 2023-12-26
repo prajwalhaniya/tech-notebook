@@ -1,10 +1,10 @@
 {
-  "permalink": "/blog/welcome",
-  "source": "@site/blog/2023-09-02-welcome/index.md",
-  "title": "Welcome",
+  "permalink": "/blog/why-dsa-matters?",
+  "source": "@site/blog/2023-12-26-why-dsa-matters/index.md",
+  "title": "Why DSA Matters?",
   "description": "Hello,",
-  "date": "2023-09-02T00:00:00.000Z",
-  "formattedDate": "September 2, 2023",
+  "date": "2023-12-26T00:00:00.000Z",
+  "formattedDate": "December 26, 2023",
   "tags": [],
   "readingTime": 0.57,
   "hasTruncateMarker": false,
@@ -18,13 +18,13 @@
     }
   ],
   "frontMatter": {
-    "slug": "welcome",
-    "title": "Welcome",
+    "slug": "why-dsa-matters?",
+    "title": "Why DSA Matters?",
     "authors": "prajwal",
     "tags": []
   },
-  "prevItem": {
-    "title": "Why DSA Matter?",
-    "permalink": "/blog/why dsa matter"
+  "nextItem": {
+    "title": "Welcome",
+    "permalink": "/blog/welcome"
   }
 }
