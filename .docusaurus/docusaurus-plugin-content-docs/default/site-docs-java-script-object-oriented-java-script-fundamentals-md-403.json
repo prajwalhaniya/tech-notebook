@@ -1,0 +1,26 @@
+{
+  "unversionedId": "JavaScript/Object-oriented-JavaScript/Fundamentals",
+  "id": "JavaScript/Object-oriented-JavaScript/Fundamentals",
+  "title": "Fundamentals",
+  "description": "This defines a new class called Animation and assigns two methods to the class’s prototype",
+  "source": "@site/docs/JavaScript/Object-oriented-JavaScript/Fundamentals.md",
+  "sourceDirName": "JavaScript/Object-oriented-JavaScript",
+  "slug": "/JavaScript/Object-oriented-JavaScript/Fundamentals",
+  "permalink": "/docs/JavaScript/Object-oriented-JavaScript/Fundamentals",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Object Oriented JavaScript",
+    "permalink": "/docs/category/object-oriented-javascript"
+  },
+  "next": {
+    "title": "Projects",
+    "permalink": "/docs/JavaScript/Projects"
+  }
+}

@@ -16,8 +16,8 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Fundamentals",
-    "permalink": "/docs/JavaScript/Fundamentals"
+    "title": "Interfaces",
+    "permalink": "/docs/JavaScript/Object-oriented-JavaScript/Interfaces"
   },
   "next": {
     "title": "DSA",

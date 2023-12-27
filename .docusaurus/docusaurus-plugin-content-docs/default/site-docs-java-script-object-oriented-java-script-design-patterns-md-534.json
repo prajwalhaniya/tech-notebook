@@ -1,0 +1,26 @@
+{
+  "unversionedId": "JavaScript/Object-oriented-JavaScript/Design Patterns",
+  "id": "JavaScript/Object-oriented-JavaScript/Design Patterns",
+  "title": "Design Patterns",
+  "description": "There are three main reasons why you would want to use design patterns in JavaScript:",
+  "source": "@site/docs/JavaScript/Object-oriented-JavaScript/Design Patterns.md",
+  "sourceDirName": "JavaScript/Object-oriented-JavaScript",
+  "slug": "/JavaScript/Object-oriented-JavaScript/Design Patterns",
+  "permalink": "/docs/JavaScript/Object-oriented-JavaScript/Design Patterns",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Introduction",
+    "permalink": "/docs/JavaScript/Object-oriented-JavaScript/Introduction"
+  },
+  "next": {
+    "title": "Interfaces",
+    "permalink": "/docs/JavaScript/Object-oriented-JavaScript/Interfaces"
+  }
+}

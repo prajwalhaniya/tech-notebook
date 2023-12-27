@@ -22,6 +22,33 @@
             "docId": "JavaScript/Fundamentals"
           },
           {
+            "type": "category",
+            "label": "Object Oriented JavaScript",
+            "collapsible": true,
+            "collapsed": true,
+            "items": [
+              {
+                "type": "link",
+                "label": "Introduction",
+                "href": "/docs/JavaScript/Object-oriented-JavaScript/Introduction",
+                "docId": "JavaScript/Object-oriented-JavaScript/Introduction"
+              },
+              {
+                "type": "link",
+                "label": "Design Patterns",
+                "href": "/docs/JavaScript/Object-oriented-JavaScript/Design Patterns",
+                "docId": "JavaScript/Object-oriented-JavaScript/Design Patterns"
+              },
+              {
+                "type": "link",
+                "label": "Interfaces",
+                "href": "/docs/JavaScript/Object-oriented-JavaScript/Interfaces",
+                "docId": "JavaScript/Object-oriented-JavaScript/Interfaces"
+              }
+            ],
+            "href": "/docs/category/object-oriented-javascript"
+          },
+          {
             "type": "link",
             "label": "Projects",
             "href": "/docs/JavaScript/Projects",
@@ -523,6 +550,24 @@
       "id": "JavaScript/Fundamentals",
       "title": "Fundamentals",
       "description": "Variables",
+      "sidebar": "tutorialSidebar"
+    },
+    "JavaScript/Object-oriented-JavaScript/Design Patterns": {
+      "id": "JavaScript/Object-oriented-JavaScript/Design Patterns",
+      "title": "Design Patterns",
+      "description": "There are three main reasons why you would want to use design patterns in JavaScript:",
+      "sidebar": "tutorialSidebar"
+    },
+    "JavaScript/Object-oriented-JavaScript/Interfaces": {
+      "id": "JavaScript/Object-oriented-JavaScript/Interfaces",
+      "title": "Interfaces",
+      "description": "What is an interface?",
+      "sidebar": "tutorialSidebar"
+    },
+    "JavaScript/Object-oriented-JavaScript/Introduction": {
+      "id": "JavaScript/Object-oriented-JavaScript/Introduction",
+      "title": "Introduction",
+      "description": "This defines a new class called Animation and assigns two methods to the class’s prototype",
       "sidebar": "tutorialSidebar"
     },
     "JavaScript/Projects": {

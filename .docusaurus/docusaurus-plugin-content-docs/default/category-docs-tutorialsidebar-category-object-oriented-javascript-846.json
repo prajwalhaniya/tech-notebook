@@ -1,0 +1,16 @@
+{
+  "title": "Object Oriented JavaScript",
+  "description": "Object Oriented JavaScript concepts goes here",
+  "slug": "/category/object-oriented-javascript",
+  "permalink": "/docs/category/object-oriented-javascript",
+  "navigation": {
+    "previous": {
+      "title": "Fundamentals",
+      "permalink": "/docs/JavaScript/Fundamentals"
+    },
+    "next": {
+      "title": "Introduction",
+      "permalink": "/docs/JavaScript/Object-oriented-JavaScript/Introduction"
+    }
+  }
+}

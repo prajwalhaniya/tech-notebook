@@ -196,6 +196,21 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "JavaScript/Object-oriented-JavaScript/Design Patterns",
+              "path": "/docs/JavaScript/Object-oriented-JavaScript/Design Patterns",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "JavaScript/Object-oriented-JavaScript/Interfaces",
+              "path": "/docs/JavaScript/Object-oriented-JavaScript/Interfaces",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "JavaScript/Object-oriented-JavaScript/Introduction",
+              "path": "/docs/JavaScript/Object-oriented-JavaScript/Introduction",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "JavaScript/Projects",
               "path": "/docs/JavaScript/Projects",
               "sidebar": "tutorialSidebar"
@@ -203,6 +218,11 @@
             {
               "id": "/category/javascript",
               "path": "/docs/category/javascript",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/object-oriented-javascript",
+              "path": "/docs/category/object-oriented-javascript",
               "sidebar": "tutorialSidebar"
             },
             {

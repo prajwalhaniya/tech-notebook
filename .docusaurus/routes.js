@@ -64,7 +64,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '59c'),
+    component: ComponentCreator('/docs', '013'),
     routes: [
       {
         path: '/docs/category/binary-search',
@@ -99,6 +99,12 @@ export default [
       {
         path: '/docs/category/javascript',
         component: ComponentCreator('/docs/category/javascript', 'bb0'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/category/object-oriented-javascript',
+        component: ComponentCreator('/docs/category/object-oriented-javascript', '2ac'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
@@ -327,6 +333,24 @@ export default [
       {
         path: '/docs/JavaScript/Fundamentals',
         component: ComponentCreator('/docs/JavaScript/Fundamentals', 'c80'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/JavaScript/Object-oriented-JavaScript/Design Patterns',
+        component: ComponentCreator('/docs/JavaScript/Object-oriented-JavaScript/Design Patterns', '0b6'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/JavaScript/Object-oriented-JavaScript/Interfaces',
+        component: ComponentCreator('/docs/JavaScript/Object-oriented-JavaScript/Interfaces', '9cb'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/JavaScript/Object-oriented-JavaScript/Introduction',
+        component: ComponentCreator('/docs/JavaScript/Object-oriented-JavaScript/Introduction', '29d'),
         exact: true,
         sidebar: "tutorialSidebar"
       },

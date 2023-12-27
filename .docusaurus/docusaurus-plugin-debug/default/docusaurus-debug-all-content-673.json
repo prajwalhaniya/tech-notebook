@@ -965,8 +965,86 @@
                 "permalink": "/docs/category/javascript"
               },
               "next": {
+                "title": "Object Oriented JavaScript",
+                "permalink": "/docs/category/object-oriented-javascript"
+              }
+            },
+            {
+              "unversionedId": "JavaScript/Object-oriented-JavaScript/Design Patterns",
+              "id": "JavaScript/Object-oriented-JavaScript/Design Patterns",
+              "title": "Design Patterns",
+              "description": "There are three main reasons why you would want to use design patterns in JavaScript:",
+              "source": "@site/docs/JavaScript/Object-oriented-JavaScript/Design Patterns.md",
+              "sourceDirName": "JavaScript/Object-oriented-JavaScript",
+              "slug": "/JavaScript/Object-oriented-JavaScript/Design Patterns",
+              "permalink": "/docs/JavaScript/Object-oriented-JavaScript/Design Patterns",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 2,
+              "frontMatter": {
+                "sidebar_position": 2
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Introduction",
+                "permalink": "/docs/JavaScript/Object-oriented-JavaScript/Introduction"
+              },
+              "next": {
+                "title": "Interfaces",
+                "permalink": "/docs/JavaScript/Object-oriented-JavaScript/Interfaces"
+              }
+            },
+            {
+              "unversionedId": "JavaScript/Object-oriented-JavaScript/Interfaces",
+              "id": "JavaScript/Object-oriented-JavaScript/Interfaces",
+              "title": "Interfaces",
+              "description": "What is an interface?",
+              "source": "@site/docs/JavaScript/Object-oriented-JavaScript/Interfaces.md",
+              "sourceDirName": "JavaScript/Object-oriented-JavaScript",
+              "slug": "/JavaScript/Object-oriented-JavaScript/Interfaces",
+              "permalink": "/docs/JavaScript/Object-oriented-JavaScript/Interfaces",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 3,
+              "frontMatter": {
+                "sidebar_position": 3
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Design Patterns",
+                "permalink": "/docs/JavaScript/Object-oriented-JavaScript/Design Patterns"
+              },
+              "next": {
                 "title": "Projects",
                 "permalink": "/docs/JavaScript/Projects"
+              }
+            },
+            {
+              "unversionedId": "JavaScript/Object-oriented-JavaScript/Introduction",
+              "id": "JavaScript/Object-oriented-JavaScript/Introduction",
+              "title": "Introduction",
+              "description": "This defines a new class called Animation and assigns two methods to the class’s prototype",
+              "source": "@site/docs/JavaScript/Object-oriented-JavaScript/Introduction.md",
+              "sourceDirName": "JavaScript/Object-oriented-JavaScript",
+              "slug": "/JavaScript/Object-oriented-JavaScript/Introduction",
+              "permalink": "/docs/JavaScript/Object-oriented-JavaScript/Introduction",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "sidebar_position": 1
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Object Oriented JavaScript",
+                "permalink": "/docs/category/object-oriented-javascript"
+              },
+              "next": {
+                "title": "Design Patterns",
+                "permalink": "/docs/JavaScript/Object-oriented-JavaScript/Design Patterns"
               }
             },
             {
@@ -987,8 +1065,8 @@
               },
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "Fundamentals",
-                "permalink": "/docs/JavaScript/Fundamentals"
+                "title": "Interfaces",
+                "permalink": "/docs/JavaScript/Object-oriented-JavaScript/Interfaces"
               },
               "next": {
                 "title": "DSA",
@@ -1008,6 +1086,32 @@
                   {
                     "type": "doc",
                     "id": "JavaScript/Fundamentals"
+                  },
+                  {
+                    "type": "category",
+                    "label": "Object Oriented JavaScript",
+                    "collapsible": true,
+                    "collapsed": true,
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "JavaScript/Object-oriented-JavaScript/Introduction"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "JavaScript/Object-oriented-JavaScript/Design Patterns"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "JavaScript/Object-oriented-JavaScript/Interfaces"
+                      }
+                    ],
+                    "link": {
+                      "type": "generated-index",
+                      "description": "Object Oriented JavaScript concepts goes here",
+                      "slug": "/category/object-oriented-javascript",
+                      "permalink": "/docs/category/object-oriented-javascript"
+                    }
                   },
                   {
                     "type": "doc",
