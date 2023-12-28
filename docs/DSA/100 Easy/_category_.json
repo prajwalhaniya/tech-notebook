@@ -1,0 +1,8 @@
+{
+    "label": "100 Easy",
+    "position": 3,
+    "link": {
+      "type": "generated-index",
+      "description": "This section consists of all the 100 easy problems"
+    }
+}

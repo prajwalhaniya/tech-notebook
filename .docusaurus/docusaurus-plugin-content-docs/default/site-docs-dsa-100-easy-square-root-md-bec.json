@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/100 Easy/Square Root",
+  "id": "DSA/100 Easy/Square Root",
+  "title": "Square Root",
+  "description": "Given a non-negative integer x, return the square root of x rounded down to the nearest integer. The returned integer should be non-negative as well.",
+  "source": "@site/docs/DSA/100 Easy/Square Root.md",
+  "sourceDirName": "DSA/100 Easy",
+  "slug": "/DSA/100 Easy/Square Root",
+  "permalink": "/docs/DSA/100 Easy/Square Root",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_position": 4
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Roman to integer",
+    "permalink": "/docs/DSA/100 Easy/Roman to integer"
+  },
+  "next": {
+    "title": "Longest common prefix",
+    "permalink": "/docs/DSA/100 Easy/Longest common prefix"
+  }
+}

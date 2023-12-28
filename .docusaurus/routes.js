@@ -64,8 +64,14 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '013'),
+    component: ComponentCreator('/docs', '127'),
     routes: [
+      {
+        path: '/docs/category/100-easy',
+        component: ComponentCreator('/docs/category/100-easy', 'c15'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
       {
         path: '/docs/category/binary-search',
         component: ComponentCreator('/docs/category/binary-search', '721'),
@@ -123,6 +129,36 @@ export default [
       {
         path: '/docs/Deployment/concepts',
         component: ComponentCreator('/docs/Deployment/concepts', '7a1'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/100 Easy/Longest common prefix',
+        component: ComponentCreator('/docs/DSA/100 Easy/Longest common prefix', '7ce'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/100 Easy/Palindrome',
+        component: ComponentCreator('/docs/DSA/100 Easy/Palindrome', 'f0c'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/100 Easy/Roman to integer',
+        component: ComponentCreator('/docs/DSA/100 Easy/Roman to integer', '247'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/100 Easy/Square Root',
+        component: ComponentCreator('/docs/DSA/100 Easy/Square Root', '3a5'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/100 Easy/Two Sum',
+        component: ComponentCreator('/docs/DSA/100 Easy/Two Sum', 'c3a'),
         exact: true,
         sidebar: "tutorialSidebar"
       },

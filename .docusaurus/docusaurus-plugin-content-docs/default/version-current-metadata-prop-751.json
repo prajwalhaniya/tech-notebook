@@ -293,6 +293,45 @@
               }
             ],
             "href": "/docs/category/depth-first-search"
+          },
+          {
+            "type": "category",
+            "label": "100 Easy",
+            "collapsible": true,
+            "collapsed": true,
+            "items": [
+              {
+                "type": "link",
+                "label": "Two Sum",
+                "href": "/docs/DSA/100 Easy/Two Sum",
+                "docId": "DSA/100 Easy/Two Sum"
+              },
+              {
+                "type": "link",
+                "label": "Palindrome",
+                "href": "/docs/DSA/100 Easy/Palindrome",
+                "docId": "DSA/100 Easy/Palindrome"
+              },
+              {
+                "type": "link",
+                "label": "Roman to integer",
+                "href": "/docs/DSA/100 Easy/Roman to integer",
+                "docId": "DSA/100 Easy/Roman to integer"
+              },
+              {
+                "type": "link",
+                "label": "Square Root",
+                "href": "/docs/DSA/100 Easy/Square Root",
+                "docId": "DSA/100 Easy/Square Root"
+              },
+              {
+                "type": "link",
+                "label": "Longest common prefix",
+                "href": "/docs/DSA/100 Easy/Longest common prefix",
+                "docId": "DSA/100 Easy/Longest common prefix"
+              }
+            ],
+            "href": "/docs/category/100-easy"
           }
         ],
         "href": "/docs/category/dsa"
@@ -340,6 +379,36 @@
       "id": "Deployment/concepts",
       "title": "concepts",
       "description": "",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Easy/Longest common prefix": {
+      "id": "DSA/100 Easy/Longest common prefix",
+      "title": "Longest common prefix",
+      "description": "Write a function to find the longest common prefix string amongst an array of strings.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Easy/Palindrome": {
+      "id": "DSA/100 Easy/Palindrome",
+      "title": "Palindrome",
+      "description": "Given an integer x, return true if x is a palindrome, and false otherwise.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Easy/Roman to integer": {
+      "id": "DSA/100 Easy/Roman to integer",
+      "title": "Roman to integer",
+      "description": "Convert the given roman numeral string into integer",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Easy/Square Root": {
+      "id": "DSA/100 Easy/Square Root",
+      "title": "Square Root",
+      "description": "Given a non-negative integer x, return the square root of x rounded down to the nearest integer. The returned integer should be non-negative as well.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Easy/Two Sum": {
+      "id": "DSA/100 Easy/Two Sum",
+      "title": "Two Sum",
+      "description": "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.",
       "sidebar": "tutorialSidebar"
     },
     "DSA/Binary Search/overview": {

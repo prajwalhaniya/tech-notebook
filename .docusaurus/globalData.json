@@ -21,6 +21,31 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "DSA/100 Easy/Longest common prefix",
+              "path": "/docs/DSA/100 Easy/Longest common prefix",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Easy/Palindrome",
+              "path": "/docs/DSA/100 Easy/Palindrome",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Easy/Roman to integer",
+              "path": "/docs/DSA/100 Easy/Roman to integer",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Easy/Square Root",
+              "path": "/docs/DSA/100 Easy/Square Root",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Easy/Two Sum",
+              "path": "/docs/DSA/100 Easy/Two Sum",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "DSA/Binary Search/overview",
               "path": "/docs/DSA/Binary Search/overview",
               "sidebar": "tutorialSidebar"
@@ -243,6 +268,11 @@
             {
               "id": "/category/depth-first-search",
               "path": "/docs/category/depth-first-search",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/100-easy",
+              "path": "/docs/category/100-easy",
               "sidebar": "tutorialSidebar"
             },
             {

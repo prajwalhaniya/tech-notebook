@@ -148,6 +148,11 @@ function addForm(formInstance) {
 // Create an instance of CompositeForm
 const myCompositeForm = new CompositeForm('formId', 'POST', '/submit');
 addForm(myCompositeForm);
-
-
 ```
+
+### Patterns that rely on `Interfaces`
+
+- The Factory Pattern
+- The Composite Pattern
+- The Decorator Pattern
+- The Command Pattern

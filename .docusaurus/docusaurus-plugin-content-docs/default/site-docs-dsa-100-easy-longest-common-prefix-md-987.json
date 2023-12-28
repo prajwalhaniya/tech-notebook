@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/100 Easy/Longest common prefix",
+  "id": "DSA/100 Easy/Longest common prefix",
+  "title": "Longest common prefix",
+  "description": "Write a function to find the longest common prefix string amongst an array of strings.",
+  "source": "@site/docs/DSA/100 Easy/Longest common prefix.md",
+  "sourceDirName": "DSA/100 Easy",
+  "slug": "/DSA/100 Easy/Longest common prefix",
+  "permalink": "/docs/DSA/100 Easy/Longest common prefix",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "sidebar_position": 5
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Square Root",
+    "permalink": "/docs/DSA/100 Easy/Square Root"
+  },
+  "next": {
+    "title": "Database",
+    "permalink": "/docs/category/database"
+  }
+}
