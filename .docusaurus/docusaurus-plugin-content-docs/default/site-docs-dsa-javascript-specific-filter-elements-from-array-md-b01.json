@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/Javascript Specific/Filter Elements From Array",
+  "id": "DSA/Javascript Specific/Filter Elements From Array",
+  "title": "Filter Elements From Array",
+  "description": "Given an integer array arr and a filtering function fn, return a filtered array filteredArr.",
+  "source": "@site/docs/DSA/Javascript Specific/Filter Elements From Array.md",
+  "sourceDirName": "DSA/Javascript Specific",
+  "slug": "/DSA/Javascript Specific/Filter Elements From Array",
+  "permalink": "/docs/DSA/Javascript Specific/Filter Elements From Array",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "sidebar_position": 8
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Function Composition",
+    "permalink": "/docs/DSA/Javascript Specific/Function Composition"
+  },
+  "next": {
+    "title": "Group By",
+    "permalink": "/docs/DSA/Javascript Specific/Group By"
+  }
+}

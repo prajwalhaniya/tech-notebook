@@ -71,228 +71,198 @@
           },
           {
             "type": "category",
-            "label": "Problems",
+            "label": "JavaScript Specific problems",
             "collapsible": true,
             "collapsed": true,
             "items": [
               {
                 "type": "link",
                 "label": "Counter",
-                "href": "/docs/DSA/Problems/Counter",
-                "docId": "DSA/Problems/Counter"
+                "href": "/docs/DSA/Javascript Specific/Counter",
+                "docId": "DSA/Javascript Specific/Counter"
               },
               {
                 "type": "link",
                 "label": "Sleep",
-                "href": "/docs/DSA/Problems/Sleep",
-                "docId": "DSA/Problems/Sleep"
+                "href": "/docs/DSA/Javascript Specific/Sleep",
+                "docId": "DSA/Javascript Specific/Sleep"
               },
               {
                 "type": "link",
                 "label": "Cache with Time",
-                "href": "/docs/DSA/Problems/Cache with Time",
-                "docId": "DSA/Problems/Cache with Time"
+                "href": "/docs/DSA/Javascript Specific/Cache with Time",
+                "docId": "DSA/Javascript Specific/Cache with Time"
               },
               {
                 "type": "link",
                 "label": "Memoize",
-                "href": "/docs/DSA/Problems/Memoize",
-                "docId": "DSA/Problems/Memoize"
+                "href": "/docs/DSA/Javascript Specific/Memoize",
+                "docId": "DSA/Javascript Specific/Memoize"
               },
               {
                 "type": "link",
                 "label": "Recursive Flatten",
-                "href": "/docs/DSA/Problems/Recursive Flatten",
-                "docId": "DSA/Problems/Recursive Flatten"
+                "href": "/docs/DSA/Javascript Specific/Recursive Flatten",
+                "docId": "DSA/Javascript Specific/Recursive Flatten"
               },
               {
                 "type": "link",
                 "label": "Array Reduce Transformation",
-                "href": "/docs/DSA/Problems/Array Reduce Transformation",
-                "docId": "DSA/Problems/Array Reduce Transformation"
+                "href": "/docs/DSA/Javascript Specific/Array Reduce Transformation",
+                "docId": "DSA/Javascript Specific/Array Reduce Transformation"
               },
               {
                 "type": "link",
                 "label": "Function Composition",
-                "href": "/docs/DSA/Problems/Function Composition",
-                "docId": "DSA/Problems/Function Composition"
+                "href": "/docs/DSA/Javascript Specific/Function Composition",
+                "docId": "DSA/Javascript Specific/Function Composition"
               },
               {
                 "type": "link",
                 "label": "Filter Elements From Array",
-                "href": "/docs/DSA/Problems/Filter Elements From Array",
-                "docId": "DSA/Problems/Filter Elements From Array"
+                "href": "/docs/DSA/Javascript Specific/Filter Elements From Array",
+                "docId": "DSA/Javascript Specific/Filter Elements From Array"
               },
               {
                 "type": "link",
                 "label": "Group By",
-                "href": "/docs/DSA/Problems/Group By",
-                "docId": "DSA/Problems/Group By"
+                "href": "/docs/DSA/Javascript Specific/Group By",
+                "docId": "DSA/Javascript Specific/Group By"
               },
               {
                 "type": "link",
                 "label": "Promise Time Limit",
-                "href": "/docs/DSA/Problems/Promise Time Limit",
-                "docId": "DSA/Problems/Promise Time Limit"
+                "href": "/docs/DSA/Javascript Specific/Promise Time Limit",
+                "docId": "DSA/Javascript Specific/Promise Time Limit"
               },
               {
                 "type": "link",
                 "label": "Fibonnacci",
-                "href": "/docs/DSA/Problems/Fibonnacci",
-                "docId": "DSA/Problems/Fibonnacci"
+                "href": "/docs/DSA/Javascript Specific/Fibonnacci",
+                "docId": "DSA/Javascript Specific/Fibonnacci"
               },
               {
                 "type": "link",
                 "label": "Nested Array Generator",
-                "href": "/docs/DSA/Problems/Nested Array Generator",
-                "docId": "DSA/Problems/Nested Array Generator"
+                "href": "/docs/DSA/Javascript Specific/Nested Array Generator",
+                "docId": "DSA/Javascript Specific/Nested Array Generator"
               },
               {
                 "type": "link",
                 "label": "Counter Two",
-                "href": "/docs/DSA/Problems/Counter Two",
-                "docId": "DSA/Problems/Counter Two"
+                "href": "/docs/DSA/Javascript Specific/Counter Two",
+                "docId": "DSA/Javascript Specific/Counter Two"
               },
               {
                 "type": "link",
                 "label": "Event Emitter",
-                "href": "/docs/DSA/Problems/Event Emitter",
-                "docId": "DSA/Problems/Event Emitter"
+                "href": "/docs/DSA/Javascript Specific/Event Emitter",
+                "docId": "DSA/Javascript Specific/Event Emitter"
               },
               {
                 "type": "link",
                 "label": "To Be or Not To Be",
-                "href": "/docs/DSA/Problems/To Be or Not To Be",
-                "docId": "DSA/Problems/To Be or Not To Be"
+                "href": "/docs/DSA/Javascript Specific/To Be or Not To Be",
+                "docId": "DSA/Javascript Specific/To Be or Not To Be"
               },
               {
                 "type": "link",
                 "label": "Execute Asynchronous Functions In Parallel",
-                "href": "/docs/DSA/Problems/Execute Asynchronous Functions In Parallel",
-                "docId": "DSA/Problems/Execute Asynchronous Functions In Parallel"
+                "href": "/docs/DSA/Javascript Specific/Execute Asynchronous Functions In Parallel",
+                "docId": "DSA/Javascript Specific/Execute Asynchronous Functions In Parallel"
               },
               {
                 "type": "link",
                 "label": "Compact Object",
-                "href": "/docs/DSA/Problems/Compact Object",
-                "docId": "DSA/Problems/Compact Object"
+                "href": "/docs/DSA/Javascript Specific/Compact Object",
+                "docId": "DSA/Javascript Specific/Compact Object"
               },
               {
                 "type": "link",
                 "label": "Join Two Arrays By Id",
-                "href": "/docs/DSA/Problems/Join Two Arrays By Id",
-                "docId": "DSA/Problems/Join Two Arrays By Id"
+                "href": "/docs/DSA/Javascript Specific/Join Two Arrays By Id",
+                "docId": "DSA/Javascript Specific/Join Two Arrays By Id"
               },
               {
                 "type": "link",
                 "label": "Array Prototype Last",
-                "href": "/docs/DSA/Problems/Array Prototype Last",
-                "docId": "DSA/Problems/Array Prototype Last"
+                "href": "/docs/DSA/Javascript Specific/Array Prototype Last",
+                "docId": "DSA/Javascript Specific/Array Prototype Last"
               },
               {
                 "type": "link",
                 "label": "Reverse words in a string",
-                "href": "/docs/DSA/Problems/Reverse words in a string",
-                "docId": "DSA/Problems/Reverse words in a string"
+                "href": "/docs/DSA/Javascript Specific/Reverse words in a string",
+                "docId": "DSA/Javascript Specific/Reverse words in a string"
               },
               {
                 "type": "link",
                 "label": "Zigzag Conversion",
-                "href": "/docs/DSA/Problems/Zigzag Conversion",
-                "docId": "DSA/Problems/Zigzag Conversion"
+                "href": "/docs/DSA/Javascript Specific/Zigzag Conversion",
+                "docId": "DSA/Javascript Specific/Zigzag Conversion"
               },
               {
                 "type": "link",
                 "label": "Merge Sorted Array",
-                "href": "/docs/DSA/Problems/Merge Sorted Array",
-                "docId": "DSA/Problems/Merge Sorted Array"
+                "href": "/docs/DSA/Javascript Specific/Merge Sorted Array",
+                "docId": "DSA/Javascript Specific/Merge Sorted Array"
               },
               {
                 "type": "link",
                 "label": "Valid Palindrome",
-                "href": "/docs/DSA/Problems/Valid Palindrome",
-                "docId": "DSA/Problems/Valid Palindrome"
+                "href": "/docs/DSA/Javascript Specific/Valid Palindrome",
+                "docId": "DSA/Javascript Specific/Valid Palindrome"
               },
               {
                 "type": "link",
                 "label": "Two Sum II",
-                "href": "/docs/DSA/Problems/Two Sum II",
-                "docId": "DSA/Problems/Two Sum II"
+                "href": "/docs/DSA/Javascript Specific/Two Sum II",
+                "docId": "DSA/Javascript Specific/Two Sum II"
               },
               {
                 "type": "link",
                 "label": "Container with most water",
-                "href": "/docs/DSA/Problems/Container with most water",
-                "docId": "DSA/Problems/Container with most water"
+                "href": "/docs/DSA/Javascript Specific/Container with most water",
+                "docId": "DSA/Javascript Specific/Container with most water"
               },
               {
                 "type": "link",
                 "label": "Minimum size subarray sum",
-                "href": "/docs/DSA/Problems/Minimum size subarray sum",
-                "docId": "DSA/Problems/Minimum size subarray sum"
+                "href": "/docs/DSA/Javascript Specific/Minimum size subarray sum",
+                "docId": "DSA/Javascript Specific/Minimum size subarray sum"
               },
               {
                 "type": "link",
                 "label": "Longest substring without repeating characters",
-                "href": "/docs/DSA/Problems/Longest substring without repeating characters",
-                "docId": "DSA/Problems/Longest substring without repeating characters"
+                "href": "/docs/DSA/Javascript Specific/Longest substring without repeating characters",
+                "docId": "DSA/Javascript Specific/Longest substring without repeating characters"
               },
               {
                 "type": "link",
                 "label": "Valid Sudoku",
-                "href": "/docs/DSA/Problems/Valid Sudoku",
-                "docId": "DSA/Problems/Valid Sudoku"
+                "href": "/docs/DSA/Javascript Specific/Valid Sudoku",
+                "docId": "DSA/Javascript Specific/Valid Sudoku"
               },
               {
                 "type": "link",
                 "label": "Group Anagrams",
-                "href": "/docs/DSA/Problems/Group Anagrams",
-                "docId": "DSA/Problems/Group Anagrams"
+                "href": "/docs/DSA/Javascript Specific/Group Anagrams",
+                "docId": "DSA/Javascript Specific/Group Anagrams"
               },
               {
                 "type": "link",
                 "label": "Summary Ranges",
-                "href": "/docs/DSA/Problems/Summary Ranges",
-                "docId": "DSA/Problems/Summary Ranges"
+                "href": "/docs/DSA/Javascript Specific/Summary Ranges",
+                "docId": "DSA/Javascript Specific/Summary Ranges"
               },
               {
                 "type": "link",
                 "label": "Merge Intervals",
-                "href": "/docs/DSA/Problems/Merge Intervals",
-                "docId": "DSA/Problems/Merge Intervals"
+                "href": "/docs/DSA/Javascript Specific/Merge Intervals",
+                "docId": "DSA/Javascript Specific/Merge Intervals"
               }
             ],
-            "href": "/docs/category/problems"
-          },
-          {
-            "type": "category",
-            "label": "Binary Search",
-            "collapsible": true,
-            "collapsed": true,
-            "items": [
-              {
-                "type": "link",
-                "label": "overview",
-                "href": "/docs/DSA/Binary Search/overview",
-                "docId": "DSA/Binary Search/overview"
-              }
-            ],
-            "href": "/docs/category/binary-search"
-          },
-          {
-            "type": "category",
-            "label": "Depth First Search",
-            "collapsible": true,
-            "collapsed": true,
-            "items": [
-              {
-                "type": "link",
-                "label": "overview",
-                "href": "/docs/DSA/Depth First Search/overview",
-                "docId": "DSA/Depth First Search/overview"
-              }
-            ],
-            "href": "/docs/category/depth-first-search"
+            "href": "/docs/category/javascript-specific-problems"
           },
           {
             "type": "category",
@@ -411,206 +381,194 @@
       "description": "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.",
       "sidebar": "tutorialSidebar"
     },
-    "DSA/Binary Search/overview": {
-      "id": "DSA/Binary Search/overview",
-      "title": "overview",
-      "description": "",
-      "sidebar": "tutorialSidebar"
-    },
-    "DSA/Depth First Search/overview": {
-      "id": "DSA/Depth First Search/overview",
-      "title": "overview",
-      "description": "",
-      "sidebar": "tutorialSidebar"
-    },
     "DSA/Fundamentals": {
       "id": "DSA/Fundamentals",
       "title": "Fundamentals",
       "description": "Time complexities",
       "sidebar": "tutorialSidebar"
     },
-    "DSA/Problems/Array Prototype Last": {
-      "id": "DSA/Problems/Array Prototype Last",
+    "DSA/Javascript Specific/Array Prototype Last": {
+      "id": "DSA/Javascript Specific/Array Prototype Last",
       "title": "Array Prototype Last",
       "description": "Write code that enhances all arrays such that you can call the array.last() method on any array and it will return the last element. If there are no elements in the array, it should return -1.",
       "sidebar": "tutorialSidebar"
     },
-    "DSA/Problems/Array Reduce Transformation": {
-      "id": "DSA/Problems/Array Reduce Transformation",
+    "DSA/Javascript Specific/Array Reduce Transformation": {
+      "id": "DSA/Javascript Specific/Array Reduce Transformation",
       "title": "Array Reduce Transformation",
       "description": "Given an integer array nums, a reducer function fn, and an initial value init, return a reduced array.",
       "sidebar": "tutorialSidebar"
     },
-    "DSA/Problems/Cache with Time": {
-      "id": "DSA/Problems/Cache with Time",
+    "DSA/Javascript Specific/Cache with Time": {
+      "id": "DSA/Javascript Specific/Cache with Time",
       "title": "Cache with Time",
       "description": "Write a class that allows getting and setting key-value pairs, however a time until expiration is associated with each key.",
       "sidebar": "tutorialSidebar"
     },
-    "DSA/Problems/Compact Object": {
-      "id": "DSA/Problems/Compact Object",
+    "DSA/Javascript Specific/Compact Object": {
+      "id": "DSA/Javascript Specific/Compact Object",
       "title": "Compact Object",
       "description": "Given an object or array obj, return a compact object. A compact object is the same as the original object, except with keys containing falsy values removed. This operation applies to the object and any nested objects. Arrays are considered objects where the indices are keys. A value is considered falsy when Boolean(value) returns false.",
       "sidebar": "tutorialSidebar"
     },
-    "DSA/Problems/Container with most water": {
-      "id": "DSA/Problems/Container with most water",
+    "DSA/Javascript Specific/Container with most water": {
+      "id": "DSA/Javascript Specific/Container with most water",
       "title": "Container with most water",
       "description": "You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]).",
       "sidebar": "tutorialSidebar"
     },
-    "DSA/Problems/Counter": {
-      "id": "DSA/Problems/Counter",
+    "DSA/Javascript Specific/Counter": {
+      "id": "DSA/Javascript Specific/Counter",
       "title": "Counter",
       "description": "Given an integer n, return a counter function. This counter function initially returns n and then returns 1 more than the previous value every subsequent time it is called (n, n + 1, n + 2, etc).",
       "sidebar": "tutorialSidebar"
     },
-    "DSA/Problems/Counter Two": {
-      "id": "DSA/Problems/Counter Two",
+    "DSA/Javascript Specific/Counter Two": {
+      "id": "DSA/Javascript Specific/Counter Two",
       "title": "Counter Two",
       "description": "Write a function createCounter. It should accept an initial integer init. It should return an object with three functions.",
       "sidebar": "tutorialSidebar"
     },
-    "DSA/Problems/Event Emitter": {
-      "id": "DSA/Problems/Event Emitter",
+    "DSA/Javascript Specific/Event Emitter": {
+      "id": "DSA/Javascript Specific/Event Emitter",
       "title": "Event Emitter",
       "description": "Design an EventEmitter class. This interface is similar (but with some differences) to the one found in Node.js or the Event Target interface of the DOM. The EventEmitter should allow for subscribing to events and emitting them.",
       "sidebar": "tutorialSidebar"
     },
-    "DSA/Problems/Execute Asynchronous Functions In Parallel": {
-      "id": "DSA/Problems/Execute Asynchronous Functions In Parallel",
+    "DSA/Javascript Specific/Execute Asynchronous Functions In Parallel": {
+      "id": "DSA/Javascript Specific/Execute Asynchronous Functions In Parallel",
       "title": "Execute Asynchronous Functions In Parallel",
       "description": "Given an array of asynchronous functions functions, return a new promise promise. Each function in the array accepts no arguments and returns a promise.",
       "sidebar": "tutorialSidebar"
     },
-    "DSA/Problems/Fibonnacci": {
-      "id": "DSA/Problems/Fibonnacci",
+    "DSA/Javascript Specific/Fibonnacci": {
+      "id": "DSA/Javascript Specific/Fibonnacci",
       "title": "Fibonnacci",
       "description": "Write a generator function that returns a generator object which yields the fibonacci sequence.",
       "sidebar": "tutorialSidebar"
     },
-    "DSA/Problems/Filter Elements From Array": {
-      "id": "DSA/Problems/Filter Elements From Array",
+    "DSA/Javascript Specific/Filter Elements From Array": {
+      "id": "DSA/Javascript Specific/Filter Elements From Array",
       "title": "Filter Elements From Array",
       "description": "Given an integer array arr and a filtering function fn, return a filtered array filteredArr.",
       "sidebar": "tutorialSidebar"
     },
-    "DSA/Problems/Function Composition": {
-      "id": "DSA/Problems/Function Composition",
+    "DSA/Javascript Specific/Function Composition": {
+      "id": "DSA/Javascript Specific/Function Composition",
       "title": "Function Composition",
       "description": "Given an array of functions [f1, f2, f3, ..., fn], return a new function fn that is the function composition of the array of functions.",
       "sidebar": "tutorialSidebar"
     },
-    "DSA/Problems/Group Anagrams": {
-      "id": "DSA/Problems/Group Anagrams",
+    "DSA/Javascript Specific/Group Anagrams": {
+      "id": "DSA/Javascript Specific/Group Anagrams",
       "title": "Group Anagrams",
       "description": "Given an array of strings strs, group the anagrams together. You can return the answer in any order.",
       "sidebar": "tutorialSidebar"
     },
-    "DSA/Problems/Group By": {
-      "id": "DSA/Problems/Group By",
+    "DSA/Javascript Specific/Group By": {
+      "id": "DSA/Javascript Specific/Group By",
       "title": "Group By",
       "description": "Write code that enhances all arrays such that you can call the array.groupBy(fn) method on any array and it will return a grouped version of the array.",
       "sidebar": "tutorialSidebar"
     },
-    "DSA/Problems/Join Two Arrays By Id": {
-      "id": "DSA/Problems/Join Two Arrays By Id",
+    "DSA/Javascript Specific/Join Two Arrays By Id": {
+      "id": "DSA/Javascript Specific/Join Two Arrays By Id",
       "title": "Join Two Arrays By Id",
       "description": "Given two arrays arr1 and arr2, return a new array joinedArray. All the objects in each of the two inputs arrays will contain an id field that has an integer value. joinedArray is an array formed by merging arr1 and arr2 based on their id key. The length of joinedArray should be the length of unique values of id. The returned array should be sorted in ascending order based on the id key.",
       "sidebar": "tutorialSidebar"
     },
-    "DSA/Problems/Longest substring without repeating characters": {
-      "id": "DSA/Problems/Longest substring without repeating characters",
+    "DSA/Javascript Specific/Longest substring without repeating characters": {
+      "id": "DSA/Javascript Specific/Longest substring without repeating characters",
       "title": "Longest substring without repeating characters",
       "description": "Given a string s, find the length of the longest substring without repeating characters.",
       "sidebar": "tutorialSidebar"
     },
-    "DSA/Problems/Memoize": {
-      "id": "DSA/Problems/Memoize",
+    "DSA/Javascript Specific/Memoize": {
+      "id": "DSA/Javascript Specific/Memoize",
       "title": "Memoize",
       "description": "Given a function fn, return a memoized version of that function.",
       "sidebar": "tutorialSidebar"
     },
-    "DSA/Problems/Merge Intervals": {
-      "id": "DSA/Problems/Merge Intervals",
+    "DSA/Javascript Specific/Merge Intervals": {
+      "id": "DSA/Javascript Specific/Merge Intervals",
       "title": "Merge Intervals",
       "description": "Given an array of intervals where intervals[i] = [starti, endi], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.",
       "sidebar": "tutorialSidebar"
     },
-    "DSA/Problems/Merge Sorted Array": {
-      "id": "DSA/Problems/Merge Sorted Array",
+    "DSA/Javascript Specific/Merge Sorted Array": {
+      "id": "DSA/Javascript Specific/Merge Sorted Array",
       "title": "Merge Sorted Array",
       "description": "You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively.",
       "sidebar": "tutorialSidebar"
     },
-    "DSA/Problems/Minimum size subarray sum": {
-      "id": "DSA/Problems/Minimum size subarray sum",
+    "DSA/Javascript Specific/Minimum size subarray sum": {
+      "id": "DSA/Javascript Specific/Minimum size subarray sum",
       "title": "Minimum size subarray sum",
       "description": "Given an array of positive integers nums and a positive integer target, return the minimal length of a",
       "sidebar": "tutorialSidebar"
     },
-    "DSA/Problems/Nested Array Generator": {
-      "id": "DSA/Problems/Nested Array Generator",
+    "DSA/Javascript Specific/Nested Array Generator": {
+      "id": "DSA/Javascript Specific/Nested Array Generator",
       "title": "Nested Array Generator",
       "description": "Given a multi-dimensional array of integers, return a generator object which yields integers in the same order as inorder traversal.",
       "sidebar": "tutorialSidebar"
     },
-    "DSA/Problems/Promise Time Limit": {
-      "id": "DSA/Problems/Promise Time Limit",
+    "DSA/Javascript Specific/Promise Time Limit": {
+      "id": "DSA/Javascript Specific/Promise Time Limit",
       "title": "Promise Time Limit",
       "description": "Given an asynchronous function fn and a time t in milliseconds, return a new time limited version of the input function. fn takes arguments provided to the time limited function.",
       "sidebar": "tutorialSidebar"
     },
-    "DSA/Problems/Recursive Flatten": {
-      "id": "DSA/Problems/Recursive Flatten",
+    "DSA/Javascript Specific/Recursive Flatten": {
+      "id": "DSA/Javascript Specific/Recursive Flatten",
       "title": "Recursive Flatten",
       "description": "Given a multi-dimensional array arr and a depth n, return a flattened version of that array.",
       "sidebar": "tutorialSidebar"
     },
-    "DSA/Problems/Reverse words in a string": {
-      "id": "DSA/Problems/Reverse words in a string",
+    "DSA/Javascript Specific/Reverse words in a string": {
+      "id": "DSA/Javascript Specific/Reverse words in a string",
       "title": "Reverse words in a string",
       "description": "Given an input string s, reverse the order of the words.",
       "sidebar": "tutorialSidebar"
     },
-    "DSA/Problems/Sleep": {
-      "id": "DSA/Problems/Sleep",
+    "DSA/Javascript Specific/Sleep": {
+      "id": "DSA/Javascript Specific/Sleep",
       "title": "Sleep",
       "description": "Given a positive integer millis, write an asynchronous function that sleeps for millis milliseconds. It can resolve any value.",
       "sidebar": "tutorialSidebar"
     },
-    "DSA/Problems/Summary Ranges": {
-      "id": "DSA/Problems/Summary Ranges",
+    "DSA/Javascript Specific/Summary Ranges": {
+      "id": "DSA/Javascript Specific/Summary Ranges",
       "title": "Summary Ranges",
       "description": "You are given a sorted unique integer array nums.",
       "sidebar": "tutorialSidebar"
     },
-    "DSA/Problems/To Be or Not To Be": {
-      "id": "DSA/Problems/To Be or Not To Be",
+    "DSA/Javascript Specific/To Be or Not To Be": {
+      "id": "DSA/Javascript Specific/To Be or Not To Be",
       "title": "To Be or Not To Be",
       "description": "Write a function expect that helps developers test their code. It should take in any value val and return an object with the following two functions.",
       "sidebar": "tutorialSidebar"
     },
-    "DSA/Problems/Two Sum II": {
-      "id": "DSA/Problems/Two Sum II",
+    "DSA/Javascript Specific/Two Sum II": {
+      "id": "DSA/Javascript Specific/Two Sum II",
       "title": "Two Sum II",
       "description": "Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number. Let these two numbers be numbers[index1] and numbers[index2] where 1 <= index1 < index2 < numbers.length.",
       "sidebar": "tutorialSidebar"
     },
-    "DSA/Problems/Valid Palindrome": {
-      "id": "DSA/Problems/Valid Palindrome",
+    "DSA/Javascript Specific/Valid Palindrome": {
+      "id": "DSA/Javascript Specific/Valid Palindrome",
       "title": "Valid Palindrome",
       "description": "A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.",
       "sidebar": "tutorialSidebar"
     },
-    "DSA/Problems/Valid Sudoku": {
-      "id": "DSA/Problems/Valid Sudoku",
+    "DSA/Javascript Specific/Valid Sudoku": {
+      "id": "DSA/Javascript Specific/Valid Sudoku",
       "title": "Valid Sudoku",
       "description": "Determine if a 9 x 9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules:",
       "sidebar": "tutorialSidebar"
     },
-    "DSA/Problems/Zigzag Conversion": {
-      "id": "DSA/Problems/Zigzag Conversion",
+    "DSA/Javascript Specific/Zigzag Conversion": {
+      "id": "DSA/Javascript Specific/Zigzag Conversion",
       "title": "Zigzag Conversion",
       "description": "The string \"PAYPALISHIRING\" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)",
       "sidebar": "tutorialSidebar"

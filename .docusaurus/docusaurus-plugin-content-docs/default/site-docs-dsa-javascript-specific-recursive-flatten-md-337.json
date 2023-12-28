@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/Javascript Specific/Recursive Flatten",
+  "id": "DSA/Javascript Specific/Recursive Flatten",
+  "title": "Recursive Flatten",
+  "description": "Given a multi-dimensional array arr and a depth n, return a flattened version of that array.",
+  "source": "@site/docs/DSA/Javascript Specific/Recursive Flatten.md",
+  "sourceDirName": "DSA/Javascript Specific",
+  "slug": "/DSA/Javascript Specific/Recursive Flatten",
+  "permalink": "/docs/DSA/Javascript Specific/Recursive Flatten",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "sidebar_position": 5
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Memoize",
+    "permalink": "/docs/DSA/Javascript Specific/Memoize"
+  },
+  "next": {
+    "title": "Array Reduce Transformation",
+    "permalink": "/docs/DSA/Javascript Specific/Array Reduce Transformation"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/Javascript Specific/Fibonnacci",
+  "id": "DSA/Javascript Specific/Fibonnacci",
+  "title": "Fibonnacci",
+  "description": "Write a generator function that returns a generator object which yields the fibonacci sequence.",
+  "source": "@site/docs/DSA/Javascript Specific/Fibonnacci.md",
+  "sourceDirName": "DSA/Javascript Specific",
+  "slug": "/DSA/Javascript Specific/Fibonnacci",
+  "permalink": "/docs/DSA/Javascript Specific/Fibonnacci",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 11,
+  "frontMatter": {
+    "sidebar_position": 11
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Promise Time Limit",
+    "permalink": "/docs/DSA/Javascript Specific/Promise Time Limit"
+  },
+  "next": {
+    "title": "Nested Array Generator",
+    "permalink": "/docs/DSA/Javascript Specific/Nested Array Generator"
+  }
+}

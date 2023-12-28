@@ -88,7 +88,7 @@
     },
     "content": "content---markdown-page-393-028"
   },
-  "/docs-127": {
+  "/docs-497": {
     "__comp": "__comp---theme-doc-page-1-be-9be",
     "__context": {
       "plugin": "plugin---docsd-46-576"
@@ -99,10 +99,6 @@
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-100-easyc-37-a0a"
   },
-  "/docs/category/binary-search-721": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-binary-search-14-f-78a"
-  },
   "/docs/category/database-03e": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-database-91-d-7bc"
@@ -110,10 +106,6 @@
   "/docs/category/deployment-901": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-deployment-065-d63"
-  },
-  "/docs/category/depth-first-search-942": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-depth-first-search-233-933"
   },
   "/docs/category/dsa-14a": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
@@ -123,13 +115,13 @@
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-javascriptdb-3-fa2"
   },
+  "/docs/category/javascript-specific-problems-b72": {
+    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-javascript-specific-problemsfda-ff7"
+  },
   "/docs/category/object-oriented-javascript-2ac": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-object-oriented-javascript-051-848"
-  },
-  "/docs/category/problems-3d8": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-problems-28-d-7f3"
   },
   "/docs/Database/concepts-3ca": {
     "__comp": "__comp---theme-doc-item-178-a40",
@@ -159,141 +151,133 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-dsa-100-easy-two-sum-169-53f"
   },
-  "/docs/DSA/Binary Search/overview-706": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-binary-search-overviewe-66-ffc"
-  },
-  "/docs/DSA/Depth First Search/overview-65e": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-depth-first-search-overview-9-a-5-d0e"
-  },
   "/docs/DSA/Fundamentals-570": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-dsa-fundamentalsc-25-317"
   },
-  "/docs/DSA/Problems/Array Prototype Last-6b0": {
+  "/docs/DSA/Javascript Specific/Array Prototype Last-f56": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-problems-array-prototype-lastc-6-b-4ac"
+    "content": "content---docs-dsa-javascript-specific-array-prototype-last-0-b-1-030"
   },
-  "/docs/DSA/Problems/Array Reduce Transformation-448": {
+  "/docs/DSA/Javascript Specific/Array Reduce Transformation-e6f": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-problems-array-reduce-transformation-989-df7"
+    "content": "content---docs-dsa-javascript-specific-array-reduce-transformationc-49-4f5"
   },
-  "/docs/DSA/Problems/Cache with Time-670": {
+  "/docs/DSA/Javascript Specific/Cache with Time-ddd": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-problems-cache-with-time-26-d-928"
+    "content": "content---docs-dsa-javascript-specific-cache-with-timee-5-a-511"
   },
-  "/docs/DSA/Problems/Compact Object-d15": {
+  "/docs/DSA/Javascript Specific/Compact Object-a2c": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-problems-compact-object-347-eb0"
+    "content": "content---docs-dsa-javascript-specific-compact-objecta-2-f-34f"
   },
-  "/docs/DSA/Problems/Container with most water-540": {
+  "/docs/DSA/Javascript Specific/Container with most water-a48": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-problems-container-with-most-water-64-e-c51"
+    "content": "content---docs-dsa-javascript-specific-container-with-most-water-990-096"
   },
-  "/docs/DSA/Problems/Counter-4d0": {
+  "/docs/DSA/Javascript Specific/Counter-273": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-problems-counter-425-2c3"
+    "content": "content---docs-dsa-javascript-specific-counterbf-3-e64"
   },
-  "/docs/DSA/Problems/Counter Two-13e": {
+  "/docs/DSA/Javascript Specific/Counter Two-e47": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-problems-counter-twoe-11-539"
+    "content": "content---docs-dsa-javascript-specific-counter-two-22-e-868"
   },
-  "/docs/DSA/Problems/Event Emitter-700": {
+  "/docs/DSA/Javascript Specific/Event Emitter-281": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-problems-event-emittercb-5-3e2"
+    "content": "content---docs-dsa-javascript-specific-event-emitterde-8-997"
   },
-  "/docs/DSA/Problems/Execute Asynchronous Functions In Parallel-4b2": {
+  "/docs/DSA/Javascript Specific/Execute Asynchronous Functions In Parallel-e72": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-problems-execute-asynchronous-functions-in-parallel-6-c-0-ce3"
+    "content": "content---docs-dsa-javascript-specific-execute-asynchronous-functions-in-parallel-372-aac"
   },
-  "/docs/DSA/Problems/Fibonnacci-efb": {
+  "/docs/DSA/Javascript Specific/Fibonnacci-9f8": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-problems-fibonnaccic-07-380"
+    "content": "content---docs-dsa-javascript-specific-fibonnacci-0-cc-bc4"
   },
-  "/docs/DSA/Problems/Filter Elements From Array-fd7": {
+  "/docs/DSA/Javascript Specific/Filter Elements From Array-250": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-problems-filter-elements-from-array-357-5ee"
+    "content": "content---docs-dsa-javascript-specific-filter-elements-from-arrayb-01-5e9"
   },
-  "/docs/DSA/Problems/Function Composition-6b0": {
+  "/docs/DSA/Javascript Specific/Function Composition-d5c": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-problems-function-composition-0-e-1-dec"
+    "content": "content---docs-dsa-javascript-specific-function-composition-5-c-3-e39"
   },
-  "/docs/DSA/Problems/Group Anagrams-57a": {
+  "/docs/DSA/Javascript Specific/Group Anagrams-894": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-problems-group-anagramsf-95-d1e"
+    "content": "content---docs-dsa-javascript-specific-group-anagramsfad-dc7"
   },
-  "/docs/DSA/Problems/Group By-474": {
+  "/docs/DSA/Javascript Specific/Group By-143": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-problems-group-bye-6-b-c28"
+    "content": "content---docs-dsa-javascript-specific-group-by-3-d-9-b65"
   },
-  "/docs/DSA/Problems/Join Two Arrays By Id-1ad": {
+  "/docs/DSA/Javascript Specific/Join Two Arrays By Id-4a3": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-problems-join-two-arrays-by-id-2-d-8-943"
+    "content": "content---docs-dsa-javascript-specific-join-two-arrays-by-id-90-b-72d"
   },
-  "/docs/DSA/Problems/Longest substring without repeating characters-396": {
+  "/docs/DSA/Javascript Specific/Longest substring without repeating characters-c9c": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-problems-longest-substring-without-repeating-characters-6-c-3-d42"
+    "content": "content---docs-dsa-javascript-specific-longest-substring-without-repeating-characters-851-12e"
   },
-  "/docs/DSA/Problems/Memoize-e98": {
+  "/docs/DSA/Javascript Specific/Memoize-e6b": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-problems-memoizeb-5-c-cfe"
+    "content": "content---docs-dsa-javascript-specific-memoize-5-c-3-e59"
   },
-  "/docs/DSA/Problems/Merge Intervals-648": {
+  "/docs/DSA/Javascript Specific/Merge Intervals-86c": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-problems-merge-intervalsd-8-a-47a"
+    "content": "content---docs-dsa-javascript-specific-merge-intervals-0-fb-ad2"
   },
-  "/docs/DSA/Problems/Merge Sorted Array-c08": {
+  "/docs/DSA/Javascript Specific/Merge Sorted Array-2c7": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-problems-merge-sorted-array-58-d-728"
+    "content": "content---docs-dsa-javascript-specific-merge-sorted-array-427-6eb"
   },
-  "/docs/DSA/Problems/Minimum size subarray sum-491": {
+  "/docs/DSA/Javascript Specific/Minimum size subarray sum-a01": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-problems-minimum-size-subarray-sum-6-b-4-bdb"
+    "content": "content---docs-dsa-javascript-specific-minimum-size-subarray-sumbd-5-c7e"
   },
-  "/docs/DSA/Problems/Nested Array Generator-02f": {
+  "/docs/DSA/Javascript Specific/Nested Array Generator-2bb": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-problems-nested-array-generatorb-31-af5"
+    "content": "content---docs-dsa-javascript-specific-nested-array-generator-31-a-903"
   },
-  "/docs/DSA/Problems/Promise Time Limit-a09": {
+  "/docs/DSA/Javascript Specific/Promise Time Limit-e17": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-problems-promise-time-limite-0-f-d37"
+    "content": "content---docs-dsa-javascript-specific-promise-time-limite-64-5e8"
   },
-  "/docs/DSA/Problems/Recursive Flatten-b6b": {
+  "/docs/DSA/Javascript Specific/Recursive Flatten-e9c": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-problems-recursive-flatten-8-b-8-ce4"
+    "content": "content---docs-dsa-javascript-specific-recursive-flatten-337-fec"
   },
-  "/docs/DSA/Problems/Reverse words in a string-831": {
+  "/docs/DSA/Javascript Specific/Reverse words in a string-33b": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-problems-reverse-words-in-a-stringdfc-43c"
+    "content": "content---docs-dsa-javascript-specific-reverse-words-in-a-string-756-2d7"
   },
-  "/docs/DSA/Problems/Sleep-0f7": {
+  "/docs/DSA/Javascript Specific/Sleep-176": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-problems-sleepe-08-52f"
+    "content": "content---docs-dsa-javascript-specific-sleepea-5-bf6"
   },
-  "/docs/DSA/Problems/Summary Ranges-11a": {
+  "/docs/DSA/Javascript Specific/Summary Ranges-83c": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-problems-summary-rangesc-76-f6a"
+    "content": "content---docs-dsa-javascript-specific-summary-ranges-81-c-bec"
   },
-  "/docs/DSA/Problems/To Be or Not To Be-e96": {
+  "/docs/DSA/Javascript Specific/To Be or Not To Be-5dc": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-problems-to-be-or-not-to-be-5-a-2-c17"
+    "content": "content---docs-dsa-javascript-specific-to-be-or-not-to-beaf-2-9f3"
   },
-  "/docs/DSA/Problems/Two Sum II-9b5": {
+  "/docs/DSA/Javascript Specific/Two Sum II-b6b": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-problems-two-sum-ii-53-b-1a7"
+    "content": "content---docs-dsa-javascript-specific-two-sum-i-ic-48-851"
   },
-  "/docs/DSA/Problems/Valid Palindrome-d54": {
+  "/docs/DSA/Javascript Specific/Valid Palindrome-b85": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-problems-valid-palindromea-87-e3a"
+    "content": "content---docs-dsa-javascript-specific-valid-palindromeec-0-e2e"
   },
-  "/docs/DSA/Problems/Valid Sudoku-0e5": {
+  "/docs/DSA/Javascript Specific/Valid Sudoku-6ec": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-problems-valid-sudoku-38-a-d3f"
+    "content": "content---docs-dsa-javascript-specific-valid-sudokub-04-d61"
   },
-  "/docs/DSA/Problems/Zigzag Conversion-b5f": {
+  "/docs/DSA/Javascript Specific/Zigzag Conversion-5d6": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-problems-zigzag-conversionc-42-094"
+    "content": "content---docs-dsa-javascript-specific-zigzag-conversion-006-a88"
   },
   "/docs/JavaScript/Fundamentals-c80": {
     "__comp": "__comp---theme-doc-item-178-a40",

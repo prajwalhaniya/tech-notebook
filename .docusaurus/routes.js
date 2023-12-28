@@ -64,17 +64,11 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '127'),
+    component: ComponentCreator('/docs', '497'),
     routes: [
       {
         path: '/docs/category/100-easy',
         component: ComponentCreator('/docs/category/100-easy', 'c15'),
-        exact: true,
-        sidebar: "tutorialSidebar"
-      },
-      {
-        path: '/docs/category/binary-search',
-        component: ComponentCreator('/docs/category/binary-search', '721'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
@@ -91,12 +85,6 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/category/depth-first-search',
-        component: ComponentCreator('/docs/category/depth-first-search', '942'),
-        exact: true,
-        sidebar: "tutorialSidebar"
-      },
-      {
         path: '/docs/category/dsa',
         component: ComponentCreator('/docs/category/dsa', '14a'),
         exact: true,
@@ -109,14 +97,14 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/category/object-oriented-javascript',
-        component: ComponentCreator('/docs/category/object-oriented-javascript', '2ac'),
+        path: '/docs/category/javascript-specific-problems',
+        component: ComponentCreator('/docs/category/javascript-specific-problems', 'b72'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/category/problems',
-        component: ComponentCreator('/docs/category/problems', '3d8'),
+        path: '/docs/category/object-oriented-javascript',
+        component: ComponentCreator('/docs/category/object-oriented-javascript', '2ac'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
@@ -163,206 +151,194 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/DSA/Binary Search/overview',
-        component: ComponentCreator('/docs/DSA/Binary Search/overview', '706'),
-        exact: true,
-        sidebar: "tutorialSidebar"
-      },
-      {
-        path: '/docs/DSA/Depth First Search/overview',
-        component: ComponentCreator('/docs/DSA/Depth First Search/overview', '65e'),
-        exact: true,
-        sidebar: "tutorialSidebar"
-      },
-      {
         path: '/docs/DSA/Fundamentals',
         component: ComponentCreator('/docs/DSA/Fundamentals', '570'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/DSA/Problems/Array Prototype Last',
-        component: ComponentCreator('/docs/DSA/Problems/Array Prototype Last', '6b0'),
+        path: '/docs/DSA/Javascript Specific/Array Prototype Last',
+        component: ComponentCreator('/docs/DSA/Javascript Specific/Array Prototype Last', 'f56'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/DSA/Problems/Array Reduce Transformation',
-        component: ComponentCreator('/docs/DSA/Problems/Array Reduce Transformation', '448'),
+        path: '/docs/DSA/Javascript Specific/Array Reduce Transformation',
+        component: ComponentCreator('/docs/DSA/Javascript Specific/Array Reduce Transformation', 'e6f'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/DSA/Problems/Cache with Time',
-        component: ComponentCreator('/docs/DSA/Problems/Cache with Time', '670'),
+        path: '/docs/DSA/Javascript Specific/Cache with Time',
+        component: ComponentCreator('/docs/DSA/Javascript Specific/Cache with Time', 'ddd'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/DSA/Problems/Compact Object',
-        component: ComponentCreator('/docs/DSA/Problems/Compact Object', 'd15'),
+        path: '/docs/DSA/Javascript Specific/Compact Object',
+        component: ComponentCreator('/docs/DSA/Javascript Specific/Compact Object', 'a2c'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/DSA/Problems/Container with most water',
-        component: ComponentCreator('/docs/DSA/Problems/Container with most water', '540'),
+        path: '/docs/DSA/Javascript Specific/Container with most water',
+        component: ComponentCreator('/docs/DSA/Javascript Specific/Container with most water', 'a48'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/DSA/Problems/Counter',
-        component: ComponentCreator('/docs/DSA/Problems/Counter', '4d0'),
+        path: '/docs/DSA/Javascript Specific/Counter',
+        component: ComponentCreator('/docs/DSA/Javascript Specific/Counter', '273'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/DSA/Problems/Counter Two',
-        component: ComponentCreator('/docs/DSA/Problems/Counter Two', '13e'),
+        path: '/docs/DSA/Javascript Specific/Counter Two',
+        component: ComponentCreator('/docs/DSA/Javascript Specific/Counter Two', 'e47'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/DSA/Problems/Event Emitter',
-        component: ComponentCreator('/docs/DSA/Problems/Event Emitter', '700'),
+        path: '/docs/DSA/Javascript Specific/Event Emitter',
+        component: ComponentCreator('/docs/DSA/Javascript Specific/Event Emitter', '281'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/DSA/Problems/Execute Asynchronous Functions In Parallel',
-        component: ComponentCreator('/docs/DSA/Problems/Execute Asynchronous Functions In Parallel', '4b2'),
+        path: '/docs/DSA/Javascript Specific/Execute Asynchronous Functions In Parallel',
+        component: ComponentCreator('/docs/DSA/Javascript Specific/Execute Asynchronous Functions In Parallel', 'e72'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/DSA/Problems/Fibonnacci',
-        component: ComponentCreator('/docs/DSA/Problems/Fibonnacci', 'efb'),
+        path: '/docs/DSA/Javascript Specific/Fibonnacci',
+        component: ComponentCreator('/docs/DSA/Javascript Specific/Fibonnacci', '9f8'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/DSA/Problems/Filter Elements From Array',
-        component: ComponentCreator('/docs/DSA/Problems/Filter Elements From Array', 'fd7'),
+        path: '/docs/DSA/Javascript Specific/Filter Elements From Array',
+        component: ComponentCreator('/docs/DSA/Javascript Specific/Filter Elements From Array', '250'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/DSA/Problems/Function Composition',
-        component: ComponentCreator('/docs/DSA/Problems/Function Composition', '6b0'),
+        path: '/docs/DSA/Javascript Specific/Function Composition',
+        component: ComponentCreator('/docs/DSA/Javascript Specific/Function Composition', 'd5c'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/DSA/Problems/Group Anagrams',
-        component: ComponentCreator('/docs/DSA/Problems/Group Anagrams', '57a'),
+        path: '/docs/DSA/Javascript Specific/Group Anagrams',
+        component: ComponentCreator('/docs/DSA/Javascript Specific/Group Anagrams', '894'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/DSA/Problems/Group By',
-        component: ComponentCreator('/docs/DSA/Problems/Group By', '474'),
+        path: '/docs/DSA/Javascript Specific/Group By',
+        component: ComponentCreator('/docs/DSA/Javascript Specific/Group By', '143'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/DSA/Problems/Join Two Arrays By Id',
-        component: ComponentCreator('/docs/DSA/Problems/Join Two Arrays By Id', '1ad'),
+        path: '/docs/DSA/Javascript Specific/Join Two Arrays By Id',
+        component: ComponentCreator('/docs/DSA/Javascript Specific/Join Two Arrays By Id', '4a3'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/DSA/Problems/Longest substring without repeating characters',
-        component: ComponentCreator('/docs/DSA/Problems/Longest substring without repeating characters', '396'),
+        path: '/docs/DSA/Javascript Specific/Longest substring without repeating characters',
+        component: ComponentCreator('/docs/DSA/Javascript Specific/Longest substring without repeating characters', 'c9c'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/DSA/Problems/Memoize',
-        component: ComponentCreator('/docs/DSA/Problems/Memoize', 'e98'),
+        path: '/docs/DSA/Javascript Specific/Memoize',
+        component: ComponentCreator('/docs/DSA/Javascript Specific/Memoize', 'e6b'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/DSA/Problems/Merge Intervals',
-        component: ComponentCreator('/docs/DSA/Problems/Merge Intervals', '648'),
+        path: '/docs/DSA/Javascript Specific/Merge Intervals',
+        component: ComponentCreator('/docs/DSA/Javascript Specific/Merge Intervals', '86c'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/DSA/Problems/Merge Sorted Array',
-        component: ComponentCreator('/docs/DSA/Problems/Merge Sorted Array', 'c08'),
+        path: '/docs/DSA/Javascript Specific/Merge Sorted Array',
+        component: ComponentCreator('/docs/DSA/Javascript Specific/Merge Sorted Array', '2c7'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/DSA/Problems/Minimum size subarray sum',
-        component: ComponentCreator('/docs/DSA/Problems/Minimum size subarray sum', '491'),
+        path: '/docs/DSA/Javascript Specific/Minimum size subarray sum',
+        component: ComponentCreator('/docs/DSA/Javascript Specific/Minimum size subarray sum', 'a01'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/DSA/Problems/Nested Array Generator',
-        component: ComponentCreator('/docs/DSA/Problems/Nested Array Generator', '02f'),
+        path: '/docs/DSA/Javascript Specific/Nested Array Generator',
+        component: ComponentCreator('/docs/DSA/Javascript Specific/Nested Array Generator', '2bb'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/DSA/Problems/Promise Time Limit',
-        component: ComponentCreator('/docs/DSA/Problems/Promise Time Limit', 'a09'),
+        path: '/docs/DSA/Javascript Specific/Promise Time Limit',
+        component: ComponentCreator('/docs/DSA/Javascript Specific/Promise Time Limit', 'e17'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/DSA/Problems/Recursive Flatten',
-        component: ComponentCreator('/docs/DSA/Problems/Recursive Flatten', 'b6b'),
+        path: '/docs/DSA/Javascript Specific/Recursive Flatten',
+        component: ComponentCreator('/docs/DSA/Javascript Specific/Recursive Flatten', 'e9c'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/DSA/Problems/Reverse words in a string',
-        component: ComponentCreator('/docs/DSA/Problems/Reverse words in a string', '831'),
+        path: '/docs/DSA/Javascript Specific/Reverse words in a string',
+        component: ComponentCreator('/docs/DSA/Javascript Specific/Reverse words in a string', '33b'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/DSA/Problems/Sleep',
-        component: ComponentCreator('/docs/DSA/Problems/Sleep', '0f7'),
+        path: '/docs/DSA/Javascript Specific/Sleep',
+        component: ComponentCreator('/docs/DSA/Javascript Specific/Sleep', '176'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/DSA/Problems/Summary Ranges',
-        component: ComponentCreator('/docs/DSA/Problems/Summary Ranges', '11a'),
+        path: '/docs/DSA/Javascript Specific/Summary Ranges',
+        component: ComponentCreator('/docs/DSA/Javascript Specific/Summary Ranges', '83c'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/DSA/Problems/To Be or Not To Be',
-        component: ComponentCreator('/docs/DSA/Problems/To Be or Not To Be', 'e96'),
+        path: '/docs/DSA/Javascript Specific/To Be or Not To Be',
+        component: ComponentCreator('/docs/DSA/Javascript Specific/To Be or Not To Be', '5dc'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/DSA/Problems/Two Sum II',
-        component: ComponentCreator('/docs/DSA/Problems/Two Sum II', '9b5'),
+        path: '/docs/DSA/Javascript Specific/Two Sum II',
+        component: ComponentCreator('/docs/DSA/Javascript Specific/Two Sum II', 'b6b'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/DSA/Problems/Valid Palindrome',
-        component: ComponentCreator('/docs/DSA/Problems/Valid Palindrome', 'd54'),
+        path: '/docs/DSA/Javascript Specific/Valid Palindrome',
+        component: ComponentCreator('/docs/DSA/Javascript Specific/Valid Palindrome', 'b85'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/DSA/Problems/Valid Sudoku',
-        component: ComponentCreator('/docs/DSA/Problems/Valid Sudoku', '0e5'),
+        path: '/docs/DSA/Javascript Specific/Valid Sudoku',
+        component: ComponentCreator('/docs/DSA/Javascript Specific/Valid Sudoku', '6ec'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/DSA/Problems/Zigzag Conversion',
-        component: ComponentCreator('/docs/DSA/Problems/Zigzag Conversion', 'b5f'),
+        path: '/docs/DSA/Javascript Specific/Zigzag Conversion',
+        component: ComponentCreator('/docs/DSA/Javascript Specific/Zigzag Conversion', '5d6'),
         exact: true,
         sidebar: "tutorialSidebar"
       },

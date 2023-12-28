@@ -46,173 +46,163 @@
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "DSA/Binary Search/overview",
-              "path": "/docs/DSA/Binary Search/overview",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "DSA/Depth First Search/overview",
-              "path": "/docs/DSA/Depth First Search/overview",
-              "sidebar": "tutorialSidebar"
-            },
-            {
               "id": "DSA/Fundamentals",
               "path": "/docs/DSA/Fundamentals",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "DSA/Problems/Array Prototype Last",
-              "path": "/docs/DSA/Problems/Array Prototype Last",
+              "id": "DSA/Javascript Specific/Array Prototype Last",
+              "path": "/docs/DSA/Javascript Specific/Array Prototype Last",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "DSA/Problems/Array Reduce Transformation",
-              "path": "/docs/DSA/Problems/Array Reduce Transformation",
+              "id": "DSA/Javascript Specific/Array Reduce Transformation",
+              "path": "/docs/DSA/Javascript Specific/Array Reduce Transformation",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "DSA/Problems/Cache with Time",
-              "path": "/docs/DSA/Problems/Cache with Time",
+              "id": "DSA/Javascript Specific/Cache with Time",
+              "path": "/docs/DSA/Javascript Specific/Cache with Time",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "DSA/Problems/Compact Object",
-              "path": "/docs/DSA/Problems/Compact Object",
+              "id": "DSA/Javascript Specific/Compact Object",
+              "path": "/docs/DSA/Javascript Specific/Compact Object",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "DSA/Problems/Container with most water",
-              "path": "/docs/DSA/Problems/Container with most water",
+              "id": "DSA/Javascript Specific/Container with most water",
+              "path": "/docs/DSA/Javascript Specific/Container with most water",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "DSA/Problems/Counter",
-              "path": "/docs/DSA/Problems/Counter",
+              "id": "DSA/Javascript Specific/Counter",
+              "path": "/docs/DSA/Javascript Specific/Counter",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "DSA/Problems/Counter Two",
-              "path": "/docs/DSA/Problems/Counter Two",
+              "id": "DSA/Javascript Specific/Counter Two",
+              "path": "/docs/DSA/Javascript Specific/Counter Two",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "DSA/Problems/Event Emitter",
-              "path": "/docs/DSA/Problems/Event Emitter",
+              "id": "DSA/Javascript Specific/Event Emitter",
+              "path": "/docs/DSA/Javascript Specific/Event Emitter",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "DSA/Problems/Execute Asynchronous Functions In Parallel",
-              "path": "/docs/DSA/Problems/Execute Asynchronous Functions In Parallel",
+              "id": "DSA/Javascript Specific/Execute Asynchronous Functions In Parallel",
+              "path": "/docs/DSA/Javascript Specific/Execute Asynchronous Functions In Parallel",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "DSA/Problems/Fibonnacci",
-              "path": "/docs/DSA/Problems/Fibonnacci",
+              "id": "DSA/Javascript Specific/Fibonnacci",
+              "path": "/docs/DSA/Javascript Specific/Fibonnacci",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "DSA/Problems/Filter Elements From Array",
-              "path": "/docs/DSA/Problems/Filter Elements From Array",
+              "id": "DSA/Javascript Specific/Filter Elements From Array",
+              "path": "/docs/DSA/Javascript Specific/Filter Elements From Array",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "DSA/Problems/Function Composition",
-              "path": "/docs/DSA/Problems/Function Composition",
+              "id": "DSA/Javascript Specific/Function Composition",
+              "path": "/docs/DSA/Javascript Specific/Function Composition",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "DSA/Problems/Group Anagrams",
-              "path": "/docs/DSA/Problems/Group Anagrams",
+              "id": "DSA/Javascript Specific/Group Anagrams",
+              "path": "/docs/DSA/Javascript Specific/Group Anagrams",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "DSA/Problems/Group By",
-              "path": "/docs/DSA/Problems/Group By",
+              "id": "DSA/Javascript Specific/Group By",
+              "path": "/docs/DSA/Javascript Specific/Group By",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "DSA/Problems/Join Two Arrays By Id",
-              "path": "/docs/DSA/Problems/Join Two Arrays By Id",
+              "id": "DSA/Javascript Specific/Join Two Arrays By Id",
+              "path": "/docs/DSA/Javascript Specific/Join Two Arrays By Id",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "DSA/Problems/Longest substring without repeating characters",
-              "path": "/docs/DSA/Problems/Longest substring without repeating characters",
+              "id": "DSA/Javascript Specific/Longest substring without repeating characters",
+              "path": "/docs/DSA/Javascript Specific/Longest substring without repeating characters",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "DSA/Problems/Memoize",
-              "path": "/docs/DSA/Problems/Memoize",
+              "id": "DSA/Javascript Specific/Memoize",
+              "path": "/docs/DSA/Javascript Specific/Memoize",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "DSA/Problems/Merge Intervals",
-              "path": "/docs/DSA/Problems/Merge Intervals",
+              "id": "DSA/Javascript Specific/Merge Intervals",
+              "path": "/docs/DSA/Javascript Specific/Merge Intervals",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "DSA/Problems/Merge Sorted Array",
-              "path": "/docs/DSA/Problems/Merge Sorted Array",
+              "id": "DSA/Javascript Specific/Merge Sorted Array",
+              "path": "/docs/DSA/Javascript Specific/Merge Sorted Array",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "DSA/Problems/Minimum size subarray sum",
-              "path": "/docs/DSA/Problems/Minimum size subarray sum",
+              "id": "DSA/Javascript Specific/Minimum size subarray sum",
+              "path": "/docs/DSA/Javascript Specific/Minimum size subarray sum",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "DSA/Problems/Nested Array Generator",
-              "path": "/docs/DSA/Problems/Nested Array Generator",
+              "id": "DSA/Javascript Specific/Nested Array Generator",
+              "path": "/docs/DSA/Javascript Specific/Nested Array Generator",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "DSA/Problems/Promise Time Limit",
-              "path": "/docs/DSA/Problems/Promise Time Limit",
+              "id": "DSA/Javascript Specific/Promise Time Limit",
+              "path": "/docs/DSA/Javascript Specific/Promise Time Limit",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "DSA/Problems/Recursive Flatten",
-              "path": "/docs/DSA/Problems/Recursive Flatten",
+              "id": "DSA/Javascript Specific/Recursive Flatten",
+              "path": "/docs/DSA/Javascript Specific/Recursive Flatten",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "DSA/Problems/Reverse words in a string",
-              "path": "/docs/DSA/Problems/Reverse words in a string",
+              "id": "DSA/Javascript Specific/Reverse words in a string",
+              "path": "/docs/DSA/Javascript Specific/Reverse words in a string",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "DSA/Problems/Sleep",
-              "path": "/docs/DSA/Problems/Sleep",
+              "id": "DSA/Javascript Specific/Sleep",
+              "path": "/docs/DSA/Javascript Specific/Sleep",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "DSA/Problems/Summary Ranges",
-              "path": "/docs/DSA/Problems/Summary Ranges",
+              "id": "DSA/Javascript Specific/Summary Ranges",
+              "path": "/docs/DSA/Javascript Specific/Summary Ranges",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "DSA/Problems/To Be or Not To Be",
-              "path": "/docs/DSA/Problems/To Be or Not To Be",
+              "id": "DSA/Javascript Specific/To Be or Not To Be",
+              "path": "/docs/DSA/Javascript Specific/To Be or Not To Be",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "DSA/Problems/Two Sum II",
-              "path": "/docs/DSA/Problems/Two Sum II",
+              "id": "DSA/Javascript Specific/Two Sum II",
+              "path": "/docs/DSA/Javascript Specific/Two Sum II",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "DSA/Problems/Valid Palindrome",
-              "path": "/docs/DSA/Problems/Valid Palindrome",
+              "id": "DSA/Javascript Specific/Valid Palindrome",
+              "path": "/docs/DSA/Javascript Specific/Valid Palindrome",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "DSA/Problems/Valid Sudoku",
-              "path": "/docs/DSA/Problems/Valid Sudoku",
+              "id": "DSA/Javascript Specific/Valid Sudoku",
+              "path": "/docs/DSA/Javascript Specific/Valid Sudoku",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "DSA/Problems/Zigzag Conversion",
-              "path": "/docs/DSA/Problems/Zigzag Conversion",
+              "id": "DSA/Javascript Specific/Zigzag Conversion",
+              "path": "/docs/DSA/Javascript Specific/Zigzag Conversion",
               "sidebar": "tutorialSidebar"
             },
             {
@@ -256,18 +246,8 @@
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "/category/problems",
-              "path": "/docs/category/problems",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "/category/binary-search",
-              "path": "/docs/category/binary-search",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "/category/depth-first-search",
-              "path": "/docs/category/depth-first-search",
+              "id": "/category/javascript-specific-problems",
+              "path": "/docs/category/javascript-specific-problems",
               "sidebar": "tutorialSidebar"
             },
             {
