@@ -21,13 +21,28 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "DSA/100 Easy/Add binary",
+              "path": "/docs/DSA/100 Easy/Add binary",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "DSA/100 Easy/Longest common prefix",
               "path": "/docs/DSA/100 Easy/Longest common prefix",
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "DSA/100 Easy/Merge two sorted lists",
+              "path": "/docs/DSA/100 Easy/Merge two sorted lists",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "DSA/100 Easy/Palindrome",
               "path": "/docs/DSA/100 Easy/Palindrome",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Easy/Remove duplicates from sorted list",
+              "path": "/docs/DSA/100 Easy/Remove duplicates from sorted list",
               "sidebar": "tutorialSidebar"
             },
             {
@@ -43,6 +58,11 @@
             {
               "id": "DSA/100 Easy/Two Sum",
               "path": "/docs/DSA/100 Easy/Two Sum",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Easy/Valid Parentheses",
+              "path": "/docs/DSA/100 Easy/Valid Parentheses",
               "sidebar": "tutorialSidebar"
             },
             {

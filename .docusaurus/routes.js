@@ -64,7 +64,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '497'),
+    component: ComponentCreator('/docs', '923'),
     routes: [
       {
         path: '/docs/category/100-easy',
@@ -121,14 +121,32 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
+        path: '/docs/DSA/100 Easy/Add binary',
+        component: ComponentCreator('/docs/DSA/100 Easy/Add binary', '70d'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
         path: '/docs/DSA/100 Easy/Longest common prefix',
         component: ComponentCreator('/docs/DSA/100 Easy/Longest common prefix', '7ce'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
+        path: '/docs/DSA/100 Easy/Merge two sorted lists',
+        component: ComponentCreator('/docs/DSA/100 Easy/Merge two sorted lists', '851'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
         path: '/docs/DSA/100 Easy/Palindrome',
         component: ComponentCreator('/docs/DSA/100 Easy/Palindrome', 'f0c'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/100 Easy/Remove duplicates from sorted list',
+        component: ComponentCreator('/docs/DSA/100 Easy/Remove duplicates from sorted list', '732'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
@@ -147,6 +165,12 @@ export default [
       {
         path: '/docs/DSA/100 Easy/Two Sum',
         component: ComponentCreator('/docs/DSA/100 Easy/Two Sum', 'c3a'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/100 Easy/Valid Parentheses',
+        component: ComponentCreator('/docs/DSA/100 Easy/Valid Parentheses', '62e'),
         exact: true,
         sidebar: "tutorialSidebar"
       },

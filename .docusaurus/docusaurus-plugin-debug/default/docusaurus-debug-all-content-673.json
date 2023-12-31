@@ -60,6 +60,32 @@
               }
             },
             {
+              "unversionedId": "DSA/100 Easy/Add binary",
+              "id": "DSA/100 Easy/Add binary",
+              "title": "Add binary",
+              "description": "Given two binary strings a and b, return their sum as a binary string.",
+              "source": "@site/docs/DSA/100 Easy/Add binary.md",
+              "sourceDirName": "DSA/100 Easy",
+              "slug": "/DSA/100 Easy/Add binary",
+              "permalink": "/docs/DSA/100 Easy/Add binary",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 8,
+              "frontMatter": {
+                "sidebar_position": 8
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Merge two sorted lists",
+                "permalink": "/docs/DSA/100 Easy/Merge two sorted lists"
+              },
+              "next": {
+                "title": "Remove duplicates from sorted list",
+                "permalink": "/docs/DSA/100 Easy/Remove duplicates from sorted list"
+              }
+            },
+            {
               "unversionedId": "DSA/100 Easy/Longest common prefix",
               "id": "DSA/100 Easy/Longest common prefix",
               "title": "Longest common prefix",
@@ -81,8 +107,34 @@
                 "permalink": "/docs/DSA/100 Easy/Square Root"
               },
               "next": {
-                "title": "Database",
-                "permalink": "/docs/category/database"
+                "title": "Valid Parentheses",
+                "permalink": "/docs/DSA/100 Easy/Valid Parentheses"
+              }
+            },
+            {
+              "unversionedId": "DSA/100 Easy/Merge two sorted lists",
+              "id": "DSA/100 Easy/Merge two sorted lists",
+              "title": "Merge two sorted lists",
+              "description": "You are given the heads of two sorted linked lists list1 and list2.",
+              "source": "@site/docs/DSA/100 Easy/Merge two sorted lists.md",
+              "sourceDirName": "DSA/100 Easy",
+              "slug": "/DSA/100 Easy/Merge two sorted lists",
+              "permalink": "/docs/DSA/100 Easy/Merge two sorted lists",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 7,
+              "frontMatter": {
+                "sidebar_position": 7
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Valid Parentheses",
+                "permalink": "/docs/DSA/100 Easy/Valid Parentheses"
+              },
+              "next": {
+                "title": "Add binary",
+                "permalink": "/docs/DSA/100 Easy/Add binary"
               }
             },
             {
@@ -109,6 +161,31 @@
               "next": {
                 "title": "Roman to integer",
                 "permalink": "/docs/DSA/100 Easy/Roman to integer"
+              }
+            },
+            {
+              "unversionedId": "DSA/100 Easy/Remove duplicates from sorted list",
+              "id": "DSA/100 Easy/Remove duplicates from sorted list",
+              "title": "Remove duplicates from sorted list",
+              "description": "Given the head of a sorted linked list, delete all duplicates such that each element appears only once. Return the linked list sorted as well.",
+              "source": "@site/docs/DSA/100 Easy/Remove duplicates from sorted list.md",
+              "sourceDirName": "DSA/100 Easy",
+              "slug": "/DSA/100 Easy/Remove duplicates from sorted list",
+              "permalink": "/docs/DSA/100 Easy/Remove duplicates from sorted list",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "sidebar_poistion": 9
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Add binary",
+                "permalink": "/docs/DSA/100 Easy/Add binary"
+              },
+              "next": {
+                "title": "Database",
+                "permalink": "/docs/category/database"
               }
             },
             {
@@ -187,6 +264,32 @@
               "next": {
                 "title": "Palindrome",
                 "permalink": "/docs/DSA/100 Easy/Palindrome"
+              }
+            },
+            {
+              "unversionedId": "DSA/100 Easy/Valid Parentheses",
+              "id": "DSA/100 Easy/Valid Parentheses",
+              "title": "Valid Parentheses",
+              "description": "Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.",
+              "source": "@site/docs/DSA/100 Easy/Valid Parentheses.md",
+              "sourceDirName": "DSA/100 Easy",
+              "slug": "/DSA/100 Easy/Valid Parentheses",
+              "permalink": "/docs/DSA/100 Easy/Valid Parentheses",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 6,
+              "frontMatter": {
+                "sidebar_position": 6
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Longest common prefix",
+                "permalink": "/docs/DSA/100 Easy/Longest common prefix"
+              },
+              "next": {
+                "title": "Merge two sorted lists",
+                "permalink": "/docs/DSA/100 Easy/Merge two sorted lists"
               }
             },
             {
@@ -1376,6 +1479,22 @@
                       {
                         "type": "doc",
                         "id": "DSA/100 Easy/Longest common prefix"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "DSA/100 Easy/Valid Parentheses"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "DSA/100 Easy/Merge two sorted lists"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "DSA/100 Easy/Add binary"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "DSA/100 Easy/Remove duplicates from sorted list"
                       }
                     ],
                     "link": {

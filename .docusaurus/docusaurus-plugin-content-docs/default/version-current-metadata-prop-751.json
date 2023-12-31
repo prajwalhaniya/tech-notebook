@@ -299,6 +299,30 @@
                 "label": "Longest common prefix",
                 "href": "/docs/DSA/100 Easy/Longest common prefix",
                 "docId": "DSA/100 Easy/Longest common prefix"
+              },
+              {
+                "type": "link",
+                "label": "Valid Parentheses",
+                "href": "/docs/DSA/100 Easy/Valid Parentheses",
+                "docId": "DSA/100 Easy/Valid Parentheses"
+              },
+              {
+                "type": "link",
+                "label": "Merge two sorted lists",
+                "href": "/docs/DSA/100 Easy/Merge two sorted lists",
+                "docId": "DSA/100 Easy/Merge two sorted lists"
+              },
+              {
+                "type": "link",
+                "label": "Add binary",
+                "href": "/docs/DSA/100 Easy/Add binary",
+                "docId": "DSA/100 Easy/Add binary"
+              },
+              {
+                "type": "link",
+                "label": "Remove duplicates from sorted list",
+                "href": "/docs/DSA/100 Easy/Remove duplicates from sorted list",
+                "docId": "DSA/100 Easy/Remove duplicates from sorted list"
               }
             ],
             "href": "/docs/category/100-easy"
@@ -351,16 +375,34 @@
       "description": "",
       "sidebar": "tutorialSidebar"
     },
+    "DSA/100 Easy/Add binary": {
+      "id": "DSA/100 Easy/Add binary",
+      "title": "Add binary",
+      "description": "Given two binary strings a and b, return their sum as a binary string.",
+      "sidebar": "tutorialSidebar"
+    },
     "DSA/100 Easy/Longest common prefix": {
       "id": "DSA/100 Easy/Longest common prefix",
       "title": "Longest common prefix",
       "description": "Write a function to find the longest common prefix string amongst an array of strings.",
       "sidebar": "tutorialSidebar"
     },
+    "DSA/100 Easy/Merge two sorted lists": {
+      "id": "DSA/100 Easy/Merge two sorted lists",
+      "title": "Merge two sorted lists",
+      "description": "You are given the heads of two sorted linked lists list1 and list2.",
+      "sidebar": "tutorialSidebar"
+    },
     "DSA/100 Easy/Palindrome": {
       "id": "DSA/100 Easy/Palindrome",
       "title": "Palindrome",
       "description": "Given an integer x, return true if x is a palindrome, and false otherwise.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Easy/Remove duplicates from sorted list": {
+      "id": "DSA/100 Easy/Remove duplicates from sorted list",
+      "title": "Remove duplicates from sorted list",
+      "description": "Given the head of a sorted linked list, delete all duplicates such that each element appears only once. Return the linked list sorted as well.",
       "sidebar": "tutorialSidebar"
     },
     "DSA/100 Easy/Roman to integer": {
@@ -379,6 +421,12 @@
       "id": "DSA/100 Easy/Two Sum",
       "title": "Two Sum",
       "description": "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Easy/Valid Parentheses": {
+      "id": "DSA/100 Easy/Valid Parentheses",
+      "title": "Valid Parentheses",
+      "description": "Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.",
       "sidebar": "tutorialSidebar"
     },
     "DSA/Fundamentals": {
