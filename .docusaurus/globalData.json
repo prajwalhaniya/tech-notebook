@@ -226,6 +226,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "DSA/Rate Limiting Algorithms/Token Bucket Algorithm",
+              "path": "/docs/DSA/Rate Limiting Algorithms/Token Bucket Algorithm",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "JavaScript/Fundamentals",
               "path": "/docs/JavaScript/Fundamentals",
               "sidebar": "tutorialSidebar"
@@ -273,6 +278,11 @@
             {
               "id": "/category/100-easy",
               "path": "/docs/category/100-easy",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/rate-limiting-algorithms",
+              "path": "/docs/category/rate-limiting-algorithms",
               "sidebar": "tutorialSidebar"
             },
             {

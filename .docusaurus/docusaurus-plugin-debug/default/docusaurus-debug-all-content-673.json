@@ -184,8 +184,8 @@
                 "permalink": "/docs/DSA/100 Easy/Add binary"
               },
               "next": {
-                "title": "Database",
-                "permalink": "/docs/category/database"
+                "title": "Rate limiting algorithms",
+                "permalink": "/docs/category/rate-limiting-algorithms"
               }
             },
             {
@@ -1125,6 +1125,32 @@
               }
             },
             {
+              "unversionedId": "DSA/Rate Limiting Algorithms/Token Bucket Algorithm",
+              "id": "DSA/Rate Limiting Algorithms/Token Bucket Algorithm",
+              "title": "Token Bucket Algorithm",
+              "description": "",
+              "source": "@site/docs/DSA/Rate Limiting Algorithms/Token Bucket Algorithm.md",
+              "sourceDirName": "DSA/Rate Limiting Algorithms",
+              "slug": "/DSA/Rate Limiting Algorithms/Token Bucket Algorithm",
+              "permalink": "/docs/DSA/Rate Limiting Algorithms/Token Bucket Algorithm",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "sidebar_position": 1
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Rate limiting algorithms",
+                "permalink": "/docs/category/rate-limiting-algorithms"
+              },
+              "next": {
+                "title": "Database",
+                "permalink": "/docs/category/database"
+              }
+            },
+            {
               "unversionedId": "JavaScript/Fundamentals",
               "id": "JavaScript/Fundamentals",
               "title": "Fundamentals",
@@ -1502,6 +1528,24 @@
                       "description": "This section consists of all the 100 easy problems",
                       "slug": "/category/100-easy",
                       "permalink": "/docs/category/100-easy"
+                    }
+                  },
+                  {
+                    "type": "category",
+                    "label": "Rate limiting algorithms",
+                    "collapsible": true,
+                    "collapsed": true,
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "DSA/Rate Limiting Algorithms/Token Bucket Algorithm"
+                      }
+                    ],
+                    "link": {
+                      "type": "generated-index",
+                      "description": "All the basic rate limiting algorithms goes here",
+                      "slug": "/category/rate-limiting-algorithms",
+                      "permalink": "/docs/category/rate-limiting-algorithms"
                     }
                   }
                 ],

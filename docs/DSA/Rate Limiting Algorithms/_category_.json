@@ -1,0 +1,8 @@
+{
+    "label": "Rate limiting algorithms",
+    "position": 4,
+    "link": {
+      "type": "generated-index",
+      "description": "All the basic rate limiting algorithms goes here"
+    }
+  }

@@ -88,7 +88,7 @@
     },
     "content": "content---markdown-page-393-028"
   },
-  "/docs-923": {
+  "/docs-175": {
     "__comp": "__comp---theme-doc-page-1-be-9be",
     "__context": {
       "plugin": "plugin---docsd-46-576"
@@ -122,6 +122,10 @@
   "/docs/category/object-oriented-javascript-2ac": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-object-oriented-javascript-051-848"
+  },
+  "/docs/category/rate-limiting-algorithms-48a": {
+    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-rate-limiting-algorithms-58-e-8d5"
   },
   "/docs/Database/concepts-3ca": {
     "__comp": "__comp---theme-doc-item-178-a40",
@@ -294,6 +298,10 @@
   "/docs/DSA/Javascript Specific/Zigzag Conversion-5d6": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-dsa-javascript-specific-zigzag-conversion-006-a88"
+  },
+  "/docs/DSA/Rate Limiting Algorithms/Token Bucket Algorithm-a3b": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-rate-limiting-algorithms-token-bucket-algorithm-885-94a"
   },
   "/docs/JavaScript/Fundamentals-c80": {
     "__comp": "__comp---theme-doc-item-178-a40",

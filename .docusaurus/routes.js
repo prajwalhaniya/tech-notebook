@@ -64,7 +64,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '923'),
+    component: ComponentCreator('/docs', '175'),
     routes: [
       {
         path: '/docs/category/100-easy',
@@ -105,6 +105,12 @@ export default [
       {
         path: '/docs/category/object-oriented-javascript',
         component: ComponentCreator('/docs/category/object-oriented-javascript', '2ac'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/category/rate-limiting-algorithms',
+        component: ComponentCreator('/docs/category/rate-limiting-algorithms', '48a'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
@@ -363,6 +369,12 @@ export default [
       {
         path: '/docs/DSA/Javascript Specific/Zigzag Conversion',
         component: ComponentCreator('/docs/DSA/Javascript Specific/Zigzag Conversion', '5d6'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/Rate Limiting Algorithms/Token Bucket Algorithm',
+        component: ComponentCreator('/docs/DSA/Rate Limiting Algorithms/Token Bucket Algorithm', 'a3b'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
