@@ -66,6 +66,16 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "DSA/100 Medium/Add Two Numbers",
+              "path": "/docs/DSA/100 Medium/Add Two Numbers",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Longest substring without repeating characters",
+              "path": "/docs/DSA/100 Medium/Longest substring without repeating characters",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "DSA/Fundamentals",
               "path": "/docs/DSA/Fundamentals",
               "sidebar": "tutorialSidebar"
@@ -278,6 +288,11 @@
             {
               "id": "/category/100-easy",
               "path": "/docs/category/100-easy",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/100-medium",
+              "path": "/docs/category/100-medium",
               "sidebar": "tutorialSidebar"
             },
             {

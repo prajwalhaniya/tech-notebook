@@ -62,7 +62,7 @@ export default {
     },
     "footer": {
       "style": "dark",
-      "copyright": "Copyright © 2023 Tech Notebook",
+      "copyright": "Copyright © 2024 Tech Notebook",
       "links": []
     },
     "prism": {

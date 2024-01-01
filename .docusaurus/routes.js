@@ -64,11 +64,17 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '175'),
+    component: ComponentCreator('/docs', '744'),
     routes: [
       {
         path: '/docs/category/100-easy',
         component: ComponentCreator('/docs/category/100-easy', 'c15'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/category/100-medium',
+        component: ComponentCreator('/docs/category/100-medium', '070'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
@@ -177,6 +183,18 @@ export default [
       {
         path: '/docs/DSA/100 Easy/Valid Parentheses',
         component: ComponentCreator('/docs/DSA/100 Easy/Valid Parentheses', '62e'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/100 Medium/Add Two Numbers',
+        component: ComponentCreator('/docs/DSA/100 Medium/Add Two Numbers', 'a48'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/100 Medium/Longest substring without repeating characters',
+        component: ComponentCreator('/docs/DSA/100 Medium/Longest substring without repeating characters', 'e43'),
         exact: true,
         sidebar: "tutorialSidebar"
       },

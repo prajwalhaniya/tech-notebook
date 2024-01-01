@@ -329,6 +329,27 @@
           },
           {
             "type": "category",
+            "label": "100 Medium",
+            "collapsible": true,
+            "collapsed": true,
+            "items": [
+              {
+                "type": "link",
+                "label": "Add Two Numbers",
+                "href": "/docs/DSA/100 Medium/Add Two Numbers",
+                "docId": "DSA/100 Medium/Add Two Numbers"
+              },
+              {
+                "type": "link",
+                "label": "Longest substring without repeating characters",
+                "href": "/docs/DSA/100 Medium/Longest substring without repeating characters",
+                "docId": "DSA/100 Medium/Longest substring without repeating characters"
+              }
+            ],
+            "href": "/docs/category/100-medium"
+          },
+          {
+            "type": "category",
             "label": "Rate limiting algorithms",
             "collapsible": true,
             "collapsed": true,
@@ -442,6 +463,18 @@
       "id": "DSA/100 Easy/Valid Parentheses",
       "title": "Valid Parentheses",
       "description": "Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Medium/Add Two Numbers": {
+      "id": "DSA/100 Medium/Add Two Numbers",
+      "title": "Add Two Numbers",
+      "description": "You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Medium/Longest substring without repeating characters": {
+      "id": "DSA/100 Medium/Longest substring without repeating characters",
+      "title": "Longest substring without repeating characters",
+      "description": "Given a string s, find the length of the longest substring without repeating characters.",
       "sidebar": "tutorialSidebar"
     },
     "DSA/Fundamentals": {
