@@ -26,13 +26,13 @@ export default {
       "classic",
       {
         "docs": {
-          "sidebarPath": "/Users/prajwal/Documents/Extras/tech-notebook/sidebars.js"
+          "sidebarPath": "/home/prajwal/Disk D/Prajwal Haniya/tech-notebook/sidebars.js"
         },
         "blog": {
           "showReadingTime": true
         },
         "theme": {
-          "customCss": "/Users/prajwal/Documents/Extras/tech-notebook/src/css/custom.css"
+          "customCss": "/home/prajwal/Disk D/Prajwal Haniya/tech-notebook/src/css/custom.css"
         }
       }
     ]

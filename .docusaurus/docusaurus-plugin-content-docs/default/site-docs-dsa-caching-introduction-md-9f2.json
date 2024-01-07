@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/caching/Introduction",
+  "id": "DSA/caching/Introduction",
+  "title": "Introduction",
+  "description": "- Caching the process of storing the data into temporary memory so that it can be easily retrieved for later use if it is required again.",
+  "source": "@site/docs/DSA/caching/Introduction.md",
+  "sourceDirName": "DSA/caching",
+  "slug": "/DSA/caching/Introduction",
+  "permalink": "/docs/DSA/caching/Introduction",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Caching",
+    "permalink": "/docs/category/caching"
+  },
+  "next": {
+    "title": "Least Frequently Used",
+    "permalink": "/docs/DSA/caching/Least Frequently Used"
+  }
+}

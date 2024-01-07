@@ -1,0 +1,16 @@
+{
+  "title": "Caching",
+  "description": "All the caching concepts goes here",
+  "slug": "/category/caching",
+  "permalink": "/docs/category/caching",
+  "navigation": {
+    "previous": {
+      "title": "Merge Intervals",
+      "permalink": "/docs/DSA/Javascript Specific/Merge Intervals"
+    },
+    "next": {
+      "title": "Introduction",
+      "permalink": "/docs/DSA/caching/Introduction"
+    }
+  }
+}

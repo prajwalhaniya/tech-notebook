@@ -266,6 +266,27 @@
           },
           {
             "type": "category",
+            "label": "Caching",
+            "collapsible": true,
+            "collapsed": true,
+            "items": [
+              {
+                "type": "link",
+                "label": "Introduction",
+                "href": "/docs/DSA/caching/Introduction",
+                "docId": "DSA/caching/Introduction"
+              },
+              {
+                "type": "link",
+                "label": "Least Frequently Used",
+                "href": "/docs/DSA/caching/Least Frequently Used",
+                "docId": "DSA/caching/Least Frequently Used"
+              }
+            ],
+            "href": "/docs/category/caching"
+          },
+          {
+            "type": "category",
             "label": "100 Easy",
             "collapsible": true,
             "collapsed": true,
@@ -475,6 +496,18 @@
       "id": "DSA/100 Medium/Longest substring without repeating characters",
       "title": "Longest substring without repeating characters",
       "description": "Given a string s, find the length of the longest substring without repeating characters.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/caching/Introduction": {
+      "id": "DSA/caching/Introduction",
+      "title": "Introduction",
+      "description": "- Caching the process of storing the data into temporary memory so that it can be easily retrieved for later use if it is required again.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/caching/Least Frequently Used": {
+      "id": "DSA/caching/Least Frequently Used",
+      "title": "Least Frequently Used",
+      "description": "// Implementation",
       "sidebar": "tutorialSidebar"
     },
     "DSA/Fundamentals": {

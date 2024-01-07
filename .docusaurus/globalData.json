@@ -76,6 +76,16 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "DSA/caching/Introduction",
+              "path": "/docs/DSA/caching/Introduction",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/caching/Least Frequently Used",
+              "path": "/docs/DSA/caching/Least Frequently Used",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "DSA/Fundamentals",
               "path": "/docs/DSA/Fundamentals",
               "sidebar": "tutorialSidebar"
@@ -283,6 +293,11 @@
             {
               "id": "/category/javascript-specific-problems",
               "path": "/docs/category/javascript-specific-problems",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/caching",
+              "path": "/docs/category/caching",
               "sidebar": "tutorialSidebar"
             },
             {

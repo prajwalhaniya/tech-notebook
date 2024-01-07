@@ -1,51 +1,51 @@
 {
-  "/__docusaurus/debug-516": {
+  "/__docusaurus/debug-d92": {
     "__comp": "__comp---theme-debug-config-23-a-2ff",
     "__context": {
-      "plugin": "plugin---docusaurus-debug-01-a-fc3"
+      "plugin": "plugin---docusaurus-debug-21-e-639"
     }
   },
-  "/__docusaurus/debug/config-288": {
+  "/__docusaurus/debug/config-584": {
     "__comp": "__comp---theme-debug-config-23-a-2ff",
     "__context": {
-      "plugin": "plugin---docusaurus-debug-01-a-fc3"
+      "plugin": "plugin---docusaurus-debug-21-e-639"
     }
   },
-  "/__docusaurus/debug/content-ecc": {
+  "/__docusaurus/debug/content-d00": {
     "__comp": "__comp---theme-debug-contentba-8-ce7",
     "__context": {
-      "plugin": "plugin---docusaurus-debug-01-a-fc3"
+      "plugin": "plugin---docusaurus-debug-21-e-639"
     },
     "allContent": "allContent---docusaurus-debug-content-246-9aa"
   },
-  "/__docusaurus/debug/globalData-bb1": {
+  "/__docusaurus/debug/globalData-d9f": {
     "__comp": "__comp---theme-debug-global-dataede-0fa",
     "__context": {
-      "plugin": "plugin---docusaurus-debug-01-a-fc3"
+      "plugin": "plugin---docusaurus-debug-21-e-639"
     }
   },
-  "/__docusaurus/debug/metadata-335": {
+  "/__docusaurus/debug/metadata-ab4": {
     "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
     "__context": {
-      "plugin": "plugin---docusaurus-debug-01-a-fc3"
+      "plugin": "plugin---docusaurus-debug-21-e-639"
     }
   },
-  "/__docusaurus/debug/registry-03c": {
+  "/__docusaurus/debug/registry-776": {
     "__comp": "__comp---theme-debug-registry-679-501",
     "__context": {
-      "plugin": "plugin---docusaurus-debug-01-a-fc3"
+      "plugin": "plugin---docusaurus-debug-21-e-639"
     }
   },
-  "/__docusaurus/debug/routes-52a": {
+  "/__docusaurus/debug/routes-49e": {
     "__comp": "__comp---theme-debug-routes-946-699",
     "__context": {
-      "plugin": "plugin---docusaurus-debug-01-a-fc3"
+      "plugin": "plugin---docusaurus-debug-21-e-639"
     }
   },
-  "/blog-98e": {
+  "/blog-f70": {
     "__comp": "__comp---theme-blog-list-pagea-6-a-7ba",
     "__context": {
-      "plugin": "plugin---blog-1-dc-24d"
+      "plugin": "plugin---blog-39-d-764"
     },
     "sidebar": "sidebar---blog-814-8ac",
     "items": [
@@ -58,40 +58,40 @@
     ],
     "metadata": "metadata---blogb-2-b-df1"
   },
-  "/blog/archive-cf9": {
+  "/blog/archive-b9b": {
     "__comp": "__comp---theme-blog-archive-page-9-e-4-1d8",
     "__context": {
-      "plugin": "plugin---blog-1-dc-24d"
+      "plugin": "plugin---blog-39-d-764"
     },
     "archive": "archive---blog-archiveb-2-f-393"
   },
-  "/blog/welcome-1bb": {
+  "/blog/welcome-8de": {
     "__comp": "__comp---theme-blog-post-pageccc-cab",
     "__context": {
-      "plugin": "plugin---blog-1-dc-24d"
+      "plugin": "plugin---blog-39-d-764"
     },
     "sidebar": "sidebar---blog-814-8ac",
     "content": "content---blog-welcome-442-3a7"
   },
-  "/blog/why dsa matter-ddd": {
+  "/blog/why dsa matter-4fc": {
     "__comp": "__comp---theme-blog-post-pageccc-cab",
     "__context": {
-      "plugin": "plugin---blog-1-dc-24d"
+      "plugin": "plugin---blog-39-d-764"
     },
     "sidebar": "sidebar---blog-814-8ac",
-    "content": "content---blog-why-dsa-matters-139-dab"
+    "content": "content---blog-why-dsa-matter-139-24e"
   },
-  "/markdown-page-389": {
+  "/markdown-page-e16": {
     "__comp": "__comp---theme-mdx-page-1-f-3-b90",
     "__context": {
-      "plugin": "plugin---markdown-pagec-7-a-226"
+      "plugin": "plugin---markdown-pageacd-94a"
     },
     "content": "content---markdown-page-393-028"
   },
-  "/docs-744": {
+  "/docs-8aa": {
     "__comp": "__comp---theme-doc-page-1-be-9be",
     "__context": {
-      "plugin": "plugin---docsd-46-576"
+      "plugin": "plugin---docsc-83-f34"
     },
     "versionMetadata": "versionMetadata---docs-935-398"
   },
@@ -102,6 +102,10 @@
   "/docs/category/100-medium-070": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-100-mediumef-2-4c0"
+  },
+  "/docs/category/caching-752": {
+    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-caching-2-ea-95b"
   },
   "/docs/category/database-03e": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
@@ -182,6 +186,14 @@
   "/docs/DSA/100 Medium/Longest substring without repeating characters-e43": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-dsa-100-medium-longest-substring-without-repeating-characters-1-a-5-68a"
+  },
+  "/docs/DSA/caching/Introduction-640": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-caching-introduction-9-f-2-856"
+  },
+  "/docs/DSA/caching/Least Frequently Used-978": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-caching-least-frequently-used-04-a-c50"
   },
   "/docs/DSA/Fundamentals-570": {
     "__comp": "__comp---theme-doc-item-178-a40",
@@ -335,10 +347,10 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-java-script-projects-2-ae-35e"
   },
-  "/-54a": {
+  "/-38b": {
     "__comp": "__comp---site-src-pages-index-jsc-4-f-f99",
     "__context": {
-      "plugin": "plugin---markdown-pagec-7-a-226"
+      "plugin": "plugin---markdown-pageacd-94a"
     },
     "config": "config---5-e-9-4f3"
   }

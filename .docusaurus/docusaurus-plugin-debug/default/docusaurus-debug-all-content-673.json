@@ -13,9 +13,9 @@
           "tagsPath": "/docs/tags",
           "isLast": true,
           "routePriority": -1,
-          "sidebarFilePath": "/Users/prajwal/Documents/Extras/tech-notebook/sidebars.js",
-          "contentPath": "/Users/prajwal/Documents/Extras/tech-notebook/docs",
-          "contentPathLocalized": "/Users/prajwal/Documents/Extras/tech-notebook/i18n/en/docusaurus-plugin-content-docs/current",
+          "sidebarFilePath": "/home/prajwal/Disk D/Prajwal Haniya/tech-notebook/sidebars.js",
+          "contentPath": "/home/prajwal/Disk D/Prajwal Haniya/tech-notebook/docs",
+          "contentPathLocalized": "/home/prajwal/Disk D/Prajwal Haniya/tech-notebook/i18n/en/docusaurus-plugin-content-docs/current",
           "docs": [
             {
               "unversionedId": "Database/concepts",
@@ -342,6 +342,58 @@
               "next": {
                 "title": "Rate limiting algorithms",
                 "permalink": "/docs/category/rate-limiting-algorithms"
+              }
+            },
+            {
+              "unversionedId": "DSA/caching/Introduction",
+              "id": "DSA/caching/Introduction",
+              "title": "Introduction",
+              "description": "- Caching the process of storing the data into temporary memory so that it can be easily retrieved for later use if it is required again.",
+              "source": "@site/docs/DSA/caching/Introduction.md",
+              "sourceDirName": "DSA/caching",
+              "slug": "/DSA/caching/Introduction",
+              "permalink": "/docs/DSA/caching/Introduction",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "sidebar_position": 1
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Caching",
+                "permalink": "/docs/category/caching"
+              },
+              "next": {
+                "title": "Least Frequently Used",
+                "permalink": "/docs/DSA/caching/Least Frequently Used"
+              }
+            },
+            {
+              "unversionedId": "DSA/caching/Least Frequently Used",
+              "id": "DSA/caching/Least Frequently Used",
+              "title": "Least Frequently Used",
+              "description": "// Implementation",
+              "source": "@site/docs/DSA/caching/Least Frequently Used.md",
+              "sourceDirName": "DSA/caching",
+              "slug": "/DSA/caching/Least Frequently Used",
+              "permalink": "/docs/DSA/caching/Least Frequently Used",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 2,
+              "frontMatter": {
+                "sidebar_position": 2
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Introduction",
+                "permalink": "/docs/DSA/caching/Introduction"
+              },
+              "next": {
+                "title": "100 Easy",
+                "permalink": "/docs/category/100-easy"
               }
             },
             {
@@ -834,8 +886,8 @@
                 "permalink": "/docs/DSA/Javascript Specific/Summary Ranges"
               },
               "next": {
-                "title": "100 Easy",
-                "permalink": "/docs/category/100-easy"
+                "title": "Caching",
+                "permalink": "/docs/category/caching"
               }
             },
             {
@@ -1530,6 +1582,28 @@
                       "description": "All the required JavaScript concepts goes here",
                       "slug": "/category/javascript-specific-problems",
                       "permalink": "/docs/category/javascript-specific-problems"
+                    }
+                  },
+                  {
+                    "type": "category",
+                    "label": "Caching",
+                    "collapsible": true,
+                    "collapsed": true,
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "DSA/caching/Introduction"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "DSA/caching/Least Frequently Used"
+                      }
+                    ],
+                    "link": {
+                      "type": "generated-index",
+                      "description": "All the caching concepts goes here",
+                      "slug": "/category/caching",
+                      "permalink": "/docs/category/caching"
                     }
                   },
                   {
