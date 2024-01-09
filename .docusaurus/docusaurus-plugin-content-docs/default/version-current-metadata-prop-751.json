@@ -365,6 +365,24 @@
                 "label": "Longest substring without repeating characters",
                 "href": "/docs/DSA/100 Medium/Longest substring without repeating characters",
                 "docId": "DSA/100 Medium/Longest substring without repeating characters"
+              },
+              {
+                "type": "link",
+                "label": "Rotate Image",
+                "href": "/docs/DSA/100 Medium/Rotate Image",
+                "docId": "DSA/100 Medium/Rotate Image"
+              },
+              {
+                "type": "link",
+                "label": "Spiral Matrix",
+                "href": "/docs/DSA/100 Medium/Spiral Matrix",
+                "docId": "DSA/100 Medium/Spiral Matrix"
+              },
+              {
+                "type": "link",
+                "label": "Number of Islands",
+                "href": "/docs/DSA/100 Medium/Number of Islands",
+                "docId": "DSA/100 Medium/Number of Islands"
               }
             ],
             "href": "/docs/category/100-medium"
@@ -496,6 +514,24 @@
       "id": "DSA/100 Medium/Longest substring without repeating characters",
       "title": "Longest substring without repeating characters",
       "description": "Given a string s, find the length of the longest substring without repeating characters.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Medium/Number of Islands": {
+      "id": "DSA/100 Medium/Number of Islands",
+      "title": "Number of Islands",
+      "description": "Given an m x n 2D binary grid grid which represents a map of '1's (land) and '0's (water), return the number of islands.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Medium/Rotate Image": {
+      "id": "DSA/100 Medium/Rotate Image",
+      "title": "Rotate Image",
+      "description": "You are given an n x n 2D matrix representing an image, rotate the image by 90 degrees (clockwise).",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Medium/Spiral Matrix": {
+      "id": "DSA/100 Medium/Spiral Matrix",
+      "title": "Spiral Matrix",
+      "description": "Given an m x n matrix, return all elements of the matrix in spiral order.",
       "sidebar": "tutorialSidebar"
     },
     "DSA/caching/Introduction": {

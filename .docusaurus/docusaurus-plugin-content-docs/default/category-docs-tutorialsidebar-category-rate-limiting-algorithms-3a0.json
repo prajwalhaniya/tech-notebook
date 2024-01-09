@@ -5,8 +5,8 @@
   "permalink": "/docs/category/rate-limiting-algorithms",
   "navigation": {
     "previous": {
-      "title": "Longest substring without repeating characters",
-      "permalink": "/docs/DSA/100 Medium/Longest substring without repeating characters"
+      "title": "Number of Islands",
+      "permalink": "/docs/DSA/100 Medium/Number of Islands"
     },
     "next": {
       "title": "Token Bucket Algorithm",

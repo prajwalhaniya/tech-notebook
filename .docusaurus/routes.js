@@ -64,7 +64,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '8aa'),
+    component: ComponentCreator('/docs', '8cd'),
     routes: [
       {
         path: '/docs/category/100-easy',
@@ -201,6 +201,24 @@ export default [
       {
         path: '/docs/DSA/100 Medium/Longest substring without repeating characters',
         component: ComponentCreator('/docs/DSA/100 Medium/Longest substring without repeating characters', 'e43'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/100 Medium/Number of Islands',
+        component: ComponentCreator('/docs/DSA/100 Medium/Number of Islands', '6ca'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/100 Medium/Rotate Image',
+        component: ComponentCreator('/docs/DSA/100 Medium/Rotate Image', '65f'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/100 Medium/Spiral Matrix',
+        component: ComponentCreator('/docs/DSA/100 Medium/Spiral Matrix', 'd8a'),
         exact: true,
         sidebar: "tutorialSidebar"
       },

@@ -76,6 +76,21 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "DSA/100 Medium/Number of Islands",
+              "path": "/docs/DSA/100 Medium/Number of Islands",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Rotate Image",
+              "path": "/docs/DSA/100 Medium/Rotate Image",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Spiral Matrix",
+              "path": "/docs/DSA/100 Medium/Spiral Matrix",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "DSA/caching/Introduction",
               "path": "/docs/DSA/caching/Introduction",
               "sidebar": "tutorialSidebar"

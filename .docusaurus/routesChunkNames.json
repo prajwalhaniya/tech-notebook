@@ -88,7 +88,7 @@
     },
     "content": "content---markdown-page-393-028"
   },
-  "/docs-8aa": {
+  "/docs-8cd": {
     "__comp": "__comp---theme-doc-page-1-be-9be",
     "__context": {
       "plugin": "plugin---docsc-83-f34"
@@ -186,6 +186,18 @@
   "/docs/DSA/100 Medium/Longest substring without repeating characters-e43": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-dsa-100-medium-longest-substring-without-repeating-characters-1-a-5-68a"
+  },
+  "/docs/DSA/100 Medium/Number of Islands-6ca": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-100-medium-number-of-islands-176-5be"
+  },
+  "/docs/DSA/100 Medium/Rotate Image-65f": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-100-medium-rotate-image-3-b-4-7d3"
+  },
+  "/docs/DSA/100 Medium/Spiral Matrix-d8a": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-100-medium-spiral-matrix-94-e-46b"
   },
   "/docs/DSA/caching/Introduction-640": {
     "__comp": "__comp---theme-doc-item-178-a40",
