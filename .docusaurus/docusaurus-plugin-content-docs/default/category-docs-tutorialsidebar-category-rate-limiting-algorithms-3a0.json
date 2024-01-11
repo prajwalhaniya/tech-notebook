@@ -5,8 +5,8 @@
   "permalink": "/docs/category/rate-limiting-algorithms",
   "navigation": {
     "previous": {
-      "title": "Number of Islands",
-      "permalink": "/docs/DSA/100 Medium/Number of Islands"
+      "title": "Least Frequently Used",
+      "permalink": "/docs/DSA/caching/Least Frequently Used"
     },
     "next": {
       "title": "Token Bucket Algorithm",

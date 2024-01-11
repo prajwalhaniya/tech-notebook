@@ -5,8 +5,8 @@
   "permalink": "/docs/category/100-easy",
   "navigation": {
     "previous": {
-      "title": "Least Frequently Used",
-      "permalink": "/docs/DSA/caching/Least Frequently Used"
+      "title": "Merge Intervals",
+      "permalink": "/docs/DSA/Javascript Specific/Merge Intervals"
     },
     "next": {
       "title": "Two Sum",

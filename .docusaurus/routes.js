@@ -64,7 +64,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '8cd'),
+    component: ComponentCreator('/docs', '07e'),
     routes: [
       {
         path: '/docs/category/100-easy',
@@ -127,6 +127,12 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
+        path: '/docs/category/trees',
+        component: ComponentCreator('/docs/category/trees', 'ba9'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
         path: '/docs/Database/concepts',
         component: ComponentCreator('/docs/Database/concepts', '3ca'),
         exact: true,
@@ -147,6 +153,12 @@ export default [
       {
         path: '/docs/DSA/100 Easy/Longest common prefix',
         component: ComponentCreator('/docs/DSA/100 Easy/Longest common prefix', '7ce'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/100 Easy/Maximum Depth of binary tree',
+        component: ComponentCreator('/docs/DSA/100 Easy/Maximum Depth of binary tree', '71c'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
@@ -429,6 +441,12 @@ export default [
       {
         path: '/docs/DSA/Rate Limiting Algorithms/Token Bucket Algorithm',
         component: ComponentCreator('/docs/DSA/Rate Limiting Algorithms/Token Bucket Algorithm', 'a3b'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/Trees/concepts',
+        component: ComponentCreator('/docs/DSA/Trees/concepts', 'eac'),
         exact: true,
         sidebar: "tutorialSidebar"
       },

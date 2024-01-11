@@ -266,27 +266,6 @@
           },
           {
             "type": "category",
-            "label": "Caching",
-            "collapsible": true,
-            "collapsed": true,
-            "items": [
-              {
-                "type": "link",
-                "label": "Introduction",
-                "href": "/docs/DSA/caching/Introduction",
-                "docId": "DSA/caching/Introduction"
-              },
-              {
-                "type": "link",
-                "label": "Least Frequently Used",
-                "href": "/docs/DSA/caching/Least Frequently Used",
-                "docId": "DSA/caching/Least Frequently Used"
-              }
-            ],
-            "href": "/docs/category/caching"
-          },
-          {
-            "type": "category",
             "label": "100 Easy",
             "collapsible": true,
             "collapsed": true,
@@ -344,6 +323,12 @@
                 "label": "Remove duplicates from sorted list",
                 "href": "/docs/DSA/100 Easy/Remove duplicates from sorted list",
                 "docId": "DSA/100 Easy/Remove duplicates from sorted list"
+              },
+              {
+                "type": "link",
+                "label": "Maximum Depth of binary tree",
+                "href": "/docs/DSA/100 Easy/Maximum Depth of binary tree",
+                "docId": "DSA/100 Easy/Maximum Depth of binary tree"
               }
             ],
             "href": "/docs/category/100-easy"
@@ -389,6 +374,27 @@
           },
           {
             "type": "category",
+            "label": "Caching",
+            "collapsible": true,
+            "collapsed": true,
+            "items": [
+              {
+                "type": "link",
+                "label": "Introduction",
+                "href": "/docs/DSA/caching/Introduction",
+                "docId": "DSA/caching/Introduction"
+              },
+              {
+                "type": "link",
+                "label": "Least Frequently Used",
+                "href": "/docs/DSA/caching/Least Frequently Used",
+                "docId": "DSA/caching/Least Frequently Used"
+              }
+            ],
+            "href": "/docs/category/caching"
+          },
+          {
+            "type": "category",
             "label": "Rate limiting algorithms",
             "collapsible": true,
             "collapsed": true,
@@ -401,6 +407,21 @@
               }
             ],
             "href": "/docs/category/rate-limiting-algorithms"
+          },
+          {
+            "type": "category",
+            "label": "Trees",
+            "collapsible": true,
+            "collapsed": true,
+            "items": [
+              {
+                "type": "link",
+                "label": "concepts",
+                "href": "/docs/DSA/Trees/concepts",
+                "docId": "DSA/Trees/concepts"
+              }
+            ],
+            "href": "/docs/category/trees"
           }
         ],
         "href": "/docs/category/dsa"
@@ -460,6 +481,12 @@
       "id": "DSA/100 Easy/Longest common prefix",
       "title": "Longest common prefix",
       "description": "Write a function to find the longest common prefix string amongst an array of strings.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Easy/Maximum Depth of binary tree": {
+      "id": "DSA/100 Easy/Maximum Depth of binary tree",
+      "title": "Maximum Depth of binary tree",
+      "description": "Given the root of a binary tree, return its maximum depth.",
       "sidebar": "tutorialSidebar"
     },
     "DSA/100 Easy/Merge two sorted lists": {
@@ -543,7 +570,7 @@
     "DSA/caching/Least Frequently Used": {
       "id": "DSA/caching/Least Frequently Used",
       "title": "Least Frequently Used",
-      "description": "// Implementation",
+      "description": "",
       "sidebar": "tutorialSidebar"
     },
     "DSA/Fundamentals": {
@@ -742,6 +769,12 @@
       "id": "DSA/Rate Limiting Algorithms/Token Bucket Algorithm",
       "title": "Token Bucket Algorithm",
       "description": "",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/Trees/concepts": {
+      "id": "DSA/Trees/concepts",
+      "title": "concepts",
+      "description": "- General Tree structure",
       "sidebar": "tutorialSidebar"
     },
     "JavaScript/Fundamentals": {

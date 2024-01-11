@@ -88,7 +88,7 @@
     },
     "content": "content---markdown-page-393-028"
   },
-  "/docs-8cd": {
+  "/docs-07e": {
     "__comp": "__comp---theme-doc-page-1-be-9be",
     "__context": {
       "plugin": "plugin---docsc-83-f34"
@@ -135,6 +135,10 @@
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-rate-limiting-algorithms-58-e-8d5"
   },
+  "/docs/category/trees-ba9": {
+    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-treesb-6-b-dd4"
+  },
   "/docs/Database/concepts-3ca": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-database-conceptsd-38-46a"
@@ -150,6 +154,10 @@
   "/docs/DSA/100 Easy/Longest common prefix-7ce": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-dsa-100-easy-longest-common-prefix-987-083"
+  },
+  "/docs/DSA/100 Easy/Maximum Depth of binary tree-71c": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-100-easy-maximum-depth-of-binary-treefdb-6be"
   },
   "/docs/DSA/100 Easy/Merge two sorted lists-851": {
     "__comp": "__comp---theme-doc-item-178-a40",
@@ -338,6 +346,10 @@
   "/docs/DSA/Rate Limiting Algorithms/Token Bucket Algorithm-a3b": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-dsa-rate-limiting-algorithms-token-bucket-algorithm-885-94a"
+  },
+  "/docs/DSA/Trees/concepts-eac": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-trees-concepts-5-a-4-10d"
   },
   "/docs/JavaScript/Fundamentals-c80": {
     "__comp": "__comp---theme-doc-item-178-a40",

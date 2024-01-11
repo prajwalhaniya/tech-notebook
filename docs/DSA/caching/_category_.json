@@ -1,6 +1,6 @@
 {
     "label": "Caching",
-    "position": 1,
+    "position": 5,
     "link": {
       "type": "generated-index",
       "description": "All the caching concepts goes here"

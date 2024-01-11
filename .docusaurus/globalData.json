@@ -31,6 +31,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "DSA/100 Easy/Maximum Depth of binary tree",
+              "path": "/docs/DSA/100 Easy/Maximum Depth of binary tree",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "DSA/100 Easy/Merge two sorted lists",
               "path": "/docs/DSA/100 Easy/Merge two sorted lists",
               "sidebar": "tutorialSidebar"
@@ -266,6 +271,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "DSA/Trees/concepts",
+              "path": "/docs/DSA/Trees/concepts",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "JavaScript/Fundamentals",
               "path": "/docs/JavaScript/Fundamentals",
               "sidebar": "tutorialSidebar"
@@ -311,11 +321,6 @@
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "/category/caching",
-              "path": "/docs/category/caching",
-              "sidebar": "tutorialSidebar"
-            },
-            {
               "id": "/category/100-easy",
               "path": "/docs/category/100-easy",
               "sidebar": "tutorialSidebar"
@@ -326,8 +331,18 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "/category/caching",
+              "path": "/docs/category/caching",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "/category/rate-limiting-algorithms",
               "path": "/docs/category/rate-limiting-algorithms",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/trees",
+              "path": "/docs/category/trees",
               "sidebar": "tutorialSidebar"
             },
             {

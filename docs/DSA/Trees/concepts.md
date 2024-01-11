@@ -1,0 +1,13 @@
+---
+sidebar_position: 1
+---
+- General Tree structure
+- Binary Trees
+- Tree Traversal
+    - Pre-order
+    - Post-order
+    - In-order
+    - Level Order(BFS)
+- Binary Search tree
+- AVL trees
+- Balancing the tree

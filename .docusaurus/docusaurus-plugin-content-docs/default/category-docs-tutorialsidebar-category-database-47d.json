@@ -5,8 +5,8 @@
   "permalink": "/docs/category/database",
   "navigation": {
     "previous": {
-      "title": "Token Bucket Algorithm",
-      "permalink": "/docs/DSA/Rate Limiting Algorithms/Token Bucket Algorithm"
+      "title": "concepts",
+      "permalink": "/docs/DSA/Trees/concepts"
     },
     "next": {
       "title": "concepts",

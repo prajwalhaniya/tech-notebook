@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/Trees/concepts",
+  "id": "DSA/Trees/concepts",
+  "title": "concepts",
+  "description": "- General Tree structure",
+  "source": "@site/docs/DSA/Trees/concepts.md",
+  "sourceDirName": "DSA/Trees",
+  "slug": "/DSA/Trees/concepts",
+  "permalink": "/docs/DSA/Trees/concepts",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Trees",
+    "permalink": "/docs/category/trees"
+  },
+  "next": {
+    "title": "Database",
+    "permalink": "/docs/category/database"
+  }
+}

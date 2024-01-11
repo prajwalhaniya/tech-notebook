@@ -2,7 +2,7 @@
   "unversionedId": "DSA/caching/Least Frequently Used",
   "id": "DSA/caching/Least Frequently Used",
   "title": "Least Frequently Used",
-  "description": "// Implementation",
+  "description": "",
   "source": "@site/docs/DSA/caching/Least Frequently Used.md",
   "sourceDirName": "DSA/caching",
   "slug": "/DSA/caching/Least Frequently Used",
@@ -20,7 +20,7 @@
     "permalink": "/docs/DSA/caching/Introduction"
   },
   "next": {
-    "title": "100 Easy",
-    "permalink": "/docs/category/100-easy"
+    "title": "Rate limiting algorithms",
+    "permalink": "/docs/category/rate-limiting-algorithms"
   }
 }
