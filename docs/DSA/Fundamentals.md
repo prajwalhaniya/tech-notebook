@@ -225,9 +225,41 @@ A `tree` is data structure composed of nodes.
 - Each child node has zero or more child nodes & so on
 - The trees cannot contain cycle
 
+Implementation of a simple tree
+
+```js
+class Node {
+    constructor(value) {
+        this.value = value;
+        this.children = [];
+    }
+    
+    addChild(value) {
+        const newNode = new Node(value);
+        this.children.push(newNode);
+        return newNode;
+    }
+}
+
+class Tree {
+    constructor(value) {
+        this.root = new Node(value);
+    }
+}
+
+
+const tree = new Tree('Root');
+const child1 = tree.root.addChild('child1');
+const child2 = tree.root.addChild('child2');
+const child3 = child1.addChild('child3');
+
+console.log(tree);
+```
+
 A tree is a `graph`, but not all graphs are trees. A tree is a connected graph without cycles.
 - Graphs can be either directed or undirected
 - A graph can have cycles
+
 
 > There are many concepts that is related to trees & graphs. So will be explaining them in their respective sections.
 
