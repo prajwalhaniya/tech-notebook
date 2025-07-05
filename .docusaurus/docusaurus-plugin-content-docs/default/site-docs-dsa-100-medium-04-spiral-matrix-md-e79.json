@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/100 Medium/Spiral Matrix",
+  "id": "DSA/100 Medium/Spiral Matrix",
+  "title": "Spiral Matrix",
+  "description": "Given an m x n matrix, return all elements of the matrix in spiral order.",
+  "source": "@site/docs/DSA/100 Medium/04_Spiral Matrix.md",
+  "sourceDirName": "DSA/100 Medium",
+  "slug": "/DSA/100 Medium/Spiral Matrix",
+  "permalink": "/docs/DSA/100 Medium/Spiral Matrix",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_position": 4
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Rotate Image",
+    "permalink": "/docs/DSA/100 Medium/Rotate Image"
+  },
+  "next": {
+    "title": "Number of Islands",
+    "permalink": "/docs/DSA/100 Medium/Number of Islands"
+  }
+}

@@ -476,15 +476,15 @@
               },
               {
                 "type": "link",
-                "label": "Dota2 Senate",
-                "href": "/docs/DSA/100 Medium/Dota2 Senate",
-                "docId": "DSA/100 Medium/Dota2 Senate"
-              },
-              {
-                "type": "link",
                 "label": "Delete the middle node of a linked list",
                 "href": "/docs/DSA/100 Medium/Delete the middle node of a linked list",
                 "docId": "DSA/100 Medium/Delete the middle node of a linked list"
+              },
+              {
+                "type": "link",
+                "label": "Dota2 Senate",
+                "href": "/docs/DSA/100 Medium/Dota2 Senate",
+                "docId": "DSA/100 Medium/Dota2 Senate"
               }
             ],
             "href": "/docs/category/100-medium"

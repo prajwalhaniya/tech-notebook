@@ -506,7 +506,7 @@
               "id": "DSA/100 Medium/Add Two Numbers",
               "title": "Add Two Numbers",
               "description": "You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.",
-              "source": "@site/docs/DSA/100 Medium/Add Two Numbers.md",
+              "source": "@site/docs/DSA/100 Medium/01_Add Two Numbers.md",
               "sourceDirName": "DSA/100 Medium",
               "slug": "/DSA/100 Medium/Add Two Numbers",
               "permalink": "/docs/DSA/100 Medium/Add Two Numbers",
@@ -532,7 +532,7 @@
               "id": "DSA/100 Medium/Best time to buy & sell stock",
               "title": "Best time to buy & sell stock",
               "description": "You are given an integer array prices where prices[i] is the price of a given stock on the ith day.",
-              "source": "@site/docs/DSA/100 Medium/Best time to buy & sell stock.md",
+              "source": "@site/docs/DSA/100 Medium/11_Best time to buy & sell stock.md",
               "sourceDirName": "DSA/100 Medium",
               "slug": "/DSA/100 Medium/Best time to buy & sell stock",
               "permalink": "/docs/DSA/100 Medium/Best time to buy & sell stock",
@@ -558,7 +558,7 @@
               "id": "DSA/100 Medium/Container with most water",
               "title": "Container with most water",
               "description": "You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]).",
-              "source": "@site/docs/DSA/100 Medium/Container with most water.md",
+              "source": "@site/docs/DSA/100 Medium/08_Container with most water.md",
               "sourceDirName": "DSA/100 Medium",
               "slug": "/DSA/100 Medium/Container with most water",
               "permalink": "/docs/DSA/100 Medium/Container with most water",
@@ -584,7 +584,7 @@
               "id": "DSA/100 Medium/Decode string",
               "title": "Decode string",
               "description": "Given an encoded string, return its decoded string.",
-              "source": "@site/docs/DSA/100 Medium/Decode string.md",
+              "source": "@site/docs/DSA/100 Medium/10_Decode string.md",
               "sourceDirName": "DSA/100 Medium",
               "slug": "/DSA/100 Medium/Decode string",
               "permalink": "/docs/DSA/100 Medium/Decode string",
@@ -610,24 +610,25 @@
               "id": "DSA/100 Medium/Delete the middle node of a linked list",
               "title": "Delete the middle node of a linked list",
               "description": "You are given the head of a linked list. Delete the middle node, and return the head of the modified linked list.",
-              "source": "@site/docs/DSA/100 Medium/Delete the middle node of a linked list.md",
+              "source": "@site/docs/DSA/100 Medium/15_Delete the middle node of a linked list.md",
               "sourceDirName": "DSA/100 Medium",
               "slug": "/DSA/100 Medium/Delete the middle node of a linked list",
               "permalink": "/docs/DSA/100 Medium/Delete the middle node of a linked list",
               "draft": false,
               "tags": [],
               "version": "current",
+              "sidebarPosition": 15,
               "frontMatter": {
                 "sidebar_postion": 13
               },
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "Dota2 Senate",
-                "permalink": "/docs/DSA/100 Medium/Dota2 Senate"
+                "title": "Odd even linked list",
+                "permalink": "/docs/DSA/100 Medium/Odd even linked list"
               },
               "next": {
-                "title": "Caching",
-                "permalink": "/docs/category/caching"
+                "title": "Dota2 Senate",
+                "permalink": "/docs/DSA/100 Medium/Dota2 Senate"
               }
             },
             {
@@ -635,7 +636,7 @@
               "id": "DSA/100 Medium/Dota2 Senate",
               "title": "Dota2 Senate",
               "description": "In the world of Dota2, there are two parties: the Radiant and the Dire.",
-              "source": "@site/docs/DSA/100 Medium/Dota2 Senate.md",
+              "source": "@site/docs/DSA/100 Medium/14_Dota2 Senate.md",
               "sourceDirName": "DSA/100 Medium",
               "slug": "/DSA/100 Medium/Dota2 Senate",
               "permalink": "/docs/DSA/100 Medium/Dota2 Senate",
@@ -648,12 +649,12 @@
               },
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "Odd even linked list",
-                "permalink": "/docs/DSA/100 Medium/Odd even linked list"
-              },
-              "next": {
                 "title": "Delete the middle node of a linked list",
                 "permalink": "/docs/DSA/100 Medium/Delete the middle node of a linked list"
+              },
+              "next": {
+                "title": "Caching",
+                "permalink": "/docs/category/caching"
               }
             },
             {
@@ -661,7 +662,7 @@
               "id": "DSA/100 Medium/Increasing triplet subsequence",
               "title": "Increasing triplet subsequence",
               "description": "Given an integer array nums, return true if there exists a triple of indices (i, j, k) such that i < j < k and nums[i] < nums[j] < nums[k].",
-              "source": "@site/docs/DSA/100 Medium/Increasing triplet subsequence.md",
+              "source": "@site/docs/DSA/100 Medium/09_Increasing triplet subsequence.md",
               "sourceDirName": "DSA/100 Medium",
               "slug": "/DSA/100 Medium/Increasing triplet subsequence",
               "permalink": "/docs/DSA/100 Medium/Increasing triplet subsequence",
@@ -687,7 +688,7 @@
               "id": "DSA/100 Medium/Longest substring without repeating characters",
               "title": "Longest substring without repeating characters",
               "description": "Given a string s, find the length of the longest substring without repeating characters.",
-              "source": "@site/docs/DSA/100 Medium/Longest substring without repeating characters.md",
+              "source": "@site/docs/DSA/100 Medium/02_Longest substring without repeating characters.md",
               "sourceDirName": "DSA/100 Medium",
               "slug": "/DSA/100 Medium/Longest substring without repeating characters",
               "permalink": "/docs/DSA/100 Medium/Longest substring without repeating characters",
@@ -713,7 +714,7 @@
               "id": "DSA/100 Medium/Number of Islands",
               "title": "Number of Islands",
               "description": "Given an m x n 2D binary grid grid which represents a map of '1's (land) and '0's (water), return the number of islands.",
-              "source": "@site/docs/DSA/100 Medium/Number of Islands.md",
+              "source": "@site/docs/DSA/100 Medium/05_Number of Islands.md",
               "sourceDirName": "DSA/100 Medium",
               "slug": "/DSA/100 Medium/Number of Islands",
               "permalink": "/docs/DSA/100 Medium/Number of Islands",
@@ -739,7 +740,7 @@
               "id": "DSA/100 Medium/Odd even linked list",
               "title": "Odd even linked list",
               "description": "Given the head of a singly linked list, group all the nodes with odd indices together followed by the nodes with even indices, and return the reordered list.",
-              "source": "@site/docs/DSA/100 Medium/Odd even linked list.md",
+              "source": "@site/docs/DSA/100 Medium/13_Odd even linked list.md",
               "sourceDirName": "DSA/100 Medium",
               "slug": "/DSA/100 Medium/Odd even linked list",
               "permalink": "/docs/DSA/100 Medium/Odd even linked list",
@@ -756,8 +757,8 @@
                 "permalink": "/docs/DSA/100 Medium/trie"
               },
               "next": {
-                "title": "Dota2 Senate",
-                "permalink": "/docs/DSA/100 Medium/Dota2 Senate"
+                "title": "Delete the middle node of a linked list",
+                "permalink": "/docs/DSA/100 Medium/Delete the middle node of a linked list"
               }
             },
             {
@@ -765,7 +766,7 @@
               "id": "DSA/100 Medium/Product of Array Except Self",
               "title": "Product of Array Except Self",
               "description": "Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i].",
-              "source": "@site/docs/DSA/100 Medium/Product of Array Except Self.md",
+              "source": "@site/docs/DSA/100 Medium/07_Product of Array Except Self.md",
               "sourceDirName": "DSA/100 Medium",
               "slug": "/DSA/100 Medium/Product of Array Except Self",
               "permalink": "/docs/DSA/100 Medium/Product of Array Except Self",
@@ -791,7 +792,7 @@
               "id": "DSA/100 Medium/Remove starts from string",
               "title": "Remove starts from string",
               "description": "You are given a string s, which contains stars *.",
-              "source": "@site/docs/DSA/100 Medium/Remove starts from string.md",
+              "source": "@site/docs/DSA/100 Medium/06_Remove starts from string.md",
               "sourceDirName": "DSA/100 Medium",
               "slug": "/DSA/100 Medium/Remove starts from string",
               "permalink": "/docs/DSA/100 Medium/Remove starts from string",
@@ -817,7 +818,7 @@
               "id": "DSA/100 Medium/Rotate Image",
               "title": "Rotate Image",
               "description": "You are given an n x n 2D matrix representing an image, rotate the image by 90 degrees (clockwise).",
-              "source": "@site/docs/DSA/100 Medium/Rotate Image.md",
+              "source": "@site/docs/DSA/100 Medium/03_Rotate Image.md",
               "sourceDirName": "DSA/100 Medium",
               "slug": "/DSA/100 Medium/Rotate Image",
               "permalink": "/docs/DSA/100 Medium/Rotate Image",
@@ -843,7 +844,7 @@
               "id": "DSA/100 Medium/Spiral Matrix",
               "title": "Spiral Matrix",
               "description": "Given an m x n matrix, return all elements of the matrix in spiral order.",
-              "source": "@site/docs/DSA/100 Medium/Spiral Matrix.md",
+              "source": "@site/docs/DSA/100 Medium/04_Spiral Matrix.md",
               "sourceDirName": "DSA/100 Medium",
               "slug": "/DSA/100 Medium/Spiral Matrix",
               "permalink": "/docs/DSA/100 Medium/Spiral Matrix",
@@ -869,7 +870,7 @@
               "id": "DSA/100 Medium/trie",
               "title": "trie",
               "description": "A trie (pronounced as \"try\") or prefix tree is a tree data structure used to efficiently store and retrieve keys in a dataset of strings. There are various applications of this data structure, such as autocomplete and spellchecker.",
-              "source": "@site/docs/DSA/100 Medium/trie.md",
+              "source": "@site/docs/DSA/100 Medium/12_trie.md",
               "sourceDirName": "DSA/100 Medium",
               "slug": "/DSA/100 Medium/trie",
               "permalink": "/docs/DSA/100 Medium/trie",
@@ -2368,11 +2369,11 @@
                       },
                       {
                         "type": "doc",
-                        "id": "DSA/100 Medium/Dota2 Senate"
+                        "id": "DSA/100 Medium/Delete the middle node of a linked list"
                       },
                       {
                         "type": "doc",
-                        "id": "DSA/100 Medium/Delete the middle node of a linked list"
+                        "id": "DSA/100 Medium/Dota2 Senate"
                       }
                     ],
                     "link": {

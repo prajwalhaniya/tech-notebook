@@ -64,7 +64,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', 'eda'),
+    component: ComponentCreator('/docs', '602'),
     routes: [
       {
         path: '/docs/category/100-easy',
@@ -254,91 +254,91 @@ export default [
       },
       {
         path: '/docs/DSA/100 Medium/Add Two Numbers',
-        component: ComponentCreator('/docs/DSA/100 Medium/Add Two Numbers', 'a48'),
+        component: ComponentCreator('/docs/DSA/100 Medium/Add Two Numbers', '743'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
         path: '/docs/DSA/100 Medium/Best time to buy & sell stock',
-        component: ComponentCreator('/docs/DSA/100 Medium/Best time to buy & sell stock', '79f'),
+        component: ComponentCreator('/docs/DSA/100 Medium/Best time to buy & sell stock', 'cbb'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
         path: '/docs/DSA/100 Medium/Container with most water',
-        component: ComponentCreator('/docs/DSA/100 Medium/Container with most water', '3cf'),
+        component: ComponentCreator('/docs/DSA/100 Medium/Container with most water', '704'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
         path: '/docs/DSA/100 Medium/Decode string',
-        component: ComponentCreator('/docs/DSA/100 Medium/Decode string', '27d'),
+        component: ComponentCreator('/docs/DSA/100 Medium/Decode string', 'ef8'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
         path: '/docs/DSA/100 Medium/Delete the middle node of a linked list',
-        component: ComponentCreator('/docs/DSA/100 Medium/Delete the middle node of a linked list', '436'),
+        component: ComponentCreator('/docs/DSA/100 Medium/Delete the middle node of a linked list', '100'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
         path: '/docs/DSA/100 Medium/Dota2 Senate',
-        component: ComponentCreator('/docs/DSA/100 Medium/Dota2 Senate', '7a4'),
+        component: ComponentCreator('/docs/DSA/100 Medium/Dota2 Senate', 'd14'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
         path: '/docs/DSA/100 Medium/Increasing triplet subsequence',
-        component: ComponentCreator('/docs/DSA/100 Medium/Increasing triplet subsequence', 'eb2'),
+        component: ComponentCreator('/docs/DSA/100 Medium/Increasing triplet subsequence', 'c50'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
         path: '/docs/DSA/100 Medium/Longest substring without repeating characters',
-        component: ComponentCreator('/docs/DSA/100 Medium/Longest substring without repeating characters', 'e43'),
+        component: ComponentCreator('/docs/DSA/100 Medium/Longest substring without repeating characters', '6a1'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
         path: '/docs/DSA/100 Medium/Number of Islands',
-        component: ComponentCreator('/docs/DSA/100 Medium/Number of Islands', '6ca'),
+        component: ComponentCreator('/docs/DSA/100 Medium/Number of Islands', 'acb'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
         path: '/docs/DSA/100 Medium/Odd even linked list',
-        component: ComponentCreator('/docs/DSA/100 Medium/Odd even linked list', 'a0e'),
+        component: ComponentCreator('/docs/DSA/100 Medium/Odd even linked list', '3f8'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
         path: '/docs/DSA/100 Medium/Product of Array Except Self',
-        component: ComponentCreator('/docs/DSA/100 Medium/Product of Array Except Self', 'c64'),
+        component: ComponentCreator('/docs/DSA/100 Medium/Product of Array Except Self', '683'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
         path: '/docs/DSA/100 Medium/Remove starts from string',
-        component: ComponentCreator('/docs/DSA/100 Medium/Remove starts from string', 'ebf'),
+        component: ComponentCreator('/docs/DSA/100 Medium/Remove starts from string', '23a'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
         path: '/docs/DSA/100 Medium/Rotate Image',
-        component: ComponentCreator('/docs/DSA/100 Medium/Rotate Image', '65f'),
+        component: ComponentCreator('/docs/DSA/100 Medium/Rotate Image', 'dd8'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
         path: '/docs/DSA/100 Medium/Spiral Matrix',
-        component: ComponentCreator('/docs/DSA/100 Medium/Spiral Matrix', 'd8a'),
+        component: ComponentCreator('/docs/DSA/100 Medium/Spiral Matrix', 'f79'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
         path: '/docs/DSA/100 Medium/trie',
-        component: ComponentCreator('/docs/DSA/100 Medium/trie', '0d6'),
+        component: ComponentCreator('/docs/DSA/100 Medium/trie', '05a'),
         exact: true,
         sidebar: "tutorialSidebar"
       },

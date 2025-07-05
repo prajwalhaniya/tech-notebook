@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/100 Medium/Remove starts from string",
+  "id": "DSA/100 Medium/Remove starts from string",
+  "title": "Remove starts from string",
+  "description": "You are given a string s, which contains stars *.",
+  "source": "@site/docs/DSA/100 Medium/06_Remove starts from string.md",
+  "sourceDirName": "DSA/100 Medium",
+  "slug": "/DSA/100 Medium/Remove starts from string",
+  "permalink": "/docs/DSA/100 Medium/Remove starts from string",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 6,
+  "frontMatter": {
+    "sidebar_position": 6
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Number of Islands",
+    "permalink": "/docs/DSA/100 Medium/Number of Islands"
+  },
+  "next": {
+    "title": "Product of Array Except Self",
+    "permalink": "/docs/DSA/100 Medium/Product of Array Except Self"
+  }
+}
