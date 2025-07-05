@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/100 Easy/Find Pivot Index",
+  "id": "DSA/100 Easy/Find Pivot Index",
+  "title": "Find Pivot Index",
+  "description": "Given an array of integers nums, calculate the pivot index of this array.",
+  "source": "@site/docs/DSA/100 Easy/16_Find Pivot Index.md",
+  "sourceDirName": "DSA/100 Easy",
+  "slug": "/DSA/100 Easy/Find Pivot Index",
+  "permalink": "/docs/DSA/100 Easy/Find Pivot Index",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 16,
+  "frontMatter": {
+    "sidebar_position": 16
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Best time to buy & sell stock",
+    "permalink": "/docs/DSA/100 Easy/Best time to buy & sell stock"
+  },
+  "next": {
+    "title": "Maximum Average Subarray I",
+    "permalink": "/docs/DSA/100 Easy/Maximum Average Subarray I"
+  }
+}

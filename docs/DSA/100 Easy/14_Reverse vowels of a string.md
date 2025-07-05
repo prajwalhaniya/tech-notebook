@@ -1,5 +1,5 @@
 ---
-sidebar_position: 16
+sidebar_position: 14
 ---
 Given a string s, reverse only all the vowels in the string and return it.
 

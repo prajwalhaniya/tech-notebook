@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/100 Medium/Container with most water",
+  "id": "DSA/100 Medium/Container with most water",
+  "title": "Container with most water",
+  "description": "You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]).",
+  "source": "@site/docs/DSA/100 Medium/Container with most water.md",
+  "sourceDirName": "DSA/100 Medium",
+  "slug": "/DSA/100 Medium/Container with most water",
+  "permalink": "/docs/DSA/100 Medium/Container with most water",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 8,
+  "frontMatter": {
+    "sidebar_position": 8
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Product of Array Except Self",
+    "permalink": "/docs/DSA/100 Medium/Product of Array Except Self"
+  },
+  "next": {
+    "title": "Increasing triplet subsequence",
+    "permalink": "/docs/DSA/100 Medium/Increasing triplet subsequence"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/100 Medium/trie",
+  "id": "DSA/100 Medium/trie",
+  "title": "trie",
+  "description": "A trie (pronounced as \"try\") or prefix tree is a tree data structure used to efficiently store and retrieve keys in a dataset of strings. There are various applications of this data structure, such as autocomplete and spellchecker.",
+  "source": "@site/docs/DSA/100 Medium/trie.md",
+  "sourceDirName": "DSA/100 Medium",
+  "slug": "/DSA/100 Medium/trie",
+  "permalink": "/docs/DSA/100 Medium/trie",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 12,
+  "frontMatter": {
+    "sidebar_position": 12
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Best time to buy & sell stock",
+    "permalink": "/docs/DSA/100 Medium/Best time to buy & sell stock"
+  },
+  "next": {
+    "title": "Odd even linked list",
+    "permalink": "/docs/DSA/100 Medium/Odd even linked list"
+  }
+}

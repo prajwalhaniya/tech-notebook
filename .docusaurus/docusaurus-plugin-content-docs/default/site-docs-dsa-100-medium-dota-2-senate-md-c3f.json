@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/100 Medium/Dota2 Senate",
+  "id": "DSA/100 Medium/Dota2 Senate",
+  "title": "Dota2 Senate",
+  "description": "In the world of Dota2, there are two parties: the Radiant and the Dire.",
+  "source": "@site/docs/DSA/100 Medium/Dota2 Senate.md",
+  "sourceDirName": "DSA/100 Medium",
+  "slug": "/DSA/100 Medium/Dota2 Senate",
+  "permalink": "/docs/DSA/100 Medium/Dota2 Senate",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 16,
+  "frontMatter": {
+    "sidebar_position": 16
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Odd even linked list",
+    "permalink": "/docs/DSA/100 Medium/Odd even linked list"
+  },
+  "next": {
+    "title": "Delete the middle node of a linked list",
+    "permalink": "/docs/DSA/100 Medium/Delete the middle node of a linked list"
+  }
+}

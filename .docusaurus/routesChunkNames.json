@@ -1,51 +1,51 @@
 {
-  "/__docusaurus/debug-d92": {
+  "/__docusaurus/debug-0d2": {
     "__comp": "__comp---theme-debug-config-23-a-2ff",
     "__context": {
-      "plugin": "plugin---docusaurus-debug-21-e-639"
+      "plugin": "plugin---docusaurus-debug-60-b-bf5"
     }
   },
-  "/__docusaurus/debug/config-584": {
+  "/__docusaurus/debug/config-62d": {
     "__comp": "__comp---theme-debug-config-23-a-2ff",
     "__context": {
-      "plugin": "plugin---docusaurus-debug-21-e-639"
+      "plugin": "plugin---docusaurus-debug-60-b-bf5"
     }
   },
-  "/__docusaurus/debug/content-d00": {
+  "/__docusaurus/debug/content-556": {
     "__comp": "__comp---theme-debug-contentba-8-ce7",
     "__context": {
-      "plugin": "plugin---docusaurus-debug-21-e-639"
+      "plugin": "plugin---docusaurus-debug-60-b-bf5"
     },
     "allContent": "allContent---docusaurus-debug-content-246-9aa"
   },
-  "/__docusaurus/debug/globalData-d9f": {
+  "/__docusaurus/debug/globalData-8ca": {
     "__comp": "__comp---theme-debug-global-dataede-0fa",
     "__context": {
-      "plugin": "plugin---docusaurus-debug-21-e-639"
+      "plugin": "plugin---docusaurus-debug-60-b-bf5"
     }
   },
-  "/__docusaurus/debug/metadata-ab4": {
+  "/__docusaurus/debug/metadata-72d": {
     "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
     "__context": {
-      "plugin": "plugin---docusaurus-debug-21-e-639"
+      "plugin": "plugin---docusaurus-debug-60-b-bf5"
     }
   },
-  "/__docusaurus/debug/registry-776": {
+  "/__docusaurus/debug/registry-5a4": {
     "__comp": "__comp---theme-debug-registry-679-501",
     "__context": {
-      "plugin": "plugin---docusaurus-debug-21-e-639"
+      "plugin": "plugin---docusaurus-debug-60-b-bf5"
     }
   },
-  "/__docusaurus/debug/routes-49e": {
+  "/__docusaurus/debug/routes-47d": {
     "__comp": "__comp---theme-debug-routes-946-699",
     "__context": {
-      "plugin": "plugin---docusaurus-debug-21-e-639"
+      "plugin": "plugin---docusaurus-debug-60-b-bf5"
     }
   },
-  "/blog-f70": {
+  "/blog-52b": {
     "__comp": "__comp---theme-blog-list-pagea-6-a-7ba",
     "__context": {
-      "plugin": "plugin---blog-39-d-764"
+      "plugin": "plugin---blog-7-af-96f"
     },
     "sidebar": "sidebar---blog-814-8ac",
     "items": [
@@ -58,40 +58,40 @@
     ],
     "metadata": "metadata---blogb-2-b-df1"
   },
-  "/blog/archive-b9b": {
+  "/blog/archive-03e": {
     "__comp": "__comp---theme-blog-archive-page-9-e-4-1d8",
     "__context": {
-      "plugin": "plugin---blog-39-d-764"
+      "plugin": "plugin---blog-7-af-96f"
     },
     "archive": "archive---blog-archiveb-2-f-393"
   },
-  "/blog/welcome-8de": {
+  "/blog/welcome-f54": {
     "__comp": "__comp---theme-blog-post-pageccc-cab",
     "__context": {
-      "plugin": "plugin---blog-39-d-764"
+      "plugin": "plugin---blog-7-af-96f"
     },
     "sidebar": "sidebar---blog-814-8ac",
     "content": "content---blog-welcome-442-3a7"
   },
-  "/blog/why dsa matter-4fc": {
+  "/blog/why dsa matter-248": {
     "__comp": "__comp---theme-blog-post-pageccc-cab",
     "__context": {
-      "plugin": "plugin---blog-39-d-764"
+      "plugin": "plugin---blog-7-af-96f"
     },
     "sidebar": "sidebar---blog-814-8ac",
     "content": "content---blog-why-dsa-matter-139-24e"
   },
-  "/markdown-page-e16": {
+  "/markdown-page-862": {
     "__comp": "__comp---theme-mdx-page-1-f-3-b90",
     "__context": {
-      "plugin": "plugin---markdown-pageacd-94a"
+      "plugin": "plugin---markdown-pagee-4-d-909"
     },
     "content": "content---markdown-page-393-028"
   },
-  "/docs-07e": {
+  "/docs-eda": {
     "__comp": "__comp---theme-doc-page-1-be-9be",
     "__context": {
-      "plugin": "plugin---docsc-83-f34"
+      "plugin": "plugin---docs-620-92f"
     },
     "versionMetadata": "versionMetadata---docs-935-398"
   },
@@ -102,6 +102,10 @@
   "/docs/category/100-medium-070": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-100-mediumef-2-4c0"
+  },
+  "/docs/category/arraysstrings-e3b": {
+    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-arraysstrings-71-b-8de"
   },
   "/docs/category/caching-752": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
@@ -147,49 +151,101 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-deployment-concepts-9-f-4-1b8"
   },
-  "/docs/DSA/100 Easy/Add binary-70d": {
+  "/docs/DSA/100 Easy/Add binary-6d9": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-100-easy-add-binarya-4-f-804"
+    "content": "content---docs-dsa-100-easy-add-binaryb-50-a0a"
   },
-  "/docs/DSA/100 Easy/Longest common prefix-7ce": {
+  "/docs/DSA/100 Easy/Best time to buy & sell stock-cc5": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-100-easy-longest-common-prefix-987-083"
+    "content": "content---docs-dsa-100-easy-best-time-to-buy-sell-stock-1-ce-8a8"
   },
-  "/docs/DSA/100 Easy/Maximum Depth of binary tree-71c": {
+  "/docs/DSA/100 Easy/Can place flowers-875": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-100-easy-maximum-depth-of-binary-treefdb-6be"
+    "content": "content---docs-dsa-100-easy-can-place-flowers-3-c-2-400"
   },
-  "/docs/DSA/100 Easy/Merge two sorted lists-851": {
+  "/docs/DSA/100 Easy/Find Pivot Index-02e": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-100-easy-merge-two-sorted-lists-580-996"
+    "content": "content---docs-dsa-100-easy-find-pivot-index-170-d2a"
   },
-  "/docs/DSA/100 Easy/Palindrome-f0c": {
+  "/docs/DSA/100 Easy/Greatest common divisor of strings-22e": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-100-easy-palindrome-6-bb-8be"
+    "content": "content---docs-dsa-100-easy-greatest-common-divisor-of-strings-222-93b"
   },
-  "/docs/DSA/100 Easy/Remove duplicates from sorted list-732": {
+  "/docs/DSA/100 Easy/Longest common prefix-d91": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-100-easy-remove-duplicates-from-sorted-lista-53-fbb"
+    "content": "content---docs-dsa-100-easy-longest-common-prefix-5-e-7-463"
   },
-  "/docs/DSA/100 Easy/Roman to integer-247": {
+  "/docs/DSA/100 Easy/Maximum Average Subarray I-c05": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-100-easy-roman-to-integer-210-c83"
+    "content": "content---docs-dsa-100-easy-maximum-average-subarray-ib-1-b-2ca"
   },
-  "/docs/DSA/100 Easy/Square Root-3a5": {
+  "/docs/DSA/100 Easy/Maximum Depth of binary tree-150": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-100-easy-square-rootbec-f60"
+    "content": "content---docs-dsa-100-easy-maximum-depth-of-binary-tree-85-d-543"
   },
-  "/docs/DSA/100 Easy/Two Sum-c3a": {
+  "/docs/DSA/100 Easy/Merge two sorted lists-71d": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-100-easy-two-sum-169-53f"
+    "content": "content---docs-dsa-100-easy-merge-two-sorted-lists-948-eb0"
   },
-  "/docs/DSA/100 Easy/Valid Parentheses-62e": {
+  "/docs/DSA/100 Easy/Move Zeros-941": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-dsa-100-easy-valid-parentheses-882-13b"
+    "content": "content---docs-dsa-100-easy-move-zeros-5-ff-c90"
+  },
+  "/docs/DSA/100 Easy/Palindrome-2e3": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-100-easy-palindromec-88-b80"
+  },
+  "/docs/DSA/100 Easy/Remove duplicates from sorted list-e1d": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-100-easy-remove-duplicates-from-sorted-listbb-9-f09"
+  },
+  "/docs/DSA/100 Easy/Reverse vowels of a string-9fa": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-100-easy-reverse-vowels-of-a-stringdda-4c4"
+  },
+  "/docs/DSA/100 Easy/Roman to integer-3ea": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-100-easy-roman-to-integer-7-a-4-c00"
+  },
+  "/docs/DSA/100 Easy/Square Root-b16": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-100-easy-square-root-363-940"
+  },
+  "/docs/DSA/100 Easy/Two Sum-dc4": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-100-easy-two-sum-346-8c0"
+  },
+  "/docs/DSA/100 Easy/Valid Parentheses-46e": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-100-easy-valid-parentheses-0-db-43f"
   },
   "/docs/DSA/100 Medium/Add Two Numbers-a48": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-dsa-100-medium-add-two-numbersa-11-e1b"
+  },
+  "/docs/DSA/100 Medium/Best time to buy & sell stock-79f": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-100-medium-best-time-to-buy-sell-stock-355-e90"
+  },
+  "/docs/DSA/100 Medium/Container with most water-3cf": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-100-medium-container-with-most-water-8-cb-d5f"
+  },
+  "/docs/DSA/100 Medium/Decode string-27d": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-100-medium-decode-stringa-5-c-cfc"
+  },
+  "/docs/DSA/100 Medium/Delete the middle node of a linked list-436": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-100-medium-delete-the-middle-node-of-a-linked-listf-87-d9e"
+  },
+  "/docs/DSA/100 Medium/Dota2 Senate-7a4": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-100-medium-dota-2-senatec-3-f-7e8"
+  },
+  "/docs/DSA/100 Medium/Increasing triplet subsequence-eb2": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-100-medium-increasing-triplet-subsequence-3-d-6-db7"
   },
   "/docs/DSA/100 Medium/Longest substring without repeating characters-e43": {
     "__comp": "__comp---theme-doc-item-178-a40",
@@ -199,6 +255,18 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-dsa-100-medium-number-of-islands-176-5be"
   },
+  "/docs/DSA/100 Medium/Odd even linked list-a0e": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-100-medium-odd-even-linked-list-2-e-4-265"
+  },
+  "/docs/DSA/100 Medium/Product of Array Except Self-c64": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-100-medium-product-of-array-except-self-93-e-8e8"
+  },
+  "/docs/DSA/100 Medium/Remove starts from string-ebf": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-100-medium-remove-starts-from-string-84-b-10a"
+  },
   "/docs/DSA/100 Medium/Rotate Image-65f": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-dsa-100-medium-rotate-image-3-b-4-7d3"
@@ -207,6 +275,10 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-dsa-100-medium-spiral-matrix-94-e-46b"
   },
+  "/docs/DSA/100 Medium/trie-0d6": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-100-medium-trie-3-b-9-b7c"
+  },
   "/docs/DSA/caching/Introduction-640": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-dsa-caching-introduction-9-f-2-856"
@@ -214,6 +286,10 @@
   "/docs/DSA/caching/Least Frequently Used-978": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-dsa-caching-least-frequently-used-04-a-c50"
+  },
+  "/docs/DSA/caching/Least Recently Used-7c5": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-caching-least-recently-usedc-49-952"
   },
   "/docs/DSA/Fundamentals-570": {
     "__comp": "__comp---theme-doc-item-178-a40",
@@ -351,6 +427,10 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-dsa-trees-concepts-5-a-4-10d"
   },
+  "/docs/JavaScript/Arrays&Strings/Array Methods-65f": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-java-script-arrays-strings-array-methodsc-83-8bd"
+  },
   "/docs/JavaScript/Fundamentals-c80": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-java-script-fundamentals-2-a-3-b82"
@@ -371,10 +451,10 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-java-script-projects-2-ae-35e"
   },
-  "/-38b": {
+  "/-3ea": {
     "__comp": "__comp---site-src-pages-index-jsc-4-f-f99",
     "__context": {
-      "plugin": "plugin---markdown-pageacd-94a"
+      "plugin": "plugin---markdown-pagee-4-d-909"
     },
     "config": "config---5-e-9-4f3"
   }

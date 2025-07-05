@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/100 Easy/Reverse vowels of a string",
+  "id": "DSA/100 Easy/Reverse vowels of a string",
+  "title": "Reverse vowels of a string",
+  "description": "Given a string s, reverse only all the vowels in the string and return it.",
+  "source": "@site/docs/DSA/100 Easy/Reverse vowels of a string.md",
+  "sourceDirName": "DSA/100 Easy",
+  "slug": "/DSA/100 Easy/Reverse vowels of a string",
+  "permalink": "/docs/DSA/100 Easy/Reverse vowels of a string",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 16,
+  "frontMatter": {
+    "sidebar_position": 16
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Can place flowers",
+    "permalink": "/docs/DSA/100 Easy/Can place flowers"
+  },
+  "next": {
+    "title": "Best time to buy & sell stock",
+    "permalink": "/docs/DSA/100 Easy/Best time to buy & sell stock"
+  }
+}

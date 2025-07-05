@@ -3,7 +3,7 @@
   "id": "DSA/100 Easy/Maximum Depth of binary tree",
   "title": "Maximum Depth of binary tree",
   "description": "Given the root of a binary tree, return its maximum depth.",
-  "source": "@site/docs/DSA/100 Easy/Maximum Depth of binary tree.md",
+  "source": "@site/docs/DSA/100 Easy/10_Maximum Depth of binary tree.md",
   "sourceDirName": "DSA/100 Easy",
   "slug": "/DSA/100 Easy/Maximum Depth of binary tree",
   "permalink": "/docs/DSA/100 Easy/Maximum Depth of binary tree",
@@ -20,7 +20,7 @@
     "permalink": "/docs/DSA/100 Easy/Remove duplicates from sorted list"
   },
   "next": {
-    "title": "Find Pivot Index",
-    "permalink": "/docs/DSA/100 Easy/Find Pivot Index"
+    "title": "Move Zeros",
+    "permalink": "/docs/DSA/100 Easy/Move Zeros"
   }
 }

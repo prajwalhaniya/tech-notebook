@@ -13,9 +13,9 @@
           "tagsPath": "/docs/tags",
           "isLast": true,
           "routePriority": -1,
-          "sidebarFilePath": "/home/prajwal/Disk D/Prajwal Haniya/tech-notebook/sidebars.js",
-          "contentPath": "/home/prajwal/Disk D/Prajwal Haniya/tech-notebook/docs",
-          "contentPathLocalized": "/home/prajwal/Disk D/Prajwal Haniya/tech-notebook/i18n/en/docusaurus-plugin-content-docs/current",
+          "sidebarFilePath": "/home/prajwal/Documents/workspace/github/tech-notebook/sidebars.js",
+          "contentPath": "/home/prajwal/Documents/workspace/github/tech-notebook/docs",
+          "contentPathLocalized": "/home/prajwal/Documents/workspace/github/tech-notebook/i18n/en/docusaurus-plugin-content-docs/current",
           "docs": [
             {
               "unversionedId": "Database/concepts",
@@ -64,7 +64,7 @@
               "id": "DSA/100 Easy/Add binary",
               "title": "Add binary",
               "description": "Given two binary strings a and b, return their sum as a binary string.",
-              "source": "@site/docs/DSA/100 Easy/Add binary.md",
+              "source": "@site/docs/DSA/100 Easy/08_Add binary.md",
               "sourceDirName": "DSA/100 Easy",
               "slug": "/DSA/100 Easy/Add binary",
               "permalink": "/docs/DSA/100 Easy/Add binary",
@@ -86,11 +86,115 @@
               }
             },
             {
+              "unversionedId": "DSA/100 Easy/Best time to buy & sell stock",
+              "id": "DSA/100 Easy/Best time to buy & sell stock",
+              "title": "Best time to buy & sell stock",
+              "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day.",
+              "source": "@site/docs/DSA/100 Easy/15_Best time to buy & sell stock.md",
+              "sourceDirName": "DSA/100 Easy",
+              "slug": "/DSA/100 Easy/Best time to buy & sell stock",
+              "permalink": "/docs/DSA/100 Easy/Best time to buy & sell stock",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 15,
+              "frontMatter": {
+                "sidebar_position": 15
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Reverse vowels of a string",
+                "permalink": "/docs/DSA/100 Easy/Reverse vowels of a string"
+              },
+              "next": {
+                "title": "Find Pivot Index",
+                "permalink": "/docs/DSA/100 Easy/Find Pivot Index"
+              }
+            },
+            {
+              "unversionedId": "DSA/100 Easy/Can place flowers",
+              "id": "DSA/100 Easy/Can place flowers",
+              "title": "Can place flowers",
+              "description": "You have a long flowerbed in which some of the plots are planted, and some are not. However, flowers cannot be planted in adjacent plots.",
+              "source": "@site/docs/DSA/100 Easy/13_Can place flowers.md",
+              "sourceDirName": "DSA/100 Easy",
+              "slug": "/DSA/100 Easy/Can place flowers",
+              "permalink": "/docs/DSA/100 Easy/Can place flowers",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 13,
+              "frontMatter": {
+                "sidebar_position": 13
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Greatest common divisor of strings",
+                "permalink": "/docs/DSA/100 Easy/Greatest common divisor of strings"
+              },
+              "next": {
+                "title": "Reverse vowels of a string",
+                "permalink": "/docs/DSA/100 Easy/Reverse vowels of a string"
+              }
+            },
+            {
+              "unversionedId": "DSA/100 Easy/Find Pivot Index",
+              "id": "DSA/100 Easy/Find Pivot Index",
+              "title": "Find Pivot Index",
+              "description": "Given an array of integers nums, calculate the pivot index of this array.",
+              "source": "@site/docs/DSA/100 Easy/16_Find Pivot Index.md",
+              "sourceDirName": "DSA/100 Easy",
+              "slug": "/DSA/100 Easy/Find Pivot Index",
+              "permalink": "/docs/DSA/100 Easy/Find Pivot Index",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 16,
+              "frontMatter": {
+                "sidebar_position": 16
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Best time to buy & sell stock",
+                "permalink": "/docs/DSA/100 Easy/Best time to buy & sell stock"
+              },
+              "next": {
+                "title": "Maximum Average Subarray I",
+                "permalink": "/docs/DSA/100 Easy/Maximum Average Subarray I"
+              }
+            },
+            {
+              "unversionedId": "DSA/100 Easy/Greatest common divisor of strings",
+              "id": "DSA/100 Easy/Greatest common divisor of strings",
+              "title": "Greatest common divisor of strings",
+              "description": "For two strings s and t, we say \"t divides s\" if and only if s = t + ... + t (i.e., t is concatenated with itself one or more times).",
+              "source": "@site/docs/DSA/100 Easy/12_Greatest common divisor of strings.md",
+              "sourceDirName": "DSA/100 Easy",
+              "slug": "/DSA/100 Easy/Greatest common divisor of strings",
+              "permalink": "/docs/DSA/100 Easy/Greatest common divisor of strings",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 12,
+              "frontMatter": {
+                "sidebar_position": 12
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Move Zeros",
+                "permalink": "/docs/DSA/100 Easy/Move Zeros"
+              },
+              "next": {
+                "title": "Can place flowers",
+                "permalink": "/docs/DSA/100 Easy/Can place flowers"
+              }
+            },
+            {
               "unversionedId": "DSA/100 Easy/Longest common prefix",
               "id": "DSA/100 Easy/Longest common prefix",
               "title": "Longest common prefix",
               "description": "Write a function to find the longest common prefix string amongst an array of strings.",
-              "source": "@site/docs/DSA/100 Easy/Longest common prefix.md",
+              "source": "@site/docs/DSA/100 Easy/05_Longest common prefix.md",
               "sourceDirName": "DSA/100 Easy",
               "slug": "/DSA/100 Easy/Longest common prefix",
               "permalink": "/docs/DSA/100 Easy/Longest common prefix",
@@ -112,11 +216,37 @@
               }
             },
             {
+              "unversionedId": "DSA/100 Easy/Maximum Average Subarray I",
+              "id": "DSA/100 Easy/Maximum Average Subarray I",
+              "title": "Maximum Average Subarray I",
+              "description": "You are given an integer array nums consisting of n elements, and an integer k.",
+              "source": "@site/docs/DSA/100 Easy/17_Maximum Average Subarray I.md",
+              "sourceDirName": "DSA/100 Easy",
+              "slug": "/DSA/100 Easy/Maximum Average Subarray I",
+              "permalink": "/docs/DSA/100 Easy/Maximum Average Subarray I",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 17,
+              "frontMatter": {
+                "sidebar_position": 17
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Find Pivot Index",
+                "permalink": "/docs/DSA/100 Easy/Find Pivot Index"
+              },
+              "next": {
+                "title": "100 Medium",
+                "permalink": "/docs/category/100-medium"
+              }
+            },
+            {
               "unversionedId": "DSA/100 Easy/Maximum Depth of binary tree",
               "id": "DSA/100 Easy/Maximum Depth of binary tree",
               "title": "Maximum Depth of binary tree",
               "description": "Given the root of a binary tree, return its maximum depth.",
-              "source": "@site/docs/DSA/100 Easy/Maximum Depth of binary tree.md",
+              "source": "@site/docs/DSA/100 Easy/10_Maximum Depth of binary tree.md",
               "sourceDirName": "DSA/100 Easy",
               "slug": "/DSA/100 Easy/Maximum Depth of binary tree",
               "permalink": "/docs/DSA/100 Easy/Maximum Depth of binary tree",
@@ -133,8 +263,8 @@
                 "permalink": "/docs/DSA/100 Easy/Remove duplicates from sorted list"
               },
               "next": {
-                "title": "100 Medium",
-                "permalink": "/docs/category/100-medium"
+                "title": "Move Zeros",
+                "permalink": "/docs/DSA/100 Easy/Move Zeros"
               }
             },
             {
@@ -142,7 +272,7 @@
               "id": "DSA/100 Easy/Merge two sorted lists",
               "title": "Merge two sorted lists",
               "description": "You are given the heads of two sorted linked lists list1 and list2.",
-              "source": "@site/docs/DSA/100 Easy/Merge two sorted lists.md",
+              "source": "@site/docs/DSA/100 Easy/07_Merge two sorted lists.md",
               "sourceDirName": "DSA/100 Easy",
               "slug": "/DSA/100 Easy/Merge two sorted lists",
               "permalink": "/docs/DSA/100 Easy/Merge two sorted lists",
@@ -164,11 +294,37 @@
               }
             },
             {
+              "unversionedId": "DSA/100 Easy/Move Zeros",
+              "id": "DSA/100 Easy/Move Zeros",
+              "title": "Move Zeros",
+              "description": "Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.",
+              "source": "@site/docs/DSA/100 Easy/11_Move Zeros.md",
+              "sourceDirName": "DSA/100 Easy",
+              "slug": "/DSA/100 Easy/Move Zeros",
+              "permalink": "/docs/DSA/100 Easy/Move Zeros",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 11,
+              "frontMatter": {
+                "sidebar_position": 11
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Maximum Depth of binary tree",
+                "permalink": "/docs/DSA/100 Easy/Maximum Depth of binary tree"
+              },
+              "next": {
+                "title": "Greatest common divisor of strings",
+                "permalink": "/docs/DSA/100 Easy/Greatest common divisor of strings"
+              }
+            },
+            {
               "unversionedId": "DSA/100 Easy/Palindrome",
               "id": "DSA/100 Easy/Palindrome",
               "title": "Palindrome",
               "description": "Given an integer x, return true if x is a palindrome, and false otherwise.",
-              "source": "@site/docs/DSA/100 Easy/Palindrome.md",
+              "source": "@site/docs/DSA/100 Easy/02_Palindrome.md",
               "sourceDirName": "DSA/100 Easy",
               "slug": "/DSA/100 Easy/Palindrome",
               "permalink": "/docs/DSA/100 Easy/Palindrome",
@@ -194,7 +350,7 @@
               "id": "DSA/100 Easy/Remove duplicates from sorted list",
               "title": "Remove duplicates from sorted list",
               "description": "Given the head of a sorted linked list, delete all duplicates such that each element appears only once. Return the linked list sorted as well.",
-              "source": "@site/docs/DSA/100 Easy/Remove duplicates from sorted list.md",
+              "source": "@site/docs/DSA/100 Easy/09_Remove duplicates from sorted list.md",
               "sourceDirName": "DSA/100 Easy",
               "slug": "/DSA/100 Easy/Remove duplicates from sorted list",
               "permalink": "/docs/DSA/100 Easy/Remove duplicates from sorted list",
@@ -216,11 +372,37 @@
               }
             },
             {
+              "unversionedId": "DSA/100 Easy/Reverse vowels of a string",
+              "id": "DSA/100 Easy/Reverse vowels of a string",
+              "title": "Reverse vowels of a string",
+              "description": "Given a string s, reverse only all the vowels in the string and return it.",
+              "source": "@site/docs/DSA/100 Easy/14_Reverse vowels of a string.md",
+              "sourceDirName": "DSA/100 Easy",
+              "slug": "/DSA/100 Easy/Reverse vowels of a string",
+              "permalink": "/docs/DSA/100 Easy/Reverse vowels of a string",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 14,
+              "frontMatter": {
+                "sidebar_position": 14
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Can place flowers",
+                "permalink": "/docs/DSA/100 Easy/Can place flowers"
+              },
+              "next": {
+                "title": "Best time to buy & sell stock",
+                "permalink": "/docs/DSA/100 Easy/Best time to buy & sell stock"
+              }
+            },
+            {
               "unversionedId": "DSA/100 Easy/Roman to integer",
               "id": "DSA/100 Easy/Roman to integer",
               "title": "Roman to integer",
               "description": "Convert the given roman numeral string into integer",
-              "source": "@site/docs/DSA/100 Easy/Roman to integer.md",
+              "source": "@site/docs/DSA/100 Easy/03_Roman to integer.md",
               "sourceDirName": "DSA/100 Easy",
               "slug": "/DSA/100 Easy/Roman to integer",
               "permalink": "/docs/DSA/100 Easy/Roman to integer",
@@ -246,7 +428,7 @@
               "id": "DSA/100 Easy/Square Root",
               "title": "Square Root",
               "description": "Given a non-negative integer x, return the square root of x rounded down to the nearest integer. The returned integer should be non-negative as well.",
-              "source": "@site/docs/DSA/100 Easy/Square Root.md",
+              "source": "@site/docs/DSA/100 Easy/04_Square Root.md",
               "sourceDirName": "DSA/100 Easy",
               "slug": "/DSA/100 Easy/Square Root",
               "permalink": "/docs/DSA/100 Easy/Square Root",
@@ -272,7 +454,7 @@
               "id": "DSA/100 Easy/Two Sum",
               "title": "Two Sum",
               "description": "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.",
-              "source": "@site/docs/DSA/100 Easy/Two Sum.md",
+              "source": "@site/docs/DSA/100 Easy/01_Two Sum.md",
               "sourceDirName": "DSA/100 Easy",
               "slug": "/DSA/100 Easy/Two Sum",
               "permalink": "/docs/DSA/100 Easy/Two Sum",
@@ -298,7 +480,7 @@
               "id": "DSA/100 Easy/Valid Parentheses",
               "title": "Valid Parentheses",
               "description": "Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.",
-              "source": "@site/docs/DSA/100 Easy/Valid Parentheses.md",
+              "source": "@site/docs/DSA/100 Easy/06_Valid Parentheses.md",
               "sourceDirName": "DSA/100 Easy",
               "slug": "/DSA/100 Easy/Valid Parentheses",
               "permalink": "/docs/DSA/100 Easy/Valid Parentheses",
@@ -343,6 +525,161 @@
               "next": {
                 "title": "Longest substring without repeating characters",
                 "permalink": "/docs/DSA/100 Medium/Longest substring without repeating characters"
+              }
+            },
+            {
+              "unversionedId": "DSA/100 Medium/Best time to buy & sell stock",
+              "id": "DSA/100 Medium/Best time to buy & sell stock",
+              "title": "Best time to buy & sell stock",
+              "description": "You are given an integer array prices where prices[i] is the price of a given stock on the ith day.",
+              "source": "@site/docs/DSA/100 Medium/Best time to buy & sell stock.md",
+              "sourceDirName": "DSA/100 Medium",
+              "slug": "/DSA/100 Medium/Best time to buy & sell stock",
+              "permalink": "/docs/DSA/100 Medium/Best time to buy & sell stock",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 11,
+              "frontMatter": {
+                "sidebar_position": 11
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Decode string",
+                "permalink": "/docs/DSA/100 Medium/Decode string"
+              },
+              "next": {
+                "title": "trie",
+                "permalink": "/docs/DSA/100 Medium/trie"
+              }
+            },
+            {
+              "unversionedId": "DSA/100 Medium/Container with most water",
+              "id": "DSA/100 Medium/Container with most water",
+              "title": "Container with most water",
+              "description": "You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]).",
+              "source": "@site/docs/DSA/100 Medium/Container with most water.md",
+              "sourceDirName": "DSA/100 Medium",
+              "slug": "/DSA/100 Medium/Container with most water",
+              "permalink": "/docs/DSA/100 Medium/Container with most water",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 8,
+              "frontMatter": {
+                "sidebar_position": 8
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Product of Array Except Self",
+                "permalink": "/docs/DSA/100 Medium/Product of Array Except Self"
+              },
+              "next": {
+                "title": "Increasing triplet subsequence",
+                "permalink": "/docs/DSA/100 Medium/Increasing triplet subsequence"
+              }
+            },
+            {
+              "unversionedId": "DSA/100 Medium/Decode string",
+              "id": "DSA/100 Medium/Decode string",
+              "title": "Decode string",
+              "description": "Given an encoded string, return its decoded string.",
+              "source": "@site/docs/DSA/100 Medium/Decode string.md",
+              "sourceDirName": "DSA/100 Medium",
+              "slug": "/DSA/100 Medium/Decode string",
+              "permalink": "/docs/DSA/100 Medium/Decode string",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 10,
+              "frontMatter": {
+                "sidebar_position": 10
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Increasing triplet subsequence",
+                "permalink": "/docs/DSA/100 Medium/Increasing triplet subsequence"
+              },
+              "next": {
+                "title": "Best time to buy & sell stock",
+                "permalink": "/docs/DSA/100 Medium/Best time to buy & sell stock"
+              }
+            },
+            {
+              "unversionedId": "DSA/100 Medium/Delete the middle node of a linked list",
+              "id": "DSA/100 Medium/Delete the middle node of a linked list",
+              "title": "Delete the middle node of a linked list",
+              "description": "You are given the head of a linked list. Delete the middle node, and return the head of the modified linked list.",
+              "source": "@site/docs/DSA/100 Medium/Delete the middle node of a linked list.md",
+              "sourceDirName": "DSA/100 Medium",
+              "slug": "/DSA/100 Medium/Delete the middle node of a linked list",
+              "permalink": "/docs/DSA/100 Medium/Delete the middle node of a linked list",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "sidebar_postion": 13
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Dota2 Senate",
+                "permalink": "/docs/DSA/100 Medium/Dota2 Senate"
+              },
+              "next": {
+                "title": "Caching",
+                "permalink": "/docs/category/caching"
+              }
+            },
+            {
+              "unversionedId": "DSA/100 Medium/Dota2 Senate",
+              "id": "DSA/100 Medium/Dota2 Senate",
+              "title": "Dota2 Senate",
+              "description": "In the world of Dota2, there are two parties: the Radiant and the Dire.",
+              "source": "@site/docs/DSA/100 Medium/Dota2 Senate.md",
+              "sourceDirName": "DSA/100 Medium",
+              "slug": "/DSA/100 Medium/Dota2 Senate",
+              "permalink": "/docs/DSA/100 Medium/Dota2 Senate",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 16,
+              "frontMatter": {
+                "sidebar_position": 16
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Odd even linked list",
+                "permalink": "/docs/DSA/100 Medium/Odd even linked list"
+              },
+              "next": {
+                "title": "Delete the middle node of a linked list",
+                "permalink": "/docs/DSA/100 Medium/Delete the middle node of a linked list"
+              }
+            },
+            {
+              "unversionedId": "DSA/100 Medium/Increasing triplet subsequence",
+              "id": "DSA/100 Medium/Increasing triplet subsequence",
+              "title": "Increasing triplet subsequence",
+              "description": "Given an integer array nums, return true if there exists a triple of indices (i, j, k) such that i < j < k and nums[i] < nums[j] < nums[k].",
+              "source": "@site/docs/DSA/100 Medium/Increasing triplet subsequence.md",
+              "sourceDirName": "DSA/100 Medium",
+              "slug": "/DSA/100 Medium/Increasing triplet subsequence",
+              "permalink": "/docs/DSA/100 Medium/Increasing triplet subsequence",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 9,
+              "frontMatter": {
+                "sidebar_position": 9
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Container with most water",
+                "permalink": "/docs/DSA/100 Medium/Container with most water"
+              },
+              "next": {
+                "title": "Decode string",
+                "permalink": "/docs/DSA/100 Medium/Decode string"
               }
             },
             {
@@ -393,8 +730,86 @@
                 "permalink": "/docs/DSA/100 Medium/Spiral Matrix"
               },
               "next": {
-                "title": "Caching",
-                "permalink": "/docs/category/caching"
+                "title": "Remove starts from string",
+                "permalink": "/docs/DSA/100 Medium/Remove starts from string"
+              }
+            },
+            {
+              "unversionedId": "DSA/100 Medium/Odd even linked list",
+              "id": "DSA/100 Medium/Odd even linked list",
+              "title": "Odd even linked list",
+              "description": "Given the head of a singly linked list, group all the nodes with odd indices together followed by the nodes with even indices, and return the reordered list.",
+              "source": "@site/docs/DSA/100 Medium/Odd even linked list.md",
+              "sourceDirName": "DSA/100 Medium",
+              "slug": "/DSA/100 Medium/Odd even linked list",
+              "permalink": "/docs/DSA/100 Medium/Odd even linked list",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 14,
+              "frontMatter": {
+                "sidebar_position": 14
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "trie",
+                "permalink": "/docs/DSA/100 Medium/trie"
+              },
+              "next": {
+                "title": "Dota2 Senate",
+                "permalink": "/docs/DSA/100 Medium/Dota2 Senate"
+              }
+            },
+            {
+              "unversionedId": "DSA/100 Medium/Product of Array Except Self",
+              "id": "DSA/100 Medium/Product of Array Except Self",
+              "title": "Product of Array Except Self",
+              "description": "Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i].",
+              "source": "@site/docs/DSA/100 Medium/Product of Array Except Self.md",
+              "sourceDirName": "DSA/100 Medium",
+              "slug": "/DSA/100 Medium/Product of Array Except Self",
+              "permalink": "/docs/DSA/100 Medium/Product of Array Except Self",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 7,
+              "frontMatter": {
+                "sidebar_position": 7
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Remove starts from string",
+                "permalink": "/docs/DSA/100 Medium/Remove starts from string"
+              },
+              "next": {
+                "title": "Container with most water",
+                "permalink": "/docs/DSA/100 Medium/Container with most water"
+              }
+            },
+            {
+              "unversionedId": "DSA/100 Medium/Remove starts from string",
+              "id": "DSA/100 Medium/Remove starts from string",
+              "title": "Remove starts from string",
+              "description": "You are given a string s, which contains stars *.",
+              "source": "@site/docs/DSA/100 Medium/Remove starts from string.md",
+              "sourceDirName": "DSA/100 Medium",
+              "slug": "/DSA/100 Medium/Remove starts from string",
+              "permalink": "/docs/DSA/100 Medium/Remove starts from string",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 6,
+              "frontMatter": {
+                "sidebar_position": 6
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Number of Islands",
+                "permalink": "/docs/DSA/100 Medium/Number of Islands"
+              },
+              "next": {
+                "title": "Product of Array Except Self",
+                "permalink": "/docs/DSA/100 Medium/Product of Array Except Self"
               }
             },
             {
@@ -450,6 +865,32 @@
               }
             },
             {
+              "unversionedId": "DSA/100 Medium/trie",
+              "id": "DSA/100 Medium/trie",
+              "title": "trie",
+              "description": "A trie (pronounced as \"try\") or prefix tree is a tree data structure used to efficiently store and retrieve keys in a dataset of strings. There are various applications of this data structure, such as autocomplete and spellchecker.",
+              "source": "@site/docs/DSA/100 Medium/trie.md",
+              "sourceDirName": "DSA/100 Medium",
+              "slug": "/DSA/100 Medium/trie",
+              "permalink": "/docs/DSA/100 Medium/trie",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 12,
+              "frontMatter": {
+                "sidebar_position": 12
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Best time to buy & sell stock",
+                "permalink": "/docs/DSA/100 Medium/Best time to buy & sell stock"
+              },
+              "next": {
+                "title": "Odd even linked list",
+                "permalink": "/docs/DSA/100 Medium/Odd even linked list"
+              }
+            },
+            {
               "unversionedId": "DSA/caching/Introduction",
               "id": "DSA/caching/Introduction",
               "title": "Introduction",
@@ -495,6 +936,32 @@
               "previous": {
                 "title": "Introduction",
                 "permalink": "/docs/DSA/caching/Introduction"
+              },
+              "next": {
+                "title": "Least Recently Used",
+                "permalink": "/docs/DSA/caching/Least Recently Used"
+              }
+            },
+            {
+              "unversionedId": "DSA/caching/Least Recently Used",
+              "id": "DSA/caching/Least Recently Used",
+              "title": "Least Recently Used",
+              "description": "// Implementation",
+              "source": "@site/docs/DSA/caching/Least Recently Used.md",
+              "sourceDirName": "DSA/caching",
+              "slug": "/DSA/caching/Least Recently Used",
+              "permalink": "/docs/DSA/caching/Least Recently Used",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 2,
+              "frontMatter": {
+                "sidebar_position": 2
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Least Frequently Used",
+                "permalink": "/docs/DSA/caching/Least Frequently Used"
               },
               "next": {
                 "title": "Rate limiting algorithms",
@@ -1386,6 +1853,32 @@
               }
             },
             {
+              "unversionedId": "JavaScript/Arrays&Strings/Array Methods",
+              "id": "JavaScript/Arrays&Strings/Array Methods",
+              "title": "Array Methods",
+              "description": "at()",
+              "source": "@site/docs/JavaScript/Arrays&Strings/Array Methods.md",
+              "sourceDirName": "JavaScript/Arrays&Strings",
+              "slug": "/JavaScript/Arrays&Strings/Array Methods",
+              "permalink": "/docs/JavaScript/Arrays&Strings/Array Methods",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "sidebar_position": 1
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Arrays/Strings",
+                "permalink": "/docs/category/arraysstrings"
+              },
+              "next": {
+                "title": "Projects",
+                "permalink": "/docs/JavaScript/Projects"
+              }
+            },
+            {
               "unversionedId": "JavaScript/Fundamentals",
               "id": "JavaScript/Fundamentals",
               "title": "Fundamentals",
@@ -1407,8 +1900,8 @@
                 "permalink": "/docs/category/javascript"
               },
               "next": {
-                "title": "Object Oriented JavaScript",
-                "permalink": "/docs/category/object-oriented-javascript"
+                "title": "Arrays/Strings",
+                "permalink": "/docs/category/arraysstrings"
               }
             },
             {
@@ -1459,8 +1952,8 @@
                 "permalink": "/docs/JavaScript/Object-oriented-JavaScript/Design Patterns"
               },
               "next": {
-                "title": "Projects",
-                "permalink": "/docs/JavaScript/Projects"
+                "title": "DSA",
+                "permalink": "/docs/category/dsa"
               }
             },
             {
@@ -1507,12 +2000,12 @@
               },
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "Interfaces",
-                "permalink": "/docs/JavaScript/Object-oriented-JavaScript/Interfaces"
+                "title": "Array Methods",
+                "permalink": "/docs/JavaScript/Arrays&Strings/Array Methods"
               },
               "next": {
-                "title": "DSA",
-                "permalink": "/docs/category/dsa"
+                "title": "Object Oriented JavaScript",
+                "permalink": "/docs/category/object-oriented-javascript"
               }
             }
           ],
@@ -1528,6 +2021,28 @@
                   {
                     "type": "doc",
                     "id": "JavaScript/Fundamentals"
+                  },
+                  {
+                    "type": "category",
+                    "label": "Arrays/Strings",
+                    "collapsible": true,
+                    "collapsed": true,
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "JavaScript/Arrays&Strings/Array Methods"
+                      }
+                    ],
+                    "link": {
+                      "type": "generated-index",
+                      "description": "Arrays and strings in javascript",
+                      "slug": "/category/arraysstrings",
+                      "permalink": "/docs/category/arraysstrings"
+                    }
+                  },
+                  {
+                    "type": "doc",
+                    "id": "JavaScript/Projects"
                   },
                   {
                     "type": "category",
@@ -1554,10 +2069,6 @@
                       "slug": "/category/object-oriented-javascript",
                       "permalink": "/docs/category/object-oriented-javascript"
                     }
-                  },
-                  {
-                    "type": "doc",
-                    "id": "JavaScript/Projects"
                   }
                 ],
                 "link": {
@@ -1760,6 +2271,34 @@
                       {
                         "type": "doc",
                         "id": "DSA/100 Easy/Maximum Depth of binary tree"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "DSA/100 Easy/Move Zeros"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "DSA/100 Easy/Greatest common divisor of strings"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "DSA/100 Easy/Can place flowers"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "DSA/100 Easy/Reverse vowels of a string"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "DSA/100 Easy/Best time to buy & sell stock"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "DSA/100 Easy/Find Pivot Index"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "DSA/100 Easy/Maximum Average Subarray I"
                       }
                     ],
                     "link": {
@@ -1794,6 +2333,46 @@
                       {
                         "type": "doc",
                         "id": "DSA/100 Medium/Number of Islands"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "DSA/100 Medium/Remove starts from string"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "DSA/100 Medium/Product of Array Except Self"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "DSA/100 Medium/Container with most water"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "DSA/100 Medium/Increasing triplet subsequence"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "DSA/100 Medium/Decode string"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "DSA/100 Medium/Best time to buy & sell stock"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "DSA/100 Medium/trie"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "DSA/100 Medium/Odd even linked list"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "DSA/100 Medium/Dota2 Senate"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "DSA/100 Medium/Delete the middle node of a linked list"
                       }
                     ],
                     "link": {
@@ -1816,6 +2395,10 @@
                       {
                         "type": "doc",
                         "id": "DSA/caching/Least Frequently Used"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "DSA/caching/Least Recently Used"
                       }
                     ],
                     "link": {

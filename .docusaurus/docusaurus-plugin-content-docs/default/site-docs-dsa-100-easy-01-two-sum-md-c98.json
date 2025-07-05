@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/100 Easy/Two_Sum",
+  "id": "DSA/100 Easy/Two_Sum",
+  "title": "Two_Sum",
+  "description": "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.",
+  "source": "@site/docs/DSA/100 Easy/01_Two_Sum.md",
+  "sourceDirName": "DSA/100 Easy",
+  "slug": "/DSA/100 Easy/Two_Sum",
+  "permalink": "/docs/DSA/100 Easy/Two_Sum",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "100 Easy",
+    "permalink": "/docs/category/100-easy"
+  },
+  "next": {
+    "title": "Palindrome",
+    "permalink": "/docs/DSA/100 Easy/Palindrome"
+  }
+}

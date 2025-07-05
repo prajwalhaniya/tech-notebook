@@ -5,8 +5,8 @@
   "permalink": "/docs/category/rate-limiting-algorithms",
   "navigation": {
     "previous": {
-      "title": "Least Frequently Used",
-      "permalink": "/docs/DSA/caching/Least Frequently Used"
+      "title": "Least Recently Used",
+      "permalink": "/docs/DSA/caching/Least Recently Used"
     },
     "next": {
       "title": "Token Bucket Algorithm",

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 11
+sidebar_position: 16
 ---
 Given an array of integers nums, calculate the pivot index of this array.
 

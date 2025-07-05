@@ -26,8 +26,33 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "DSA/100 Easy/Best time to buy & sell stock",
+              "path": "/docs/DSA/100 Easy/Best time to buy & sell stock",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Easy/Can place flowers",
+              "path": "/docs/DSA/100 Easy/Can place flowers",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Easy/Find Pivot Index",
+              "path": "/docs/DSA/100 Easy/Find Pivot Index",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Easy/Greatest common divisor of strings",
+              "path": "/docs/DSA/100 Easy/Greatest common divisor of strings",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "DSA/100 Easy/Longest common prefix",
               "path": "/docs/DSA/100 Easy/Longest common prefix",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Easy/Maximum Average Subarray I",
+              "path": "/docs/DSA/100 Easy/Maximum Average Subarray I",
               "sidebar": "tutorialSidebar"
             },
             {
@@ -41,6 +66,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "DSA/100 Easy/Move Zeros",
+              "path": "/docs/DSA/100 Easy/Move Zeros",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "DSA/100 Easy/Palindrome",
               "path": "/docs/DSA/100 Easy/Palindrome",
               "sidebar": "tutorialSidebar"
@@ -48,6 +78,11 @@
             {
               "id": "DSA/100 Easy/Remove duplicates from sorted list",
               "path": "/docs/DSA/100 Easy/Remove duplicates from sorted list",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Easy/Reverse vowels of a string",
+              "path": "/docs/DSA/100 Easy/Reverse vowels of a string",
               "sidebar": "tutorialSidebar"
             },
             {
@@ -76,6 +111,36 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "DSA/100 Medium/Best time to buy & sell stock",
+              "path": "/docs/DSA/100 Medium/Best time to buy & sell stock",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Container with most water",
+              "path": "/docs/DSA/100 Medium/Container with most water",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Decode string",
+              "path": "/docs/DSA/100 Medium/Decode string",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Delete the middle node of a linked list",
+              "path": "/docs/DSA/100 Medium/Delete the middle node of a linked list",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Dota2 Senate",
+              "path": "/docs/DSA/100 Medium/Dota2 Senate",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Increasing triplet subsequence",
+              "path": "/docs/DSA/100 Medium/Increasing triplet subsequence",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "DSA/100 Medium/Longest substring without repeating characters",
               "path": "/docs/DSA/100 Medium/Longest substring without repeating characters",
               "sidebar": "tutorialSidebar"
@@ -83,6 +148,21 @@
             {
               "id": "DSA/100 Medium/Number of Islands",
               "path": "/docs/DSA/100 Medium/Number of Islands",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Odd even linked list",
+              "path": "/docs/DSA/100 Medium/Odd even linked list",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Product of Array Except Self",
+              "path": "/docs/DSA/100 Medium/Product of Array Except Self",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Remove starts from string",
+              "path": "/docs/DSA/100 Medium/Remove starts from string",
               "sidebar": "tutorialSidebar"
             },
             {
@@ -96,6 +176,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "DSA/100 Medium/trie",
+              "path": "/docs/DSA/100 Medium/trie",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "DSA/caching/Introduction",
               "path": "/docs/DSA/caching/Introduction",
               "sidebar": "tutorialSidebar"
@@ -103,6 +188,11 @@
             {
               "id": "DSA/caching/Least Frequently Used",
               "path": "/docs/DSA/caching/Least Frequently Used",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/caching/Least Recently Used",
+              "path": "/docs/DSA/caching/Least Recently Used",
               "sidebar": "tutorialSidebar"
             },
             {
@@ -276,6 +366,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "JavaScript/Arrays&Strings/Array Methods",
+              "path": "/docs/JavaScript/Arrays&Strings/Array Methods",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "JavaScript/Fundamentals",
               "path": "/docs/JavaScript/Fundamentals",
               "sidebar": "tutorialSidebar"
@@ -303,6 +398,11 @@
             {
               "id": "/category/javascript",
               "path": "/docs/category/javascript",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/arraysstrings",
+              "path": "/docs/category/arraysstrings",
               "sidebar": "tutorialSidebar"
             },
             {

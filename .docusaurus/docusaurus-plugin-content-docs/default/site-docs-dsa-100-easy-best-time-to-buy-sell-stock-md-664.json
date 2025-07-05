@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/100 Easy/Best time to buy & sell stock",
+  "id": "DSA/100 Easy/Best time to buy & sell stock",
+  "title": "Best time to buy & sell stock",
+  "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day.",
+  "source": "@site/docs/DSA/100 Easy/Best time to buy & sell stock.md",
+  "sourceDirName": "DSA/100 Easy",
+  "slug": "/DSA/100 Easy/Best time to buy & sell stock",
+  "permalink": "/docs/DSA/100 Easy/Best time to buy & sell stock",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 17,
+  "frontMatter": {
+    "sidebar_position": 17
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Reverse vowels of a string",
+    "permalink": "/docs/DSA/100 Easy/Reverse vowels of a string"
+  },
+  "next": {
+    "title": "100 Medium",
+    "permalink": "/docs/category/100-medium"
+  }
+}

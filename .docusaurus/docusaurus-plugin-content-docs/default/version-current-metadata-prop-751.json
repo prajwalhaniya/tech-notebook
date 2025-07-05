@@ -23,6 +23,27 @@
           },
           {
             "type": "category",
+            "label": "Arrays/Strings",
+            "collapsible": true,
+            "collapsed": true,
+            "items": [
+              {
+                "type": "link",
+                "label": "Array Methods",
+                "href": "/docs/JavaScript/Arrays&Strings/Array Methods",
+                "docId": "JavaScript/Arrays&Strings/Array Methods"
+              }
+            ],
+            "href": "/docs/category/arraysstrings"
+          },
+          {
+            "type": "link",
+            "label": "Projects",
+            "href": "/docs/JavaScript/Projects",
+            "docId": "JavaScript/Projects"
+          },
+          {
+            "type": "category",
             "label": "Object Oriented JavaScript",
             "collapsible": true,
             "collapsed": true,
@@ -47,12 +68,6 @@
               }
             ],
             "href": "/docs/category/object-oriented-javascript"
-          },
-          {
-            "type": "link",
-            "label": "Projects",
-            "href": "/docs/JavaScript/Projects",
-            "docId": "JavaScript/Projects"
           }
         ],
         "href": "/docs/category/javascript"
@@ -329,6 +344,48 @@
                 "label": "Maximum Depth of binary tree",
                 "href": "/docs/DSA/100 Easy/Maximum Depth of binary tree",
                 "docId": "DSA/100 Easy/Maximum Depth of binary tree"
+              },
+              {
+                "type": "link",
+                "label": "Move Zeros",
+                "href": "/docs/DSA/100 Easy/Move Zeros",
+                "docId": "DSA/100 Easy/Move Zeros"
+              },
+              {
+                "type": "link",
+                "label": "Greatest common divisor of strings",
+                "href": "/docs/DSA/100 Easy/Greatest common divisor of strings",
+                "docId": "DSA/100 Easy/Greatest common divisor of strings"
+              },
+              {
+                "type": "link",
+                "label": "Can place flowers",
+                "href": "/docs/DSA/100 Easy/Can place flowers",
+                "docId": "DSA/100 Easy/Can place flowers"
+              },
+              {
+                "type": "link",
+                "label": "Reverse vowels of a string",
+                "href": "/docs/DSA/100 Easy/Reverse vowels of a string",
+                "docId": "DSA/100 Easy/Reverse vowels of a string"
+              },
+              {
+                "type": "link",
+                "label": "Best time to buy & sell stock",
+                "href": "/docs/DSA/100 Easy/Best time to buy & sell stock",
+                "docId": "DSA/100 Easy/Best time to buy & sell stock"
+              },
+              {
+                "type": "link",
+                "label": "Find Pivot Index",
+                "href": "/docs/DSA/100 Easy/Find Pivot Index",
+                "docId": "DSA/100 Easy/Find Pivot Index"
+              },
+              {
+                "type": "link",
+                "label": "Maximum Average Subarray I",
+                "href": "/docs/DSA/100 Easy/Maximum Average Subarray I",
+                "docId": "DSA/100 Easy/Maximum Average Subarray I"
               }
             ],
             "href": "/docs/category/100-easy"
@@ -368,6 +425,66 @@
                 "label": "Number of Islands",
                 "href": "/docs/DSA/100 Medium/Number of Islands",
                 "docId": "DSA/100 Medium/Number of Islands"
+              },
+              {
+                "type": "link",
+                "label": "Remove starts from string",
+                "href": "/docs/DSA/100 Medium/Remove starts from string",
+                "docId": "DSA/100 Medium/Remove starts from string"
+              },
+              {
+                "type": "link",
+                "label": "Product of Array Except Self",
+                "href": "/docs/DSA/100 Medium/Product of Array Except Self",
+                "docId": "DSA/100 Medium/Product of Array Except Self"
+              },
+              {
+                "type": "link",
+                "label": "Container with most water",
+                "href": "/docs/DSA/100 Medium/Container with most water",
+                "docId": "DSA/100 Medium/Container with most water"
+              },
+              {
+                "type": "link",
+                "label": "Increasing triplet subsequence",
+                "href": "/docs/DSA/100 Medium/Increasing triplet subsequence",
+                "docId": "DSA/100 Medium/Increasing triplet subsequence"
+              },
+              {
+                "type": "link",
+                "label": "Decode string",
+                "href": "/docs/DSA/100 Medium/Decode string",
+                "docId": "DSA/100 Medium/Decode string"
+              },
+              {
+                "type": "link",
+                "label": "Best time to buy & sell stock",
+                "href": "/docs/DSA/100 Medium/Best time to buy & sell stock",
+                "docId": "DSA/100 Medium/Best time to buy & sell stock"
+              },
+              {
+                "type": "link",
+                "label": "trie",
+                "href": "/docs/DSA/100 Medium/trie",
+                "docId": "DSA/100 Medium/trie"
+              },
+              {
+                "type": "link",
+                "label": "Odd even linked list",
+                "href": "/docs/DSA/100 Medium/Odd even linked list",
+                "docId": "DSA/100 Medium/Odd even linked list"
+              },
+              {
+                "type": "link",
+                "label": "Dota2 Senate",
+                "href": "/docs/DSA/100 Medium/Dota2 Senate",
+                "docId": "DSA/100 Medium/Dota2 Senate"
+              },
+              {
+                "type": "link",
+                "label": "Delete the middle node of a linked list",
+                "href": "/docs/DSA/100 Medium/Delete the middle node of a linked list",
+                "docId": "DSA/100 Medium/Delete the middle node of a linked list"
               }
             ],
             "href": "/docs/category/100-medium"
@@ -389,6 +506,12 @@
                 "label": "Least Frequently Used",
                 "href": "/docs/DSA/caching/Least Frequently Used",
                 "docId": "DSA/caching/Least Frequently Used"
+              },
+              {
+                "type": "link",
+                "label": "Least Recently Used",
+                "href": "/docs/DSA/caching/Least Recently Used",
+                "docId": "DSA/caching/Least Recently Used"
               }
             ],
             "href": "/docs/category/caching"
@@ -477,10 +600,40 @@
       "description": "Given two binary strings a and b, return their sum as a binary string.",
       "sidebar": "tutorialSidebar"
     },
+    "DSA/100 Easy/Best time to buy & sell stock": {
+      "id": "DSA/100 Easy/Best time to buy & sell stock",
+      "title": "Best time to buy & sell stock",
+      "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Easy/Can place flowers": {
+      "id": "DSA/100 Easy/Can place flowers",
+      "title": "Can place flowers",
+      "description": "You have a long flowerbed in which some of the plots are planted, and some are not. However, flowers cannot be planted in adjacent plots.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Easy/Find Pivot Index": {
+      "id": "DSA/100 Easy/Find Pivot Index",
+      "title": "Find Pivot Index",
+      "description": "Given an array of integers nums, calculate the pivot index of this array.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Easy/Greatest common divisor of strings": {
+      "id": "DSA/100 Easy/Greatest common divisor of strings",
+      "title": "Greatest common divisor of strings",
+      "description": "For two strings s and t, we say \"t divides s\" if and only if s = t + ... + t (i.e., t is concatenated with itself one or more times).",
+      "sidebar": "tutorialSidebar"
+    },
     "DSA/100 Easy/Longest common prefix": {
       "id": "DSA/100 Easy/Longest common prefix",
       "title": "Longest common prefix",
       "description": "Write a function to find the longest common prefix string amongst an array of strings.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Easy/Maximum Average Subarray I": {
+      "id": "DSA/100 Easy/Maximum Average Subarray I",
+      "title": "Maximum Average Subarray I",
+      "description": "You are given an integer array nums consisting of n elements, and an integer k.",
       "sidebar": "tutorialSidebar"
     },
     "DSA/100 Easy/Maximum Depth of binary tree": {
@@ -495,6 +648,12 @@
       "description": "You are given the heads of two sorted linked lists list1 and list2.",
       "sidebar": "tutorialSidebar"
     },
+    "DSA/100 Easy/Move Zeros": {
+      "id": "DSA/100 Easy/Move Zeros",
+      "title": "Move Zeros",
+      "description": "Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.",
+      "sidebar": "tutorialSidebar"
+    },
     "DSA/100 Easy/Palindrome": {
       "id": "DSA/100 Easy/Palindrome",
       "title": "Palindrome",
@@ -505,6 +664,12 @@
       "id": "DSA/100 Easy/Remove duplicates from sorted list",
       "title": "Remove duplicates from sorted list",
       "description": "Given the head of a sorted linked list, delete all duplicates such that each element appears only once. Return the linked list sorted as well.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Easy/Reverse vowels of a string": {
+      "id": "DSA/100 Easy/Reverse vowels of a string",
+      "title": "Reverse vowels of a string",
+      "description": "Given a string s, reverse only all the vowels in the string and return it.",
       "sidebar": "tutorialSidebar"
     },
     "DSA/100 Easy/Roman to integer": {
@@ -537,6 +702,42 @@
       "description": "You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.",
       "sidebar": "tutorialSidebar"
     },
+    "DSA/100 Medium/Best time to buy & sell stock": {
+      "id": "DSA/100 Medium/Best time to buy & sell stock",
+      "title": "Best time to buy & sell stock",
+      "description": "You are given an integer array prices where prices[i] is the price of a given stock on the ith day.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Medium/Container with most water": {
+      "id": "DSA/100 Medium/Container with most water",
+      "title": "Container with most water",
+      "description": "You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]).",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Medium/Decode string": {
+      "id": "DSA/100 Medium/Decode string",
+      "title": "Decode string",
+      "description": "Given an encoded string, return its decoded string.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Medium/Delete the middle node of a linked list": {
+      "id": "DSA/100 Medium/Delete the middle node of a linked list",
+      "title": "Delete the middle node of a linked list",
+      "description": "You are given the head of a linked list. Delete the middle node, and return the head of the modified linked list.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Medium/Dota2 Senate": {
+      "id": "DSA/100 Medium/Dota2 Senate",
+      "title": "Dota2 Senate",
+      "description": "In the world of Dota2, there are two parties: the Radiant and the Dire.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Medium/Increasing triplet subsequence": {
+      "id": "DSA/100 Medium/Increasing triplet subsequence",
+      "title": "Increasing triplet subsequence",
+      "description": "Given an integer array nums, return true if there exists a triple of indices (i, j, k) such that i < j < k and nums[i] < nums[j] < nums[k].",
+      "sidebar": "tutorialSidebar"
+    },
     "DSA/100 Medium/Longest substring without repeating characters": {
       "id": "DSA/100 Medium/Longest substring without repeating characters",
       "title": "Longest substring without repeating characters",
@@ -547,6 +748,24 @@
       "id": "DSA/100 Medium/Number of Islands",
       "title": "Number of Islands",
       "description": "Given an m x n 2D binary grid grid which represents a map of '1's (land) and '0's (water), return the number of islands.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Medium/Odd even linked list": {
+      "id": "DSA/100 Medium/Odd even linked list",
+      "title": "Odd even linked list",
+      "description": "Given the head of a singly linked list, group all the nodes with odd indices together followed by the nodes with even indices, and return the reordered list.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Medium/Product of Array Except Self": {
+      "id": "DSA/100 Medium/Product of Array Except Self",
+      "title": "Product of Array Except Self",
+      "description": "Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i].",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Medium/Remove starts from string": {
+      "id": "DSA/100 Medium/Remove starts from string",
+      "title": "Remove starts from string",
+      "description": "You are given a string s, which contains stars *.",
       "sidebar": "tutorialSidebar"
     },
     "DSA/100 Medium/Rotate Image": {
@@ -561,6 +780,12 @@
       "description": "Given an m x n matrix, return all elements of the matrix in spiral order.",
       "sidebar": "tutorialSidebar"
     },
+    "DSA/100 Medium/trie": {
+      "id": "DSA/100 Medium/trie",
+      "title": "trie",
+      "description": "A trie (pronounced as \"try\") or prefix tree is a tree data structure used to efficiently store and retrieve keys in a dataset of strings. There are various applications of this data structure, such as autocomplete and spellchecker.",
+      "sidebar": "tutorialSidebar"
+    },
     "DSA/caching/Introduction": {
       "id": "DSA/caching/Introduction",
       "title": "Introduction",
@@ -571,6 +796,12 @@
       "id": "DSA/caching/Least Frequently Used",
       "title": "Least Frequently Used",
       "description": "",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/caching/Least Recently Used": {
+      "id": "DSA/caching/Least Recently Used",
+      "title": "Least Recently Used",
+      "description": "// Implementation",
       "sidebar": "tutorialSidebar"
     },
     "DSA/Fundamentals": {
@@ -775,6 +1006,12 @@
       "id": "DSA/Trees/concepts",
       "title": "concepts",
       "description": "- General Tree structure",
+      "sidebar": "tutorialSidebar"
+    },
+    "JavaScript/Arrays&Strings/Array Methods": {
+      "id": "JavaScript/Arrays&Strings/Array Methods",
+      "title": "Array Methods",
+      "description": "at()",
       "sidebar": "tutorialSidebar"
     },
     "JavaScript/Fundamentals": {

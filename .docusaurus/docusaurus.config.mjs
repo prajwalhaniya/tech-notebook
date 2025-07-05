@@ -26,13 +26,13 @@ export default {
       "classic",
       {
         "docs": {
-          "sidebarPath": "/home/prajwal/Disk D/Prajwal Haniya/tech-notebook/sidebars.js"
+          "sidebarPath": "/home/prajwal/Documents/workspace/github/tech-notebook/sidebars.js"
         },
         "blog": {
           "showReadingTime": true
         },
         "theme": {
-          "customCss": "/home/prajwal/Disk D/Prajwal Haniya/tech-notebook/src/css/custom.css"
+          "customCss": "/home/prajwal/Documents/workspace/github/tech-notebook/src/css/custom.css"
         }
       }
     ]
@@ -62,7 +62,7 @@ export default {
     },
     "footer": {
       "style": "dark",
-      "copyright": "Copyright © 2024 Tech Notebook",
+      "copyright": "Copyright © 2025 Tech Notebook",
       "links": []
     },
     "prism": {
