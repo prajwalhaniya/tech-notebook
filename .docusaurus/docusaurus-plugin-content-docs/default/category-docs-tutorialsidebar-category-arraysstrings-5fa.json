@@ -6,11 +6,11 @@
   "navigation": {
     "previous": {
       "title": "Fundamentals",
-      "permalink": "/docs/JavaScript/Fundamentals"
+      "permalink": "/docs/programming/JavaScript/Fundamentals"
     },
     "next": {
       "title": "Array Methods",
-      "permalink": "/docs/JavaScript/Arrays&Strings/Array Methods"
+      "permalink": "/docs/programming/JavaScript/Arrays&Strings/Array Methods"
     }
   }
 }

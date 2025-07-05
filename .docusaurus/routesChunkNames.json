@@ -88,7 +88,7 @@
     },
     "content": "content---markdown-page-393-028"
   },
-  "/docs-602": {
+  "/docs-7cd": {
     "__comp": "__comp---theme-doc-page-1-be-9be",
     "__context": {
       "plugin": "plugin---docs-620-92f"
@@ -135,9 +135,17 @@
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-object-oriented-javascript-051-848"
   },
+  "/docs/category/programming-languages-5d7": {
+    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-programming-languages-1-e-5-c71"
+  },
   "/docs/category/rate-limiting-algorithms-48a": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-rate-limiting-algorithms-58-e-8d5"
+  },
+  "/docs/category/rust-ec7": {
+    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-rustd-79-ab6"
   },
   "/docs/category/trees-ba9": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
@@ -427,29 +435,33 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-dsa-trees-concepts-5-a-4-10d"
   },
-  "/docs/JavaScript/Arrays&Strings/Array Methods-65f": {
+  "/docs/programming/JavaScript/Arrays&Strings/Array Methods-b99": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-java-script-arrays-strings-array-methodsc-83-8bd"
+    "content": "content---docs-programming-java-script-arrays-strings-array-methodsb-05-785"
   },
-  "/docs/JavaScript/Fundamentals-c80": {
+  "/docs/programming/JavaScript/Fundamentals-c05": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-java-script-fundamentals-2-a-3-b82"
+    "content": "content---docs-programming-java-script-fundamentalscb-6-71e"
   },
-  "/docs/JavaScript/Object-oriented-JavaScript/Design Patterns-0b6": {
+  "/docs/programming/JavaScript/Object-oriented-JavaScript/Design Patterns-793": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-java-script-object-oriented-java-script-design-patterns-534-9a8"
+    "content": "content---docs-programming-java-script-object-oriented-java-script-design-patterns-78-b-a07"
   },
-  "/docs/JavaScript/Object-oriented-JavaScript/Interfaces-9cb": {
+  "/docs/programming/JavaScript/Object-oriented-JavaScript/Interfaces-ecd": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-java-script-object-oriented-java-script-interfacesee-6-48a"
+    "content": "content---docs-programming-java-script-object-oriented-java-script-interfacesc-75-dd4"
   },
-  "/docs/JavaScript/Object-oriented-JavaScript/Introduction-29d": {
+  "/docs/programming/JavaScript/Object-oriented-JavaScript/Introduction-687": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-java-script-object-oriented-java-script-introductionba-8-987"
+    "content": "content---docs-programming-java-script-object-oriented-java-script-introductione-4-b-b95"
   },
-  "/docs/JavaScript/Projects-e95": {
+  "/docs/programming/JavaScript/Projects-fd3": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-java-script-projects-2-ae-35e"
+    "content": "content---docs-programming-java-script-projectsa-92-a12"
+  },
+  "/docs/programming/Rust/Fundamentals-b51": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-programming-rust-fundamentalsbc-9-c4a"
   },
   "/-3ea": {
     "__comp": "__comp---site-src-pages-index-jsc-4-f-f99",

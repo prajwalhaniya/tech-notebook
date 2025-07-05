@@ -1,0 +1,12 @@
+{
+  "title": "Programming Languages",
+  "description": "Rust",
+  "slug": "/category/programming-languages",
+  "permalink": "/docs/category/programming-languages",
+  "navigation": {
+    "next": {
+      "title": "JavaScript",
+      "permalink": "/docs/category/javascript"
+    }
+  }
+}

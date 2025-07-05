@@ -5,12 +5,12 @@
   "permalink": "/docs/category/javascript-1",
   "navigation": {
     "previous": {
-      "title": "Fundamentals",
-      "permalink": "/docs/JavaScript/Fundamentals"
+      "title": "JavaScript",
+      "permalink": "/docs/category/javascript"
     },
     "next": {
       "title": "Fundamentals",
-      "permalink": "/docs/JavaScript/Object-oriented-JavaScript/Fundamentals"
+      "permalink": "/docs/programming/JavaScript/Fundamentals"
     }
   }
 }

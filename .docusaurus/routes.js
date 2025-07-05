@@ -64,7 +64,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '602'),
+    component: ComponentCreator('/docs', '7cd'),
     routes: [
       {
         path: '/docs/category/100-easy',
@@ -127,8 +127,20 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
+        path: '/docs/category/programming-languages',
+        component: ComponentCreator('/docs/category/programming-languages', '5d7'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
         path: '/docs/category/rate-limiting-algorithms',
         component: ComponentCreator('/docs/category/rate-limiting-algorithms', '48a'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/category/rust',
+        component: ComponentCreator('/docs/category/rust', 'ec7'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
@@ -565,38 +577,44 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/JavaScript/Arrays&Strings/Array Methods',
-        component: ComponentCreator('/docs/JavaScript/Arrays&Strings/Array Methods', '65f'),
+        path: '/docs/programming/JavaScript/Arrays&Strings/Array Methods',
+        component: ComponentCreator('/docs/programming/JavaScript/Arrays&Strings/Array Methods', 'b99'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/JavaScript/Fundamentals',
-        component: ComponentCreator('/docs/JavaScript/Fundamentals', 'c80'),
+        path: '/docs/programming/JavaScript/Fundamentals',
+        component: ComponentCreator('/docs/programming/JavaScript/Fundamentals', 'c05'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/JavaScript/Object-oriented-JavaScript/Design Patterns',
-        component: ComponentCreator('/docs/JavaScript/Object-oriented-JavaScript/Design Patterns', '0b6'),
+        path: '/docs/programming/JavaScript/Object-oriented-JavaScript/Design Patterns',
+        component: ComponentCreator('/docs/programming/JavaScript/Object-oriented-JavaScript/Design Patterns', '793'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/JavaScript/Object-oriented-JavaScript/Interfaces',
-        component: ComponentCreator('/docs/JavaScript/Object-oriented-JavaScript/Interfaces', '9cb'),
+        path: '/docs/programming/JavaScript/Object-oriented-JavaScript/Interfaces',
+        component: ComponentCreator('/docs/programming/JavaScript/Object-oriented-JavaScript/Interfaces', 'ecd'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/JavaScript/Object-oriented-JavaScript/Introduction',
-        component: ComponentCreator('/docs/JavaScript/Object-oriented-JavaScript/Introduction', '29d'),
+        path: '/docs/programming/JavaScript/Object-oriented-JavaScript/Introduction',
+        component: ComponentCreator('/docs/programming/JavaScript/Object-oriented-JavaScript/Introduction', '687'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/docs/JavaScript/Projects',
-        component: ComponentCreator('/docs/JavaScript/Projects', 'e95'),
+        path: '/docs/programming/JavaScript/Projects',
+        component: ComponentCreator('/docs/programming/JavaScript/Projects', 'fd3'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/programming/Rust/Fundamentals',
+        component: ComponentCreator('/docs/programming/Rust/Fundamentals', 'b51'),
         exact: true,
         sidebar: "tutorialSidebar"
       }

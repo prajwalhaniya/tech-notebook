@@ -8,7 +8,7 @@
           "label": "Next",
           "isLast": true,
           "path": "/docs",
-          "mainDocId": "JavaScript/Fundamentals",
+          "mainDocId": "programming/JavaScript/Fundamentals",
           "docs": [
             {
               "id": "Database/concepts",
@@ -366,33 +366,43 @@
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "JavaScript/Arrays&Strings/Array Methods",
-              "path": "/docs/JavaScript/Arrays&Strings/Array Methods",
+              "id": "programming/JavaScript/Arrays&Strings/Array Methods",
+              "path": "/docs/programming/JavaScript/Arrays&Strings/Array Methods",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "JavaScript/Fundamentals",
-              "path": "/docs/JavaScript/Fundamentals",
+              "id": "programming/JavaScript/Fundamentals",
+              "path": "/docs/programming/JavaScript/Fundamentals",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "JavaScript/Object-oriented-JavaScript/Design Patterns",
-              "path": "/docs/JavaScript/Object-oriented-JavaScript/Design Patterns",
+              "id": "programming/JavaScript/Object-oriented-JavaScript/Design Patterns",
+              "path": "/docs/programming/JavaScript/Object-oriented-JavaScript/Design Patterns",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "JavaScript/Object-oriented-JavaScript/Interfaces",
-              "path": "/docs/JavaScript/Object-oriented-JavaScript/Interfaces",
+              "id": "programming/JavaScript/Object-oriented-JavaScript/Interfaces",
+              "path": "/docs/programming/JavaScript/Object-oriented-JavaScript/Interfaces",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "JavaScript/Object-oriented-JavaScript/Introduction",
-              "path": "/docs/JavaScript/Object-oriented-JavaScript/Introduction",
+              "id": "programming/JavaScript/Object-oriented-JavaScript/Introduction",
+              "path": "/docs/programming/JavaScript/Object-oriented-JavaScript/Introduction",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "JavaScript/Projects",
-              "path": "/docs/JavaScript/Projects",
+              "id": "programming/JavaScript/Projects",
+              "path": "/docs/programming/JavaScript/Projects",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "programming/Rust/Fundamentals",
+              "path": "/docs/programming/Rust/Fundamentals",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/programming-languages",
+              "path": "/docs/category/programming-languages",
               "sidebar": "tutorialSidebar"
             },
             {
@@ -408,6 +418,11 @@
             {
               "id": "/category/object-oriented-javascript",
               "path": "/docs/category/object-oriented-javascript",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/rust",
+              "path": "/docs/category/rust",
               "sidebar": "tutorialSidebar"
             },
             {
@@ -460,8 +475,8 @@
           "sidebars": {
             "tutorialSidebar": {
               "link": {
-                "path": "/docs/category/javascript",
-                "label": "JavaScript"
+                "path": "/docs/category/programming-languages",
+                "label": "Programming Languages"
               }
             }
           }

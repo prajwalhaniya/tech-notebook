@@ -11,66 +11,90 @@
     "tutorialSidebar": [
       {
         "type": "category",
-        "label": "JavaScript",
+        "label": "Programming Languages",
         "collapsible": true,
         "collapsed": true,
         "items": [
           {
-            "type": "link",
-            "label": "Fundamentals",
-            "href": "/docs/JavaScript/Fundamentals",
-            "docId": "JavaScript/Fundamentals"
-          },
-          {
             "type": "category",
-            "label": "Arrays/Strings",
+            "label": "JavaScript",
             "collapsible": true,
             "collapsed": true,
             "items": [
               {
                 "type": "link",
-                "label": "Array Methods",
-                "href": "/docs/JavaScript/Arrays&Strings/Array Methods",
-                "docId": "JavaScript/Arrays&Strings/Array Methods"
+                "label": "Fundamentals",
+                "href": "/docs/programming/JavaScript/Fundamentals",
+                "docId": "programming/JavaScript/Fundamentals"
+              },
+              {
+                "type": "category",
+                "label": "Arrays/Strings",
+                "collapsible": true,
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "link",
+                    "label": "Array Methods",
+                    "href": "/docs/programming/JavaScript/Arrays&Strings/Array Methods",
+                    "docId": "programming/JavaScript/Arrays&Strings/Array Methods"
+                  }
+                ],
+                "href": "/docs/category/arraysstrings"
+              },
+              {
+                "type": "link",
+                "label": "Projects",
+                "href": "/docs/programming/JavaScript/Projects",
+                "docId": "programming/JavaScript/Projects"
+              },
+              {
+                "type": "category",
+                "label": "Object Oriented JavaScript",
+                "collapsible": true,
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "link",
+                    "label": "Introduction",
+                    "href": "/docs/programming/JavaScript/Object-oriented-JavaScript/Introduction",
+                    "docId": "programming/JavaScript/Object-oriented-JavaScript/Introduction"
+                  },
+                  {
+                    "type": "link",
+                    "label": "Design Patterns",
+                    "href": "/docs/programming/JavaScript/Object-oriented-JavaScript/Design Patterns",
+                    "docId": "programming/JavaScript/Object-oriented-JavaScript/Design Patterns"
+                  },
+                  {
+                    "type": "link",
+                    "label": "Interfaces",
+                    "href": "/docs/programming/JavaScript/Object-oriented-JavaScript/Interfaces",
+                    "docId": "programming/JavaScript/Object-oriented-JavaScript/Interfaces"
+                  }
+                ],
+                "href": "/docs/category/object-oriented-javascript"
               }
             ],
-            "href": "/docs/category/arraysstrings"
-          },
-          {
-            "type": "link",
-            "label": "Projects",
-            "href": "/docs/JavaScript/Projects",
-            "docId": "JavaScript/Projects"
+            "href": "/docs/category/javascript"
           },
           {
             "type": "category",
-            "label": "Object Oriented JavaScript",
+            "label": "Rust",
             "collapsible": true,
             "collapsed": true,
             "items": [
               {
                 "type": "link",
-                "label": "Introduction",
-                "href": "/docs/JavaScript/Object-oriented-JavaScript/Introduction",
-                "docId": "JavaScript/Object-oriented-JavaScript/Introduction"
-              },
-              {
-                "type": "link",
-                "label": "Design Patterns",
-                "href": "/docs/JavaScript/Object-oriented-JavaScript/Design Patterns",
-                "docId": "JavaScript/Object-oriented-JavaScript/Design Patterns"
-              },
-              {
-                "type": "link",
-                "label": "Interfaces",
-                "href": "/docs/JavaScript/Object-oriented-JavaScript/Interfaces",
-                "docId": "JavaScript/Object-oriented-JavaScript/Interfaces"
+                "label": "Fundamentals",
+                "href": "/docs/programming/Rust/Fundamentals",
+                "docId": "programming/Rust/Fundamentals"
               }
             ],
-            "href": "/docs/category/object-oriented-javascript"
+            "href": "/docs/category/rust"
           }
         ],
-        "href": "/docs/category/javascript"
+        "href": "/docs/category/programming-languages"
       },
       {
         "type": "category",
@@ -1008,40 +1032,46 @@
       "description": "- General Tree structure",
       "sidebar": "tutorialSidebar"
     },
-    "JavaScript/Arrays&Strings/Array Methods": {
-      "id": "JavaScript/Arrays&Strings/Array Methods",
+    "programming/JavaScript/Arrays&Strings/Array Methods": {
+      "id": "programming/JavaScript/Arrays&Strings/Array Methods",
       "title": "Array Methods",
       "description": "at()",
       "sidebar": "tutorialSidebar"
     },
-    "JavaScript/Fundamentals": {
-      "id": "JavaScript/Fundamentals",
+    "programming/JavaScript/Fundamentals": {
+      "id": "programming/JavaScript/Fundamentals",
       "title": "Fundamentals",
       "description": "Variables",
       "sidebar": "tutorialSidebar"
     },
-    "JavaScript/Object-oriented-JavaScript/Design Patterns": {
-      "id": "JavaScript/Object-oriented-JavaScript/Design Patterns",
+    "programming/JavaScript/Object-oriented-JavaScript/Design Patterns": {
+      "id": "programming/JavaScript/Object-oriented-JavaScript/Design Patterns",
       "title": "Design Patterns",
       "description": "There are three main reasons why you would want to use design patterns in JavaScript:",
       "sidebar": "tutorialSidebar"
     },
-    "JavaScript/Object-oriented-JavaScript/Interfaces": {
-      "id": "JavaScript/Object-oriented-JavaScript/Interfaces",
+    "programming/JavaScript/Object-oriented-JavaScript/Interfaces": {
+      "id": "programming/JavaScript/Object-oriented-JavaScript/Interfaces",
       "title": "Interfaces",
       "description": "What is an interface?",
       "sidebar": "tutorialSidebar"
     },
-    "JavaScript/Object-oriented-JavaScript/Introduction": {
-      "id": "JavaScript/Object-oriented-JavaScript/Introduction",
+    "programming/JavaScript/Object-oriented-JavaScript/Introduction": {
+      "id": "programming/JavaScript/Object-oriented-JavaScript/Introduction",
       "title": "Introduction",
       "description": "This defines a new class called Animation and assigns two methods to the class’s prototype",
       "sidebar": "tutorialSidebar"
     },
-    "JavaScript/Projects": {
-      "id": "JavaScript/Projects",
+    "programming/JavaScript/Projects": {
+      "id": "programming/JavaScript/Projects",
       "title": "Projects",
       "description": "The following projects must be done using the pure JavaScript without the help of any external libraries",
+      "sidebar": "tutorialSidebar"
+    },
+    "programming/Rust/Fundamentals": {
+      "id": "programming/Rust/Fundamentals",
+      "title": "Fundamentals",
+      "description": "",
       "sidebar": "tutorialSidebar"
     }
   }

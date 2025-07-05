@@ -6,11 +6,11 @@
   "navigation": {
     "previous": {
       "title": "Projects",
-      "permalink": "/docs/JavaScript/Projects"
+      "permalink": "/docs/programming/JavaScript/Projects"
     },
     "next": {
       "title": "Introduction",
-      "permalink": "/docs/JavaScript/Object-oriented-JavaScript/Introduction"
+      "permalink": "/docs/programming/JavaScript/Object-oriented-JavaScript/Introduction"
     }
   }
 }

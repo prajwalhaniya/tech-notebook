@@ -1,0 +1,8 @@
+{
+    "label": "Rust",
+    "position": 2,
+    "link": {
+      "type": "generated-index",
+      "description": "All the required Rust concepts goes here"
+    }
+  }

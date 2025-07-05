@@ -1,0 +1,16 @@
+{
+  "title": "Rust",
+  "description": "All the required Rust concepts goes here",
+  "slug": "/category/rust",
+  "permalink": "/docs/category/rust",
+  "navigation": {
+    "previous": {
+      "title": "Interfaces",
+      "permalink": "/docs/programming/JavaScript/Object-oriented-JavaScript/Interfaces"
+    },
+    "next": {
+      "title": "Fundamentals",
+      "permalink": "/docs/programming/Rust/Fundamentals"
+    }
+  }
+}
