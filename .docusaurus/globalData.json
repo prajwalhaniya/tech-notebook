@@ -171,6 +171,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "DSA/100 Medium/Set Matrix Zeros",
+              "path": "/docs/DSA/100 Medium/Set Matrix Zeros",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "DSA/100 Medium/Spiral Matrix",
               "path": "/docs/DSA/100 Medium/Spiral Matrix",
               "sidebar": "tutorialSidebar"

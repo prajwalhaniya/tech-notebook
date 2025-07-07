@@ -840,6 +840,32 @@
               }
             },
             {
+              "unversionedId": "DSA/100 Medium/Set Matrix Zeros",
+              "id": "DSA/100 Medium/Set Matrix Zeros",
+              "title": "Set Matrix Zeros",
+              "description": "",
+              "source": "@site/docs/DSA/100 Medium/18_Set Matrix Zeros.md",
+              "sourceDirName": "DSA/100 Medium",
+              "slug": "/DSA/100 Medium/Set Matrix Zeros",
+              "permalink": "/docs/DSA/100 Medium/Set Matrix Zeros",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 17,
+              "frontMatter": {
+                "sidebar_position": 17
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Valid Sudoku",
+                "permalink": "/docs/DSA/100 Medium/Valid Sudoku"
+              },
+              "next": {
+                "title": "Caching",
+                "permalink": "/docs/category/caching"
+              }
+            },
+            {
               "unversionedId": "DSA/100 Medium/Spiral Matrix",
               "id": "DSA/100 Medium/Spiral Matrix",
               "title": "Spiral Matrix",
@@ -939,8 +965,8 @@
                 "permalink": "/docs/DSA/100 Medium/String to integer"
               },
               "next": {
-                "title": "Caching",
-                "permalink": "/docs/category/caching"
+                "title": "Set Matrix Zeros",
+                "permalink": "/docs/DSA/100 Medium/Set Matrix Zeros"
               }
             },
             {
@@ -2492,6 +2518,10 @@
                       {
                         "type": "doc",
                         "id": "DSA/100 Medium/Valid Sudoku"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "DSA/100 Medium/Set Matrix Zeros"
                       }
                     ],
                     "link": {

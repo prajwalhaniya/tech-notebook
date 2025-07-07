@@ -521,6 +521,12 @@
                 "label": "Valid Sudoku",
                 "href": "/docs/DSA/100 Medium/Valid Sudoku",
                 "docId": "DSA/100 Medium/Valid Sudoku"
+              },
+              {
+                "type": "link",
+                "label": "Set Matrix Zeros",
+                "href": "/docs/DSA/100 Medium/Set Matrix Zeros",
+                "docId": "DSA/100 Medium/Set Matrix Zeros"
               }
             ],
             "href": "/docs/category/100-medium"
@@ -808,6 +814,12 @@
       "id": "DSA/100 Medium/Rotate Image",
       "title": "Rotate Image",
       "description": "You are given an n x n 2D matrix representing an image, rotate the image by 90 degrees (clockwise).",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Medium/Set Matrix Zeros": {
+      "id": "DSA/100 Medium/Set Matrix Zeros",
+      "title": "Set Matrix Zeros",
+      "description": "",
       "sidebar": "tutorialSidebar"
     },
     "DSA/100 Medium/Spiral Matrix": {

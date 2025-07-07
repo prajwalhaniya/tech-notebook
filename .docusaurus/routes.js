@@ -64,7 +64,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '867'),
+    component: ComponentCreator('/docs', 'd9f'),
     routes: [
       {
         path: '/docs/category/100-easy',
@@ -339,6 +339,12 @@ export default [
       {
         path: '/docs/DSA/100 Medium/Rotate Image',
         component: ComponentCreator('/docs/DSA/100 Medium/Rotate Image', 'dd8'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/100 Medium/Set Matrix Zeros',
+        component: ComponentCreator('/docs/DSA/100 Medium/Set Matrix Zeros', '4cb'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
