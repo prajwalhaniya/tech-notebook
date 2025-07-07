@@ -88,7 +88,7 @@
     },
     "content": "content---markdown-page-393-028"
   },
-  "/docs-7cd": {
+  "/docs-092": {
     "__comp": "__comp---theme-doc-page-1-be-9be",
     "__context": {
       "plugin": "plugin---docs-620-92f"
@@ -282,6 +282,10 @@
   "/docs/DSA/100 Medium/Spiral Matrix-f79": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-dsa-100-medium-spiral-matrixe-79-90c"
+  },
+  "/docs/DSA/100 Medium/String to integer-027": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-100-medium-string-to-integer-707-aba"
   },
   "/docs/DSA/100 Medium/trie-05a": {
     "__comp": "__comp---theme-doc-item-178-a40",

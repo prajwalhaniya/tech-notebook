@@ -176,6 +176,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "DSA/100 Medium/String to integer",
+              "path": "/docs/DSA/100 Medium/String to integer",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "DSA/100 Medium/trie",
               "path": "/docs/DSA/100 Medium/trie",
               "sidebar": "tutorialSidebar"

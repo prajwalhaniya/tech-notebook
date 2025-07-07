@@ -64,7 +64,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '7cd'),
+    component: ComponentCreator('/docs', '092'),
     routes: [
       {
         path: '/docs/category/100-easy',
@@ -345,6 +345,12 @@ export default [
       {
         path: '/docs/DSA/100 Medium/Spiral Matrix',
         component: ComponentCreator('/docs/DSA/100 Medium/Spiral Matrix', 'f79'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/100 Medium/String to integer',
+        component: ComponentCreator('/docs/DSA/100 Medium/String to integer', '027'),
         exact: true,
         sidebar: "tutorialSidebar"
       },

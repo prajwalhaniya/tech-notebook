@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/100 Easy/String to integer",
+  "id": "DSA/100 Easy/String to integer",
+  "title": "String to integer",
+  "description": "",
+  "source": "@site/docs/DSA/100 Easy/18_String to integer.md",
+  "sourceDirName": "DSA/100 Easy",
+  "slug": "/DSA/100 Easy/String to integer",
+  "permalink": "/docs/DSA/100 Easy/String to integer",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 18,
+  "frontMatter": {
+    "sidebar_position": 18
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Maximum Average Subarray I",
+    "permalink": "/docs/DSA/100 Easy/Maximum Average Subarray I"
+  },
+  "next": {
+    "title": "100 Medium",
+    "permalink": "/docs/category/100-medium"
+  }
+}

@@ -509,6 +509,12 @@
                 "label": "Dota2 Senate",
                 "href": "/docs/DSA/100 Medium/Dota2 Senate",
                 "docId": "DSA/100 Medium/Dota2 Senate"
+              },
+              {
+                "type": "link",
+                "label": "String to integer",
+                "href": "/docs/DSA/100 Medium/String to integer",
+                "docId": "DSA/100 Medium/String to integer"
               }
             ],
             "href": "/docs/category/100-medium"
@@ -802,6 +808,12 @@
       "id": "DSA/100 Medium/Spiral Matrix",
       "title": "Spiral Matrix",
       "description": "Given an m x n matrix, return all elements of the matrix in spiral order.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Medium/String to integer": {
+      "id": "DSA/100 Medium/String to integer",
+      "title": "String to integer",
+      "description": "Problem statement",
       "sidebar": "tutorialSidebar"
     },
     "DSA/100 Medium/trie": {

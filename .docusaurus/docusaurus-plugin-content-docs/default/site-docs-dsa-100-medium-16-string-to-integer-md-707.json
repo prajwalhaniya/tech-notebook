@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/100 Medium/String to integer",
+  "id": "DSA/100 Medium/String to integer",
+  "title": "String to integer",
+  "description": "Problem statement",
+  "source": "@site/docs/DSA/100 Medium/16_String to integer.md",
+  "sourceDirName": "DSA/100 Medium",
+  "slug": "/DSA/100 Medium/String to integer",
+  "permalink": "/docs/DSA/100 Medium/String to integer",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 16,
+  "frontMatter": {
+    "sidebar_position": 16
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Dota2 Senate",
+    "permalink": "/docs/DSA/100 Medium/Dota2 Senate"
+  },
+  "next": {
+    "title": "Caching",
+    "permalink": "/docs/category/caching"
+  }
+}

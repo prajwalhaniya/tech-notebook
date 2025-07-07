@@ -653,8 +653,8 @@
                 "permalink": "/docs/DSA/100 Medium/Delete the middle node of a linked list"
               },
               "next": {
-                "title": "Caching",
-                "permalink": "/docs/category/caching"
+                "title": "String to integer",
+                "permalink": "/docs/DSA/100 Medium/String to integer"
               }
             },
             {
@@ -863,6 +863,32 @@
               "next": {
                 "title": "Number of Islands",
                 "permalink": "/docs/DSA/100 Medium/Number of Islands"
+              }
+            },
+            {
+              "unversionedId": "DSA/100 Medium/String to integer",
+              "id": "DSA/100 Medium/String to integer",
+              "title": "String to integer",
+              "description": "Problem statement",
+              "source": "@site/docs/DSA/100 Medium/16_String to integer.md",
+              "sourceDirName": "DSA/100 Medium",
+              "slug": "/DSA/100 Medium/String to integer",
+              "permalink": "/docs/DSA/100 Medium/String to integer",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 16,
+              "frontMatter": {
+                "sidebar_position": 16
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Dota2 Senate",
+                "permalink": "/docs/DSA/100 Medium/Dota2 Senate"
+              },
+              "next": {
+                "title": "Caching",
+                "permalink": "/docs/category/caching"
               }
             },
             {
@@ -2132,7 +2158,7 @@
                 ],
                 "link": {
                   "type": "generated-index",
-                  "description": "Rust",
+                  "description": "Programming",
                   "slug": "/category/programming-languages",
                   "permalink": "/docs/category/programming-languages"
                 }
@@ -2432,6 +2458,10 @@
                       {
                         "type": "doc",
                         "id": "DSA/100 Medium/Dota2 Senate"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "DSA/100 Medium/String to integer"
                       }
                     ],
                     "link": {
