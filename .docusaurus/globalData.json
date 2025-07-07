@@ -186,6 +186,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "DSA/100 Medium/Valid Sudoku",
+              "path": "/docs/DSA/100 Medium/Valid Sudoku",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "DSA/caching/Introduction",
               "path": "/docs/DSA/caching/Introduction",
               "sidebar": "tutorialSidebar"

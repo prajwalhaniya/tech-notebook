@@ -64,7 +64,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '092'),
+    component: ComponentCreator('/docs', '867'),
     routes: [
       {
         path: '/docs/category/100-easy',
@@ -357,6 +357,12 @@ export default [
       {
         path: '/docs/DSA/100 Medium/trie',
         component: ComponentCreator('/docs/DSA/100 Medium/trie', '05a'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/100 Medium/Valid Sudoku',
+        component: ComponentCreator('/docs/DSA/100 Medium/Valid Sudoku', 'e21'),
         exact: true,
         sidebar: "tutorialSidebar"
       },

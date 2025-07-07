@@ -515,6 +515,12 @@
                 "label": "String to integer",
                 "href": "/docs/DSA/100 Medium/String to integer",
                 "docId": "DSA/100 Medium/String to integer"
+              },
+              {
+                "type": "link",
+                "label": "Valid Sudoku",
+                "href": "/docs/DSA/100 Medium/Valid Sudoku",
+                "docId": "DSA/100 Medium/Valid Sudoku"
               }
             ],
             "href": "/docs/category/100-medium"
@@ -820,6 +826,12 @@
       "id": "DSA/100 Medium/trie",
       "title": "trie",
       "description": "A trie (pronounced as \"try\") or prefix tree is a tree data structure used to efficiently store and retrieve keys in a dataset of strings. There are various applications of this data structure, such as autocomplete and spellchecker.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Medium/Valid Sudoku": {
+      "id": "DSA/100 Medium/Valid Sudoku",
+      "title": "Valid Sudoku",
+      "description": "Explanation:",
       "sidebar": "tutorialSidebar"
     },
     "DSA/caching/Introduction": {

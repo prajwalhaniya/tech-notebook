@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/100 Medium/Valid Sudoku",
+  "id": "DSA/100 Medium/Valid Sudoku",
+  "title": "Valid Sudoku",
+  "description": "Explanation:",
+  "source": "@site/docs/DSA/100 Medium/17_Valid Sudoku.md",
+  "sourceDirName": "DSA/100 Medium",
+  "slug": "/DSA/100 Medium/Valid Sudoku",
+  "permalink": "/docs/DSA/100 Medium/Valid Sudoku",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 17,
+  "frontMatter": {
+    "sidebar_position": 17
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "String to integer",
+    "permalink": "/docs/DSA/100 Medium/String to integer"
+  },
+  "next": {
+    "title": "Caching",
+    "permalink": "/docs/category/caching"
+  }
+}

@@ -887,8 +887,8 @@
                 "permalink": "/docs/DSA/100 Medium/Dota2 Senate"
               },
               "next": {
-                "title": "Caching",
-                "permalink": "/docs/category/caching"
+                "title": "Valid Sudoku",
+                "permalink": "/docs/DSA/100 Medium/Valid Sudoku"
               }
             },
             {
@@ -915,6 +915,32 @@
               "next": {
                 "title": "Odd even linked list",
                 "permalink": "/docs/DSA/100 Medium/Odd even linked list"
+              }
+            },
+            {
+              "unversionedId": "DSA/100 Medium/Valid Sudoku",
+              "id": "DSA/100 Medium/Valid Sudoku",
+              "title": "Valid Sudoku",
+              "description": "Explanation:",
+              "source": "@site/docs/DSA/100 Medium/17_Valid Sudoku.md",
+              "sourceDirName": "DSA/100 Medium",
+              "slug": "/DSA/100 Medium/Valid Sudoku",
+              "permalink": "/docs/DSA/100 Medium/Valid Sudoku",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 17,
+              "frontMatter": {
+                "sidebar_position": 17
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "String to integer",
+                "permalink": "/docs/DSA/100 Medium/String to integer"
+              },
+              "next": {
+                "title": "Caching",
+                "permalink": "/docs/category/caching"
               }
             },
             {
@@ -2462,6 +2488,10 @@
                       {
                         "type": "doc",
                         "id": "DSA/100 Medium/String to integer"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "DSA/100 Medium/Valid Sudoku"
                       }
                     ],
                     "link": {

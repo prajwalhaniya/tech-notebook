@@ -88,7 +88,7 @@
     },
     "content": "content---markdown-page-393-028"
   },
-  "/docs-092": {
+  "/docs-867": {
     "__comp": "__comp---theme-doc-page-1-be-9be",
     "__context": {
       "plugin": "plugin---docs-620-92f"
@@ -290,6 +290,10 @@
   "/docs/DSA/100 Medium/trie-05a": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-dsa-100-medium-triebb-8-3f7"
+  },
+  "/docs/DSA/100 Medium/Valid Sudoku-e21": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-100-medium-valid-sudokubf-3-8af"
   },
   "/docs/DSA/caching/Introduction-640": {
     "__comp": "__comp---theme-doc-item-178-a40",
