@@ -14,6 +14,7 @@ Given an integer array nums where the elements are sorted in ascending order, co
  *     this.right = (right===undefined ? null : right)
  * }
  */
+
 /**
  * @param {TreeNode} root
  * @return {boolean}
