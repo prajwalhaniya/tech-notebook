@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/100 Easy/Linked list cycle",
+  "id": "DSA/100 Easy/Linked list cycle",
+  "title": "Linked list cycle",
+  "description": "Problem statement",
+  "source": "@site/docs/DSA/100 Easy/21_Linked list cycle.md",
+  "sourceDirName": "DSA/100 Easy",
+  "slug": "/DSA/100 Easy/Linked list cycle",
+  "permalink": "/docs/DSA/100 Easy/Linked list cycle",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 21,
+  "frontMatter": {
+    "sidebar_position": 21
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Maximum Depth of a Binary tree",
+    "permalink": "/docs/DSA/100 Easy/Maximum Depth of a Binary tree"
+  },
+  "next": {
+    "title": "Reverse a linked list",
+    "permalink": "/docs/DSA/100 Easy/Reverse a linked list"
+  }
+}

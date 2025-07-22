@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/100 Easy/Palindrome Linked List",
+  "id": "DSA/100 Easy/Palindrome Linked List",
+  "title": "Palindrome Linked List",
+  "description": "Given the head of a singly linked list, return true if it is a palindrome or false otherwise.",
+  "source": "@site/docs/DSA/100 Easy/23_Palindrome Linked List.md",
+  "sourceDirName": "DSA/100 Easy",
+  "slug": "/DSA/100 Easy/Palindrome Linked List",
+  "permalink": "/docs/DSA/100 Easy/Palindrome Linked List",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 21,
+  "frontMatter": {
+    "sidebar_position": 21
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Reverse a linked list",
+    "permalink": "/docs/DSA/100 Easy/Reverse a linked list"
+  },
+  "next": {
+    "title": "100 Medium",
+    "permalink": "/docs/category/100-medium"
+  }
+}

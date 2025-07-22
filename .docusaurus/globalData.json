@@ -36,6 +36,16 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "DSA/100 Easy/Convert sorted array to binary search tree",
+              "path": "/docs/DSA/100 Easy/Convert sorted array to binary search tree",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Easy/Diameter of a binary tree",
+              "path": "/docs/DSA/100 Easy/Diameter of a binary tree",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "DSA/100 Easy/Find Pivot Index",
               "path": "/docs/DSA/100 Easy/Find Pivot Index",
               "sidebar": "tutorialSidebar"
@@ -46,6 +56,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "DSA/100 Easy/Linked list cycle",
+              "path": "/docs/DSA/100 Easy/Linked list cycle",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "DSA/100 Easy/Longest common prefix",
               "path": "/docs/DSA/100 Easy/Longest common prefix",
               "sidebar": "tutorialSidebar"
@@ -53,6 +68,11 @@
             {
               "id": "DSA/100 Easy/Maximum Average Subarray I",
               "path": "/docs/DSA/100 Easy/Maximum Average Subarray I",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Easy/Maximum Depth of a Binary tree",
+              "path": "/docs/DSA/100 Easy/Maximum Depth of a Binary tree",
               "sidebar": "tutorialSidebar"
             },
             {
@@ -76,8 +96,18 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "DSA/100 Easy/Palindrome Linked List",
+              "path": "/docs/DSA/100 Easy/Palindrome Linked List",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "DSA/100 Easy/Remove duplicates from sorted list",
               "path": "/docs/DSA/100 Easy/Remove duplicates from sorted list",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Easy/Reverse a linked list",
+              "path": "/docs/DSA/100 Easy/Reverse a linked list",
               "sidebar": "tutorialSidebar"
             },
             {
@@ -116,8 +146,28 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "DSA/100 Medium/Binary Tree Level Order Traversal",
+              "path": "/docs/DSA/100 Medium/Binary Tree Level Order Traversal",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Binary Tree Right Side View",
+              "path": "/docs/DSA/100 Medium/Binary Tree Right Side View",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Construct Binary Tree from Preorder and Inorder Traversal",
+              "path": "/docs/DSA/100 Medium/Construct Binary Tree from Preorder and Inorder Traversal",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "DSA/100 Medium/Container with most water",
               "path": "/docs/DSA/100 Medium/Container with most water",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Course Schedule",
+              "path": "/docs/DSA/100 Medium/Course Schedule",
               "sidebar": "tutorialSidebar"
             },
             {
@@ -136,13 +186,48 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "DSA/100 Medium/Find All Anagrams in a String",
+              "path": "/docs/DSA/100 Medium/Find All Anagrams in a String",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "DSA/100 Medium/Increasing triplet subsequence",
               "path": "/docs/DSA/100 Medium/Increasing triplet subsequence",
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "DSA/100 Medium/Kth smallest element in BST",
+              "path": "/docs/DSA/100 Medium/Kth smallest element in BST",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Largest Number",
+              "path": "/docs/DSA/100 Medium/Largest Number",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Longest Palidromic Substring",
+              "path": "/docs/DSA/100 Medium/Longest Palidromic Substring",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Longest repeating character replacement",
+              "path": "/docs/DSA/100 Medium/Longest repeating character replacement",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "DSA/100 Medium/Longest substring without repeating characters",
               "path": "/docs/DSA/100 Medium/Longest substring without repeating characters",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Lowest Common Ancestor of binary tree.md",
+              "path": "/docs/DSA/100 Medium/Lowest Common Ancestor of binary tree.md",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Max width of a binary tree",
+              "path": "/docs/DSA/100 Medium/Max width of a binary tree",
               "sidebar": "tutorialSidebar"
             },
             {
@@ -156,6 +241,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "DSA/100 Medium/Path sum",
+              "path": "/docs/DSA/100 Medium/Path sum",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "DSA/100 Medium/Product of Array Except Self",
               "path": "/docs/DSA/100 Medium/Product of Array Except Self",
               "sidebar": "tutorialSidebar"
@@ -166,13 +256,28 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "DSA/100 Medium/Reorder List",
+              "path": "/docs/DSA/100 Medium/Reorder List",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "DSA/100 Medium/Rotate Image",
               "path": "/docs/DSA/100 Medium/Rotate Image",
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "DSA/100 Medium/Rotate list",
+              "path": "/docs/DSA/100 Medium/Rotate list",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "DSA/100 Medium/Set Matrix Zeros",
               "path": "/docs/DSA/100 Medium/Set Matrix Zeros",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Sort List",
+              "path": "/docs/DSA/100 Medium/Sort List",
               "sidebar": "tutorialSidebar"
             },
             {
@@ -193,6 +298,11 @@
             {
               "id": "DSA/100 Medium/Valid Sudoku",
               "path": "/docs/DSA/100 Medium/Valid Sudoku",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Validate Binary Search Tree",
+              "path": "/docs/DSA/100 Medium/Validate Binary Search Tree",
               "sidebar": "tutorialSidebar"
             },
             {
@@ -381,6 +491,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "LLD/Design a parking lot",
+              "path": "/docs/LLD/Design a parking lot",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "programming/JavaScript/Arrays&Strings/Array Methods",
               "path": "/docs/programming/JavaScript/Arrays&Strings/Array Methods",
               "sidebar": "tutorialSidebar"
@@ -461,18 +576,23 @@
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "/category/caching",
-              "path": "/docs/category/caching",
-              "sidebar": "tutorialSidebar"
-            },
-            {
               "id": "/category/rate-limiting-algorithms",
               "path": "/docs/category/rate-limiting-algorithms",
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "/category/caching",
+              "path": "/docs/category/caching",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "/category/trees",
               "path": "/docs/category/trees",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/lld",
+              "path": "/docs/category/lld",
               "sidebar": "tutorialSidebar"
             },
             {

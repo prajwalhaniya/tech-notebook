@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/100 Medium/Path sum",
+  "id": "DSA/100 Medium/Path sum",
+  "title": "Path sum",
+  "description": "Given the root of a binary tree and an integer targetSum, return all root-to-leaf paths where the sum of the node values in the path equals targetSum. Each path should be returned as a list of the node values, not node references.",
+  "source": "@site/docs/DSA/100 Medium/33_Path sum.md",
+  "sourceDirName": "DSA/100 Medium",
+  "slug": "/DSA/100 Medium/Path sum",
+  "permalink": "/docs/DSA/100 Medium/Path sum",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 33,
+  "frontMatter": {
+    "sidebar_position": 33
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Sort List",
+    "permalink": "/docs/DSA/100 Medium/Sort List"
+  },
+  "next": {
+    "title": "Max width of a binary tree",
+    "permalink": "/docs/DSA/100 Medium/Max width of a binary tree"
+  }
+}

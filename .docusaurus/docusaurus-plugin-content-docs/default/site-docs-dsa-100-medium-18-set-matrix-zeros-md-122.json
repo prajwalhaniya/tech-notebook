@@ -10,9 +10,9 @@
   "draft": false,
   "tags": [],
   "version": "current",
-  "sidebarPosition": 17,
+  "sidebarPosition": 18,
   "frontMatter": {
-    "sidebar_position": 17
+    "sidebar_position": 18
   },
   "sidebar": "tutorialSidebar",
   "previous": {
@@ -20,7 +20,7 @@
     "permalink": "/docs/DSA/100 Medium/Valid Sudoku"
   },
   "next": {
-    "title": "Caching",
-    "permalink": "/docs/category/caching"
+    "title": "Validate Binary Search Tree",
+    "permalink": "/docs/DSA/100 Medium/Validate Binary Search Tree"
   }
 }

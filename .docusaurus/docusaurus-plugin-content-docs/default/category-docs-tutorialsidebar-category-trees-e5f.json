@@ -5,8 +5,8 @@
   "permalink": "/docs/category/trees",
   "navigation": {
     "previous": {
-      "title": "Token Bucket Algorithm",
-      "permalink": "/docs/DSA/Rate Limiting Algorithms/Token Bucket Algorithm"
+      "title": "Least Recently Used",
+      "permalink": "/docs/DSA/caching/Least Recently Used"
     },
     "next": {
       "title": "concepts",

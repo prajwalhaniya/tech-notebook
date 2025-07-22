@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/100 Easy/Reverse a linked list",
+  "id": "DSA/100 Easy/Reverse a linked list",
+  "title": "Reverse a linked list",
+  "description": "Given the head of a singly linked list, reverse the list, and return the reversed list.",
+  "source": "@site/docs/DSA/100 Easy/22_Reverse a linked list.md",
+  "sourceDirName": "DSA/100 Easy",
+  "slug": "/DSA/100 Easy/Reverse a linked list",
+  "permalink": "/docs/DSA/100 Easy/Reverse a linked list",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 21,
+  "frontMatter": {
+    "sidebar_position": 21
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Linked list cycle",
+    "permalink": "/docs/DSA/100 Easy/Linked list cycle"
+  },
+  "next": {
+    "title": "Palindrome Linked List",
+    "permalink": "/docs/DSA/100 Easy/Palindrome Linked List"
+  }
+}

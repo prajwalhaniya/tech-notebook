@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/100 Medium/Lowest Common Ancestor of binary tree.md",
+  "id": "DSA/100 Medium/Lowest Common Ancestor of binary tree.md",
+  "title": "Lowest Common Ancestor of binary tree.md",
+  "description": "Problem statement",
+  "source": "@site/docs/DSA/100 Medium/29_Lowest Common Ancestor of binary tree.md.md",
+  "sourceDirName": "DSA/100 Medium",
+  "slug": "/DSA/100 Medium/Lowest Common Ancestor of binary tree.md",
+  "permalink": "/docs/DSA/100 Medium/Lowest Common Ancestor of binary tree.md",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 29,
+  "frontMatter": {
+    "sidebar_position": 29
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Course Schedule",
+    "permalink": "/docs/DSA/100 Medium/Course Schedule"
+  },
+  "next": {
+    "title": "Reorder List",
+    "permalink": "/docs/DSA/100 Medium/Reorder List"
+  }
+}

@@ -64,7 +64,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', 'd9f'),
+    component: ComponentCreator('/docs', 'fff'),
     routes: [
       {
         path: '/docs/category/100-easy',
@@ -117,6 +117,12 @@ export default [
       {
         path: '/docs/category/javascript-specific-problems',
         component: ComponentCreator('/docs/category/javascript-specific-problems', 'b72'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/category/lld',
+        component: ComponentCreator('/docs/category/lld', '3cc'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
@@ -181,6 +187,18 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
+        path: '/docs/DSA/100 Easy/Convert sorted array to binary search tree',
+        component: ComponentCreator('/docs/DSA/100 Easy/Convert sorted array to binary search tree', 'f3a'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/100 Easy/Diameter of a binary tree',
+        component: ComponentCreator('/docs/DSA/100 Easy/Diameter of a binary tree', 'aa7'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
         path: '/docs/DSA/100 Easy/Find Pivot Index',
         component: ComponentCreator('/docs/DSA/100 Easy/Find Pivot Index', '02e'),
         exact: true,
@@ -193,6 +211,12 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
+        path: '/docs/DSA/100 Easy/Linked list cycle',
+        component: ComponentCreator('/docs/DSA/100 Easy/Linked list cycle', '16e'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
         path: '/docs/DSA/100 Easy/Longest common prefix',
         component: ComponentCreator('/docs/DSA/100 Easy/Longest common prefix', 'd91'),
         exact: true,
@@ -201,6 +225,12 @@ export default [
       {
         path: '/docs/DSA/100 Easy/Maximum Average Subarray I',
         component: ComponentCreator('/docs/DSA/100 Easy/Maximum Average Subarray I', 'c05'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/100 Easy/Maximum Depth of a Binary tree',
+        component: ComponentCreator('/docs/DSA/100 Easy/Maximum Depth of a Binary tree', '6dc'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
@@ -229,8 +259,20 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
+        path: '/docs/DSA/100 Easy/Palindrome Linked List',
+        component: ComponentCreator('/docs/DSA/100 Easy/Palindrome Linked List', 'de6'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
         path: '/docs/DSA/100 Easy/Remove duplicates from sorted list',
         component: ComponentCreator('/docs/DSA/100 Easy/Remove duplicates from sorted list', 'e1d'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/100 Easy/Reverse a linked list',
+        component: ComponentCreator('/docs/DSA/100 Easy/Reverse a linked list', '2e3'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
@@ -277,8 +319,32 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
+        path: '/docs/DSA/100 Medium/Binary Tree Level Order Traversal',
+        component: ComponentCreator('/docs/DSA/100 Medium/Binary Tree Level Order Traversal', 'c7b'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/100 Medium/Binary Tree Right Side View',
+        component: ComponentCreator('/docs/DSA/100 Medium/Binary Tree Right Side View', '83d'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/100 Medium/Construct Binary Tree from Preorder and Inorder Traversal',
+        component: ComponentCreator('/docs/DSA/100 Medium/Construct Binary Tree from Preorder and Inorder Traversal', '311'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
         path: '/docs/DSA/100 Medium/Container with most water',
         component: ComponentCreator('/docs/DSA/100 Medium/Container with most water', '704'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/100 Medium/Course Schedule',
+        component: ComponentCreator('/docs/DSA/100 Medium/Course Schedule', '920'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
@@ -301,14 +367,56 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
+        path: '/docs/DSA/100 Medium/Find All Anagrams in a String',
+        component: ComponentCreator('/docs/DSA/100 Medium/Find All Anagrams in a String', 'a44'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
         path: '/docs/DSA/100 Medium/Increasing triplet subsequence',
         component: ComponentCreator('/docs/DSA/100 Medium/Increasing triplet subsequence', 'c50'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
+        path: '/docs/DSA/100 Medium/Kth smallest element in BST',
+        component: ComponentCreator('/docs/DSA/100 Medium/Kth smallest element in BST', '792'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/100 Medium/Largest Number',
+        component: ComponentCreator('/docs/DSA/100 Medium/Largest Number', 'd10'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/100 Medium/Longest Palidromic Substring',
+        component: ComponentCreator('/docs/DSA/100 Medium/Longest Palidromic Substring', '171'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/100 Medium/Longest repeating character replacement',
+        component: ComponentCreator('/docs/DSA/100 Medium/Longest repeating character replacement', 'f97'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
         path: '/docs/DSA/100 Medium/Longest substring without repeating characters',
         component: ComponentCreator('/docs/DSA/100 Medium/Longest substring without repeating characters', '6a1'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/100 Medium/Lowest Common Ancestor of binary tree.md',
+        component: ComponentCreator('/docs/DSA/100 Medium/Lowest Common Ancestor of binary tree.md', 'f25'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/100 Medium/Max width of a binary tree',
+        component: ComponentCreator('/docs/DSA/100 Medium/Max width of a binary tree', 'f73'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
@@ -325,6 +433,12 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
+        path: '/docs/DSA/100 Medium/Path sum',
+        component: ComponentCreator('/docs/DSA/100 Medium/Path sum', '3ca'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
         path: '/docs/DSA/100 Medium/Product of Array Except Self',
         component: ComponentCreator('/docs/DSA/100 Medium/Product of Array Except Self', '683'),
         exact: true,
@@ -337,14 +451,32 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
+        path: '/docs/DSA/100 Medium/Reorder List',
+        component: ComponentCreator('/docs/DSA/100 Medium/Reorder List', 'eda'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
         path: '/docs/DSA/100 Medium/Rotate Image',
         component: ComponentCreator('/docs/DSA/100 Medium/Rotate Image', 'dd8'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
+        path: '/docs/DSA/100 Medium/Rotate list',
+        component: ComponentCreator('/docs/DSA/100 Medium/Rotate list', 'de3'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
         path: '/docs/DSA/100 Medium/Set Matrix Zeros',
         component: ComponentCreator('/docs/DSA/100 Medium/Set Matrix Zeros', '4cb'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/100 Medium/Sort List',
+        component: ComponentCreator('/docs/DSA/100 Medium/Sort List', '2de'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
@@ -369,6 +501,12 @@ export default [
       {
         path: '/docs/DSA/100 Medium/Valid Sudoku',
         component: ComponentCreator('/docs/DSA/100 Medium/Valid Sudoku', 'e21'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/100 Medium/Validate Binary Search Tree',
+        component: ComponentCreator('/docs/DSA/100 Medium/Validate Binary Search Tree', '3f9'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
@@ -591,6 +729,12 @@ export default [
       {
         path: '/docs/DSA/Trees/concepts',
         component: ComponentCreator('/docs/DSA/Trees/concepts', 'eac'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/LLD/Design a parking lot',
+        component: ComponentCreator('/docs/LLD/Design a parking lot', 'e88'),
         exact: true,
         sidebar: "tutorialSidebar"
       },

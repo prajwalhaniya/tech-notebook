@@ -5,8 +5,8 @@
   "permalink": "/docs/category/caching",
   "navigation": {
     "previous": {
-      "title": "Set Matrix Zeros",
-      "permalink": "/docs/DSA/100 Medium/Set Matrix Zeros"
+      "title": "Token Bucket Algorithm",
+      "permalink": "/docs/DSA/Rate Limiting Algorithms/Token Bucket Algorithm"
     },
     "next": {
       "title": "Introduction",

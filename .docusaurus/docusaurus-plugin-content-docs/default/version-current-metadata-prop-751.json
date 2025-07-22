@@ -410,6 +410,42 @@
                 "label": "Maximum Average Subarray I",
                 "href": "/docs/DSA/100 Easy/Maximum Average Subarray I",
                 "docId": "DSA/100 Easy/Maximum Average Subarray I"
+              },
+              {
+                "type": "link",
+                "label": "Convert sorted array to binary search tree",
+                "href": "/docs/DSA/100 Easy/Convert sorted array to binary search tree",
+                "docId": "DSA/100 Easy/Convert sorted array to binary search tree"
+              },
+              {
+                "type": "link",
+                "label": "Diameter of a binary tree",
+                "href": "/docs/DSA/100 Easy/Diameter of a binary tree",
+                "docId": "DSA/100 Easy/Diameter of a binary tree"
+              },
+              {
+                "type": "link",
+                "label": "Maximum Depth of a Binary tree",
+                "href": "/docs/DSA/100 Easy/Maximum Depth of a Binary tree",
+                "docId": "DSA/100 Easy/Maximum Depth of a Binary tree"
+              },
+              {
+                "type": "link",
+                "label": "Linked list cycle",
+                "href": "/docs/DSA/100 Easy/Linked list cycle",
+                "docId": "DSA/100 Easy/Linked list cycle"
+              },
+              {
+                "type": "link",
+                "label": "Reverse a linked list",
+                "href": "/docs/DSA/100 Easy/Reverse a linked list",
+                "docId": "DSA/100 Easy/Reverse a linked list"
+              },
+              {
+                "type": "link",
+                "label": "Palindrome Linked List",
+                "href": "/docs/DSA/100 Easy/Palindrome Linked List",
+                "docId": "DSA/100 Easy/Palindrome Linked List"
               }
             ],
             "href": "/docs/category/100-easy"
@@ -527,9 +563,120 @@
                 "label": "Set Matrix Zeros",
                 "href": "/docs/DSA/100 Medium/Set Matrix Zeros",
                 "docId": "DSA/100 Medium/Set Matrix Zeros"
+              },
+              {
+                "type": "link",
+                "label": "Validate Binary Search Tree",
+                "href": "/docs/DSA/100 Medium/Validate Binary Search Tree",
+                "docId": "DSA/100 Medium/Validate Binary Search Tree"
+              },
+              {
+                "type": "link",
+                "label": "Kth smallest element in BST",
+                "href": "/docs/DSA/100 Medium/Kth smallest element in BST",
+                "docId": "DSA/100 Medium/Kth smallest element in BST"
+              },
+              {
+                "type": "link",
+                "label": "Binary Tree Level Order Traversal",
+                "href": "/docs/DSA/100 Medium/Binary Tree Level Order Traversal",
+                "docId": "DSA/100 Medium/Binary Tree Level Order Traversal"
+              },
+              {
+                "type": "link",
+                "label": "Binary Tree Right Side View",
+                "href": "/docs/DSA/100 Medium/Binary Tree Right Side View",
+                "docId": "DSA/100 Medium/Binary Tree Right Side View"
+              },
+              {
+                "type": "link",
+                "label": "Largest Number",
+                "href": "/docs/DSA/100 Medium/Largest Number",
+                "docId": "DSA/100 Medium/Largest Number"
+              },
+              {
+                "type": "link",
+                "label": "Construct Binary Tree from Preorder and Inorder Traversal",
+                "href": "/docs/DSA/100 Medium/Construct Binary Tree from Preorder and Inorder Traversal",
+                "docId": "DSA/100 Medium/Construct Binary Tree from Preorder and Inorder Traversal"
+              },
+              {
+                "type": "link",
+                "label": "Find All Anagrams in a String",
+                "href": "/docs/DSA/100 Medium/Find All Anagrams in a String",
+                "docId": "DSA/100 Medium/Find All Anagrams in a String"
+              },
+              {
+                "type": "link",
+                "label": "Longest Palidromic Substring",
+                "href": "/docs/DSA/100 Medium/Longest Palidromic Substring",
+                "docId": "DSA/100 Medium/Longest Palidromic Substring"
+              },
+              {
+                "type": "link",
+                "label": "Longest repeating character replacement",
+                "href": "/docs/DSA/100 Medium/Longest repeating character replacement",
+                "docId": "DSA/100 Medium/Longest repeating character replacement"
+              },
+              {
+                "type": "link",
+                "label": "Course Schedule",
+                "href": "/docs/DSA/100 Medium/Course Schedule",
+                "docId": "DSA/100 Medium/Course Schedule"
+              },
+              {
+                "type": "link",
+                "label": "Lowest Common Ancestor of binary tree.md",
+                "href": "/docs/DSA/100 Medium/Lowest Common Ancestor of binary tree.md",
+                "docId": "DSA/100 Medium/Lowest Common Ancestor of binary tree.md"
+              },
+              {
+                "type": "link",
+                "label": "Reorder List",
+                "href": "/docs/DSA/100 Medium/Reorder List",
+                "docId": "DSA/100 Medium/Reorder List"
+              },
+              {
+                "type": "link",
+                "label": "Rotate list",
+                "href": "/docs/DSA/100 Medium/Rotate list",
+                "docId": "DSA/100 Medium/Rotate list"
+              },
+              {
+                "type": "link",
+                "label": "Sort List",
+                "href": "/docs/DSA/100 Medium/Sort List",
+                "docId": "DSA/100 Medium/Sort List"
+              },
+              {
+                "type": "link",
+                "label": "Path sum",
+                "href": "/docs/DSA/100 Medium/Path sum",
+                "docId": "DSA/100 Medium/Path sum"
+              },
+              {
+                "type": "link",
+                "label": "Max width of a binary tree",
+                "href": "/docs/DSA/100 Medium/Max width of a binary tree",
+                "docId": "DSA/100 Medium/Max width of a binary tree"
               }
             ],
             "href": "/docs/category/100-medium"
+          },
+          {
+            "type": "category",
+            "label": "Rate limiting algorithms",
+            "collapsible": true,
+            "collapsed": true,
+            "items": [
+              {
+                "type": "link",
+                "label": "Token Bucket Algorithm",
+                "href": "/docs/DSA/Rate Limiting Algorithms/Token Bucket Algorithm",
+                "docId": "DSA/Rate Limiting Algorithms/Token Bucket Algorithm"
+              }
+            ],
+            "href": "/docs/category/rate-limiting-algorithms"
           },
           {
             "type": "category",
@@ -560,21 +707,6 @@
           },
           {
             "type": "category",
-            "label": "Rate limiting algorithms",
-            "collapsible": true,
-            "collapsed": true,
-            "items": [
-              {
-                "type": "link",
-                "label": "Token Bucket Algorithm",
-                "href": "/docs/DSA/Rate Limiting Algorithms/Token Bucket Algorithm",
-                "docId": "DSA/Rate Limiting Algorithms/Token Bucket Algorithm"
-              }
-            ],
-            "href": "/docs/category/rate-limiting-algorithms"
-          },
-          {
-            "type": "category",
             "label": "Trees",
             "collapsible": true,
             "collapsed": true,
@@ -590,6 +722,21 @@
           }
         ],
         "href": "/docs/category/dsa"
+      },
+      {
+        "type": "category",
+        "label": "LLD",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "Design a parking lot",
+            "href": "/docs/LLD/Design a parking lot",
+            "docId": "LLD/Design a parking lot"
+          }
+        ],
+        "href": "/docs/category/lld"
       },
       {
         "type": "category",
@@ -654,6 +801,18 @@
       "description": "You have a long flowerbed in which some of the plots are planted, and some are not. However, flowers cannot be planted in adjacent plots.",
       "sidebar": "tutorialSidebar"
     },
+    "DSA/100 Easy/Convert sorted array to binary search tree": {
+      "id": "DSA/100 Easy/Convert sorted array to binary search tree",
+      "title": "Convert sorted array to binary search tree",
+      "description": "Given an integer array nums where the elements are sorted in ascending order, convert it to a height-balanced binary search tree.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Easy/Diameter of a binary tree": {
+      "id": "DSA/100 Easy/Diameter of a binary tree",
+      "title": "Diameter of a binary tree",
+      "description": "Problem Statement",
+      "sidebar": "tutorialSidebar"
+    },
     "DSA/100 Easy/Find Pivot Index": {
       "id": "DSA/100 Easy/Find Pivot Index",
       "title": "Find Pivot Index",
@@ -666,6 +825,12 @@
       "description": "For two strings s and t, we say \"t divides s\" if and only if s = t + ... + t (i.e., t is concatenated with itself one or more times).",
       "sidebar": "tutorialSidebar"
     },
+    "DSA/100 Easy/Linked list cycle": {
+      "id": "DSA/100 Easy/Linked list cycle",
+      "title": "Linked list cycle",
+      "description": "Problem statement",
+      "sidebar": "tutorialSidebar"
+    },
     "DSA/100 Easy/Longest common prefix": {
       "id": "DSA/100 Easy/Longest common prefix",
       "title": "Longest common prefix",
@@ -676,6 +841,12 @@
       "id": "DSA/100 Easy/Maximum Average Subarray I",
       "title": "Maximum Average Subarray I",
       "description": "You are given an integer array nums consisting of n elements, and an integer k.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Easy/Maximum Depth of a Binary tree": {
+      "id": "DSA/100 Easy/Maximum Depth of a Binary tree",
+      "title": "Maximum Depth of a Binary tree",
+      "description": "Problem Statement",
       "sidebar": "tutorialSidebar"
     },
     "DSA/100 Easy/Maximum Depth of binary tree": {
@@ -702,10 +873,22 @@
       "description": "Given an integer x, return true if x is a palindrome, and false otherwise.",
       "sidebar": "tutorialSidebar"
     },
+    "DSA/100 Easy/Palindrome Linked List": {
+      "id": "DSA/100 Easy/Palindrome Linked List",
+      "title": "Palindrome Linked List",
+      "description": "Given the head of a singly linked list, return true if it is a palindrome or false otherwise.",
+      "sidebar": "tutorialSidebar"
+    },
     "DSA/100 Easy/Remove duplicates from sorted list": {
       "id": "DSA/100 Easy/Remove duplicates from sorted list",
       "title": "Remove duplicates from sorted list",
       "description": "Given the head of a sorted linked list, delete all duplicates such that each element appears only once. Return the linked list sorted as well.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Easy/Reverse a linked list": {
+      "id": "DSA/100 Easy/Reverse a linked list",
+      "title": "Reverse a linked list",
+      "description": "Given the head of a singly linked list, reverse the list, and return the reversed list.",
       "sidebar": "tutorialSidebar"
     },
     "DSA/100 Easy/Reverse vowels of a string": {
@@ -750,10 +933,34 @@
       "description": "You are given an integer array prices where prices[i] is the price of a given stock on the ith day.",
       "sidebar": "tutorialSidebar"
     },
+    "DSA/100 Medium/Binary Tree Level Order Traversal": {
+      "id": "DSA/100 Medium/Binary Tree Level Order Traversal",
+      "title": "Binary Tree Level Order Traversal",
+      "description": "Level order traversal is a method of visiting all nodes in a binary tree level by level, from top to bottom and left to right within each level. It's also known as Breadth-First Search (BFS) for trees.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Medium/Binary Tree Right Side View": {
+      "id": "DSA/100 Medium/Binary Tree Right Side View",
+      "title": "Binary Tree Right Side View",
+      "description": "Problem Statement",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Medium/Construct Binary Tree from Preorder and Inorder Traversal": {
+      "id": "DSA/100 Medium/Construct Binary Tree from Preorder and Inorder Traversal",
+      "title": "Construct Binary Tree from Preorder and Inorder Traversal",
+      "description": "Given two integer arrays preorder and inorder where preorder is the preorder traversal of a binary tree and inorder is the inorder traversal of the same tree, construct and return the binary tree.",
+      "sidebar": "tutorialSidebar"
+    },
     "DSA/100 Medium/Container with most water": {
       "id": "DSA/100 Medium/Container with most water",
       "title": "Container with most water",
       "description": "You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]).",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Medium/Course Schedule": {
+      "id": "DSA/100 Medium/Course Schedule",
+      "title": "Course Schedule",
+      "description": "There are a total of numCourses courses you have to take, labeled from 0 to numCourses - 1. You are given an array prerequisites where prerequisites[i] = [ai, bi] indicates that you must take course bi first if you want to take course ai.",
       "sidebar": "tutorialSidebar"
     },
     "DSA/100 Medium/Decode string": {
@@ -774,16 +981,58 @@
       "description": "In the world of Dota2, there are two parties: the Radiant and the Dire.",
       "sidebar": "tutorialSidebar"
     },
+    "DSA/100 Medium/Find All Anagrams in a String": {
+      "id": "DSA/100 Medium/Find All Anagrams in a String",
+      "title": "Find All Anagrams in a String",
+      "description": "Problem statement",
+      "sidebar": "tutorialSidebar"
+    },
     "DSA/100 Medium/Increasing triplet subsequence": {
       "id": "DSA/100 Medium/Increasing triplet subsequence",
       "title": "Increasing triplet subsequence",
       "description": "Given an integer array nums, return true if there exists a triple of indices (i, j, k) such that i < j < k and nums[i] < nums[j] < nums[k].",
       "sidebar": "tutorialSidebar"
     },
+    "DSA/100 Medium/Kth smallest element in BST": {
+      "id": "DSA/100 Medium/Kth smallest element in BST",
+      "title": "Kth smallest element in BST",
+      "description": "Problem statement",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Medium/Largest Number": {
+      "id": "DSA/100 Medium/Largest Number",
+      "title": "Largest Number",
+      "description": "Given a list of non-negative integers nums, arrange them such that they form the largest number and return it.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Medium/Longest Palidromic Substring": {
+      "id": "DSA/100 Medium/Longest Palidromic Substring",
+      "title": "Longest Palidromic Substring",
+      "description": "Problem Statement",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Medium/Longest repeating character replacement": {
+      "id": "DSA/100 Medium/Longest repeating character replacement",
+      "title": "Longest repeating character replacement",
+      "description": "Problem statement",
+      "sidebar": "tutorialSidebar"
+    },
     "DSA/100 Medium/Longest substring without repeating characters": {
       "id": "DSA/100 Medium/Longest substring without repeating characters",
       "title": "Longest substring without repeating characters",
       "description": "Given a string s, find the length of the longest substring without repeating characters.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Medium/Lowest Common Ancestor of binary tree.md": {
+      "id": "DSA/100 Medium/Lowest Common Ancestor of binary tree.md",
+      "title": "Lowest Common Ancestor of binary tree.md",
+      "description": "Problem statement",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Medium/Max width of a binary tree": {
+      "id": "DSA/100 Medium/Max width of a binary tree",
+      "title": "Max width of a binary tree",
+      "description": "Given the root of a binary tree, return the maximum width of the given tree.",
       "sidebar": "tutorialSidebar"
     },
     "DSA/100 Medium/Number of Islands": {
@@ -798,6 +1047,12 @@
       "description": "Given the head of a singly linked list, group all the nodes with odd indices together followed by the nodes with even indices, and return the reordered list.",
       "sidebar": "tutorialSidebar"
     },
+    "DSA/100 Medium/Path sum": {
+      "id": "DSA/100 Medium/Path sum",
+      "title": "Path sum",
+      "description": "Given the root of a binary tree and an integer targetSum, return all root-to-leaf paths where the sum of the node values in the path equals targetSum. Each path should be returned as a list of the node values, not node references.",
+      "sidebar": "tutorialSidebar"
+    },
     "DSA/100 Medium/Product of Array Except Self": {
       "id": "DSA/100 Medium/Product of Array Except Self",
       "title": "Product of Array Except Self",
@@ -810,16 +1065,34 @@
       "description": "You are given a string s, which contains stars *.",
       "sidebar": "tutorialSidebar"
     },
+    "DSA/100 Medium/Reorder List": {
+      "id": "DSA/100 Medium/Reorder List",
+      "title": "Reorder List",
+      "description": "Problem statement",
+      "sidebar": "tutorialSidebar"
+    },
     "DSA/100 Medium/Rotate Image": {
       "id": "DSA/100 Medium/Rotate Image",
       "title": "Rotate Image",
       "description": "You are given an n x n 2D matrix representing an image, rotate the image by 90 degrees (clockwise).",
       "sidebar": "tutorialSidebar"
     },
+    "DSA/100 Medium/Rotate list": {
+      "id": "DSA/100 Medium/Rotate list",
+      "title": "Rotate list",
+      "description": "Problem statement",
+      "sidebar": "tutorialSidebar"
+    },
     "DSA/100 Medium/Set Matrix Zeros": {
       "id": "DSA/100 Medium/Set Matrix Zeros",
       "title": "Set Matrix Zeros",
       "description": "",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Medium/Sort List": {
+      "id": "DSA/100 Medium/Sort List",
+      "title": "Sort List",
+      "description": "Problem Statement",
       "sidebar": "tutorialSidebar"
     },
     "DSA/100 Medium/Spiral Matrix": {
@@ -844,6 +1117,12 @@
       "id": "DSA/100 Medium/Valid Sudoku",
       "title": "Valid Sudoku",
       "description": "Explanation:",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/100 Medium/Validate Binary Search Tree": {
+      "id": "DSA/100 Medium/Validate Binary Search Tree",
+      "title": "Validate Binary Search Tree",
+      "description": "Before moving ahead let us understand what is binary search tree?",
       "sidebar": "tutorialSidebar"
     },
     "DSA/caching/Introduction": {
@@ -1066,6 +1345,12 @@
       "id": "DSA/Trees/concepts",
       "title": "concepts",
       "description": "- General Tree structure",
+      "sidebar": "tutorialSidebar"
+    },
+    "LLD/Design a parking lot": {
+      "id": "LLD/Design a parking lot",
+      "title": "Design a parking lot",
+      "description": "Problem Statement",
       "sidebar": "tutorialSidebar"
     },
     "programming/JavaScript/Arrays&Strings/Array Methods": {

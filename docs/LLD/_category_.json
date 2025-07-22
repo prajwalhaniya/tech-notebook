@@ -1,6 +1,6 @@
 {
-    "label": "Database",
-    "position": 4,
+    "label": "LLD",
+    "position": 3,
     "link": {
       "type": "generated-index",
       "description": "All the required JavaScript concepts goes here"

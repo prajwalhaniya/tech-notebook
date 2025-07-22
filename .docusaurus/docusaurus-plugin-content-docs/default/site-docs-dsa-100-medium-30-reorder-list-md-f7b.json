@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/100 Medium/Reorder List",
+  "id": "DSA/100 Medium/Reorder List",
+  "title": "Reorder List",
+  "description": "Problem statement",
+  "source": "@site/docs/DSA/100 Medium/30_Reorder List.md",
+  "sourceDirName": "DSA/100 Medium",
+  "slug": "/DSA/100 Medium/Reorder List",
+  "permalink": "/docs/DSA/100 Medium/Reorder List",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 30,
+  "frontMatter": {
+    "sidebar_position": 30
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Lowest Common Ancestor of binary tree.md",
+    "permalink": "/docs/DSA/100 Medium/Lowest Common Ancestor of binary tree.md"
+  },
+  "next": {
+    "title": "Rotate list",
+    "permalink": "/docs/DSA/100 Medium/Rotate list"
+  }
+}

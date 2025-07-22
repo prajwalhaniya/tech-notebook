@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/100 Easy/Diameter of a binary tree",
+  "id": "DSA/100 Easy/Diameter of a binary tree",
+  "title": "Diameter of a binary tree",
+  "description": "Problem Statement",
+  "source": "@site/docs/DSA/100 Easy/19_Diameter of a binary tree.md",
+  "sourceDirName": "DSA/100 Easy",
+  "slug": "/DSA/100 Easy/Diameter of a binary tree",
+  "permalink": "/docs/DSA/100 Easy/Diameter of a binary tree",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 19,
+  "frontMatter": {
+    "sidebar_position": 19
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Convert sorted array to binary search tree",
+    "permalink": "/docs/DSA/100 Easy/Convert sorted array to binary search tree"
+  },
+  "next": {
+    "title": "Maximum Depth of a Binary tree",
+    "permalink": "/docs/DSA/100 Easy/Maximum Depth of a Binary tree"
+  }
+}
