@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/Javascript Specific/Valid Sudoku",
+  "id": "DSA/Javascript Specific/Valid Sudoku",
+  "title": "Valid Sudoku",
+  "description": "Determine if a 9 x 9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules:",
+  "source": "@site/docs/DSA/Javascript Specific/Valid Sudoku.md",
+  "sourceDirName": "DSA/Javascript Specific",
+  "slug": "/DSA/Javascript Specific/Valid Sudoku",
+  "permalink": "/docs/DSA/Javascript Specific/Valid Sudoku",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 28,
+  "frontMatter": {
+    "sidebar_position": 28
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Longest substring without repeating characters",
+    "permalink": "/docs/DSA/Javascript Specific/Longest substring without repeating characters"
+  },
+  "next": {
+    "title": "Group Anagrams",
+    "permalink": "/docs/DSA/Javascript Specific/Group Anagrams"
+  }
+}

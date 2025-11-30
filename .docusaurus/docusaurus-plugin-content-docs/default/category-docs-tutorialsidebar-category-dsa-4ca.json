@@ -1,0 +1,16 @@
+{
+  "title": "DSA",
+  "description": "All the required JavaScript concepts goes here",
+  "slug": "/category/dsa",
+  "permalink": "/docs/category/dsa",
+  "navigation": {
+    "previous": {
+      "title": "Fundamentals",
+      "permalink": "/docs/programming/Rust/Fundamentals"
+    },
+    "next": {
+      "title": "Fundamentals",
+      "permalink": "/docs/DSA/Fundamentals"
+    }
+  }
+}

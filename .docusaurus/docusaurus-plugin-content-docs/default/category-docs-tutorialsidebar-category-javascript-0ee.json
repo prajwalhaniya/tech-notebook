@@ -1,0 +1,16 @@
+{
+  "title": "JavaScript",
+  "description": "All the required JavaScript concepts goes here",
+  "slug": "/category/javascript",
+  "permalink": "/docs/category/javascript",
+  "navigation": {
+    "previous": {
+      "title": "Programming Languages",
+      "permalink": "/docs/category/programming-languages"
+    },
+    "next": {
+      "title": "Fundamentals",
+      "permalink": "/docs/programming/JavaScript/Fundamentals"
+    }
+  }
+}

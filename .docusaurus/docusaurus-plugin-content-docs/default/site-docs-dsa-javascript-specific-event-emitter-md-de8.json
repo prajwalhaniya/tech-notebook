@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/Javascript Specific/Event Emitter",
+  "id": "DSA/Javascript Specific/Event Emitter",
+  "title": "Event Emitter",
+  "description": "Design an EventEmitter class. This interface is similar (but with some differences) to the one found in Node.js or the Event Target interface of the DOM. The EventEmitter should allow for subscribing to events and emitting them.",
+  "source": "@site/docs/DSA/Javascript Specific/Event Emitter.md",
+  "sourceDirName": "DSA/Javascript Specific",
+  "slug": "/DSA/Javascript Specific/Event Emitter",
+  "permalink": "/docs/DSA/Javascript Specific/Event Emitter",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 14,
+  "frontMatter": {
+    "sidebar_position": 14
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Counter Two",
+    "permalink": "/docs/DSA/Javascript Specific/Counter Two"
+  },
+  "next": {
+    "title": "To Be or Not To Be",
+    "permalink": "/docs/DSA/Javascript Specific/To Be or Not To Be"
+  }
+}

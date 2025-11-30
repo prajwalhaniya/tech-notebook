@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/100 Medium/Decode string",
+  "id": "DSA/100 Medium/Decode string",
+  "title": "Decode string",
+  "description": "Given an encoded string, return its decoded string.",
+  "source": "@site/docs/DSA/100 Medium/10_Decode string.md",
+  "sourceDirName": "DSA/100 Medium",
+  "slug": "/DSA/100 Medium/Decode string",
+  "permalink": "/docs/DSA/100 Medium/Decode string",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 10,
+  "frontMatter": {
+    "sidebar_position": 10
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Increasing triplet subsequence",
+    "permalink": "/docs/DSA/100 Medium/Increasing triplet subsequence"
+  },
+  "next": {
+    "title": "Best time to buy & sell stock",
+    "permalink": "/docs/DSA/100 Medium/Best time to buy & sell stock"
+  }
+}

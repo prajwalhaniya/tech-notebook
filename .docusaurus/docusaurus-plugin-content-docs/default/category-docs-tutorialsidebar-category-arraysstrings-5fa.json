@@ -1,0 +1,16 @@
+{
+  "title": "Arrays/Strings",
+  "description": "Arrays and strings in javascript",
+  "slug": "/category/arraysstrings",
+  "permalink": "/docs/category/arraysstrings",
+  "navigation": {
+    "previous": {
+      "title": "Fundamentals",
+      "permalink": "/docs/programming/JavaScript/Fundamentals"
+    },
+    "next": {
+      "title": "Array Methods",
+      "permalink": "/docs/programming/JavaScript/Arrays&Strings/Array Methods"
+    }
+  }
+}

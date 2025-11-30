@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/Javascript Specific/Zigzag Conversion",
+  "id": "DSA/Javascript Specific/Zigzag Conversion",
+  "title": "Zigzag Conversion",
+  "description": "The string \"PAYPALISHIRING\" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)",
+  "source": "@site/docs/DSA/Javascript Specific/Zigzag Conversion.md",
+  "sourceDirName": "DSA/Javascript Specific",
+  "slug": "/DSA/Javascript Specific/Zigzag Conversion",
+  "permalink": "/docs/DSA/Javascript Specific/Zigzag Conversion",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 21,
+  "frontMatter": {
+    "sidebar_position": 21
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Reverse words in a string",
+    "permalink": "/docs/DSA/Javascript Specific/Reverse words in a string"
+  },
+  "next": {
+    "title": "Merge Sorted Array",
+    "permalink": "/docs/DSA/Javascript Specific/Merge Sorted Array"
+  }
+}

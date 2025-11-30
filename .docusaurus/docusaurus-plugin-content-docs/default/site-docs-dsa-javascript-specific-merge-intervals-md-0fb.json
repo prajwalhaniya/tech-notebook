@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/Javascript Specific/Merge Intervals",
+  "id": "DSA/Javascript Specific/Merge Intervals",
+  "title": "Merge Intervals",
+  "description": "Given an array of intervals where intervals[i] = [starti, endi], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.",
+  "source": "@site/docs/DSA/Javascript Specific/Merge Intervals.md",
+  "sourceDirName": "DSA/Javascript Specific",
+  "slug": "/DSA/Javascript Specific/Merge Intervals",
+  "permalink": "/docs/DSA/Javascript Specific/Merge Intervals",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 31,
+  "frontMatter": {
+    "sidebar_position": 31
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Summary Ranges",
+    "permalink": "/docs/DSA/Javascript Specific/Summary Ranges"
+  },
+  "next": {
+    "title": "Java Specific problems",
+    "permalink": "/docs/category/java-specific-problems"
+  }
+}

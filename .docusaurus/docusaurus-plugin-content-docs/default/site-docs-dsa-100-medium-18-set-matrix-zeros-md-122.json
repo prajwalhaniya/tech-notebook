@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/100 Medium/Set Matrix Zeros",
+  "id": "DSA/100 Medium/Set Matrix Zeros",
+  "title": "Set Matrix Zeros",
+  "description": "",
+  "source": "@site/docs/DSA/100 Medium/18_Set Matrix Zeros.md",
+  "sourceDirName": "DSA/100 Medium",
+  "slug": "/DSA/100 Medium/Set Matrix Zeros",
+  "permalink": "/docs/DSA/100 Medium/Set Matrix Zeros",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 18,
+  "frontMatter": {
+    "sidebar_position": 18
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Valid Sudoku",
+    "permalink": "/docs/DSA/100 Medium/Valid Sudoku"
+  },
+  "next": {
+    "title": "Validate Binary Search Tree",
+    "permalink": "/docs/DSA/100 Medium/Validate Binary Search Tree"
+  }
+}

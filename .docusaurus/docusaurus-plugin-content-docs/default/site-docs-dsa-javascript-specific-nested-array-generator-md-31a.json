@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/Javascript Specific/Nested Array Generator",
+  "id": "DSA/Javascript Specific/Nested Array Generator",
+  "title": "Nested Array Generator",
+  "description": "Given a multi-dimensional array of integers, return a generator object which yields integers in the same order as inorder traversal.",
+  "source": "@site/docs/DSA/Javascript Specific/Nested Array Generator.md",
+  "sourceDirName": "DSA/Javascript Specific",
+  "slug": "/DSA/Javascript Specific/Nested Array Generator",
+  "permalink": "/docs/DSA/Javascript Specific/Nested Array Generator",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 12,
+  "frontMatter": {
+    "sidebar_position": 12
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Fibonnacci",
+    "permalink": "/docs/DSA/Javascript Specific/Fibonnacci"
+  },
+  "next": {
+    "title": "Counter Two",
+    "permalink": "/docs/DSA/Javascript Specific/Counter Two"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "title": "100 Medium",
+  "description": "This section consists of all the 100 medium problems",
+  "slug": "/category/100-medium",
+  "permalink": "/docs/category/100-medium",
+  "navigation": {
+    "previous": {
+      "title": "Palindrome Linked List",
+      "permalink": "/docs/DSA/100 Easy/Palindrome Linked List"
+    },
+    "next": {
+      "title": "Add Two Numbers",
+      "permalink": "/docs/DSA/100 Medium/Add Two Numbers"
+    }
+  }
+}

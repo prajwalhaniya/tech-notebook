@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/100 Easy/Maximum Depth of a Binary tree",
+  "id": "DSA/100 Easy/Maximum Depth of a Binary tree",
+  "title": "Maximum Depth of a Binary tree",
+  "description": "Problem Statement",
+  "source": "@site/docs/DSA/100 Easy/20_Maximum Depth of a Binary tree.md",
+  "sourceDirName": "DSA/100 Easy",
+  "slug": "/DSA/100 Easy/Maximum Depth of a Binary tree",
+  "permalink": "/docs/DSA/100 Easy/Maximum Depth of a Binary tree",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 20,
+  "frontMatter": {
+    "sidebar_position": 20
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Diameter of a binary tree",
+    "permalink": "/docs/DSA/100 Easy/Diameter of a binary tree"
+  },
+  "next": {
+    "title": "Linked list cycle",
+    "permalink": "/docs/DSA/100 Easy/Linked list cycle"
+  }
+}

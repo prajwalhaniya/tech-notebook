@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/Javascript Specific/Compact Object",
+  "id": "DSA/Javascript Specific/Compact Object",
+  "title": "Compact Object",
+  "description": "Given an object or array obj, return a compact object. A compact object is the same as the original object, except with keys containing falsy values removed. This operation applies to the object and any nested objects. Arrays are considered objects where the indices are keys. A value is considered falsy when Boolean(value) returns false.",
+  "source": "@site/docs/DSA/Javascript Specific/Compact Object.md",
+  "sourceDirName": "DSA/Javascript Specific",
+  "slug": "/DSA/Javascript Specific/Compact Object",
+  "permalink": "/docs/DSA/Javascript Specific/Compact Object",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 17,
+  "frontMatter": {
+    "sidebar_position": 17
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Execute Asynchronous Functions In Parallel",
+    "permalink": "/docs/DSA/Javascript Specific/Execute Asynchronous Functions In Parallel"
+  },
+  "next": {
+    "title": "Join Two Arrays By Id",
+    "permalink": "/docs/DSA/Javascript Specific/Join Two Arrays By Id"
+  }
+}

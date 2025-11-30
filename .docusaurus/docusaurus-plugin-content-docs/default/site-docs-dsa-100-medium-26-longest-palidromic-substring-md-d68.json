@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/100 Medium/Longest Palidromic Substring",
+  "id": "DSA/100 Medium/Longest Palidromic Substring",
+  "title": "Longest Palidromic Substring",
+  "description": "Problem Statement",
+  "source": "@site/docs/DSA/100 Medium/26_Longest Palidromic Substring.md",
+  "sourceDirName": "DSA/100 Medium",
+  "slug": "/DSA/100 Medium/Longest Palidromic Substring",
+  "permalink": "/docs/DSA/100 Medium/Longest Palidromic Substring",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 26,
+  "frontMatter": {
+    "sidebar_position": 26
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Find All Anagrams in a String",
+    "permalink": "/docs/DSA/100 Medium/Find All Anagrams in a String"
+  },
+  "next": {
+    "title": "Longest repeating character replacement",
+    "permalink": "/docs/DSA/100 Medium/Longest repeating character replacement"
+  }
+}

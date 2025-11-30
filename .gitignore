@@ -17,4 +17,3 @@ Dockerfile.dev
 !.vscode/launch.json
 !.vscode/extensions.json
 !.vscode/*.code-snippets
-.docusaurus

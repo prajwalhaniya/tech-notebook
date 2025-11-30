@@ -1,0 +1,26 @@
+{
+  "unversionedId": "programming/JavaScript/Object-oriented-JavaScript/Interfaces",
+  "id": "programming/JavaScript/Object-oriented-JavaScript/Interfaces",
+  "title": "Interfaces",
+  "description": "What is an interface?",
+  "source": "@site/docs/programming/JavaScript/Object-oriented-JavaScript/Interfaces.md",
+  "sourceDirName": "programming/JavaScript/Object-oriented-JavaScript",
+  "slug": "/programming/JavaScript/Object-oriented-JavaScript/Interfaces",
+  "permalink": "/docs/programming/JavaScript/Object-oriented-JavaScript/Interfaces",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Design Patterns",
+    "permalink": "/docs/programming/JavaScript/Object-oriented-JavaScript/Design Patterns"
+  },
+  "next": {
+    "title": "Rust",
+    "permalink": "/docs/category/rust"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "unversionedId": "programming/JavaScript/Object-oriented-JavaScript/Introduction",
+  "id": "programming/JavaScript/Object-oriented-JavaScript/Introduction",
+  "title": "Introduction",
+  "description": "This defines a new class called Animation and assigns two methods to the class’s prototype",
+  "source": "@site/docs/programming/JavaScript/Object-oriented-JavaScript/Introduction.md",
+  "sourceDirName": "programming/JavaScript/Object-oriented-JavaScript",
+  "slug": "/programming/JavaScript/Object-oriented-JavaScript/Introduction",
+  "permalink": "/docs/programming/JavaScript/Object-oriented-JavaScript/Introduction",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Object Oriented JavaScript",
+    "permalink": "/docs/category/object-oriented-javascript"
+  },
+  "next": {
+    "title": "Design Patterns",
+    "permalink": "/docs/programming/JavaScript/Object-oriented-JavaScript/Design Patterns"
+  }
+}

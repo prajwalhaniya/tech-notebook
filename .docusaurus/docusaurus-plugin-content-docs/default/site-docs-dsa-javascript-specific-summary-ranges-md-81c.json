@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/Javascript Specific/Summary Ranges",
+  "id": "DSA/Javascript Specific/Summary Ranges",
+  "title": "Summary Ranges",
+  "description": "You are given a sorted unique integer array nums.",
+  "source": "@site/docs/DSA/Javascript Specific/Summary Ranges.md",
+  "sourceDirName": "DSA/Javascript Specific",
+  "slug": "/DSA/Javascript Specific/Summary Ranges",
+  "permalink": "/docs/DSA/Javascript Specific/Summary Ranges",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 30,
+  "frontMatter": {
+    "sidebar_position": 30
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Group Anagrams",
+    "permalink": "/docs/DSA/Javascript Specific/Group Anagrams"
+  },
+  "next": {
+    "title": "Merge Intervals",
+    "permalink": "/docs/DSA/Javascript Specific/Merge Intervals"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/Javascript Specific/Group By",
+  "id": "DSA/Javascript Specific/Group By",
+  "title": "Group By",
+  "description": "Write code that enhances all arrays such that you can call the array.groupBy(fn) method on any array and it will return a grouped version of the array.",
+  "source": "@site/docs/DSA/Javascript Specific/Group By.md",
+  "sourceDirName": "DSA/Javascript Specific",
+  "slug": "/DSA/Javascript Specific/Group By",
+  "permalink": "/docs/DSA/Javascript Specific/Group By",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 9,
+  "frontMatter": {
+    "sidebar_position": 9
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Filter Elements From Array",
+    "permalink": "/docs/DSA/Javascript Specific/Filter Elements From Array"
+  },
+  "next": {
+    "title": "Promise Time Limit",
+    "permalink": "/docs/DSA/Javascript Specific/Promise Time Limit"
+  }
+}

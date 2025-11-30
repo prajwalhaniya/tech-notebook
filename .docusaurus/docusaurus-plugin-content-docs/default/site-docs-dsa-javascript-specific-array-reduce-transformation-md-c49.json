@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/Javascript Specific/Array Reduce Transformation",
+  "id": "DSA/Javascript Specific/Array Reduce Transformation",
+  "title": "Array Reduce Transformation",
+  "description": "Given an integer array nums, a reducer function fn, and an initial value init, return a reduced array.",
+  "source": "@site/docs/DSA/Javascript Specific/Array Reduce Transformation.md",
+  "sourceDirName": "DSA/Javascript Specific",
+  "slug": "/DSA/Javascript Specific/Array Reduce Transformation",
+  "permalink": "/docs/DSA/Javascript Specific/Array Reduce Transformation",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 6,
+  "frontMatter": {
+    "sidebar_position": 6
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Recursive Flatten",
+    "permalink": "/docs/DSA/Javascript Specific/Recursive Flatten"
+  },
+  "next": {
+    "title": "Function Composition",
+    "permalink": "/docs/DSA/Javascript Specific/Function Composition"
+  }
+}

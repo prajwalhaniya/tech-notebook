@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/Javascript Specific/Function Composition",
+  "id": "DSA/Javascript Specific/Function Composition",
+  "title": "Function Composition",
+  "description": "Given an array of functions [f1, f2, f3, ..., fn], return a new function fn that is the function composition of the array of functions.",
+  "source": "@site/docs/DSA/Javascript Specific/Function Composition.md",
+  "sourceDirName": "DSA/Javascript Specific",
+  "slug": "/DSA/Javascript Specific/Function Composition",
+  "permalink": "/docs/DSA/Javascript Specific/Function Composition",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 7,
+  "frontMatter": {
+    "sidebar_position": 7
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Array Reduce Transformation",
+    "permalink": "/docs/DSA/Javascript Specific/Array Reduce Transformation"
+  },
+  "next": {
+    "title": "Filter Elements From Array",
+    "permalink": "/docs/DSA/Javascript Specific/Filter Elements From Array"
+  }
+}

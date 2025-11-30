@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/Javascript Specific/Join Two Arrays By Id",
+  "id": "DSA/Javascript Specific/Join Two Arrays By Id",
+  "title": "Join Two Arrays By Id",
+  "description": "Given two arrays arr1 and arr2, return a new array joinedArray. All the objects in each of the two inputs arrays will contain an id field that has an integer value. joinedArray is an array formed by merging arr1 and arr2 based on their id key. The length of joinedArray should be the length of unique values of id. The returned array should be sorted in ascending order based on the id key.",
+  "source": "@site/docs/DSA/Javascript Specific/Join Two Arrays By Id.md",
+  "sourceDirName": "DSA/Javascript Specific",
+  "slug": "/DSA/Javascript Specific/Join Two Arrays By Id",
+  "permalink": "/docs/DSA/Javascript Specific/Join Two Arrays By Id",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 18,
+  "frontMatter": {
+    "sidebar_position": 18
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Compact Object",
+    "permalink": "/docs/DSA/Javascript Specific/Compact Object"
+  },
+  "next": {
+    "title": "Array Prototype Last",
+    "permalink": "/docs/DSA/Javascript Specific/Array Prototype Last"
+  }
+}

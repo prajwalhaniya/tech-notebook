@@ -1,0 +1,16 @@
+{
+  "title": "JavaScript Specific problems",
+  "description": "All the required JavaScript concepts goes here",
+  "slug": "/category/javascript-specific-problems",
+  "permalink": "/docs/category/javascript-specific-problems",
+  "navigation": {
+    "previous": {
+      "title": "Fundamentals",
+      "permalink": "/docs/DSA/Fundamentals"
+    },
+    "next": {
+      "title": "Counter",
+      "permalink": "/docs/DSA/Javascript Specific/Counter"
+    }
+  }
+}

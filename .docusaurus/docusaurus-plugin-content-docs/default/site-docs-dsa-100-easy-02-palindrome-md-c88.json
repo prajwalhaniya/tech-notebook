@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/100 Easy/Palindrome",
+  "id": "DSA/100 Easy/Palindrome",
+  "title": "Palindrome",
+  "description": "Given an integer x, return true if x is a palindrome, and false otherwise.",
+  "source": "@site/docs/DSA/100 Easy/02_Palindrome.md",
+  "sourceDirName": "DSA/100 Easy",
+  "slug": "/DSA/100 Easy/Palindrome",
+  "permalink": "/docs/DSA/100 Easy/Palindrome",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Two Sum",
+    "permalink": "/docs/DSA/100 Easy/Two Sum"
+  },
+  "next": {
+    "title": "Roman to integer",
+    "permalink": "/docs/DSA/100 Easy/Roman to integer"
+  }
+}

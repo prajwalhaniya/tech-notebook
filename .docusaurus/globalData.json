@@ -1,0 +1,643 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/docs",
+          "mainDocId": "programming/JavaScript/Fundamentals",
+          "docs": [
+            {
+              "id": "Database/concepts",
+              "path": "/docs/Database/concepts",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "Deployment/concepts",
+              "path": "/docs/Deployment/concepts",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Easy/Add binary",
+              "path": "/docs/DSA/100 Easy/Add binary",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Easy/Best time to buy & sell stock",
+              "path": "/docs/DSA/100 Easy/Best time to buy & sell stock",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Easy/Can place flowers",
+              "path": "/docs/DSA/100 Easy/Can place flowers",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Easy/Convert sorted array to binary search tree",
+              "path": "/docs/DSA/100 Easy/Convert sorted array to binary search tree",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Easy/Diameter of a binary tree",
+              "path": "/docs/DSA/100 Easy/Diameter of a binary tree",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Easy/Find Pivot Index",
+              "path": "/docs/DSA/100 Easy/Find Pivot Index",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Easy/Greatest common divisor of strings",
+              "path": "/docs/DSA/100 Easy/Greatest common divisor of strings",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Easy/Linked list cycle",
+              "path": "/docs/DSA/100 Easy/Linked list cycle",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Easy/Longest common prefix",
+              "path": "/docs/DSA/100 Easy/Longest common prefix",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Easy/Maximum Average Subarray I",
+              "path": "/docs/DSA/100 Easy/Maximum Average Subarray I",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Easy/Maximum Depth of a Binary tree",
+              "path": "/docs/DSA/100 Easy/Maximum Depth of a Binary tree",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Easy/Maximum Depth of binary tree",
+              "path": "/docs/DSA/100 Easy/Maximum Depth of binary tree",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Easy/Merge two sorted lists",
+              "path": "/docs/DSA/100 Easy/Merge two sorted lists",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Easy/Move Zeros",
+              "path": "/docs/DSA/100 Easy/Move Zeros",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Easy/Palindrome",
+              "path": "/docs/DSA/100 Easy/Palindrome",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Easy/Palindrome Linked List",
+              "path": "/docs/DSA/100 Easy/Palindrome Linked List",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Easy/Remove duplicates from sorted list",
+              "path": "/docs/DSA/100 Easy/Remove duplicates from sorted list",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Easy/Reverse a linked list",
+              "path": "/docs/DSA/100 Easy/Reverse a linked list",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Easy/Reverse vowels of a string",
+              "path": "/docs/DSA/100 Easy/Reverse vowels of a string",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Easy/Roman to integer",
+              "path": "/docs/DSA/100 Easy/Roman to integer",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Easy/Square Root",
+              "path": "/docs/DSA/100 Easy/Square Root",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Easy/Two Sum",
+              "path": "/docs/DSA/100 Easy/Two Sum",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Easy/Valid Parentheses",
+              "path": "/docs/DSA/100 Easy/Valid Parentheses",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Add Two Numbers",
+              "path": "/docs/DSA/100 Medium/Add Two Numbers",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Best time to buy & sell stock",
+              "path": "/docs/DSA/100 Medium/Best time to buy & sell stock",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Binary Tree Level Order Traversal",
+              "path": "/docs/DSA/100 Medium/Binary Tree Level Order Traversal",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Binary Tree Right Side View",
+              "path": "/docs/DSA/100 Medium/Binary Tree Right Side View",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Construct Binary Tree from Preorder and Inorder Traversal",
+              "path": "/docs/DSA/100 Medium/Construct Binary Tree from Preorder and Inorder Traversal",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Container with most water",
+              "path": "/docs/DSA/100 Medium/Container with most water",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Course Schedule",
+              "path": "/docs/DSA/100 Medium/Course Schedule",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Decode string",
+              "path": "/docs/DSA/100 Medium/Decode string",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Delete the middle node of a linked list",
+              "path": "/docs/DSA/100 Medium/Delete the middle node of a linked list",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Dota2 Senate",
+              "path": "/docs/DSA/100 Medium/Dota2 Senate",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Find All Anagrams in a String",
+              "path": "/docs/DSA/100 Medium/Find All Anagrams in a String",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Increasing triplet subsequence",
+              "path": "/docs/DSA/100 Medium/Increasing triplet subsequence",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Kth smallest element in BST",
+              "path": "/docs/DSA/100 Medium/Kth smallest element in BST",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Largest Number",
+              "path": "/docs/DSA/100 Medium/Largest Number",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Longest Palidromic Substring",
+              "path": "/docs/DSA/100 Medium/Longest Palidromic Substring",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Longest repeating character replacement",
+              "path": "/docs/DSA/100 Medium/Longest repeating character replacement",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Longest substring without repeating characters",
+              "path": "/docs/DSA/100 Medium/Longest substring without repeating characters",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Lowest Common Ancestor of binary tree.md",
+              "path": "/docs/DSA/100 Medium/Lowest Common Ancestor of binary tree.md",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Max width of a binary tree",
+              "path": "/docs/DSA/100 Medium/Max width of a binary tree",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Number of Islands",
+              "path": "/docs/DSA/100 Medium/Number of Islands",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Odd even linked list",
+              "path": "/docs/DSA/100 Medium/Odd even linked list",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Path sum",
+              "path": "/docs/DSA/100 Medium/Path sum",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Product of Array Except Self",
+              "path": "/docs/DSA/100 Medium/Product of Array Except Self",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Remove starts from string",
+              "path": "/docs/DSA/100 Medium/Remove starts from string",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Reorder List",
+              "path": "/docs/DSA/100 Medium/Reorder List",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Rotate Image",
+              "path": "/docs/DSA/100 Medium/Rotate Image",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Rotate list",
+              "path": "/docs/DSA/100 Medium/Rotate list",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Set Matrix Zeros",
+              "path": "/docs/DSA/100 Medium/Set Matrix Zeros",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Sort List",
+              "path": "/docs/DSA/100 Medium/Sort List",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Spiral Matrix",
+              "path": "/docs/DSA/100 Medium/Spiral Matrix",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/String to integer",
+              "path": "/docs/DSA/100 Medium/String to integer",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/trie",
+              "path": "/docs/DSA/100 Medium/trie",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Valid Sudoku",
+              "path": "/docs/DSA/100 Medium/Valid Sudoku",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/100 Medium/Validate Binary Search Tree",
+              "path": "/docs/DSA/100 Medium/Validate Binary Search Tree",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/caching/Introduction",
+              "path": "/docs/DSA/caching/Introduction",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/caching/Least Frequently Used",
+              "path": "/docs/DSA/caching/Least Frequently Used",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/caching/Least Recently Used",
+              "path": "/docs/DSA/caching/Least Recently Used",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Fundamentals",
+              "path": "/docs/DSA/Fundamentals",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/java/Arrays/Best Time to Buy and Sell Stock",
+              "path": "/docs/DSA/java/Arrays/Best Time to Buy and Sell Stock",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/java/Arrays/Best Time to Buy And Sell Stock II",
+              "path": "/docs/DSA/java/Arrays/Best Time to Buy And Sell Stock II",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Javascript Specific/Array Prototype Last",
+              "path": "/docs/DSA/Javascript Specific/Array Prototype Last",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Javascript Specific/Array Reduce Transformation",
+              "path": "/docs/DSA/Javascript Specific/Array Reduce Transformation",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Javascript Specific/Cache with Time",
+              "path": "/docs/DSA/Javascript Specific/Cache with Time",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Javascript Specific/Compact Object",
+              "path": "/docs/DSA/Javascript Specific/Compact Object",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Javascript Specific/Container with most water",
+              "path": "/docs/DSA/Javascript Specific/Container with most water",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Javascript Specific/Counter",
+              "path": "/docs/DSA/Javascript Specific/Counter",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Javascript Specific/Counter Two",
+              "path": "/docs/DSA/Javascript Specific/Counter Two",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Javascript Specific/Event Emitter",
+              "path": "/docs/DSA/Javascript Specific/Event Emitter",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Javascript Specific/Execute Asynchronous Functions In Parallel",
+              "path": "/docs/DSA/Javascript Specific/Execute Asynchronous Functions In Parallel",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Javascript Specific/Fibonnacci",
+              "path": "/docs/DSA/Javascript Specific/Fibonnacci",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Javascript Specific/Filter Elements From Array",
+              "path": "/docs/DSA/Javascript Specific/Filter Elements From Array",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Javascript Specific/Function Composition",
+              "path": "/docs/DSA/Javascript Specific/Function Composition",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Javascript Specific/Group Anagrams",
+              "path": "/docs/DSA/Javascript Specific/Group Anagrams",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Javascript Specific/Group By",
+              "path": "/docs/DSA/Javascript Specific/Group By",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Javascript Specific/Join Two Arrays By Id",
+              "path": "/docs/DSA/Javascript Specific/Join Two Arrays By Id",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Javascript Specific/Longest substring without repeating characters",
+              "path": "/docs/DSA/Javascript Specific/Longest substring without repeating characters",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Javascript Specific/Memoize",
+              "path": "/docs/DSA/Javascript Specific/Memoize",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Javascript Specific/Merge Intervals",
+              "path": "/docs/DSA/Javascript Specific/Merge Intervals",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Javascript Specific/Merge Sorted Array",
+              "path": "/docs/DSA/Javascript Specific/Merge Sorted Array",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Javascript Specific/Minimum size subarray sum",
+              "path": "/docs/DSA/Javascript Specific/Minimum size subarray sum",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Javascript Specific/Nested Array Generator",
+              "path": "/docs/DSA/Javascript Specific/Nested Array Generator",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Javascript Specific/Promise Time Limit",
+              "path": "/docs/DSA/Javascript Specific/Promise Time Limit",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Javascript Specific/Recursive Flatten",
+              "path": "/docs/DSA/Javascript Specific/Recursive Flatten",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Javascript Specific/Reverse words in a string",
+              "path": "/docs/DSA/Javascript Specific/Reverse words in a string",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Javascript Specific/Sleep",
+              "path": "/docs/DSA/Javascript Specific/Sleep",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Javascript Specific/Summary Ranges",
+              "path": "/docs/DSA/Javascript Specific/Summary Ranges",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Javascript Specific/To Be or Not To Be",
+              "path": "/docs/DSA/Javascript Specific/To Be or Not To Be",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Javascript Specific/Two Sum II",
+              "path": "/docs/DSA/Javascript Specific/Two Sum II",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Javascript Specific/Valid Palindrome",
+              "path": "/docs/DSA/Javascript Specific/Valid Palindrome",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Javascript Specific/Valid Sudoku",
+              "path": "/docs/DSA/Javascript Specific/Valid Sudoku",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Javascript Specific/Zigzag Conversion",
+              "path": "/docs/DSA/Javascript Specific/Zigzag Conversion",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Rate Limiting Algorithms/Token Bucket Algorithm",
+              "path": "/docs/DSA/Rate Limiting Algorithms/Token Bucket Algorithm",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/Trees/concepts",
+              "path": "/docs/DSA/Trees/concepts",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "LLD/Design a parking lot",
+              "path": "/docs/LLD/Design a parking lot",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "programming/JavaScript/Arrays&Strings/Array Methods",
+              "path": "/docs/programming/JavaScript/Arrays&Strings/Array Methods",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "programming/JavaScript/Fundamentals",
+              "path": "/docs/programming/JavaScript/Fundamentals",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "programming/JavaScript/Object-oriented-JavaScript/Design Patterns",
+              "path": "/docs/programming/JavaScript/Object-oriented-JavaScript/Design Patterns",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "programming/JavaScript/Object-oriented-JavaScript/Interfaces",
+              "path": "/docs/programming/JavaScript/Object-oriented-JavaScript/Interfaces",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "programming/JavaScript/Object-oriented-JavaScript/Introduction",
+              "path": "/docs/programming/JavaScript/Object-oriented-JavaScript/Introduction",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "programming/JavaScript/Projects",
+              "path": "/docs/programming/JavaScript/Projects",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "programming/Rust/Fundamentals",
+              "path": "/docs/programming/Rust/Fundamentals",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/programming-languages",
+              "path": "/docs/category/programming-languages",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/javascript",
+              "path": "/docs/category/javascript",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/arraysstrings",
+              "path": "/docs/category/arraysstrings",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/object-oriented-javascript",
+              "path": "/docs/category/object-oriented-javascript",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/rust",
+              "path": "/docs/category/rust",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/dsa",
+              "path": "/docs/category/dsa",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/javascript-specific-problems",
+              "path": "/docs/category/javascript-specific-problems",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/java-specific-problems",
+              "path": "/docs/category/java-specific-problems",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/arrays-specific-problems",
+              "path": "/docs/category/arrays-specific-problems",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/100-easy",
+              "path": "/docs/category/100-easy",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/100-medium",
+              "path": "/docs/category/100-medium",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/rate-limiting-algorithms",
+              "path": "/docs/category/rate-limiting-algorithms",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/caching",
+              "path": "/docs/category/caching",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/trees",
+              "path": "/docs/category/trees",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/lld",
+              "path": "/docs/category/lld",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/database",
+              "path": "/docs/category/database",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/deployment",
+              "path": "/docs/category/deployment",
+              "sidebar": "tutorialSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "tutorialSidebar": {
+              "link": {
+                "path": "/docs/category/programming-languages",
+                "label": "Programming Languages"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}
