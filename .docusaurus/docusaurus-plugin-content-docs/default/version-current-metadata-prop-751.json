@@ -305,6 +305,36 @@
           },
           {
             "type": "category",
+            "label": "Java Specific problems",
+            "collapsible": true,
+            "collapsed": true,
+            "items": [
+              {
+                "type": "category",
+                "label": "Arrays Specific problems",
+                "collapsible": true,
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "link",
+                    "label": "Best Time to Buy and Sell Stock II",
+                    "href": "/docs/DSA/java/Arrays/Best Time to Buy And Sell Stock II",
+                    "docId": "DSA/java/Arrays/Best Time to Buy And Sell Stock II"
+                  },
+                  {
+                    "type": "link",
+                    "label": "Best Time to Buy and Sell Stock",
+                    "href": "/docs/DSA/java/Arrays/Best Time to Buy and Sell Stock",
+                    "docId": "DSA/java/Arrays/Best Time to Buy and Sell Stock"
+                  }
+                ],
+                "href": "/docs/category/arrays-specific-problems"
+              }
+            ],
+            "href": "/docs/category/java-specific-problems"
+          },
+          {
+            "type": "category",
             "label": "100 Easy",
             "collapsible": true,
             "collapsed": true,
@@ -1147,6 +1177,18 @@
       "id": "DSA/Fundamentals",
       "title": "Fundamentals",
       "description": "Time complexities",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/java/Arrays/Best Time to Buy and Sell Stock": {
+      "id": "DSA/java/Arrays/Best Time to Buy and Sell Stock",
+      "title": "Best Time to Buy and Sell Stock",
+      "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day.",
+      "sidebar": "tutorialSidebar"
+    },
+    "DSA/java/Arrays/Best Time to Buy And Sell Stock II": {
+      "id": "DSA/java/Arrays/Best Time to Buy And Sell Stock II",
+      "title": "Best Time to Buy and Sell Stock II",
+      "description": "You are given an integer array prices where prices[i] is the price of a stock on the ith day.",
       "sidebar": "tutorialSidebar"
     },
     "DSA/Javascript Specific/Array Prototype Last": {

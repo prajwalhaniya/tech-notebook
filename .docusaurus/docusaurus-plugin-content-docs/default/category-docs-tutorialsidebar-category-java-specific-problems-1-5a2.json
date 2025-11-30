@@ -1,0 +1,16 @@
+{
+  "title": "Java Specific problems",
+  "description": "All the required JavaScript concepts goes here",
+  "slug": "/category/java-specific-problems-1",
+  "permalink": "/docs/category/java-specific-problems-1",
+  "navigation": {
+    "previous": {
+      "title": "Java Specific problems",
+      "permalink": "/docs/category/java-specific-problems"
+    },
+    "next": {
+      "title": "Best Time to Buy and Sell Stock",
+      "permalink": "/docs/DSA/java/Arrays/Best Time to Buy and Sell Stock"
+    }
+  }
+}

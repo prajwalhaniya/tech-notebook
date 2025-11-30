@@ -1,0 +1,23 @@
+{
+  "unversionedId": "DSA/java/Arrays/BestTimeBuyAndSellStock",
+  "id": "DSA/java/Arrays/BestTimeBuyAndSellStock",
+  "title": "BestTimeBuyAndSellStock",
+  "description": "",
+  "source": "@site/docs/DSA/java/Arrays/BestTimeBuyAndSellStock.md",
+  "sourceDirName": "DSA/java/Arrays",
+  "slug": "/DSA/java/Arrays/BestTimeBuyAndSellStock",
+  "permalink": "/docs/DSA/java/Arrays/BestTimeBuyAndSellStock",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Java Specific problems",
+    "permalink": "/docs/category/java-specific-problems-1"
+  },
+  "next": {
+    "title": "100 Easy",
+    "permalink": "/docs/category/100-easy"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "unversionedId": "DSA/java/Arrays/Best Time to Buy and Sell Stock",
+  "id": "DSA/java/Arrays/Best Time to Buy and Sell Stock",
+  "title": "Best Time to Buy and Sell Stock",
+  "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day.",
+  "source": "@site/docs/DSA/java/Arrays/Best Time to Buy and Sell Stock.md",
+  "sourceDirName": "DSA/java/Arrays",
+  "slug": "/DSA/java/Arrays/Best Time to Buy and Sell Stock",
+  "permalink": "/docs/DSA/java/Arrays/Best Time to Buy and Sell Stock",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Best Time to Buy and Sell Stock II",
+    "permalink": "/docs/DSA/java/Arrays/Best Time to Buy And Sell Stock II"
+  },
+  "next": {
+    "title": "100 Easy",
+    "permalink": "/docs/category/100-easy"
+  }
+}

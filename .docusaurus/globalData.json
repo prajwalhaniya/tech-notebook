@@ -326,6 +326,16 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "DSA/java/Arrays/Best Time to Buy and Sell Stock",
+              "path": "/docs/DSA/java/Arrays/Best Time to Buy and Sell Stock",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "DSA/java/Arrays/Best Time to Buy And Sell Stock II",
+              "path": "/docs/DSA/java/Arrays/Best Time to Buy And Sell Stock II",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "DSA/Javascript Specific/Array Prototype Last",
               "path": "/docs/DSA/Javascript Specific/Array Prototype Last",
               "sidebar": "tutorialSidebar"
@@ -563,6 +573,16 @@
             {
               "id": "/category/javascript-specific-problems",
               "path": "/docs/category/javascript-specific-problems",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/java-specific-problems",
+              "path": "/docs/category/java-specific-problems",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/arrays-specific-problems",
+              "path": "/docs/category/arrays-specific-problems",
               "sidebar": "tutorialSidebar"
             },
             {

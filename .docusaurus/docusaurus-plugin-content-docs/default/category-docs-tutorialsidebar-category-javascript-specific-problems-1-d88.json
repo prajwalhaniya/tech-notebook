@@ -1,0 +1,16 @@
+{
+  "title": "JavaScript Specific problems",
+  "description": "All the required JavaScript concepts goes here",
+  "slug": "/category/javascript-specific-problems-1",
+  "permalink": "/docs/category/javascript-specific-problems-1",
+  "navigation": {
+    "previous": {
+      "title": "concepts",
+      "permalink": "/docs/DSA/Trees/concepts"
+    },
+    "next": {
+      "title": "BestTimeBuyAndSellStock",
+      "permalink": "/docs/DSA/java/Arrays/BestTimeBuyAndSellStock"
+    }
+  }
+}

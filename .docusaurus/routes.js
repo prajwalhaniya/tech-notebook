@@ -4,67 +4,67 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 export default [
   {
     path: '/__docusaurus/debug',
-    component: ComponentCreator('/__docusaurus/debug', '0d2'),
+    component: ComponentCreator('/__docusaurus/debug', '6b3'),
     exact: true
   },
   {
     path: '/__docusaurus/debug/config',
-    component: ComponentCreator('/__docusaurus/debug/config', '62d'),
+    component: ComponentCreator('/__docusaurus/debug/config', '286'),
     exact: true
   },
   {
     path: '/__docusaurus/debug/content',
-    component: ComponentCreator('/__docusaurus/debug/content', '556'),
+    component: ComponentCreator('/__docusaurus/debug/content', '4d9'),
     exact: true
   },
   {
     path: '/__docusaurus/debug/globalData',
-    component: ComponentCreator('/__docusaurus/debug/globalData', '8ca'),
+    component: ComponentCreator('/__docusaurus/debug/globalData', '932'),
     exact: true
   },
   {
     path: '/__docusaurus/debug/metadata',
-    component: ComponentCreator('/__docusaurus/debug/metadata', '72d'),
+    component: ComponentCreator('/__docusaurus/debug/metadata', 'd30'),
     exact: true
   },
   {
     path: '/__docusaurus/debug/registry',
-    component: ComponentCreator('/__docusaurus/debug/registry', '5a4'),
+    component: ComponentCreator('/__docusaurus/debug/registry', '183'),
     exact: true
   },
   {
     path: '/__docusaurus/debug/routes',
-    component: ComponentCreator('/__docusaurus/debug/routes', '47d'),
+    component: ComponentCreator('/__docusaurus/debug/routes', '931'),
     exact: true
   },
   {
     path: '/blog',
-    component: ComponentCreator('/blog', '52b'),
+    component: ComponentCreator('/blog', 'ca7'),
     exact: true
   },
   {
     path: '/blog/archive',
-    component: ComponentCreator('/blog/archive', '03e'),
+    component: ComponentCreator('/blog/archive', 'eaa'),
     exact: true
   },
   {
     path: '/blog/welcome',
-    component: ComponentCreator('/blog/welcome', 'f54'),
+    component: ComponentCreator('/blog/welcome', '312'),
     exact: true
   },
   {
     path: '/blog/why dsa matter',
-    component: ComponentCreator('/blog/why dsa matter', '248'),
+    component: ComponentCreator('/blog/why dsa matter', '8ed'),
     exact: true
   },
   {
     path: '/markdown-page',
-    component: ComponentCreator('/markdown-page', '862'),
+    component: ComponentCreator('/markdown-page', '79b'),
     exact: true
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', 'fff'),
+    component: ComponentCreator('/docs', 'ee0'),
     routes: [
       {
         path: '/docs/category/100-easy',
@@ -75,6 +75,12 @@ export default [
       {
         path: '/docs/category/100-medium',
         component: ComponentCreator('/docs/category/100-medium', '070'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/category/arrays-specific-problems',
+        component: ComponentCreator('/docs/category/arrays-specific-problems', '096'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
@@ -105,6 +111,12 @@ export default [
       {
         path: '/docs/category/dsa',
         component: ComponentCreator('/docs/category/dsa', '14a'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/category/java-specific-problems',
+        component: ComponentCreator('/docs/category/java-specific-problems', '42a'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
@@ -535,6 +547,18 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
+        path: '/docs/DSA/java/Arrays/Best Time to Buy and Sell Stock',
+        component: ComponentCreator('/docs/DSA/java/Arrays/Best Time to Buy and Sell Stock', 'f50'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/docs/DSA/java/Arrays/Best Time to Buy And Sell Stock II',
+        component: ComponentCreator('/docs/DSA/java/Arrays/Best Time to Buy And Sell Stock II', '18a'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
         path: '/docs/DSA/Javascript Specific/Array Prototype Last',
         component: ComponentCreator('/docs/DSA/Javascript Specific/Array Prototype Last', 'f56'),
         exact: true,
@@ -784,7 +808,7 @@ export default [
   },
   {
     path: '/',
-    component: ComponentCreator('/', '3ea'),
+    component: ComponentCreator('/', '322'),
     exact: true
   },
   {

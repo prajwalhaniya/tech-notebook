@@ -1,51 +1,51 @@
 {
-  "/__docusaurus/debug-0d2": {
+  "/__docusaurus/debug-6b3": {
     "__comp": "__comp---theme-debug-config-23-a-2ff",
     "__context": {
-      "plugin": "plugin---docusaurus-debug-60-b-bf5"
+      "plugin": "plugin---docusaurus-debug-020-585"
     }
   },
-  "/__docusaurus/debug/config-62d": {
+  "/__docusaurus/debug/config-286": {
     "__comp": "__comp---theme-debug-config-23-a-2ff",
     "__context": {
-      "plugin": "plugin---docusaurus-debug-60-b-bf5"
+      "plugin": "plugin---docusaurus-debug-020-585"
     }
   },
-  "/__docusaurus/debug/content-556": {
+  "/__docusaurus/debug/content-4d9": {
     "__comp": "__comp---theme-debug-contentba-8-ce7",
     "__context": {
-      "plugin": "plugin---docusaurus-debug-60-b-bf5"
+      "plugin": "plugin---docusaurus-debug-020-585"
     },
     "allContent": "allContent---docusaurus-debug-content-246-9aa"
   },
-  "/__docusaurus/debug/globalData-8ca": {
+  "/__docusaurus/debug/globalData-932": {
     "__comp": "__comp---theme-debug-global-dataede-0fa",
     "__context": {
-      "plugin": "plugin---docusaurus-debug-60-b-bf5"
+      "plugin": "plugin---docusaurus-debug-020-585"
     }
   },
-  "/__docusaurus/debug/metadata-72d": {
+  "/__docusaurus/debug/metadata-d30": {
     "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
     "__context": {
-      "plugin": "plugin---docusaurus-debug-60-b-bf5"
+      "plugin": "plugin---docusaurus-debug-020-585"
     }
   },
-  "/__docusaurus/debug/registry-5a4": {
+  "/__docusaurus/debug/registry-183": {
     "__comp": "__comp---theme-debug-registry-679-501",
     "__context": {
-      "plugin": "plugin---docusaurus-debug-60-b-bf5"
+      "plugin": "plugin---docusaurus-debug-020-585"
     }
   },
-  "/__docusaurus/debug/routes-47d": {
+  "/__docusaurus/debug/routes-931": {
     "__comp": "__comp---theme-debug-routes-946-699",
     "__context": {
-      "plugin": "plugin---docusaurus-debug-60-b-bf5"
+      "plugin": "plugin---docusaurus-debug-020-585"
     }
   },
-  "/blog-52b": {
+  "/blog-ca7": {
     "__comp": "__comp---theme-blog-list-pagea-6-a-7ba",
     "__context": {
-      "plugin": "plugin---blog-7-af-96f"
+      "plugin": "plugin---blog-3-f-3-5ad"
     },
     "sidebar": "sidebar---blog-814-8ac",
     "items": [
@@ -58,40 +58,40 @@
     ],
     "metadata": "metadata---blogb-2-b-df1"
   },
-  "/blog/archive-03e": {
+  "/blog/archive-eaa": {
     "__comp": "__comp---theme-blog-archive-page-9-e-4-1d8",
     "__context": {
-      "plugin": "plugin---blog-7-af-96f"
+      "plugin": "plugin---blog-3-f-3-5ad"
     },
     "archive": "archive---blog-archiveb-2-f-393"
   },
-  "/blog/welcome-f54": {
+  "/blog/welcome-312": {
     "__comp": "__comp---theme-blog-post-pageccc-cab",
     "__context": {
-      "plugin": "plugin---blog-7-af-96f"
+      "plugin": "plugin---blog-3-f-3-5ad"
     },
     "sidebar": "sidebar---blog-814-8ac",
     "content": "content---blog-welcome-442-3a7"
   },
-  "/blog/why dsa matter-248": {
+  "/blog/why dsa matter-8ed": {
     "__comp": "__comp---theme-blog-post-pageccc-cab",
     "__context": {
-      "plugin": "plugin---blog-7-af-96f"
+      "plugin": "plugin---blog-3-f-3-5ad"
     },
     "sidebar": "sidebar---blog-814-8ac",
     "content": "content---blog-why-dsa-matter-139-24e"
   },
-  "/markdown-page-862": {
+  "/markdown-page-79b": {
     "__comp": "__comp---theme-mdx-page-1-f-3-b90",
     "__context": {
-      "plugin": "plugin---markdown-pagee-4-d-909"
+      "plugin": "plugin---markdown-pageaac-b23"
     },
     "content": "content---markdown-page-393-028"
   },
-  "/docs-fff": {
+  "/docs-ee0": {
     "__comp": "__comp---theme-doc-page-1-be-9be",
     "__context": {
-      "plugin": "plugin---docs-620-92f"
+      "plugin": "plugin---docsb-3-d-35a"
     },
     "versionMetadata": "versionMetadata---docs-935-398"
   },
@@ -102,6 +102,10 @@
   "/docs/category/100-medium-070": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-100-mediumef-2-4c0"
+  },
+  "/docs/category/arrays-specific-problems-096": {
+    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-arrays-specific-problems-01-e-ddd"
   },
   "/docs/category/arraysstrings-e3b": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
@@ -122,6 +126,10 @@
   "/docs/category/dsa-14a": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
     "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-dsaa-35-ed0"
+  },
+  "/docs/category/java-specific-problems-42a": {
+    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-category-java-specific-problems-954-7fa"
   },
   "/docs/category/javascript-bb0": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
@@ -407,6 +415,14 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-dsa-fundamentalsc-25-317"
   },
+  "/docs/DSA/java/Arrays/Best Time to Buy and Sell Stock-f50": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-java-arrays-best-time-to-buy-and-sell-stock-06-b-6f6"
+  },
+  "/docs/DSA/java/Arrays/Best Time to Buy And Sell Stock II-18a": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-dsa-java-arrays-best-time-to-buy-and-sell-stock-ii-29-e-79f"
+  },
   "/docs/DSA/Javascript Specific/Array Prototype Last-f56": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-dsa-javascript-specific-array-prototype-last-0-b-1-030"
@@ -571,10 +587,10 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---docs-programming-rust-fundamentalsbc-9-c4a"
   },
-  "/-3ea": {
+  "/-322": {
     "__comp": "__comp---site-src-pages-index-jsc-4-f-f99",
     "__context": {
-      "plugin": "plugin---markdown-pagee-4-d-909"
+      "plugin": "plugin---markdown-pageaac-b23"
     },
     "config": "config---5-e-9-4f3"
   }
