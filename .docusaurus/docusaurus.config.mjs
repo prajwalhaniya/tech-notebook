@@ -26,13 +26,13 @@ export default {
       "classic",
       {
         "docs": {
-          "sidebarPath": "/home/prajwal/Documents/workspace/github/tech-notebook/sidebars.js"
+          "sidebarPath": "/Users/shashidharrbhat/Documents/workspace/tech-notebook/sidebars.js"
         },
         "blog": {
           "showReadingTime": true
         },
         "theme": {
-          "customCss": "/home/prajwal/Documents/workspace/github/tech-notebook/src/css/custom.css"
+          "customCss": "/Users/shashidharrbhat/Documents/workspace/tech-notebook/src/css/custom.css"
         }
       }
     ]

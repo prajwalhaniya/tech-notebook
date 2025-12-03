@@ -13,9 +13,9 @@
           "tagsPath": "/docs/tags",
           "isLast": true,
           "routePriority": -1,
-          "sidebarFilePath": "/home/prajwal/Documents/workspace/github/tech-notebook/sidebars.js",
-          "contentPath": "/home/prajwal/Documents/workspace/github/tech-notebook/docs",
-          "contentPathLocalized": "/home/prajwal/Documents/workspace/github/tech-notebook/i18n/en/docusaurus-plugin-content-docs/current",
+          "sidebarFilePath": "/Users/shashidharrbhat/Documents/workspace/tech-notebook/sidebars.js",
+          "contentPath": "/Users/shashidharrbhat/Documents/workspace/tech-notebook/docs",
+          "contentPathLocalized": "/Users/shashidharrbhat/Documents/workspace/tech-notebook/i18n/en/docusaurus-plugin-content-docs/current",
           "docs": [
             {
               "unversionedId": "Database/concepts",
@@ -1646,6 +1646,58 @@
               }
             },
             {
+              "unversionedId": "DSA/java/Arrays/Best Time to Buy and Sell Stock",
+              "id": "DSA/java/Arrays/Best Time to Buy and Sell Stock",
+              "title": "Best Time to Buy and Sell Stock",
+              "description": "You are given an array prices where prices[i] is the price of a given stock on the ith day.",
+              "source": "@site/docs/DSA/java/Arrays/Best Time to Buy and Sell Stock.md",
+              "sourceDirName": "DSA/java/Arrays",
+              "slug": "/DSA/java/Arrays/Best Time to Buy and Sell Stock",
+              "permalink": "/docs/DSA/java/Arrays/Best Time to Buy and Sell Stock",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "sidebar_position": 1
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Best Time to Buy and Sell Stock II",
+                "permalink": "/docs/DSA/java/Arrays/Best Time to Buy And Sell Stock II"
+              },
+              "next": {
+                "title": "100 Easy",
+                "permalink": "/docs/category/100-easy"
+              }
+            },
+            {
+              "unversionedId": "DSA/java/Arrays/Best Time to Buy And Sell Stock II",
+              "id": "DSA/java/Arrays/Best Time to Buy And Sell Stock II",
+              "title": "Best Time to Buy and Sell Stock II",
+              "description": "You are given an integer array prices where prices[i] is the price of a stock on the ith day.",
+              "source": "@site/docs/DSA/java/Arrays/Best Time to Buy And Sell Stock II.md",
+              "sourceDirName": "DSA/java/Arrays",
+              "slug": "/DSA/java/Arrays/Best Time to Buy And Sell Stock II",
+              "permalink": "/docs/DSA/java/Arrays/Best Time to Buy And Sell Stock II",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "sidebar_position": 1
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Arrays Specific problems",
+                "permalink": "/docs/category/arrays-specific-problems"
+              },
+              "next": {
+                "title": "Best Time to Buy and Sell Stock",
+                "permalink": "/docs/DSA/java/Arrays/Best Time to Buy and Sell Stock"
+              }
+            },
+            {
               "unversionedId": "DSA/Javascript Specific/Array Prototype Last",
               "id": "DSA/Javascript Specific/Array Prototype Last",
               "title": "Array Prototype Last",
@@ -2109,8 +2161,8 @@
                 "permalink": "/docs/DSA/Javascript Specific/Summary Ranges"
               },
               "next": {
-                "title": "100 Easy",
-                "permalink": "/docs/category/100-easy"
+                "title": "Java Specific problems",
+                "permalink": "/docs/category/java-specific-problems"
               }
             },
             {
@@ -2959,6 +3011,42 @@
                       "description": "All the required JavaScript concepts goes here",
                       "slug": "/category/javascript-specific-problems",
                       "permalink": "/docs/category/javascript-specific-problems"
+                    }
+                  },
+                  {
+                    "type": "category",
+                    "label": "Java Specific problems",
+                    "collapsible": true,
+                    "collapsed": true,
+                    "items": [
+                      {
+                        "type": "category",
+                        "label": "Arrays Specific problems",
+                        "collapsible": true,
+                        "collapsed": true,
+                        "items": [
+                          {
+                            "type": "doc",
+                            "id": "DSA/java/Arrays/Best Time to Buy And Sell Stock II"
+                          },
+                          {
+                            "type": "doc",
+                            "id": "DSA/java/Arrays/Best Time to Buy and Sell Stock"
+                          }
+                        ],
+                        "link": {
+                          "type": "generated-index",
+                          "description": "All the required JavaScript concepts goes here",
+                          "slug": "/category/arrays-specific-problems",
+                          "permalink": "/docs/category/arrays-specific-problems"
+                        }
+                      }
+                    ],
+                    "link": {
+                      "type": "generated-index",
+                      "description": "All the required JavaScript concepts goes here",
+                      "slug": "/category/java-specific-problems",
+                      "permalink": "/docs/category/java-specific-problems"
                     }
                   },
                   {
