@@ -3,7 +3,7 @@ sidebar_position: 4
 ---
 # Adapter
 
-```
+```go
 package main
 
 import "fmt"
