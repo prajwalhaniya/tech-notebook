@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# LLD Instagram
+# Design Instagram
 
 ## Table of Contents
 1. [Overview](#overview)

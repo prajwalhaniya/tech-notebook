@@ -2,6 +2,8 @@
 sidebar_position: 1
 ---
 
+# Design a Parking Lot
+
 ### Problem Statement
 
 A parking lot is a designated area for parking vehicles, commonly found in venues like shopping malls, sports stadiums, and office buildings. 
