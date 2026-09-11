@@ -620,6 +620,32 @@ article table {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
+/* Wrap a table with many columns (e.g. a pattern/domain matrix) in
+   <div class="table-scroll">...</div> in the markdown source. A plain
+   <table> can only wrap or squash its columns to fit the page — there's
+   no DOM wrapper by default to scroll — so this class provides one and
+   forces the table to keep its natural column widths (nowrap) so it
+   actually overflows into a horizontal scrollbar instead of being
+   clipped or crushed unreadably. */
+.table-scroll {
+  overflow-x: auto;
+  margin: 2rem 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.table-scroll table {
+  display: table;
+  width: max-content;
+  min-width: 100%;
+  white-space: nowrap;
+  margin: 0;
+  box-shadow: none;
+  border-radius: 0;
+}
+
 article table thead tr {
   background: linear-gradient(135deg,
     var(--ifm-color-primary),
@@ -710,4 +736,22 @@ article > p:first-of-type::first-letter {
   margin: 0.1rem 0.5rem 0 0;
   font-weight: 700;
   color: var(--ifm-color-primary);
+}
+
+/* =========================================================
+   SIDEBAR TOGGLE POSITIONING
+   By default, the "expand sidebar" arrow is a full-height clickable
+   strip with the icon centered mid-viewport, which reads as a
+   distracting floating arrow while reading. Anchor it to the bottom
+   instead, so it lines up with the "collapse sidebar" button below
+   the menu and both controls live in the same predictable spot.
+   ========================================================= */
+@media (min-width: 997px) {
+  /* !important: the component's own positioning rule is injected in a
+     later CSS chunk than this stylesheet, so it would otherwise win
+     the cascade despite matching specificity. */
+  [class*='expandButton_'] {
+    align-items: flex-end !important;
+    padding-bottom: 14px;
+  }
 }

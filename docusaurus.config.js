@@ -75,6 +75,12 @@ const config = {
           // {to: '/blog', label: 'Blog', position: 'left'},
         ],
       },
+      docs: {
+        sidebar: {
+          hideable: true,
+          autoCollapseCategories: true,
+        },
+      },
       footer: {
         style: 'dark',
         copyright: `Copyright © ${new Date().getFullYear()} Tech Notebook`,

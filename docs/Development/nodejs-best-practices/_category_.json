@@ -1,0 +1,8 @@
+{
+  "label": "Node.js Best Practices",
+  "position": 10,
+  "link": {
+    "type": "generated-index",
+    "description": "A curated, in-depth guide to writing production-grade Node.js applications — project structure, error handling, code style, testing, going to production, security, performance, and Docker. Adapted from the open-source nodebestpractices project by Yoni Goldberg."
+  }
+}
