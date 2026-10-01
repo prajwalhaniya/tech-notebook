@@ -157,6 +157,24 @@ A bottom-up walkthrough of the `fs` module — from `fs.readFile()` in JavaScrip
 
 ---
 
+### HTTP Request Lifecycle
+
+A bottom-up trace of a single HTTP request — from the kernel's TCP accept queue through libuv, the llhttp parser, and the `http` module's JavaScript layer, to the response hitting the wire.
+
+**Covers:**
+- The TCP accept path — `uv_listen()`, `OnConnection`, `TCPWrap` (`src/tcp_wrap.cc`)
+- llhttp — the generated HTTP/1.x parser state machine (`deps/llhttp/`, `src/node_http_parser.cc`)
+- The parser `FreeList` pool that reuses `HTTPParser` instances across connections (`lib/_http_common.js`)
+- How `onHeadersComplete` constructs `IncomingMessage` and fires the server's `'request'` event before the body has fully arrived
+- `IncomingMessage` as a push-based Readable stream (`lib/_http_incoming.js`)
+- `ServerResponse` / `OutgoingMessage` — header flushing on first `write()`, chunked vs `Content-Length` framing (`lib/_http_outgoing.js`)
+- Keep-alive: parser and socket reuse across requests, `server.keepAliveTimeout`, and the load-balancer idle-timeout mismatch that causes sporadic 502s
+- Backpressure on both the request body and the response write path
+- What changes under HTTP/2 — multiplexed streams, HPACK, per-stream flow control (`lib/internal/http2/core.js`)
+- How `cluster` distributes connections from one shared listen socket across worker processes
+
+---
+
 ## Reading the Source
 
 All code references in these guides use the format `path/to/file.js:line_number`. To follow along:
@@ -182,3 +200,5 @@ The guides reference line numbers from the main branch at time of writing. Line 
 | `Module._cache` | `lib/internal/modules/cjs/loader.js` | Ensures each module is compiled and executed only once |
 | `highWaterMark` | `lib/internal/streams/state.js` | The backpressure threshold for all streams |
 | `UV_THREADPOOL_SIZE` | libuv / env var | Controls how many blocking operations can run concurrently |
+| `HTTPParser` (llhttp) | `src/node_http_parser.cc`, `deps/llhttp/` | Turns raw socket bytes into request/response events |
+| Parser `FreeList` | `lib/_http_common.js` | Reuses `HTTPParser` instances across keep-alive connections |
