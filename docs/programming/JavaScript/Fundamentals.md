@@ -31,7 +31,9 @@ console.log(contained); // ReferenceError
 
 ### Hoisting and the Temporal Dead Zone
 
-`var` is hoisted and initialized to `undefined`. `let` and `const` are hoisted but **not initialized** — accessing them before the declaration throws a `ReferenceError`. This inaccessible window is the **Temporal Dead Zone (TDZ)**.
+`var` is hoisted and initialized to `undefined`.
+
+`let` and `const` are hoisted but **not initialized** — accessing them before the declaration throws a `ReferenceError`. This inaccessible window is the **Temporal Dead Zone (TDZ)**.
 
 ```js
 console.log(a); // undefined — var is hoisted and initialized
