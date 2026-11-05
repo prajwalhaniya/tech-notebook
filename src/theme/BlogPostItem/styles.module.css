@@ -1,0 +1,32 @@
+.listItem {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  text-decoration: none !important;
+  color: inherit;
+}
+
+.listItem:last-child {
+  border-bottom: none;
+}
+
+.listItemTitle {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ifm-heading-color);
+  transition: color var(--ifm-transition-fast) ease;
+}
+
+.listItem:hover .listItemTitle {
+  color: var(--ifm-color-primary);
+}
+
+.listItemDate {
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-600);
+  white-space: nowrap;
+}

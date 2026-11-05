@@ -14,6 +14,8 @@ The original pitch for Node.js was simple: one language on frontend and backend,
 
 The combination is now the dominant stack for: API gateways, backend-for-frontends (BFFs), developer tooling, real-time services, and internal microservices.
 
+<!-- truncate -->
+
 ---
 
 ## Architecture: How Enterprises Structure Node.js at Scale
