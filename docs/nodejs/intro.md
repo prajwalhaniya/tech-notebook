@@ -82,6 +82,23 @@ The key directories in [nodejs/node](https://github.com/nodejs/node):
 
 ## Guides in This Section
 
+### Node.js Runtime & Event Loop
+
+The foundational guide: how a `node` process actually boots, and what `uv_run()` is really iterating over — from `main()` to process exit, at the level of the real C/C++ structures involved.
+
+**Covers:**
+- The three-layer runtime: V8, libuv, and the `Environment`/`IsolateData` glue that connects them (`src/env.h`, `src/api/environment.cc`)
+- Process bootstrap in order: `uv_loop_init()` → `NewIsolate` → `CreateEnvironment` → `LoadEnvironment` → `SpinEventLoopInternal` (`src/node.cc`, `src/api/embed_helpers.cc`)
+- Why your module's top-level code runs *before* the event loop ever starts turning
+- The `uv_loop_t` structure itself — timer min-heap, pending queue, I/O watcher list, active handle/request counts (`deps/uv/src/unix/core.c`)
+- Phase-by-phase mechanics of one `uv_run()` iteration — timers, pending, idle/prepare, poll, check, closing handles
+- The poll phase's timeout calculation and why an idle Node.js process uses ~0% CPU (`uv__io_poll`, `deps/uv/src/unix/linux.c`)
+- `ref()` / `unref()` and the active-handle count that decides whether `uv_loop_alive()` — and therefore the process — keeps running
+- Where `process.nextTick` and the microtask queue actually drain: after every JS callback, not just at phase boundaries
+- Worker threads as fully independent runtimes — separate `Environment`, isolate, and `uv_loop_t` per thread (`src/node_worker.cc`)
+
+---
+
 ### Async Internals
 
 How async code actually runs — tracing the full path from `setTimeout` to `async/await` through the C++ async context stack.
@@ -175,6 +192,22 @@ A bottom-up trace of a single HTTP request — from the kernel's TCP accept queu
 
 ---
 
+### Worked Example: an Express Request
+
+A single Express app, traced line by line through the runtime and event loop guides above — `require('express')` as module loading, `app.listen()` as the first libuv handle, a synchronous route handled inside one poll-phase callback, and an `async` route suspending on `await` and resuming via microtask while the loop serves other clients in between.
+
+**Covers:**
+- Why `app.get()` is pure synchronous data (a router stack entry), with zero event-loop involvement
+- `app.listen()` unpacked into `http.createServer` + `net.Server.listen()` → `uv_tcp_bind`/`uv_listen`, and why that handle keeps the process alive forever
+- What "the script ends, the loop takes over" looks like for a real server
+- A synchronous handler served start-to-finish inside a single poll-phase callback
+- An `async` handler's exact suspend point at `await`, and why control returns to the loop immediately instead of blocking
+- A concrete two-client interleaved timeline showing one thread serving a fast synchronous request *during* a slower async request's in-flight DB call
+- Why keep-alive sockets eventually stop keeping the process alive but the listening socket never does
+- What changes — and breaks — when an async route is replaced with a CPU-bound synchronous one
+
+---
+
 ## Reading the Source
 
 All code references in these guides use the format `path/to/file.js:line_number`. To follow along:
@@ -192,6 +225,8 @@ The guides reference line numbers from the main branch at time of writing. Line 
 | Concept | Where it lives | Why it matters |
 |---|---|---|
 | `uv_run()` / event loop | `src/api/embed_helpers.cc` | The outermost loop that keeps Node running |
+| `uv_loop_t` active handle count | `deps/uv/src/unix/core.c` | What `uv_loop_alive()` checks — decides if the process exits |
+| `uv__io_poll` timeout calc | `deps/uv/src/unix/linux.c` | Why an idle Node.js process blocks instead of busy-waiting |
 | `async_id_fields` TypedArray | `lib/internal/async_hooks.js` | Zero-cost JS/C++ shared state for async tracking |
 | `push/pop_async_context` | `src/env.cc` | Maintains correct `executionAsyncId` across callbacks |
 | `callbackTrampoline` | `lib/internal/async_hooks.js` | Hot path for every I/O callback — fires before/after hooks |
