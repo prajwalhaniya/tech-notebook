@@ -32,6 +32,13 @@ const config = {
     locales: ['en'],
   },
 
+  stylesheets: [
+    {
+      href: 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=IBM+Plex+Mono:wght@400;600&display=swap',
+      type: 'text/css',
+    },
+  ],
+
   presets: [
     [
       'classic',

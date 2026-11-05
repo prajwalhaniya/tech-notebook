@@ -11,7 +11,7 @@ Welcome to Tech Notebook — a comprehensive knowledge base designed to help you
 
 This knowledge base covers six major areas of software engineering:
 
-### 🌐 [Technology Fundamentals](./category/technology-fundamentals/)
+### 🌐 [Technology Fundamentals](./category/technology/)
 Deep-dive into how technologies actually work. Learn about Email systems (SMTP, POP3, IMAP), Internet architecture (protocols, routing, DNS), and the infrastructure that powers the web.
 
 ### 💻 [Programming Languages](./category/programming/)
@@ -49,7 +49,7 @@ Go beyond surface-level to truly understand how things work.
 New to programming or tech? Start with [Programming Basics](./category/c-programming/).
 
 ### Technology Explorer
-Want to understand how things work? Explore [Technology Fundamentals](./category/technology-fundamentals/).
+Want to understand how things work? Explore [Technology Fundamentals](./category/technology/).
 
 ### System Architect
 Building scalable applications? Master [System Design & Architecture](./category/hld/).
