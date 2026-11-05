@@ -1,44 +1,28 @@
 import React from 'react';
-import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
 import styles from './index.module.css';
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
   return (
     <header className={styles.heroBanner}>
       <div className="container">
         <div className={styles.heroContent}>
-          <span className={styles.eyebrow}>ENGINEERING KNOWLEDGE BASE</span>
+          <span className={styles.eyebrow}>Engineering Notebook</span>
 
-          <h1 className={styles.heroTitle}>
-            Learn technology
-            <br />
-            from first principles.
-          </h1>
+          <h1 className={styles.heroTitle}>Notes on building software.</h1>
 
           <p className={styles.heroDescription}>
-            A comprehensive knowledge base covering programming, system design, databases,
-            algorithms, and the engineering fundamentals that power modern technology.
+            A running set of notes on programming, system design, databases,
+            and the engineering fundamentals underneath. Organized like a
+            notebook — by topic, in order, nothing in the way.
           </p>
 
-          <div className={styles.buttons}>
-            <Link
-              className="button button--primary button--lg"
-              to="/docs/intro">
-              Explore the knowledge base
-              <span>→</span>
-            </Link>
-            {/* <Link
-              className="button button--outline button--lg"
-              to="/docs/category/technology-fundamentals/">
-              Start with fundamentals
-            </Link> */}
-          </div>
+          <Link className={styles.heroLink} to="/docs/intro">
+            Start from page one <span>→</span>
+          </Link>
         </div>
       </div>
     </header>
@@ -46,7 +30,6 @@ function HomepageHeader() {
 }
 
 export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
       title="Home"

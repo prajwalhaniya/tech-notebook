@@ -1,0 +1,43 @@
+@media (min-width: 997px) {
+  .generatedIndexPage {
+    max-width: 75% !important;
+  }
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.description {
+  max-width: 640px;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+.listHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 760px;
+  margin: 0 0 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--ifm-heading-color);
+}
+
+.listLabel {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.listCount {
+  font-size: 0.8125rem;
+  color: var(--ifm-color-emphasis-500);
+  white-space: nowrap;
+}

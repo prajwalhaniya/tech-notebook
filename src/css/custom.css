@@ -14,10 +14,10 @@
   --ifm-color-primary-lightest: #4b5563;
 
   /* Typography */
-  --ifm-font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    'Helvetica Neue', Arial, sans-serif;
-  --ifm-font-family-monospace: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono',
-    Consolas, 'Courier New', monospace;
+  --ifm-font-family-base: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --ifm-font-family-monospace: 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono',
+    'IBM Plex Mono', 'Courier New', monospace;
   --ifm-code-font-size: 95%;
   --ifm-line-height-base: 1.7;
 
@@ -120,27 +120,23 @@ h3,
 h4,
 h5,
 h6 {
-  letter-spacing: -0.025em;
-  font-weight: 700;
+  font-weight: 600;
   margin-top: 0;
 }
 
 h1 {
   font-size: 2.5rem;
-  line-height: 1.1;
-  letter-spacing: -0.045em;
+  line-height: 1.2;
 }
 
 h2 {
   font-size: 2rem;
-  line-height: 1.15;
-  letter-spacing: -0.035em;
+  line-height: 1.25;
 }
 
 h3 {
   font-size: 1.5rem;
-  line-height: 1.25;
-  letter-spacing: -0.025em;
+  line-height: 1.3;
 }
 
 code {
@@ -157,8 +153,7 @@ code {
 }
 
 .navbar__title {
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-weight: 600;
   font-size: 1.125rem;
 }
 
@@ -289,10 +284,14 @@ code {
   border: 1px solid var(--ifm-border-color);
 }
 
-/* Pagination */
-.pagination-nav__link {
-  border-radius: 4px;
-  border: 1px solid var(--ifm-border-color);
+/* Pagination
+   Layout and hover motion live in the swizzled PaginatorNavLink
+   component (src/theme/PaginatorNavLink); this just turns off
+   Infima's built-in "« "/" »" text so our own arrow glyph is the
+   only one rendered. */
+.pagination-nav__link--prev .pagination-nav__label::before,
+.pagination-nav__link--next .pagination-nav__label::after {
+  content: '';
 }
 
 /* Breadcrumbs */
@@ -407,15 +406,36 @@ main {
   padding: 0.25rem 0.75rem;
   line-height: 1.3;
   font-weight: 500;
+  border-left: 2px solid transparent;
 }
 
 .menu__list-item-collapsible .menu__link {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 600;
 }
 
 .menu__list .menu__list {
   font-size: 0.8rem;
+}
+
+.menu__list .menu__list .menu__link {
+  border-left-color: var(--ifm-border-color);
+}
+
+/* A thin left rule marks the active page, like a bookmark tab in the
+   margin, instead of Infima's default tinted background pill.
+   (.menu__link.menu__link--active, not just .menu__link--active, to
+   outrank the nested-list margin rule above on specificity.) */
+.menu__link.menu__link--active:not(.menu__link--sublist) {
+  background: transparent;
+  border-left-color: var(--ifm-heading-color);
+  color: var(--ifm-heading-color);
+  font-weight: 700;
+}
+
+.menu__link.menu__link--active:not(.menu__link--sublist):hover {
+  background: var(--ifm-menu-color-background-hover);
+  color: var(--ifm-heading-color);
 }
 
 .menu__list-item:not(:first-child) {
@@ -426,89 +446,16 @@ main {
   margin-top: 0;
 }
 
-/* Sidebar category caret — premium chevron icon */
-.menu__caret:before,
-.menu__link--sublist:after {
-  background: none;
-  filter: none;
-  width: 1rem;
-  height: 1rem;
-  opacity: 0.55;
-  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 17 12 9 18"></polyline></svg>');
-  mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 17 12 9 18"></polyline></svg>');
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
-  -webkit-mask-size: 0.9rem;
-  mask-size: 0.9rem;
-  background-color: var(--ifm-menu-color);
-  transform: rotate(90deg);
-  transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 0.15s ease, opacity 0.15s ease;
-}
-
-.menu__list-item--collapsed .menu__link--sublist:after,
-.menu__list-item--collapsed .menu__caret:before {
-  transform: rotate(0deg);
-}
-
-.menu__caret {
-  border-radius: 0.375rem;
-}
-
-.menu__caret:hover:before,
-.menu__link--sublist:hover:after {
-  opacity: 1;
-  background-color: var(--ifm-color-primary);
-}
-
-.menu__list-item-collapsible--active .menu__caret:before,
-.menu__list-item-collapsible--active .menu__link--sublist:after {
-  background-color: var(--ifm-color-primary);
-  opacity: 0.85;
-}
-
-/* Page Animations */
-
-/* Page transition animation */
-article {
-  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px) scale(0.98);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Add subtle parallax effect to headings */
-article h1, article h2 {
-  animation: headingFadeIn 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.2s backwards;
-}
-
-@keyframes headingFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Premium Content Styling */
+/* =========================================================
+   DOC CONTENT TYPOGRAPHY
+   Plain, notebook-like reading styles: serif headings, flat
+   borders instead of shadows/gradients, no decorative motion.
+   ========================================================= */
 
 /* Main content container */
 .theme-doc-markdown {
@@ -516,27 +463,21 @@ article h1, article h2 {
   margin: 0 auto;
 }
 
-/* Typography improvements */
 article p {
   font-size: 1.05rem;
   line-height: 1.8;
   margin-bottom: 1.5rem;
   color: var(--ifm-font-color-base);
-  letter-spacing: 0.01em;
 }
 
-/* Premium heading styles */
 article h1 {
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.2;
   margin-bottom: 1.5rem;
   margin-top: 2rem;
-  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-light) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  letter-spacing: -0.02em;
+  color: var(--ifm-heading-color);
+  letter-spacing: -0.01em;
 }
 
 article h2 {
@@ -546,9 +487,8 @@ article h2 {
   margin-top: 3rem;
   margin-bottom: 1.25rem;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid rgba(112, 100, 243, 0.15);
+  border-bottom: 1px solid var(--ifm-border-color);
   color: var(--ifm-heading-color);
-  letter-spacing: -0.01em;
 }
 
 article h3 {
@@ -565,41 +505,28 @@ article h4 {
   font-weight: 600;
   margin-top: 2rem;
   margin-bottom: 0.875rem;
-  color: var(--ifm-color-primary-darker);
+  color: var(--ifm-heading-color);
 }
 
-/* Enhanced links */
+/* Links */
 article a:not(.hash-link) {
   color: var(--ifm-color-primary);
   text-decoration: none;
   font-weight: 500;
   border-bottom: 1px solid transparent;
-  transition: all 0.2s ease;
-  position: relative;
+  transition: border-color 0.2s ease;
 }
 
 article a:not(.hash-link):hover {
-  color: var(--ifm-color-primary-darker);
   border-bottom: 1px solid var(--ifm-color-primary);
 }
 
-/* Premium code blocks */
+/* Code blocks */
 article pre {
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(112, 100, 243, 0.1);
+  border-radius: 4px;
+  border: 1px solid var(--ifm-border-color);
   margin: 2rem 0;
   font-size: 0.9rem;
-}
-
-article code {
-  background-color: rgba(112, 100, 243, 0.08);
-  color: var(--ifm-color-primary-darker);
-  padding: 0.2em 0.4em;
-  border-radius: 4px;
-  font-size: 0.9em;
-  font-weight: 500;
-  border: 1px solid rgba(112, 100, 243, 0.12);
 }
 
 article pre code {
@@ -610,18 +537,13 @@ article pre code {
   font-weight: normal;
 }
 
-/* Beautiful blockquotes */
+/* Blockquotes */
 article blockquote {
-  border-left: 4px solid var(--ifm-color-primary);
-  background: linear-gradient(90deg,
-    rgba(112, 100, 243, 0.05),
-    rgba(112, 100, 243, 0.02)
-  );
-  padding: 1.25rem 1.5rem;
+  border-left: 3px solid var(--ifm-color-emphasis-500);
+  background: var(--ifm-color-emphasis-100);
+  padding: 1rem 1.5rem;
   margin: 2rem 0;
-  border-radius: 0 8px 8px 0;
   font-style: italic;
-  box-shadow: 0 2px 8px rgba(112, 100, 243, 0.08);
 }
 
 article blockquote p {
@@ -632,7 +554,7 @@ article blockquote p:last-child {
   margin-bottom: 0;
 }
 
-/* Enhanced lists */
+/* Lists */
 article ul, article ol {
   margin-bottom: 1.5rem;
   padding-left: 1.75rem;
@@ -644,23 +566,12 @@ article li {
   font-size: 1.05rem;
 }
 
-article ul li::marker {
-  color: var(--ifm-color-primary);
-}
-
-article ol li::marker {
-  color: var(--ifm-color-primary);
-  font-weight: 600;
-}
-
 /* Tables */
 article table {
   border-collapse: collapse;
   width: 100%;
   margin: 2rem 0;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--ifm-border-color);
 }
 
 /* Wrap a table with many columns (e.g. a pattern/domain matrix) in
@@ -673,8 +584,7 @@ article table {
 .table-scroll {
   overflow-x: auto;
   margin: 2rem 0;
-  border-radius: 8px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--ifm-border-color);
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
 }
@@ -690,38 +600,27 @@ article table {
 }
 
 article table thead tr {
-  background: linear-gradient(135deg,
-    var(--ifm-color-primary),
-    var(--ifm-color-primary-light)
-  );
-  color: white;
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-heading-color);
 }
 
 article table th {
   padding: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   text-align: left;
   font-size: 0.95rem;
-  letter-spacing: 0.02em;
+  border-bottom: 1px solid var(--ifm-border-color);
 }
 
 article table td {
   padding: 0.875rem 1rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-article table tbody tr {
-  transition: background-color 0.2s ease;
-}
-
-article table tbody tr:hover {
-  background-color: rgba(112, 100, 243, 0.04);
+  border-bottom: 1px solid var(--ifm-border-color);
 }
 
 /* Images */
 article img {
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  border: 1px solid var(--ifm-border-color);
   margin: 2rem 0;
   max-width: 100%;
 }
@@ -729,56 +628,8 @@ article img {
 /* Horizontal rule */
 article hr {
   border: none;
-  height: 2px;
-  background: linear-gradient(90deg,
-    transparent,
-    rgba(112, 100, 243, 0.3),
-    transparent
-  );
+  border-top: 1px solid var(--ifm-border-color);
   margin: 3rem 0;
-}
-
-/* Add subtle shadow to content */
-.theme-doc-markdown {
-  padding: 2rem;
-  background: var(--ifm-background-color);
-  border-radius: 12px;
-}
-
-/* Improve reading experience in dark mode */
-[data-theme='dark'] article p,
-[data-theme='dark'] article li {
-  color: rgba(255, 255, 255, 0.85);
-}
-
-[data-theme='dark'] article h1 {
-  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-lighter) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-[data-theme='dark'] article table thead tr {
-  background: linear-gradient(135deg,
-    var(--ifm-color-primary-darker),
-    var(--ifm-color-primary)
-  );
-}
-
-[data-theme='dark'] article code {
-  background-color: rgba(157, 151, 248, 0.15);
-  color: var(--ifm-color-primary-lighter);
-  border: 1px solid rgba(157, 151, 248, 0.2);
-}
-
-/* First paragraph drop cap effect for premium look */
-article > p:first-of-type::first-letter {
-  font-size: 3.5rem;
-  line-height: 1;
-  float: left;
-  margin: 0.1rem 0.5rem 0 0;
-  font-weight: 700;
-  color: var(--ifm-color-primary);
 }
 
 /* =========================================================
@@ -796,5 +647,111 @@ article > p:first-of-type::first-letter {
   [class*='expandButton_'] {
     align-items: flex-end !important;
     padding-bottom: 14px;
+  }
+}
+
+/* =========================================================
+   NOTEBOOK INDEX
+   A plain numbered table-of-contents list — a dotted leader
+   between title and arrow, a one-line description underneath.
+   Shared by the homepage Contents section and the doc category
+   index pages (src/theme/DocCard, DocCardList).
+   ========================================================= */
+
+.notebookIndex {
+  max-width: 760px;
+}
+
+.notebookIndexEntry {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr auto;
+  align-items: start;
+  column-gap: 1rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--ifm-border-color);
+  color: var(--ifm-font-color-base);
+}
+
+.notebookIndexEntry:hover {
+  color: var(--ifm-font-color-base);
+}
+
+.notebookIndexEntry:first-child {
+  padding-top: 1.25rem;
+}
+
+.notebookIndexNumber {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.875rem;
+  color: var(--ifm-color-emphasis-500);
+  padding-top: 0.25rem;
+}
+
+.notebookIndexBody {
+  min-width: 0;
+}
+
+.notebookIndexTitleRow {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.notebookIndexTitle {
+  font-size: 1.1875rem;
+  font-weight: 600;
+  color: var(--ifm-heading-color);
+  white-space: nowrap;
+}
+
+.notebookIndexLeader {
+  flex: 1;
+  border-bottom: 1px dotted var(--ifm-color-emphasis-500);
+  margin-bottom: 0.3rem;
+}
+
+.notebookIndexDescription {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.notebookIndexArrow {
+  padding-top: 0.2rem;
+  font-size: 1.125rem;
+  color: var(--ifm-heading-color);
+  opacity: 0;
+  transform: translateX(-3px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.notebookIndexEntry:hover .notebookIndexArrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.notebookIndexEntry:hover .notebookIndexTitle {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media screen and (max-width: 640px) {
+  .notebookIndexEntry {
+    grid-template-columns: 2rem 1fr auto;
+    column-gap: 0.75rem;
+  }
+
+  .notebookIndexTitleRow {
+    flex-wrap: wrap;
+  }
+
+  .notebookIndexLeader {
+    display: none;
+  }
+
+  .notebookIndexTitle {
+    white-space: normal;
   }
 }
