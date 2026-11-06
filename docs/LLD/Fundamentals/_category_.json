@@ -1,0 +1,8 @@
+{
+    "label": "Fundamentals",
+    "position": 0,
+    "link": {
+      "type": "generated-index",
+      "description": "Object-oriented foundations every LLD interview builds on: the four OOP pillars and the SOLID principles."
+    }
+}
