@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-## TypeORM
+# TypeORM
 
 TypeORM is a TypeScript/JavaScript ORM (Object-Relational Mapping) that can run in Node.js, Browser, Cordova, PhoneGap, Ionic, React Native, and Electron. It supports PostgreSQL, MySQL, MariaDB, SQLite, MS SQL Server, Oracle, and more.
 
