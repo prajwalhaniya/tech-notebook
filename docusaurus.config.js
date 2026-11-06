@@ -74,12 +74,11 @@ const config = {
         title: 'Tech Notebook',
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            type: 'custom-topicsDropdown',
             position: 'left',
-            label: 'Learn',
           },
           // {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/reels', label: 'Reels', position: 'right'},
         ],
       },
       docs: {

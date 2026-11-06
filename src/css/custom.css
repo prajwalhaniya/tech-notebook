@@ -438,6 +438,20 @@ main {
   color: var(--ifm-heading-color);
 }
 
+/* =========================================================
+   NAVBAR "TOPICS" DROPDOWN
+   The dropdown's own trigger label becomes the selected topic's
+   name (see src/components/TopicsNavbarItem), so the category
+   shows in place of the word "Topics" instead of as a separate
+   heading elsewhere. This just makes the currently-selected
+   topic stand out inside the open dropdown list too.
+   ========================================================= */
+.dropdown__link--active {
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-heading-color) !important;
+  font-weight: 700;
+}
+
 .menu__list-item:not(:first-child) {
   margin-top: 0.125rem;
 }
@@ -459,14 +473,14 @@ html {
 
 /* Main content container */
 .theme-doc-markdown {
-  max-width: 900px;
+  max-width: 940px;
   margin: 0 auto;
 }
 
 article p {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
   color: var(--ifm-font-color-base);
 }
 
@@ -474,29 +488,27 @@ article h1 {
   font-size: 2.5rem;
   font-weight: 600;
   line-height: 1.2;
-  margin-bottom: 1.5rem;
-  margin-top: 2rem;
+  margin-bottom: 1.25rem;
+  margin-top: 1.5rem;
   color: var(--ifm-heading-color);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 
 article h2 {
   font-size: 1.875rem;
   font-weight: 600;
   line-height: 1.3;
-  margin-top: 3rem;
-  margin-bottom: 1.25rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--ifm-border-color);
+  margin-top: 2.5rem;
+  margin-bottom: 0.5rem;
   color: var(--ifm-heading-color);
 }
 
 article h3 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 600;
   line-height: 1.4;
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
   color: var(--ifm-heading-color);
 }
 
@@ -541,9 +553,10 @@ article pre code {
 article blockquote {
   border-left: 3px solid var(--ifm-color-emphasis-500);
   background: var(--ifm-color-emphasis-100);
-  padding: 1rem 1.5rem;
-  margin: 2rem 0;
-  font-style: italic;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  border-radius: 0 6px 6px 0;
+  font-style: normal;
 }
 
 article blockquote p {
@@ -619,9 +632,8 @@ article table td {
 
 /* Images */
 article img {
-  border-radius: 4px;
-  border: 1px solid var(--ifm-border-color);
-  margin: 2rem 0;
+  display: block;
+  margin: 1.75rem auto;
   max-width: 100%;
 }
 
@@ -652,8 +664,7 @@ article hr {
 
 /* =========================================================
    NOTEBOOK INDEX
-   A plain numbered table-of-contents list — a dotted leader
-   between title and arrow, a one-line description underneath.
+   A plain numbered table of contents — number, title, arrow.
    Shared by the homepage Contents section and the doc category
    index pages (src/theme/DocCard, DocCardList).
    ========================================================= */
@@ -665,61 +676,34 @@ article hr {
 .notebookIndexEntry {
   display: grid;
   grid-template-columns: 2.5rem 1fr auto;
-  align-items: start;
+  align-items: center;
   column-gap: 1rem;
-  padding: 1.1rem 0;
-  border-bottom: 1px solid var(--ifm-border-color);
+  padding: 0.9rem 0.75rem;
+  margin: 0 -0.75rem;
+  border-radius: 6px;
   color: var(--ifm-font-color-base);
+  transition: background-color 0.15s ease;
 }
 
 .notebookIndexEntry:hover {
+  background: var(--ifm-color-emphasis-100);
   color: var(--ifm-font-color-base);
-}
-
-.notebookIndexEntry:first-child {
-  padding-top: 1.25rem;
 }
 
 .notebookIndexNumber {
   font-family: var(--ifm-font-family-monospace);
   font-size: 0.875rem;
   color: var(--ifm-color-emphasis-500);
-  padding-top: 0.25rem;
-}
-
-.notebookIndexBody {
-  min-width: 0;
-}
-
-.notebookIndexTitleRow {
-  display: flex;
-  align-items: baseline;
-  gap: 0.6rem;
 }
 
 .notebookIndexTitle {
+  min-width: 0;
   font-size: 1.1875rem;
   font-weight: 600;
   color: var(--ifm-heading-color);
-  white-space: nowrap;
-}
-
-.notebookIndexLeader {
-  flex: 1;
-  border-bottom: 1px dotted var(--ifm-color-emphasis-500);
-  margin-bottom: 0.3rem;
-}
-
-.notebookIndexDescription {
-  display: block;
-  margin-top: 0.35rem;
-  font-size: 0.875rem;
-  line-height: 1.6;
-  color: var(--ifm-color-emphasis-700);
 }
 
 .notebookIndexArrow {
-  padding-top: 0.2rem;
   font-size: 1.125rem;
   color: var(--ifm-heading-color);
   opacity: 0;
@@ -732,26 +716,9 @@ article hr {
   transform: translateX(0);
 }
 
-.notebookIndexEntry:hover .notebookIndexTitle {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
 @media screen and (max-width: 640px) {
   .notebookIndexEntry {
     grid-template-columns: 2rem 1fr auto;
     column-gap: 0.75rem;
-  }
-
-  .notebookIndexTitleRow {
-    flex-wrap: wrap;
-  }
-
-  .notebookIndexLeader {
-    display: none;
-  }
-
-  .notebookIndexTitle {
-    white-space: normal;
   }
 }

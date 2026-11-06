@@ -1,24 +1,12 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
-import {
-  findFirstCategoryLink,
-  useDocById,
-} from '@docusaurus/theme-common/internal';
-import {translate} from '@docusaurus/Translate';
+import {findFirstCategoryLink} from '@docusaurus/theme-common/internal';
 
-function EntryLayout({href, number, title, description}) {
+function EntryLayout({href, number, title}) {
   return (
     <Link href={href} className="notebookIndexEntry">
       <span className="notebookIndexNumber">{number}</span>
-      <span className="notebookIndexBody">
-        <span className="notebookIndexTitleRow">
-          <span className="notebookIndexTitle">{title}</span>
-          <span className="notebookIndexLeader" />
-        </span>
-        {description && (
-          <span className="notebookIndexDescription">{description}</span>
-        )}
-      </span>
+      <span className="notebookIndexTitle">{title}</span>
       <span className="notebookIndexArrow">→</span>
     </Link>
   );
@@ -30,37 +18,11 @@ function CardCategory({item, number}) {
   if (!href) {
     return null;
   }
-  return (
-    <EntryLayout
-      href={href}
-      number={number}
-      title={item.label}
-      description={
-        item.description ??
-        translate(
-          {
-            message: '{count} items',
-            id: 'theme.docs.DocCard.categoryDescription',
-            description:
-              'The default description for a category card in the generated index about how many items this category includes',
-          },
-          {count: item.items.length},
-        )
-      }
-    />
-  );
+  return <EntryLayout href={href} number={number} title={item.label} />;
 }
 
 function CardLink({item, number}) {
-  const doc = useDocById(item.docId ?? undefined);
-  return (
-    <EntryLayout
-      href={item.href}
-      number={number}
-      title={item.label}
-      description={item.description ?? doc?.description}
-    />
-  );
+  return <EntryLayout href={item.href} number={number} title={item.label} />;
 }
 
 export default function DocCard({item, index}) {

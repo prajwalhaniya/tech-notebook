@@ -46,7 +46,7 @@ Go beyond surface-level to truly understand how things work.
 ## Choose Your Path
 
 ### Complete Beginner
-New to programming or tech? Start with [Programming Basics](./category/c-programming/).
+New to programming or tech? Start with [Programming Basics](./category/programming/).
 
 ### Technology Explorer
 Want to understand how things work? Explore [Technology Fundamentals](./category/technology/).
@@ -60,4 +60,4 @@ This is an open-source knowledge base. Feel free to explore, learn, and share!
 
 ---
 
-Ready to start? Choose a topic above or explore the sidebar to dive into any area that interests you.
+Ready to start? Pick a topic from the **Topics** menu at the top of the page — the sidebar will then show everything under that topic.

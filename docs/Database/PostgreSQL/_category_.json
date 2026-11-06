@@ -1,0 +1,8 @@
+{
+    "label": "PostgreSQL Internals",
+    "position": 1.5,
+    "link": {
+      "type": "generated-index",
+      "description": "Level 1 — Database Fundamentals & SQL: how PostgreSQL actually works underneath the SQL you write, from the relational model down to the bytes on disk."
+    }
+  }

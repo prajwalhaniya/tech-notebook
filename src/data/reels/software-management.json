@@ -1,0 +1,630 @@
+{
+  "topic": "software-management",
+  "topicLabel": "Software Management",
+  "cards": [
+    {
+      "id": "mgmt-0001",
+      "tag": "Microservices",
+      "heading": "Split only when the pain is real",
+      "hook": "Only split a service when the pain of the monolith exceeds the complexity cost of distribution.",
+      "body": "Splitting too early, or along the wrong boundaries, creates more problems than it solves.",
+      "sourceDoc": "/docs/Software_Management/Managing_Large_Scale_Software"
+    },
+    {
+      "id": "mgmt-0002",
+      "tag": "Microservices",
+      "heading": "Natural split points have minimal cross-calls",
+      "hook": "The best place to split a service is wherever two modules already have the fewest calls between them.",
+      "body": "High cohesion inside a module plus low coupling to the rest of the service is what makes a boundary viable.",
+      "sourceDoc": "/docs/Software_Management/Managing_Large_Scale_Software"
+    },
+    {
+      "id": "mgmt-0003",
+      "tag": "Sharding",
+      "heading": "A shard key choice is basically permanent",
+      "hook": "Changing a shard key later means a full data migration, so choose it based on actual query patterns, not convenience.",
+      "sourceDoc": "/docs/Software_Management/Managing_Large_Scale_Software"
+    },
+    {
+      "id": "mgmt-0004",
+      "tag": "Sharding",
+      "heading": "Consistent hashing is what makes rebalancing cheap",
+      "hook": "Consistent hashing means adding a new shard only moves the keys that actually belong on it, not the entire dataset.",
+      "sourceDoc": "/docs/Software_Management/Managing_Large_Scale_Software"
+    },
+    {
+      "id": "mgmt-0005",
+      "tag": "Sharding",
+      "heading": "Cross-shard queries are the expensive part",
+      "hook": "A query spanning multiple shards needs fan-out and aggregation — design your schema to minimize how often that happens.",
+      "body": "Co-locating related data, like a user and their orders, on the same shard avoids most of this.",
+      "sourceDoc": "/docs/Software_Management/Managing_Large_Scale_Software"
+    },
+    {
+      "id": "mgmt-0006",
+      "tag": "Caching",
+      "heading": "Read replicas target where the load actually is",
+      "hook": "Most applications run a 90:10 or 95:5 read-to-write ratio, which is exactly why separating reads onto replicas is such high-leverage work.",
+      "sourceDoc": "/docs/Software_Management/Managing_Large_Scale_Software"
+    },
+    {
+      "id": "mgmt-0007",
+      "tag": "Caching",
+      "heading": "Replica lag means your own write can look missing",
+      "hook": "A read replica can trail the primary by seconds, so a user can briefly see stale data right after they wrote something.",
+      "body": "Reading from the primary immediately after a write is the usual fix when that staleness isn't acceptable.",
+      "sourceDoc": "/docs/Software_Management/Managing_Large_Scale_Software"
+    },
+    {
+      "id": "mgmt-0008",
+      "tag": "Event-Driven",
+      "heading": "Events decouple services at the cost of instant consistency",
+      "hook": "Publishing an event instead of calling a service directly means publishers never need to know who's listening — but operations now complete asynchronously.",
+      "body": "That's why event handlers must be idempotent: the same message can and will be delivered more than once.",
+      "sourceDoc": "/docs/Software_Management/Managing_Large_Scale_Software"
+    },
+    {
+      "id": "mgmt-0009",
+      "tag": "Event-Driven",
+      "heading": "A dead letter queue is the failure valve",
+      "hook": "Retry a failed message with exponential backoff, and only after it still fails repeatedly does it land in a dead letter queue for a human to look at.",
+      "sourceDoc": "/docs/Software_Management/Managing_Large_Scale_Software"
+    },
+    {
+      "id": "mgmt-0010",
+      "tag": "Team Topology",
+      "heading": "Conway's Law is not optional",
+      "hook": "Your system architecture ends up mirroring your team's communication structure whether you plan it that way or not.",
+      "sourceDoc": "/docs/Software_Management/Managing_Large_Scale_Software"
+    },
+    {
+      "id": "mgmt-0011",
+      "tag": "Ownership",
+      "heading": "Clear ownership prevents a 3am dead end",
+      "hook": "Without a registry mapping each service to a team, an SLA, and an on-call rotation, incidents become everyone's problem and no one's responsibility.",
+      "sourceDoc": "/docs/Software_Management/Managing_Large_Scale_Software"
+    },
+    {
+      "id": "mgmt-0012",
+      "tag": "Deployment",
+      "heading": "Progressive rollout limits blast radius",
+      "hook": "Rolling a new version out at 1%, then 10%, then 50%, then 100% means a bug only ever affects a small slice of users before it's caught.",
+      "code": "canary: 1% -> small: 10% -> medium: 50% -> full: 100%",
+      "sourceDoc": "/docs/Software_Management/Managing_Large_Scale_Software"
+    },
+    {
+      "id": "mgmt-0013",
+      "tag": "Deployment",
+      "heading": "Health checks must watch business metrics",
+      "hook": "A health check that only confirms the service is responding will miss a conversion-rate drop or a payment failure spike — check the metrics that actually matter.",
+      "sourceDoc": "/docs/Software_Management/Managing_Large_Scale_Software"
+    },
+    {
+      "id": "mgmt-0014",
+      "tag": "Feature Flags",
+      "heading": "Feature flags decouple deploy from release",
+      "hook": "Shipping code behind a flag means you can deploy anytime and decide who sees it later — testing in production with real data before anyone else sees it.",
+      "sourceDoc": "/docs/Software_Management/Managing_Large_Scale_Software"
+    },
+    {
+      "id": "mgmt-0015",
+      "tag": "Feature Flags",
+      "heading": "Consistent hashing keeps a rollout stable",
+      "hook": "A 10% rollout should mean the same 10% of users every time, not a different random slice on every request — consistent hashing by user id is what guarantees that.",
+      "sourceDoc": "/docs/Software_Management/Managing_Large_Scale_Software"
+    },
+    {
+      "id": "mgmt-0016",
+      "tag": "Feature Flags",
+      "heading": "Flag sprawl is a real cost",
+      "hook": "Old flags that outlive their rollout quietly accumulate and slow the system down — remove a flag the moment its rollout completes.",
+      "sourceDoc": "/docs/Software_Management/Managing_Large_Scale_Software"
+    },
+    {
+      "id": "mgmt-0017",
+      "tag": "Caching",
+      "heading": "Layered caching can cut database load 99%",
+      "hook": "Stacking a memory cache, Redis, and a CDN in front of a database took one product catalog from 10,000 database queries a second down to 100.",
+      "sourceDoc": "/docs/Software_Management/Managing_Large_Scale_Software"
+    },
+    {
+      "id": "mgmt-0018",
+      "tag": "Caching",
+      "heading": "Invalidation is the hardest part of caching",
+      "hook": "Multi-layer caching only works if every layer gets invalidated together — miss one key on a write and users start seeing stale data.",
+      "sourceDoc": "/docs/Software_Management/Managing_Large_Scale_Software"
+    },
+    {
+      "id": "mgmt-0019",
+      "tag": "Query Optimization",
+      "heading": "Batching turns an N+1 bug into one query",
+      "hook": "Fetching a user per order in a loop means 101 queries for 100 orders — a DataLoader batches that into 2 queries and turns 505ms into 10ms.",
+      "sourceDoc": "/docs/Software_Management/Managing_Large_Scale_Software"
+    },
+    {
+      "id": "mgmt-0020",
+      "tag": "Query Optimization",
+      "heading": "One composite index can fix a 2.5 second query",
+      "hook": "A query filtering on customer_id and status went from a 2,500ms full table scan to a 15ms index scan with one composite index covering both columns.",
+      "sourceDoc": "/docs/Software_Management/Managing_Large_Scale_Software"
+    },
+    {
+      "id": "mgmt-0021",
+      "tag": "SLOs",
+      "heading": "An SLO defines how much failure is acceptable",
+      "hook": "A 99.9% uptime target over 30 days means exactly 43.2 minutes of allowed downtime — that's your error budget to spend.",
+      "sourceDoc": "/docs/Software_Management/Managing_Large_Scale_Software"
+    },
+    {
+      "id": "mgmt-0022",
+      "tag": "SLOs",
+      "heading": "An exhausted error budget freezes deployments",
+      "hook": "When the error budget hits zero, deployments stop automatically until reliability recovers — an objective trigger instead of a political argument.",
+      "sourceDoc": "/docs/Software_Management/Managing_Large_Scale_Software"
+    },
+    {
+      "id": "mgmt-0023",
+      "tag": "Cost Optimization",
+      "heading": "Autoscaling beats static provisioning hard",
+      "hook": "Running 20 instances around the clock to cover peak load cost $146K a month — autoscaling down during off-peak hours cut that to $58K.",
+      "sourceDoc": "/docs/Software_Management/Managing_Large_Scale_Software"
+    },
+    {
+      "id": "mgmt-0024",
+      "tag": "Cost Optimization",
+      "heading": "Low utilization is where the waste hides",
+      "hook": "A service sitting under 30% CPU or memory utilization for weeks is money being spent on capacity nobody's using.",
+      "sourceDoc": "/docs/Software_Management/Managing_Large_Scale_Software"
+    },
+    {
+      "id": "mgmt-0025",
+      "tag": "Cost Optimization",
+      "heading": "Cost per transaction reveals inefficient code",
+      "hook": "Total infrastructure cost hides which service is actually wasteful — cost per request or per transaction exposes it.",
+      "sourceDoc": "/docs/Software_Management/Managing_Large_Scale_Software"
+    },
+    {
+      "id": "mgmt-0026",
+      "tag": "Documentation",
+      "heading": "An ADR records why, not just what",
+      "hook": "An Architecture Decision Record captures the context, the decision, and the consequences so a future engineer never has to re-litigate a settled choice.",
+      "sourceDoc": "/docs/Software_Management/Managing_Large_Scale_Software"
+    },
+    {
+      "id": "mgmt-0027",
+      "tag": "Technical Debt",
+      "heading": "Debt reduction needs a fixed allocation",
+      "hook": "Allocating a fixed slice of every sprint, like 20%, to tech debt is the only thing that reliably gets it addressed.",
+      "body": "Without a dedicated allocation, debt reduction always loses to the next feature deadline.",
+      "sourceDoc": "/docs/Software_Management/Managing_Large_Scale_Software"
+    },
+    {
+      "id": "mgmt-0028",
+      "tag": "Incident Management",
+      "heading": "Blameless postmortems fix the system, not the person",
+      "hook": "A postmortem that assigns blame teaches people to hide mistakes — one that focuses on action items teaches the system to get safer.",
+      "sourceDoc": "/docs/Software_Management/Managing_Large_Scale_Software"
+    },
+    {
+      "id": "mgmt-0029",
+      "tag": "Scaling",
+      "heading": "Scaling is a checklist, not one fix",
+      "hook": "Sharding, multi-layer caching, circuit breakers, SLOs, and a tested rollback path all have to exist together — missing any one of them becomes the next incident.",
+      "sourceDoc": "/docs/Software_Management/Managing_Large_Scale_Software"
+    },
+    {
+      "id": "mgmt-0030",
+      "tag": "Cost Optimization",
+      "heading": "Reserved and spot instances layer on top of autoscaling",
+      "hook": "Reserved instances cover your predictable baseline at a discount, spot instances handle interruptible batch work cheaply, and autoscaling handles everything variable in between.",
+      "sourceDoc": "/docs/Software_Management/Managing_Large_Scale_Software"
+    },
+    {
+      "id": "mgmt-0031",
+      "tag": "Estimation",
+      "heading": "Engineers underestimate by default",
+      "hook": "Optimism bias makes engineers underestimate by 30-50% on average, especially for anything unfamiliar.",
+      "sourceDoc": "/docs/Software_Management/Project_Planning_and_Estimation"
+    },
+    {
+      "id": "mgmt-0032",
+      "tag": "Story Points",
+      "heading": "Story points measure complexity, not hours",
+      "hook": "A 5-point story being five times harder than a 1-point one has nothing to do with calendar time — that's exactly why it doesn't read as a deadline.",
+      "sourceDoc": "/docs/Software_Management/Project_Planning_and_Estimation"
+    },
+    {
+      "id": "mgmt-0033",
+      "tag": "Story Points",
+      "heading": "Fibonacci spacing kills false precision",
+      "hook": "The gaps between 1, 2, 3, 5, 8, 13 widen on purpose, so you literally can't claim something is an 11 — you're forced to decide 8 or 13.",
+      "sourceDoc": "/docs/Software_Management/Project_Planning_and_Estimation"
+    },
+    {
+      "id": "mgmt-0034",
+      "tag": "PERT",
+      "heading": "Three-point estimation turns a guess into a number",
+      "hook": "(optimistic plus four times realistic plus pessimistic) divided by six gives you a defensible expected time instead of a single confident-sounding guess.",
+      "code": "expected = (optimistic + 4*realistic + pessimistic) / 6",
+      "sourceDoc": "/docs/Software_Management/Project_Planning_and_Estimation"
+    },
+    {
+      "id": "mgmt-0035",
+      "tag": "WBS",
+      "heading": "Unestimable work is just undecomposed work",
+      "hook": "Any task that feels impossible to estimate just hasn't been broken down to 1-3 day pieces yet.",
+      "sourceDoc": "/docs/Software_Management/Project_Planning_and_Estimation"
+    },
+    {
+      "id": "mgmt-0036",
+      "tag": "WBS",
+      "heading": "A breakdown's real value is visibility",
+      "hook": "A work breakdown structure's biggest win isn't the total number, it's that stakeholders can see exactly what's included and choose what to cut.",
+      "sourceDoc": "/docs/Software_Management/Project_Planning_and_Estimation"
+    },
+    {
+      "id": "mgmt-0037",
+      "tag": "T-Shirt Sizing",
+      "heading": "Give a size plus a plan to narrow it",
+      "hook": "When requirements aren't clear yet, a t-shirt size like Large-to-Extra-Large plus a one-week feasibility study beats inventing a fake precise number.",
+      "sourceDoc": "/docs/Software_Management/Project_Planning_and_Estimation"
+    },
+    {
+      "id": "mgmt-0038",
+      "tag": "Uncertainty",
+      "heading": "The cone of uncertainty narrows as you learn",
+      "hook": "At week zero your estimate can be off by 4x — by the time the design is done, that range has tightened to maybe 1.5x.",
+      "sourceDoc": "/docs/Software_Management/Project_Planning_and_Estimation"
+    },
+    {
+      "id": "mgmt-0039",
+      "tag": "Uncertainty",
+      "heading": "Risk multipliers stack multiplicatively",
+      "hook": "New technology, legacy code, and unclear requirements each add their own percentage buffer, and those buffers compound — 30 days can become 85 days once you multiply them all together.",
+      "sourceDoc": "/docs/Software_Management/Project_Planning_and_Estimation"
+    },
+    {
+      "id": "mgmt-0040",
+      "tag": "Communicating Estimates",
+      "heading": "Never give a single number",
+      "hook": "\"25-35 days, most likely 30\" is more honest than \"30 days\" and gives stakeholders a real sense of the uncertainty involved.",
+      "sourceDoc": "/docs/Software_Management/Project_Planning_and_Estimation"
+    },
+    {
+      "id": "mgmt-0041",
+      "tag": "Communicating Estimates",
+      "heading": "An estimate is not a commitment",
+      "hook": "An estimate is your best professional judgment; a commitment is a promise with a deliberate buffer built on top of it.",
+      "sourceDoc": "/docs/Software_Management/Project_Planning_and_Estimation"
+    },
+    {
+      "id": "mgmt-0042",
+      "tag": "Communicating Estimates",
+      "heading": "Confidence level matters as much as the number",
+      "hook": "Stating whether you're high, medium, or low confidence tells a stakeholder exactly how much weight to put on your estimate.",
+      "sourceDoc": "/docs/Software_Management/Project_Planning_and_Estimation"
+    },
+    {
+      "id": "mgmt-0043",
+      "tag": "Estimation Mistakes",
+      "heading": "The hero assumption inflates every estimate",
+      "hook": "Estimating from your best-ever day, with zero meetings or interruptions, is exactly why real work always takes longer than planned.",
+      "sourceDoc": "/docs/Software_Management/Project_Planning_and_Estimation"
+    },
+    {
+      "id": "mgmt-0044",
+      "tag": "Estimation Mistakes",
+      "heading": "Coding time is a fraction of the real project",
+      "hook": "Requirements, design, testing, review, and documentation routinely add up to more time than the coding itself — a 10-day coding estimate is often a 25-day project.",
+      "sourceDoc": "/docs/Software_Management/Project_Planning_and_Estimation"
+    },
+    {
+      "id": "mgmt-0045",
+      "tag": "Estimation Mistakes",
+      "heading": "Track your estimates against reality",
+      "hook": "Recording your original estimate, the actual time, and what you missed after every project is the only way your calibration actually improves.",
+      "sourceDoc": "/docs/Software_Management/Project_Planning_and_Estimation"
+    },
+    {
+      "id": "mgmt-0046",
+      "tag": "Audience",
+      "heading": "Your job shifts from coding to communicating",
+      "hook": "Junior engineers spend roughly 80% of their time coding; tech leads spend roughly 80% communicating — impact scales through other people, not through more code.",
+      "sourceDoc": "/docs/Software_Management/Effective_Communication"
+    },
+    {
+      "id": "mgmt-0047",
+      "tag": "Audience",
+      "heading": "The same fact needs four different framings",
+      "hook": "A slow API gets explained in N+1 queries and DataLoader to engineers, in timeline and risk to your manager, and in customer impact alone to an executive.",
+      "sourceDoc": "/docs/Software_Management/Effective_Communication"
+    },
+    {
+      "id": "mgmt-0048",
+      "tag": "Writing",
+      "heading": "Write for scanning, not reading",
+      "hook": "A wall of text buries the actual ask — bold headers, bullets, and a specific question at the end get an answer.",
+      "sourceDoc": "/docs/Software_Management/Effective_Communication"
+    },
+    {
+      "id": "mgmt-0049",
+      "tag": "Collaboration",
+      "heading": "Yes, and beats no, but",
+      "hook": "Building a cheaper version of someone's idea keeps the conversation open — shooting it down with a list of obstacles just shuts it down.",
+      "sourceDoc": "/docs/Software_Management/Effective_Communication"
+    },
+    {
+      "id": "mgmt-0050",
+      "tag": "Disagreement",
+      "heading": "Disagree with data, not opinion",
+      "hook": "Citing the actual numbers behind your concern, then asking what you're missing, lands better than a flat dismissal of someone's suggestion.",
+      "sourceDoc": "/docs/Software_Management/Effective_Communication"
+    },
+    {
+      "id": "mgmt-0051",
+      "tag": "Disagreement",
+      "heading": "Questions are less confrontational than statements",
+      "hook": "\"What problem does this solve that the simpler option doesn't?\" gets further than \"that's overcomplicated\" — questions often lead people to find the flaw themselves.",
+      "sourceDoc": "/docs/Software_Management/Effective_Communication"
+    },
+    {
+      "id": "mgmt-0052",
+      "tag": "Explaining Tech",
+      "heading": "An analogy beats jargon for non-technical audiences",
+      "hook": "Explaining a race condition as \"multiple cooks working the same order without coordinating\" lands where \"vector clocks aren't converging\" doesn't.",
+      "sourceDoc": "/docs/Software_Management/Effective_Communication"
+    },
+    {
+      "id": "mgmt-0053",
+      "tag": "Explaining Tech",
+      "heading": "Not knowing is fine, going silent isn't",
+      "hook": "\"I don't have enough context, I'll check and get back to you by end of day\" beats both guessing and freezing up in a meeting.",
+      "sourceDoc": "/docs/Software_Management/Effective_Communication"
+    },
+    {
+      "id": "mgmt-0054",
+      "tag": "Owning Mistakes",
+      "heading": "Report a mistake in minutes, not after discovery",
+      "hook": "An immediate message with what happened, current status, and the next update time rebuilds trust far faster than hoping no one notices.",
+      "sourceDoc": "/docs/Software_Management/Effective_Communication"
+    },
+    {
+      "id": "mgmt-0055",
+      "tag": "Cross-Team Requests",
+      "heading": "A spec and a deadline beat a vague ask",
+      "hook": "\"Can you add an endpoint ASAP\" gets deprioritized — a concrete spec, a real deadline with buffer, and an offer to help gets scheduled.",
+      "sourceDoc": "/docs/Software_Management/Effective_Communication"
+    },
+    {
+      "id": "mgmt-0056",
+      "tag": "Status Updates",
+      "heading": "Blockers are the most valuable line in a status update",
+      "hook": "Surfacing a blocker before it becomes a missed deadline is the entire point of a weekly update — burying it defeats the purpose.",
+      "sourceDoc": "/docs/Software_Management/Effective_Communication"
+    },
+    {
+      "id": "mgmt-0057",
+      "tag": "Design Docs",
+      "heading": "Non-goals matter as much as goals",
+      "hook": "A design doc's non-goals section tells readers exactly what you're deliberately not solving, heading off a whole category of scope debate later.",
+      "sourceDoc": "/docs/Software_Management/Effective_Communication"
+    },
+    {
+      "id": "mgmt-0058",
+      "tag": "Feedback",
+      "heading": "Situation, behavior, impact, suggestion",
+      "hook": "Critical feedback structured as situation, behavior, impact, and suggestion reads as a fixable problem, not a verdict on someone's ability.",
+      "sourceDoc": "/docs/Software_Management/Effective_Communication"
+    },
+    {
+      "id": "mgmt-0059",
+      "tag": "Anti-Patterns",
+      "heading": "The mysterious Slack ping wastes everyone's time",
+      "hook": "\"Got a minute?\" and then silence forces a guessing game — stating the actual question upfront gets a faster, better answer.",
+      "sourceDoc": "/docs/Software_Management/Effective_Communication"
+    },
+    {
+      "id": "mgmt-0060",
+      "tag": "Stakeholders",
+      "heading": "Unreasonable stakeholders are optimizing differently",
+      "hook": "A PM pushing a deadline and an SRE blocking a release aren't being difficult — they're each maximizing a success metric that isn't yours.",
+      "sourceDoc": "/docs/Software_Management/Stakeholder_Management"
+    },
+    {
+      "id": "mgmt-0061",
+      "tag": "Stakeholders",
+      "heading": "Different roles optimize for different metrics",
+      "hook": "A PM measures features shipped, DevOps measures uptime, an executive measures revenue — knowing which one you're talking to changes what argument actually works.",
+      "sourceDoc": "/docs/Software_Management/Stakeholder_Management"
+    },
+    {
+      "id": "mgmt-0062",
+      "tag": "Scope",
+      "heading": "Ask scope questions before you estimate",
+      "hook": "\"Add two-factor authentication\" hides a dozen unscoped decisions — which methods, mandatory or optional, account recovery — surface them before committing to a number.",
+      "sourceDoc": "/docs/Software_Management/Stakeholder_Management"
+    },
+    {
+      "id": "mgmt-0063",
+      "tag": "Scope",
+      "heading": "Every scope addition is a trade-off, not a freebie",
+      "hook": "The moment new scope appears, state it explicitly as more time or less of something else — silently absorbing it is how a 3-week project becomes 7 weeks.",
+      "sourceDoc": "/docs/Software_Management/Stakeholder_Management"
+    },
+    {
+      "id": "mgmt-0064",
+      "tag": "Saying No",
+      "heading": "Offer an alternative, don't just refuse",
+      "hook": "A smaller version in the original timeline, or the full version with more time, both beat a flat \"no\" to an urgent request.",
+      "sourceDoc": "/docs/Software_Management/Stakeholder_Management"
+    },
+    {
+      "id": "mgmt-0065",
+      "tag": "Prioritization",
+      "heading": "Triage conflicting urgent requests in five minutes",
+      "hook": "Ranking three simultaneous fires by actual business impact and communicating the order immediately beats context-switching between all three badly.",
+      "sourceDoc": "/docs/Software_Management/Stakeholder_Management"
+    },
+    {
+      "id": "mgmt-0066",
+      "tag": "Managing Up",
+      "heading": "Own your own 1-on-1 agenda",
+      "hook": "Bringing wins, blockers, career goals, and feedback to a 1-on-1 yourself gets far more out of it than waiting for your manager to ask.",
+      "sourceDoc": "/docs/Software_Management/Stakeholder_Management"
+    },
+    {
+      "id": "mgmt-0067",
+      "tag": "Managing Up",
+      "heading": "Surface risk the week you spot it",
+      "hook": "Flagging a risk early, with options already attached, gives your manager time to adjust — surfacing it after it's already a missed deadline doesn't.",
+      "sourceDoc": "/docs/Software_Management/Stakeholder_Management"
+    },
+    {
+      "id": "mgmt-0068",
+      "tag": "PMs",
+      "heading": "PMs need the underlying need, not the stated solution",
+      "hook": "\"We need custom reports\" usually means five customers manually exporting to Excel — solve that need with three cost-tiered options, not a single huge build.",
+      "sourceDoc": "/docs/Software_Management/Stakeholder_Management"
+    },
+    {
+      "id": "mgmt-0069",
+      "tag": "PMs",
+      "heading": "Question a bad priority with data, not dismissal",
+      "hook": "Bringing concrete numbers and asking what you're missing opens a dialogue — calling a priority stupid just ends one.",
+      "sourceDoc": "/docs/Software_Management/Stakeholder_Management"
+    },
+    {
+      "id": "mgmt-0070",
+      "tag": "Executives",
+      "heading": "The elevator pitch is bottom line, then impact, then ask",
+      "hook": "An executive needs the proposal and the business reason in 30 seconds — the technical detail only comes up if they actually ask for it.",
+      "sourceDoc": "/docs/Software_Management/Stakeholder_Management"
+    },
+    {
+      "id": "mgmt-0071",
+      "tag": "Deep Work",
+      "heading": "An 8-hour day isn't 8 hours of coding",
+      "hook": "Once meetings, Slack, and context switching are subtracted, a typical day leaves 2-3 hours of actual deep focus time.",
+      "sourceDoc": "/docs/Software_Management/Time_Management_and_Productivity"
+    },
+    {
+      "id": "mgmt-0072",
+      "tag": "Deep Work",
+      "heading": "An interruption costs more than its own length",
+      "hook": "Each interruption costs 10-20 minutes total, not just the time it takes — the rest is spent re-entering the flow you were in before it hit.",
+      "sourceDoc": "/docs/Software_Management/Time_Management_and_Productivity"
+    },
+    {
+      "id": "mgmt-0073",
+      "tag": "Deep Work",
+      "heading": "Morning blocks work because the day hasn't derailed yet",
+      "hook": "Protecting the first few hours of the day for deep work beats the afternoon, because fewer people have had the chance to interrupt you yet.",
+      "sourceDoc": "/docs/Software_Management/Time_Management_and_Productivity"
+    },
+    {
+      "id": "mgmt-0074",
+      "tag": "Prioritization",
+      "heading": "Every yes is a no to something else",
+      "hook": "Declining a request with a concrete alternative protects your time without actually burning the relationship.",
+      "sourceDoc": "/docs/Software_Management/Time_Management_and_Productivity"
+    },
+    {
+      "id": "mgmt-0075",
+      "tag": "Prioritization",
+      "heading": "Sort by important, not just urgent",
+      "hook": "The Eisenhower matrix splits work into do-first, schedule, delegate, and eliminate — most inboxes are dominated by urgent-but-unimportant noise in the delegate and eliminate quadrants.",
+      "sourceDoc": "/docs/Software_Management/Time_Management_and_Productivity"
+    },
+    {
+      "id": "mgmt-0076",
+      "tag": "Time Blocking",
+      "heading": "The two-minute rule clears small tasks instantly",
+      "hook": "Anything under two minutes should just get done immediately — it prevents a pile of tiny tasks from becoming constant mental overhead.",
+      "sourceDoc": "/docs/Software_Management/Time_Management_and_Productivity"
+    },
+    {
+      "id": "mgmt-0077",
+      "tag": "Time Blocking",
+      "heading": "Batching similar work avoids a context-switch tax",
+      "hook": "Grouping all meetings into one block and all code review into another means you're not paying the mental cost of switching between types of work all day.",
+      "sourceDoc": "/docs/Software_Management/Time_Management_and_Productivity"
+    },
+    {
+      "id": "mgmt-0078",
+      "tag": "Interruptions",
+      "heading": "Batching Slack checks keeps you responsive anyway",
+      "hook": "Checking messages four times a day at scheduled times is still responsive enough, but cuts your context switches from 30-plus a day down to four.",
+      "sourceDoc": "/docs/Software_Management/Time_Management_and_Productivity"
+    },
+    {
+      "id": "mgmt-0079",
+      "tag": "Interruptions",
+      "heading": "Logging interruptions for a week reveals the pattern",
+      "hook": "Most teams find 60% or more of their interruptions could have been handled async — you only see that pattern if you actually track it for a week.",
+      "sourceDoc": "/docs/Software_Management/Time_Management_and_Productivity"
+    },
+    {
+      "id": "mgmt-0080",
+      "tag": "Energy",
+      "heading": "Match hard work to your actual peak energy",
+      "hook": "A morning person and a night owl have inverted peak hours — schedule your hardest problem for whichever window is genuinely yours, not a generic 9-to-5 assumption.",
+      "sourceDoc": "/docs/Software_Management/Time_Management_and_Productivity"
+    },
+    {
+      "id": "mgmt-0081",
+      "tag": "Burnout",
+      "heading": "Burnout's warning signs show up before quality does",
+      "hook": "Dreading opening your laptop and constant exhaustion despite sleep are earlier signals than your actual output dropping — catch it there instead.",
+      "sourceDoc": "/docs/Software_Management/Time_Management_and_Productivity"
+    },
+    {
+      "id": "mgmt-0082",
+      "tag": "Burnout",
+      "heading": "A hard stop protects the rest of your life",
+      "hook": "Setting a firm end time and actually closing the laptop is what makes a sustainable pace sustainable — not working fewer hours in theory.",
+      "sourceDoc": "/docs/Software_Management/Time_Management_and_Productivity"
+    },
+    {
+      "id": "mgmt-0083",
+      "tag": "Meetings",
+      "heading": "No agenda is a reason to decline",
+      "hook": "A meeting invite with no clear decision or goal attached is a signal to push for an async doc instead of accepting it.",
+      "sourceDoc": "/docs/Software_Management/Time_Management_and_Productivity"
+    },
+    {
+      "id": "mgmt-0084",
+      "tag": "Meetings",
+      "heading": "Default to 30 minutes, not 60",
+      "hook": "Most meetings don't actually need a full hour — defaulting to 30 minutes forces a tighter agenda and ends up being enough almost every time.",
+      "sourceDoc": "/docs/Software_Management/Time_Management_and_Productivity"
+    },
+    {
+      "id": "mgmt-0085",
+      "tag": "Procrastination",
+      "heading": "The five-minute start breaks the freeze",
+      "hook": "Committing to just five minutes — open the file, write one function signature — is usually enough to build momentum, because starting is the actual hard part.",
+      "sourceDoc": "/docs/Software_Management/Time_Management_and_Productivity"
+    },
+    {
+      "id": "mgmt-0086",
+      "tag": "Procrastination",
+      "heading": "Rubber duck debugging works for a real reason",
+      "hook": "Explaining a stuck problem out loud to anyone, or anything, forces you to articulate it clearly enough that the solution often falls out on its own.",
+      "sourceDoc": "/docs/Software_Management/Time_Management_and_Productivity"
+    },
+    {
+      "id": "mgmt-0087",
+      "tag": "Async Communication",
+      "heading": "Propose an answer, don't just ask a question",
+      "hook": "An async message with your own proposed answer and a response deadline lets you keep moving if no one objects, instead of waiting on an open-ended question.",
+      "sourceDoc": "/docs/Software_Management/Time_Management_and_Productivity"
+    },
+    {
+      "id": "mgmt-0088",
+      "tag": "Async Communication",
+      "heading": "A shared doc beats a meeting for most decisions",
+      "hook": "Writing a doc, collecting async comments, and meeting only if real disagreement remains takes a fraction of the time of defaulting straight to a meeting.",
+      "sourceDoc": "/docs/Software_Management/Time_Management_and_Productivity"
+    }
+  ]
+}

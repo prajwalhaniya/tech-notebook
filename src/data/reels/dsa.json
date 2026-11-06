@@ -1,0 +1,674 @@
+{
+  "topic": "dsa",
+  "topicLabel": "DSA",
+  "cards": [
+    {
+      "id": "dsa-0001",
+      "tag": "Big O",
+      "heading": "Big O describes the worst case, not the exact runtime",
+      "hook": "Big O is the upper bound on how an algorithm's time grows as input size grows — not a literal prediction of how many milliseconds it takes.",
+      "body": "Big Omega is the lower bound, and Big Theta means both match, giving a tight bound on the real runtime.",
+      "sourceDoc": "/docs/DSA/Fundamentals"
+    },
+    {
+      "id": "dsa-0002",
+      "tag": "Big O",
+      "heading": "Two loops add, nested loops multiply",
+      "hook": "Two sequential loops over m and n items cost O(m + n), but nesting one inside the other costs O(m * n) — multiplication is the signature of nested iteration, not addition.",
+      "sourceDoc": "/docs/DSA/Fundamentals"
+    },
+    {
+      "id": "dsa-0003",
+      "tag": "Big O",
+      "heading": "Where log n and root n growth come from",
+      "hook": "Logarithmic time shows up whenever an algorithm halves its input each step, like binary search; square-root time sits between logarithmic and linear, growing slower than O(n) but faster than O(log n).",
+      "sourceDoc": "/docs/DSA/Fundamentals"
+    },
+    {
+      "id": "dsa-0004",
+      "tag": "Heap",
+      "heading": "A min-heap is an array with bubble-up and bubble-down",
+      "hook": "Pushing appends a value then bubbles it up toward its parent; popping swaps the last element into the root then bubbles it down — both stay O(log n) because the tree never gets unbalanced.",
+      "sourceDoc": "/docs/DSA/Fundamentals"
+    },
+    {
+      "id": "dsa-0005",
+      "tag": "Caching",
+      "heading": "A cache is a tradeoff between hits and misses",
+      "hook": "Caching stores data in fast temporary memory so a repeat request skips the expensive original lookup — the entire design goal is maximizing hits and minimizing misses.",
+      "body": "Browsers cache assets, DNS servers cache records, and CDNs cache content for exactly this reason.",
+      "sourceDoc": "/docs/DSA/caching/Introduction"
+    },
+    {
+      "id": "dsa-0006",
+      "tag": "Caching",
+      "heading": "LFU eviction needs two maps, not one",
+      "hook": "An LFU cache pairs a key-to-node map with a frequency-to-nodes map, so eviction always pulls from the single lowest frequency bucket in O(1) instead of scanning every entry.",
+      "body": "Every get or put bumps a node's frequency and moves it to the next bucket up.",
+      "sourceDoc": "/docs/DSA/caching/Least Frequently Used"
+    },
+    {
+      "id": "dsa-0007",
+      "tag": "Graph Traversal",
+      "heading": "BFS for shortest path, DFS for exploring everything",
+      "hook": "Need the minimum number of steps or a level-by-level traversal, reach for BFS and a queue; need to try every path or backtrack through combinations, reach for DFS and a stack or recursion.",
+      "body": "On a tree, BFS costs O(width) in space while DFS costs O(height); on a graph both cost O(V).",
+      "sourceDoc": "/docs/DSA/Algorithms/BFS DFS"
+    },
+    {
+      "id": "dsa-0008",
+      "tag": "Graph Traversal",
+      "heading": "DFS does not guarantee the shortest path",
+      "hook": "DFS commits to one path all the way down before backtracking, so it can return a longer route even when a shorter one exists — only BFS's level-by-level expansion guarantees shortest path on an unweighted graph.",
+      "body": "The exception is a tree or a DAG, where only one path exists or topological order plus DP finds it directly.",
+      "sourceDoc": "/docs/DSA/Algorithms/BFS DFS"
+    },
+    {
+      "id": "dsa-0009",
+      "tag": "Graph Traversal",
+      "heading": "Bidirectional BFS cuts the search space dramatically",
+      "hook": "Running BFS from both the source and the target at once, stopping when the frontiers meet, shrinks the search space from O(b^d) to O(b^(d/2)) — a massive improvement with a large branching factor.",
+      "sourceDoc": "/docs/DSA/Algorithms/BFS DFS"
+    },
+    {
+      "id": "dsa-0010",
+      "tag": "Shortest Path",
+      "heading": "Dijkstra assumes weights are never negative",
+      "hook": "Dijkstra always expands the closest unvisited node first using a min-heap, but one negative edge can produce a cheaper path later that it already ruled out — exactly why it fails with negative weights.",
+      "body": "Bellman-Ford handles negatives by relaxing every edge V-1 times, and can detect a negative cycle in one extra pass.",
+      "sourceDoc": "/docs/DSA/Algorithms/Shortest Path Algorithm"
+    },
+    {
+      "id": "dsa-0011",
+      "tag": "Shortest Path",
+      "heading": "A negative cycle means no shortest path exists",
+      "hook": "If a cycle's total weight is negative, looping it forever keeps lowering the cost — so there's no well-defined shortest path at all, and that extra Bellman-Ford pass is how you catch it.",
+      "sourceDoc": "/docs/DSA/Algorithms/Shortest Path Algorithm"
+    },
+    {
+      "id": "dsa-0012",
+      "tag": "Rate Limiting",
+      "heading": "A token bucket decouples allowed rate from burst size",
+      "hook": "A token bucket holds a capped number of tokens that refill on a timer — consuming an action just needs enough tokens available, and an empty bucket rejects requests until the next refill.",
+      "code": "consume(tokens = 1) {\n  if (this.tokens >= tokens) { this.tokens -= tokens; return true; }\n  return false;\n}",
+      "sourceDoc": "/docs/DSA/Algorithms/Token Bucket Algorithm"
+    },
+    {
+      "id": "dsa-0013",
+      "tag": "Trees",
+      "heading": "The four ways to walk a tree",
+      "hook": "Pre-order, in-order, post-order, and level-order are the four standard ways to visit every node in a tree — in-order on a binary search tree is the one that visits values in sorted order.",
+      "sourceDoc": "/docs/DSA/Trees/concepts"
+    },
+    {
+      "id": "dsa-0014",
+      "tag": "Hash Map",
+      "heading": "A hash map turns Two Sum into one pass",
+      "hook": "Store each number's index as you scan, and the moment you see its complement already in the map, you've found the pair — no need to check every pair of numbers.",
+      "code": "if (map.has(target - nums[i])) return [map.get(target - nums[i]), i];\nmap.set(nums[i], i);",
+      "sourceDoc": "/docs/DSA/100 Easy/Two Sum"
+    },
+    {
+      "id": "dsa-0015",
+      "tag": "Two Pointers",
+      "heading": "Checking a number palindrome is a string problem in disguise",
+      "hook": "Convert the integer to a string and compare characters from both ends inward — no special-casing needed for how negative signs or trailing zeros would otherwise complicate a purely numeric approach.",
+      "sourceDoc": "/docs/DSA/100 Easy/Palindrome"
+    },
+    {
+      "id": "dsa-0016",
+      "tag": "Parsing",
+      "heading": "Roman numerals subtract when a smaller symbol comes first",
+      "hook": "Look one character ahead: if the next symbol's value exceeds the current one, subtract the current value instead of adding it — that single rule handles every exception case like IV and IX.",
+      "sourceDoc": "/docs/DSA/100 Easy/Roman to integer"
+    },
+    {
+      "id": "dsa-0017",
+      "tag": "Binary Search",
+      "heading": "Integer square root is binary search on the answer",
+      "hook": "Binary search between 1 and x for the largest mid where mid squared doesn't exceed x — that's the floor of the square root in O(log n), with no exponent operator needed.",
+      "sourceDoc": "/docs/DSA/100 Easy/Square Root"
+    },
+    {
+      "id": "dsa-0018",
+      "tag": "String",
+      "heading": "Shrink a candidate prefix instead of comparing pairwise",
+      "hook": "Start with the first string as your candidate prefix, then trim it down character by character the instant it stops matching the next string in line.",
+      "sourceDoc": "/docs/DSA/100 Easy/Longest common prefix"
+    },
+    {
+      "id": "dsa-0019",
+      "tag": "Stack",
+      "heading": "A stack is the natural fit for matching brackets",
+      "hook": "Push every opening bracket, and the moment you hit a closing one it must match whatever's currently on top of the stack — if it doesn't, the string is invalid immediately.",
+      "sourceDoc": "/docs/DSA/100 Easy/Valid Parentheses"
+    },
+    {
+      "id": "dsa-0020",
+      "tag": "Linked List",
+      "heading": "A dummy head node avoids special-casing the first merge",
+      "hook": "Merging two sorted lists by always attaching the smaller current node is simplest when you start with a placeholder dummy node and return dummy.next at the end.",
+      "sourceDoc": "/docs/DSA/100 Easy/Merge two sorted lists"
+    },
+    {
+      "id": "dsa-0021",
+      "tag": "Simulation",
+      "heading": "Binary addition is grade-school addition with carries",
+      "hook": "Pad both strings to equal length, then walk from the right adding each pair of bits plus the running carry — exactly how you'd add numbers by hand, just in base 2.",
+      "sourceDoc": "/docs/DSA/100 Easy/Add binary"
+    },
+    {
+      "id": "dsa-0022",
+      "tag": "Linked List",
+      "heading": "Sorted means duplicates are always adjacent",
+      "hook": "Because the list is already sorted, you only ever need to compare a node to the very next one and skip forward on a match — no hash set required to spot duplicates.",
+      "sourceDoc": "/docs/DSA/100 Easy/Remove duplicates from sorted list"
+    },
+    {
+      "id": "dsa-0023",
+      "tag": "Recursion",
+      "heading": "Tree depth is one plus the deeper child",
+      "hook": "Recursively find the depth of the left and right subtrees, take the larger one, and add one for the current node — the base case is simply a null node having depth zero.",
+      "sourceDoc": "/docs/DSA/100 Easy/Maximum Depth of binary tree"
+    },
+    {
+      "id": "dsa-0024",
+      "tag": "Two Pointers",
+      "heading": "Move zeroes in place with a single write pointer",
+      "hook": "Walk the array once, writing every non-zero value to the next open slot from the left, then fill whatever's left over with zeros — one pass, no extra array.",
+      "sourceDoc": "/docs/DSA/100 Easy/Move Zeros"
+    },
+    {
+      "id": "dsa-0025",
+      "tag": "Math",
+      "heading": "A common divisor string's length is the GCD of the lengths",
+      "hook": "Compute the GCD of both string lengths, take that many characters as a candidate, and confirm it repeats cleanly to rebuild both originals — if it does, that's the answer.",
+      "sourceDoc": "/docs/DSA/100 Easy/Greatest common divisor of strings"
+    },
+    {
+      "id": "dsa-0026",
+      "tag": "Greedy",
+      "heading": "Plant flowers greedily, left to right",
+      "hook": "A flower fits a plot only if it and both neighbors are empty, and planting greedily as soon as that's true never produces a worse outcome than planting more carefully.",
+      "sourceDoc": "/docs/DSA/100 Easy/Can place flowers"
+    },
+    {
+      "id": "dsa-0027",
+      "tag": "Two Pointers",
+      "heading": "Skip consonants with two pointers, swap only vowels",
+      "hook": "Advance the left pointer until it lands on a vowel, advance the right pointer the same way, then swap the two and continue inward.",
+      "sourceDoc": "/docs/DSA/100 Easy/Reverse vowels of a string"
+    },
+    {
+      "id": "dsa-0028",
+      "tag": "Greedy",
+      "heading": "Track the lowest price seen so far, not every past price",
+      "hook": "The max profit at each day is the price minus the minimum price seen before it — one pass tracking a running minimum beats comparing every pair of days.",
+      "sourceDoc": "/docs/DSA/100 Easy/Best time to buy & sell stock"
+    },
+    {
+      "id": "dsa-0029",
+      "tag": "Prefix Sum",
+      "heading": "A running left sum turns pivot search into one pass",
+      "hook": "Keep a running left-side sum and derive the right side as total minus left minus the current value — you never need to recompute a sum from scratch at any index.",
+      "sourceDoc": "/docs/DSA/100 Easy/Find Pivot Index"
+    },
+    {
+      "id": "dsa-0030",
+      "tag": "Sliding Window",
+      "heading": "A fixed-size window avoids recomputing the sum",
+      "hook": "Slide a window of length k forward one step at a time, subtracting the value that leaves and adding the value that enters, instead of resumming the whole window every time.",
+      "sourceDoc": "/docs/DSA/100 Easy/Maximum Average Subarray I"
+    },
+    {
+      "id": "dsa-0031",
+      "tag": "Recursion",
+      "heading": "Track a side answer while computing depth",
+      "hook": "Depth-first recursion computes each subtree's depth while updating a running max of left-depth plus right-depth at every node — that running max is the tree's diameter.",
+      "sourceDoc": "/docs/DSA/100 Easy/Diameter of a binary tree"
+    },
+    {
+      "id": "dsa-0032",
+      "tag": "Fast & Slow Pointers",
+      "heading": "Two pointers at different speeds always meet in a cycle",
+      "hook": "A slow pointer moving one step and a fast pointer moving two steps are guaranteed to collide if and only if the list loops back on itself.",
+      "sourceDoc": "/docs/DSA/100 Easy/Linked list cycle"
+    },
+    {
+      "id": "dsa-0033",
+      "tag": "Linked List",
+      "heading": "Reversing a list is relinking each next pointer backward",
+      "hook": "Walk forward while tracking the previous node, flipping each node's next pointer to point behind it instead of ahead.",
+      "body": "A recursive version reverses everything after the head first, then points the head's old next back at the head.",
+      "sourceDoc": "/docs/DSA/100 Easy/Reverse a linked list"
+    },
+    {
+      "id": "dsa-0034",
+      "tag": "Stack",
+      "heading": "A stack turns a linked list palindrome check into an array problem",
+      "hook": "Push every value onto a stack while walking forward, then walk again from the head popping the stack and comparing — a true palindrome matches every single pop.",
+      "sourceDoc": "/docs/DSA/100 Easy/Palindrome Linked List"
+    },
+    {
+      "id": "dsa-0035",
+      "tag": "Linked List",
+      "heading": "Adding two linked-list numbers is base-10 addition with carry",
+      "hook": "Walk both lists in lockstep, summing corresponding digits plus the carry from the previous step, and building one new node per digit of the result.",
+      "sourceDoc": "/docs/DSA/100 Medium/Add Two Numbers"
+    },
+    {
+      "id": "dsa-0036",
+      "tag": "Sliding Window",
+      "heading": "A last-seen-index map beats re-scanning for duplicates",
+      "hook": "Track the last index each character was seen at, and the moment a repeat appears inside the current window, jump the window's left edge straight past that earlier occurrence.",
+      "code": "if (seen[c] !== undefined && seen[c] >= left) left = seen[c] + 1;\nseen[c] = right;",
+      "sourceDoc": "/docs/DSA/100 Medium/Longest substring without repeating characters"
+    },
+    {
+      "id": "dsa-0037",
+      "tag": "Matrix",
+      "heading": "Rotating a matrix is transpose, then reverse each row",
+      "hook": "Swap across the diagonal to transpose the matrix, then reverse every row, and you get a 90-degree clockwise rotation in place with no second matrix.",
+      "sourceDoc": "/docs/DSA/100 Medium/Rotate Image"
+    },
+    {
+      "id": "dsa-0038",
+      "tag": "Matrix",
+      "heading": "Peel the matrix like an onion, one ring at a time",
+      "hook": "Repeatedly take the top row, then the right column, then the bottom row reversed, then the left column reversed, shrinking the remaining matrix after every layer.",
+      "sourceDoc": "/docs/DSA/100 Medium/Spiral Matrix"
+    },
+    {
+      "id": "dsa-0039",
+      "tag": "Graph",
+      "heading": "Sink each island as you find it so you never recount it",
+      "hook": "The moment DFS or BFS finds a land cell, flip every connected land cell to water — so a later scan of the grid can't rediscover the same island.",
+      "sourceDoc": "/docs/DSA/100 Medium/Number of Islands"
+    },
+    {
+      "id": "dsa-0040",
+      "tag": "Stack",
+      "heading": "A stack cancels the nearest character automatically",
+      "hook": "Push every non-star character, and on a star, just pop — the stack always holds exactly the characters that survive, no index bookkeeping needed.",
+      "sourceDoc": "/docs/DSA/100 Medium/Remove starts from string"
+    },
+    {
+      "id": "dsa-0041",
+      "tag": "Prefix Sum",
+      "heading": "Prefix and suffix products avoid division entirely",
+      "hook": "Build a running product of everything to the left of each index, then a running product of everything to the right, and multiply the two — the answer with no division anywhere.",
+      "sourceDoc": "/docs/DSA/100 Medium/Product of Array Except Self"
+    },
+    {
+      "id": "dsa-0042",
+      "tag": "Two Pointers",
+      "heading": "Move the shorter wall inward, the taller one can't help",
+      "hook": "Start pointers at both ends and always move the one at the shorter line inward, because the shorter line caps the area — moving the taller one can only lose width for no height gain.",
+      "sourceDoc": "/docs/DSA/100 Medium/Container with most water"
+    },
+    {
+      "id": "dsa-0043",
+      "tag": "Greedy",
+      "heading": "Track the two smallest numbers seen, not the whole history",
+      "hook": "Maintain the smallest and second-smallest values seen; the instant a third number beats both, an increasing triplet exists — one pass, O(1) space.",
+      "sourceDoc": "/docs/DSA/100 Medium/Increasing triplet subsequence"
+    },
+    {
+      "id": "dsa-0044",
+      "tag": "Stack",
+      "heading": "Nested bracket decoding is a stack of counts and strings",
+      "hook": "Push the current count and string onto a stack on every opening bracket, then on a closing bracket pop and repeat the inner string that many times before continuing.",
+      "sourceDoc": "/docs/DSA/100 Medium/Decode string"
+    },
+    {
+      "id": "dsa-0045",
+      "tag": "Greedy",
+      "heading": "Sum every positive day-over-day gain",
+      "hook": "When unlimited transactions are allowed, the optimal strategy is simply adding up every day the price rose from the day before — no need to actually track buy and sell days.",
+      "sourceDoc": "/docs/DSA/100 Medium/Best time to buy & sell stock"
+    },
+    {
+      "id": "dsa-0046",
+      "tag": "Trie",
+      "heading": "A trie shares prefixes across words",
+      "hook": "Each node holds a map of child characters, so inserting or searching a word walks one character at a time down shared branches — a prefix search stops the moment the path runs out.",
+      "sourceDoc": "/docs/DSA/100 Medium/trie"
+    },
+    {
+      "id": "dsa-0047",
+      "tag": "Linked List",
+      "heading": "Rewire odd and even chains with two trailing pointers",
+      "hook": "Keep a pointer into the odd chain and one into the even chain, continuously relinking each to skip over the other, then splice the even chain onto the end of the odd one.",
+      "sourceDoc": "/docs/DSA/100 Medium/Odd even linked list"
+    },
+    {
+      "id": "dsa-0048",
+      "tag": "Greedy",
+      "heading": "Whoever votes first gets to ban, so simulate with two queues",
+      "hook": "Queue up each senator's position; each round the earlier-positioned senator bans the next opponent and requeues themselves further back — the side that runs out of senators first loses.",
+      "sourceDoc": "/docs/DSA/100 Medium/Dota2 Senate"
+    },
+    {
+      "id": "dsa-0049",
+      "tag": "Fast & Slow Pointers",
+      "heading": "Find the middle without counting the list twice",
+      "hook": "Advance slow by one and fast by two; when fast runs out, slow sits at the middle — keep a trailing pointer alongside so you can unlink the middle in the same pass.",
+      "sourceDoc": "/docs/DSA/100 Medium/Delete the middle node of a linked list"
+    },
+    {
+      "id": "dsa-0050",
+      "tag": "Parsing",
+      "heading": "Atoi is pure edge-case handling, clamped as you go",
+      "hook": "Skip leading spaces, read an optional sign, then consume digits while clamping the running result the instant it would exceed the 32-bit range — so you never actually overflow a number.",
+      "sourceDoc": "/docs/DSA/100 Medium/String to integer"
+    },
+    {
+      "id": "dsa-0051",
+      "tag": "Hash Set",
+      "heading": "Three sets per cell are all Sudoku validation needs",
+      "hook": "For every filled cell, check whether its value already exists in that row's, column's, or 3x3 box's set — the board is invalid the instant any one of the three already contains it.",
+      "sourceDoc": "/docs/DSA/100 Medium/Valid Sudoku"
+    },
+    {
+      "id": "dsa-0052",
+      "tag": "Matrix",
+      "heading": "Record zero rows and columns before you zero anything",
+      "hook": "A single pass records every row and column containing a zero, and only the second pass actually zeroes them out — mutating during the first pass would cascade zeros incorrectly.",
+      "sourceDoc": "/docs/DSA/100 Medium/Set Matrix Zeros"
+    },
+    {
+      "id": "dsa-0053",
+      "tag": "Recursion",
+      "heading": "A valid BST needs a shrinking range, not one parent check",
+      "hook": "Every recursive call carries down the min and max bounds a node's value must fall within — that's what catches a node that's fine against its direct parent but still violates an ancestor further up.",
+      "sourceDoc": "/docs/DSA/100 Medium/Validate Binary Search Tree"
+    },
+    {
+      "id": "dsa-0054",
+      "tag": "In-order Traversal",
+      "heading": "In-order traversal of a BST visits values in sorted order",
+      "hook": "An iterative in-order walk using an explicit stack can stop the instant it's popped the kth node, instead of visiting the entire tree and sorting afterward.",
+      "sourceDoc": "/docs/DSA/100 Medium/Kth smallest element in BST"
+    },
+    {
+      "id": "dsa-0055",
+      "tag": "BFS",
+      "heading": "Snapshot the queue's size to separate BFS levels cleanly",
+      "hook": "Record how many nodes are currently in the queue before processing any of them — that count is exactly how many nodes belong to the current level.",
+      "sourceDoc": "/docs/DSA/100 Medium/Binary Tree Level Order Traversal"
+    },
+    {
+      "id": "dsa-0056",
+      "tag": "BFS",
+      "heading": "The right side view is the last node at each BFS level",
+      "hook": "Run the same level-order BFS, but only keep the final node dequeued at each level — that's exactly the node visible from the right side of the tree.",
+      "sourceDoc": "/docs/DSA/100 Medium/Binary Tree Right Side View"
+    },
+    {
+      "id": "dsa-0057",
+      "tag": "Recursion",
+      "heading": "Preorder gives the root, inorder splits the subtrees",
+      "hook": "The first element of preorder is always the current subtree's root; finding that value's position in inorder tells you exactly how many nodes belong to the left subtree versus the right.",
+      "sourceDoc": "/docs/DSA/100 Medium/Construct Binary Tree from Preorder and Inorder Traversal"
+    },
+    {
+      "id": "dsa-0058",
+      "tag": "Sliding Window",
+      "heading": "A fixed-size window with a count array spots every anagram",
+      "hook": "Maintain a 26-length count array for the current window and slide it one character at a time, comparing counts instead of re-sorting every substring.",
+      "sourceDoc": "/docs/DSA/100 Medium/Find All Anagrams in a String"
+    },
+    {
+      "id": "dsa-0059",
+      "tag": "Expand Around Center",
+      "heading": "Every palindrome expands outward from its own center",
+      "hook": "Try every possible center, both single characters and the gaps between pairs, expanding outward while both sides match, and keep the longest expansion found.",
+      "sourceDoc": "/docs/DSA/100 Medium/Longest Palidromic Substring"
+    },
+    {
+      "id": "dsa-0060",
+      "tag": "Sliding Window",
+      "heading": "Track the window's most frequent character, not every count",
+      "hook": "A window stays valid as long as its length minus the count of its most frequent character doesn't exceed k replacements — shrink from the left the moment it does.",
+      "sourceDoc": "/docs/DSA/100 Medium/Longest repeating character replacement"
+    },
+    {
+      "id": "dsa-0061",
+      "tag": "Topological Sort",
+      "heading": "Topological sort peels off zero-dependency nodes, layer by layer",
+      "hook": "Track how many prerequisites each course still has, queue up every course with zero, and each time one's processed, decrement its dependents until they hit zero too.",
+      "sourceDoc": "/docs/DSA/100 Medium/Course Schedule"
+    },
+    {
+      "id": "dsa-0062",
+      "tag": "Recursion",
+      "heading": "The first split point is the lowest common ancestor",
+      "hook": "Recursively search both children; if one target is found on each side, the current node is the answer — otherwise the answer is whichever side actually found something.",
+      "sourceDoc": "/docs/DSA/100 Medium/Lowest Common Ancestor of binary tree.md"
+    },
+    {
+      "id": "dsa-0063",
+      "tag": "Linked List",
+      "heading": "Reordering a list is split, reverse, then merge",
+      "hook": "Find the middle, reverse the second half in place, then weave the two halves together one node at a time — that's the whole L0 Ln L1 Ln-1 pattern.",
+      "sourceDoc": "/docs/DSA/100 Medium/Reorder List"
+    },
+    {
+      "id": "dsa-0064",
+      "tag": "Linked List",
+      "heading": "Rotating a list is relinking the tail to a new head",
+      "hook": "Find the true rotation amount with k modulo the list length, walk to the new tail, cut the list there, and reconnect the old tail to the old head.",
+      "sourceDoc": "/docs/DSA/100 Medium/Rotate list"
+    },
+    {
+      "id": "dsa-0065",
+      "tag": "Linked List",
+      "heading": "Merge sort suits linked lists because splitting is free",
+      "hook": "Find the middle with a slow and fast pointer, recursively sort each half, then merge the two sorted halves exactly like merging two sorted arrays — no array copy needed to split.",
+      "sourceDoc": "/docs/DSA/100 Medium/Sort List"
+    },
+    {
+      "id": "dsa-0066",
+      "tag": "Backtracking",
+      "heading": "Backtrack the path array as you unwind the recursion",
+      "hook": "Push each node's value onto a running path as you descend, record it when you hit a matching leaf, and pop it back off as you return — that pop is what makes it backtracking.",
+      "sourceDoc": "/docs/DSA/100 Medium/Path sum"
+    },
+    {
+      "id": "dsa-0067",
+      "tag": "BFS",
+      "heading": "Index nodes like a heap, and width is just a subtraction",
+      "hook": "Number each node's position as if the tree were complete (2*pos+1, 2*pos+2 for children), and a level's width is simply its last position minus its first.",
+      "sourceDoc": "/docs/DSA/100 Medium/Max width of a binary tree"
+    },
+    {
+      "id": "dsa-0068",
+      "tag": "Two Pointers",
+      "heading": "Sort first, fix one number, then two-pointer the rest",
+      "hook": "Sorting lets you fix each number in turn and two-pointer the remaining range for pairs summing to its negation, skipping duplicates to avoid repeated triplets.",
+      "sourceDoc": "/docs/DSA/100 Medium/Three Sum"
+    },
+    {
+      "id": "dsa-0069",
+      "tag": "Sorting",
+      "heading": "Sort by start time, then merge against only the last kept",
+      "hook": "After sorting by start, a new interval only ever needs to merge with the most recently kept one, since anything earlier is already guaranteed not to overlap it.",
+      "sourceDoc": "/docs/DSA/100 Medium/Merge Intervals"
+    },
+    {
+      "id": "dsa-0070",
+      "tag": "Prototypes",
+      "heading": "Extending Array.prototype gives every array a new method",
+      "hook": "Adding a function onto Array.prototype makes it available on every array in the program — that's how array.last() becomes callable anywhere without wrapping arrays in a class.",
+      "sourceDoc": "/docs/DSA/Javascript Specific/Array Prototype Last"
+    },
+    {
+      "id": "dsa-0071",
+      "tag": "Reduce",
+      "heading": "Reduce is a running accumulator, one element at a time",
+      "hook": "Implementing reduce from scratch is nothing more than a loop carrying one accumulator value forward, calling the reducer on it and the next element each time.",
+      "sourceDoc": "/docs/DSA/Javascript Specific/Array Reduce Transformation"
+    },
+    {
+      "id": "dsa-0072",
+      "tag": "Design",
+      "heading": "Expiring entries need a stored timestamp, not a timer per key",
+      "hook": "Storing each value alongside its computed expiration time means checking validity is just comparing against Date.now() at read time — no need to schedule a deletion for every key.",
+      "sourceDoc": "/docs/DSA/Javascript Specific/Cache with Time"
+    },
+    {
+      "id": "dsa-0073",
+      "tag": "Recursion",
+      "heading": "Compacting an object means recursing into every nested value",
+      "hook": "Recursively walk arrays and objects, rebuilding them with any key whose value is falsy removed, treating arrays as objects whose keys happen to be indices.",
+      "sourceDoc": "/docs/DSA/Javascript Specific/Compact Object"
+    },
+    {
+      "id": "dsa-0074",
+      "tag": "Closures",
+      "heading": "A closure lets a returned function remember a variable",
+      "hook": "The inner function keeps a live reference to a variable even after the outer function returns, so every call reads and mutates the exact same captured value instead of starting fresh.",
+      "sourceDoc": "/docs/DSA/Javascript Specific/Counter"
+    },
+    {
+      "id": "dsa-0075",
+      "tag": "Closures",
+      "heading": "One closure variable can back three different methods",
+      "hook": "increment, decrement, and reset all read and write the same captured count variable, which is what keeps them in sync without any shared external state.",
+      "sourceDoc": "/docs/DSA/Javascript Specific/Counter Two"
+    },
+    {
+      "id": "dsa-0076",
+      "tag": "Design",
+      "heading": "An emitter is a map of event names to callback arrays",
+      "hook": "Subscribing pushes a callback onto that event's array, emitting walks the array calling each one in subscription order, and unsubscribing just splices that one callback back out.",
+      "sourceDoc": "/docs/DSA/Javascript Specific/Event Emitter"
+    },
+    {
+      "id": "dsa-0077",
+      "tag": "Promises",
+      "heading": "Promise.all works by counting completions",
+      "hook": "Start every promise immediately, track how many have resolved, and resolve the outer promise only once every single one has — but reject immediately on the very first rejection.",
+      "sourceDoc": "/docs/DSA/Javascript Specific/Execute Asynchronous Functions In Parallel"
+    },
+    {
+      "id": "dsa-0078",
+      "tag": "Generators",
+      "heading": "A generator can represent an infinite sequence lazily",
+      "hook": "A while(true) loop with yield inside a generator produces values only when asked, which is how you model the infinite Fibonacci sequence without ever computing more than requested.",
+      "sourceDoc": "/docs/DSA/Javascript Specific/Fibonnacci"
+    },
+    {
+      "id": "dsa-0079",
+      "tag": "Higher-Order Functions",
+      "heading": "Filter is a loop that keeps only truthy predicate results",
+      "hook": "Implementing filter from scratch is iterating the array, calling the predicate with the element and its index, and pushing the element only when the predicate passes.",
+      "sourceDoc": "/docs/DSA/Javascript Specific/Filter Elements From Array"
+    },
+    {
+      "id": "dsa-0080",
+      "tag": "Functional Programming",
+      "heading": "Function composition applies right to left",
+      "hook": "compose([f, g, h])(x) means h runs first, then g, then f — the array is walked backward so the rightmost function always touches the raw input first.",
+      "sourceDoc": "/docs/DSA/Javascript Specific/Function Composition"
+    },
+    {
+      "id": "dsa-0081",
+      "tag": "Hash Map",
+      "heading": "Sorting each word into a key groups anagrams instantly",
+      "hook": "Two words are anagrams exactly when their sorted characters are identical, so sorting each word's letters into a map key naturally buckets every anagram together.",
+      "sourceDoc": "/docs/DSA/Javascript Specific/Group Anagrams"
+    },
+    {
+      "id": "dsa-0082",
+      "tag": "Reduce",
+      "heading": "groupBy buckets items by whatever key a function returns",
+      "hook": "Call the key function on each item, then push that item onto whichever bucket in a plain object maps to that key's string.",
+      "sourceDoc": "/docs/DSA/Javascript Specific/Group By"
+    },
+    {
+      "id": "dsa-0083",
+      "tag": "Hash Map",
+      "heading": "A map keyed by id is the natural way to merge record sets",
+      "hook": "Insert every object from the first array into a map keyed by id, then insert the second array the same way so its values overwrite overlapping keys — merged and de-duplicated in one pass.",
+      "sourceDoc": "/docs/DSA/Javascript Specific/Join Two Arrays By Id"
+    },
+    {
+      "id": "dsa-0084",
+      "tag": "Closures",
+      "heading": "Memoization caches results keyed by the exact arguments",
+      "hook": "Serialize the arguments into a cache key, and if that key's already been seen, skip the real computation entirely and return the stored result instead.",
+      "sourceDoc": "/docs/DSA/Javascript Specific/Memoize"
+    },
+    {
+      "id": "dsa-0085",
+      "tag": "Sliding Window",
+      "heading": "Shrink the window from the left once it's big enough",
+      "hook": "Expand the window by moving right forward, and every time the running sum meets the target, shrink from the left while recording the smallest window length found so far.",
+      "sourceDoc": "/docs/DSA/Javascript Specific/Minimum size subarray sum"
+    },
+    {
+      "id": "dsa-0086",
+      "tag": "Generators",
+      "heading": "yield* delegates to flatten recursion naturally",
+      "hook": "Recursing into a nested array and yielding each number works cleanly with yield*, which forwards every value from the inner generator call out through the outer one.",
+      "sourceDoc": "/docs/DSA/Javascript Specific/Nested Array Generator"
+    },
+    {
+      "id": "dsa-0087",
+      "tag": "Promises",
+      "heading": "A race against a timer enforces a deadline on a promise",
+      "hook": "Start a timer that rejects after t milliseconds alongside the real async call — whichever settles first, clearing the other, determines whether the caller gets a result or a timeout error.",
+      "sourceDoc": "/docs/DSA/Javascript Specific/Promise Time Limit"
+    },
+    {
+      "id": "dsa-0088",
+      "tag": "Recursion",
+      "heading": "Flattening to a depth means tracking depth as you recurse",
+      "hook": "Each recursive call only unwraps one more array level if the current depth is still less than the target — that's what stops flattening at exactly the requested depth.",
+      "sourceDoc": "/docs/DSA/Javascript Specific/Recursive Flatten"
+    },
+    {
+      "id": "dsa-0089",
+      "tag": "String",
+      "heading": "Build words in a buffer, commit them on a space",
+      "hook": "Accumulate characters into a word buffer and flush it to the front of the result the moment a space is hit — which naturally skips duplicate spaces.",
+      "sourceDoc": "/docs/DSA/Javascript Specific/Reverse words in a string"
+    },
+    {
+      "id": "dsa-0090",
+      "tag": "Promises",
+      "heading": "A sleep function is setTimeout wrapped in a promise",
+      "hook": "Wrapping setTimeout in a promise constructor turns a callback-based delay into something you can directly await inside async code.",
+      "sourceDoc": "/docs/DSA/Javascript Specific/Sleep"
+    },
+    {
+      "id": "dsa-0091",
+      "tag": "Array",
+      "heading": "Extend the current range, close it out on a gap",
+      "hook": "Track a running start and end, extend end whenever the next number is exactly one more, and the moment it isn't, push the completed range and start a new one.",
+      "sourceDoc": "/docs/DSA/Javascript Specific/Summary Ranges"
+    },
+    {
+      "id": "dsa-0092",
+      "tag": "Testing",
+      "heading": "A tiny assertion library is strict equality plus a thrown error",
+      "hook": "toBe and notToBe both just compare with strict equality and throw when the comparison doesn't match the expectation — the entire mechanism behind most assertion libraries.",
+      "sourceDoc": "/docs/DSA/Javascript Specific/To Be or Not To Be"
+    },
+    {
+      "id": "dsa-0093",
+      "tag": "Two Pointers",
+      "heading": "A sorted input turns Two Sum into two pointers",
+      "hook": "Because the array is already sorted, moving the low pointer up when the sum is too small and the high pointer down when it's too large finds the pair in O(1) space — no hash map needed.",
+      "sourceDoc": "/docs/DSA/Javascript Specific/Two Sum II"
+    },
+    {
+      "id": "dsa-0094",
+      "tag": "Simulation",
+      "heading": "Simulate a zigzag by bouncing a row pointer up and down",
+      "hook": "Walk the string once, appending each character to the row array at the current row index, and flip direction the instant you hit the top or bottom row.",
+      "sourceDoc": "/docs/DSA/Javascript Specific/Zigzag Conversion"
+    }
+  ]
+}
