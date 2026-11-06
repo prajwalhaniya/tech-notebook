@@ -103,17 +103,11 @@ const Contents = [
   },
 ];
 
-function ContentsRow({number, title, description, link}) {
+function ContentsRow({number, title, link}) {
   return (
     <Link to={link} className="notebookIndexEntry">
       <span className="notebookIndexNumber">{number}</span>
-      <span className="notebookIndexBody">
-        <span className="notebookIndexTitleRow">
-          <span className="notebookIndexTitle">{title}</span>
-          <span className="notebookIndexLeader" />
-        </span>
-        <span className="notebookIndexDescription">{description}</span>
-      </span>
+      <span className="notebookIndexTitle">{title}</span>
       <span className="notebookIndexArrow">→</span>
     </Link>
   );

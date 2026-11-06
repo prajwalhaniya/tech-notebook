@@ -1,0 +1,687 @@
+{
+  "topic": "testing",
+  "topicLabel": "Testing",
+  "cards": [
+    {
+      "id": "test-0001",
+      "tag": "Testing Philosophy",
+      "heading": "Testing isn't about coverage",
+      "hook": "Testing is about confidence — shipping code knowing it works, and that future changes won't silently break it.",
+      "sourceDoc": "/docs/Testing/Testing Fundamentals"
+    },
+    {
+      "id": "test-0002",
+      "tag": "Testing Pyramid",
+      "heading": "The pyramid, bottom to top",
+      "hook": "Many fast unit tests at the base, fewer integration tests in the middle, and a handful of slow E2E tests at the top.",
+      "body": "Inverting that ratio — lots of E2E, few unit tests — is the most common testing mistake teams make.",
+      "sourceDoc": "/docs/Testing/Testing Fundamentals"
+    },
+    {
+      "id": "test-0003",
+      "tag": "Unit Tests",
+      "heading": "What a unit test actually covers",
+      "hook": "A unit test isolates a single function or class with every dependency mocked, running in milliseconds.",
+      "body": "Hundreds or thousands of them can live in a healthy codebase without slowing anyone down.",
+      "sourceDoc": "/docs/Testing/Testing Fundamentals"
+    },
+    {
+      "id": "test-0004",
+      "tag": "Integration Tests",
+      "heading": "What integration tests catch that unit tests can't",
+      "hook": "Integration tests use the real database, Redis, or file system — slower, but they catch the contract bugs between layers that mocks paper over.",
+      "sourceDoc": "/docs/Testing/Testing Fundamentals"
+    },
+    {
+      "id": "test-0005",
+      "tag": "E2E Tests",
+      "heading": "E2E tests are expensive on purpose",
+      "hook": "End-to-end tests exercise the whole system from the outside, HTTP request to DB to HTTP response.",
+      "body": "Reserve them for a few dozen critical paths like checkout and login, not everything.",
+      "sourceDoc": "/docs/Testing/Testing Fundamentals"
+    },
+    {
+      "id": "test-0006",
+      "tag": "Testing Philosophy",
+      "heading": "Test behavior, not implementation",
+      "hook": "A test that spies on a private method breaks on every refactor — assert on the observable result instead, and it survives any internal rewrite.",
+      "code": "// Bad\nexpect(spy).toHaveBeenCalledWith(order.id, order.total);\n// Good\nexpect(result.status).toBe('SUCCESS');",
+      "sourceDoc": "/docs/Testing/Testing Fundamentals"
+    },
+    {
+      "id": "test-0007",
+      "tag": "Testing Philosophy",
+      "heading": "Test the contract, not the internals",
+      "hook": "expect(user._data.profile.name) breaks the moment that internal shape changes — expect(user.getName()) doesn't care how the data is stored.",
+      "sourceDoc": "/docs/Testing/Testing Fundamentals"
+    },
+    {
+      "id": "test-0008",
+      "tag": "Testing Philosophy",
+      "heading": "Not everything deserves a test",
+      "hook": "Business logic, edge cases, and error paths are worth testing — simple getters, framework code, and one-line wrappers mostly aren't.",
+      "sourceDoc": "/docs/Testing/Testing Fundamentals"
+    },
+    {
+      "id": "test-0009",
+      "tag": "AAA Pattern",
+      "heading": "Every test is Arrange, Act, Assert",
+      "hook": "Set up the scenario, call the thing under test, verify the outcome — keep the three phases visually separated.",
+      "body": "A 50-line Arrange section is a sign the test is covering too much at once.",
+      "sourceDoc": "/docs/Testing/Testing Fundamentals"
+    },
+    {
+      "id": "test-0010",
+      "tag": "Test Naming",
+      "heading": "A test name is documentation",
+      "hook": "test('handles edge case') tells you nothing when it fails — test('throws NotFoundError when order does not exist') tells you exactly what broke.",
+      "sourceDoc": "/docs/Testing/Testing Fundamentals"
+    },
+    {
+      "id": "test-0011",
+      "tag": "Test Naming",
+      "heading": "The naming pattern that scales",
+      "hook": "[action/condition] [expected result] as the template means a failing test literally explains itself in the output.",
+      "code": "OrderService > placeOrder > throws InsufficientInventoryError when stock is 0",
+      "sourceDoc": "/docs/Testing/Testing Fundamentals"
+    },
+    {
+      "id": "test-0012",
+      "tag": "Test Isolation",
+      "heading": "Tests must not depend on each other",
+      "hook": "Every test should start from a clean state and be runnable in any order.",
+      "code": "beforeEach(() => {\n  userRepo = new InMemoryUserRepository();\n  userService = new UserService(userRepo);\n});",
+      "sourceDoc": "/docs/Testing/Testing Fundamentals"
+    },
+    {
+      "id": "test-0013",
+      "tag": "Test Isolation",
+      "heading": "Cleaning up after integration tests",
+      "hook": "beforeAll runs migrations once, beforeEach seeds fresh data, afterEach truncates tables.",
+      "body": "Each test gets a clean slate without paying the migration cost every single time.",
+      "sourceDoc": "/docs/Testing/Testing Fundamentals"
+    },
+    {
+      "id": "test-0014",
+      "tag": "Test Doubles",
+      "heading": "Stub, mock, spy, fake — four different tools",
+      "hook": "A stub returns canned data, a mock also verifies it was called correctly, a spy wraps a real implementation and just watches, and a fake is a simplified-but-working version for when the real thing is too slow.",
+      "sourceDoc": "/docs/Testing/Testing Fundamentals"
+    },
+    {
+      "id": "test-0015",
+      "tag": "Test Doubles",
+      "heading": "When to reach for which double",
+      "hook": "Need a dependency to return specific data? Stub. Need to verify it was called right? Mock. Watching a real implementation run? Spy. The real thing is a slow DB or external API? Fake.",
+      "sourceDoc": "/docs/Testing/Testing Fundamentals"
+    },
+    {
+      "id": "test-0016",
+      "tag": "Good Tests",
+      "heading": "FIRST: what makes a test good",
+      "hook": "Fast, Isolated, Repeatable, Self-checking, Timely — a test missing any one of these five quietly stops getting trusted, then stops getting run.",
+      "sourceDoc": "/docs/Testing/Testing Fundamentals"
+    },
+    {
+      "id": "test-0017",
+      "tag": "Anti-Patterns",
+      "heading": "Testing implementation details breaks on every refactor",
+      "hook": "expect(service._internalState).toBe('ready') couples the test to code that has no business being tested — it'll break the next time someone renames a private field, for no real reason.",
+      "sourceDoc": "/docs/Testing/Testing Fundamentals"
+    },
+    {
+      "id": "test-0018",
+      "tag": "Anti-Patterns",
+      "heading": "One test, one behavior",
+      "hook": "A test with ten assertions tells you something failed but not which.",
+      "body": "Splitting it into one assertion per test turns a vague red into an exact diagnosis.",
+      "sourceDoc": "/docs/Testing/Testing Fundamentals"
+    },
+    {
+      "id": "test-0019",
+      "tag": "Anti-Patterns",
+      "heading": "Testing the mechanism instead of the outcome",
+      "hook": "expect(spy).toHaveBeenCalled() on an Axios call checks that a library was invoked, not that the behavior is right — assert on the actual transaction ID or status instead.",
+      "sourceDoc": "/docs/Testing/Testing Fundamentals"
+    },
+    {
+      "id": "test-0020",
+      "tag": "Anti-Patterns",
+      "heading": "A skipped test is a silent liability",
+      "hook": "Marking a failing test test.skip instead of fixing it quietly erases the safety net it used to provide.",
+      "sourceDoc": "/docs/Testing/Testing Fundamentals"
+    },
+    {
+      "id": "test-0021",
+      "tag": "Code Coverage",
+      "heading": "Coverage is a metric, not a goal",
+      "hook": "100% coverage can still ship bugs — coverage only proves code ran during a test, never that the test actually checked anything meaningful.",
+      "sourceDoc": "/docs/Testing/Testing Fundamentals"
+    },
+    {
+      "id": "test-0022",
+      "tag": "Code Coverage",
+      "heading": "Where to actually aim for high coverage",
+      "hook": "Business logic, utility functions, and error-handling paths deserve high coverage — boilerplate, generated code, and simple getters don't need the same bar.",
+      "sourceDoc": "/docs/Testing/Testing Fundamentals"
+    },
+    {
+      "id": "test-0023",
+      "tag": "TDD",
+      "heading": "Red, Green, Refactor",
+      "hook": "Write a failing test first, write just enough code to pass it, then refactor with the safety net already in place.",
+      "body": "TDD forces you to design the interface before the implementation exists.",
+      "sourceDoc": "/docs/Testing/Testing Fundamentals"
+    },
+    {
+      "id": "test-0024",
+      "tag": "TDD",
+      "heading": "Where TDD earns its keep",
+      "hook": "Business logic, algorithms, and utility functions are where TDD shines — exploratory UI work and unknown domains are where it gets in the way.",
+      "sourceDoc": "/docs/Testing/Testing Fundamentals"
+    },
+    {
+      "id": "test-0025",
+      "tag": "Testing Pyramid",
+      "heading": "Each layer trades speed for confidence",
+      "hook": "Unit tests run in milliseconds but only prove the logic is right in isolation; E2E tests are slow and brittle but prove the whole system actually works together.",
+      "body": "Neither layer replaces the other — that's exactly why the pyramid has three levels.",
+      "sourceDoc": "/docs/Testing/Testing Fundamentals"
+    },
+    {
+      "id": "test-0026",
+      "tag": "Anti-Patterns",
+      "heading": "A test suite nobody trusts gets ignored, not fixed",
+      "hook": "Once a team starts re-running a flaky test until it passes, every red in that suite stops meaning anything.",
+      "body": "Fixing the flakiness is more urgent than it feels in the moment.",
+      "sourceDoc": "/docs/Testing/Testing Fundamentals"
+    },
+    {
+      "id": "test-0027",
+      "tag": "Jest Setup",
+      "heading": "Wiring up Jest",
+      "hook": "testEnvironment: node plus a testMatch pattern is most of what Jest needs to find and run your tests.",
+      "body": "ES modules need an extra babel-jest preset layered on top.",
+      "sourceDoc": "/docs/Testing/Unit Testing"
+    },
+    {
+      "id": "test-0028",
+      "tag": "Jest Setup",
+      "heading": "testMatch decides what counts as a test file",
+      "hook": "A pattern like **/*.test.js is what keeps Jest from accidentally trying to run your source files or fixtures as test suites.",
+      "sourceDoc": "/docs/Testing/Unit Testing"
+    },
+    {
+      "id": "test-0029",
+      "tag": "Jest Setup",
+      "heading": "Watch mode speeds up the feedback loop",
+      "hook": "jest --watch reruns only the tests affected by your latest change, turning the suite into a live feedback loop instead of a full run every save.",
+      "sourceDoc": "/docs/Testing/Unit Testing"
+    },
+    {
+      "id": "test-0030",
+      "tag": "Assertions",
+      "heading": "toBe vs toEqual",
+      "hook": "toBe checks strict equality for primitives — toEqual does a deep comparison, which is what you actually want for objects and arrays.",
+      "sourceDoc": "/docs/Testing/Unit Testing"
+    },
+    {
+      "id": "test-0031",
+      "tag": "Assertions",
+      "heading": "The assertion you forget: toBeCloseTo",
+      "hook": "Floating point math makes toBe(0.3) fail unpredictably — toBeCloseTo(0.3, 5) compares within a tolerance instead of expecting exact binary equality.",
+      "sourceDoc": "/docs/Testing/Unit Testing"
+    },
+    {
+      "id": "test-0032",
+      "tag": "Assertions",
+      "heading": "Partial matches without listing every field",
+      "hook": "toMatchObject checks that an object contains the given fields with the given values, ignoring everything else.",
+      "sourceDoc": "/docs/Testing/Unit Testing"
+    },
+    {
+      "id": "test-0033",
+      "tag": "Assertions",
+      "heading": "Asserting on thrown errors",
+      "hook": "expect(() => fn()).toThrow(ValidationError) checks the error type, not just that something was thrown — being specific here catches the wrong kind of failure.",
+      "sourceDoc": "/docs/Testing/Unit Testing"
+    },
+    {
+      "id": "test-0034",
+      "tag": "Async Testing",
+      "heading": "Testing promises cleanly",
+      "hook": "await expect(promise).resolves.toBe(...) and .rejects.toThrow(...) read cleaner than wrapping everything in try/catch.",
+      "sourceDoc": "/docs/Testing/Unit Testing"
+    },
+    {
+      "id": "test-0035",
+      "tag": "Mocking",
+      "heading": "jest.mock replaces a whole module",
+      "hook": "jest.mock('./emailService.js') swaps every export for a jest.fn() automatically — then you control exactly what each call returns.",
+      "code": "jest.mock('./emailService.js');\nsendEmail.mockResolvedValue({ sent: true });",
+      "sourceDoc": "/docs/Testing/Unit Testing"
+    },
+    {
+      "id": "test-0036",
+      "tag": "Mocking",
+      "heading": "Mocking just the methods you need",
+      "hook": "A factory passed to jest.mock lets you mock only specific exports instead of silently stubbing every function in the module.",
+      "sourceDoc": "/docs/Testing/Unit Testing"
+    },
+    {
+      "id": "test-0037",
+      "tag": "Mocking",
+      "heading": "Classes get auto-mocked too",
+      "hook": "jest.mock('./PaymentGateway.js') turns every method on that class into a jest.fn() automatically — set its return value directly on the prototype.",
+      "sourceDoc": "/docs/Testing/Unit Testing"
+    },
+    {
+      "id": "test-0038",
+      "tag": "Mocking",
+      "heading": "A stub is often a one-liner",
+      "hook": "jest.fn().mockResolvedValue(...) with no class and no implementation is often all a dependency needs to be for a unit test.",
+      "sourceDoc": "/docs/Testing/Unit Testing"
+    },
+    {
+      "id": "test-0039",
+      "tag": "Dependency Injection",
+      "heading": "DI makes mocking unnecessary",
+      "hook": "A class that accepts its dependencies through the constructor can be tested with plain fake objects — no jest.mock() magic required at all.",
+      "code": "const service = new OrderService(mockRepo, mockEmail, {});",
+      "sourceDoc": "/docs/Testing/Unit Testing"
+    },
+    {
+      "id": "test-0040",
+      "tag": "Setup and Teardown",
+      "heading": "beforeEach vs beforeAll",
+      "hook": "beforeAll runs once for the whole describe block — good for expensive setup like DB connections. beforeEach runs before every single test — good for resetting state so tests can't leak into each other.",
+      "sourceDoc": "/docs/Testing/Unit Testing"
+    },
+    {
+      "id": "test-0041",
+      "tag": "Setup and Teardown",
+      "heading": "Clear your mocks between tests",
+      "hook": "jest.clearAllMocks() in beforeEach resets call counts so a mock called in test one doesn't silently inflate the assertions in test two.",
+      "sourceDoc": "/docs/Testing/Unit Testing"
+    },
+    {
+      "id": "test-0042",
+      "tag": "Snapshot Testing",
+      "heading": "Snapshot tests catch unexpected changes",
+      "hook": "toMatchSnapshot() saves a function's output the first time and fails the test if it ever changes.",
+      "body": "Ideal for HTML templates and serialization, risky for anything with a timestamp.",
+      "sourceDoc": "/docs/Testing/Unit Testing"
+    },
+    {
+      "id": "test-0043",
+      "tag": "Snapshot Testing",
+      "heading": "Keeping dynamic data out of snapshots",
+      "hook": "expect.any(String) and expect.any(Date) let a snapshot-style assertion ignore fields that are expected to change on every run, like generated IDs.",
+      "sourceDoc": "/docs/Testing/Unit Testing"
+    },
+    {
+      "id": "test-0044",
+      "tag": "Error Testing",
+      "heading": "The happy path is the easy 10%",
+      "hook": "Error paths are where bugs actually hide — testing that a service rolls back an order when payment fails matters more than testing that it succeeds.",
+      "sourceDoc": "/docs/Testing/Unit Testing"
+    },
+    {
+      "id": "test-0045",
+      "tag": "Error Testing",
+      "heading": "Verify what didn't happen, not just what did",
+      "hook": "expect(mockPayment.charge).not.toHaveBeenCalled() after a failed inventory check proves the system didn't charge a card for stock it didn't have.",
+      "body": "A subtler and more important assertion than just checking the error message.",
+      "sourceDoc": "/docs/Testing/Unit Testing"
+    },
+    {
+      "id": "test-0046",
+      "tag": "Parameterized Tests",
+      "heading": "test.each kills repetitive test code",
+      "hook": "One test.each table replaces five nearly-identical test blocks, and adding a new case is a one-line row instead of a copy-pasted function.",
+      "code": "test.each([[1000,0,1000],[1000,10,900]])(\n  'price %d with %d%% discount returns %d',\n  (p,d,e) => expect(applyDiscount(p,d)).toBe(e)\n);",
+      "sourceDoc": "/docs/Testing/Unit Testing"
+    },
+    {
+      "id": "test-0047",
+      "tag": "Design",
+      "heading": "Constructor injection is the cheapest testability win",
+      "hook": "A class built as new OrderService({orderRepo, emailService, paymentService}) can be tested with four plain objects — no module mocking, no magic.",
+      "sourceDoc": "/docs/Testing/Unit Testing"
+    },
+    {
+      "id": "test-0048",
+      "tag": "Real-World Example",
+      "heading": "One behavior, one test, even in a real service",
+      "hook": "OrderService.placeOrder's test cases each check exactly one outcome — order created, marked PAID, email sent, stock enforced.",
+      "body": "So a failure immediately says which specific behavior broke, not just that something did.",
+      "sourceDoc": "/docs/Testing/Unit Testing"
+    },
+    {
+      "id": "test-0049",
+      "tag": "Integration Tests",
+      "heading": "Unit tests check the logic, integration tests check the wiring",
+      "hook": "A mocked unit test can pass even when your SQL has a typo, your schema doesn't match, or a foreign key blocks the insert — only a real database catches that.",
+      "sourceDoc": "/docs/Testing/Integration Testing"
+    },
+    {
+      "id": "test-0050",
+      "tag": "What to Test",
+      "heading": "Pick the layer, not just 'integration'",
+      "hook": "Repository-to-DB, service-to-Redis, HTTP-to-service — each boundary needs its own integration tests, because each one breaks in a different way.",
+      "sourceDoc": "/docs/Testing/Integration Testing"
+    },
+    {
+      "id": "test-0051",
+      "tag": "Repository Tests",
+      "heading": "Use a real test database, not a mock",
+      "hook": "A dedicated test database with real migrations run against it proves your queries, constraints, and indexes actually work — a mock can't catch a missing foreign key.",
+      "sourceDoc": "/docs/Testing/Integration Testing"
+    },
+    {
+      "id": "test-0052",
+      "tag": "Repository Tests",
+      "heading": "Truncate, don't recreate, between tests",
+      "hook": "TRUNCATE TABLE orders RESTART IDENTITY CASCADE in afterEach resets the table to empty without the cost of dropping and recreating it for every test.",
+      "sourceDoc": "/docs/Testing/Integration Testing"
+    },
+    {
+      "id": "test-0053",
+      "tag": "Repository Tests",
+      "heading": "Postgres returns numbers as strings — test for it",
+      "hook": "A NUMERIC column comes back from pg as a string, not a JS number.",
+      "body": "A test asserting total === 500 instead of '500' passes locally and fails against the real driver.",
+      "sourceDoc": "/docs/Testing/Integration Testing"
+    },
+    {
+      "id": "test-0054",
+      "tag": "HTTP Testing",
+      "heading": "Supertest hits your real app without binding a port",
+      "hook": "Supertest starts your actual Express app in-process and fires real HTTP requests at it — testing routing, middleware, and response shape with no live server to manage.",
+      "code": "const res = await request(app).post('/orders').send({...});\nexpect(res.status).toBe(201);",
+      "sourceDoc": "/docs/Testing/Integration Testing"
+    },
+    {
+      "id": "test-0055",
+      "tag": "HTTP Testing",
+      "heading": "Test the failure responses too",
+      "hook": "A 400 on an empty items array and a 401 on a missing Authorization header are just as much the contract as the 201 on success.",
+      "body": "They're exactly what a mocked unit test would never catch.",
+      "sourceDoc": "/docs/Testing/Integration Testing"
+    },
+    {
+      "id": "test-0056",
+      "tag": "HTTP Testing",
+      "heading": "A Location header is part of the contract too",
+      "hook": "A 201 response that includes Location: /orders/42 lets a client immediately fetch the created resource — testing for its presence catches a regression a status-code-only check would miss.",
+      "sourceDoc": "/docs/Testing/Integration Testing"
+    },
+    {
+      "id": "test-0057",
+      "tag": "HTTP Testing",
+      "heading": "Seed data directly, then act through HTTP",
+      "hook": "Inserting an order straight into Postgres and then hitting GET /orders/:id through the real HTTP layer isolates exactly what's under test.",
+      "body": "It tests only the read path, without re-testing the write path in the same case.",
+      "sourceDoc": "/docs/Testing/Integration Testing"
+    },
+    {
+      "id": "test-0058",
+      "tag": "Auth Testing",
+      "heading": "Don't mock auth in integration tests",
+      "hook": "Generating a real signed JWT and sending it through the real middleware is what actually proves your authentication and role checks work.",
+      "sourceDoc": "/docs/Testing/Integration Testing"
+    },
+    {
+      "id": "test-0059",
+      "tag": "Auth Testing",
+      "heading": "Role-based access needs its own test",
+      "hook": "A non-admin token hitting an admin-only route should return 403 — skip that test and a broken permission check ships silently.",
+      "sourceDoc": "/docs/Testing/Integration Testing"
+    },
+    {
+      "id": "test-0060",
+      "tag": "Database Strategy",
+      "heading": "Three ways to isolate integration tests",
+      "hook": "A shared test database with truncation between tests is simplest but can't run in parallel; wrapping each test in a transaction and rolling it back is fast but needs an injectable client; a separate database per test file is fully parallel-safe but more setup.",
+      "sourceDoc": "/docs/Testing/Integration Testing"
+    },
+    {
+      "id": "test-0061",
+      "tag": "Database Strategy",
+      "heading": "Transaction rollback is the fast option",
+      "hook": "BEGIN before the test, ROLLBACK after — no truncation, no cleanup queries, and the next test starts from an identical clean slate every time.",
+      "sourceDoc": "/docs/Testing/Integration Testing"
+    },
+    {
+      "id": "test-0062",
+      "tag": "Redis Testing",
+      "heading": "Flush, don't guess, between cache tests",
+      "hook": "client.flushDb() in afterEach clears every key so a cache test can't accidentally pass because a previous test left the right value behind.",
+      "sourceDoc": "/docs/Testing/Integration Testing"
+    },
+    {
+      "id": "test-0063",
+      "tag": "Redis Testing",
+      "heading": "TTL expiry is worth an explicit test",
+      "hook": "Setting a 1-second TTL and then actually waiting past it is the only way to prove cache invalidation logic works, not just that set and get round-trip correctly.",
+      "sourceDoc": "/docs/Testing/Integration Testing"
+    },
+    {
+      "id": "test-0064",
+      "tag": "Test Data",
+      "heading": "A seed helper beats repeating setup",
+      "hook": "seedUser() and seedOrder() helpers with sensible defaults let every test spin up exactly the data it needs in one line.",
+      "sourceDoc": "/docs/Testing/Integration Testing"
+    },
+    {
+      "id": "test-0065",
+      "tag": "Organization",
+      "heading": "Keep unit and integration tests in separate directories",
+      "hook": "Fast unit tests run on every save; slower integration tests run in CI with --runInBand so they don't fight each other over the same test database.",
+      "sourceDoc": "/docs/Testing/Integration Testing"
+    },
+    {
+      "id": "test-0066",
+      "tag": "Integration vs Unit",
+      "heading": "A decision table beats a rule of thumb",
+      "hook": "Discount math is a unit test. SQL returning correct rows is an integration test. Can't-ship-an-unpaid-order needs both.",
+      "body": "Matching test type to what could actually break is the real skill, not a blanket rule.",
+      "sourceDoc": "/docs/Testing/Integration Testing"
+    },
+    {
+      "id": "test-0067",
+      "tag": "HTTP Testing",
+      "heading": "Separating unit and integration test scripts",
+      "hook": "npm test runs only src/**/*.test.js fast on every save; npm run test:integration runs the slower suite against real infrastructure separately.",
+      "sourceDoc": "/docs/Testing/Integration Testing"
+    },
+    {
+      "id": "test-0068",
+      "tag": "Load Testing",
+      "heading": "The slow degradation nobody notices",
+      "hook": "An API can look fine at 100 users, creep to 2 seconds at 1,000, and hit 10 seconds at 5,000.",
+      "body": "Because the growth is gradual, nobody notices until connections exhaust completely.",
+      "sourceDoc": "/docs/Testing/Load_Testing_with_k6"
+    },
+    {
+      "id": "test-0069",
+      "tag": "k6",
+      "heading": "Why k6 over JMeter or Locust",
+      "hook": "k6 scripts are plain JavaScript, run from the command line with no GUI, and need no Python — which is exactly what fits cleanly into a Node.js team's CI/CD pipeline.",
+      "sourceDoc": "/docs/Testing/Load_Testing_with_k6"
+    },
+    {
+      "id": "test-0070",
+      "tag": "k6",
+      "heading": "A virtual user is just a loop",
+      "hook": "vus: 10 and duration: '30s' means 10 simulated users each repeatedly running your script for 30 seconds.",
+      "code": "export const options = { vus: 10, duration: '30s' };",
+      "sourceDoc": "/docs/Testing/Load_Testing_with_k6"
+    },
+    {
+      "id": "test-0071",
+      "tag": "k6",
+      "heading": "check() is k6's assertion",
+      "hook": "check(response, {...}) doesn't fail the test run the way a thrown error would — it just records a pass/fail rate you read in the summary.",
+      "sourceDoc": "/docs/Testing/Load_Testing_with_k6"
+    },
+    {
+      "id": "test-0072",
+      "tag": "Metrics",
+      "heading": "http_req_duration is the number that matters most",
+      "hook": "avg under 500ms is the common bar for a good user experience.",
+      "body": "But watch the gap between avg and p(95) — a big one means most users are fine while a meaningful slice are having a bad time.",
+      "sourceDoc": "/docs/Testing/Load_Testing_with_k6"
+    },
+    {
+      "id": "test-0073",
+      "tag": "Metrics",
+      "heading": "p95 and p99 catch what averages hide",
+      "hook": "An average of 250ms can still have a p99 of 2 seconds — the 99th percentile tells you how bad the worst 1% of requests get, which the average silently erases.",
+      "sourceDoc": "/docs/Testing/Load_Testing_with_k6"
+    },
+    {
+      "id": "test-0074",
+      "tag": "Metrics",
+      "heading": "http_req_failed is your error budget in one number",
+      "hook": "0% failed is the target — anything above it means real requests are erroring under load, not just running slow.",
+      "sourceDoc": "/docs/Testing/Load_Testing_with_k6"
+    },
+    {
+      "id": "test-0075",
+      "tag": "Test Types",
+      "heading": "Smoke test: the one-user sanity check",
+      "hook": "A smoke test runs with a single virtual user for a minute before anything heavier — its only job is confirming the system works at all.",
+      "body": "Cheap enough to run on every CI build.",
+      "sourceDoc": "/docs/Testing/Load_Testing_with_k6"
+    },
+    {
+      "id": "test-0076",
+      "tag": "Test Types",
+      "heading": "Load test: your actual expected traffic",
+      "hook": "Ramp up to the number of users you really expect, hold steady, ramp down.",
+      "code": "thresholds: {\n  http_req_duration: ['p(95)<500'],\n  http_req_failed: ['rate<0.01'],\n}",
+      "sourceDoc": "/docs/Testing/Load_Testing_with_k6"
+    },
+    {
+      "id": "test-0077",
+      "tag": "Test Types",
+      "heading": "Stress test: finding where it actually breaks",
+      "hook": "Step the load up in stages — 100, 200, 300 users — and watch exactly which stage response time and error rate start climbing.",
+      "body": "That's your real breaking point, not a guess.",
+      "sourceDoc": "/docs/Testing/Load_Testing_with_k6"
+    },
+    {
+      "id": "test-0078",
+      "tag": "Test Types",
+      "heading": "Spike test: can you survive a sudden flood",
+      "hook": "Jumping from 10 to 200 users in under a minute simulates a marketing email landing in 50,000 inboxes at once.",
+      "body": "The real question isn't just whether it degrades — it's whether it recovers after.",
+      "sourceDoc": "/docs/Testing/Load_Testing_with_k6"
+    },
+    {
+      "id": "test-0079",
+      "tag": "Test Types",
+      "heading": "Soak test: the one that finds memory leaks",
+      "hook": "Running steady load for three hours instead of five minutes is what surfaces a memory leak.",
+      "body": "Response time creeping from 250ms to 5 seconds over hours is invisible in a short test.",
+      "sourceDoc": "/docs/Testing/Load_Testing_with_k6"
+    },
+    {
+      "id": "test-0080",
+      "tag": "Realistic Scenarios",
+      "heading": "A real user doesn't hammer the API nonstop",
+      "hook": "sleep(Math.random() * 3 + 2) between requests models actual think time — a script with no sleep at all tests a traffic pattern that will never really happen.",
+      "sourceDoc": "/docs/Testing/Load_Testing_with_k6"
+    },
+    {
+      "id": "test-0081",
+      "tag": "Realistic Scenarios",
+      "heading": "group() breaks a flow into named stages",
+      "hook": "Wrapping browse, add-to-cart, and checkout in group() blocks with different tags lets you set a stricter threshold on checkout than on browsing.",
+      "body": "Results come back broken down per step, not just as one blended average.",
+      "sourceDoc": "/docs/Testing/Load_Testing_with_k6"
+    },
+    {
+      "id": "test-0082",
+      "tag": "Realistic Scenarios",
+      "heading": "A login-then-act flow needs the token passed forward",
+      "hook": "Logging in, pulling the token out of the response, then using it as a Bearer header on the next request is what actually exercises the authenticated path, not just the login endpoint.",
+      "sourceDoc": "/docs/Testing/Load_Testing_with_k6"
+    },
+    {
+      "id": "test-0083",
+      "tag": "Test Data",
+      "heading": "SharedArray loads test data once, not once per VU",
+      "hook": "Wrapping an array of test users in SharedArray means it's loaded into memory a single time and shared across every virtual user, instead of duplicated per VU.",
+      "sourceDoc": "/docs/Testing/Load_Testing_with_k6"
+    },
+    {
+      "id": "test-0084",
+      "tag": "Custom Metrics",
+      "heading": "Trend and Counter track what k6 doesn't by default",
+      "hook": "A custom Trend metric can measure just your checkout step's duration specifically, separate from the blended average across every endpoint the test hits.",
+      "sourceDoc": "/docs/Testing/Load_Testing_with_k6"
+    },
+    {
+      "id": "test-0085",
+      "tag": "Diagnosing Issues",
+      "heading": "Response time degradation has a short list of usual suspects",
+      "hook": "Database not scaling, no caching layer, synchronous code blocking the event loop, or CPU-bound work on the main thread — roughly in that order of likelihood.",
+      "sourceDoc": "/docs/Testing/Load_Testing_with_k6"
+    },
+    {
+      "id": "test-0086",
+      "tag": "Diagnosing Issues",
+      "heading": "429 errors under load might be working as intended",
+      "hook": "Seeing rate-limit errors climb as load increases isn't necessarily a bug — it can be exactly the protection doing its job.",
+      "body": "The real decision is whether the limit itself needs raising.",
+      "sourceDoc": "/docs/Testing/Load_Testing_with_k6"
+    },
+    {
+      "id": "test-0087",
+      "tag": "Diagnosing Issues",
+      "heading": "Connection pool exhaustion looks like random failures",
+      "hook": "0% errors at 50 users and 30% 'too many connections' errors at 100 is a pool sized too small for the concurrency, not a code bug.",
+      "sourceDoc": "/docs/Testing/Load_Testing_with_k6"
+    },
+    {
+      "id": "test-0088",
+      "tag": "Best Practices",
+      "heading": "Start small, then escalate",
+      "hook": "Smoke test with 1 user, then 10, then your real expected load, then a stress test to find the ceiling.",
+      "body": "Jumping straight to a stress test burns time chasing failures a smoke test would have caught in seconds.",
+      "sourceDoc": "/docs/Testing/Load_Testing_with_k6"
+    },
+    {
+      "id": "test-0089",
+      "tag": "Best Practices",
+      "heading": "Never load test production without explicit approval",
+      "hook": "A load test is, by design, trying to overwhelm a system — running one against production without sign-off is indistinguishable from an accidental denial-of-service.",
+      "sourceDoc": "/docs/Testing/Load_Testing_with_k6"
+    },
+    {
+      "id": "test-0090",
+      "tag": "Best Practices",
+      "heading": "Document your baseline so regressions are visible",
+      "hook": "A written baseline — p95 response time, error rate, throughput, on a specific infrastructure — turns 'feels slower' into 'p95 went from 450ms to 900ms since last quarter'.",
+      "sourceDoc": "/docs/Testing/Load_Testing_with_k6"
+    },
+    {
+      "id": "test-0091",
+      "tag": "CI/CD",
+      "heading": "Fail the build on a threshold breach, not just a crash",
+      "hook": "thresholds in k6 options make the test process exit non-zero when p(95) or error rate crosses your line.",
+      "body": "That's what actually blocks a bad deploy in CI instead of just producing a report nobody reads.",
+      "sourceDoc": "/docs/Testing/Load_Testing_with_k6"
+    },
+    {
+      "id": "test-0092",
+      "tag": "CI/CD",
+      "heading": "Run the smoke test on every deploy, the stress test monthly",
+      "hook": "A smoke test is cheap enough for every single CI run; a 3-hour soak test only makes sense before a major release.",
+      "body": "Matching test type to cadence is what keeps the pipeline fast.",
+      "sourceDoc": "/docs/Testing/Load_Testing_with_k6"
+    }
+  ]
+}

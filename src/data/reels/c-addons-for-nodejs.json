@@ -1,0 +1,403 @@
+{
+  "topic": "c-addons-for-nodejs",
+  "topicLabel": "C++ Addons for Node.js",
+  "cards": [
+    {
+      "id": "cpp-0001",
+      "tag": "Performance",
+      "heading": "Why reach for C++ at all",
+      "hook": "A pure JavaScript image processing routine took 45 seconds — the same operation as a native C++ addon took 0.8 seconds, a 56x gain.",
+      "body": "Bcrypt-style hashing was 18x faster, and parsing a 100MB CSV was 6.6x faster while using 82% less memory.",
+      "sourceDoc": "/docs/CPP_Addons/Introduction_and_Setup"
+    },
+    {
+      "id": "cpp-0002",
+      "tag": "Performance",
+      "heading": "When addons are the wrong tool",
+      "hook": "I/O-bound work, simple CRUD, network requests, and file system operations are already async in Node — a C++ addon adds complexity without adding speed there.",
+      "body": "Reach for one for CPU-intensive computation: image/video processing, cryptography, scientific simulation, or wrapping an existing native library.",
+      "sourceDoc": "/docs/CPP_Addons/Introduction_and_Setup"
+    },
+    {
+      "id": "cpp-0003",
+      "tag": "Setup",
+      "heading": "V8 API vs N-API",
+      "hook": "The raw V8 API gives maximum performance and control but breaks across Node versions, forcing a recompile — N-API trades a little overhead for a stable ABI that survives upgrades.",
+      "sourceDoc": "/docs/CPP_Addons/Introduction_and_Setup"
+    },
+    {
+      "id": "cpp-0004",
+      "tag": "Setup",
+      "heading": "node-gyp is the build system",
+      "hook": "node-gyp compiles your C++ source into a platform-specific .node binary, generating the right Makefile or Visual Studio project for whatever OS it's running on.",
+      "sourceDoc": "/docs/CPP_Addons/Introduction_and_Setup"
+    },
+    {
+      "id": "cpp-0005",
+      "tag": "Setup",
+      "heading": "binding.gyp is the addon's build config",
+      "hook": "target_name sets the output binary's name, sources lists the C++ files to compile, and cflags! removes a default flag — here, to re-enable C++ exceptions.",
+      "code": "{\n  \"targets\": [{\n    \"target_name\": \"hello\",\n    \"sources\": [ \"hello.cc\" ]\n  }]\n}",
+      "sourceDoc": "/docs/CPP_Addons/Introduction_and_Setup"
+    },
+    {
+      "id": "cpp-0006",
+      "tag": "Setup",
+      "heading": "NODE_MODULE registers the addon",
+      "hook": "Every addon ends with a NODE_MODULE macro call that hands Node an Initialize function — that's the one hook point where your C++ functions become visible as a JS exports object.",
+      "code": "NODE_MODULE(NODE_GYP_MODULE_NAME, Initialize)",
+      "sourceDoc": "/docs/CPP_Addons/Introduction_and_Setup"
+    },
+    {
+      "id": "cpp-0007",
+      "tag": "V8 Fundamentals",
+      "heading": "Every exported function has the same shape",
+      "hook": "An addon function always takes a FunctionCallbackInfo<Value>& and returns void — you set the actual return value through args.GetReturnValue().Set(...), not a C++ return statement.",
+      "sourceDoc": "/docs/CPP_Addons/Introduction_and_Setup"
+    },
+    {
+      "id": "cpp-0008",
+      "tag": "V8 Fundamentals",
+      "heading": "An Isolate is one V8 VM instance",
+      "hook": "Every V8 operation needs an Isolate pointer, and isolates are not thread-safe — a worker thread must get its own isolate, never reuse one from the main thread.",
+      "sourceDoc": "/docs/CPP_Addons/Introduction_and_Setup"
+    },
+    {
+      "id": "cpp-0009",
+      "tag": "V8 Fundamentals",
+      "heading": "A Context is an execution environment",
+      "hook": "Most V8 operations — setting an object property, calling a function — require the current Context, not just the Isolate, because it's what separates one global object and execution scope from another.",
+      "sourceDoc": "/docs/CPP_Addons/Introduction_and_Setup"
+    },
+    {
+      "id": "cpp-0010",
+      "tag": "V8 Fundamentals",
+      "heading": "Local handles clean themselves up",
+      "hook": "A Local<> handle is stack-allocated and vanishes the moment its scope exits — fine for temporary values, but useless for anything that needs to outlive the function call.",
+      "sourceDoc": "/docs/CPP_Addons/Introduction_and_Setup"
+    },
+    {
+      "id": "cpp-0011",
+      "tag": "V8 Fundamentals",
+      "heading": "Persistent handles survive garbage collection",
+      "hook": "A Persistent<> handle is heap-allocated and keeps a V8 value alive across calls — the right choice for a stored callback or any long-lived object — but it must be explicitly Reset() or it leaks.",
+      "code": "Persistent<Function> callback;\ncallback.Reset(isolate, function);\n// ... later:\ncallback.Reset(); // must release explicitly",
+      "sourceDoc": "/docs/CPP_Addons/Introduction_and_Setup"
+    },
+    {
+      "id": "cpp-0012",
+      "tag": "V8 Fundamentals",
+      "heading": "HandleScope is what makes Local safe in a loop",
+      "hook": "Without a HandleScope inside a million-iteration loop, a million Local handles would pile up and never get released — a scope created each iteration cleans them up the moment that iteration ends.",
+      "sourceDoc": "/docs/CPP_Addons/Introduction_and_Setup"
+    },
+    {
+      "id": "cpp-0013",
+      "tag": "V8 Fundamentals",
+      "heading": "Check types before you convert",
+      "hook": "Calling NumberValue on an argument that's actually a string doesn't throw — it just silently gives you a wrong number, which is why every addon function checks IsNumber/IsString/IsArray before touching args.",
+      "sourceDoc": "/docs/CPP_Addons/Introduction_and_Setup"
+    },
+    {
+      "id": "cpp-0014",
+      "tag": "V8 Types",
+      "heading": "Everything starts as a Local<Value>",
+      "hook": "Every JavaScript value crossing into C++ arrives as the same generic Local<Value> — you only get a Number, String, or Array once you've checked its type and explicitly cast with .As<T>().",
+      "sourceDoc": "/docs/CPP_Addons/V8_Data_Types_and_Conversion"
+    },
+    {
+      "id": "cpp-0015",
+      "tag": "V8 Types",
+      "heading": "JavaScript numbers are all 64-bit floats",
+      "hook": "There's no separate JS integer type — every number, including what looks like an integer, is IEEE 754 double precision, safe only up to 2^53-1 (Number.MAX_SAFE_INTEGER).",
+      "sourceDoc": "/docs/CPP_Addons/V8_Data_Types_and_Conversion"
+    },
+    {
+      "id": "cpp-0016",
+      "tag": "V8 Types",
+      "heading": "Four ways to pull a number out of a Value",
+      "hook": "NumberValue gives you a double, Int32Value/Uint32Value give fixed-width integers, and IntegerValue gives an int64 — pick based on what the C++ side actually needs, not just what compiles.",
+      "sourceDoc": "/docs/CPP_Addons/V8_Data_Types_and_Conversion"
+    },
+    {
+      "id": "cpp-0017",
+      "tag": "V8 Types",
+      "heading": "String::Utf8Value is the quick string bridge",
+      "hook": "Wrapping a JS value in String::Utf8Value gives you a C string via dereferencing it — it's stack-allocated and cheap, but its lifetime is tied to that scope, so convert to std::string if you need the data afterward.",
+      "code": "String::Utf8Value str(isolate, args[0]);\nconst char* cstr = *str;",
+      "sourceDoc": "/docs/CPP_Addons/V8_Data_Types_and_Conversion"
+    },
+    {
+      "id": "cpp-0018",
+      "tag": "V8 Types",
+      "heading": "A UTF-8 string's length is in bytes, not characters",
+      "hook": "utf8.length() on a string containing non-ASCII characters (like 世界) counts bytes, not visible characters — getting the real character count needs a proper UTF-8-aware parser.",
+      "sourceDoc": "/docs/CPP_Addons/V8_Data_Types_and_Conversion"
+    },
+    {
+      "id": "cpp-0019",
+      "tag": "V8 Types",
+      "heading": "Truthy and falsy convert exactly like JS",
+      "hook": "BooleanValue() applies JavaScript's own truthiness rules — false, 0, empty string, null, undefined, and NaN all convert to false, and literally everything else converts to true.",
+      "sourceDoc": "/docs/CPP_Addons/V8_Data_Types_and_Conversion"
+    },
+    {
+      "id": "cpp-0020",
+      "tag": "V8 Types",
+      "heading": "Building a V8 array means setting each index",
+      "hook": "There's no bulk constructor from a C++ vector — Array::New(isolate, length) allocates the slots, then you loop and Set() each one from your std::vector<double> or similar.",
+      "sourceDoc": "/docs/CPP_Addons/V8_Data_Types_and_Conversion"
+    },
+    {
+      "id": "cpp-0021",
+      "tag": "V8 Types",
+      "heading": "Reading an object's properties by name",
+      "hook": "obj->Get(context, key) fetches a property, obj->Has(context, key) checks existence first without throwing, and GetPropertyNames() enumerates every key on the object — the same three operations you'd reach for in JS.",
+      "sourceDoc": "/docs/CPP_Addons/V8_Data_Types_and_Conversion"
+    },
+    {
+      "id": "cpp-0022",
+      "tag": "V8 Types",
+      "heading": "ArrayBuffer + BackingStore is zero-copy binary data",
+      "hook": "GetBackingStore() hands you a raw uint8_t* pointer straight into the buffer's actual memory — you can read or modify it in place without ever copying the bytes through a JS-side array.",
+      "code": "auto backing = buffer->GetBackingStore();\nuint8_t* data = static_cast<uint8_t*>(backing->Data());",
+      "sourceDoc": "/docs/CPP_Addons/V8_Data_Types_and_Conversion"
+    },
+    {
+      "id": "cpp-0023",
+      "tag": "V8 Types",
+      "heading": "A TypedArray is a view, not its own storage",
+      "hook": "A Uint8Array or Float64Array doesn't own memory — it has a ByteOffset and ByteLength into a shared underlying ArrayBuffer, so two typed array views can read and write the exact same bytes.",
+      "sourceDoc": "/docs/CPP_Addons/V8_Data_Types_and_Conversion"
+    },
+    {
+      "id": "cpp-0024",
+      "tag": "Performance",
+      "heading": "Don't convert the same value twice",
+      "hook": "Wrapping the same argument in String::Utf8Value more than once in the same function silently redoes the UTF-8 decode — convert it once, keep the std::string, and reuse it.",
+      "sourceDoc": "/docs/CPP_Addons/V8_Data_Types_and_Conversion"
+    },
+    {
+      "id": "cpp-0025",
+      "tag": "Performance",
+      "heading": "Hoist repeated V8 object creation out of loops",
+      "hook": "Creating the same Local<String> key inside a thousand-iteration loop rebuilds it a thousand times — create it once outside the loop and reuse the handle on every pass.",
+      "sourceDoc": "/docs/CPP_Addons/V8_Data_Types_and_Conversion"
+    },
+    {
+      "id": "cpp-0026",
+      "tag": "Async",
+      "heading": "Node.js has one thread — don't block it",
+      "hook": "A synchronous C++ call that takes 5 seconds freezes the entire event loop for those 5 seconds: no HTTP requests handled, no timers fire, the whole app looks hung.",
+      "body": "The rule of thumb: any operation over roughly 10ms must run asynchronously.",
+      "sourceDoc": "/docs/CPP_Addons/Async_Operations_with_libuv"
+    },
+    {
+      "id": "cpp-0027",
+      "tag": "Async",
+      "heading": "libuv's thread pool defaults to 4 threads",
+      "hook": "Every async addon operation that needs real CPU work runs on libuv's background thread pool, which is only 4 threads by default — tunable with the UV_THREADPOOL_SIZE environment variable.",
+      "code": "UV_THREADPOOL_SIZE=8 node app.js",
+      "sourceDoc": "/docs/CPP_Addons/Async_Operations_with_libuv"
+    },
+    {
+      "id": "cpp-0028",
+      "tag": "Async",
+      "heading": "uv_queue_work is the core async pattern",
+      "hook": "You hand libuv two functions: one that runs the expensive work on a background thread, and one that runs back on the main thread once it's done — that's the entire mechanism async addons are built on.",
+      "code": "uv_queue_work(uv_default_loop(), &data->request,\n  ExecuteWork,    // worker thread\n  WorkComplete);  // main thread",
+      "sourceDoc": "/docs/CPP_Addons/Async_Operations_with_libuv"
+    },
+    {
+      "id": "cpp-0029",
+      "tag": "Async",
+      "heading": "Never touch V8 objects from a worker thread",
+      "hook": "The function libuv runs in the background thread must stay pure C++ — touching any V8/Isolate object there is a guaranteed crash, since V8 objects are only safe on the thread that owns them.",
+      "sourceDoc": "/docs/CPP_Addons/Async_Operations_with_libuv"
+    },
+    {
+      "id": "cpp-0030",
+      "tag": "Async",
+      "heading": "A work struct carries data across the thread boundary",
+      "hook": "Because the worker and completion functions run on different threads, you can't use normal stack variables — a heap-allocated struct holding the uv_work_t, a Persistent<Function> callback, and your input/output fields is what ties the two halves together.",
+      "sourceDoc": "/docs/CPP_Addons/Async_Operations_with_libuv"
+    },
+    {
+      "id": "cpp-0031",
+      "tag": "Async",
+      "heading": "Modern addons return real Promises",
+      "hook": "Promise::Resolver::New creates a promise and its resolver up front; the background work resolves or rejects it from the main-thread completion callback once the result is ready — then async/await on the JS side just works.",
+      "sourceDoc": "/docs/CPP_Addons/Async_Operations_with_libuv"
+    },
+    {
+      "id": "cpp-0032",
+      "tag": "Async",
+      "heading": "uv_async_send reports progress mid-flight",
+      "hook": "A worker thread can call uv_async_send to safely wake a callback on the main thread before the whole job finishes — that's how a long-running addon reports 10%, 20%, 30% progress back to JavaScript.",
+      "sourceDoc": "/docs/CPP_Addons/Async_Operations_with_libuv"
+    },
+    {
+      "id": "cpp-0033",
+      "tag": "Async",
+      "heading": "Cancellation is cooperative, not forced",
+      "hook": "There's no way to kill a running worker thread outright — cancellation means setting an atomic bool flag and having the worker check it periodically between units of work, bailing out early if it's set.",
+      "sourceDoc": "/docs/CPP_Addons/Async_Operations_with_libuv"
+    },
+    {
+      "id": "cpp-0034",
+      "tag": "Async",
+      "heading": "The completion handler owns cleanup",
+      "hook": "Whatever heap-allocated work struct you created before queuing the job gets deleted in the completion callback, and any Persistent<Function> you stashed gets Reset() there too — forgetting either one leaks on every single call.",
+      "sourceDoc": "/docs/CPP_Addons/Async_Operations_with_libuv"
+    },
+    {
+      "id": "cpp-0035",
+      "tag": "Object Wrapping",
+      "heading": "Without wrapping, every call starts from zero",
+      "hook": "A plain exported function like addon.add(5, 3) can't remember anything between calls — object wrapping is what lets new addon.Calculator(10) keep its running value across calc.add(5) and calc.multiply(2).",
+      "sourceDoc": "/docs/CPP_Addons/Object_Wrapping"
+    },
+    {
+      "id": "cpp-0036",
+      "tag": "Object Wrapping",
+      "heading": "node::ObjectWrap ties a C++ instance to a JS object",
+      "hook": "Inheriting from node::ObjectWrap and calling Wrap(args.This()) in your constructor binds a real C++ object underneath a JavaScript object — Unwrap<T>() in every method call gets it back out.",
+      "code": "Calculator* obj = ObjectWrap::Unwrap<Calculator>(args.Holder());\nobj->value_ += args[0]->NumberValue(context).FromMaybe(0);",
+      "sourceDoc": "/docs/CPP_Addons/Object_Wrapping"
+    },
+    {
+      "id": "cpp-0037",
+      "tag": "Object Wrapping",
+      "heading": "SetInternalFieldCount(1) is easy to forget",
+      "hook": "Wrap() needs a slot on the JS object to stash the C++ pointer in — skip SetInternalFieldCount(1) on the instance template and Wrap() has nowhere to put it.",
+      "sourceDoc": "/docs/CPP_Addons/Object_Wrapping"
+    },
+    {
+      "id": "cpp-0038",
+      "tag": "Object Wrapping",
+      "heading": "A constructor callback has to handle both call styles",
+      "hook": "JavaScript can call a constructor function with or without new — args.IsConstructCall() is how the C++ side tells which happened, and the non-new branch just forwards to a real construct call manually.",
+      "sourceDoc": "/docs/CPP_Addons/Object_Wrapping"
+    },
+    {
+      "id": "cpp-0039",
+      "tag": "Object Wrapping",
+      "heading": "Properties feel more native than method calls",
+      "hook": "SetAccessor on the instance template wires up a getter and setter pair, so calc.value reads naturally instead of requiring calc.getValue() — a small touch that makes a wrapped class feel like a real JS object.",
+      "sourceDoc": "/docs/CPP_Addons/Object_Wrapping"
+    },
+    {
+      "id": "cpp-0040",
+      "tag": "Object Wrapping",
+      "heading": "The destructor fires on garbage collection",
+      "hook": "A wrapped object's C++ destructor runs automatically once the JS object it's bound to gets garbage collected — the natural place to close a file handle or release any other resource it's holding.",
+      "sourceDoc": "/docs/CPP_Addons/Object_Wrapping"
+    },
+    {
+      "id": "cpp-0041",
+      "tag": "Object Wrapping",
+      "heading": "Wrapped objects can be passed between functions",
+      "hook": "Unwrap() doesn't only work inside a class's own methods — any function can unwrap an object passed in as an argument, which is how one addon function hands a C++ instance off to another.",
+      "sourceDoc": "/docs/CPP_Addons/Object_Wrapping"
+    },
+    {
+      "id": "cpp-0042",
+      "tag": "Object Wrapping",
+      "heading": "A factory function skips the new keyword",
+      "hook": "A plain exported function can internally call the stored constructor and hand back a fully wrapped instance — addon.createObject(42) instead of new addon.MyObject(42), useful when you want a function-style API.",
+      "sourceDoc": "/docs/CPP_Addons/Object_Wrapping"
+    },
+    {
+      "id": "cpp-0043",
+      "tag": "Object Wrapping",
+      "heading": "When object wrapping actually earns its complexity",
+      "hook": "Stateful operations, system resources like files or database connections, and complex data structures like trees or graphs are where wrapping pays off — a one-shot stateless calculation doesn't need it.",
+      "sourceDoc": "/docs/CPP_Addons/Object_Wrapping"
+    },
+    {
+      "id": "cpp-0044",
+      "tag": "Project Structure",
+      "heading": "A flat addon directory stops scaling fast",
+      "hook": "Dumping every .cc file into the project root works for a weekend prototype, but it breaks down past 2-3 files — no separation between C++ source, JS wrapper, build config, and tests.",
+      "sourceDoc": "/docs/CPP_Addons/Scalable_Directory_Structure"
+    },
+    {
+      "id": "cpp-0045",
+      "tag": "Project Structure",
+      "heading": "Three structure levels, picked by project size",
+      "hook": "A single small addon just needs src/, test/, and a binding.gyp. Several related addons sharing code graduate to a packages/ monorepo with a common/ folder. A production library adds include/, benchmarks, and TypeScript types.",
+      "sourceDoc": "/docs/CPP_Addons/Scalable_Directory_Structure"
+    },
+    {
+      "id": "cpp-0046",
+      "tag": "Project Structure",
+      "heading": "Shared C++ code lives in its own folder, referenced by path",
+      "hook": "When multiple addons in a monorepo need the same buffer or string helpers, a common/include + common/src pair gets referenced from each addon's binding.gyp with a relative path, rather than duplicated per addon.",
+      "code": "\"sources\": [\n  \"src/addon.cc\",\n  \"../../common/src/buffer_utils.cc\"\n]",
+      "sourceDoc": "/docs/CPP_Addons/Scalable_Directory_Structure"
+    },
+    {
+      "id": "cpp-0047",
+      "tag": "Project Structure",
+      "heading": "A thin JS wrapper layer hides the native API",
+      "hook": "Instead of exposing the raw C++ addon directly, a src/js/index.js class wraps it in a clean Promise-based API — consumers never see the callback-style native methods underneath.",
+      "sourceDoc": "/docs/CPP_Addons/Scalable_Directory_Structure"
+    },
+    {
+      "id": "cpp-0048",
+      "tag": "Project Structure",
+      "heading": "Cross-platform code branches on compile-time macros",
+      "hook": "_WIN32, __APPLE__, and __linux__ are the standard preprocessor checks for platform-specific implementations — a memory allocator might use VirtualAlloc on Windows and mmap everywhere else behind the same function signature.",
+      "sourceDoc": "/docs/CPP_Addons/Scalable_Directory_Structure"
+    },
+    {
+      "id": "cpp-0049",
+      "tag": "Project Structure",
+      "heading": "Ship TypeScript types alongside the native binary",
+      "hook": "A types/index.d.ts file gives TypeScript consumers full autocomplete and type-checking on a native addon's API, even though the actual implementation is a compiled .node binary with no types of its own.",
+      "sourceDoc": "/docs/CPP_Addons/Scalable_Directory_Structure"
+    },
+    {
+      "id": "cpp-0050",
+      "tag": "Project Structure",
+      "heading": "Unit tests and integration tests stay in separate folders",
+      "hook": "test/unit holds C++-level tests of individual components, test/integration holds JS-level tests that exercise the compiled addon end-to-end — mixing the two makes it unclear what failed when something breaks.",
+      "sourceDoc": "/docs/CPP_Addons/Scalable_Directory_Structure"
+    },
+    {
+      "id": "cpp-0051",
+      "tag": "Project Structure",
+      "heading": "binding.gyp conditions branch per operating system",
+      "hook": "A conditions block lets one binding.gyp link pthread only on Linux, set Xcode-specific flags only on macOS, and apply MSVC exception handling only on Windows — all from a single shared build file.",
+      "sourceDoc": "/docs/CPP_Addons/Scalable_Directory_Structure"
+    },
+    {
+      "id": "cpp-0052",
+      "tag": "V8 Fundamentals",
+      "heading": "Check argument count before you check types",
+      "hook": "args[1] on a function called with only one argument doesn't throw, it returns undefined — args.Length() is the first thing every addon function checks, before it ever inspects a single argument's type.",
+      "sourceDoc": "/docs/CPP_Addons/Introduction_and_Setup"
+    },
+    {
+      "id": "cpp-0053",
+      "tag": "Async",
+      "heading": "Promises are the async style to reach for now",
+      "hook": "The raw uv_queue_work + callback pattern still works, but wrapping it behind a Promise::Resolver means the JavaScript side gets normal .then()/await instead of a Node-style error-first callback.",
+      "sourceDoc": "/docs/CPP_Addons/Async_Operations_with_libuv"
+    },
+    {
+      "id": "cpp-0054",
+      "tag": "Project Structure",
+      "heading": "A benchmark folder proves the addon is actually faster",
+      "hook": "The entire case for writing a C++ addon rests on a measured speedup — a benchmark/ folder with before/after numbers is what turns \"it should be faster\" into evidence worth shipping.",
+      "sourceDoc": "/docs/CPP_Addons/Scalable_Directory_Structure"
+    },
+    {
+      "id": "cpp-0055",
+      "tag": "Setup",
+      "heading": "npm install can trigger the native build automatically",
+      "hook": "Setting \"install\": \"node-gyp rebuild\" as an npm script means consumers of the package never run node-gyp by hand — a plain npm install silently compiles the native binary for their platform.",
+      "sourceDoc": "/docs/CPP_Addons/Scalable_Directory_Structure"
+    }
+  ]
+}

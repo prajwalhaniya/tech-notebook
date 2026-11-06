@@ -36,12 +36,40 @@ This guide walks through real nginx configuration, directive by directive — no
 └────────┘ └────────┘ └────────┘  └────────┘
 ```
 
-**Why this shape, specifically:** Apache's traditional model spawns one process or thread per connection — simple to reason about, but every idle keep-alive connection still holds a thread's worth of memory and the OS still has to schedule it. Nginx's workers instead run a single-threaded event loop each, built on an OS-level readiness API (`epoll` on Linux, `kqueue` on BSD/macOS). A worker asks the kernel "wake me when any of these thousands of sockets has data ready," then services only the sockets that are actually ready, in a tight non-blocking loop. One worker can comfortably hold tens of thousands of idle connections at once because idle connections cost almost nothing while they're idle — there's no thread sitting around waiting for them.
+**Why this shape, specifically:** 
 
-- **Master process** — owns the configuration. It reads `nginx.conf`, opens the listening sockets, and spawns/supervises worker processes. The master itself never touches client traffic.
-- **Worker processes** — each runs its own event loop and handles actual requests. Workers are independent; if one crashes, the master spawns a replacement and the others are unaffected.
-- **Non-blocking I/O** — a worker never calls a blocking read/write and then sits idle waiting; it registers interest in a socket and moves on to other ready work, which is what lets one OS thread serve thousands of connections.
-- **Shared-nothing workers** — workers don't share connection state with each other, which avoids lock contention between them. This is also why session data or rate-limit counters that need to be shared across workers (covered in the Security section) have to live in an explicitly shared memory zone, not an in-process variable.
+Apache's traditional model spawns one process or thread per connection — simple to reason about, but every idle keep-alive connection still holds a thread's worth of memory and the OS still has to schedule it. 
+
+Nginx's workers instead run a single-threaded event loop each, built on an OS-level readiness API (`epoll` on Linux, `kqueue` on BSD/macOS). 
+
+A worker asks the kernel "wake me when any of these thousands of sockets has data ready," then services only the sockets that are actually ready, in a tight non-blocking loop. 
+
+One worker can comfortably hold tens of thousands of idle connections at once because idle connections cost almost nothing while they're idle — there's no thread sitting around waiting for them.
+
+#### **Master process**:
+
+Owns the configuration. 
+It reads `nginx.conf`, opens the listening sockets, and spawns/supervises worker processes.
+
+The master itself never touches client traffic.
+
+#### **Worker processes**: 
+
+Each runs its own event loop and handles actual requests. 
+
+Workers are independent; if one crashes, the master spawns a replacement and the others are unaffected.
+
+#### **Non-blocking I/O**: 
+
+A worker never calls a blocking read/write and then sits idle waiting; 
+
+It registers interest in a socket and moves on to other ready work, which is what lets one OS thread serve thousands of connections.
+
+#### **Shared-nothing workers**: 
+
+Workers don't share connection state with each other, which avoids lock contention between them. 
+
+This is also why session data or rate-limit counters that need to be shared across workers (covered in the Security section) have to live in an explicitly shared memory zone, not an in-process variable.
 
 ### Process Model
 
@@ -55,7 +83,13 @@ nginx     1235  0.0  0.5  nginx: worker process
 nginx     1236  0.0  0.5  nginx: worker process
 ```
 
-**What this is showing:** the master runs as `root` — it needs that privilege once, to bind to port 80/443 (ports below 1024 are privileged on Linux). Immediately after binding, workers are forked and drop down to an unprivileged user (`nginx` here, set by the `user` directive below). This split is a deliberate security boundary: the process that actually parses untrusted client bytes runs with no special privileges, so a bug in request handling doesn't hand an attacker root. If you ever see all nginx processes running as root, that's a configuration mistake worth fixing, not a quirk.
+**What this is showing?**
+
+The master runs as `root` — it needs that privilege once, to bind to port 80/443 (ports below 1024 are privileged on Linux). 
+
+Immediately after binding, workers are forked and drop down to an unprivileged user (`nginx` here, set by the `user` directive below). 
+
+This split is a deliberate security boundary: the process that actually parses untrusted client bytes runs with no special privileges, so a bug in request handling doesn't hand an attacker root. If you ever see all nginx processes running as root, that's a configuration mistake worth fixing, not a quirk.
 
 ## Basic Configuration
 
@@ -102,22 +136,47 @@ http {
 
 This is nginx's three-level structure, and it matters because directives inherit downward: a setting in `http {}` applies to every `server {}` inside it unless a more specific block overrides it.
 
-**What each directive does:**
+**What each directive does**, grouped by what it's actually responsible for rather than the order it appears in the file:
+
+#### Process setup
 
 - **`user nginx`** — the unprivileged account worker processes run as, discussed above.
 - **`worker_processes auto`** — spawn one worker per detected CPU core. Since each worker is single-threaded, this is what actually lets nginx use multiple cores at all. More workers than cores just adds context-switching overhead with no upside.
 - **`error_log ... warn`** — where diagnostic output goes, filtered to `warn` severity and above. The level matters: `debug` is extremely verbose and only useful with a debug build; `error` or `crit` would hide warnings you'd actually want to see (like a backend becoming unreachable).
 - **`pid`** — where the master writes its own process ID, so `nginx -s reload`/`stop` know which process to signal.
-- **`events { worker_connections 1024; }`** — the maximum number of simultaneous connections *one worker* can hold open. This is a hard ceiling: 4 workers × 1024 means 4096 total connections, full stop, regardless of how much RAM or CPU is free. As a reverse proxy, a single client request can occupy **two** connections at once (client-to-nginx and nginx-to-backend), so the real client capacity is roughly half this number — a common sizing mistake.
+
+#### Handling connections — the `events` block
+
+- **`worker_connections 1024`** — the maximum number of simultaneous connections *one worker* can hold open. This is a hard ceiling: 4 workers × 1024 means 4096 total connections, full stop, regardless of how much RAM or CPU is free. As a reverse proxy, a single client request can occupy **two** connections at once (client-to-nginx and nginx-to-backend), so the real client capacity is roughly half this number — a common sizing mistake.
 - **`use epoll`** — explicitly select the Linux event notification API. Nginx auto-detects the best available mechanism for the OS it's running on, so this line is rarely required anymore; it's worth keeping only as documentation of intent, or on older nginx builds that don't auto-select correctly.
 - **`multi_accept on`** — when a burst of connections arrives at once, let a worker accept all of them in one pass through its accept queue instead of one per event-loop iteration. This sounds like a free win but isn't always: under very high connection churn it can let one worker grab a disproportionate share of new connections before handing control back to its event loop, starving other request processing briefly. Nginx's own documentation leaves it off by default for a reason — benchmark before enabling it under real load.
+
+#### Serving requests correctly
+
 - **`include mime.types` / `default_type`** — maps file extensions to `Content-Type` headers (`.css` → `text/css`, etc.); anything not in the map falls back to `default_type`, which is deliberately a generic binary type rather than guessing wrong.
 - **`log_format main '...'`** — defines a named, reusable log line shape. `$remote_addr`, `$status`, and friends are nginx variables populated per-request; defining the format once and referencing it by name (`main`) is what makes it possible to use different formats for different `server` blocks.
 - **`access_log ... main`** — write every request to this file using the `main` format. Turning this off entirely (`access_log off;`) at a high-traffic, low-value location (static assets, health checks) is a legitimate way to cut disk I/O — shown later in the Caching section.
-- **`sendfile on` / `tcp_nopush on` / `tcp_nodelay on`** — this trio controls exactly how bytes leave the socket, and they work together rather than independently: `sendfile` lets the kernel copy a file straight from disk cache to the network socket without ever copying it into nginx's own userspace buffer first — a meaningful win when serving static files. `tcp_nopush` (only meaningful alongside `sendfile`) holds off sending a packet until it's as full as possible, instead of dribbling out small TCP segments. `tcp_nodelay` disables Nagle's algorithm so the final, often-small packet of a response goes out immediately instead of waiting for more data to batch with — without it, that last packet could sit buffered for up to ~200ms. Nginx actually applies `tcp_nopush` for the bulk of a transfer and `tcp_nodelay` for the tail end, which is why both are conventionally turned on together rather than treated as alternatives.
+
+#### Performance
+
+- **`sendfile` / `tcp_nopush` / `tcp_nodelay`** — this trio controls exactly how bytes leave the socket, and they work together rather than independently:
+  - `sendfile` lets the kernel copy a file straight from disk cache to the network socket without ever copying it into nginx's own userspace buffer first — a meaningful win when serving static files.
+  - `tcp_nopush` (only meaningful alongside `sendfile`) holds off sending a packet until it's as full as possible, instead of dribbling out small TCP segments.
+  - `tcp_nodelay` disables Nagle's algorithm so the final, often-small packet of a response goes out immediately instead of waiting for more data to batch with — without it, that last packet could sit buffered for up to ~200ms.
+
+  Nginx actually applies `tcp_nopush` for the bulk of a transfer and `tcp_nodelay` for the tail end, which is why both are conventionally turned on together rather than treated as alternatives.
 - **`keepalive_timeout 65`** — how long an idle client connection is kept open, waiting for another request on the same TCP connection, before nginx closes it. Longer values save handshake overhead for clients making repeat requests; too long and idle connections tie up a worker's connection budget for no benefit.
 - **`types_hash_max_size 2048`** — a tuning knob for the internal hash table nginx builds from `mime.types`. Too small and the hash table has more collisions, which nginx warns about in its error log; 2048 is comfortably large for the default MIME type list.
-- **`gzip on` / `gzip_vary on` / `gzip_min_length` / `gzip_types`** — compress responses before sending them. `gzip_vary on` adds a `Vary: Accept-Encoding` header, which tells any cache in between (browser or CDN) that the response differs depending on whether the client accepts compression — without it, a cache could serve a gzipped response to a client that can't decompress it. `gzip_min_length 1024` skips compressing tiny responses, where the CPU cost isn't worth the tiny size saving. `gzip_types` is an explicit allow-list — notably, `text/html` is always compressed by default and doesn't need listing, but other types do.
+
+#### Compression
+
+- **`gzip on` / `gzip_vary on` / `gzip_min_length` / `gzip_types`** — compress responses before sending them.
+  - `gzip_vary on` adds a `Vary: Accept-Encoding` header, which tells any cache in between (browser or CDN) that the response differs depending on whether the client accepts compression — without it, a cache could serve a gzipped response to a client that can't decompress it.
+  - `gzip_min_length 1024` skips compressing tiny responses, where the CPU cost isn't worth the tiny size saving.
+  - `gzip_types` is an explicit allow-list — notably, `text/html` is always compressed by default and doesn't need listing, but other types do.
+
+#### Modularity
+
 - **`include /etc/nginx/conf.d/*.conf`** — pull in every `server {}` block defined in separate files under `conf.d/`. This is what lets you manage one site per file instead of one giant `nginx.conf`.
 
 ### Simple Web Server
@@ -153,15 +212,28 @@ server {
 }
 ```
 
-**What each directive does:**
+**What each directive does**, grouped by what it's responsible for:
+
+#### Serving the files
 
 - **`listen 80`** — bind this server block to port 80 on all interfaces. A host can run many `server` blocks on the same port, distinguished by `server_name` (virtual hosting).
 - **`server_name`** — which `Host` header values route to this block. The first block in your config that matches `listen` *and* has no matching `server_name` anywhere else effectively becomes the default for unmatched hosts — worth knowing, since an unintended block can silently become your catch-all.
 - **`root` / `index`** — the filesystem directory requests are resolved against, and which filename to serve for a directory request (tried in order).
 - **`try_files $uri $uri/ =404`** — try the request path as a file, then as a directory, and if neither exists, return a real `404` rather than letting the request fall through to something else. This is the standard "serve static files, 404 on anything missing" pattern — contrast with the single-page-app variant later in this guide, which falls back to `index.html` instead of `404`.
-- **`location ~* \.(jpg|jpeg|...)$ { expires 30d; ... }`** — a case-insensitive regex location matching common static asset extensions. `expires 30d` sets *both* the `Expires` header and `Cache-Control: max-age=...` in one directive. `Cache-Control: public, immutable` goes further: `immutable` tells the browser not to even revalidate this resource on a user-triggered reload, which only makes sense if the filename changes whenever the content does (cache-busted build hashes) — using `immutable` on a URL that *can* change in place will serve stale assets to returning visitors.
+
+#### Caching static assets
+
+- **`location ~* \.(jpg|jpeg|...)$ { expires 30d; ... }`** — a case-insensitive regex location matching common static asset extensions.
+  - `expires 30d` sets *both* the `Expires` header and `Cache-Control: max-age=...` in one directive.
+  - `Cache-Control: public, immutable` goes further: `immutable` tells the browser not to even revalidate this resource on a user-triggered reload, which only makes sense if the filename changes whenever the content does (cache-busted build hashes) — using `immutable` on a URL that *can* change in place will serve stale assets to returning visitors.
+
+#### Error pages
+
 - **`error_page 404 /404.html`** — serve a custom page instead of nginx's bare-bones default 404, without changing the HTTP status code the client sees.
 - **`error_page 500 502 503 504 /50x.html`** combined with **`location = /50x.html { root ...; }`** — one friendly page for every flavor of upstream failure. The exact-match `location =` here matters: it points this specific error page at a *local* static file path, independent of whatever `root` the failing request was using, so the error page itself can never also fail to be found.
+
+#### Response headers
+
 - **`add_header ... always`** — the `always` keyword is easy to miss but important: without it, `add_header` is silently skipped for non-2xx/3xx responses (like error pages), meaning your security headers would quietly disappear exactly on the responses — errors — where you'd most want them present.
 - **Security headers here** — `X-Frame-Options: SAMEORIGIN` stops the page being embedded in another site's `<iframe>` (clickjacking defense); `X-Content-Type-Options: nosniff` stops the browser from guessing a different content type than what the server declared (MIME-sniffing defense). `X-XSS-Protection` is a legacy header for an old browser-built-in XSS filter that Chrome, Edge, and Safari have all removed — it's harmless to send for backward compatibility but provides no real protection in a current browser. A Content-Security-Policy (covered in the Security section) is the modern replacement for what that header used to do.
 
@@ -245,13 +317,23 @@ server {
 }
 ```
 
-**What each directive does:**
+**What each directive does**, grouped by what it's responsible for:
+
+#### Forwarding headers the backend needs
 
 - **`proxy_pass`** — forward the request to this upstream address instead of serving it locally. From here on, nginx is a client to your application, not just a server to the browser — which is exactly why the next block of headers is necessary.
 - **`proxy_set_header Host $host`** — by default, nginx would forward the *original* `Host` header it received, which is usually fine — but without setting it explicitly, some proxy configurations substitute the upstream's own address instead. Setting it explicitly to `$host` guarantees your application sees the hostname the client actually requested, which matters for any app logic that branches on it (multi-tenant routing, building absolute URLs, redirects).
 - **`X-Real-IP` / `X-Forwarded-For`** — without these, your application's access logs and any IP-based logic (rate limiting, geo features, fraud checks) would only ever see nginx's own IP address, because as far as the TCP connection is concerned, nginx *is* the client now. `X-Real-IP` carries just the immediate client IP; `X-Forwarded-For` (built from `$proxy_add_x_forwarded_for`, which *appends* to any existing value) carries the whole chain of proxies a request passed through — useful when there's more than one hop, but also means your application must only trust it if it validates which proxies it came through, since a client can forge their own `X-Forwarded-For` header.
 - **`X-Forwarded-Proto $scheme`** — tells the application whether the *original* client connection was HTTP or HTTPS, since the nginx-to-backend hop is commonly plain HTTP even when the public-facing side is TLS. Without this, an app behind an SSL-terminating proxy can't tell it's actually being accessed securely, which breaks logic like "redirect to HTTPS if not already" or "only set the secure cookie flag over HTTPS" into an infinite loop or a security gap, respectively.
-- **`proxy_connect_timeout` / `proxy_send_timeout` / `proxy_read_timeout`** — three different phases, each with its own clock: `connect` is how long to wait for the TCP handshake with the upstream to succeed; `send` is how long to wait between successful writes while nginx is sending the request body *to* the upstream; `read` is how long to wait between successful reads while nginx is receiving the response *from* the upstream. A slow database query, for instance, shows up as a `proxy_read_timeout` problem, not a connect problem — distinguishing which one is firing in your error log tells you where to actually look.
+
+#### Timeouts: three different clocks
+
+- **`proxy_connect_timeout`** — how long to wait for the TCP handshake with the upstream to succeed.
+- **`proxy_send_timeout`** — how long to wait between successful writes while nginx is sending the request body *to* the upstream.
+- **`proxy_read_timeout`** — how long to wait between successful reads while nginx is receiving the response *from* the upstream. A slow database query, for instance, shows up as a `proxy_read_timeout` problem, not a connect problem — distinguishing which one is firing in your error log tells you where to actually look.
+
+#### Buffering the response
+
 - **`proxy_buffering on`** — let nginx read the entire upstream response into its own buffers (spilling to a temp file if it's large) before forwarding it to the client, rather than streaming bytes through immediately as they arrive. This decouples a slow client from your application: the backend can finish and move on to the next request quickly, while nginx handles the (potentially much slower) job of trickling the response out to the client.
 - **`proxy_buffer_size 4k`** — the buffer specifically for the *first part* of the response — the status line and headers. This is usually small and fixed-size, since headers rarely need much more than one memory page.
 - **`proxy_buffers 8 4k`** — the pool used for the response *body*: 8 buffers of 4k each, so up to 32k of a response can be held in memory per request before nginx starts using temp files on disk.
@@ -512,16 +594,30 @@ server {
 }
 ```
 
-**What each directive does:**
+**What each directive does**, grouped by what it's responsible for:
+
+#### Listening and the certificate
 
 - **`listen 443 ssl http2`** — accept TLS connections on 443, and negotiate HTTP/2 when the client supports it. HTTP/2's main practical win over HTTP/1.1 is multiplexing: many requests can share one TCP connection in parallel without blocking each other, which is why the old "concatenate your JS/CSS into one file" and "shard assets across hostnames" optimizations exist specifically to work around HTTP/1.1's limits — and matter much less once HTTP/2 is in play.
 - **`ssl_certificate` / `ssl_certificate_key`** — the public certificate (and intermediate chain) and its matching private key. The key file's permissions matter in practice: it should be unreadable by anything other than root/nginx.
+
+#### Protocol and cipher policy
+
 - **`ssl_protocols TLSv1.2 TLSv1.3`** — the allow-list of protocol versions. Deliberately excluding TLS 1.0 and 1.1 here isn't just modernization for its own sake — both have known, practical vulnerabilities (BEAST, POODLE-adjacent issues) and are explicitly disallowed by current PCI-DSS requirements for anything handling payment data.
 - **`ssl_ciphers HIGH:!aNULL:!MD5`** — a cipher-suite selection string: allow "high" strength ciphers, explicitly exclude anonymous (no authentication) ciphers and anything using the broken MD5 hash. This is an older, broad-strokes string; the "SSL Best Practices" snippet further down is the more precise, modern equivalent.
 - **`ssl_prefer_server_ciphers on`** — when the client and server both support multiple cipher suites, let the *server's* preference order win rather than the client's. This matters for TLS 1.2 and earlier, where cipher strength varies a lot; TLS 1.3 removed the weak options entirely, which is why some modern configs turn this back `off` specifically for 1.3-only setups.
+
+#### Session resumption
+
 - **`ssl_session_cache shared:SSL:10m`** — a cache of previously-negotiated TLS sessions, shared across all worker processes (not per-worker, which would make resumption far less likely to hit). This lets a returning client skip the expensive full handshake (certificate exchange, key negotiation) and resume a prior session cheaply. 10m of shared memory holds roughly 40,000 sessions as a rule of thumb.
 - **`ssl_session_timeout 10m`** — how long a cached session stays resumable before a full handshake is required again.
-- **`ssl_stapling on` / `ssl_stapling_verify on` / `ssl_trusted_certificate`** — OCSP stapling. Normally, a client checks certificate revocation status by contacting the Certificate Authority's OCSP responder itself during the handshake — which is slow, and also tells the CA which sites that client is visiting. Stapling has nginx fetch that signed "not revoked" proof itself, cache it, and staple it directly onto the handshake, so the client never has to make its own round trip. `ssl_trusted_certificate` points at the CA chain nginx needs to verify the OCSP response it fetched.
+
+#### OCSP stapling
+
+- **`ssl_stapling on` / `ssl_stapling_verify on` / `ssl_trusted_certificate`** — normally, a client checks certificate revocation status by contacting the Certificate Authority's OCSP responder itself during the handshake — which is slow, and also tells the CA which sites that client is visiting. Stapling has nginx fetch that signed "not revoked" proof itself, cache it, and staple it directly onto the handshake, so the client never has to make its own round trip. `ssl_trusted_certificate` points at the CA chain nginx needs to verify the OCSP response it fetched.
+
+#### Enforcing HTTPS
+
 - **`Strict-Transport-Security` (HSTS)** — tells the browser "never attempt a plain-HTTP connection to this host again, for the next `max-age` seconds — automatically upgrade to HTTPS, even if the user typed `http://`." This is a one-way door worth taking seriously: once a browser has cached this, it will refuse to even try plain HTTP, errors and all, until `max-age` expires — so it shouldn't be deployed with a long `max-age` until HTTPS is confirmed stable across the whole site, including subdomains if `includeSubDomains` is set.
 - **The plain-port-80 `server` block** returns a `301` (permanent) redirect to the HTTPS version of the same path (`$request_uri` preserves the original path and query string). `301` rather than `302` matters for SEO and for browsers/clients that cache permanent redirects — it tells the client (and search engines) this redirect isn't going away, so they should update their own records rather than re-checking every time.
 
@@ -642,17 +738,36 @@ http {
 }
 ```
 
-**What each directive does:**
+**What each directive does**, grouped by what it's responsible for:
 
-- **`proxy_cache_path`** — declares *where* and *how* cached responses are stored on disk, separately from any `server` block that actually uses it. `levels=1:2` spreads cache files across a two-level directory hash (e.g. `/var/cache/nginx/a/1b/<rest-of-hash>`) instead of dumping everything into one flat directory, which would otherwise get slow once it holds hundreds of thousands of files. `keys_zone=my_cache:10m` is a *shared memory* zone — separate from the disk cache itself — holding cache keys and metadata so nginx can check "is this cached, and is it still fresh?" without touching disk; 10m holds roughly 80,000 keys. `max_size=10g` caps the on-disk cache size; a background process evicts the least-recently-used entries once it's exceeded. `inactive=60m` evicts an entry if nothing has requested it in 60 minutes, *regardless* of whether it would still be considered fresh — this is different from `proxy_cache_valid` below, which governs freshness, not eviction-for-lack-of-use. `use_temp_path=off` writes response bodies directly into the cache directory as they're received, instead of a separate temp directory followed by a rename — faster, at the cost of needing the cache and temp paths to be on the same filesystem (which `off` conveniently guarantees by removing the separate temp path).
+#### Where the cache lives
+
+- **`proxy_cache_path`** — declares *where* and *how* cached responses are stored on disk, separately from any `server` block that actually uses it:
+  - `levels=1:2` spreads cache files across a two-level directory hash (e.g. `/var/cache/nginx/a/1b/<rest-of-hash>`) instead of dumping everything into one flat directory, which would otherwise get slow once it holds hundreds of thousands of files.
+  - `keys_zone=my_cache:10m` is a *shared memory* zone — separate from the disk cache itself — holding cache keys and metadata so nginx can check "is this cached, and is it still fresh?" without touching disk; 10m holds roughly 80,000 keys.
+  - `max_size=10g` caps the on-disk cache size; a background process evicts the least-recently-used entries once it's exceeded.
+  - `inactive=60m` evicts an entry if nothing has requested it in 60 minutes, *regardless* of whether it would still be considered fresh — this is different from `proxy_cache_valid` below, which governs freshness, not eviction-for-lack-of-use.
+  - `use_temp_path=off` writes response bodies directly into the cache directory as they're received, instead of a separate temp directory followed by a rename — faster, at the cost of needing the cache and temp paths to be on the same filesystem (which `off` conveniently guarantees by removing the separate temp path).
+
+#### Turning caching on for a location
+
 - **`proxy_cache my_cache`** — turn caching on for this location, using the zone declared above.
 - **`proxy_cache_key`** — exactly what identifies a "unique" cacheable response. Including `$scheme` and `$host` here isn't decorative — without them, a cache zone shared across multiple hostnames or across both HTTP and HTTPS versions of a site could serve one host's cached response to a request for a different host, which is a real cache-poisoning risk, not just an inefficiency.
+
+#### Freshness and resilience
+
 - **`proxy_cache_valid 200 60m` / `proxy_cache_valid 404 10m`** — freshness duration, set *per status code*. Caching `404`s (for a shorter time) is deliberate "negative caching" — it stops a flood of requests for a genuinely missing resource from hammering the backend repeatedly, while still re-checking periodically in case the resource shows up.
 - **`proxy_cache_use_stale error timeout updating http_5xx`** — if the upstream is down, times out, or returns a server error, and there's a previously cached (even if technically expired) copy available, serve that stale copy instead of an error page. `updating` specifically covers the moment a cache entry is being refreshed — serve the old version to this request rather than making it wait. This trades perfect freshness for availability during an outage, which is almost always the right trade for anything that isn't financial or security-sensitive data.
 - **`proxy_cache_background_update on`** — when a cached entry has just expired, serve the stale copy to the *current* request immediately, and kick off a background request to refresh the cache for the *next* request — rather than making this unlucky request wait through a full origin round-trip.
 - **`proxy_cache_lock on`** — the thundering-herd / cache-stampede guard: when many requests arrive simultaneously for a URL that isn't yet cached, only the first one is actually sent to the upstream; the rest wait briefly for that first request to populate the cache, then get served from it — instead of all of them hitting the backend at once for the same uncached resource.
+
+#### Visibility and overrides
+
 - **`X-Cache-Status $upstream_cache_status`** — exposes nginx's own cache decision (`HIT`, `MISS`, `EXPIRED`, `STALE`, `UPDATING`, `BYPASS`) as a response header, purely for your own debugging — invaluable when trying to figure out why a response feels stale or why the backend load doesn't match expectations.
 - **`proxy_cache_bypass` / `proxy_no_cache`** — two related but distinct controls: `proxy_cache_bypass` decides whether to *read from* the cache for this request; `proxy_no_cache` decides whether to *write to* the cache from this request's response. Both are driven by the same two signals here — a `nocache` cookie or query argument — covering the case where a logged-in or debugging user needs to see (and not pollute) the cache with a personalized or test response. Each directive accepts a *list* of variables, and is triggered if **any** of them is non-empty and not `"0"` — nginx ORs the list automatically, which matters for the fix noted in "Cache Purging and Management" below.
+
+#### The purge endpoint
+
 - **The `/purge` location** — deliberately restricted to `127.0.0.1` (the `ngx_cache_purge` third-party module that implements `proxy_cache_purge` isn't part of stock nginx and needs to be compiled in separately). This endpoint lets you manually invalidate one cached URL without waiting for `proxy_cache_valid` to expire it — and it must never be reachable from outside, since anyone who can hit it can force your backend to be hit for every cached URL they choose to purge.
 
 ### Static File Caching

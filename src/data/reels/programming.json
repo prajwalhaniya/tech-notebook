@@ -1,0 +1,838 @@
+{
+  "topic": "programming",
+  "topicLabel": "Programming",
+  "cards": [
+    {
+      "id": "prog-0001",
+      "tag": "C++ Basics",
+      "heading": "Every C++ program starts in main",
+      "hook": "main is the entrance every C++ program must have — execution always starts there, no matter how many other functions exist in the file.",
+      "sourceDoc": "/docs/programming/CPP/getting-started"
+    },
+    {
+      "id": "prog-0002",
+      "tag": "C++ Basics",
+      "heading": "Compiling turns source into a runnable binary",
+      "hook": "C++ is compiled, not interpreted — g++ hello.cpp -o hello turns source code into an executable the OS can actually run, a step scripting languages skip entirely.",
+      "sourceDoc": "/docs/programming/CPP/getting-started"
+    },
+    {
+      "id": "prog-0003",
+      "tag": "C++ Basics",
+      "heading": "cout and cin point in opposite directions",
+      "hook": "The insertion operator << sends data to cout for printing, and the extraction operator >> pulls data from cin into a variable — the arrows literally show which way the data flows.",
+      "sourceDoc": "/docs/programming/CPP/getting-started"
+    },
+    {
+      "id": "prog-0004",
+      "tag": "C++ Basics",
+      "heading": "A missing semicolon is the most common first error",
+      "hook": "Every statement needs a semicolon to mark its end, and forgetting one produces a compiler error pointing at the line after the real mistake, not the mistake itself.",
+      "sourceDoc": "/docs/programming/CPP/getting-started"
+    },
+    {
+      "id": "prog-0005",
+      "tag": "Data Types",
+      "heading": "Pick the type that matches the data, not habit",
+      "hook": "int for whole numbers, double for decimals, bool for true or false, char for one character, string for text — using int for a price just truncates it to whole dollars.",
+      "sourceDoc": "/docs/programming/CPP/variables-basics"
+    },
+    {
+      "id": "prog-0006",
+      "tag": "Data Types",
+      "heading": "const prevents reassignment at compile time",
+      "hook": "Declaring a value const makes the compiler reject any attempt to change it later, catching an entire class of bugs before the program ever runs.",
+      "sourceDoc": "/docs/programming/CPP/variables-basics"
+    },
+    {
+      "id": "prog-0007",
+      "tag": "Variables",
+      "heading": "An uninitialized variable holds garbage, not zero",
+      "hook": "int score; with no assignment contains whatever bits happened to already be in that memory — always initialize a variable the moment you declare it.",
+      "sourceDoc": "/docs/programming/CPP/variables-basics"
+    },
+    {
+      "id": "prog-0008",
+      "tag": "Strings",
+      "heading": "cin stops reading at the first space",
+      "hook": "std::cin >> name only reads up to the first whitespace, so Minecraft Java Edition becomes just Minecraft — getline reads the whole line instead.",
+      "code": "std::getline(std::cin, favoriteGame);",
+      "sourceDoc": "/docs/programming/CPP/variables-basics"
+    },
+    {
+      "id": "prog-0009",
+      "tag": "Data Types",
+      "heading": "Converting double to int throws away the decimal",
+      "hook": "int truncated = pi silently drops everything after the decimal point instead of rounding — 3.14159 becomes 3, not 3.",
+      "sourceDoc": "/docs/programming/CPP/variables-basics"
+    },
+    {
+      "id": "prog-0010",
+      "tag": "Operators",
+      "heading": "Integer division throws away the remainder",
+      "hook": "7 divided by 2 as integers gives 3, not 3.5 — C++ only keeps the decimal part when at least one operand is already a double.",
+      "sourceDoc": "/docs/programming/CPP/operators-math"
+    },
+    {
+      "id": "prog-0011",
+      "tag": "Operators",
+      "heading": "Modulus gives you the leftover, not the quotient",
+      "hook": "17 mod 5 is 2, the remainder after dividing — which is exactly how you check if a number is even, since n mod 2 equals 0 only when n divides evenly.",
+      "sourceDoc": "/docs/programming/CPP/operators-math"
+    },
+    {
+      "id": "prog-0012",
+      "tag": "Operators",
+      "heading": "Assignment and comparison look almost identical",
+      "hook": "if (score = 100) sets score to 100 and the condition is always true, instead of checking whether score equals 100 — the compiler won't warn you either way.",
+      "sourceDoc": "/docs/programming/CPP/operators-math"
+    },
+    {
+      "id": "prog-0013",
+      "tag": "Operators",
+      "heading": "&& and || short circuit for a reason",
+      "hook": "age >= 16 && hasLicense stops checking the moment the first half is false, which is the same trick that safely guards a second check that would otherwise crash.",
+      "sourceDoc": "/docs/programming/CPP/operators-math"
+    },
+    {
+      "id": "prog-0014",
+      "tag": "Control Flow",
+      "heading": "else if stops at the first true condition",
+      "hook": "A chain of else if clauses checking a score against 90, 80, then 70 only ever runs the first branch that matches — once one condition is true, the rest are never even evaluated.",
+      "sourceDoc": "/docs/programming/CPP/conditionals"
+    },
+    {
+      "id": "prog-0015",
+      "tag": "Control Flow",
+      "heading": "The ternary operator is an expression, not a statement",
+      "hook": "condition ? valueIfTrue : valueIfFalse returns a value directly, which is why it fits inline in an assignment where a full if-else block simply couldn't.",
+      "sourceDoc": "/docs/programming/CPP/conditionals"
+    },
+    {
+      "id": "prog-0016",
+      "tag": "Control Flow",
+      "heading": "A switch case without break falls through",
+      "hook": "Without break, hitting case 2 keeps running every case after it too — fall-through is usually a bug, not a feature, which is why break is needed on almost every branch.",
+      "sourceDoc": "/docs/programming/CPP/conditionals"
+    },
+    {
+      "id": "prog-0017",
+      "tag": "Control Flow",
+      "heading": "An if with no braces only protects one line",
+      "hook": "A second line you meant to guard right after an if with no braces runs unconditionally, every single time, since only the one statement right after the if is actually controlled by it.",
+      "sourceDoc": "/docs/programming/CPP/conditionals"
+    },
+    {
+      "id": "prog-0018",
+      "tag": "Loops",
+      "heading": "for is for counting, while is for conditions",
+      "hook": "Reach for a for loop when you know the number of iterations upfront, and a while loop when you're repeating until some condition changes, not a fixed count.",
+      "sourceDoc": "/docs/programming/CPP/loops"
+    },
+    {
+      "id": "prog-0019",
+      "tag": "Loops",
+      "heading": "do-while always runs at least once",
+      "hook": "A while loop checks its condition before the first run and may never execute at all, but do-while checks after, guaranteeing the body runs one time no matter what.",
+      "sourceDoc": "/docs/programming/CPP/loops"
+    },
+    {
+      "id": "prog-0020",
+      "tag": "Loops",
+      "heading": "An infinite loop happens when the condition never changes",
+      "hook": "while (number > 0) with nothing inside that ever modifies number runs forever — the loop variable has to actually move toward making the condition false.",
+      "sourceDoc": "/docs/programming/CPP/loops"
+    },
+    {
+      "id": "prog-0021",
+      "tag": "Loops",
+      "heading": "break exits the loop, continue skips just one iteration",
+      "hook": "break stops the whole loop immediately, while continue jumps straight to the next iteration without running the rest of the current one — useful for skipping even numbers with no nested if.",
+      "sourceDoc": "/docs/programming/CPP/loops"
+    },
+    {
+      "id": "prog-0022",
+      "tag": "Functions",
+      "heading": "Pass by value copies, pass by reference shares",
+      "hook": "A function taking a plain int gets its own copy and any changes vanish when it returns — adding an ampersand to make it int& lets it operate on the original variable instead.",
+      "sourceDoc": "/docs/programming/CPP/functions"
+    },
+    {
+      "id": "prog-0023",
+      "tag": "Functions",
+      "heading": "Default parameters let a function flex without overloads",
+      "hook": "A parameter with a default value lets a caller skip the argument entirely and get a sensible fallback, but every default parameter must come after the required ones in the list.",
+      "sourceDoc": "/docs/programming/CPP/functions"
+    },
+    {
+      "id": "prog-0024",
+      "tag": "Functions",
+      "heading": "Overloading picks a function by its signature, not just its name",
+      "hook": "Two functions both named add can coexist as long as their parameter types or counts differ — the compiler chooses the right one based on what was actually passed in.",
+      "sourceDoc": "/docs/programming/CPP/functions"
+    },
+    {
+      "id": "prog-0025",
+      "tag": "Functions",
+      "heading": "A recursive function needs a base case or it never stops",
+      "hook": "factorial(n) calling factorial(n - 1) only terminates because n <= 1 returns 1 directly — skip the base case and the calls recurse until the stack overflows.",
+      "sourceDoc": "/docs/programming/CPP/functions"
+    },
+    {
+      "id": "prog-0026",
+      "tag": "Functions",
+      "heading": "A local variable dies the moment its function returns",
+      "hook": "A variable declared inside a function only exists for that one call — reading it from outside, or returning a pointer to it, reaches into memory that's no longer valid.",
+      "sourceDoc": "/docs/programming/CPP/functions"
+    },
+    {
+      "id": "prog-0027",
+      "tag": "Functions",
+      "heading": "A function prototype lets you call before you define",
+      "hook": "Declaring a function's signature before main and writing its full body afterward tells the compiler the function exists now, with the details filled in later in the same file.",
+      "sourceDoc": "/docs/programming/CPP/functions"
+    },
+    {
+      "id": "prog-0028",
+      "tag": "Arrays",
+      "heading": "Arrays are zero-indexed, always",
+      "hook": "scores[0] is the first element and scores[4] is the fifth in a five-element array — reading or writing scores[5] silently reads past the end instead of raising an error.",
+      "sourceDoc": "/docs/programming/CPP/arrays"
+    },
+    {
+      "id": "prog-0029",
+      "tag": "Arrays",
+      "heading": "An array's size is fixed the moment it's declared",
+      "hook": "int scores[5] can never hold a sixth element — there's no resizing, which is exactly the limitation vectors were built to remove.",
+      "sourceDoc": "/docs/programming/CPP/arrays"
+    },
+    {
+      "id": "prog-0030",
+      "tag": "Arrays",
+      "heading": "Passing an array to a function hands over the real thing",
+      "hook": "A function that writes to arr[i] inside its body changes the caller's original array, unlike every other parameter type in C++ which gets copied by default.",
+      "sourceDoc": "/docs/programming/CPP/arrays"
+    },
+    {
+      "id": "prog-0031",
+      "tag": "Arrays",
+      "heading": "sizeof divides give you the element count",
+      "hook": "Dividing an array's total byte size by one element's byte size recovers exactly how many elements it actually holds, without you needing to track the count separately.",
+      "code": "int size = sizeof(numbers) / sizeof(numbers[0]);",
+      "sourceDoc": "/docs/programming/CPP/arrays"
+    },
+    {
+      "id": "prog-0032",
+      "tag": "Arrays",
+      "heading": "A 2D array is really an array of arrays",
+      "hook": "A grid of three rows and four columns is walked with a for loop nested inside another for loop — the outer handles rows, the inner handles the columns within each one.",
+      "sourceDoc": "/docs/programming/CPP/arrays"
+    },
+    {
+      "id": "prog-0033",
+      "tag": "Vectors",
+      "heading": "A vector grows, an array cannot",
+      "hook": "push_back adds an element and the vector resizes itself automatically behind the scenes — no need to know the final size in advance the way a plain array demands.",
+      "sourceDoc": "/docs/programming/CPP/vectors"
+    },
+    {
+      "id": "prog-0034",
+      "tag": "Vectors",
+      "heading": "at() checks bounds, the bracket operator doesn't",
+      "hook": "numbers.at(10) throws a catchable exception on an out-of-range index, while numbers[10] just reads whatever memory happens to be sitting there.",
+      "sourceDoc": "/docs/programming/CPP/vectors"
+    },
+    {
+      "id": "prog-0035",
+      "tag": "Vectors",
+      "heading": "A range-based for loop reads cleaner than indexing",
+      "hook": "for (int score : scores) means for each score in scores, and skips the index variable entirely for the cases where you never actually needed the position.",
+      "sourceDoc": "/docs/programming/CPP/vectors"
+    },
+    {
+      "id": "prog-0036",
+      "tag": "Vectors",
+      "heading": "Pass a vector by const reference to avoid copying it",
+      "hook": "A function taking const std::vector<int>& vec reads the caller's vector directly, without duplicating it and without being allowed to modify it either.",
+      "sourceDoc": "/docs/programming/CPP/vectors"
+    },
+    {
+      "id": "prog-0037",
+      "tag": "Vectors",
+      "heading": "Never push_back into a vector you're range-for looping over",
+      "hook": "Changing a vector's size while a range-based for loop is iterating it invalidates the loop mid-flight — it's undefined behavior, not just a slow mistake.",
+      "sourceDoc": "/docs/programming/CPP/vectors"
+    },
+    {
+      "id": "prog-0038",
+      "tag": "Strings",
+      "heading": "substr takes a start position and a length, not two positions",
+      "hook": "sentence.substr(6, 5) means start at index 6 and take 5 characters — not stop at index 5, a mix-up that silently returns the wrong slice of the string.",
+      "sourceDoc": "/docs/programming/CPP/strings"
+    },
+    {
+      "id": "prog-0039",
+      "tag": "Strings",
+      "heading": "find returns a special constant when nothing matches",
+      "hook": "text.find fails by returning std::string::npos, not -1 — comparing the result against -1 directly is a common and subtle bug that silently never triggers.",
+      "sourceDoc": "/docs/programming/CPP/strings"
+    },
+    {
+      "id": "prog-0040",
+      "tag": "Strings",
+      "heading": "String comparison with < is alphabetical, not length",
+      "hook": "apple is less than banana because a comes before b — C++ compares strings character by character the same way a dictionary would, regardless of which string is longer.",
+      "sourceDoc": "/docs/programming/CPP/strings"
+    },
+    {
+      "id": "prog-0041",
+      "tag": "Strings",
+      "heading": "stoi and to_string convert in opposite directions",
+      "hook": "std::stoi parses a string into an integer and std::to_string does the reverse — together they're the bridge between raw user input and actual arithmetic.",
+      "sourceDoc": "/docs/programming/CPP/strings"
+    },
+    {
+      "id": "prog-0042",
+      "tag": "Strings",
+      "heading": "Reversing a string means building a new one character by character",
+      "hook": "Walking the original backward and appending each character to an empty string builds the reversed result one piece at a time, with no built-in reverse function needed.",
+      "sourceDoc": "/docs/programming/CPP/strings"
+    },
+    {
+      "id": "prog-0043",
+      "tag": "Structures",
+      "heading": "A struct groups related data under one name",
+      "hook": "A Student struct holding name, age, and grade turns three loose variables into one real type, accessed as student1.name instead of three separately named variables floating around.",
+      "sourceDoc": "/docs/programming/CPP/structures"
+    },
+    {
+      "id": "prog-0044",
+      "tag": "Structures",
+      "heading": "Forgetting the semicolon after a struct is a classic typo",
+      "hook": "A struct definition needs a semicolon right after its closing brace — leaving it off is one of the most common first errors anyone hits with structs.",
+      "sourceDoc": "/docs/programming/CPP/structures"
+    },
+    {
+      "id": "prog-0045",
+      "tag": "Structures",
+      "heading": "A struct can nest another struct as a field",
+      "hook": "A Person struct holding a Date birthday field lets you write person1.birthday.year, chaining dot access exactly like you would for any other nested object.",
+      "sourceDoc": "/docs/programming/CPP/structures"
+    },
+    {
+      "id": "prog-0046",
+      "tag": "Structures",
+      "heading": "Passing a struct by reference lets a function actually change it",
+      "hook": "A function taking Player& player changes the real player's score, where passing by value would only ever update a disposable copy that vanishes when the function returns.",
+      "sourceDoc": "/docs/programming/CPP/structures"
+    },
+    {
+      "id": "prog-0047",
+      "tag": "OOP",
+      "heading": "Struct members default to public, class members default to private",
+      "hook": "That's the one real difference between struct and class in C++ — everything else, including methods, constructors, and inheritance, works identically on both.",
+      "sourceDoc": "/docs/programming/CPP/classes-intro"
+    },
+    {
+      "id": "prog-0048",
+      "tag": "OOP",
+      "heading": "A constructor runs automatically the moment an object is created",
+      "hook": "Creating a Student with three arguments calls the Student constructor the instant that line executes, with no explicit call needed — it's the object's built-in setup step.",
+      "sourceDoc": "/docs/programming/CPP/classes-intro"
+    },
+    {
+      "id": "prog-0049",
+      "tag": "OOP",
+      "heading": "Encapsulation means hiding data behind methods",
+      "hook": "Making a balance field private and only exposing deposit and withdraw methods means the class itself decides what counts as a valid change, instead of trusting every caller.",
+      "sourceDoc": "/docs/programming/CPP/classes-intro"
+    },
+    {
+      "id": "prog-0050",
+      "tag": "OOP",
+      "heading": "A setter can validate on the way in",
+      "hook": "setAge(a) can refuse an age of 200 and fall back to a safe default, something a plain public field could never enforce on its own.",
+      "sourceDoc": "/docs/programming/CPP/classes-intro"
+    },
+    {
+      "id": "prog-0051",
+      "tag": "OOP",
+      "heading": "this refers to whichever object the method was called on",
+      "hook": "Inside a method, this->length means the length field of whichever specific object invoked that method — essential the moment a parameter name shadows a member name.",
+      "sourceDoc": "/docs/programming/CPP/classes-intro"
+    },
+    {
+      "id": "prog-0052",
+      "tag": "OOP",
+      "heading": "A const method promises not to modify the object",
+      "hook": "Marking a method const tells the compiler it only ever reads, never writes, which is what lets that method be called even on a const instance of the class.",
+      "sourceDoc": "/docs/programming/CPP/classes-intro"
+    },
+    {
+      "id": "prog-0053",
+      "tag": "Pointers",
+      "heading": "A pointer stores an address, not a value",
+      "hook": "int* ptr = &age holds the memory location where age lives, and dereferencing it with *ptr gets you back to the actual value stored there.",
+      "sourceDoc": "/docs/programming/CPP/pointers-basics"
+    },
+    {
+      "id": "prog-0054",
+      "tag": "Pointers",
+      "heading": "Dereferencing a pointer lets you change the original",
+      "hook": "Assigning through *ptr doesn't just change what ptr points to in isolation — it changes the original variable itself, because they refer to the exact same memory.",
+      "sourceDoc": "/docs/programming/CPP/pointers-basics"
+    },
+    {
+      "id": "prog-0055",
+      "tag": "Pointers",
+      "heading": "An array name decays into a pointer to its first element",
+      "hook": "numbers[i] and dereferencing numbers plus i are literally the same operation under the hood — array indexing is pointer arithmetic with friendlier syntax on top.",
+      "sourceDoc": "/docs/programming/CPP/pointers-basics"
+    },
+    {
+      "id": "prog-0056",
+      "tag": "Pointers",
+      "heading": "new must always be paired with delete",
+      "hook": "Memory allocated with new lives until you explicitly delete it — forget the delete and that memory is leaked for the rest of the program's life.",
+      "code": "int* arr = new int[size];\n// ... use arr ...\ndelete[] arr;",
+      "sourceDoc": "/docs/programming/CPP/pointers-basics"
+    },
+    {
+      "id": "prog-0057",
+      "tag": "Pointers",
+      "heading": "Use the arrow operator with pointers, the dot with objects",
+      "hook": "ptr->name is shorthand for dereferencing ptr and then using dot name — objects use the dot operator, but a pointer to an object needs the arrow to reach inside it.",
+      "sourceDoc": "/docs/programming/CPP/pointers-basics"
+    },
+    {
+      "id": "prog-0058",
+      "tag": "Pointers",
+      "heading": "Always set a pointer to nullptr after deleting it",
+      "hook": "Using a pointer after its memory has been deleted is undefined behavior that might work by accident today and corrupt memory tomorrow — nulling it out makes the mistake crash loudly instead of silently.",
+      "code": "delete ptr;\nptr = nullptr;",
+      "sourceDoc": "/docs/programming/CPP/pointers-basics"
+    },
+    {
+      "id": "prog-0059",
+      "tag": "Concurrency",
+      "heading": "A race condition hides inside counter++",
+      "hook": "counter++ looks like one operation but is actually read, add, and write as three separate steps — two threads interleaving those steps can both read the same stale value and lose an increment.",
+      "sourceDoc": "/docs/programming/CPP/synchronization-primitives"
+    },
+    {
+      "id": "prog-0060",
+      "tag": "Concurrency",
+      "heading": "A mutex makes a critical section exclusive",
+      "hook": "Only one thread can hold a mutex at a time — every other thread calling lock on it simply blocks until the current holder calls unlock.",
+      "code": "counterMutex.lock();\ncounter++;\ncounterMutex.unlock();",
+      "sourceDoc": "/docs/programming/CPP/synchronization-primitives"
+    },
+    {
+      "id": "prog-0061",
+      "tag": "Concurrency",
+      "heading": "lock_guard unlocks automatically, even on an exception",
+      "hook": "A manually called unlock never runs if an exception is thrown between lock and unlock — lock_guard ties the unlock to its own destructor, so it fires no matter how the scope exits.",
+      "code": "std::lock_guard<std::mutex> lock(counterMutex);\ncounter++;\n// unlocks automatically here",
+      "sourceDoc": "/docs/programming/CPP/synchronization-primitives"
+    },
+    {
+      "id": "prog-0062",
+      "tag": "Concurrency",
+      "heading": "unique_lock trades some performance for real flexibility",
+      "hook": "Deferred locking, manually unlocking and relocking mid-function, and try_lock are all things lock_guard can't do — unique_lock supports every one of them.",
+      "sourceDoc": "/docs/programming/CPP/synchronization-primitives"
+    },
+    {
+      "id": "prog-0063",
+      "tag": "Concurrency",
+      "heading": "A shared_mutex lets every reader in at once",
+      "hook": "A hundred threads can hold a shared lock simultaneously to read, but the moment one thread needs a unique lock to write, every reader and writer waits for it.",
+      "sourceDoc": "/docs/programming/CPP/synchronization-primitives"
+    },
+    {
+      "id": "prog-0064",
+      "tag": "Concurrency",
+      "heading": "A condition variable waits for a fact, not a fixed time",
+      "hook": "wait on a condition variable sleeps the thread until another thread notifies it and a predicate actually holds true — the predicate guards against spurious wakeups that can happen with no notification at all.",
+      "sourceDoc": "/docs/programming/CPP/synchronization-primitives"
+    },
+    {
+      "id": "prog-0065",
+      "tag": "Concurrency",
+      "heading": "Atomics skip the mutex entirely for simple operations",
+      "hook": "An atomic fetch_add is a single uninterruptible hardware instruction, which is why atomic increments run five to ten times faster than the same increment protected by a mutex.",
+      "sourceDoc": "/docs/programming/CPP/synchronization-primitives"
+    },
+    {
+      "id": "prog-0066",
+      "tag": "Concurrency",
+      "heading": "A latch counts down once, a barrier resets and repeats",
+      "hook": "Both block threads until a count reaches zero, but a latch is single use while a barrier automatically resets for the next phase of a multi-round algorithm.",
+      "sourceDoc": "/docs/programming/CPP/synchronization-primitives"
+    },
+    {
+      "id": "prog-0067",
+      "tag": "Concurrency",
+      "heading": "Keep the critical section as small as possible",
+      "hook": "Doing expensive work outside the lock and only the quick shared-state update inside it is the single biggest lever for reducing how long other threads are forced to wait.",
+      "sourceDoc": "/docs/programming/CPP/synchronization-primitives"
+    },
+    {
+      "id": "prog-0068",
+      "tag": "JavaScript",
+      "heading": "let and const are hoisted but unusable before their line",
+      "hook": "Accessing a let or const variable before its declaration throws a ReferenceError instead of returning undefined — that inaccessible window is called the temporal dead zone.",
+      "sourceDoc": "/docs/programming/JavaScript/Fundamentals"
+    },
+    {
+      "id": "prog-0069",
+      "tag": "JavaScript",
+      "heading": "const blocks reassignment, not mutation",
+      "hook": "const user equals an object forbids pointing user at a new object later, but does nothing to stop you from changing user.name — freezing the object is the only way to lock that down too.",
+      "code": "const user = { name: 'Prajwal' };\nuser.name = 'Updated';  // allowed\nuser = {};               // TypeError",
+      "sourceDoc": "/docs/programming/JavaScript/Fundamentals"
+    },
+    {
+      "id": "prog-0070",
+      "tag": "JavaScript",
+      "heading": "Always use === unless you specifically want coercion",
+      "hook": "0 == false is true because JavaScript converts types before comparing, while 0 === false is false because the types already differ — the one common exception is x == null, which deliberately catches both null and undefined.",
+      "sourceDoc": "/docs/programming/JavaScript/Fundamentals"
+    },
+    {
+      "id": "prog-0071",
+      "tag": "JavaScript",
+      "heading": "Only eight values are falsy in JavaScript",
+      "hook": "false, 0, negative zero, 0n, empty string, null, undefined, and NaN are the entire falsy list — an empty array and an empty object are both truthy, which surprises almost everyone the first time.",
+      "sourceDoc": "/docs/programming/JavaScript/Fundamentals"
+    },
+    {
+      "id": "prog-0072",
+      "tag": "JavaScript",
+      "heading": "typeof null is object, and it's a known language bug",
+      "hook": "That quirk has shipped in every version of JavaScript since 1995 because fixing it now would break the web — checking for null always needs an explicit comparison, never typeof.",
+      "sourceDoc": "/docs/programming/JavaScript/Fundamentals"
+    },
+    {
+      "id": "prog-0073",
+      "tag": "JavaScript",
+      "heading": "0.1 plus 0.2 does not equal 0.3",
+      "hook": "Floating point numbers can't represent 0.1 exactly, so the sum comes out to 0.30000000000000004 — comparing with a small tolerance instead of strict equality is the standard fix.",
+      "sourceDoc": "/docs/programming/JavaScript/Fundamentals"
+    },
+    {
+      "id": "prog-0074",
+      "tag": "JavaScript",
+      "heading": "A function expression isn't hoisted the way a declaration is",
+      "hook": "Calling a function before its declaration works because the whole function is hoisted, but calling one before a const or var assignment throws, because only the variable name was hoisted, not the function it holds.",
+      "sourceDoc": "/docs/programming/JavaScript/Fundamentals"
+    },
+    {
+      "id": "prog-0075",
+      "tag": "JavaScript",
+      "heading": "Arrow functions can't be constructors and have no arguments object",
+      "hook": "new on an arrow function throws immediately, and referencing arguments inside one throws a ReferenceError — arrow functions intentionally opt out of both of these regular-function behaviors.",
+      "sourceDoc": "/docs/programming/JavaScript/Fundamentals"
+    },
+    {
+      "id": "prog-0076",
+      "tag": "Closures",
+      "heading": "A closure keeps its outer variables alive after the outer function returns",
+      "hook": "Even once an outer function has fully finished running, a function it returned can still read and update variables that were local to it — those variables simply never get garbage collected while the closure exists.",
+      "sourceDoc": "/docs/programming/JavaScript/Closures & Scope"
+    },
+    {
+      "id": "prog-0077",
+      "tag": "Closures",
+      "heading": "Each call to a factory function gets its own private state",
+      "hook": "Two separate calls to a counter factory create two completely independent count variables, each only reachable through its own returned object — that's the whole mechanism behind private data in JavaScript.",
+      "sourceDoc": "/docs/programming/JavaScript/Closures & Scope"
+    },
+    {
+      "id": "prog-0078",
+      "tag": "Closures",
+      "heading": "The classic var-in-a-loop bug is really one shared binding",
+      "hook": "Three setTimeout callbacks all close over the exact same var i, so by the time any of them fire the loop has already finished and i is the final value for every single one.",
+      "code": "for (var i = 0; i < 3; i++) {\n  setTimeout(() => console.log(i), 100);\n}\n// logs: 3, 3, 3",
+      "sourceDoc": "/docs/programming/JavaScript/Closures & Scope"
+    },
+    {
+      "id": "prog-0079",
+      "tag": "Closures",
+      "heading": "let in a loop creates a fresh binding every iteration",
+      "hook": "Switching that same loop from var to let gives each iteration its own separate i, which is exactly why the callbacks then correctly print 0, 1, and 2 instead of three copies of the final value.",
+      "code": "for (let i = 0; i < 3; i++) {\n  setTimeout(() => console.log(i), 100);\n}\n// logs: 0, 1, 2",
+      "sourceDoc": "/docs/programming/JavaScript/Closures & Scope"
+    },
+    {
+      "id": "prog-0080",
+      "tag": "Closures",
+      "heading": "Memoization is just a closure holding a cache",
+      "hook": "The returned function closes over a Map that persists between calls, checking it first before ever running the expensive calculation again for an argument it's already seen.",
+      "sourceDoc": "/docs/programming/JavaScript/Closures & Scope"
+    },
+    {
+      "id": "prog-0081",
+      "tag": "Closures",
+      "heading": "A closure can accidentally keep a huge array alive",
+      "hook": "Returning a function that only ever uses an array's length still keeps the entire multi-megabyte array reachable — extracting just the number you need before returning breaks that unwanted reference.",
+      "sourceDoc": "/docs/programming/JavaScript/Closures & Scope"
+    },
+    {
+      "id": "prog-0082",
+      "tag": "Closures",
+      "heading": "IIFEs faked private scope before modules existed",
+      "hook": "Wrapping code in an immediately invoked function expression created a scope nothing outside could reach — ES modules now give every file that same isolation for free, with no wrapper needed.",
+      "sourceDoc": "/docs/programming/JavaScript/Closures & Scope"
+    },
+    {
+      "id": "prog-0083",
+      "tag": "this Binding",
+      "heading": "this is decided by how a function is called, not where it's written",
+      "hook": "The exact same function can have a completely different this depending on whether it's called plainly, as an object method, through call or bind, or with new.",
+      "sourceDoc": "/docs/programming/JavaScript/this & Binding"
+    },
+    {
+      "id": "prog-0084",
+      "tag": "this Binding",
+      "heading": "Extracting a method from its object loses this",
+      "hook": "Assigning a method to a plain variable and calling it logs undefined instead of the object's data, because the function reference traveled alone, without the object that used to be this attached to it.",
+      "code": "const fn = user.greet;\nfn(); // this is no longer user",
+      "sourceDoc": "/docs/programming/JavaScript/this & Binding"
+    },
+    {
+      "id": "prog-0085",
+      "tag": "this Binding",
+      "heading": "bind permanently locks this, call only sets it once",
+      "hook": "greet.call(user, ...) sets this for a single invocation, where greet.bind(user) returns a brand new function with this permanently fixed, safe to pass anywhere including setTimeout.",
+      "sourceDoc": "/docs/programming/JavaScript/this & Binding"
+    },
+    {
+      "id": "prog-0086",
+      "tag": "this Binding",
+      "heading": "Arrow functions don't have their own this at all",
+      "hook": "An arrow function captures this from whatever scope it was written inside, permanently — not even call, apply, or bind can override it afterward.",
+      "sourceDoc": "/docs/programming/JavaScript/this & Binding"
+    },
+    {
+      "id": "prog-0087",
+      "tag": "this Binding",
+      "heading": "new creates a brand new object and makes it this",
+      "hook": "Calling a function with new creates an empty object, links its prototype, runs the function with this pointing at that object, then returns it automatically.",
+      "sourceDoc": "/docs/programming/JavaScript/this & Binding"
+    },
+    {
+      "id": "prog-0088",
+      "tag": "this Binding",
+      "heading": "A priority order decides who wins when binding rules collide",
+      "hook": "new beats explicit binding, explicit binding beats implicit method-call binding, and implicit beats the plain default — arrow functions sit outside this whole hierarchy entirely.",
+      "sourceDoc": "/docs/programming/JavaScript/this & Binding"
+    },
+    {
+      "id": "prog-0089",
+      "tag": "this Binding",
+      "heading": "Class fields as arrow functions fix the callback this problem for good",
+      "hook": "Writing a method as an arrow function class field binds this to the instance at definition time, so it stays correctly bound even after being destructured out of the object — the pattern React class components relied on for event handlers.",
+      "code": "class Counter {\n  #count = 0;\n  increment = () => { this.#count++; };\n}",
+      "sourceDoc": "/docs/programming/JavaScript/this & Binding"
+    },
+    {
+      "id": "prog-0090",
+      "tag": "Prototypes",
+      "heading": "Every object has a hidden link to another object",
+      "hook": "Accessing a property JavaScript doesn't find directly on an object walks up that object's internal prototype link until it finds the property or hits null.",
+      "sourceDoc": "/docs/programming/JavaScript/Prototypes & Inheritance"
+    },
+    {
+      "id": "prog-0091",
+      "tag": "Prototypes",
+      "heading": "dunder-proto and dot-prototype are not the same thing",
+      "hook": "__proto__ lives on every object and points to its actual prototype, while .prototype lives only on functions and becomes the __proto__ of whatever that function creates with new.",
+      "sourceDoc": "/docs/programming/JavaScript/Prototypes & Inheritance"
+    },
+    {
+      "id": "prog-0092",
+      "tag": "Prototypes",
+      "heading": "class syntax is sugar over the exact same prototype system",
+      "hook": "Methods written inside a class body end up on ClassName.prototype under the hood, identical to manually assigning them — new still does the exact same steps either way.",
+      "sourceDoc": "/docs/programming/JavaScript/Prototypes & Inheritance"
+    },
+    {
+      "id": "prog-0093",
+      "tag": "Prototypes",
+      "heading": "Methods on the prototype are shared, not copied per instance",
+      "hook": "Two instances' greet methods are the literal same function in memory, because every instance looks up that one shared method on the prototype rather than carrying its own private copy.",
+      "sourceDoc": "/docs/programming/JavaScript/Prototypes & Inheritance"
+    },
+    {
+      "id": "prog-0094",
+      "tag": "Prototypes",
+      "heading": "Object.create builds true prototypal inheritance with no classes",
+      "hook": "A factory function returning Object.create of a shared prototype gives every object it makes that prototype's methods, with no constructor function and no new keyword anywhere in sight.",
+      "sourceDoc": "/docs/programming/JavaScript/Prototypes & Inheritance"
+    },
+    {
+      "id": "prog-0095",
+      "tag": "Prototypes",
+      "heading": "Mixins compose behavior that single inheritance can't",
+      "hook": "JavaScript only lets a class extend one parent, but a mixin function that takes a class and returns a new extended class lets you layer several independent behaviors onto the same base.",
+      "sourceDoc": "/docs/programming/JavaScript/Prototypes & Inheritance"
+    },
+    {
+      "id": "prog-0096",
+      "tag": "Prototypes",
+      "heading": "hasOwnProperty tells you if a property is actually your own",
+      "hook": "A property reachable through the prototype chain still answers true to the in operator, but hasOwnProperty, or the modern Object.hasOwn, is what actually distinguishes an object's own properties from ones it merely inherited.",
+      "sourceDoc": "/docs/programming/JavaScript/Prototypes & Inheritance"
+    },
+    {
+      "id": "prog-0097",
+      "tag": "Async",
+      "heading": "A promise settles exactly once, permanently",
+      "hook": "Every promise starts pending and moves to either fulfilled or rejected — once it lands on one of those, it can never change state again.",
+      "sourceDoc": "/docs/programming/JavaScript/Async JavaScript"
+    },
+    {
+      "id": "prog-0098",
+      "tag": "Async",
+      "heading": "Returning a promise from .then makes the chain wait for it",
+      "hook": "If a .then callback returns another promise instead of a plain value, the next .then in the chain doesn't run until that inner promise actually resolves.",
+      "sourceDoc": "/docs/programming/JavaScript/Async JavaScript"
+    },
+    {
+      "id": "prog-0099",
+      "tag": "Async",
+      "heading": "async/await is promises wearing synchronous-looking syntax",
+      "hook": "Every async function always returns a promise, and await just pauses that function until the awaited promise settles — it changes nothing about how promises actually behave underneath.",
+      "sourceDoc": "/docs/programming/JavaScript/Async JavaScript"
+    },
+    {
+      "id": "prog-0100",
+      "tag": "Async",
+      "heading": "await in a loop runs sequentially, Promise.all runs in parallel",
+      "hook": "Awaiting inside a for loop waits for each operation before starting the next, while mapping to promises first and awaiting Promise.all kicks every one of them off at the same time.",
+      "code": "// Sequential\nfor (const id of ids) await processOrder(id);\n\n// Parallel\nawait Promise.all(ids.map(processOrder));",
+      "sourceDoc": "/docs/programming/JavaScript/Async JavaScript"
+    },
+    {
+      "id": "prog-0101",
+      "tag": "Async",
+      "heading": "Promise.all fails the instant any single promise rejects",
+      "hook": "Even if nine of ten promises succeed, one rejection makes the whole Promise.all reject immediately — Promise.allSettled is the one to reach for when you want every individual outcome instead.",
+      "sourceDoc": "/docs/programming/JavaScript/Async JavaScript"
+    },
+    {
+      "id": "prog-0102",
+      "tag": "Async",
+      "heading": "Promise.race and Promise.any answer different questions",
+      "hook": "Promise.race settles with whichever promise finishes first, success or failure, where Promise.any specifically waits for the first success and only fails if every single one rejects.",
+      "sourceDoc": "/docs/programming/JavaScript/Async JavaScript"
+    },
+    {
+      "id": "prog-0103",
+      "tag": "Async",
+      "heading": "A timeout pattern is just Promise.race against a rejecting timer",
+      "hook": "Racing a real request against a promise that rejects after a fixed delay gives a clean way to timeout any async call, without touching the original request's own code.",
+      "sourceDoc": "/docs/programming/JavaScript/Async JavaScript"
+    },
+    {
+      "id": "prog-0104",
+      "tag": "Async",
+      "heading": "Swallowing an error in a catch block hides failures from the caller",
+      "hook": "A catch block that logs nothing and returns nothing makes the function look like it succeeded even when it didn't — always rethrow or transform the error so the caller actually knows.",
+      "sourceDoc": "/docs/programming/JavaScript/Async JavaScript"
+    },
+    {
+      "id": "prog-0105",
+      "tag": "Functional",
+      "heading": "A pure function always gives the same output for the same input",
+      "hook": "No reading from outside state, no mutating anything, no I/O — which is exactly what makes a pure function trivially testable and safe to run in parallel.",
+      "sourceDoc": "/docs/programming/JavaScript/Functional Programming"
+    },
+    {
+      "id": "prog-0106",
+      "tag": "Functional",
+      "heading": "Array.sort mutates the original array",
+      "hook": "Calling sort on an array changes it in place and also returns it, which is why an immutable approach spreads into a new array first before sorting.",
+      "code": "const sorted = [...arr].sort(); // arr itself stays untouched",
+      "sourceDoc": "/docs/programming/JavaScript/Functional Programming"
+    },
+    {
+      "id": "prog-0107",
+      "tag": "Functional",
+      "heading": "reduce can build far more than a sum",
+      "hook": "The same reduce that adds up a list of totals can also group orders by status, index users by id, or flatten a nested array — it's really a general fold, not just arithmetic.",
+      "sourceDoc": "/docs/programming/JavaScript/Functional Programming"
+    },
+    {
+      "id": "prog-0108",
+      "tag": "Functional",
+      "heading": "Currying turns one multi-argument function into a chain of one-argument ones",
+      "hook": "Calling add(2) then (3) separately instead of add(2, 3) lets you create a reusable addFive once, which is the real value of currying over plain partial application.",
+      "sourceDoc": "/docs/programming/JavaScript/Functional Programming"
+    },
+    {
+      "id": "prog-0109",
+      "tag": "Functional",
+      "heading": "pipe reads left to right, compose reads right to left",
+      "hook": "Both combine functions so one's output feeds the next one's input — pipe just reads in the same order the functions actually execute, which is why it tends to read more naturally.",
+      "sourceDoc": "/docs/programming/JavaScript/Functional Programming"
+    },
+    {
+      "id": "prog-0110",
+      "tag": "Functional",
+      "heading": "Object.freeze only protects one level deep",
+      "hook": "Freezing a config object stops you from reassigning its top-level keys, but a nested object inside it is still fully mutable unless you recursively freeze every level.",
+      "sourceDoc": "/docs/programming/JavaScript/Functional Programming"
+    },
+    {
+      "id": "prog-0111",
+      "tag": "Functional",
+      "heading": "Push side effects to the edges, keep the core logic pure",
+      "hook": "Separating a pure total calculation from the database save and the email send means the actual business logic can be tested with no mocks at all, while the side effects stay isolated in a thin orchestration layer.",
+      "sourceDoc": "/docs/programming/JavaScript/Functional Programming"
+    },
+    {
+      "id": "prog-0112",
+      "tag": "Memory",
+      "heading": "An object is only garbage collected when nothing reaches it anymore",
+      "hook": "Mark-and-sweep starts from roots like global variables and the call stack, marks every object still reachable from there, then frees everything left unmarked — one remaining reference is enough to keep something alive indefinitely.",
+      "sourceDoc": "/docs/programming/JavaScript/Memory Management"
+    },
+    {
+      "id": "prog-0113",
+      "tag": "Memory",
+      "heading": "Reference counting can't free a circular reference",
+      "hook": "Two objects pointing at each other never hit a reference count of zero even after nothing else points to either — mark-and-sweep handles this correctly because reachability from the roots is what actually matters.",
+      "sourceDoc": "/docs/programming/JavaScript/Memory Management"
+    },
+    {
+      "id": "prog-0114",
+      "tag": "Memory",
+      "heading": "An unremoved event listener keeps its whole closure alive",
+      "hook": "A resize listener that was never cleaned up keeps this, and therefore every large object this references, alive for the lifetime of the page — removing it before discarding an object is not optional.",
+      "sourceDoc": "/docs/programming/JavaScript/Memory Management"
+    },
+    {
+      "id": "prog-0115",
+      "tag": "Memory",
+      "heading": "An unbounded cache is a slow memory leak with a deadline",
+      "hook": "A plain object used as a cache with no eviction grows forever in a long-running server — an LRU cache with a max size, or a WeakMap keyed on the object itself, both cap that growth automatically.",
+      "sourceDoc": "/docs/programming/JavaScript/Memory Management"
+    },
+    {
+      "id": "prog-0116",
+      "tag": "Memory",
+      "heading": "A WeakMap lets its keys be garbage collected",
+      "hook": "Once nothing else references a key stored in a WeakMap, that entry disappears on its own — a regular Map would keep the entry, and therefore the key, alive forever.",
+      "sourceDoc": "/docs/programming/JavaScript/Memory Management"
+    },
+    {
+      "id": "prog-0117",
+      "tag": "Memory",
+      "heading": "heapUsed that never stabilizes is the signature of a leak",
+      "hook": "Logging process.memoryUsage every few seconds and watching heapUsed climb without ever plateauing is the simplest way to confirm a Node.js service is leaking memory, before reaching for a full heap snapshot.",
+      "sourceDoc": "/docs/programming/JavaScript/Memory Management"
+    }
+  ]
+}
