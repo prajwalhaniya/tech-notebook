@@ -1,38 +1,26 @@
 ---
 sidebar_position: 25
 ---
-You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]).
 
-Find two lines that together with the x-axis form a container, such that the container contains the most water.
+# Container With Most Water
 
-Return the maximum amount of water a container can store.
+The full write-up (understand, clarify, brute force, the two-pointer proof, tests, alternatives and follow-ups) lives in **[100 Medium → Container With Most Water](../100%20Medium/08_Container%20with%20most%20water.md)**.
 
-Notice that you may not slant the container.
+Quick reference (two pointers, O(n) time, O(1) space):
 
 ```js
-function maxWater(arr) {
-    let max = 0;
-    let left = 0;
-    let right = arr.length - 1;
+function maxArea(height) {
+  let left = 0, right = height.length - 1, best = 0;
 
-    while (left < right) {
-        const h1 = arr[left];
-        const h2 = arr[right];
-        const minHeight = Math.min(h1, h2);
-        const width = right - left;
-        const area = minHeight * width;
-
-        max = Math.max(max, area);
-
-        if (h1 < h2) {
-            left++;
-        } else {
-            right--;
-        }
-    }
-    return max;
+  while (left < right) {
+    best = Math.max(best, (right - left) * Math.min(height[left], height[right]));
+    if (height[left] < height[right]) left++; // move the shorter wall: it's the bottleneck
+    else right--;
+  }
+  return best;
 }
 
-const arr = [1,8,6,2,5,4,8,3,7];
-console.log(maxWater(arr));
+console.log(maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7])); // 49
 ```
+
+Related: [Trapping Rain Water](../100%20Medium/39_Trapping%20Rain%20Water.md), where every bar counts and the water is summed.
