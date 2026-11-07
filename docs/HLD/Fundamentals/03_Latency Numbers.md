@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Latency Numbers Every Engineer Should Know
+## Latency Numbers Every Engineer Should Know
 
 > **Why this matters at FAANG:** every design decision ("add a cache", "make it async", "keep it in one region", "batch the writes") is justified by **orders of magnitude**. Interviewers don't want exact nanoseconds. They want you to know that memory is about 1,000x faster than an SSD random read, that an in-datacenter round trip is cheaper than a disk seek, and that a cross-ocean round trip costs about 100 ms, bounded by physics. Get those ratios wrong and the rest of the design is built on sand.
 

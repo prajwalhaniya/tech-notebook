@@ -1,8 +1,8 @@
 ---
-sidebar_position: 5
+sidebar_position: 0
 ---
 
-# The HLD Blueprint: 15 Components of a System Design
+## The HLD Blueprint: 15 Components of a System Design
 
 > **How to use this page:** it's the checklist behind every design on this site. In a real 45–60 minute round you **won't** cover all 15 in depth. You'll cover 1–5 for every problem, then **pick the 2–4 deep-dive components the problem is actually about** (a chat app is about async processing and distributed ordering, a URL shortener about caching and ID generation, a payment system about distributed transactions and idempotency). Knowing all 15 is what lets you choose well and answer any follow-up.
 
