@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # HTTP (and HTTPS, HTTP/2, HTTP/3)
 
-> **Why this matters at FAANG:** every API you sketch in a design round speaks HTTP. Interviewers test whether you know the **semantics** (which methods are safe to retry, which status code means what), the **performance model** (handshakes cost round trips, and why HTTP/2 and HTTP/3 exist), **caching** (`Cache-Control`, `ETag`, CDNs) and **when not to use plain request/response** (WebSockets, SSE, gRPC).
+> **Why this matters in interviews:** every API you sketch in a design round speaks HTTP. Interviewers test whether you know the **semantics** (which methods are safe to retry, which status code means what), the **performance model** (handshakes cost round trips, and why HTTP/2 and HTTP/3 exist), **caching** (`Cache-Control`, `ETag`, CDNs) and **when not to use plain request/response** (WebSockets, SSE, gRPC).
 
 Prerequisite: [DNS](./01_DNS.md). Related: [Latency Numbers](./03_Latency%20Numbers.md).
 

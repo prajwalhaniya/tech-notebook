@@ -5,7 +5,7 @@ slug: /HLD/Enveloper_Estimatioin
 
 # Back-of-the-Envelope Estimation
 
-> **Why this matters at FAANG:** estimation isn't a math test. It's how you **justify architecture**. "100 writes/s fits on one Postgres primary" and "1M writes/s needs a sharded, log-structured store" lead to completely different designs. Interviewers grade whether you pick sensible assumptions, say them out loud, do the arithmetic quickly with round numbers and, most importantly, **draw a design conclusion from each number**.
+> **Why this matters in interviews:** estimation isn't a math test. It's how you **justify architecture**. "100 writes/s fits on one Postgres primary" and "1M writes/s needs a sharded, log-structured store" lead to completely different designs. Interviewers grade whether you pick sensible assumptions, say them out loud, do the arithmetic quickly with round numbers and, most importantly, **draw a design conclusion from each number**.
 
 Prerequisite: [Latency Numbers](./03_Latency%20Numbers.md).
 

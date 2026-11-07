@@ -12,7 +12,7 @@ Fundamentals this builds on: [DNS](./01_DNS.md) · [HTTP](./02_HTTP.md) · [Late
 
 ## What interviewers are grading
 
-Most FAANG system design rubrics come down to four signals:
+Most system design interview rubrics come down to four signals:
 
 | Signal | What it looks like |
 | --- | --- |

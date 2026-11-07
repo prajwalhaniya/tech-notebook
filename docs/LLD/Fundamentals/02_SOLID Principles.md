@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # SOLID Principles
 
-> **Why this matters at FAANG:** nobody asks you to recite the acronym. In an LLD round the interviewer adds a requirement halfway through ("now support UPI payments", "now notify by WhatsApp too", "a premium member pays a different rate") and watches **how much existing code you have to change**. SOLID is the toolkit that keeps that answer at "one new class." In code-review style rounds you'll get a messy class and be asked what's wrong with it, and the answer is usually phrased in SOLID terms.
+> **Why this matters in interviews:** nobody asks you to recite the acronym. In an LLD round the interviewer adds a requirement halfway through ("now support UPI payments", "now notify by WhatsApp too", "a premium member pays a different rate") and watches **how much existing code you have to change**. SOLID is the toolkit that keeps that answer at "one new class." In code-review style rounds you'll get a messy class and be asked what's wrong with it, and the answer is usually phrased in SOLID terms.
 
 Prerequisite: [OOP Pillars](./01_OOP%20Pillars.md). Examples are in TypeScript.
 

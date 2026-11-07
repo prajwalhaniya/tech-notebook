@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # OOP Pillars
 
-> **Why this matters at FAANG:** LLD / machine-coding rounds (Amazon, Uber, Flipkart, Microsoft, Google's "object-oriented design" interviews) don't ask "define encapsulation." They hand you *Design a Parking Lot / Elevator / Splitwise* and watch whether your classes **protect their state**, **hide the right details**, **use inheritance only where it's honest**, and **extend through polymorphism instead of `if/else` chains**. These notes cover each pillar the way it's actually tested.
+> **Why this matters in interviews:** LLD / machine-coding rounds (Amazon, Uber, Flipkart, Microsoft, Google's "object-oriented design" interviews) don't ask "define encapsulation." They hand you *Design a Parking Lot / Elevator / Splitwise* and watch whether your classes **protect their state**, **hide the right details**, **use inheritance only where it's honest**, and **extend through polymorphism instead of `if/else` chains**. These notes cover each pillar the way it's actually tested.
 
 Examples are in **TypeScript**: it's close to JavaScript but has interfaces, access modifiers and abstract classes. Notes call out where Java/C++ behave differently.
 

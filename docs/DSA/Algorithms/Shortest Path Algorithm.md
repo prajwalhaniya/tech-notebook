@@ -314,4 +314,4 @@ A: Yes, when target node is reached
 
 ---
 
-This is the complete FAANG-level understanding you need.
+This is the complete interview-level understanding you need.

@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # DNS (Domain Name System)
 
-> **Why this matters at FAANG:** nobody asks you to "design DNS" in most loops, but DNS shows up in nearly every design. It's the first hop of "what happens when you type a URL", it's the cheapest global load balancer you have, and it's how you do region failover, CDN routing and blue/green cutovers. Interviewers probe whether you understand **caching and TTLs**, because they decide how fast any DNS-based change actually takes effect.
+> **Why this matters in interviews:** nobody asks you to "design DNS" in most loops, but DNS shows up in nearly every design. It's the first hop of "what happens when you type a URL", it's the cheapest global load balancer you have, and it's how you do region failover, CDN routing and blue/green cutovers. Interviewers probe whether you understand **caching and TTLs**, because they decide how fast any DNS-based change actually takes effect.
 
 **In one line:** DNS is a globally distributed, hierarchical, heavily cached **key-value store** that maps names (`api.example.com`) to records (IP addresses, aliases, mail servers, text). It's read-mostly and eventually consistent.
 
