@@ -1,6 +1,11 @@
 ---
 sidebar_position: 11
 ---
+
+# Best Time to Buy and Sell Stock II
+
+> **LeetCode 122 · Medium · Pattern: Greedy (sum every upward move)**. For the single-transaction version, the state-machine DP that solves every variant, and the fee, cooldown and k-transaction follow-ups, see [Best Time to Buy and Sell Stock](../100%20Easy/15_Best%20time%20to%20buy%20%26%20sell%20stock.md).
+
 You are given an integer array prices where prices[i] is the price of a given stock on the ith day.
 
 On each day, you may decide to buy and/or sell the stock. You can only hold at most one share of the stock at any time. However, you can buy it then immediately sell it on the same day. Find and return the maximum profit you can achieve.

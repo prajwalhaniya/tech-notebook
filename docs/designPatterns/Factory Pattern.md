@@ -4,6 +4,8 @@ sidebar_position: 3
 
 ## Factory Pattern in JS
 
+> For interview depth (Factory Method vs Abstract Factory, static factory methods, LLD usage, and Factory vs Builder vs Strategy), see [LLD → Design Patterns → Factory](../LLD/Design%20Patterns/02_Factory.md). For step-by-step construction, see [Builder](../LLD/Design%20Patterns/03_Builder.md).
+
 The **Factory Pattern** is one of the most common **creational design patterns** in Node.js.
 
 Think of it like this:

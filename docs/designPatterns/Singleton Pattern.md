@@ -4,6 +4,8 @@ sidebar_position: 1
 
 ## Singleton Pattern in JS
 
+> For interview depth (thread safety, the async-init race, why Singleton is called an anti-pattern, and DI as the alternative), see [LLD → Design Patterns → Singleton](../LLD/Design%20Patterns/01_Singleton.md).
+
 The **Singleton Pattern** ensures a class has **only one instance** throughout the application's lifetime and provides a global access point to it.
 
 Think of it like this:
