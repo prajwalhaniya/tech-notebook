@@ -4,6 +4,8 @@ sidebar_position: 4
 
 ## Strategy Pattern in JS
 
+> For the interview-depth version (structure, trade-offs, LLD usage, interview questions) see [Strategy in LLD](../LLD/Design%20Patterns/04_Strategy.md).
+
 The **Strategy Pattern** is one of the cleanest ways to remove `if/else` or `switch` hell in Node.js.
 
 Think of it like this:

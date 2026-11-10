@@ -2,7 +2,7 @@
     "label": "Design Patterns",
     "position": 0.5,
     "link": {
-      "type": "generated-index",
-      "description": "Creational design patterns at interview depth: Singleton, Factory (Simple, Factory Method, Abstract Factory) and Builder. Covers intent, structure, TypeScript implementations, trade-offs, pitfalls and the questions interviewers ask."
+        "type": "generated-index",
+        "description": "Design patterns at interview depth. Creational: Singleton, Factory (Simple, Factory Method, Abstract Factory), Builder. Behavioural: Strategy, Observer, State. Structural: Decorator, Adapter. Covers intent, structure, TypeScript implementations, trade-offs, pitfalls and the questions interviewers ask."
     }
 }

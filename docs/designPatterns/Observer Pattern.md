@@ -4,6 +4,8 @@ sidebar_position: 6
 
 ## Observer Pattern in JS
 
+> For the interview-depth version (structure, trade-offs, LLD usage, interview questions) see [Observer in LLD](../LLD/Design%20Patterns/05_Observer.md).
+
 The **Observer Pattern** is one of the most widely used patterns in event-driven systems like Node.js.
 
 Think of it like this:

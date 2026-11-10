@@ -4,6 +4,8 @@ sidebar_position: 7
 
 ## Decorator Pattern in JS
 
+> For the interview-depth version (structure, trade-offs, LLD usage, interview questions) see [Decorator in LLD](../LLD/Design%20Patterns/06_Decorator.md).
+
 The **Decorator Pattern** lets you **add behavior to an object or function** without modifying its original code.
 
 Think of it like this:
