@@ -1,0 +1,383 @@
+:root {
+  --bg: #ffffff;
+  --fg: #1c1e21;
+  --muted: #697177;
+  --muted-2: #8a9099;
+  --border: #e3e5e8;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #15171a;
+    --fg: #f1f2f3;
+    --muted: #b8bcc2;
+    --muted-2: #8a9099;
+    --border: #30343a;
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: #15171a;
+  --fg: #f1f2f3;
+  --muted: #b8bcc2;
+  --muted-2: #8a9099;
+  --border: #30343a;
+  color-scheme: dark;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 30;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg) 80%, transparent);
+  color: var(--fg);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.theme-toggle:hover {
+  border-color: color-mix(in srgb, var(--fg) 25%, transparent);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========================================================
+   HUB — topic picker grid
+   ========================================================= */
+
+.hub {
+  min-height: 100vh;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 4rem;
+}
+
+.hub-kicker {
+  display: block;
+  margin-bottom: 0.6rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.hub-title {
+  margin: 0 0 0.85rem;
+  font-size: clamp(2.25rem, 6vw, 3.1rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.hub-subtitle {
+  max-width: 540px;
+  margin: 0 0 2.75rem;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.hub-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding: 1.5rem 1.4rem 1.35rem;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--accent) 5%, var(--bg));
+  overflow: hidden;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.15s ease;
+}
+
+.hub-card:hover {
+  border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  background: color-mix(in srgb, var(--accent) 11%, var(--bg));
+  transform: translateY(-2px);
+}
+
+.hub-card-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--accent);
+}
+
+.hub-card-label {
+  font-size: 1.1875rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.hub-card-arrow {
+  margin-top: auto;
+  align-self: flex-end;
+  font-size: 1.25rem;
+  color: color-mix(in srgb, var(--accent) 70%, transparent);
+}
+
+.hub-empty {
+  color: var(--muted);
+}
+
+/* =========================================================
+   DECK — the swipeable reel shell
+   ========================================================= */
+
+.shell {
+  position: relative;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.top-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem 0.75rem;
+  background: linear-gradient(
+    to bottom,
+    var(--bg) 0%,
+    color-mix(in srgb, var(--bg) 70%, transparent) 70%,
+    transparent 100%
+  );
+}
+
+.close-link {
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--muted);
+  padding: 0.1rem 0.4rem;
+}
+
+.close-link:hover {
+  color: var(--fg);
+}
+
+.topic-label {
+  flex: 1;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.progress-track {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 11;
+  height: 3px;
+  background: var(--border);
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--accent, var(--fg));
+  box-shadow: 0 0 10px color-mix(in srgb, var(--accent, var(--fg)) 65%, transparent);
+  transition: width 0.25s ease, background-color 0.3s ease;
+}
+
+.deck {
+  height: 100%;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scrollbar-width: none;
+}
+
+.deck::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  height: 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--accent) 8%, var(--bg)) 0%,
+    var(--bg) 42%
+  );
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  padding: 5.5rem 1.75rem 4rem;
+}
+
+.card-number {
+  position: absolute;
+  top: 0.25rem;
+  right: 1.75rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: color-mix(in srgb, var(--accent) 20%, transparent);
+  user-select: none;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  padding: 0.3rem 0.75rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+}
+
+.heading {
+  margin: 0 0 1rem;
+  font-size: clamp(1.625rem, 4.4vw, 2.3rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+
+.accent-bar {
+  display: block;
+  width: 2.5rem;
+  height: 4px;
+  margin-bottom: 1.25rem;
+  border-radius: 2px;
+  background: var(--accent);
+}
+
+.hook {
+  margin: 0 0 0.85rem;
+  font-size: clamp(1.1875rem, 2.6vw, 1.375rem);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.detail {
+  margin: 0 0 1.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.code {
+  margin: 0 0 1.5rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.nav-hint {
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  text-align: center;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: var(--muted-2);
+  pointer-events: none;
+}
+
+.empty {
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.empty-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 640px) {
+  .card-inner {
+    padding: 5rem 1.25rem 3.5rem;
+  }
+
+  .card-number {
+    font-size: 1.75rem;
+    top: 0.1rem;
+    right: 1.25rem;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+  }
+
+  .hook {
+    font-size: 1.0625rem;
+  }
+
+  .detail {
+    font-size: 0.9375rem;
+  }
+
+  .hub-grid {
+    grid-template-columns: 1fr;
+  }
+}

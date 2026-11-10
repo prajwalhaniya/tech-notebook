@@ -78,7 +78,6 @@ const config = {
             position: 'left',
           },
           // {to: '/blog', label: 'Blog', position: 'left'},
-          {to: '/reels', label: 'Reels', position: 'right'},
         ],
       },
       docs: {
