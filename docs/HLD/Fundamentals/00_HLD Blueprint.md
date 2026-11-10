@@ -6,7 +6,7 @@ sidebar_position: 0
 
 > **How to use this page:** it's the checklist behind every design on this site. In a real 45–60 minute round you **won't** cover all 15 in depth. You'll cover 1–5 for every problem, then **pick the 2–4 deep-dive components the problem is actually about** (a chat app is about async processing and distributed ordering, a URL shortener about caching and ID generation, a payment system about distributed transactions and idempotency). Knowing all 15 is what lets you choose well and answer any follow-up.
 
-Fundamentals this builds on: [DNS](./01_DNS.md) · [HTTP](./02_HTTP.md) · [Latency Numbers](./03_Latency%20Numbers.md) · [Back-of-the-Envelope Estimation](./04_Back-of-the-Envelope%20Estimation.md)
+Fundamentals this builds on: [DNS](./01_DNS.md) · [HTTP](./02_HTTP.md) · [Latency Numbers](./03_Latency%20Numbers.md) · [Back-of-the-Envelope Estimation](./04_Back-of-the-Envelope%20Estimation.md) · [SQL vs NoSQL](./05_SQL%20vs%20NoSQL.md) · [Indexes](./06_Indexes.md) · [ACID vs BASE](./07_ACID%20vs%20BASE.md)
 
 ---
 
@@ -114,7 +114,7 @@ GET    /v1/photos/{photoId}            → 200 { ... }  (ETag for caching)
 2. List the **access patterns** with their frequency: "get the feed for a user, newest first" (very hot), "get the followers of a user" (fan-out), "get a photo by ID".
 3. Choose the **primary keys and partition keys** to serve the hot patterns **without scatter-gather**.
 4. Decide **normalize vs denormalize**: normalize for write integrity, denormalize (or precompute) for hot reads.
-5. Choose the **indexes**. Every index speeds up reads and slows down writes.
+5. Choose the **indexes**. Every index speeds up reads and slows down writes. See [Indexes](./06_Indexes.md) for composite-index ordering, keyset pagination and secondary indexes on sharded data.
 
 ```
 users      (user_id PK, username UNIQUE, created_at, ...)
@@ -184,9 +184,11 @@ feed_items (user_id, created_at, photo_id)           partition key user_id, sort
 | **Analytical (OLAP, columnar)** | BigQuery, Snowflake, Redshift, ClickHouse | Scans and aggregations over billions of rows | Dashboards, BI, reporting, ML features | Low-latency transactional point reads and writes |
 | **Object / blob** | S3, GCS, Azure Blob | Cheap, effectively unlimited, very durable | Images, video, backups, data lake files | Small, frequently updated records |
 
+Deep dive: [SQL vs NoSQL](./05_SQL%20vs%20NoSQL.md) (decision framework and worked examples).
+
 **Decision questions:** Do I need multi-row **transactions**? What are the **query patterns** (key lookups vs ad-hoc vs range scans vs full text vs aggregations)? Is it **read- or write-heavy**? How much data, and how fast does it grow? What consistency is required? Is the schema stable or evolving?
 
-**ACID vs BASE:** ACID (atomic, consistent, isolated, durable) is the relational guarantee. BASE (basically available, soft state, eventually consistent) is the trade many NoSQL systems make for availability and scale. Know the **isolation levels** (read committed, repeatable read, serializable) and the anomalies each one prevents (dirty reads, non-repeatable reads, phantoms, write skew).
+**ACID vs BASE:** ACID (atomic, consistent, isolated, durable) is the relational guarantee. BASE (basically available, soft state, eventually consistent) is the trade many NoSQL systems make for availability and scale. Know the **isolation levels** (read committed, repeatable read, serializable) and the anomalies each one prevents (dirty reads, non-repeatable reads, phantoms, write skew). Deep dive: [ACID vs BASE](./07_ACID%20vs%20BASE.md).
 
 **How storage engines differ:** a **B-tree** (most SQL databases) is good for reads and updates in place, and does random writes. An **LSM-tree** (Cassandra, RocksDB) is good for writes because it turns them into sequential appends, at the cost of compaction and read amplification, which Bloom filters mitigate.
 
