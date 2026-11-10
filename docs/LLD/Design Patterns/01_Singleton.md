@@ -193,6 +193,45 @@ public enum Logger { INSTANCE; public void log(String m) { ... } }
 
 **C++11 and later:** a function-local static (`static Logger& instance() { static Logger inst; return inst; }`, the "Meyers singleton") is guaranteed thread-safe to initialize.
 
+### Python and Go (if you interview in them)
+
+```python
+# Python, idiomatic: a module is imported once per interpreter, so a module-level object is the singleton.
+# config.py
+settings = Settings()          # every `from config import settings` gets this object
+
+# Python, class-based (thread-safe lazy init). Know it, but prefer the module version.
+import threading
+
+class Logger:
+    _instance = None
+    _lock = threading.Lock()
+
+    def __new__(cls):
+        if cls._instance is None:                 # fast path, no lock
+            with cls._lock:
+                if cls._instance is None:         # double-checked under the lock
+                    cls._instance = super().__new__(cls)
+        return cls._instance
+```
+
+`__init__` still runs on **every** `Logger()` call, so put one-time setup in `__new__` (or guard it). A metaclass-based singleton is the other common answer, and `functools.cache` on a factory function (`@cache def get_client(): ...`) is often the cleanest.
+
+```go
+// Go: sync.Once runs the initializer exactly once, even under concurrent calls.
+var (
+    instance *Logger
+    once     sync.Once
+)
+
+func GetLogger() *Logger {
+    once.Do(func() { instance = newLogger() })
+    return instance
+}
+```
+
+In Go, package-level variables initialized in `var` or `init()` are the eager version. If initialization can fail, Go 1.21's `sync.OnceValues` returns `(value, err)` and caches both. Like the cached-Promise problem above, decide whether a failure should be cached or retried.
+
 ### JavaScript: "it's single-threaded, so it's safe"... not quite
 
 The JS event loop runs your code on one thread, so the synchronous check-then-create is atomic. But **asynchronous initialization reintroduces the race**:
@@ -325,6 +364,48 @@ class FeatureFlags {
 // in a test's afterEach: FeatureFlags.resetForTests();
 ```
 
+### Lifecycle: the single instance also has to shut down
+
+Interviewers who've run production services ask this: a singleton holding a connection pool, a buffered logger or a background timer must be **closed** on shutdown, or you lose buffered logs, leak connections and hang the process (an open socket or `setInterval` keeps Node alive).
+
+```ts
+class MetricsClient {
+  static #instance: MetricsClient | undefined;
+  #buffer: string[] = [];
+  #timer: NodeJS.Timeout;
+
+  private constructor() {
+    this.#timer = setInterval(() => this.flush(), 10_000);
+  }
+
+  static getInstance(): MetricsClient {
+    return (MetricsClient.#instance ??= new MetricsClient());
+  }
+
+  record(metric: string) { this.#buffer.push(metric); }
+
+  flush() {
+    const batch = this.#buffer.splice(0);   // send `batch` to the backend
+    return batch.length;
+  }
+
+  async close(): Promise<void> {
+    clearInterval(this.#timer);             // let the process exit
+    this.flush();                           // don't drop buffered data
+    MetricsClient.#instance = undefined;    // a later getInstance() creates a fresh one
+  }
+}
+
+// composition root: close singletons in reverse order of creation
+process.once('SIGTERM', async () => {
+  await MetricsClient.getInstance().close();
+  process.exit(0);
+});
+```
+
+- **Order matters:** close things that *use* the DB pool before closing the pool. DI containers handle this with lifecycle hooks (NestJS `onModuleDestroy`, Spring `@PreDestroy`). A hand-rolled singleton makes it your job.
+- **After `close()`,** either reset the instance (as above) or make further calls throw. Silently using a closed pool is the worst option.
+
 ## 8. Variants worth knowing
 
 ### Multiton: one instance per key
@@ -379,6 +460,18 @@ It's useful for per-tenant or per-region resources. Watch for **unbounded growth
 - **Elevator system:** one `ElevatorController` per building, not per process, so it's a scoped instance, not a global.
 - **Rate limiter:** one in-memory limiter per process, which means limits are per instance. For a global limit, move the state to Redis (it becomes an HLD conversation).
 
+## 11. How to talk about it in the room (about 60 seconds)
+
+When the interviewer asks "should X be a singleton?" or "implement a singleton", hit these beats in order:
+
+1. **Justify the cardinality.** "There must be exactly one because ___" (shared state, a shared limited resource). If you can't finish that sentence, say "one per context, so I'll inject it" instead.
+2. **Implement the simplest correct version for the language.** A module export in Node, the holder idiom or an enum in Java, `sync.Once` in Go, a module object in Python.
+3. **Address concurrency unprompted.** The thread-safety of lazy init (or the async Promise race in JS).
+4. **Name the downsides and your mitigation.** "It's global state and hurts testability, so I'll depend on an interface and create the one instance at the composition root."
+5. **State the scope.** "One per process. If we need one across the fleet, that's leader election."
+
+This shows you can build it, you know its failure modes, and you'd still choose it deliberately. That combination is what separates a senior answer from a textbook one.
+
 ---
 
 ## Interview questions (with crisp answers)
@@ -412,3 +505,5 @@ Reflection, serialization, cloning and multiple class loaders. An enum singleton
 - Caching a rejected init Promise forever, so the app can never recover.
 - Calling `getInstance()` deep inside business logic instead of injecting it.
 - Forgetting that "one" means one per process, not one per system.
+- Never closing the instance: buffered data is lost on shutdown, and open timers or sockets keep the process from exiting.
+- Python: putting one-time setup in `__init__`, which re-runs on every `Logger()` call.

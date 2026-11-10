@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Factory Pattern (Simple Factory, Factory Method, Abstract Factory)
+# Factory Pattern
 
 > **Why this matters in interviews:** almost every LLD problem has a "which concrete class do I create?" moment: the vehicle type in a parking lot, the payment provider at checkout, the notification channel, the chess piece, the vending machine state. Interviewers watch whether creation logic is **centralized and closed for modification** or scattered as `switch` statements across the codebase. They also ask the classic clarification: **"What's the difference between Factory Method and Abstract Factory?"**
 
@@ -272,6 +272,35 @@ Money.zero('USD') === Money.ofCents(0, 'USD'); // true (cached)
 
 **Real-world examples:** `Array.from`, `Array.of`, `Promise.resolve`, `Object.create`, `document.createElement('div')` (a simple factory keyed by tag name), Node's `crypto.createHash('sha256')`, `React.createElement`, Java's `List.of` / `Optional.of`.
 
+### Async factories: when construction needs I/O
+
+A constructor **can't be `async`** in JS/TS (or in most languages). If an object isn't usable until it has connected, loaded a file or fetched a key, the usual mistakes are an `init()` method callers forget to call, or kicking off a Promise in the constructor that nobody awaits. Use a static async factory with a private constructor instead:
+
+```ts
+interface Secrets { apiKey: string }
+
+class PaymentsClient {
+  private constructor(private readonly secrets: Secrets) {}   // only receives ready-to-use state
+
+  static async create(loadSecrets: () => Promise<Secrets>): Promise<PaymentsClient> {
+    const secrets = await loadSecrets();                      // the I/O happens here
+    if (!secrets.apiKey) throw new Error('missing apiKey');   // validate before the object exists
+    return new PaymentsClient(secrets);
+  }
+
+  charge(cents: number): string {
+    return `charged ${cents} with key ${this.secrets.apiKey.slice(0, 3)}…`;
+  }
+}
+
+const client = await PaymentsClient.create(async () => ({ apiKey: 'sk_live_123' }));
+client.charge(500); // "charged 500 with key sk_…"
+```
+
+- **Why it works:** a `PaymentsClient` can only be obtained **after** its async setup succeeded, so there's no "not initialized yet" state to check in every method.
+- **Combine it with the singleton Promise trick** (cache the Promise returned by `create()`) when the client should be shared. See [Singleton](./01_Singleton.md), section 4.
+- Seen in the wild: `mongodb`'s static `MongoClient.connect(url)`, Playwright's `chromium.launch()`, and `fs.promises.open()` (resolves to a ready `FileHandle`).
+
 ## 7. Factories in LLD problems
 
 ### Parking lot: create the vehicle from its type
@@ -349,7 +378,37 @@ In TS, a factory is often just a **function type**. You don't need a `FactoryFac
 | **Prototype** | Create by cloning an existing object | An alternative to factories when configuring from scratch is expensive |
 | **Dependency injection** | Who wires objects together? | A DI container is essentially a big, configurable factory. Use factories for objects created **at runtime per request**, and DI for the long-lived graph. |
 
-## 9. Pitfalls
+## 9. The same idea in other interview languages
+
+| Language | Idiomatic factory | Notes |
+| --- | --- | --- |
+| **Java** | Static factories (`List.of`, `Optional.ofNullable`), `Map<String, Supplier<Shape>>` registries, `ServiceLoader` for plugins | Enum-keyed `EnumMap<Type, Supplier<T>>` gives exhaustiveness. Spring's `@Bean` methods are factory methods. |
+| **Python** | `@classmethod` alternate constructors (`datetime.fromtimestamp`, `dict.fromkeys`), and a plain `dict` from key to class | Classes are first-class, so `REGISTRY[kind](**cfg)` is a complete simple factory. Decorators often do the registering: `@register("email")`. |
+| **Go** | `NewX(...)` constructor functions, since Go has no constructors | Go's convention is "**accept interfaces, return structs**": `NewServer` returns `*Server`, not an interface. Return an interface only when you really are choosing among implementations (a true factory). |
+| **C++** | Functions returning `std::unique_ptr<Base>` | Ownership is explicit in the return type, so the caller owns the product. |
+
+```python
+# Python registry factory with a decorator
+_REGISTRY: dict[str, type] = {}
+
+def register(kind: str):
+    def deco(cls):
+        _REGISTRY[kind] = cls
+        return cls
+    return deco
+
+@register("email")
+class EmailNotification:
+    def send(self, to, msg): return f"email:{to}:{msg}"
+
+def create_notification(kind: str):
+    try:
+        return _REGISTRY[kind]()
+    except KeyError:
+        raise ValueError(f"unknown channel: {kind}") from None
+```
+
+## 10. Pitfalls
 
 - **God factory:** one `createAnything(type)` with 40 branches. Split it per product family.
 - **Returning concrete types** (`createNotification(): EmailNotification`), which defeats the point. Return the interface.
@@ -357,6 +416,22 @@ In TS, a factory is often just a **function type**. You don't need a `FactoryFac
 - **Hidden configuration:** a factory that reads `process.env` deep inside makes behaviour hard to trace. Pass config in.
 - **Silent fallbacks:** `default: return new EmailNotification()` hides typos. Throw on unknown types.
 - **Confusing Factory with Builder:** if the caller is passing 10 options into `create(...)`, you probably want a builder (or an options object).
+- **Async setup in a constructor:** a constructor that starts I/O without awaiting it hands out half-initialized objects. Use an async factory.
+
+## 11. How to talk about it in the room
+
+When you spot a "which concrete class?" decision in an LLD problem:
+
+1. **Name the variation point.** "Payment providers vary, and we'll add more."
+2. **Define the product interface first** (`PaymentGateway.charge()`), so business logic depends only on it.
+3. **Pick the lightest variant that fits, and say why:**
+   - The type comes from input or config → **simple factory**, as a registry if new types arrive often.
+   - A base class's workflow needs a subclass-specific object → **factory method**.
+   - Several products must match (same vendor, same theme) → **abstract factory**.
+4. **Inject the factory** into the service, so tests can pass a fake.
+5. **Mention the trade-off:** a `switch` factory isn't fully open/closed, but it's contained and exhaustiveness-checked. A registry is open but only checked at runtime, so fail fast at startup.
+
+Don't draw an abstract factory for a single product, and don't call a `switch` function "the Factory Method pattern". Interviewers notice both.
 
 ---
 

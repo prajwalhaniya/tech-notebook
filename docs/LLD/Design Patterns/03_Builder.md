@@ -178,6 +178,48 @@ const faster = req.toBuilder().timeout(1_000).build();             // a new obje
 
 In TS, the builder could also be a nested static class, or a separate class in the same module with `_create` kept internal. That's TS's stand-in for Java's private nested `Builder` with access to a private constructor.
 
+### The Java version (what most LLD rounds in Java expect)
+
+```java
+public final class HttpRequest {
+    private final String url;                       // all fields final → immutable
+    private final String method;
+    private final Map<String, String> headers;
+    private final int timeoutMs;
+
+    private HttpRequest(Builder b) {                // only Builder can call this
+        this.url = b.url;
+        this.method = b.method;
+        this.headers = Map.copyOf(b.headers);       // defensive, unmodifiable copy
+        this.timeoutMs = b.timeoutMs;
+    }
+
+    public static Builder builder(String url) { return new Builder(url); }   // required field up front
+
+    public static final class Builder {             // static nested: no outer instance needed
+        private final String url;
+        private String method = "GET";              // defaults live here
+        private final Map<String, String> headers = new HashMap<>();
+        private int timeoutMs = 30_000;
+
+        private Builder(String url) { this.url = Objects.requireNonNull(url); }
+
+        public Builder method(String m)              { this.method = m; return this; }
+        public Builder header(String k, String v)    { headers.put(k.toLowerCase(), v); return this; }
+        public Builder timeout(int ms)               { this.timeoutMs = ms; return this; }
+
+        public HttpRequest build() {
+            if (timeoutMs <= 0) throw new IllegalStateException("timeout must be positive");
+            return new HttpRequest(this);           // validate, then construct once
+        }
+    }
+}
+
+HttpRequest req = HttpRequest.builder("https://api.example.com").method("POST").timeout(5_000).build();
+```
+
+Points interviewers look for: **`static` nested** class (a non-static inner class would need an outer instance), the **private constructor taking the builder**, **`final` fields**, the **defensive copy** of mutable collections, and **required fields in `builder(...)`**. Lombok's `@Builder` (plus `@Singular`, `toBuilder = true`) generates this boilerplate, and Java 16+ `record`s cover simple immutable data with no builder at all.
+
 ## 5. The GoF builder + director: same steps, different representations
 
 The **director** knows the *order* of construction steps. The **builders** know how to produce one particular *representation*.
@@ -301,7 +343,64 @@ const plain = base.build();                   // toppings: [], so base wasn't mu
 
 Java and Kotlin get the same guarantee with **step interfaces**: `builder()` returns a `NeedsSize`, whose `size()` returns a `NeedsCrust`, whose `crust()` returns an `OptionalSteps` that has `build()`.
 
-## 7. Builders for tests: the test data builder
+## 7. Functional options: the builder alternative from Go
+
+Go has no method overloading and no default parameters, so the community settled on **functional options**: each option is a function that modifies the config, and the constructor applies them over defaults. It's worth knowing because Go-heavy teams ask about it, and it works well in TS for libraries where third parties add options.
+
+```go
+type Server struct {
+    addr    string
+    timeout time.Duration
+    maxConn int
+}
+
+type Option func(*Server)
+
+func WithTimeout(d time.Duration) Option { return func(s *Server) { s.timeout = d } }
+func WithMaxConn(n int) Option          { return func(s *Server) { s.maxConn = n } }
+
+func NewServer(addr string, opts ...Option) (*Server, error) {
+    s := &Server{addr: addr, timeout: 30 * time.Second, maxConn: 100}  // defaults
+    for _, opt := range opts {
+        opt(s)
+    }
+    if s.maxConn <= 0 {
+        return nil, errors.New("maxConn must be positive")             // validation, like build()
+    }
+    return s, nil
+}
+
+srv, err := NewServer(":8080", WithTimeout(5*time.Second))
+```
+
+The same shape in TypeScript:
+
+```ts
+interface ServerConfig { addr: string; timeoutMs: number; maxConn: number }
+type Option = (c: ServerConfig) => void;
+
+const withTimeout = (ms: number): Option => (c) => { c.timeoutMs = ms; };
+const withMaxConn = (n: number): Option => (c) => { c.maxConn = n; };
+
+function createServer(addr: string, ...opts: Option[]): Readonly<ServerConfig> {
+  const c: ServerConfig = { addr, timeoutMs: 30_000, maxConn: 100 };
+  for (const opt of opts) opt(c);
+  if (c.maxConn <= 0) throw new Error('maxConn must be positive');
+  return Object.freeze(c);
+}
+
+createServer(':8080', withTimeout(5_000)).timeoutMs; // 5000
+```
+
+| | Fluent builder | Functional options | Options object |
+| --- | --- | --- | --- |
+| Named, optional parameters | ✅ | ✅ | ✅ |
+| Extensible by other packages (new options without editing the type) | ❌ (needs new methods) | ✅ (anyone can write an `Option`) | ❌ (needs new fields) |
+| Options can carry logic (e.g. `withTLS(certPath)` sets three fields) | ✅ | ✅ | ❌ |
+| Incremental, conditional construction | ✅ | ✅ (build an `Option[]`) | Awkward |
+| Discoverability (autocomplete on `.`) | ✅ Best | Weaker | ✅ |
+
+## 8. Builders for tests: the test data builder
 
 ```ts
 interface User { id: string; email: string; role: 'admin' | 'member'; active: boolean }
@@ -322,7 +421,7 @@ const u = UserBuilder.aUser().admin().inactive().build();
 
 This is the **test data builder** (from *Growing Object-Oriented Software, Guided by Tests*). It keeps tests readable and resilient when `User` gains new required fields: you update the default in one place, not in 200 tests. Libraries like Fishery and `factory_bot` generalize it.
 
-## 8. Builder in the wild
+## 9. Builder in the wild
 
 | Example | Kind |
 | --- | --- |
@@ -333,7 +432,7 @@ This is the **test data builder** (from *Growing Object-Oriented Software, Guide
 | Elasticsearch / Mongo aggregation pipeline builders | DSL builder |
 | Docker multi-stage builds, CI pipeline DSLs | Step-by-step construction (conceptually a director) |
 
-## 9. Builder vs related patterns
+## 10. Builder vs related patterns
 
 | | Builder | Factory | Options object | Constructor |
 | --- | --- | --- | --- | --- |
@@ -345,7 +444,7 @@ This is the **test data builder** (from *Growing Object-Oriented Software, Guide
 
 They combine naturally: a **factory can return a pre-configured builder** (`RequestBuilders.forService('payments')`), and a **director is the client of builders**. A **Prototype** (clone, then modify) is the alternative when a configured object is expensive to rebuild.
 
-## 10. In LLD rounds
+## 11. In LLD rounds
 
 | Problem | Builder for | Why |
 | --- | --- | --- |
@@ -358,7 +457,7 @@ They combine naturally: a **factory can return a pre-configured builder** (`Requ
 
 **A sentence to use:** *"`Pizza` has two required fields and several optional ones with business rules, so I'll use a builder that validates in `build()` and returns an immutable `Pizza`. If it only had optional flags, I'd just accept an options object."*
 
-## 11. Pitfalls
+## 12. Pitfalls
 
 - **A builder for a two-field class.** Use a constructor or an options object.
 - **Mutable product:** a builder that returns an object with public setters loses the main benefit.
@@ -367,6 +466,14 @@ They combine naturally: a **factory can return a pre-configured builder** (`Requ
 - **Required fields as optional setters** with no check, which fails at use time instead of build time.
 - **Reusing one mutable builder across async tasks.** Builders are usually single-use and not thread-safe. Create one per build, or use immutable steps (section 6).
 - **Mixing up "Builder" and "Factory":** if you're choosing a subclass, that's a factory.
+
+## 13. How to talk about it in the room
+
+1. **Name the trigger.** "This object has N optional parts and rules about how they combine" (or "the same steps produce several formats").
+2. **Rule out the lighter option out loud.** "With only optional flags I'd take an options object, but these cross-field rules belong in one `build()` step."
+3. **State the guarantees:** private constructor, validation in `build()`, an immutable product, defensive copies, required fields taken in `builder(...)`.
+4. **Offer upgrades if there's time:** a staged builder for compile-time required fields, `toBuilder()` for copy-with-changes, or a director if multiple representations come up.
+5. **Connect it to the design:** the builder is usually used by a service or a factory (`OrderService` builds an `Order`), not instead of one.
 
 ---
 
