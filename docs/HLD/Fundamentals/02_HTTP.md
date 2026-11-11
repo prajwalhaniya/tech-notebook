@@ -142,7 +142,7 @@ Client cache ── CDN / reverse proxy (shared) ── Origin
 
 **Validation:** when content goes stale, the client sends `If-None-Match: <etag>`, and the server replies `304` with no body if nothing changed. **`Vary: Accept-Encoding`** tells caches to store a separate copy per encoding. Varying on too many headers destroys the hit rate.
 
-**Cache invalidation at the CDN:** prefer **versioned URLs** (a new deploy means a new filename, and the old copy just ages out) over purge APIs, which are slow, rate-limited and eventually consistent.
+**Cache invalidation at the CDN:** prefer **versioned URLs** (a new deploy means a new filename, and the old copy just ages out) over purge APIs, which are slow, rate-limited and eventually consistent. More in [CDN](./10_CDN.md) and [Caching Strategies](./08_Caching%20Strategies.md).
 
 ## 8. Choosing the communication style
 

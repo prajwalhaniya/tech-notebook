@@ -6,7 +6,7 @@ sidebar_position: 0
 
 > **How to use this page:** it's the checklist behind every design on this site. In a real 45–60 minute round you **won't** cover all 15 in depth. You'll cover 1–5 for every problem, then **pick the 2–4 deep-dive components the problem is actually about** (a chat app is about async processing and distributed ordering, a URL shortener about caching and ID generation, a payment system about distributed transactions and idempotency). Knowing all 15 is what lets you choose well and answer any follow-up.
 
-Fundamentals this builds on: [DNS](./01_DNS.md) · [HTTP](./02_HTTP.md) · [Latency Numbers](./03_Latency%20Numbers.md) · [Back-of-the-Envelope Estimation](./04_Back-of-the-Envelope%20Estimation.md) · [SQL vs NoSQL](./05_SQL%20vs%20NoSQL.md) · [Indexes](./06_Indexes.md) · [ACID vs BASE](./07_ACID%20vs%20BASE.md)
+Fundamentals this builds on: [DNS](./01_DNS.md) · [HTTP](./02_HTTP.md) · [Latency Numbers](./03_Latency%20Numbers.md) · [Back-of-the-Envelope Estimation](./04_Back-of-the-Envelope%20Estimation.md) · [SQL vs NoSQL](./05_SQL%20vs%20NoSQL.md) · [Indexes](./06_Indexes.md) · [ACID vs BASE](./07_ACID%20vs%20BASE.md) · [Caching Strategies](./08_Caching%20Strategies.md) · [Cache Eviction](./09_Cache%20Eviction.md) · [CDN](./10_CDN.md)
 
 ---
 
@@ -155,7 +155,7 @@ feed_items (user_id, created_at, photo_id)           partition key user_id, sort
 | --- | --- | --- |
 | **Clients** | Web and mobile | Client-side caching, retries with backoff, offline queues |
 | **DNS / GeoDNS** | Route to the nearest healthy region | See [DNS](./01_DNS.md) |
-| **CDN** | Serve static content and media from the edge, terminate TLS near users | The largest bandwidth saver |
+| **CDN** | Serve static content and media from the edge, terminate TLS near users | The largest bandwidth saver. See [CDN](./10_CDN.md) |
 | **Load balancer** | Spread traffic, run health checks, terminate TLS | L4 vs L7, see [HTTP §10](./02_HTTP.md#10-load-balancers-and-http) |
 | **API gateway** | Authentication, rate limiting, request routing, aggregation | Keep business logic out of it |
 | **Application services** | **Stateless** business logic | Scale horizontally with autoscaling |
@@ -206,7 +206,7 @@ Deep dive: [SQL vs NoSQL](./05_SQL%20vs%20NoSQL.md) (decision framework and work
 | **Write-behind (write-back)** | | Write to the cache, which **flushes to the DB asynchronously** | Weak | **Data loss** if the cache dies before flushing | Counters, likes, metrics, very write-heavy and loss-tolerant data |
 | **Write-around** | | Write to the DB only, so the cache fills on read | Eventual | Read-after-write misses | Write-once, rarely re-read data |
 
-**Eviction:** LRU (the default), LFU (stable popularity), TTL-based. Set memory limits and watch the eviction rate.
+**Eviction:** LRU (the default), LFU (stable popularity), TTL-based. Set memory limits and watch the eviction rate. Deep dive: [Cache Eviction](./09_Cache%20Eviction.md) (policies, admission with W-TinyLFU, Redis `maxmemory-policy`).
 
 **Invalidation:** "there are only two hard things in computer science..."
 - Prefer **delete on write** over update on write. That avoids two concurrent writers leaving the older value in the cache.
@@ -224,7 +224,7 @@ Deep dive: [SQL vs NoSQL](./05_SQL%20vs%20NoSQL.md) (decision framework and work
 | **Hot key** | One key overloads one cache shard | A local in-process cache in front, replicate the key across shards (`key#1..N`), CDN |
 | **Stale read race** | Reader A misses and reads the old value from the DB. Writer B updates the DB and deletes the key. A then writes the old value into the cache. | Short TTLs, **leases** (Facebook's memcache paper), delayed double-delete, or versioned writes |
 
-Related deep dives in this notebook: [Caching Introduction](../../DSA/caching/Introduction.md), [LRU](../../DSA/caching/Least%20Recently%20Used.md), [LFU](../../DSA/caching/Least%20Frequently%20Used.md).
+Deep dives: [Caching Strategies](./08_Caching%20Strategies.md) (read/write strategies, consistency races, stampedes, sizing) · [CDN](./10_CDN.md) (edge caching, invalidation, origin shield). Also in this notebook: [Caching Introduction](../../DSA/caching/Introduction.md), [LRU](../../DSA/caching/Least%20Recently%20Used.md), [LFU](../../DSA/caching/Least%20Frequently%20Used.md).
 
 ## 8. Scalability
 

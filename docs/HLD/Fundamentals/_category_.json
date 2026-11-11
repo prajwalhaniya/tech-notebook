@@ -2,7 +2,7 @@
     "label": "Fundamentals",
     "position": 0,
     "link": {
-      "type": "generated-index",
-      "description": "The building blocks every system design round assumes: DNS, HTTP, latency numbers, back-of-the-envelope estimation, SQL vs NoSQL, indexes, ACID vs BASE, and the 15-component HLD blueprint."
+        "type": "generated-index",
+        "description": "The building blocks every system design round assumes: DNS, HTTP, latency numbers, back-of-the-envelope estimation, SQL vs NoSQL, indexes, ACID vs BASE, caching strategies, cache eviction, CDNs, and the 15-component HLD blueprint."
     }
 }
