@@ -1,0 +1,8 @@
+{
+  "label": "Binary Search",
+  "position": 7,
+  "link": {
+    "type": "generated-index",
+    "description": "Halving the search space, including binary search on the answer."
+  }
+}
