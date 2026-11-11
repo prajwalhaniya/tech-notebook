@@ -1,0 +1,8 @@
+{
+  "label": "Linked List",
+  "position": 8,
+  "link": {
+    "type": "generated-index",
+    "description": "Singly and doubly linked list manipulation: reversal, cycles, merging, reordering."
+  }
+}

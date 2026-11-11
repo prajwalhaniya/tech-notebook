@@ -4,7 +4,7 @@ sidebar_position: 27
 
 # Longest Substring Without Repeating Characters
 
-The full write-up (understand, clarify, brute force, two sliding-window versions, the `"abba"` trap, tests, alternatives and follow-ups) lives in **[100 Medium → Longest Substring Without Repeating Characters](../100%20Medium/02_Longest%20substring%20without%20repeating%20characters.md)**.
+The full write-up (understand, clarify, brute force, two sliding-window versions, the `"abba"` trap, tests, alternatives and follow-ups) lives in **[Sliding Window → Longest Substring Without Repeating Characters](../Sliding%20Window/03_Longest%20substring%20without%20repeating%20characters.md)**.
 
 Quick reference (sliding window + last-seen index, O(n) time, O(min(n, alphabet)) space):
 
@@ -26,4 +26,4 @@ console.log(lengthOfLongestSubstring('abcabcbb')); // 3
 console.log(lengthOfLongestSubstring('abba'));     // 2
 ```
 
-Related: [Longest Repeating Character Replacement](../100%20Medium/27_Longest%20repeating%20character%20replacement.md), [Minimum Window Substring](../100%20Medium/40_Minimum%20Window%20Substring.md).
+Related: [Longest Repeating Character Replacement](../Sliding%20Window/05_Longest%20repeating%20character%20replacement.md), [Minimum Window Substring](../Sliding%20Window/06_Minimum%20Window%20Substring.md).

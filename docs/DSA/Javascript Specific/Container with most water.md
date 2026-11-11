@@ -4,7 +4,7 @@ sidebar_position: 25
 
 # Container With Most Water
 
-The full write-up (understand, clarify, brute force, the two-pointer proof, tests, alternatives and follow-ups) lives in **[100 Medium → Container With Most Water](../100%20Medium/08_Container%20with%20most%20water.md)**.
+The full write-up (understand, clarify, brute force, the two-pointer proof, tests, alternatives and follow-ups) lives in **[Two Pointers → Container With Most Water](../Two%20Pointers/03_Container%20with%20most%20water.md)**.
 
 Quick reference (two pointers, O(n) time, O(1) space):
 
@@ -23,4 +23,4 @@ function maxArea(height) {
 console.log(maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7])); // 49
 ```
 
-Related: [Trapping Rain Water](../100%20Medium/39_Trapping%20Rain%20Water.md), where every bar counts and the water is summed.
+Related: [Trapping Rain Water](../Two%20Pointers/05_Trapping%20Rain%20Water.md), where every bar counts and the water is summed.
