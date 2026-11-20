@@ -1,0 +1,8 @@
+{
+  "label": "Sliding Window",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "A window over an array or string that grows and shrinks to maintain an invariant."
+  }
+}

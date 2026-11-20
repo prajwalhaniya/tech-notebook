@@ -106,7 +106,7 @@ The same pattern shows up in:
 - Find Duplicate File in System (key = file content)
 - Isomorphic strings / Word Pattern (key = first-occurrence index pattern)
 - Valid Anagram (the single-pair version)
-- Find All Anagrams in a String (a sliding window with a count signature, see [Find All Anagrams](../100%20Medium/25_Find%20All%20Anagrams%20in%20a%20String.md))
+- Find All Anagrams in a String (a sliding window with a count signature, see [Find All Anagrams](../Sliding%20Window/04_Find%20All%20Anagrams%20in%20a%20String.md))
 
 ## 6. Implement
 

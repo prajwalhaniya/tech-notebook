@@ -1,8 +1,8 @@
 {
-    "label": "Trees",
-    "position": 7,
-    "link": {
-      "type": "generated-index",
-      "description": "All the tree concepts goes here"
-    }
+  "label": "Trees",
+  "position": 9,
+  "link": {
+    "type": "generated-index",
+    "description": "All the tree concepts goes here"
+  }
 }

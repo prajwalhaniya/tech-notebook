@@ -67,7 +67,7 @@ Time is already linear, so the bottleneck is **memory**. We build a whole new st
 The same pattern shows up in:
 - Reverse String / Reverse Vowels of a String
 - Valid Palindrome II (one deletion allowed)
-- Two Sum II (sorted array), 3Sum, [Container With Most Water](../100%20Medium/08_Container%20with%20most%20water.md), [Trapping Rain Water](../100%20Medium/39_Trapping%20Rain%20Water.md)
+- Two Sum II (sorted array), 3Sum, [Container With Most Water](../Two%20Pointers/03_Container%20with%20most%20water.md), [Trapping Rain Water](../Two%20Pointers/05_Trapping%20Rain%20Water.md)
 - Palindrome Linked List (find the middle, reverse, then compare from both ends)
 
 ## 6. Implement (optimal: in-place two pointers)
@@ -227,8 +227,8 @@ Time O(n), space O(1). A common mistake is greedily choosing one side. `"cbbcc"`
 
 1. **At most k deletions** (Valid Palindrome III): this becomes DP. `n - LPS(s) <= k`, where LPS is the longest palindromic subsequence, at O(n²).
 2. **Streaming input / a string too big for memory:** two pointers need random access. Use a file with seek, or compare rolling hashes of the forward and reverse streams (with a probabilistic false-positive caveat).
-3. **Palindrome Number** (no string conversion): reverse half of the number mathematically. See [Palindrome](../100%20Easy/02_Palindrome.md).
-4. **Longest Palindromic Substring:** expand around centers. See [Longest Palindromic Substring](../100%20Medium/26_Longest%20Palidromic%20Substring.md).
+3. **Palindrome Number** (no string conversion): reverse half of the number mathematically. See [Palindrome](../Math%20%26%20Geometry/01_Palindrome.md).
+4. **Longest Palindromic Substring:** expand around centers. See [Longest Palindromic Substring](../Dynamic%20Programming/01_Longest%20Palidromic%20Substring.md).
 
 ## Common mistakes
 

@@ -1,0 +1,8 @@
+{
+  "label": "Dynamic Programming",
+  "position": 13,
+  "link": {
+    "type": "generated-index",
+    "description": "Breaking a problem into overlapping subproblems with memoized or tabulated state."
+  }
+}

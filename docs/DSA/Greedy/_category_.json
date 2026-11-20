@@ -1,0 +1,8 @@
+{
+  "label": "Greedy",
+  "position": 14,
+  "link": {
+    "type": "generated-index",
+    "description": "Making the locally optimal choice at each step to reach a global optimum."
+  }
+}

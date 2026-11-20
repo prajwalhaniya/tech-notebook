@@ -1,0 +1,8 @@
+{
+  "label": "Two Pointers",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Two pointers moving toward or away from each other across a sorted or bounded structure."
+  }
+}

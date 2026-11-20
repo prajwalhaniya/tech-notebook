@@ -1,0 +1,8 @@
+{
+  "label": "Heap & Priority Queue",
+  "position": 11,
+  "link": {
+    "type": "generated-index",
+    "description": "Problems solved with a heap or priority queue, such as Top-K selection."
+  }
+}
