@@ -576,18 +576,6 @@ article pre code {
   font-weight: normal;
 }
 
-/* Highlighted terms (<mark>) — author-marked key terms that answer a
-   specific question, not reader-triggered selection (that's the
-   HighlightConcordance panel). Same amber used by the highlight toggle's
-   active state, instead of the browser's harsh default yellow, so the
-   two highlighting concepts in this site read as one visual language. */
-article mark {
-  background: rgba(245, 197, 24, 0.3);
-  color: inherit;
-  padding: 0.05em 0.2em;
-  border-radius: 2px;
-}
-
 /* Blockquotes */
 article blockquote {
   border-left: 3px solid var(--ifm-color-emphasis-500);
