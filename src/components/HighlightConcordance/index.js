@@ -1,4 +1,5 @@
 import React, {useEffect, useState, useCallback} from 'react';
+import {useLocation} from '@docusaurus/router';
 import {findMatchingBlockIndices, MIN_LENGTH, MAX_LENGTH} from '@site/src/utils/concordance';
 import {EVENT_NAME, readEnabled} from '@site/src/utils/highlightState';
 import styles from './styles.module.css';
@@ -7,6 +8,7 @@ const CONTENT_SELECTOR = '.markdown, article';
 const BLOCK_SELECTOR = 'p, li, td, th, h1, h2, h3, h4, blockquote, figcaption';
 
 export default function HighlightConcordance() {
+  const {pathname} = useLocation();
   const [enabled, setEnabled] = useState(false);
   const [matches, setMatches] = useState(null); // null = panel closed
 
@@ -16,6 +18,15 @@ export default function HighlightConcordance() {
     window.addEventListener(EVENT_NAME, onToggle);
     return () => window.removeEventListener(EVENT_NAME, onToggle);
   }, []);
+
+  // Docusaurus navigation is client-side (no full page load), so without
+  // this the panel survives a route change pointing at DOM nodes from the
+  // page that's no longer there: the header still quotes the old
+  // selection, the listed snippets are the old page's prose, and clicking
+  // one calls scrollIntoView on a detached node (a silent no-op).
+  useEffect(() => {
+    setMatches(null);
+  }, [pathname]);
 
   useEffect(() => {
     if (!enabled) {
@@ -44,7 +55,17 @@ export default function HighlightConcordance() {
       }
       const container = anchorEl ? anchorEl.closest(CONTENT_SELECTOR) : null;
       if (!container) return;
-      const blocks = Array.from(container.querySelectorAll(BLOCK_SELECTOR));
+      // Leaf blocks only: BLOCK_SELECTOR matches nested combinations like
+      // <li><p>...</li> and <ol><li>...<ul><li>...</li></ul></li>, and an
+      // outer block's textContent includes all of its children's text. Without
+      // this filter, querySelectorAll returns the outer block before the
+      // inner one (document order), so excludeIndex points at the wrong
+      // (outer) block — the inner block the reader actually selected then
+      // matches itself — and every real occurrence inside nested markup is
+      // counted once per ancestor level as well as once for itself.
+      const blocks = Array.from(container.querySelectorAll(BLOCK_SELECTOR)).filter(
+        (el) => !el.querySelector(BLOCK_SELECTOR),
+      );
       const excludeIndex = blocks.findIndex((el) => el.contains(anchorEl));
       const blockTexts = blocks.map((el) => el.textContent || '');
       const matchIndices = findMatchingBlockIndices(text, blockTexts, excludeIndex);

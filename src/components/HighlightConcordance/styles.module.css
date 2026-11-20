@@ -13,6 +13,26 @@
   box-sizing: border-box;
 }
 
+/* Below desktop width, a 320px right-edge panel either sits on top of the
+   article's text column (it's centered, not flush right, so the panel
+   overlaps it well before the viewport is actually narrow) or, on a
+   phone, covers most of the screen. A bottom sheet keeps the panel from
+   ever occluding the passage the reader just highlighted. */
+@media (max-width: 996px) {
+  .panel {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    height: auto;
+    max-height: 45vh;
+    border-left: none;
+    border-top: 1px solid var(--ifm-border-color);
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+  }
+}
+
 .panelHeader {
   display: flex;
   justify-content: space-between;
