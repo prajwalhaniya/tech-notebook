@@ -18,10 +18,10 @@ export default function DocCardList(props) {
   }
   const filteredItems = filterDocCardListItems(items);
   return (
-    <section className={clsx('notebookIndex', className)}>
+    <ul className={clsx('compactIndexList', className)}>
       {filteredItems.map((item, index) => (
-        <DocCard key={index} item={item} index={index} />
+        <DocCard key={index} item={item} />
       ))}
-    </section>
+    </ul>
   );
 }
