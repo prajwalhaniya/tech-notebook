@@ -13,18 +13,25 @@
   --ifm-color-primary-lighter: #374151;
   --ifm-color-primary-lightest: #4b5563;
 
-  /* Typography */
-  --ifm-font-family-base: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  /* Typography
+     Roboto for everything — headings and body share one family, the same
+     way sre.google/workbook does it. Hierarchy there comes from size
+     alone (every heading is weight 400, same as body); see the article
+     h1-h4 rules below for the matching scale. */
+  --ifm-font-family-base: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Helvetica Neue', Arial, sans-serif;
   --ifm-font-family-monospace: 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono',
     'IBM Plex Mono', 'Courier New', monospace;
   --ifm-code-font-size: 95%;
   --ifm-line-height-base: 1.7;
 
-  /* Colors */
-  --ifm-background-color: #ffffff;
-  --ifm-heading-color: #111827;
-  --ifm-font-color-base: #374151;
+  /* Colors
+     Heading/body grays sampled from sre.google/workbook/data-processing/
+     (#424242 headings, #515154 body) rather than the previous near-black
+     (#111827) — a softer, "printed report" contrast instead of pure black. */
+  --ifm-background-color: #f7f4ec;
+  --ifm-heading-color: #424242;
+  --ifm-font-color-base: #515154;
   --ifm-color-emphasis-300: #d1d5db;
   --ifm-color-emphasis-500: #9ca3af;
   --ifm-color-emphasis-700: #6b7280;
@@ -37,13 +44,13 @@
   --docusaurus-highlighted-code-line-bg: rgba(17, 24, 39, 0.05);
 
   /* Navbar */
-  --ifm-navbar-background-color: #ffffff;
+  --ifm-navbar-background-color: #f7f4ec;
   --ifm-navbar-height: 70px;
   --ifm-navbar-padding-horizontal: 1.5rem;
   --ifm-navbar-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.05);
 
   /* Footer */
-  --ifm-footer-background-color: #fafafa;
+  --ifm-footer-background-color: #efebe0;
   --ifm-footer-color: #6b7280;
   --ifm-footer-link-color: #111827;
 
@@ -113,7 +120,15 @@ a:hover {
   text-decoration: none;
 }
 
-/* Typography improvements */
+/* Typography improvements
+   Baseline reset only — actual sizes for doc/blog content are set once,
+   deliberately, in the "DOC CONTENT TYPOGRAPHY" block below. Previously
+   this block ALSO set explicit font-size on bare h1/h2/h3, which fought
+   the .markdown>h* rules that used to live further down this file on a
+   property-by-property basis (one rule won font-size, the other won
+   margins), producing spacing nobody actually designed. Keep this to a
+   harmless reset; pages that need their own heading size (homepage hero,
+   card titles) already set it via a scoped CSS-module class. */
 h1,
 h2,
 h3,
@@ -122,21 +137,6 @@ h5,
 h6 {
   font-weight: 600;
   margin-top: 0;
-}
-
-h1 {
-  font-size: 2.5rem;
-  line-height: 1.2;
-}
-
-h2 {
-  font-size: 2rem;
-  line-height: 1.25;
-}
-
-h3 {
-  font-size: 1.5rem;
-  line-height: 1.3;
 }
 
 code {
@@ -185,43 +185,12 @@ code {
   font-weight: 600;
 }
 
-/* Docs content */
+/* Docs content
+   Heading sizes, margins, and the h2 divider rule all live in one place
+   now — the "DOC CONTENT TYPOGRAPHY" block near the end of this file —
+   instead of being split across this selector and that one. */
 .markdown {
-  --ifm-h1-font-size: 2.5rem;
-  --ifm-h2-font-size: 2rem;
-  --ifm-h3-font-size: 1.5rem;
   max-width: 100%;
-}
-
-.markdown > h1 {
-  margin-bottom: 1.5rem;
-}
-
-.markdown > h2 {
-  margin-top: 3rem;
-  margin-bottom: 1.25rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--ifm-border-color);
-}
-
-.markdown > h2:first-child {
-  border-top: none;
-  padding-top: 0;
-  margin-top: 0;
-}
-
-.markdown > h3 {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-
-.markdown > p {
-  margin-bottom: 1.25rem;
-}
-
-.markdown > ul,
-.markdown > ol {
-  margin-bottom: 1.25rem;
 }
 
 /* Code blocks */
@@ -294,9 +263,15 @@ code {
   content: '';
 }
 
-/* Breadcrumbs */
+/* Breadcrumbs
+   This theme renders breadcrumbs inside <article>, so the "article
+   a:not(.hash-link)" blue-link rule (added for in-content links to
+   match sre.google/workbook) was also catching the Home/HLD breadcrumb
+   links and turning them blue. Pin them back to the original neutral
+   color explicitly, at a specificity that wins over that rule. */
 .breadcrumbs__link {
   font-size: 0.85rem;
+  color: var(--ifm-font-color-base);
 }
 
 /* Table of Contents */
@@ -370,7 +345,13 @@ main {
   }
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments
+   The bare h1/h2 selectors used to do nothing on doc/blog pages: inside
+   <article>, article h1/h2 always outrank a bare element selector on
+   specificity, so this shrink never actually applied there — full-size
+   desktop headings (and their 48px+ top margins) were rendering as-is on
+   phones. Target article h1-h3 directly so this takes effect where it's
+   needed most. */
 @media (max-width: 996px) {
   :root {
     --ifm-navbar-height: 60px;
@@ -382,6 +363,20 @@ main {
 
   h2 {
     font-size: 1.75rem;
+  }
+
+  article h1 {
+    font-size: 2rem;
+  }
+
+  article h2 {
+    font-size: 1.625rem;
+    margin-top: 2.25rem;
+  }
+
+  article h3 {
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
   }
 }
 
@@ -467,70 +462,83 @@ html {
 
 /* =========================================================
    DOC CONTENT TYPOGRAPHY
-   Plain, notebook-like reading styles: serif headings, flat
-   borders instead of shadows/gradients, no decorative motion.
+   Modeled on sre.google/workbook/data-processing/: one font family
+   for headings and body alike, hierarchy from size rather than
+   boldness (every heading below is weight 400, same as body text),
+   dark-gray ink instead of pure black, and zero divider borders —
+   sections are separated by whitespace alone, the way a printed
+   report reads, not by a ruled line under every heading.
    ========================================================= */
 
-/* Main content container */
+/* Main content container (~978px measure, matching the reference) */
 .theme-doc-markdown {
-  max-width: 940px;
+  max-width: 960px;
   margin: 0 auto;
 }
 
 article p {
   font-size: 1.125rem;
-  line-height: 1.75;
+  line-height: 1.6;
   margin-bottom: 1.25rem;
   color: var(--ifm-font-color-base);
 }
 
 article h1 {
-  font-size: 2.5rem;
-  font-weight: 600;
-  line-height: 1.2;
-  margin-bottom: 1.25rem;
-  margin-top: 1.5rem;
+  font-size: 2.75rem;
+  font-weight: 400;
+  line-height: 1.25;
+  margin-bottom: 2.25rem;
+  margin-top: 1rem;
   color: var(--ifm-heading-color);
-  letter-spacing: -0.02em;
 }
 
 article h2 {
-  font-size: 1.875rem;
-  font-weight: 600;
-  line-height: 1.3;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.375;
   margin-top: 2.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.25rem;
   color: var(--ifm-heading-color);
 }
 
 article h3 {
-  font-size: 1.4rem;
-  font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 400;
   line-height: 1.4;
   margin-top: 2rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   color: var(--ifm-heading-color);
 }
 
 article h4 {
+  /* One step smaller still, so it needs a weight bump to keep reading as
+     a heading rather than disappearing into 1.125rem body text — the
+     reference page never goes this many levels deep to show us what it
+     would do here, so this tier is an extrapolation, not a sampled value. */
   font-size: 1.25rem;
-  font-weight: 600;
-  margin-top: 2rem;
-  margin-bottom: 0.875rem;
+  font-weight: 500;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
   color: var(--ifm-heading-color);
 }
 
-/* Links */
-article a:not(.hash-link) {
-  color: var(--ifm-color-primary);
+/* Links — blue sampled from sre.google/workbook (rgb(67,136,255)),
+   replacing the previous near-black link color inherited from
+   --ifm-color-primary. In-text links read as links now, not as
+   slightly-emphasized body text.
+   Excludes .breadcrumbs__link too: breadcrumbs render inside <article>
+   in this theme, so without the exclusion this rule also recolors the
+   Home/HLD breadcrumb trail, which should keep its original look. */
+article a:not(.hash-link):not(.breadcrumbs__link) {
+  color: #4388ff;
   text-decoration: none;
   font-weight: 500;
   border-bottom: 1px solid transparent;
   transition: border-color 0.2s ease;
 }
 
-article a:not(.hash-link):hover {
-  border-bottom: 1px solid var(--ifm-color-primary);
+article a:not(.hash-link):not(.breadcrumbs__link):hover {
+  border-bottom: 1px solid #4388ff;
 }
 
 /* Code blocks */
@@ -637,10 +645,15 @@ article img {
   max-width: 100%;
 }
 
-/* Horizontal rule */
+/* Horizontal rule — the reference design (sre.google/workbook) separates
+   sections with whitespace only, never a ruled line, but a lot of this
+   site's markdown has manually-authored "---" section breaks. Rather than
+   edit every doc to strip them, render them as pure vertical space here
+   so the visual language stays consistent without a content-wide pass. */
 article hr {
   border: none;
-  border-top: 1px solid var(--ifm-border-color);
+  background: none;
+  height: 0;
   margin: 3rem 0;
 }
 
