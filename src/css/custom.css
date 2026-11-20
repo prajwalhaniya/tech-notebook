@@ -171,9 +171,28 @@ code {
   padding: 0;
 }
 
-/* Sidebar */
+/* Sidebar
+   Removed site-wide: the reader-focused redesign replaces the always-
+   visible per-topic sidebar tree with the Topics navbar dropdown plus
+   each topic's own Contents page. Docusaurus's own doc layout sizes
+   itself entirely off these two custom properties (defined by
+   @docusaurus/theme-classic — see DocPage/Layout/Sidebar/styles.module.css),
+   so collapsing them to 0px both hides the sidebar and expands the main
+   content column to fill the width it used to reserve, with no layout
+   component swizzle needed.
+   !important is load-bearing here, not decorative: theme-classic's own
+   compiled CSS module (which redeclares --doc-sidebar-width at :root and
+   sets display:block on .docSidebarContainer_* at >=997px) is injected
+   AFTER custom.css in this build's output, so at equal specificity it
+   would otherwise win the cascade tie and silently keep the sidebar. */
+:root {
+  --doc-sidebar-width: 0px !important;
+  --doc-sidebar-hidden-width: 0px !important;
+}
+
 .theme-doc-sidebar-container {
   border-right: 1px solid var(--ifm-border-color);
+  display: none !important;
 }
 
 .menu__link {
