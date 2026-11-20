@@ -82,6 +82,10 @@ const config = {
             position: 'left',
           },
           // {to: '/blog', label: 'Blog', position: 'left'},
+          {
+            type: 'custom-highlightToggle',
+            position: 'right',
+          },
         ],
       },
       docs: {

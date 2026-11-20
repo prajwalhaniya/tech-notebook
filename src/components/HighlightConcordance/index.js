@@ -1,5 +1,5 @@
 import React, {useEffect, useState, useCallback} from 'react';
-import {findMatchingBlockIndices} from '@site/src/utils/concordance';
+import {findMatchingBlockIndices, MIN_LENGTH, MAX_LENGTH} from '@site/src/utils/concordance';
 import {EVENT_NAME, readEnabled} from '@site/src/utils/highlightState';
 import styles from './styles.module.css';
 
@@ -25,7 +25,15 @@ export default function HighlightConcordance() {
     const onSelectionChange = () => {
       const selection = window.getSelection();
       const text = selection ? selection.toString() : '';
-      if (!text.trim()) {
+      const trimmedLength = text.trim().length;
+      if (trimmedLength < MIN_LENGTH || trimmedLength > MAX_LENGTH) {
+        // Out of bounds: leave the panel exactly as it was (closed, or
+        // showing a previous real result) rather than opening/replacing
+        // it with a result for a selection too short or long to be a
+        // meaningful lookup — findMatchingBlockIndices would return an
+        // empty array for this case too, but that's indistinguishable
+        // from "searched and found nothing", which is a different,
+        // genuine result worth showing. Gate here instead.
         return;
       }
       const anchorNode = selection.anchorNode;
