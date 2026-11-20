@@ -2,11 +2,9 @@
 sidebar_position: 9
 ---
 
-# Design IRCTC
+# Design IRCTC (Indian Railway Ticket Booking System)
 
-### Design IRCTC (Indian Railway Ticket Booking System)
-
-A comprehensive system design for IRCTC, India's railway ticket booking platform, with emphasis on how it absorbs the single hardest problem in this domain: the **Tatkal booking rush** — millions of users hammering the same small set of train/date/class rows in the same few seconds.
+IRCTC is India's railway ticket booking platform. Its hardest problem isn't steady-state traffic — it's the **Tatkal booking rush**: millions of users hammering the same small set of train/date/class rows in the same few seconds. This design is built around absorbing exactly that spike.
 
 ---
 

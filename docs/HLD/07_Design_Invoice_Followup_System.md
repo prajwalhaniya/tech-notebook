@@ -251,6 +251,16 @@ Design an invoice follow-up system that automates accounts receivable management
 
 **Total: ~$1.76M/year (at scale)**
 
+### Conclusions
+
+These numbers drive several decisions made later in this document:
+
+- **6,650 rps peak against 1,330 rps average (a 5x swing)** means the API layer and database connection pools must be sized for the spike, not the average — this is why [Horizontal Scaling](#horizontal-scaling) uses an auto-scaling group (5-50 instances) rather than a fixed fleet.
+- **Audit logs account for 1.3PB of the 1.5PB total storage** — nearly 90% — because every financial action is logged for 7 years at 500GB/day. Storing that volume in PostgreSQL would make the transactional database unmanageably large, which is why audit and event data go to DynamoDB instead (see [Database Design](#database-design)).
+- **2M reminders/day is small next to 11M reminder *checks*/day** — most scheduled checks decide not to send (invoice already paid, follow-up paused). This is why the [Reminder Processing Loop](#automated-follow-up-engine) runs as a periodic batch job that filters down to sendable reminders, rather than firing a job per invoice.
+- **Email is the single largest line item at $720K/year**, more than compute, database, and network combined. That cost is why only 30% of invoices (the ones that actually go unpaid past a reminder trigger) generate reminders at all — sending reminders to every invoice regardless of payment status would roughly triple this number for no collection benefit.
+- **50,000 tenants sharing one 1,330 rps request budget** means a single tenant with a traffic spike (e.g., a bulk invoice import) could starve others if left unchecked — the reason per-tenant [Rate Limiting](#rate-limiting) exists later in this document.
+
 ---
 
 ## System APIs
@@ -461,11 +471,11 @@ GET /api/v1/integrations/status
 
 ### Schema Design
 
-We'll use a hybrid approach:
-- **PostgreSQL**: Transactional data (invoices, payments, customers)
-- **DynamoDB**: Time-series data (events, audit logs, communication logs)
-- **ElasticSearch**: Full-text search, analytics queries
-- **Redis**: Caching, rate limiting, job queues
+No single database fits every access pattern this system has, so it splits data across four stores by what each one is actually good at:
+- **PostgreSQL**: Transactional data (invoices, payments, customers) — this data needs ACID guarantees (an invoice's `balance_due` must never be inconsistent with its payments) and relational joins for reporting, which a key-value or document store can't give cheaply.
+- **DynamoDB**: Time-series data (events, audit logs, communication logs) — these tables are append-mostly and grow to billions of rows (see the 1.3PB audit log estimate above); a relational database would need constant repartitioning to keep up, while DynamoDB's key-based writes scale linearly with almost no operational tuning.
+- **ElasticSearch**: Full-text search, analytics queries — searching invoice notes or customer communications by keyword is a poor fit for SQL `LIKE` queries at this volume; an inverted index makes that search sub-second instead of a full table scan.
+- **Redis**: Caching, rate limiting, job queues — these are all short-lived, high-frequency operations (a reminder lock, a rate-limit counter) where hitting PostgreSQL for every check would add latency and load the primary database doesn't need to carry.
 
 ### PostgreSQL Schema
 
@@ -905,6 +915,8 @@ queue:reconciliation:pending → List of transactions to reconcile
 └─────────────────┘  └─────────────────┘  └─────────────────┘
 ```
 
+The nine services are split along where failure and load actually differ, not just by data entity. Invoice and Payment stay on the synchronous request path because a user is waiting on the result; Follow-up, Communication, and Integration run mostly async because a reminder or a QuickBooks sync can tolerate a few minutes of delay without anyone noticing. That split matters operationally too: if the Integration Service is stuck retrying a failed QuickBooks call, that queue backs up without blocking invoice creation or payment recording, because the two are connected only through the message queue, not a direct call.
+
 ### Service Communication
 
 **Synchronous (REST):**
@@ -926,6 +938,8 @@ queue:reconciliation:pending → List of transactions to reconcile
 ## Core Components
 
 ### 1. Invoice Service
+
+Owns the invoice lifecycle end to end (draft → sent → paid) so that every other service treats the invoice's status field as the single source of truth instead of re-deriving it from payments or reminders independently.
 
 **Responsibilities:**
 - Invoice CRUD operations
@@ -951,6 +965,8 @@ markAsPaid(invoice_id, payment_id) → updated_invoice
 - Validation: Joi / Zod
 
 ### 2. Follow-up Engine
+
+This is kept separate from the Invoice Service because its workload shape is completely different: it doesn't respond to user requests, it runs on a timer and fans out to potentially millions of reminders a day (see the 11M reminder checks/day estimate above). Isolating it means a slow reminder batch run never adds latency to someone creating or viewing an invoice.
 
 **Responsibilities:**
 - Rule evaluation and reminder scheduling
@@ -1040,6 +1056,8 @@ def adjust_for_exclusions(dt, skip_weekends, skip_holidays, quiet_start, quiet_e
 
 ### 3. Payment Service
 
+Payment recording and reconciliation carry stricter correctness requirements than the rest of the system — a missed or duplicated payment directly affects money owed — so this logic lives behind its own service boundary where it can enforce idempotency and audit logging without every other service having to re-implement those checks.
+
 **Responsibilities:**
 - Payment recording (manual and automatic)
 - Payment gateway integration (Stripe, PayPal, Square)
@@ -1085,6 +1103,8 @@ def auto_reconcile_bank_transaction(transaction):
 ```
 
 ### 4. Communication Service
+
+Email, SMS, and WhatsApp each have their own delivery APIs, rate limits, and failure modes. Centralizing them here means the Follow-up Engine and Invoice Service just call `sendEmail()` or `sendSMS()` without knowing which third-party provider is behind it — if Twilio is swapped for another SMS provider later, only this service changes.
 
 **Responsibilities:**
 - Multi-channel message delivery (email, SMS, WhatsApp, push)
@@ -1135,6 +1155,8 @@ getConversationHistory(customer_id) → messages[]
 ```
 
 ### 5. Analytics Service
+
+DSO, aging reports, and payment-behavior scores all require scanning and aggregating large slices of invoice and payment history — work that would compete with the Invoice Service's read replicas if run inline. Running it as a separate service lets these queries hit their own replicas and caches on their own schedule (see TTLs under [Caching Strategy](#caching-strategy)) without slowing down everyday invoice operations.
 
 **Responsibilities:**
 - DSO (Days Sales Outstanding) calculation
@@ -1216,6 +1238,8 @@ def calculate_payment_behavior_score(customer_id):
 ```
 
 ### 6. Integration Service
+
+Third-party systems (QuickBooks, Stripe, Salesforce) fail, rate-limit, and change their APIs on their own schedule, independent of anything happening in this system. Putting all of that behind one adapter layer means a QuickBooks outage degrades only this service's sync queue — the Invoice and Payment services keep working against local data and simply have a pending sync to retry once the third party recovers.
 
 **Responsibilities:**
 - Bi-directional sync with accounting software
@@ -1427,6 +1451,8 @@ Payment Service
 
 ### Reminder Processing Loop
 
+This loop runs as a cron job rather than firing one job per reminder because the volume (up to 1000 reminders per batch, out of millions scheduled per day) makes per-reminder scheduling wasteful — a single query every 5 minutes amortizes the database round-trip across many reminders at once. The distributed lock exists because the service runs on multiple instances for availability; without it, two instances waking up at the same 5-minute tick would both claim the same batch of reminders and send every reminder twice.
+
 ```python
 # Cron job: Run every 5 minutes
 def process_scheduled_reminders():
@@ -1607,7 +1633,11 @@ def build_template_variables(reminder, invoice):
     }
 ```
 
+`send_reminder()` re-checks the invoice's status and `followup_paused` flag immediately before sending, even though those conditions were already checked when the reminder was scheduled. That re-check exists because minutes or days can pass between scheduling and the cron tick that actually sends — the customer may have paid, disputed the invoice, or had follow-up manually paused in that window — so skipping the re-check would mean emailing someone who already paid.
+
 ### Smart Scheduling Logic
+
+A reminder scheduled for "7 days before due" still needs an actual send time, not just a date — the functions below exist to pick a time within that day likely to get opened rather than ignored, and to avoid sending at a time that reads as inconsiderate (midnight, a holiday, outside business hours).
 
 ```python
 def determine_optimal_send_time(scheduled_dt, followup_rule, customer):
@@ -1667,6 +1697,8 @@ def get_customer_most_active_hour(customer_id):
 
 ## Payment Tracking & Reconciliation
 
+Bank transfers rarely carry a clean invoice number — a wire transfer description might read "JOHN SMITH PAYMENT" instead of "INV-2024-001" — so matching a bank transaction to an invoice can't rely on exact matching alone. The pipeline below tries increasingly fuzzy matching strategies and routes anything it's not confident about to a human, because auto-reconciling a payment against the wrong invoice (marking the wrong invoice paid) is worse than leaving it unmatched for a few minutes.
+
 ### Automatic Reconciliation Pipeline
 
 ```
@@ -1719,6 +1751,8 @@ Payment Service
                    ├─> Notify accountants
                    └─> Show in reconciliation dashboard
 ```
+
+The three confidence bands exist because the cost of being wrong differs by band. Above 95% confidence (an exact reference-number match, typically), auto-reconciling saves an accountant from reviewing something that was never really in doubt. Below 70%, the available signal (amount and rough date) is too weak to act on automatically — two different customers can easily owe the same amount in the same week — so these go to a human rather than risk marking the wrong invoice paid. The 70-95% band is where automation would be a coin flip either way, so the system shows its top 3 guesses and lets a person make the final call instead of guessing for them.
 
 ### Reconciliation Dashboard
 
@@ -1805,6 +1839,8 @@ def get_reconciliation_suggestions(transaction):
 ---
 
 ## Integration Architecture
+
+Each external system here is a different shape of integration: QuickBooks needs OAuth and periodic two-way sync because it has no webhook model worth relying on, while Stripe pushes events in real time because payment confirmation is time-sensitive and Stripe's webhooks are reliable enough to trust. The two integrations below are worked examples of those two shapes — most other integrations in [the supported-systems table](#6-integration-service) follow one pattern or the other.
 
 ### QuickBooks Online Integration
 
@@ -1963,9 +1999,13 @@ def map_to_qb_invoice(invoice, qb_invoice=None):
     return qb_data
 ```
 
+`map_to_qb_invoice` carries forward the existing `SyncToken` when updating a QuickBooks invoice because QuickBooks uses it for optimistic concurrency control — submitting an update without the current token (for example, if the invoice changed in QuickBooks since the last sync) causes QuickBooks to reject the write rather than silently overwrite a change made directly in QuickBooks by the customer's own accountant.
+
 ### Stripe Integration
 
 **Webhook Handling:**
+
+Unlike the QuickBooks poll, this endpoint is public and reachable by anyone who finds the URL, so the signature check below isn't optional — without it, anyone could POST a fake `payment_intent.succeeded` event and mark an unpaid invoice as paid.
 
 ```python
 @app.route('/webhooks/stripe', methods=['POST'])
@@ -2032,6 +2072,8 @@ def handle_successful_payment(payment_intent):
 
 ### Multi-channel Architecture
 
+The three queues at the bottom of this architecture exist because not every notification has the same urgency: a payment confirmation feels broken if it arrives an hour late, while a batch of 2,000 scheduled reminders doesn't need to go out instantly and benefits from being sent at a steady rate instead of all at once. Splitting them into priority, standard, and retry queues means a burst of low-priority reminders can never delay a payment confirmation sitting in the priority queue behind it.
+
 ```
 Notification Service
          │
@@ -2058,6 +2100,8 @@ Notification Service
 ```
 
 ### Email Delivery with Tracking
+
+The tracking pixel and link-wrapping below aren't just vanity metrics — `opened_at` and `clicked_at` feed directly into [`get_customer_most_active_hour`](#smart-scheduling-logic), which picks each customer's next reminder send time, and into the [payment behavior score and prediction model](#analytics--reporting), which use open/click history as signals for how likely a customer is to pay on time.
 
 ```python
 def send_email(to, subject, template_id, variables, invoice_id=None):
@@ -2437,6 +2481,9 @@ def delete_invoice(invoice_id):
 - Certificate pinning for mobile apps
 
 **Field-Level Encryption:**
+
+Deriving a separate key per organization, rather than encrypting every tenant's sensitive fields with one shared key, limits the blast radius if a single derived key is ever compromised — only that one tenant's SSNs and bank account numbers are exposed, not every tenant's in the shared database described in [Database Design](#database-design).
+
 ```python
 from cryptography.fernet import Fernet
 import base64
@@ -2768,6 +2815,8 @@ def check_rate_limit():
 - Noisy neighbor problem (mitigated by resource quotas)
 - Cannot offer dedicated database to enterprise customers
 
+Large enterprise contracts often require a contractual guarantee of dedicated infrastructure or specific data residency, which a shared cluster can't promise — losing that bullet can mean losing the deal, which is the direct motivation for the hybrid solution below.
+
 **Alternative:** Database-per-tenant
 - Better isolation but much higher costs
 - Harder to manage at scale (1000s of databases)
@@ -2807,6 +2856,8 @@ def check_rate_limit():
 **Cons:**
 - Harder to scale horizontally
 - Schema migrations can be slow
+
+In practice this means a single PostgreSQL cluster has a ceiling — the [partitioning strategy](#database-scaling) (hash-partitioning invoices by `organization_id` into 16 partitions) exists specifically to push that ceiling higher without giving up the ACID guarantees invoices and payments need.
 
 **Hybrid Approach:**
 - PostgreSQL for invoices, payments, customers

@@ -214,6 +214,13 @@ With metadata: ~50 GB per cache server
 | Bandwidth | 80 Mbps (240 peak) |
 | Cache Memory | 50 GB/server |
 
+### Conclusions
+
+- **200 writes/sec (600 at peak) is trivial** for a single PostgreSQL primary — URL creation will never be the bottleneck in this system, so there's no reason to shard the database for write throughput alone.
+- **20,000 reads/sec (60,000 at peak) is the number that actually drives the architecture.** Redirects have to answer in under 100ms at that volume, which is why a cache sits in front of the database instead of serving every redirect from disk.
+- **117 TB over 10 years is cheap to store** on commodity disks — the hard part of this system was never capacity, it's serving point lookups by `short_code` fast enough, which a cache and a simple index already solve.
+- **A 50 GB-per-server cache covering just 20% of URLs can absorb 80% of read traffic** (the 80/20 rule assumed above), which is what makes 20,000 QPS survivable with a handful of Redis nodes instead of scaling the database to match.
+
 ---
 
 ## System APIs
@@ -444,6 +451,8 @@ For extremely high-scale systems, consider NoSQL:
 
 ## High-Level Architecture
 
+Each box below is a separate layer because each one fails and scales on its own schedule: a traffic spike should force the load balancer and API tier to add capacity without touching the database, and a database failover shouldn't take the cache down with it. Keeping load balancing, compute, caching, storage, and analytics as independent layers is what lets any one of them grow or break without dragging the others down.
+
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                         CLIENT LAYER                            │
@@ -510,13 +519,13 @@ For extremely high-scale systems, consider NoSQL:
 
 ### Architecture Components
 
-1. **Load Balancer:** Distributes traffic across API servers
-2. **API Servers:** Stateless application servers (Node.js, Go, Java)
-3. **Cache Layer:** Redis cluster for fast lookups
-4. **Database:** PostgreSQL/MySQL with read replicas
-5. **Message Queue:** Kafka/RabbitMQ for async analytics
-6. **Analytics Service:** Process click events and generate reports
-7. **Monitoring:** Prometheus + Grafana for metrics
+1. **Load Balancer:** Distributes traffic across API servers. It exists as its own layer so servers can be added or removed behind it without any client needing to know how many there are or which one answered.
+2. **API Servers:** Stateless application servers (Node.js, Go, Java). Statelessness is what makes horizontal scaling trivial — because no server holds session data, the load balancer can route a request to any of them, and adding a fourth server under load needs no coordination with the other three.
+3. **Cache Layer:** Redis cluster for fast lookups. This sits between the API servers and the database specifically because reads outnumber writes 100:1; without it, every one of the 20,000 redirects/sec from the capacity estimate above would hit the database directly.
+4. **Database:** PostgreSQL/MySQL with read replicas. This is the durable source of truth for URL mappings; replicas take read load off the primary for whatever the cache misses, while all writes still go through a single primary so two requests can never claim the same short code.
+5. **Message Queue:** Kafka/RabbitMQ for async analytics. Click tracking is decoupled from the redirect path through a queue so a slow analytics write never adds latency to the thing users actually feel — the redirect itself.
+6. **Analytics Service:** Process click events and generate reports. Running as a separate consumer means it can batch inserts and fall behind during a traffic spike without that backlog ever slowing down a single redirect.
+7. **Monitoring:** Prometheus + Grafana for metrics. Without this layer, the first sign of a dropping cache-hit ratio or growing replica lag would be user complaints about slow redirects, not an alert.
 
 ---
 
@@ -530,6 +539,8 @@ For extremely high-scale systems, consider NoSQL:
 - Store URL mappings
 - Handle custom aliases
 - Check for duplicates
+
+This logic lives in its own service, separate from the Redirect Service, because the two have opposite traffic profiles: creation runs at 200/sec and can afford a database round-trip to check alias uniqueness, while redirects run at 20,000/sec and must avoid the database whenever possible. Keeping them apart means a slow write path can never throttle the read path that the vast majority of traffic depends on.
 
 **Implementation (Node.js):**
 
@@ -619,6 +630,8 @@ class URLShortenerService {
 - Track click events
 - Handle expired URLs
 
+Because this path carries roughly 100x the traffic of URL creation, it is optimized differently from the shortening service: cache-first lookups keep the database out of the common case, and click tracking (below) is fired off asynchronously rather than awaited, so a slow analytics write never adds to the redirect's response time.
+
 **Implementation:**
 
 ```javascript
@@ -692,6 +705,8 @@ class RedirectService {
 - Aggregate statistics
 - Generate reports
 - Store time-series data
+
+This runs as a separate consumer off the message queue rather than inline inside the Redirect Service, so a spike in click volume on one link — say it goes viral — gets absorbed as queue backlog instead of slowing down redirects for every other URL in the system.
 
 **Implementation:**
 
@@ -859,6 +874,10 @@ class RandomGenerator {
 **Cons:**
 - Requires uniqueness check
 - Collision probability increases over time
+
+### Why Counter-Based Generation Wins
+
+All three approaches reduce to the same trade-off: avoid collisions by construction, or accept them and pay to detect them. Hash-based generation collides because a 7-character slice of an MD5 digest has far fewer possible values than the full hash it's cut from, and it has a second problem beyond collisions — the same long URL always produces the same short code, so two different users can't get two separately-trackable links to the same page. Random generation avoids that second problem, but its uniqueness-check retry loop gets slower as the system grows: with more codes already taken, a freshly generated random string is more likely to collide with one of them. Counter-based generation sidesteps both issues — every ID is unique by definition, so there's no collision handling and no retry loop — which is why it's the recommended approach above, at the cost of needing a single, always-available source of "the next number" (the reason the Optimization note suggests a distributed ID generator like Snowflake instead of one database counter that would become a bottleneck at scale).
 
 ### Base62 Encoding Explained
 
@@ -1033,6 +1052,8 @@ async function createURL(shortCode, longURL) {
 ### Cache Eviction Policy
 
 **Strategy:** LRU (Least Recently Used) with TTL
+
+LRU fits this workload because URL popularity is skewed and changes slowly — the links getting clicked this hour are usually the same ones that got clicked last hour. Evicting whatever hasn't been touched recently reliably keeps that hot set in cache, which is exactly the assumption the 80/20 cache-sizing math above depends on.
 
 **Configuration:**
 - TTL: 1 hour for normal URLs
@@ -1474,6 +1495,8 @@ app.use(compression());
 - Balance between length and capacity
 - Short enough for easy sharing
 
+Picking 5 characters would work today but caps the system at 916M codes against a target of billions of URLs over a 10-year retention window, forcing a disruptive length migration later. Picking 8 avoids that ceiling but makes every link one character longer than the 7-character option already needs for this scale.
+
 ### 2. 301 vs 302 Redirect
 
 **Decision:** Use 302 (Temporary Redirect)
@@ -1501,6 +1524,8 @@ app.use(compression());
 - Can shard if needed
 - Migrate to NoSQL only if necessary
 
+Starting with NoSQL instead would mean giving up ACID transactions and SQL joins on day one in exchange for horizontal write scaling this system doesn't need yet — the capacity estimate above puts writes at 200/sec, nowhere near where a single PostgreSQL primary struggles.
+
 ### 4. Hash vs Counter for Short Code
 
 **Decision:** Counter-based with Base62 encoding
@@ -1511,6 +1536,8 @@ app.use(compression());
 - Predictable behavior
 - Can add randomization for security
 
+Choosing hash-based generation instead would save one database round-trip per request but reintroduce the collision-retry loop and the "same URL always gets the same code" limitation described in [URL Shortening Algorithm](#url-shortening-algorithm) — not a good trade here, since write volume (200/sec) is nowhere near the point where that extra round-trip would matter.
+
 ### 5. Cache Expiration
 
 **Decision:** 1-hour TTL for normal URLs, 24-hour for hot URLs
@@ -1519,6 +1546,8 @@ app.use(compression());
 - Balance between freshness and performance
 - Hot URLs rarely change
 - Reduces database load
+
+A shorter TTL would catch an edited destination URL faster but push more lookups to the database; a longer one does the opposite. One hour is short enough that an update propagates within the hour, long enough that a hot URL still serves thousands of requests from cache before any single entry expires.
 
 ### 6. Analytics Granularity
 
@@ -1529,6 +1558,8 @@ app.use(compression());
 - Aggregations for performance
 - Can run custom queries on raw data
 
+Storing only hourly aggregates would be cheaper, but it would permanently close off any question nobody thought to ask in advance — for example, "how many clicks came from a specific IP range last Tuesday" can't be answered from an aggregate that never recorded IP per hour. Keeping the raw events costs more storage upfront but leaves that door open.
+
 ### 7. Expiration Handling
 
 **Decision:** Soft delete + periodic cleanup job
@@ -1537,6 +1568,8 @@ app.use(compression());
 - Immediate marking as expired (soft delete)
 - Batch cleanup to save resources
 - Can restore accidentally expired URLs
+
+A hard delete on expiration would free storage immediately, but it also makes an accidental deletion or a compromised account's deletion unrecoverable. The soft delete buys a window to undo that mistake before the periodic cleanup job removes the row for good.
 
 ---
 

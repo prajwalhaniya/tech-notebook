@@ -207,6 +207,13 @@ Design a cloud compute service that allows users to launch and manage virtual se
 - **Virtualization ratio**: 10:1 (10 VMs per physical server)
 - **Total capacity**: 1 million VMs
 
+### Conclusions
+
+- **1 billion API calls/day at a 50:1 read-to-write ratio** means the system has to be built as a read-heavy workload from the start — caching and read replicas have to absorb most of that traffic, because hitting the primary database for every `describeInstances` call would make the database the bottleneck long before physical compute capacity is.
+- **100 PB of EBS volumes plus 10 PB of snapshots** rules out any single storage array or filer. This only works as a distributed block storage system spread across many machines, which is why Storage Architecture (below) treats EBS as a distributed system with its own replication, not as a disk attached to a database server.
+- **1 Tbps of peak instance network traffic** has to be spread across many physical links rather than one — it's why Networking Architecture (below) runs on an overlay (VXLAN/GRE) across many physical switches instead of relying on a single oversized pipe.
+- **A 10:1 virtualization ratio packing 1 million VMs onto 100,000 physical servers** only stays safe if the hypervisor enforces hard isolation between tenants sharing a host. This is why Hypervisor Management (Core Components, below) treats CPU pinning, memory ballooning, and I/O throttling as required features, not optional ones.
+
 ---
 
 ## System APIs
@@ -465,6 +472,8 @@ Response:
 
 ## Database Design
 
+Two partitioning strategies recur in the tables below, and each solves a different problem. Tables like `instances` partition by `HASH(account_id)` so that one customer's load — a burst of launches, a large `describeInstances` scan — stays confined to one shard instead of competing with every other customer's traffic on the same partition. Tables like `instance_metrics` and `billing_records` instead partition `RANGE` by year, because those tables only ever grow: old partitions can be dropped or archived to cold storage wholesale once a year's data ages out, which a hash partition can't do without touching every shard.
+
 ### 1. Instances Table
 
 ```sql
@@ -689,6 +698,8 @@ CREATE TABLE billing_records (
 
 ## High-Level Architecture
 
+The diagram below splits the system into six layers because each one changes, scales, and fails on a different schedule. The Application Layer's services hold no state of their own, so they can be redeployed independently and often; the Infrastructure Layer underneath (physical hypervisor hosts, storage backends, network gear) changes far less often, and a mistake there can affect running customer instances directly. Keeping these as separate layers means an API-layer bug — a broken rate limiter, a bad input check — can be rolled back without ever touching a host that has customer VMs running on it, and a hardware failure never has to wait on an application deploy to be handled.
+
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                         Client Layer                             │
@@ -831,6 +842,8 @@ CREATE TABLE billing_records (
 
 ### 1. API Gateway
 
+Every service below would otherwise need its own authentication, rate limiting, and request validation. The API Gateway exists to do that once, in one place, so a change to how IAM credentials are checked means editing one component instead of nine.
+
 **Responsibilities:**
 - Request routing and load balancing
 - Authentication and authorization (IAM integration)
@@ -846,6 +859,8 @@ CREATE TABLE billing_records (
 - Caching for frequently accessed data
 
 ### 2. Instance Management Service
+
+This service owns the customer-facing state of an instance — what the API reports as pending, running, or stopped — while deciding *where* an instance actually runs is delegated to the Orchestration Service below. Splitting the two apart means the public API, and its <60s launch target (NFR2), doesn't get slower just because the placement logic underneath grows more sophisticated over time.
 
 **Responsibilities:**
 - Handle instance lifecycle operations (launch, start, stop, terminate)
@@ -871,6 +886,8 @@ running → shutting-down → terminated
 
 ### 3. Orchestration Service
 
+Deciding where an instance runs needs a global view — which availability zone has spare capacity, which hypervisor host can fit this instance type right now — that shouldn't have to be computed synchronously inside an API request. Pulling placement logic into its own service means placement strategies (spread, cluster, or partition placement, covered in Trade-offs below) can be tuned or replaced without changing the instance lifecycle API at all.
+
 **Responsibilities:**
 - Resource scheduling and placement
 - Capacity management
@@ -894,6 +911,8 @@ running → shutting-down → terminated
 
 ### 4. Hypervisor Management
 
+This is the only layer that actually touches physical hardware, which is why resource isolation lives here rather than in the Orchestration Service above it. *Deciding* which host an instance lands on and *enforcing* isolation on that host are different concerns — conflating them would mean a bug in scheduling logic could also compromise the boundary between tenants sharing the same server.
+
 **Responsibilities:**
 - Manage hypervisor hosts
 - Allocate/deallocate resources
@@ -915,6 +934,8 @@ running → shutting-down → terminated
 
 ### 5. Image Management Service
 
+Images are read far more often than they're written — thousands of instances can boot from the same popular AMI — and the same image often needs to be shared across accounts and regions. Those access patterns match object storage, not a transactional database, which is why this service's data path (below) stores images in S3-style object storage rather than the block storage used for live volumes.
+
 **Responsibilities:**
 - Store and manage AMI images
 - Image versioning
@@ -935,6 +956,8 @@ running → shutting-down → terminated
 4. Make available for launch
 
 ### 6. Storage Management Service
+
+EBS volumes are deliberately decoupled from any single instance: they can be created, attached, detached, and re-attached to a different instance independently of that instance's own lifecycle. This service exists to own that independent lifecycle, which is what makes persistent, instance-independent storage possible in the first place (see Storage Architecture below).
 
 **Responsibilities:**
 - Create and manage EBS volumes
@@ -958,6 +981,8 @@ running → shutting-down → terminated
 
 ### 7. Networking Service
 
+Security group and network ACL rules have to be enforced consistently for every instance in a customer's VPC, no matter which hypervisor host that instance happens to land on. Centralizing rule management here, instead of letting each host keep its own copy, is what keeps a security group update applied everywhere at once rather than drifting host by host.
+
 **Responsibilities:**
 - VPC and subnet management
 - Security group rule enforcement
@@ -980,6 +1005,8 @@ running → shutting-down → terminated
 
 ### 8. Monitoring Service
 
+The Orchestration Service's auto-recovery and migration, and NFR9's requirement to migrate instances automatically during hardware failures, both depend on knowing a host or instance is unhealthy before the customer notices. This service is what produces that signal, which is why it runs as a continuous collection pipeline rather than something queried on demand.
+
 **Responsibilities:**
 - Collect instance metrics
 - Store metrics in time-series database
@@ -1001,6 +1028,8 @@ running → shutting-down → terminated
 - CloudWatch-like interface for querying
 
 ### 9. Billing Service
+
+Metering has to keep running while instances start, stop, and terminate continuously. Tying billing calculations directly into the Instance Management Service's request path would mean a slow billing calculation could delay a `stopInstance` call — keeping billing a separate, event-driven service means usage metering never blocks a lifecycle operation.
 
 **Responsibilities:**
 - Meter instance usage
@@ -1121,11 +1150,15 @@ running → shutting-down → terminated
 └────────────┘
 ```
 
+Three of these states — `pending`, `stopping`, and `shutting-down` — exist because the operations behind them take real time and can fail partway through. `pending` lets the API hand back an instance ID the moment a launch request is accepted, instead of making the client wait the full 30-60 seconds it takes the hypervisor to actually boot a VM — the <60s launch target in NFR2 depends on not blocking the response on this. `stopping` gives the guest OS a window to flush its in-memory state to EBS before power-off; collapsing `running` straight to `stopped` would risk tearing the instance down mid-write, with whatever the application was saving at that instant lost or corrupted. Once an instance reaches `stopped`, its hypervisor host and any ephemeral Instance Store are released — that data is simply gone (see Storage Architecture below) — which is why restarting a stopped instance isn't a resume: it re-enters the Launch Flow above and goes through placement on a host again, exactly like a fresh launch.
+
 ### Health Monitoring
 
 **Instance Status Checks:**
 1. **System Status Check** - Hypervisor host health
 2. **Instance Status Check** - Instance reachability
+
+These two checks stay separate because the fix differs depending on which one fails: a failing host (power, networking, a dead disk) is something only EC2 can act on by moving the instance elsewhere, while an unresponsive instance (a kernel panic, a hung process) is often resolved by a simple restart that doesn't need a new host at all.
 
 **Auto-Recovery:**
 - If system status check fails → Migrate instance to healthy host
@@ -1150,6 +1183,8 @@ VPC (10.0.0.0/16)
 └── Public Subnet (10.0.3.0/24) - AZ: us-east-1b
     └── Instances with public IPs
 ```
+
+Each customer gets their own VPC and address range instead of sharing one address space because customers routinely reuse the same private ranges — `10.0.0.0/16` is a common default — across their own on-premises networks and other VPCs they own. Without per-customer isolation, two unrelated customers both using `10.0.1.5` would collide. The overlay networking covered in Trade-offs below (VXLAN/GRE) is what makes giving every customer an independent address space possible on top of physical network hardware that's actually shared.
 
 ### Security Groups
 
@@ -1192,6 +1227,8 @@ VPC (10.0.0.0/16)
 - Rules evaluated in order
 - Default deny all inbound, allow all outbound
 
+Enforcing rules at the hypervisor, outside the guest OS, matters because a customer has root access inside their own instance. If the firewall lived inside the guest, that same root access would let them disable it; enforcing it one layer below is what makes a security group an actual boundary rather than a setting the customer could turn off.
+
 ### Network Isolation
 
 **Multi-Tenancy:**
@@ -1199,6 +1236,8 @@ VPC (10.0.0.0/16)
 - Network virtualization (VXLAN, GRE tunnels)
 - MAC address isolation
 - VLAN tagging per customer
+
+Each mechanism here closes a different gap: VXLAN/GRE tunnels keep one customer's traffic from being visible on the physical wire shared with others, MAC address isolation stops one tenant's VM from spoofing another's network identity, and VLAN tagging lets the physical switches drop a misdirected packet before it ever reaches the wrong host.
 
 **Traffic Flow:**
 ```
@@ -1241,12 +1280,16 @@ Create Volume → Available → Attach → In-Use →
 Detach → Available → Delete → Deleted
 ```
 
+The loop back through `Available` after `Detach` — rather than going straight to `Deleted` — is what makes EBS useful as persistent, instance-independent storage: a detached volume keeps its data and can be attached to a different instance later, which is the entire point of separating EBS from the Instance Store in the first place.
+
 **Snapshot Process:**
 1. Create snapshot request
 2. Freeze filesystem (if supported)
 3. Copy data blocks to object storage
 4. Unfreeze filesystem
 5. Mark snapshot as completed
+
+The freeze step exists because a snapshot is a block-level copy, not an application-aware backup. Without briefly quiescing the filesystem, step 3 could copy a volume mid-write and capture, say, half of a database transaction — with no way to tell afterward that the data on disk is inconsistent.
 
 ### Storage Backend
 
@@ -1266,6 +1309,8 @@ Distributed Block Storage
 - 99.999999999% (11 nines) for EBS volumes
 - Achieved through replication
 - Automatic repair of corrupted blocks
+
+This works because the 3x replication above spreads copies across physically separate AZs with independent power and cooling (see Disaster Recovery & High Availability below). For data to actually be lost, the same block would have to fail in three unrelated facilities at once — a scenario rare enough to push the failure probability down to 11 nines.
 
 ---
 
@@ -1302,6 +1347,8 @@ Distributed Block Storage
   ]
 }
 ```
+
+The `Condition` block above is doing real work: without it, this policy would let the holder launch any instance type, including expensive GPU or memory-optimized instances. Scoping it to `t3.micro`/`t3.small` means a leaked credential carrying this policy can run up a small bill at worst, not an unbounded one — the same resource-level restriction pattern IAM encourages everywhere it's used.
 
 ### Network Security
 
@@ -1635,6 +1682,8 @@ Time-Series DB → Monitoring Dashboard
 - Per-hour: Simpler, less fair
 - 1-minute minimum balances fairness and complexity
 
+The unfairness in per-hour billing is concrete: an instance launched, used for 5 minutes, and terminated would still be billed for a full hour. Per-second billing closes exactly that gap, at the cost of the billing system having to track and calculate usage at much finer granularity.
+
 ---
 
 ### 7. Instance State Persistence: Stop vs Hibernate
@@ -1674,6 +1723,8 @@ Time-Series DB → Monitoring Dashboard
 - Stateful: Simpler, but requires connection tracking
 - Stateless: More control, but complex rule management
 - Stateful is industry standard and user-friendly
+
+The complexity stateless rules would add is visible in the example rule set under Networking Architecture above: that security group defines inbound rules for HTTP and SSH plus one egress-all rule. Without connection tracking, letting the HTTP response back out would require its own explicit rule matching whatever ephemeral port the client connected from — stateful tracking is what lets "allow all outbound" implicitly cover every return packet instead.
 
 ---
 
@@ -1789,6 +1840,8 @@ Time-Series DB → Monitoring Dashboard
 - NoSQL (InfluxDB/TimescaleDB) for time-series metrics
 - Can shard SQL database if needed
 
+Launching an instance touches several related rows at once — the instance record, its security group attachments, its volume attachment, its IP allocation — and all of them need to succeed or roll back together. That's exactly what SQL's ACID transactions guarantee and most NoSQL stores don't, which is why metadata stays relational even though metrics (one row per instance per minute, never updated or joined) move to a time-series store instead.
+
 ---
 
 ### 13. Caching Strategy: Write-Through vs Write-Back
@@ -1813,6 +1866,8 @@ Time-Series DB → Monitoring Dashboard
 - Write-through for instance state (consistency critical)
 - Cache with TTL for frequently read data
 - Event-driven invalidation for state changes
+
+A write-back cache would let the API acknowledge a `stopInstance` call as soon as the cache is updated, before the database write actually lands. If that cache node crashed before flushing, the customer would be told their instance is stopping while the database still says `running` — a state mismatch the Instance Lifecycle state machine above has no way to recover from on its own.
 
 ---
 
@@ -1840,6 +1895,8 @@ Time-Series DB → Monitoring Dashboard
 - Pull for health checks and service discovery
 - Hybrid approach provides best of both
 
+"Behind firewall" here means hypervisor hosts sit inside infrastructure that network isolation (NFR11, Networking Architecture above) is specifically designed to keep unreachable from outside. A centralized pull-based scraper would need an inbound path into every host across every customer's isolated network just to collect metrics; the push model avoids that entirely by having each agent open the connection outward instead.
+
 ---
 
 ### 15. Region Strategy: Single vs Multi-Region
@@ -1859,6 +1916,8 @@ Time-Series DB → Monitoring Dashboard
 - Expand based on customer demand
 - Replicate critical data across regions
 - Route customers to nearest region
+
+Building multi-region in from day one is deliberately a harder starting point, chosen to avoid a much harder retrofit later. Once account IDs, instance IDs, and billing records already exist in one region's database with no region dimension, splitting that schema across regions without downtime for millions of existing customers is a far bigger migration than designing for regions from the start.
 
 ---
 
