@@ -5,6 +5,7 @@ import DropdownNavbarItem from '@theme/NavbarItem/DropdownNavbarItem';
 // `prefix` must match the real top-level URL segment for that topic
 // (i.e. the docs/<folder> name), not the slugified category label.
 const TOPICS = [
+  {label: 'Blog', prefix: '/blog', to: '/blog/archive'},
   {label: 'Programming', prefix: '/docs/programming', to: '/docs/category/programming/'},
   {label: 'DSA', prefix: '/docs/DSA', to: '/docs/category/dsa/'},
   {label: 'Node.js Internals', prefix: '/docs/nodejs', to: '/docs/category/nodejs-internals/'},
