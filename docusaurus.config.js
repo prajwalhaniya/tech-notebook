@@ -34,7 +34,7 @@ const config = {
 
   stylesheets: [
     {
-      href: 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=IBM+Plex+Mono:wght@400;600&display=swap',
+      href: 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300..800;1,300..800&family=IBM+Plex+Mono:wght@400;600&display=swap',
       type: 'text/css',
     },
   ],
@@ -70,6 +70,10 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
+      colorMode: {
+        defaultMode: 'dark',
+        respectPrefersColorScheme: false,
+      },
       navbar: {
         title: 'Tech Notebook',
         items: [

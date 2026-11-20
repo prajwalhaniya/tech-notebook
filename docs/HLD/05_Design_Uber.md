@@ -223,6 +223,8 @@ GET    /api/v1/trips/{tripId}/receipt
 
 ### WebSocket APIs (Real-time)
 
+Everything above is REST because each call is one request answered by one response — fetching a rider's profile or submitting a rating doesn't need an open connection. Ride tracking and incoming driver requests are different: the client needs updates pushed to it as they happen, not fetched on a schedule. Polling a REST endpoint once a second to fake that would turn each of the 3.7M location updates/second (see Capacity Estimation) into a request from every client watching that ride, instead of one push down one open socket.
+
 ```javascript
 // WebSocket connections for real-time updates
 ws://api.uber.com/v1/rides/{rideId}/track
@@ -370,6 +372,8 @@ CREATE TABLE drivers (
 );
 ```
 
+`idx_location` is a plain composite index, which helps a bounding-box filter but can't efficiently answer "find all drivers within 2km" the way a real spatial index can. That query runs against Redis Geo instead (see Real-Time Location Tracking) — these two columns exist here as a durable, queryable copy of a driver's last known position, not as the path the matching service actually searches.
+
 #### Vehicle Table
 ```sql
 CREATE TABLE vehicles (
@@ -437,6 +441,8 @@ CREATE TABLE rides (
 );
 ```
 
+The fare is split into `base_fare`, `distance_fare`, `time_fare`, and `surge_multiplier` instead of storing only `total_fare` so a receipt or a billing dispute can show how that number was reached. Rates and surge multipliers change continuously, so recomputing from today's pricing would not reproduce what the rider was actually charged at request time.
+
 #### Location Tracking Table (Time-Series)
 ```sql
 -- Using time-series database (e.g., TimescaleDB, InfluxDB)
@@ -475,6 +481,8 @@ CREATE TABLE payment_methods (
     INDEX idx_default (rider_id, is_default)
 );
 ```
+
+`token` holds a reference from the payment gateway, not the card number itself. PCI-DSS prohibits storing full card numbers, so the real digits stay with the processor (e.g., Stripe) and this table keeps only `last_four_digits` for display and a token for charging the card again later.
 
 #### Payment Transaction Table
 ```sql
@@ -735,6 +743,8 @@ Base Fare + (Distance × Rate per km) + (Time × Rate per minute) × Surge Multi
   - Reduced cross-shard queries
   - Better performance
 
+This works because matching, pricing, and the driver pool for a given ride are all local to one city — a rider in San Francisco is never matched against a driver in London. Sharding by `user_id` instead would scatter a city's drivers evenly across every shard, turning the "find nearby available drivers" query — which today stays within one shard — into a fan-out across all of them.
+
 **Shard Key**: `city_id` or `region_id`
 
 **Challenges**:
@@ -752,6 +762,8 @@ Base Fare + (Distance × Rate per km) + (Time × Rate per minute) × Surge Multi
 **Cache Partitioning**:
 - Partition Redis by geographic region
 - Use consistent hashing for driver location cache
+
+Consistent hashing matters here because adding or removing a Redis node remaps only the keys in the affected slice of the hash ring, not the entire driver-location cache. With driver matching required to complete in under 5 seconds (see Requirements), rehashing every key on each scaling event would be disruptive at exactly the wrong moment.
 
 ---
 
@@ -799,6 +811,8 @@ Base Fare + (Distance × Rate per km) + (Time × Rate per minute) × Surge Multi
    - Session affinity (for WebSocket connections)
    - Weighted routing (based on server capacity)
 
+Session affinity exists specifically for the WebSocket connections described in System APIs. A REST call can land on any server since it carries no state between requests, but a ride-tracking or driver-request socket is a long-lived connection to one specific server process, so the load balancer has to keep routing that client back to the same instance for the life of the connection.
+
 3. **Database Level**:
    - Read replicas for read-heavy operations
    - Master-slave replication
@@ -836,6 +850,8 @@ Base Fare + (Distance × Rate per km) + (Time × Rate per minute) × Surge Multi
 - **Geohash**: Convert lat/lng to hash for spatial queries
 - **R-tree**: For efficient range queries
 - **Redis Geo**: Built-in geospatial data structures
+
+These aren't three competing options — they're different layers of the same idea. Geohash is the encoding (turning a lat/lng pair into a string where nearby points share a prefix); an R-tree is the kind of index a general-purpose database would build over that encoding; Redis Geo is Redis's own implementation of a geohash-based sorted set, which is why the example below queries it directly instead of maintaining a separate R-tree.
 
 ### Example: Finding Nearby Drivers
 
@@ -932,6 +948,8 @@ def calculate_fare(ride):
 - **Multi-factor Authentication**: For drivers
 - **Role-based Access Control**: Riders, drivers, admins
 
+MFA is scoped to drivers rather than riders because a compromised driver account exposes more: payout bank details and license/vehicle information, not just a payment method and a ride history.
+
 ### Data Security
 
 - **Encryption at Rest**: Encrypt sensitive data in database
@@ -946,6 +964,8 @@ def calculate_fare(ride):
 - **Data Retention**: Delete location data after retention period
 - **User Consent**: Explicit consent for data collection
 - **Data Anonymization**: Anonymize data for analytics
+
+A full pickup-to-dropoff trace tied to a rider's identity can reveal home and work addresses. Once a trip is closed out and any payment dispute window has passed, keeping that trace identifiable adds breach exposure without adding any operational value.
 
 ### Security Measures
 
