@@ -139,6 +139,13 @@ Design a photo and video sharing social networking service similar to Instagram 
 
 **CDN will handle most download traffic, reducing origin server load.**
 
+### Conclusions
+
+- 100 million photos a day at 200 KB each rules out storing images as a column in the `posts` table: at that volume the row data alone would run to tens of terabytes a day, so photo and video bytes belong in object storage (S3), with the database holding only the URL.
+- The 100:1 read-to-write ratio means almost every scaling decision downstream should favor reads over writes — this is why the Caching Strategy section below spends most of its TTL budget on feed and profile reads rather than on speeding up post creation.
+- Video posts are only 20% of daily uploads but, at 3 MB versus 200 KB each, account for 3x the daily storage of photos (60 TB vs 20 TB/day) — this is why video drives roughly 330 PB of the ~440 PB five-year total, and why any retention/cold-storage policy should target video first.
+- Average download bandwidth (92.8 Tbps) is about 50,000x average upload bandwidth (1.85 Gbps). No origin fleet is sized to serve tens of Tbps directly, so the CDN isn't an optimization here — it's load the origin servers physically cannot absorb on their own.
+
 ---
 
 ## System APIs
@@ -371,10 +378,12 @@ CREATE TABLE notifications (
 - Use consistent hashing to distribute users across shards
 - User data, posts, and relationships stored on same shard when possible
 - Cross-shard queries for feed generation (handled by feed service)
+- Consistent hashing specifically (not a simple `user_id % N`) matters because adding a shard under modulo hashing remaps nearly every key; consistent hashing only reshuffles the fraction of keys that land on the new shard.
 
 **Shard by Post ID:**
 - Posts sharded separately for better distribution
 - Enables parallel processing of popular posts
+- Sharding posts by `post_id` instead of the post owner's `user_id` keeps a single popular account's posts — and the read traffic they attract — from piling onto one shard the way they would if posts followed their author's shard.
 
 ---
 
@@ -429,16 +438,18 @@ CREATE TABLE notifications (
               └─────────────────────┘
 ```
 
+Each tier in this diagram exists to isolate a different scaling problem. API servers are stateless so the load balancer can add or remove instances without worrying about session affinity. Redis sits between the API servers and the database shards because, per the 100:1 read-to-write ratio from Capacity Estimation, almost every request is a read — letting all of those reads hit disk-backed shards directly would overwhelm them long before the shards' write capacity became the bottleneck. The database is sharded because no single instance can hold 1 billion users' data or serve their combined query load. Photos and videos live in object storage behind a CDN rather than in the database for the same reason noted in the Capacity Estimation conclusions: at 200 KB–3 MB per file, storing that much binary data as database rows would bloat every table it touched and slow down unrelated queries.
+
 ### Core Services
 
-1. **User Service**: Handles user registration, authentication, profiles
-2. **Post Service**: Manages post creation, retrieval, deletion
-3. **Feed Service**: Generates personalized feeds
-4. **Social Graph Service**: Manages follow relationships
-5. **Like/Comment Service**: Handles likes and comments
-6. **Search Service**: Handles search functionality
-7. **Notification Service**: Manages notifications
-8. **Media Service**: Handles image/video upload and processing
+1. **User Service**: Handles user registration, authentication, profiles. It's split out because auth and profile lookups happen on nearly every request (session checks, display names on posts), so it needs to scale and cache independently of heavier, bursty services like Media.
+2. **Post Service**: Manages post creation, retrieval, deletion. Kept separate from Feed Service because post CRUD is simple per-row work, while feed generation is a fan-out/aggregation problem with very different latency and scaling needs — conflating the two would force both to scale together even though their load patterns don't match.
+3. **Feed Service**: Generates personalized feeds. This is the component the <200ms feed-generation requirement (from Non-Functional Requirements) is aimed at, so it owns its own caching and the fan-out logic described in Component Design below.
+4. **Social Graph Service**: Manages follow relationships. Centralized here because both the Feed Service ("who does this user follow") and the Notification Service ("who should be notified of this new post") need the same follower/following lookups — duplicating that logic in each consumer would mean duplicating the sharding and caching for it too.
+5. **Like/Comment Service**: Handles likes and comments. Isolated because, at 5 billion likes/day, it's the highest-write-volume path in the system; bundling it into Post Service would mean a spike in likes could slow down post creation and deletion.
+6. **Search Service**: Handles search functionality. Backed by its own index (Elasticsearch, per Component Design below) rather than querying the sharded Post/User tables directly, since fuzzy username matching and geospatial queries don't map onto the user_id/post_id sharding used everywhere else.
+7. **Notification Service**: Manages notifications. Decoupled so that a burst of likes or comments — which each trigger a notification — doesn't add latency to the like/comment write path itself; notifications are produced asynchronously instead.
+8. **Media Service**: Handles image/video upload and processing. Separated because transcoding and thumbnail generation are CPU-heavy, bursty jobs; running them inside Post Service would mean a spike in uploads competes for the same resources as ordinary post reads and writes.
 
 ---
 
@@ -487,6 +498,8 @@ Cons:
 - On-demand for users with > 1000 followers
 - Use background workers to pre-compute feeds asynchronously
 ```
+
+The 1,000-follower line is a write-amplification cutoff, not an arbitrary round number: fan-out-on-write means every post triggers one cache write per follower, so a 1,000-follower account costs 1,000 writes per post — cheap enough for a background worker to absorb. A celebrity account with 10 million followers would turn a single post into 10 million writes, which is exactly the "high write amplification" con listed for Approach 1; routing those accounts to on-demand generation instead avoids that burst entirely, trading it for a slightly slower read the comparatively few times someone actually requests that celebrity's feed. Without the split, the system is stuck picking one extreme: fan-out-on-write for everyone means a single post from a high-follower account can queue up millions of cache writes, while fan-out-on-read for everyone means every feed request — even for someone who follows a few hundred ordinary accounts — pays the cost of fetching and merging posts live.
 
 **Feed Generation Algorithm:**
 ```python
@@ -537,6 +550,8 @@ Original Image (2MB)
 Store in CDN
 ```
 
+Generating three sizes upfront costs extra storage (about 750 KB total instead of the original 200 KB–2 MB) but saves far more on the download side: a feed view can be served the 50 KB thumbnail or 200 KB medium image instead of the full-resolution original, which is what keeps actual download bandwidth closer to the 92.8 Tbps figure from Capacity Estimation instead of several times that.
+
 ### Search Service
 
 **Requirements:**
@@ -549,6 +564,8 @@ Store in CDN
 - Index users, posts, hashtags
 - Support fuzzy matching for usernames
 - Geospatial search for location-based queries
+
+The sharded relational tables used elsewhere in this design are indexed for exact-match lookups by `user_id` or `post_id`, not for "usernames that sound like 'jonh'" or "posts within 5km of this point." Elasticsearch runs those query types natively, which is why search gets its own index instead of adding fuzzy-match and geospatial indexes to the sharded Post/User tables.
 
 **Index Structure:**
 ```json
@@ -589,11 +606,13 @@ Store in CDN
 - Shard by `follower_id`
 - All follow relationships for a user on same shard
 - Efficient for getting followers/following lists
+- Sharding by `follower_id` means "who does user X follow" is a single-shard lookup; sharding by `followee_id` instead would make that same query scatter across every shard holding one of X's followees, turning a cheap read into a cross-shard fan-out.
 
 **4. Feed Data Sharding**
 - Shard by `user_id` (feed owner)
 - Pre-computed feeds stored per user
 - Fast feed retrieval
+- This only applies to the pre-computed half of the hybrid feed approach above — accounts routed to on-demand generation don't have a stored feed row to shard in the first place.
 
 ### Handling Hot Partitions
 
@@ -616,6 +635,8 @@ Store in CDN
 - Post metadata: 1-hour TTL
 - Feed data: 5-minute TTL
 - Like/comment counts: 15-minute TTL
+
+Each TTL tracks how often that data actually changes. A bio or follower count is edited rarely, so a 24-hour TTL is safe; a feed has to reflect posts from the last few minutes, so it expires in 5 — accepting more frequent cache misses in exchange for freshness the user would otherwise notice as missing content.
 
 **2. CDN Cache**
 - Images and videos: Long TTL (1 year)
@@ -653,6 +674,8 @@ def update_post(post_id, data):
 - **Read-heavy**: Use cache-aside for reads
 - **Write-heavy**: Use write-behind for posts (async processing)
 
+Write-behind matters specifically because of the <3-second image upload requirement from Non-Functional Requirements: it lets the API server acknowledge the client as soon as the post is accepted, instead of making the client wait on a synchronous database write plus every downstream cache invalidation before it gets a response.
+
 ---
 
 ## Load Balancing
@@ -685,6 +708,8 @@ def update_post(post_id, data):
 - Use IP hash for stateful sessions
 - Use weighted for heterogeneous servers
 
+Least connections fits the API tier because request cost varies widely — a feed-generation call does far more work than toggling a like — so plain round robin could stack several expensive requests onto one server while another sits idle; routing by active connection count self-corrects for that instead of assuming every request costs the same.
+
 ---
 
 ## Security & Privacy
@@ -695,6 +720,8 @@ def update_post(post_id, data):
 - JWT tokens for stateless authentication
 - Token refresh mechanism
 - OAuth for third-party login
+
+JWTs keep authentication stateless for the same reason the API servers themselves are stateless (see Scalability Considerations): any server can validate a request on its own, without checking a shared session store, which is what lets the load balancer add or remove API servers freely without needing sticky sessions.
 
 **Authorization:**
 - Role-based access control (RBAC)

@@ -79,6 +79,8 @@ Cover: **DAU/MAU → QPS (average and peak) → storage (with retention and repl
 
 **Always end with a design implication:** "Peak is 70k reads/s, which is 100x the writes, so we optimize the read path with precomputed feeds and caching."
 
+**What bandwidth cost actually is:** cloud providers almost universally charge for data egress — bytes leaving their network to the internet, or to another region — and not for ingress, which is usually free. The bill is `GB transferred out × the provider's egress rate`, and that rate is tiered: a free allowance, then a flat per-GB price for the next several terabytes, cheaper again at larger committed volume. Traffic to a CDN on the same provider, or between services in the same region, is typically cheaper or free, which is the other reason (besides latency) that co-locating chatty services in one AZ matters, and why CDN offload is usually the single biggest lever on this bill for a media-heavy system: a cache hit at the edge never touches your origin's egress meter at all.
+
 ## 3. API design
 
 **Goal:** define the contract between clients and the system. It reveals the core entities and operations.
@@ -105,6 +107,14 @@ GET    /v1/photos/{photoId}            → 200 { ... }  (ETag for caching)
 
 **Red flags:** verbs in URLs (`/getUserFeed`). No pagination on list endpoints. Exposing internal IDs or DB structure. Ignoring retries.
 
+**Going deeper on three rows above:**
+
+**Large uploads**, step by step: the client asks your app server for an upload slot; the app server generates a presigned URL (a short-lived, scoped link that authorizes one specific PUT to one specific object key) and returns it; the client uploads the bytes straight to object storage, never through your app servers; the client (or a storage event) then tells the app server the upload finished, so it can record the metadata. For anything too big for one PUT, a multipart upload splits the file into chunks (S3's default is up to 10,000 parts), uploads them — in parallel, if the network allows — and finishes with a single call listing every part's ETag. Resumable uploads build on the same idea: if a part fails, retry only that part instead of restarting the whole file.
+
+**Long-running work**: the server validates the request, enqueues a job, and replies `202 Accepted` with a `Location` header pointing at a status resource (`/jobs/{jobId}`) immediately — it never makes the client wait on the actual work. A worker pulls the job off the queue, processes it, and writes the result somewhere durable (a DB row or an object). The client either polls that status resource (`pending` → `running` → `completed`/`failed`) or gets pushed a webhook callback once it's done; a live-updating UI uses a WebSocket or SSE connection instead of polling. Give the job submission itself an idempotency key, the same as any other retried write, so a client that resubmits after a timeout doesn't start the work twice.
+
+**API versioning**: **URL path versioning** (`/v1/users`, `/v2/users`) is simple, visible in every log line, and trivial to route at the load balancer or gateway — its cost is that you're running two full API surfaces side by side. **Header versioning** (`Accept: application/vnd.myapi.v2+json`) keeps one stable URL per resource, which REST purists prefer, at the cost of being invisible to anyone just reading request logs or testing in a browser. Either way, "additive-only within a version" means exactly this: a client built against v1 must keep working forever on v1 — you add new optional fields, you never remove or repurpose an existing one. Retiring an old version is its own process: announce a sunset date, add a `Deprecation`/`Sunset` response header, watch per-client usage to know who's still on it, and give a real grace period before the hard cutoff.
+
 ## 4. Data modeling
 
 **Goal:** the entities, their relationships, and, most importantly, the **access patterns** that decide the keys and the storage engine.
@@ -114,6 +124,9 @@ GET    /v1/photos/{photoId}            → 200 { ... }  (ETag for caching)
 2. List the **access patterns** with their frequency: "get the feed for a user, newest first" (very hot), "get the followers of a user" (fan-out), "get a photo by ID".
 3. Choose the **primary keys and partition keys** to serve the hot patterns **without scatter-gather**.
 4. Decide **normalize vs denormalize**: normalize for write integrity, denormalize (or precompute) for hot reads.
+   - **Normalization** stores each fact exactly once. A user's display name lives only in the `users` table; every other table holds a `user_id` and joins to get the name. Change the name once, and every place that reads it is correct — that's the whole benefit, and it's why normalization is the right default for a source of truth.
+   - **Denormalization** deliberately duplicates or precomputes that same fact somewhere a hot read needs it without a join — storing `author_name` directly on each `Post` row so rendering a feed of 10,000 posts doesn't join `users` 10,000 times, or storing a precomputed `follower_count` on `User` instead of running `COUNT(*)` on every profile view.
+   - The trade is real, not free: a denormalized copy can drift stale, and every write now has to update every copy (or accept that staleness for a while). Normalize first; denormalize specifically for the read you've already measured as hot.
 5. Choose the **indexes**. Every index speeds up reads and slows down writes. See [Indexes](./06_Indexes.md) for composite-index ordering, keyset pagination and secondary indexes on sharded data.
 
 ```
@@ -190,7 +203,12 @@ Deep dive: [SQL vs NoSQL](./05_SQL%20vs%20NoSQL.md) (decision framework and work
 
 **ACID vs BASE:** ACID (atomic, consistent, isolated, durable) is the relational guarantee. BASE (basically available, soft state, eventually consistent) is the trade many NoSQL systems make for availability and scale. Know the **isolation levels** (read committed, repeatable read, serializable) and the anomalies each one prevents (dirty reads, non-repeatable reads, phantoms, write skew). Deep dive: [ACID vs BASE](./07_ACID%20vs%20BASE.md).
 
-**How storage engines differ:** a **B-tree** (most SQL databases) is good for reads and updates in place, and does random writes. An **LSM-tree** (Cassandra, RocksDB) is good for writes because it turns them into sequential appends, at the cost of compaction and read amplification, which Bloom filters mitigate.
+**Storage engines, in more depth:** this is the layer below "SQL vs NoSQL" — the part of a database that actually decides how data lands on disk, and the same engine family backs very different databases.
+
+- **B-tree** (PostgreSQL, MySQL/InnoDB, most traditional SQL engines) keeps data sorted on disk in a tree, so point lookups and range scans are fast — walk down the tree, or scan a sorted range. Every write has to find its place in that sorted structure and update it in place, which means random disk I/O. That's why B-tree engines are the stronger choice when reads dominate or the workload is mixed.
+- **LSM-tree** (log-structured merge-tree — Cassandra, RocksDB, LevelDB, and underneath most "wide-column" stores) never writes in place. New writes land sequentially in an in-memory table plus a write-ahead log, then get flushed to disk as new, immutable sorted files. Sequential appends give LSM-trees very high write throughput, but a single key's current value can be scattered across several of those files, since old files are never updated — only superseded — which means a read may have to check more than one file. **Bloom filters** (a compact structure that can quickly say "this key is definitely not in this file") let most files be skipped, and background **compaction** merges old files to keep that number small, at the cost of extra disk and CPU work in the background.
+
+Rule of thumb: B-tree when reads dominate or you need in-place consistency; LSM-tree when writes dominate — time-series, logs, feeds, metrics — and a little read-latency variance is an acceptable trade for sustained write throughput.
 
 ## 7. Caching strategy
 
@@ -231,6 +249,14 @@ Deep dives: [Caching Strategies](./08_Caching%20Strategies.md) (read/write strat
 **Vertical scaling** (a bigger machine) is simple, has no distribution problems, and is often the right first step. But it has a ceiling, gets expensive and leaves a single point of failure. **Horizontal scaling** (more machines) is near-unlimited, but needs **stateless services** and partitioned data.
 
 **Stateless services:** move session state into tokens or a shared store so any instance can serve any request. Autoscale on CPU, RPS or queue depth.
+
+**Autoscaling, in depth:** it adds or removes compute capacity automatically in response to real-time demand, so you provision for the load that's actually happening instead of a fixed guess at peak. Horizontal autoscaling (add/remove instances) is the common case, since it has no single-node ceiling; vertical (resize one instance to a bigger type) is simpler but needs a restart and still has a ceiling.
+- **Target tracking** picks one metric and a target value — "keep average CPU at 50%" — and the autoscaler continuously adjusts capacity to hold it there.
+- **Step scaling** defines explicit thresholds ("add 2 instances past 70% CPU, add 5 past 90%") for more deliberate control over how aggressively it reacts.
+- **Scheduled scaling** pre-scales ahead of a known spike (a sale at noon, a Tatkal booking window at 10:00 AM) because reactive autoscaling is too slow for a demand jump that happens in seconds — the metric has to cross the threshold, and only then does a new instance start booting.
+- A **cooldown period** after each scaling action prevents "flapping": scaling up again before the last action's effect has even shown up in the metrics.
+- What you scale *on* matters: CPU lags real user impact, request latency tracks it more directly, and for async workers the right signal is queue depth or consumer lag, not the worker's own CPU — a worker can be idle-waiting on a slow downstream call with a huge backlog still piling up behind it.
+- **Cold start** is the real ceiling on how fast any of this can react: a freshly launched instance has to boot, deploy code, warm its caches and connections, and pass health checks before the load balancer sends it a single request. That lag — not the autoscaling policy — is why a 1,000x instantaneous spike (see [Design IRCTC](../09_Design_IRCTC.md#the-tatkal-rush-how-scale-is-actually-handled)) needs capacity scheduled ahead of time, not autoscaled in response.
 
 ### Replication: copies for availability and read scale
 

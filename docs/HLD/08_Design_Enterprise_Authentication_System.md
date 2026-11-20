@@ -172,6 +172,13 @@ Unlike a single-tenant login system, an enterprise auth platform has to satisfy 
 
 **Total: ~$350K–$400K/year at this scale**, excluding support/SSO-certificate-management overhead, which scales with the number of enterprise tenants rather than user count.
 
+### Conclusions
+
+- Token validation (~8,680 rps average, ~26,000 rps peak) runs at roughly 38x the volume of login traffic (~226 rps average). That gap is why validation has to be a local JWT signature check against a cached key, with no network call — the moment validation needs a round-trip to another service, that service becomes the platform's real bottleneck, not login.
+- Token refresh traffic (~8,330 rps average) sits in the same order of magnitude as validation traffic, not login traffic. Any added latency in the refresh path (a database hit instead of a Redis lookup, for example) would show up as broadly as a validation-path regression, which is why refresh-token rotation is implemented against Redis rather than PostgreSQL.
+- Audit logs (~44TB hot/warm) outweigh the Identity Directory (~100GB) by roughly 400x. That imbalance is why audit data gets its own retention and cold-archive lifecycle instead of sharing a backup/retention policy with user profile data — a 7-year compliance retention requirement on 100GB is a non-issue; the same requirement on tens of terabytes is not.
+- Compute and the Redis session store together account for roughly 60% of the itemized cost (~$203K of ~$341K), versus ~14% for the PostgreSQL database. The Session Store, not the Identity Directory, is the line item that needs the closest tracking as the user base grows, since it holds one entry per concurrent session rather than one per registered user.
+
 ---
 
 ## System APIs
@@ -431,6 +438,8 @@ jwks:current -> JSON
            Signing keys live in KMS/HSM — never in app config.
 ```
 
+Auth Service, Token Service, and Authorization Service are split along scaling lines, not just logical ones. Auth Service carries login's slow, bursty work — password checks, MFA challenges, IdP round-trips — which the Capacity Estimation above puts at ~2,260 rps even at a 10x Monday-morning storm. Token Service only verifies signatures, which has to absorb the ~26,000 rps validation peak — roughly 11x the login peak. Keeping them separate means a login storm never has to be provisioned into the path every downstream API call depends on.
+
 ### Service Communication
 
 - **Edge → Auth/Token/Authorization services:** synchronous HTTPS (REST/gRPC), behind the API Gateway.
@@ -443,6 +452,8 @@ jwks:current -> JSON
 ## Core Components
 
 ### 1. Auth Service
+
+This is the only service that touches raw credentials and talks to third-party IdPs directly. Isolating it means a slow SAML handshake or a deliberately slow Argon2id hash (see below) never adds latency to the Token Service's job of verifying a token that was already issued.
 
 **Responsibilities:**
 - Password login, registration, password reset.
@@ -466,6 +477,8 @@ resetPassword(email) → reset_email_sent
 - Password hashing: Argon2id via `argon2` (run in a worker thread pool, not the main event loop)
 
 ### 2. Token Service
+
+It's split from Auth Service for a second reason beyond load: narrowing which code paths can ever touch a signing key. Only this service calls KMS for signing operations, so a compromise or bug in the login flow (password checks, SSO parsing) can't reach key material it was never given access to.
 
 **Responsibilities:**
 - Issue signed JWT access tokens and opaque refresh tokens.
@@ -514,6 +527,8 @@ def refresh_tokens(refresh_token):
 
 ### 3. Authorization Service
 
+It exists as a separate service specifically for the permission checks that don't fit in a JWT: resource-specific or frequently-changing decisions, like whether this particular user can approve this particular invoice. Routine, slow-changing roles stay embedded as JWT claims instead (see Service Communication above), so most requests never call this service at all — it only has to handle the less-common, fine-grained cases.
+
 **Responsibilities:**
 - Central RBAC/ABAC policy evaluation.
 - Role/permission management per tenant.
@@ -532,6 +547,8 @@ assignRole(user_id, role_id) → assigned
 
 ### 4. MFA Service
 
+Separating MFA out lets each verification method fail or get upgraded independently of password login. A WebAuthn library upgrade or an SMS provider (Twilio/SNS) outage then can't take down the password-login path itself, since Auth Service only calls out to this service after the password check has already succeeded.
+
 **Responsibilities:**
 - TOTP secret generation and verification (RFC 6238).
 - WebAuthn/FIDO2 credential registration and assertion (passkeys).
@@ -547,6 +564,8 @@ verifyWebauthnAssertion(user_id, assertion) → valid: bool
 
 ### 5. SSO Federation Hub
 
+Both SAML2 and OIDC are supported because enterprise IdPs split across the two: legacy and on-prem identity stacks (and plenty of existing Okta/Azure AD setups) default to SAML2, while newer cloud-native IdPs default to OIDC. Supporting only one protocol would rule out a real slice of the Okta, Azure AD, Ping, and Google Workspace tenants named in the Problem Statement — exactly the enterprise buyers this platform exists to onboard.
+
 **Responsibilities:**
 - Terminate SAML2/OIDC protocol complexity per tenant so the rest of the platform only ever sees a normalized internal token.
 - Validate assertion signatures against the tenant's registered IdP certificate.
@@ -560,6 +579,8 @@ mapAttributesToUser(claims, attribute_mapping) → normalized_identity
 ```
 
 ### 6. Audit & Compliance Service
+
+Splitting this out from the services that generate events means a slow or backed-up audit pipeline can never add latency to a login or token issuance — the connection to it is asynchronous, via Kafka (see Service Communication above), so the write is guaranteed but never blocks the response.
 
 **Responsibilities:**
 - Append-only recording of every authentication/authorization decision.
@@ -604,6 +625,8 @@ async function handleSsoCallback(tenantSlug: string, assertion: SamlAssertion) {
 
 MFA enforcement reads from `tenant.mfaPolicy`, not a global constant — enterprise customers negotiate their own security posture (e.g., "trust the IdP's own MFA assertion" vs. "always challenge again") into contracts, so this has to be tenant-configurable from day one.
 
+`provisionJit` exists so a new employee's first SSO login creates their account automatically — without it, an enterprise customer's admin would have to pre-create every employee in this platform before anyone could log in, which defeats the point of federating identity to their own IdP. JIT only covers account *creation*, though: it fires on login, not on removal, so offboarding an employee who leaves still depends on the SCIM-based deprovisioning flow (see Optional Features) rather than on this callback ever running again for that user.
+
 ### Token Validation on the Hot Path
 
 ```ts
@@ -645,7 +668,7 @@ Signature verification happens locally against a cached public key, which is wha
 
 ### Authentication & Authorization Hardening
 
-- Argon2id for password hashing, tuned to ~250ms per hash on reference hardware, run off the main event loop.
+- Argon2id for password hashing, tuned to ~250ms per hash on reference hardware, run off the main event loop. Argon2id is memory-hard — it costs RAM, not just CPU time, to compute — which is why it's chosen over bcrypt: an attacker with GPUs or ASICs can parallelize bcrypt cracking far more cheaply than Argon2id cracking at an equivalent hash time.
 - Rate limiting on login and MFA attempts, keyed by account and by IP, with exponential backoff.
 - Refresh token rotation with reuse detection (see Token Service algorithm above) to catch token theft.
 - Device fingerprinting attached to refresh tokens so a session hijack from a new device/location can be flagged or forced to re-authenticate.
