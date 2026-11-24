@@ -20,6 +20,7 @@ const TOPICS = [
   {label: 'Deployment', prefix: '/docs/Deployment', to: '/docs/category/deployment/'},
   {label: 'Software Management', prefix: '/docs/Software_Management', to: '/docs/category/software-management/'},
   {label: 'Technology', prefix: '/docs/Tech_Fundamentals', to: '/docs/category/technology/'},
+  {label: 'Q&A', prefix: '/docs/QnA', to: '/docs/category/qa/'},
 ];
 
 export default function TopicsNavbarItem(props) {

@@ -4,13 +4,15 @@ sidebar_position: 2
 
 # TypeORM
 
-TypeORM is a TypeScript/JavaScript ORM (Object-Relational Mapping) that can run in Node.js, Browser, Cordova, PhoneGap, Ionic, React Native, and Electron. It supports PostgreSQL, MySQL, MariaDB, SQLite, MS SQL Server, Oracle, and more.
+TypeORM is a TypeScript/JavaScript ORM (Object-Relational Mapping tool — it maps database tables to classes, so you work with objects instead of hand-written SQL) that runs in Node.js, the browser, Cordova, Ionic, React Native, and Electron. It supports PostgreSQL, MySQL, MariaDB, SQLite, MS SQL Server, Oracle, and more, and lets you switch between them by changing connection options rather than rewriting your queries.
 
 * * *
 
 ## Installation & Setup
 
 ### Install TypeORM
+
+TypeORM reads your TypeScript decorators (`@Entity`, `@Column`) at runtime to build its schema, which requires the `reflect-metadata` polyfill alongside the ORM itself. You also need a driver package for whichever database you're connecting to — `pg` for PostgreSQL, `mysql2` for MySQL.
 
 ```bash
 # With PostgreSQL driver
@@ -24,6 +26,8 @@ npm install -D @types/node typescript ts-node
 ```
 
 ### Configure tsconfig.json
+
+Decorators didn't become a finished JavaScript standard until 2022, so using them in a TypeORM project before that needs two compiler flags: `experimentalDecorators` turns on the decorator syntax itself, and `emitDecoratorMetadata` makes TypeScript emit the type information that `reflect-metadata` reads at runtime — it's how TypeORM infers that a `string` property should become a `varchar` column without you stating the SQL type explicitly.
 
 ```json
 {
@@ -45,6 +49,10 @@ npm install -D @types/node typescript ts-node
 ```
 
 ### Data Source Setup
+
+A `DataSource` is TypeORM's connection object — it holds the database credentials, the list of entities it manages, and the connection pool. You create one instance per application and call `.initialize()` once at startup, before running any queries.
+
+Two options are worth flagging. `synchronize: true` makes TypeORM auto-generate and alter tables to match your entities, which is convenient in development but risky in production — it can drop a column, or the data in it, the moment an entity definition changes in a way TypeORM reconciles differently than you expected. `logging: true` prints every generated SQL statement to the console, which is the fastest way to see why a query isn't returning what you expect.
 
 ```typescript
 // src/data-source.ts
@@ -77,6 +85,8 @@ AppDataSource.initialize()
 
 ### Environment Variables
 
+Hardcoding credentials, as the example above does, means a developer's local password ends up committed to source control. A real setup reads configuration from environment variables instead, and disables `synchronize` once `NODE_ENV` is `production`, so a deployment can't reshape the schema outside of a reviewed migration.
+
 ```typescript
 // src/data-source.ts with dotenv
 import "dotenv/config";
@@ -100,7 +110,11 @@ export const AppDataSource = new DataSource({
 
 ## Entities
 
+An entity is a class decorated with `@Entity()` that maps to a database table — one instance of the class corresponds to one row. TypeORM infers the table name from the class name unless you pass one explicitly, the way `@Entity("users")` below maps the `User` class to a table literally named `users`.
+
 ### Basic Entity
+
+`@PrimaryGeneratedColumn()` creates an auto-incrementing integer primary key. `@Column()` marks a property as a mapped column, with options like `type`, `length`, and `unique` controlling the generated DDL (Data Definition Language — the SQL that creates or alters the table). `@CreateDateColumn()` and `@UpdateDateColumn()` are managed automatically: TypeORM sets `createdAt` once on insert and bumps `updatedAt` on every save, so you never set either one yourself.
 
 ```typescript
 // src/entities/User.ts
@@ -135,6 +149,8 @@ export class User {
 ```
 
 ### Column Types
+
+TypeORM maps each `@Column()` to a database-specific SQL type, and some of these exist only on certain drivers — `jsonb` and native array columns (`@Column("text", { array: true })`) are PostgreSQL-only, and would need a workaround like a stringified JSON column on MySQL. The enum column below generates a check constraint, or a native SQL `ENUM` on databases that support one, restricting `status` to the four listed values.
 
 ```typescript
 @Entity()
@@ -200,6 +216,8 @@ export class Product {
 
 ### Column Options
 
+`nullable: false` and `unique: true` become real SQL constraints (`NOT NULL`, `UNIQUE`), not just TypeScript-level hints — inserting a duplicate `name` throws a database error, not a silent no-op. `select: false` is for sensitive columns like `secretKey`: TypeORM leaves them out of `find()` results by default, so a careless `JSON.stringify(user)` doesn't leak them, and you only get the value back by explicitly asking with `.addSelect()`. `update: false` protects fields like `createdBy` that should be set once on insert and never change afterward.
+
 ```typescript
 @Entity()
 export class Example {
@@ -222,6 +240,8 @@ export class Example {
 ```
 
 ### Primary Keys
+
+Most tables use a single auto-incrementing integer (`@PrimaryGeneratedColumn()`), but TypeORM also supports UUID primary keys for cases where you need an identifier that stays unique across separate databases or services (`@PrimaryGeneratedColumn("uuid")`). A composite primary key, shown in `OrderItem` below, is for join or junction tables where no single column uniquely identifies a row — combining `orderId` and `productId` does.
 
 ```typescript
 // Auto-increment
@@ -254,7 +274,11 @@ export class OrderItem {
 
 ## Relationships
 
+TypeORM represents foreign-key relationships as decorated class properties, and it keeps standard relational-database terminology — `@OneToMany`, `@ManyToOne`, `@ManyToMany` — rather than inventing its own vocabulary.
+
 ### One-to-Many / Many-to-One
+
+A one-to-many and a many-to-one relationship are two sides of the same foreign key — one `User` has many `Post` rows, and each `Post` belongs to exactly one `User`. `@ManyToOne` goes on the side that owns the foreign-key column (`userId` on `Post`), and `@JoinColumn` tells TypeORM which column holds it. `onDelete: "CASCADE"` pushes the deletion rule into the database itself: deleting a user deletes their posts in the same operation, instead of leaving orphaned rows behind.
 
 ```typescript
 // User has many Posts
@@ -292,6 +316,8 @@ export class Post {
 
 ### Many-to-Many
 
+A many-to-many relationship, like users and roles, needs a junction table to store the pairings, since neither table can hold a single foreign key for an association where one row on each side can match many rows on the other. `@JoinTable()` on the owning side (`User` here) tells TypeORM to create and manage that junction table — named `user_roles` below — automatically; the inverse side (`Role`) only needs a plain `@ManyToMany` pointing back.
+
 ```typescript
 // User has many Roles, Role has many Users
 @Entity()
@@ -325,6 +351,8 @@ export class Role {
 ```
 
 ### One-to-One
+
+A one-to-one relationship splits a table's data into two tables, usually because the second half is optional or read far less often — a `User` and its `Profile` (bio, avatar) here. `cascade: true` on the owning side means saving a `User` with a new `profile` attached also inserts the `Profile` row in the same call, instead of requiring a separate `profileRepository.save()`.
 
 ```typescript
 @Entity()
@@ -360,6 +388,8 @@ export class Profile {
 
 ### Cascade Options
 
+`cascade` controls which operations ripple from the parent entity to the related one at the TypeORM level — `cascade: ["insert"]` only propagates new related records, while `cascade: true` propagates every operation. `onDelete` and `onUpdate` are different: they're database-level foreign-key rules, enforced by the DBMS even if a query bypasses TypeORM entirely. Use both together — `cascade` for ORM convenience, `onDelete: "CASCADE"` as the safety net underneath it.
+
 ```typescript
 @ManyToOne(() => User, (user) => user.posts, {
   cascade: true,        // All operations
@@ -373,6 +403,8 @@ user: User;
 ```
 
 ### Eager vs Lazy Loading
+
+Eager loading fetches the related entity automatically on every query against the owning entity — convenient, but it adds a join to every query regardless of whether that query needs the relation, so it's worth reserving for relations you touch almost always. Lazy loading defers the query until you access the property, at the cost of returning a `Promise` instead of the entity itself, and every access fires its own round trip to the database. Neither extreme is usually right for a hot path — see Explicit Loading under Performance Optimization below for the common middle ground.
 
 ```typescript
 // Eager loading - automatically load relations
@@ -392,7 +424,11 @@ const user = await post.user;  // Separate query
 
 ## Repository Pattern
 
+A repository is TypeORM's main interface for querying and persisting an entity. `AppDataSource.getRepository(User)` returns an object with `find`, `save`, `delete`, and similar methods, all scoped to the `User` table.
+
 ### Basic CRUD Operations
+
+`create()` builds a plain entity instance in memory without touching the database; `save()` is what actually runs the `INSERT` or `UPDATE`. Calling `save()` directly on a plain object, as the `newUser` example does, performs both steps in one call. `findOneOrFail` behaves like `findOne` but throws instead of returning `null` — useful when a missing record signals a bug rather than an expected outcome. Soft delete, covered under Advanced Features below, replaces a hard `DELETE` with a timestamp column, so the row — and the option to restore it — survives.
 
 ```typescript
 import { AppDataSource } from "./data-source";
@@ -452,6 +488,8 @@ await userRepository.restore({ id: 1 });  // Restore soft-deleted
 ```
 
 ### Find Options
+
+The `where` object accepts a plain value for equality, an array for OR conditions (the `username`-or-`email` example below), and TypeORM's operator functions — `In`, `Not`, `MoreThan`, `Like` — for anything else. `relations` triggers a SQL join to pull in related entities within the same query; nesting it, as `relations: { posts: { comments: true } }` does, joins two levels deep in one round trip instead of three separate queries.
 
 ```typescript
 // Where conditions
@@ -526,6 +564,8 @@ await userRepository.find({
 
 ### Advanced Operators
 
+Operators like `Between`, `IsNull`, and `ILike` (PostgreSQL's case-insensitive `LIKE`) build the SQL condition for you while still parameterizing the value, which avoids SQL injection the same way a named placeholder does in Query Builder. `Raw` is the escape hatch for a condition none of the typed operators cover — you write the SQL fragment yourself, with the column alias passed in, so reach for it only when the comparison genuinely can't be expressed with the structured operators above it.
+
 ```typescript
 import {
   In, Not, LessThan, LessThanOrEqual,
@@ -566,6 +606,8 @@ await repository.find({
 
 ### Count & Aggregations
 
+`count()` and `exists()` cover the common cases — how many rows match, and does at least one — without loading the matching rows into memory. Anything past a plain count, like `SUM`, `AVG`, or `MIN`/`MAX`, isn't part of the repository API; you drop into Query Builder, covered next, and call `.getRawOne()` to get back a plain value instead of an entity.
+
 ```typescript
 // Count
 const count = await userRepository.count();
@@ -586,9 +628,11 @@ const result = await userRepository
 
 ## Query Builder
 
-More powerful than find options for complex queries.
+Find options cover straightforward conditions, but they can't express a `GROUP BY`, a correlated subquery, or a raw `SUM()`. Query Builder is TypeORM's lower-level, SQL-shaped API for exactly that — you assemble a query clause by clause, and it stays parameterized against SQL injection the same way `where` conditions do.
 
 ### Basic Query Builder
+
+The alias string passed to `createQueryBuilder("user")` is how later clauses refer back to the table — `"user.isActive"` in the `where` clause resolves against it. `getMany()` returns an array of hydrated entities; `getRawMany()` returns plain objects with no entity mapping, which is what you need once a query selects a computed column like `COUNT(*)` that has no corresponding entity field.
 
 ```typescript
 const users = await userRepository
@@ -621,6 +665,8 @@ const raw = await userRepository
 
 ### Joins
 
+`leftJoinAndSelect` both joins the related table and includes its columns in the result, hydrating `post.user` in the same round trip. Plain `leftJoin` without `AndSelect` still lets you filter or group by the joined table's columns, but doesn't attach that related entity to the result — useful when you need to filter by a relation without returning it. `innerJoinAndSelect` behaves the same way but excludes rows with no match, the way a SQL `INNER JOIN` does.
+
 ```typescript
 const usersWithPosts = await userRepository
   .createQueryBuilder("user")
@@ -652,6 +698,8 @@ const posts = await postRepository
 
 ### Select Specific Fields
 
+Selecting only the columns you need (`user.id`, `user.username`) cuts the data pulled over the wire — this starts to matter once a table grows a `jsonb` or `text` column nobody reads on a given screen. The second example adds computed aggregate columns (`COUNT`, `SUM`) alongside a `GROUP BY`, which only works with `getRawMany()` since the result has no matching entity shape to map onto.
+
 ```typescript
 const users = await userRepository
   .createQueryBuilder("user")
@@ -669,6 +717,8 @@ const result = await orderRepository
 ```
 
 ### WHERE Conditions
+
+Named parameters like `:age` prevent SQL injection the same way a prepared statement does — never concatenate user input directly into the query string. `andWhere` and `orWhere` chain onto an existing `where`, and the callback form (the bracket example below) groups a sub-expression in parentheses, which matters because `AND` binds tighter than `OR` in SQL. Without those brackets, `isActive AND country = 'USA' OR age > 65` would match any user over 65 regardless of `isActive`.
 
 ```typescript
 // Parameters (prevents SQL injection)
@@ -726,6 +776,8 @@ await userRepository
 
 ### Pagination
 
+`skip` and `take` map directly to SQL's `OFFSET` and `LIMIT`. `getManyAndCount()` runs the query twice internally — once for the page of rows, once as a `COUNT` — so you get both the current page and the total needed to render page numbers, without writing the count query by hand.
+
 ```typescript
 const users = await userRepository
   .createQueryBuilder("user")
@@ -744,6 +796,8 @@ console.log(`Page 3 of ${Math.ceil(total / 10)}`);
 ```
 
 ### Subqueries
+
+A subquery lets one query's `WHERE` or `SELECT` clause depend on the result of another query. The `WHERE` example below finds posts belonging to any currently active user, by checking `post.userId` against a list of active user IDs computed inline — no join required. The `SELECT` example attaches a per-row post count to each user in a single query, instead of running a separate `COUNT` query per user, which is exactly the N+1 pattern described under Performance Optimization below.
 
 ```typescript
 // Subquery in WHERE
@@ -775,6 +829,8 @@ const users = await userRepository
 
 ### Transactions with Query Builder
 
+Wrapping multiple Query Builder statements in `AppDataSource.transaction()` guarantees they commit or roll back together. The balance transfer below decrements one user's balance and increments another's inside the same transaction — if the second update throws, the first is undone automatically rather than leaving the books unbalanced.
+
 ```typescript
 await AppDataSource.transaction(async manager => {
   await manager
@@ -795,6 +851,8 @@ await AppDataSource.transaction(async manager => {
 
 ### Raw SQL
 
+`AppDataSource.query()` runs a raw SQL string directly, bypassing Query Builder entirely — useful for a database-specific feature TypeORM doesn't model, like a PostgreSQL `EXPLAIN ANALYZE`. Use positional placeholders (`$1`, `$2` on PostgreSQL) rather than string interpolation, so the driver parameterizes the values instead of inlining them.
+
 ```typescript
 // Execute raw query
 const rawData = await AppDataSource.query(
@@ -814,7 +872,11 @@ const users = await userRepository
 
 ## Transactions
 
+A transaction groups multiple writes so they succeed or fail as one unit. The classic example is transferring money between two accounts, where debiting one and crediting the other must either both happen or neither.
+
 ### Using Transaction Manager
+
+`AppDataSource.transaction()` is the simplest way to run one: pass it an async callback, and every query made through the `transactionalEntityManager` it provides runs inside the same database transaction. If the callback throws — including an unhandled error from a failed `save()` — TypeORM rolls back everything the callback did and rethrows the error.
 
 ```typescript
 import { AppDataSource } from "./data-source";
@@ -833,6 +895,8 @@ await AppDataSource.transaction(async (transactionalEntityManager) => {
 ```
 
 ### Manual Transaction Control
+
+The `QueryRunner` API gives you explicit `commitTransaction()` / `rollbackTransaction()` calls instead of a wrapping callback, for cases where the transaction boundary doesn't map cleanly onto a single function — spanning multiple request handlers, say, or branching mid-flight on whether to commit. The `try`/`catch`/`finally` structure is mandatory here: skipping `release()` leaks a connection from the pool.
 
 ```typescript
 const queryRunner = AppDataSource.createQueryRunner();
@@ -859,6 +923,8 @@ try {
 
 ### Isolation Levels
 
+The isolation level controls how much one transaction can see of another's uncommitted or concurrently-committed changes. `SERIALIZABLE` is the strictest — it behaves as if transactions ran one at a time — and the safest choice for financial operations, at the cost of more lock contention and occasional retries under heavy concurrent writes. `READ COMMITTED`, the default on PostgreSQL, trades some of that safety for throughput by letting a transaction see rows committed by others after it started.
+
 ```typescript
 await AppDataSource.transaction(
   "SERIALIZABLE",  // or "READ UNCOMMITTED", "READ COMMITTED", "REPEATABLE READ"
@@ -872,9 +938,11 @@ await AppDataSource.transaction(
 
 ## Migrations
 
-Migrations allow you to version-control database schema changes.
+Migrations are versioned, ordered scripts that change the database schema — each one a plain TypeScript file wrapping the SQL needed, with an `up()` (apply) and a `down()` (undo) method. They replace `synchronize: true` in any environment where you can't afford TypeORM guessing how to reconcile your entities with the live schema.
 
 ### Generate Migration
+
+`migration:generate` diffs your current entity definitions against the database's actual schema and writes a migration file containing the SQL needed to close the gap — add a column, create an index, whatever changed. `migration:create` scaffolds an empty file instead, for changes you want to write by hand, such as a data backfill that has no entity-level equivalent.
 
 ```bash
 # Generate migration from entity changes
@@ -885,6 +953,8 @@ npm run typeorm migration:create -- -n AddUserRole
 ```
 
 ### package.json Scripts
+
+These scripts exist because the `typeorm` CLI needs to run through `ts-node` (via `typeorm-ts-node-commonjs`) to execute TypeScript migration files directly, without a separate compile step.
 
 ```json
 {
@@ -898,6 +968,8 @@ npm run typeorm migration:create -- -n AddUserRole
 ```
 
 ### Migration File
+
+`up()` is what runs when you apply the migration; `down()` must undo exactly what `up()` did, so reverting a migration — after discovering, say, that a new column's type was wrong — restores the previous schema instead of leaving the database in a state no migration file describes. The table and column definitions below mirror the shape of `@Entity()`/`@Column()` from earlier, but written out as literal SQL schema rather than a TypeScript class.
 
 ```typescript
 // src/migrations/1234567890-CreateUserTable.ts
@@ -953,6 +1025,8 @@ export class CreateUserTable1234567890 implements MigrationInterface {
 
 ### Add Column Migration
 
+A narrower migration, like adding a single nullable `age` column, should still pair an `up()` with a matching `down()` — here, `addColumn` paired with `dropColumn` — even though the change is small, so the migration history stays reversible end to end.
+
 ```typescript
 import { MigrationInterface, QueryRunner, TableColumn } from "typeorm";
 
@@ -976,6 +1050,8 @@ export class AddUserAge1234567891 implements MigrationInterface {
 
 ### Run Migrations
 
+`migration:run` applies every migration that hasn't run yet, in filename order — which is why migration filenames are timestamp-prefixed. `migration:revert` undoes only the single most recently applied migration, not all of them, so reverting three migrations means running the command three times.
+
 ```bash
 # Run all pending migrations
 npm run migration:run
@@ -991,7 +1067,11 @@ npm run typeorm migration:show
 
 ## Advanced Features
 
+The features below aren't needed in every project, but when the problem fits — a recoverable delete, a self-referencing hierarchy, a cross-entity audit hook — they save you from reimplementing the same thing by hand.
+
 ### Soft Delete
+
+A soft delete marks a row as deleted by setting a timestamp column (`@DeleteDateColumn()`) instead of removing it with `DELETE`, which keeps the row recoverable and preserves any foreign-key references from other tables that point at it. `find()` automatically excludes soft-deleted rows, so the rest of your code doesn't need to remember to filter them out — you opt back in explicitly with `withDeleted: true` for the rare case, like an admin audit view, where you need to see them.
 
 ```typescript
 import { Entity, PrimaryGeneratedColumn, Column, DeleteDateColumn } from "typeorm";
@@ -1023,6 +1103,8 @@ await userRepository.find({ where: { deletedAt: Not(IsNull()) }, withDeleted: tr
 ```
 
 ### Entity Listeners
+
+These decorators let an entity react to its own lifecycle without the caller needing to do anything extra. `@BeforeInsert()` below is the natural place to hash a password before it's ever written to disk, so every code path that creates a user gets the hash automatically, instead of relying on each caller to remember it.
 
 ```typescript
 import { Entity, PrimaryGeneratedColumn, Column, BeforeInsert, AfterInsert, BeforeUpdate } from "typeorm";
@@ -1064,7 +1146,7 @@ Available listeners:
 
 ### Subscribers
 
-Global event listeners across all entities.
+An entity listener only ever sees one entity class; a subscriber listens across every entity, or several, through `listenTo()`. Reach for a subscriber when the same behavior needs to apply in more than one place — centralized audit logging, for example — instead of copy-pasting the same `@BeforeInsert()` into every entity that needs it.
 
 ```typescript
 // src/subscribers/UserSubscriber.ts
@@ -1094,6 +1176,8 @@ export const AppDataSource = new DataSource({
 ```
 
 ### Tree Entities (Hierarchical Data)
+
+Tree entities model self-referential hierarchies — categories with subcategories, an org chart, a comment thread — using one of three storage strategies you pick via `@Tree(...)`: `closure-table` (a separate table recording every ancestor-descendant pair — fast to query, more storage), `materialized-path` (a string like `1/4/9` encoding the path — compact, but needs string parsing), or `nested-set` (fast reads, expensive writes, since inserting a node can require renumbering others). `findDescendants` and `findAncestors` walk the hierarchy without you writing a recursive query by hand.
 
 ```typescript
 import { Entity, Column, Tree, TreeChildren, TreeParent } from "typeorm";
@@ -1130,6 +1214,8 @@ const ancestors = await categoryRepository.findAncestors(category);
 
 ### View Entities
 
+A `@ViewEntity` maps a class to a SQL `VIEW` instead of a table — the `expression` becomes the view's defining query, computed by the database on every read rather than stored. It's a way to reuse a complex aggregate query, like the per-user post count below, through the same repository API as a real entity, without materializing and keeping it in sync yourself.
+
 ```typescript
 import { ViewEntity, ViewColumn, DataSource } from "typeorm";
 
@@ -1163,7 +1249,11 @@ const stats = await AppDataSource.getRepository(UserPostCount).find();
 
 ## Performance Optimization
 
+TypeORM makes it easy to write a query that returns the right answer while doing far more work than necessary. The patterns below are the ones that come up most often once a table carries real traffic.
+
 ### Eager Loading vs Lazy Loading vs Explicit Loading
+
+Eager and lazy loading were introduced under Relationships above; explicit loading is the practical default for most code — you ask for exactly the relations a given query needs, via `relations` or `leftJoinAndSelect`, so the database does one join instead of the ORM firing a separate query per row.
 
 ```typescript
 // 1. Eager loading (automatic, use sparingly)
@@ -1191,6 +1281,8 @@ const posts = await postRepository
 
 ### Avoid N+1 Queries
 
+The N+1 problem is what happens when you fetch a list of N parent rows and then fetch each one's related rows in a loop — one query for the list, plus N more, instead of one query total. It's easy to introduce by accident with a lazy-loaded relation, and it's the single most common TypeORM performance bug. The fix, shown below, is to ask for the relation up front with `relations: ["posts"]` or an explicit join.
+
 ```typescript
 // Bad - N+1 queries
 const users = await userRepository.find();
@@ -1213,6 +1305,8 @@ const users = await userRepository
 ```
 
 ### Indexing
+
+An index lets the database find matching rows without scanning the whole table, at the cost of extra work on every write to keep the index updated — so index the columns you filter or sort by often, not every column. `@Index({ unique: true })` both indexes and enforces uniqueness in one decorator. A composite index like `IDX_USER_NAME_AGE` only speeds up queries filtering on a leading prefix of its columns (`firstName`, or `firstName` plus `lastName`) — not `age` alone. A partial index, PostgreSQL-specific and built with a `where` clause, indexes only the rows matching that condition, which keeps the index small when you only ever query the subset — active users, say.
 
 ```typescript
 // Single column index
@@ -1259,6 +1353,8 @@ export class User {
 
 ### Batch Operations
 
+`insert()` on an array sends one multi-row `INSERT` statement instead of one round trip per row, which matters once you're inserting hundreds of records at a time. The batch update and bulk delete examples below use Query Builder directly against the table rather than loading entities into memory first — updating `isActive` for every user matching a date filter touches the database once, instead of loading each matching user, changing a field, and calling `save()` in a loop.
+
 ```typescript
 // Batch insert
 const users = [
@@ -1286,6 +1382,8 @@ await userRepository
 ```
 
 ### Caching
+
+`cache: true` stores a query's result, keyed by its SQL and parameters, so an identical query within the cache window skips the database entirely. It trades a period of staleness for lower load — fine for data like a product catalog that changes rarely, risky for anything that must reflect the latest write immediately. An `id`-tagged entry, like `active_users` below, can be invalidated explicitly through `queryResultCache.remove()` the moment the underlying data changes, instead of waiting out the TTL. By default this cache lives in a database table; pointing `cache.type` at `redis` moves it to a faster, shared store when multiple app instances need to see the same cached results.
 
 ```typescript
 // Enable query result caching
@@ -1329,7 +1427,11 @@ export const AppDataSource = new DataSource({
 
 ## Testing
 
+Testing against a real, disposable database catches integration bugs — a failing foreign key, a unique-constraint violation — that a mocked repository would hide.
+
 ### Setup Test Database
+
+A dedicated `TestDataSource` keeps test runs isolated from your development database. `dropSchema: true` combined with `synchronize: true` recreates the schema from scratch on every run, which is fine here specifically because this is a throwaway test database — the same combination on a production `DataSource`, as flagged earlier, risks destroying real data.
 
 ```typescript
 // src/test-utils/setup.ts
@@ -1359,6 +1461,8 @@ afterAll(async () => {
 ```
 
 ### Test Example
+
+`beforeEach` clearing the repository ensures each test starts from a known-empty table, so one test's leftover data can't make a later test pass or fail for the wrong reason.
 
 ```typescript
 // src/__tests__/user.test.ts
@@ -1415,6 +1519,8 @@ describe("User Entity", () => {
 
 ### 1. Use synchronize: false in Production
 
+Auto-sync is a convenience for local development, where losing data costs nothing. In production, TypeORM comparing your entities to the live schema and altering tables to match can drop a column — or its data — the moment an entity definition changes in a way TypeORM interprets differently than you intended. Migrations, covered above, give you a reviewable, reversible SQL diff instead.
+
 ```typescript
 export const AppDataSource = new DataSource({
   // ...
@@ -1424,11 +1530,15 @@ export const AppDataSource = new DataSource({
 
 ### 2. Use Migrations in Production
 
+Running `migration:run` as a deploy step means every schema change is a file in version control, reviewed in a pull request like any other code change, with the `down()` method serving as a tested rollback path if something goes wrong.
+
 ```bash
 npm run migration:run
 ```
 
 ### 3. Explicit Column Names
+
+Mapping `firstName` to a `first_name` column lets your database follow SQL's conventional `snake_case` naming while your TypeScript code stays `camelCase`. Without this, TypeORM creates a literal `firstName` column, which is legal but awkward to reference from raw SQL or another tool that expects `snake_case`.
 
 ```typescript
 @Column({ name: "first_name" })
@@ -1436,6 +1546,8 @@ firstName: string;
 ```
 
 ### 4. Use Transactions for Related Operations
+
+Saving a user and its profile outside a transaction means a failure between the two calls leaves a user with no profile — an inconsistent state that's visible to every other part of the app, not a temporary glitch that fixes itself.
 
 ```typescript
 await AppDataSource.transaction(async manager => {
@@ -1445,6 +1557,8 @@ await AppDataSource.transaction(async manager => {
 ```
 
 ### 5. Avoid Select *
+
+Loading every column by default pulls in ones you don't need for a given screen or endpoint — a large `jsonb` blob, or a `passwordHash` nobody should serialize to a client. Naming the columns you actually need, as in `select: ["id", "username", "email"]` below, keeps both the query and the response payload smaller.
 
 ```typescript
 // Instead of
@@ -1458,9 +1572,11 @@ const users = await userRepository.find({
 
 ### 6. Connection Pooling
 
-See the [Connection Pools & PostgreSQL Internals](./Connection Pools.md) guide.
+TypeORM pools connections under the hood; sizing that pool correctly for your workload is covered in the [Connection Pools & PostgreSQL Internals](./Connection%20Pools.md) guide.
 
 ### 7. Use DTOs for Input Validation
+
+A DTO (Data Transfer Object) describes the shape of data coming from outside the application — a request body, with no guarantee it matches your entity's types or required fields — separately from the entity TypeORM manages. Validating the DTO before it reaches the repository turns a confusing database error, like a `NOT NULL` violation from a missing `username`, into a clear validation message at the point where the bad input actually entered.
 
 ```typescript
 // dto/create-user.dto.ts
@@ -1474,6 +1590,8 @@ export class CreateUserDto {
 ```
 
 ### 8. Handle Errors Properly
+
+PostgreSQL reports a unique-constraint violation as error code `23505` rather than a typed exception, so catching it by code and translating it into an application-level error (`"Email already exists"`) gives the caller something actionable instead of a raw driver error. Re-throw anything you don't specifically handle — swallowing unrecognized errors hides real bugs.
 
 ```typescript
 try {
@@ -1490,7 +1608,11 @@ try {
 
 ## Common Patterns
 
+Two patterns recur across most TypeORM codebases past the basic CRUD examples above: extending a repository with domain-specific queries, and separating business logic into a service layer.
+
 ### Repository Pattern Extension
+
+Extending `Repository<User>` adds domain-specific query methods — `findByEmail`, `findActiveUsers` — directly onto the repository, so calling code reads `userRepository.findByEmail(...)` instead of repeating the same `where` clause at every call site. `.extend()` attaches these methods to the repository instance TypeORM already manages, rather than requiring a separate class you instantiate and wire up yourself.
 
 ```typescript
 // src/repositories/UserRepository.ts
@@ -1521,6 +1643,8 @@ const user = await userRepository.findByEmail("john@example.com");
 ```
 
 ### Service Layer
+
+A service layer sits between your route handlers and the repository, holding business rules that don't belong in either — the duplicate-email check in `createUser` below needs to run before the insert, and fits neither inside `User` itself nor inside a route handler that should stay thin. Keeping repositories simple and business logic in services is what keeps `UserService` below testable independent of the HTTP layer around it.
 
 ```typescript
 // src/services/UserService.ts
@@ -1560,4 +1684,4 @@ export class UserService {
 
 - Official Docs: https://typeorm.io/
 - GitHub: https://github.com/typeorm/typeorm
-- See also: [PostgreSQL](./PostgreSQL.md), [Connection Pools & PostgreSQL Internals](./Connection Pools.md)
+- See also: [PostgreSQL](./PostgreSQL.md), [Connection Pools & PostgreSQL Internals](./Connection%20Pools.md)
